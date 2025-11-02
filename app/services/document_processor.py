@@ -12,10 +12,17 @@ import uuid
 
 class DocumentProcessor:
     def __init__(self):
-        self.qdrant = QdrantClient(
-            host=settings.QDRANT_HOST,
-            port=settings.QDRANT_PORT
-        )
+        # Use QDRANT_URL if available (for cloud), otherwise use host/port (for local)
+        if settings.QDRANT_URL and "cloud.qdrant.io" in settings.QDRANT_URL:
+            self.qdrant = QdrantClient(
+                url=settings.QDRANT_URL,
+                api_key=settings.QDRANT_API_KEY
+            )
+        else:
+            self.qdrant = QdrantClient(
+                host=settings.QDRANT_HOST,
+                port=settings.QDRANT_PORT
+            )
         self.llm_service = LLMService()
         self._ensure_collection_exists()
     
@@ -188,7 +195,7 @@ class DocumentProcessor:
                 "value": hit.payload.get("value"),
                 "deadline": hit.payload.get("metadata", {}).get("closing_date"),
                 "published_date": published_date,
-                "score": round(hit.score, 3),  # ✅ 0-1 score for (match.score * 100)
+                "score": round(hit.score, 3),
                 "is_new": is_new,
                 "url": f"https://www.contractsfinder.service.gov.uk/notice/{hit.payload.get('notice_id', '')}" if hit.payload.get("notice_id") else "",
                 "description": hit.payload.get("content", "")[:200] + "..." if hit.payload.get("content") else "",
