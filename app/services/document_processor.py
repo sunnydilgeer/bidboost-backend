@@ -146,13 +146,9 @@ class DocumentProcessor:
         Sorts by: 1) New contracts first, 2) Then similarity score
         """
         # Get all document chunks for this user
+        # Get all document chunks for this user
         search_result = self.qdrant.scroll(
             collection_name="user_documents",
-            scroll_filter={
-                "must": [
-                    {"key": "user_id", "match": {"value": user_id}}
-                ]
-            },
             limit=100,
             with_vectors=True
         )
