@@ -68,7 +68,9 @@ app = FastAPI(
 origins = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
-    "*",  # Allow all origins temporarily for testing
+    "https://bidboost-mkjdofs0x-sunny-dilgeers-projects.vercel.app",
+    "https://*.vercel.app",  # Allow all Vercel preview deployments
+    "*",  # Temporarily allow all for testing
 ]
 
 app.add_middleware(
