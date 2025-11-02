@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: legal-rag-postgres
+    environment:
+      POSTGRES_USER: legal_rag_user
+      POSTGRES_PASSWORD: secure_password
+      POSTGRES_DB: legal_rag_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U legal_rag_user -d legal_rag_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - legal-rag-network
+
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: legal-rag-qdrant
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - qdrant_data:/qdrant/storage
+    networks:
+      - legal-rag-network
+
+volumes:
+  postgres_data:
+    driver: local
+  qdrant_data:
+    driver: local
+
+networks:
+  legal-rag-network:
+    driver: bridge

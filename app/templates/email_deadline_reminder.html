@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contract Deadline Reminder</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #ef4444;
+        }
+        .header h1 {
+            color: #ef4444;
+            margin: 0 0 10px 0;
+            font-size: 24px;
+        }
+        .urgency-banner {
+            background-color: {% if days_until_deadline == 1 %}#fee2e2{% elif days_until_deadline == 3 %}#fef3c7{% else %}#dbeafe{% endif %};
+            border-left: 4px solid {% if days_until_deadline == 1 %}#ef4444{% elif days_until_deadline == 3 %}#f59e0b{% else %}#3b82f6{% endif %};
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 18px;
+            color: {% if days_until_deadline == 1 %}#991b1b{% elif days_until_deadline == 3 %}#92400e{% else %}#1e40af{% endif %};
+        }
+        .greeting {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .contract-details {
+            background-color: #f9fafb;
+            border: 2px solid #e5e7eb;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        .contract-title {
+            font-weight: bold;
+            color: #1e40af;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        .detail-row {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+        }
+        .detail-label {
+            font-weight: 600;
+            color: #4b5563;
+            min-width: 100px;
+        }
+        .detail-value {
+            color: #1f2937;
+        }
+        .deadline-highlight {
+            background-color: {% if days_until_deadline == 1 %}#fecaca{% elif days_until_deadline == 3 %}#fde68a{% else %}#bfdbfe{% endif %};
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+        .action-button {
+            display: inline-block;
+            background-color: #ef4444;
+            color: white;
+            text-decoration: none;
+            padding: 14px 28px;
+            border-radius: 6px;
+            margin-top: 10px;
+            font-weight: 600;
+            font-size: 16px;
+        }
+        .cta-section {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e5e7eb;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e5e7eb;
+            color: #6b7280;
+            font-size: 12px;
+        }
+        .footer a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>{% if days_until_deadline == 1 %}🚨{% elif days_until_deadline == 3 %}⏰{% else %}⏰{% endif %} Deadline Reminder</h1>
+            <p style="color: #6b7280; margin: 0;">Don't miss this opportunity</p>
+        </div>
+
+        <div class="urgency-banner">
+            {% if days_until_deadline == 1 %}
+                URGENT: Deadline Tomorrow!
+            {% elif days_until_deadline == 3 %}
+                Deadline in 3 Days
+            {% else %}
+                Deadline in {{ days_until_deadline }} Days
+            {% endif %}
+        </div>
+
+        <div class="greeting">
+            Hi {{ user_name }},
+        </div>
+
+        <p>
+            This is a reminder that the deadline for a contract you're tracking is 
+            <strong>{% if days_until_deadline == 1 %}tomorrow{% else %}in {{ days_until_deadline }} days{% endif %}</strong>.
+        </p>
+
+        <div class="contract-details">
+            <div class="contract-title">{{ contract.title }}</div>
+            
+            <div class="detail-row">
+                <div class="detail-label">👔 Buyer:</div>
+                <div class="detail-value">{{ contract.buyer_name }}</div>
+            </div>
+            
+            {% if contract.value %}
+            <div class="detail-row">
+                <div class="detail-label">💰 Value:</div>
+                <div class="detail-value">{{ contract.value }}</div>
+            </div>
+            {% endif %}
+            
+            <div class="detail-row">
+                <div class="detail-label">📅 Deadline:</div>
+                <div class="detail-value">
+                    <span class="deadline-highlight">{{ contract.deadline }}</span>
+                </div>
+            </div>
+            
+            {% if contract.status %}
+            <div class="detail-row">
+                <div class="detail-label">📊 Status:</div>
+                <div class="detail-value">{{ contract.status }}</div>
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="cta-section">
+            <a href="{{ contract_url }}" class="action-button">
+                View Contract Details →
+            </a>
+            <p style="margin-top: 15px; color: #6b7280; font-size: 14px;">
+                Make sure you have everything ready before the deadline!
+            </p>
+        </div>
+
+        <div class="footer">
+            <p>
+                You're receiving deadline reminders for contracts marked as "interested" or "bidding".<br>
+                <a href="{{ unsubscribe_url }}">Manage email preferences</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
