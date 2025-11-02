@@ -10,12 +10,19 @@ logger = logging.getLogger(__name__)
 
 class VectorStoreService:
     def __init__(self):
+    # Use QDRANT_URL if available (for cloud), otherwise use host/port (for local)
+    if settings.QDRANT_URL and "cloud.qdrant.io" in settings.QDRANT_URL:
         self.client = QdrantClient(
-            host=settings.QDRANT_HOST,  
-            port=settings.QDRANT_PORT   
+            url=settings.QDRANT_URL,
+            api_key=settings.QDRANT_API_KEY
         )
-        self.collection_name = settings.QDRANT_COLLECTION_NAME  
-        self._ensure_collection()
+    else:
+        self.client = QdrantClient(
+            host=settings.QDRANT_HOST,
+            port=settings.QDRANT_PORT
+        )
+    self.collection_name = settings.QDRANT_COLLECTION_NAME
+    self._ensure_collection()
     
     def _ensure_collection(self):
         """Create collection if it doesn't exist"""
