@@ -64,14 +64,16 @@ app = FastAPI(
     lifespan=lifespan  
 )
 
-# CORS middleware - configured for development
+# CORS middleware - configured for development and production
+origins = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "*",  # Allow all origins temporarily for testing
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:3000",  # Next.js frontend (development)
-        "http://127.0.0.1:3000",
-        # Add production URLs here when deploying
-    ],
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allow_headers=["*"],
