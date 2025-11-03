@@ -904,40 +904,65 @@ async def update_preferences(
 
 @router.post("/contracts/sync")
 async def sync_contracts(
-    limit: int = 50,
-    days_back: int = 7,
+    total_target: int = 5000,
+    batch_size: int = 100,
+    days_back: int = 90,
     current_user: User = Depends(get_current_active_user)
 ) -> ContractSyncResponse:
-    """Sync new contract opportunities from Contracts Finder API"""
+    """
+    Sync contract opportunities from Contracts Finder API with pagination.
+    Safely fetches large numbers of contracts in batches of 100.
+    """
     
     contract_service = ContractFetcherService()
+    total_synced = 0
+    batch_count = 0
     
     try:
-        # Fetch contracts from API
-        contracts = await contract_service.fetch_contracts(limit=limit, days_back=days_back)
+        logger.info(f"Starting batch sync: target={total_target}, batch_size={batch_size}, days_back={days_back}")
         
-        if contracts:
-            # Store in vector database for semantic search
-            await vector_store.add_contracts(contracts, llm_service)
+        for offset in range(0, total_target, batch_size):
+            batch_count += 1
             
-        logger.info(f"Synced {len(contracts)} contracts for user {current_user.email}")
+            # Fetch batch
+            contracts = await contract_service.fetch_contracts(
+                limit=batch_size,
+                days_back=days_back,
+                offset=offset
+            )
+            
+            # Stop if no more contracts
+            if not contracts:
+                logger.info(f"No more contracts found at offset {offset}")
+                break
+            
+            # Store in vector database
+            await vector_store.add_contracts(contracts, llm_service)
+            total_synced += len(contracts)
+            
+            logger.info(f"Batch {batch_count}: Synced {len(contracts)} contracts (total: {total_synced})")
+            
+            # Rate limiting - wait 2 seconds between batches to be respectful
+            if offset + batch_size < total_target:
+                await asyncio.sleep(10)
+        
+        logger.info(f"Sync complete: {total_synced} contracts synced in {batch_count} batches")
         
         return ContractSyncResponse(
             success=True,
-            contracts_fetched=len(contracts),
-            contracts_processed=len(contracts),
-            message=f"Successfully synced {len(contracts)} contracts to vector database"
+            contracts_fetched=total_synced,
+            contracts_processed=total_synced,
+            message=f"Successfully synced {total_synced} contracts in {batch_count} batches"
         )
         
     except Exception as e:
-        logger.error(f"Contract sync failed: {str(e)}")
+        logger.error(f"Batch sync failed: {str(e)}")
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Contract sync failed: {str(e)}"
+            detail=f"Contract sync failed after {total_synced} contracts: {str(e)}"
         )
     finally:
         await contract_service.close()
-
 
 @router.get("/contracts/recommended", response_model=ContractSearchResponse)
 async def get_recommended_contracts(

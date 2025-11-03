@@ -18,14 +18,16 @@ class ContractFetcherService:
     async def fetch_contracts(
         self, 
         limit: int = 100,
-        days_back: int = 7
+        days_back: int = 7,
+        offset: int = 0  # NEW: Add offset parameter
     ) -> List[ContractOpportunity]:
         """
         Fetch recent contract opportunities from Contracts Finder.
         
         Args:
-            limit: Max contracts to fetch (default 100)
+            limit: Max contracts to fetch (default 100, max 100 per API rules)
             days_back: How many days back to search (default 7)
+            offset: Pagination offset (default 0)
         """
         try:
             # Calculate date filter
@@ -33,12 +35,12 @@ class ContractFetcherService:
             
             params = {
                 "limit": limit,
-                "offset": 0,
+                "offset": offset,  # NEW: Use offset parameter
                 "publishedFrom": published_from,
                 "format": "json"
             }
             
-            logger.info(f"Fetching contracts from {published_from} (limit: {limit})")
+            logger.info(f"Fetching contracts from {published_from} (limit: {limit}, offset: {offset})")
             
             response = await self.client.get(self.BASE_URL, params=params)
             response.raise_for_status()
@@ -46,7 +48,7 @@ class ContractFetcherService:
             data = response.json()
             contracts = self._parse_contracts(data)
             
-            logger.info(f"Successfully fetched {len(contracts)} contracts")
+            logger.info(f"Successfully fetched {len(contracts)} contracts at offset {offset}")
             return contracts
             
         except Exception as e:
