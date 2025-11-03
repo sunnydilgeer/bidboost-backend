@@ -1,32 +1,47 @@
 import httpx
-from typing import List, Dict, Any
+from typing import List
 from app.core.config import settings
 
 class LLMService:
     def __init__(self):
-        self.model = settings.OLLAMA_MODEL  # For chat/generation
-        self.embedding_model = settings.OLLAMA_EMBEDDING_MODEL  # For embeddings
-        self.base_url = "http://localhost:11434"
+        self.model = settings.OLLAMA_MODEL
+        self.embedding_model = settings.OLLAMA_EMBEDDING_MODEL
+        self.base_url = settings.OLLAMA_HOST
     
     async def generate_embeddings(self, text: str) -> List[float]:
-        """Generate embedding using direct HTTP call to Ollama API"""
-        request_data = {
-            "model": "nomic-embed-text",
-            "prompt": text
-        }
+        """Generate embedding - OpenAI in production, Ollama in development"""
         
-        print(f"DEBUG: Sending embedding request: {request_data}")
-        
-        async with httpx.AsyncClient(timeout=30.0) as client:
-            response = await client.post(
-                f"{self.base_url}/api/embeddings",
-                json=request_data
-            )
-            print(f"DEBUG: Response status: {response.status_code}")
-            print(f"DEBUG: Response text: {response.text[:200]}...")
+        if settings.USE_OPENAI_EMBEDDINGS:
+            # Use OpenAI for production
+            from openai import AsyncOpenAI
             
-            response.raise_for_status()
-            return response.json()["embedding"]
+            if not settings.OPENAI_API_KEY:
+                raise ValueError("OPENAI_API_KEY not set in environment variables")
+            
+            client = AsyncOpenAI(api_key=settings.OPENAI_API_KEY)
+            
+            response = await client.embeddings.create(
+                model="text-embedding-3-small",
+                input=text,
+                dimensions=768  # Match Nomic's 768 dimensions for Qdrant compatibility
+            )
+            
+            return response.data[0].embedding
+        
+        else:
+            # Use Ollama for local development
+            request_data = {
+                "model": self.embedding_model,
+                "prompt": text
+            }
+            
+            async with httpx.AsyncClient(timeout=30.0) as client:
+                response = await client.post(
+                    f"{self.base_url}/api/embeddings",
+                    json=request_data
+                )
+                response.raise_for_status()
+                return response.json()["embedding"]
     
     async def generate_response(
         self, 
@@ -34,7 +49,7 @@ class LLMService:
         context: str,
         system_prompt: str = None
     ) -> str:
-        """Generate a response using RAG context"""
+        """Generate a response using RAG context (uses Ollama)"""
         if system_prompt is None:
             system_prompt = """You are a legal AI assistant for UK law firms with access to the firm's internal document library.
 
