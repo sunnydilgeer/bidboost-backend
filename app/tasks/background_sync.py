@@ -1,8 +1,10 @@
 import asyncio
+import logging
 from app.services.contract_fetcher import ContractFetcherService
 from app.services.vector_store import VectorStoreService
 from app.services.llm import LLMService
-from app.core.logging_config import logger
+
+logger = logging.getLogger(__name__)
 
 async def sync_contracts_background(limit: int = 10000, days_back: int = 365):
     """
