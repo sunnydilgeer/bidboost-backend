@@ -38,6 +38,17 @@ class VectorStoreService:
                 )
             )
             logger.info(f"Created collection: {self.collection_name}")
+
+    try:
+        self.client.create_payload_index(
+            collection_name=self.collection_name,
+            field_name="document_type",
+            field_schema="keyword"
+        )
+        logger.info(f"Created index on document_type field")
+    except Exception as e:
+        # Index might already exist
+        logger.debug(f"Index creation skipped: {e}")
     
     async def add_documents(self, documents: List[Dict], llm_service):
         """
