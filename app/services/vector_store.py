@@ -101,7 +101,7 @@ class VectorStoreService:
             
             for contract in contracts:
                 # Generate deterministic UUID from notice_id to prevent duplicates
-                point_id = str(uuid.uuid4())                
+                point_id = contract.notice_id
                 # Safe value formatting
                 if contract.value is not None:
                     value_text = f"£{contract.value:,.2f}"
