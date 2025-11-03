@@ -127,7 +127,7 @@ Closing Date: {closing_date_text}""".strip()
                 embedding = await llm_service.generate_embeddings(embedding_text)
                 
                 point = PointStruct(
-                    id=str(uuid.uuid4()),
+                    id=contract.notice_id,  # ✅ Use notice_id as ID to prevent duplicates
                     vector=embedding,
                     payload={
                         "content": contract_text,  # Store full text for display

@@ -1631,6 +1631,17 @@ async def update_contract_status(
         )
 
 
+@router.delete("/admin/reset-contracts")
+async def reset_contracts():
+    """Delete all contracts and start fresh"""
+    try:
+        vector_store.client.delete_collection("legal_documents")
+        vector_store._ensure_collection()  # Recreate
+        
+        return {"success": True, "message": "Collection reset. Ready to sync."}
+    except Exception as e:
+        return {"success": False, "message": str(e)}
+
 @router.get("/contracts/save/{notice_id}/check")
 async def check_if_saved(
     notice_id: str,
