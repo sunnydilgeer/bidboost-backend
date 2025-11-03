@@ -1,5 +1,5 @@
 import asyncio
-from app.services.contracts_api import ContractsAPIService
+from app.services.contract_fetcher import ContractFetcher
 from app.core.logging_config import logger
 
 async def sync_contracts_background(limit: int = 10000, days_back: int = 365):
@@ -9,7 +9,7 @@ async def sync_contracts_background(limit: int = 10000, days_back: int = 365):
     """
     logger.info(f"🚀 Starting background sync: {limit} contracts, {days_back} days back")
     
-    service = ContractsAPIService()
+    fetcher = ContractFetcher()
     batch_size = 100
     batches = limit // batch_size
     
@@ -19,7 +19,7 @@ async def sync_contracts_background(limit: int = 10000, days_back: int = 365):
     for i in range(batches):
         try:
             logger.info(f"📦 Processing batch {i+1}/{batches}")
-            result = await service.sync_contracts(limit=batch_size, days_back=days_back)
+            result = await fetcher.sync_contracts(limit=batch_size, days_back=days_back)
             synced = result.get("synced", 0)
             total_synced += synced
             
