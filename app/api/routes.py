@@ -1671,7 +1671,7 @@ async def sync_contracts_background_endpoint(
     background_tasks: BackgroundTasks,
     limit: int = 10000,
     days_back: int = 365,
-    current_user: dict = Depends(get_current_user)
+    current_user: dict = Depends(get_current_active_user)
 ):
     """
     Trigger background sync that runs on Railway without timeout.
