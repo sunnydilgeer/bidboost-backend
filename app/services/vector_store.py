@@ -2,6 +2,7 @@ from qdrant_client import QdrantClient
 from qdrant_client.models import Distance, VectorParams, PointStruct, Filter, FieldCondition, MatchValue, FilterSelector
 from typing import List, Dict, Any, Optional
 import uuid
+import hashlib
 import logging
 from app.core.config import settings
 from app.models.schemas import ContractOpportunity
@@ -38,17 +39,18 @@ class VectorStoreService:
                 )
             )
             logger.info(f"Created collection: {self.collection_name}")
-
-    try:
-        self.client.create_payload_index(
-            collection_name=self.collection_name,
-            field_name="document_type",
-            field_schema="keyword"
-        )
-        logger.info(f"Created index on document_type field")
-    except Exception as e:
-        # Index might already exist
-        logger.debug(f"Index creation skipped: {e}")
+        
+        # Create index for document_type field
+        try:
+            self.client.create_payload_index(
+                collection_name=self.collection_name,
+                field_name="document_type",
+                field_schema="keyword"
+            )
+            logger.info(f"Created index on document_type field")
+        except Exception as e:
+            # Index might already exist
+            logger.debug(f"Index creation skipped: {e}")
     
     async def add_documents(self, documents: List[Dict], llm_service):
         """
@@ -98,6 +100,9 @@ class VectorStoreService:
             points = []
             
             for contract in contracts:
+                # Generate deterministic UUID from notice_id to prevent duplicates
+                point_id = str(uuid.UUID(hashlib.md5(contract.notice_id.encode()).hexdigest()))
+                
                 # Safe value formatting
                 if contract.value is not None:
                     value_text = f"£{contract.value:,.2f}"
@@ -119,7 +124,7 @@ CPV Codes: {', '.join(contract.cpv_codes) if contract.cpv_codes else 'None'}
 Region: {contract.region or 'Not specified'}
 Closing Date: {closing_date_text}""".strip()
                 
-                # Clean and limit text for embedding to prevent Ollama crashes
+                # Clean and limit text for embedding
                 clean_text = contract_text.replace('\r\n', ' ').replace('\r', ' ').replace('\n', ' ')
                 embedding_text = clean_text[:1500]  # Limit to 1500 characters
                 
@@ -127,7 +132,7 @@ Closing Date: {closing_date_text}""".strip()
                 embedding = await llm_service.generate_embeddings(embedding_text)
                 
                 point = PointStruct(
-                    id=contract.notice_id,  # ✅ Use notice_id as ID to prevent duplicates
+                    id=point_id,  # Deterministic UUID prevents duplicates
                     vector=embedding,
                     payload={
                         "content": contract_text,  # Store full text for display
@@ -230,7 +235,7 @@ Closing Date: {closing_date_text}""".strip()
         formatted_results = []
         for result in results:
             formatted_result = {
-                "id": result.id,  # ADD THIS LINE - Qdrant point ID
+                "id": result.id,  # Qdrant point ID
                 "content": result.payload["content"],
                 "metadata": result.payload.get("metadata", {}),
                 "score": result.score,
@@ -290,7 +295,7 @@ Closing Date: {closing_date_text}""".strip()
             document_type="contract_opportunity"
         )
         
-        # Post-filter by value range (since Qdrant range queries need special handling)
+        # Post-filter by value range
         if min_value is not None or max_value is not None:
             filtered_results = []
             for result in results:
@@ -337,8 +342,6 @@ Closing Date: {closing_date_text}""".strip()
         
         cutoff_date = datetime.utcnow() - timedelta(days=days)
         
-        # This would require a more complex query with date comparison
-        # For now, log the intent - you may want to implement this based on your needs
         logger.info(f"Contract cleanup requested for entries older than {days} days")
     
     def get_document_count(self, firm_id: Optional[str] = None, document_type: Optional[str] = None) -> int:
