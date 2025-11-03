@@ -1,4 +1,5 @@
 import asyncio
+from fastapi import BackgroundTasks
 from app.api.debug_routes import debug_router  
 from app.services.contract_fetcher import ContractFetcherService
 from app.services.match_scoring import ContractMatchScorer
@@ -1664,3 +1665,24 @@ async def check_if_saved(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"Failed to check saved status: {str(e)}"
         )
+
+@router.post("/contracts/sync-background")
+async def sync_contracts_background_endpoint(
+    background_tasks: BackgroundTasks,
+    limit: int = 10000,
+    days_back: int = 365,
+    current_user: dict = Depends(get_current_user)
+):
+    """
+    Trigger background sync that runs on Railway without timeout.
+    Returns immediately while sync continues in background.
+    """
+    from app.tasks.background_sync import sync_contracts_background
+    
+    background_tasks.add_task(sync_contracts_background, limit, days_back)
+    
+    return {
+        "message": f"Background sync started for {limit} contracts over {days_back} days",
+        "status": "processing",
+        "note": "Check Railway logs to monitor progress. Search for 🚀 emoji."
+    }
