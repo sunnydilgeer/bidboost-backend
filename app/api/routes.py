@@ -1536,6 +1536,27 @@ async def unsave_contract(
             detail=f"Failed to unsave contract: {str(e)}"
         )
 
+@router.post("/admin/setup-indexes")
+async def setup_qdrant_indexes():
+    """One-time setup: Create required Qdrant indexes"""
+    try:
+        # Create document_type index
+        vector_store.client.create_payload_index(
+            collection_name=vector_store.collection_name,
+            field_name="document_type",
+            field_schema="keyword"
+        )
+        
+        return {
+            "success": True,
+            "message": "Qdrant indexes created successfully"
+        }
+    except Exception as e:
+        return {
+            "success": False,
+            "message": f"Index creation: {str(e)}"
+        }
+
 
 @router.put("/contracts/save/{notice_id}/status")
 async def update_contract_status(
