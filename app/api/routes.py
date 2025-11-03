@@ -945,7 +945,7 @@ async def sync_contracts(
             
             # Rate limiting - wait 2 seconds between batches to be respectful
             if offset + batch_size < total_target:
-                await asyncio.sleep(10)
+                await asyncio.sleep(3)
         
         logger.info(f"Sync complete: {total_synced} contracts synced in {batch_count} batches")
         
