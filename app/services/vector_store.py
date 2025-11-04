@@ -4,6 +4,7 @@ from typing import List, Dict, Any, Optional
 import uuid
 import hashlib
 import logging
+import time
 from app.core.config import settings
 from app.models.schemas import ContractOpportunity
 
@@ -11,19 +12,33 @@ logger = logging.getLogger(__name__)
 
 class VectorStoreService:
     def __init__(self):
-        # Use QDRANT_URL if available (for cloud), otherwise use host/port (for local)
-        if settings.QDRANT_URL and "cloud.qdrant.io" in settings.QDRANT_URL:
-            self.client = QdrantClient(
-                url=settings.QDRANT_URL,
-                api_key=settings.QDRANT_API_KEY
-            )
-        else:
-            self.client = QdrantClient(
-                host=settings.QDRANT_HOST,
-                port=settings.QDRANT_PORT
-            )
-        self.collection_name = settings.QDRANT_COLLECTION_NAME
-        self._ensure_collection()
+        max_retries = 5
+        retry_delay = 2
+        
+        for attempt in range(max_retries):
+            try:
+                # Use QDRANT_URL if available (for cloud), otherwise use host/port (for local)
+                if settings.QDRANT_URL and "cloud.qdrant.io" in settings.QDRANT_URL:
+                    self.client = QdrantClient(
+                        url=settings.QDRANT_URL,
+                        api_key=settings.QDRANT_API_KEY
+                    )
+                else:
+                    self.client = QdrantClient(
+                        url=settings.QDRANT_URL
+                    )
+                self.collection_name = settings.QDRANT_COLLECTION_NAME
+                self._ensure_collection()
+                logger.info(f"✅ Connected to Qdrant on attempt {attempt + 1}")
+                break
+            except Exception as e:
+                if attempt < max_retries - 1:
+                    logger.warning(f"Qdrant connection attempt {attempt + 1}/{max_retries} failed, retrying in {retry_delay}s... Error: {str(e)}")
+                    time.sleep(retry_delay)
+                    retry_delay *= 2  # Exponential backoff
+                else:
+                    logger.error(f"❌ Failed to connect to Qdrant after {max_retries} attempts: {str(e)}")
+                    raise
     
     def _ensure_collection(self):
         """Create collection if it doesn't exist"""

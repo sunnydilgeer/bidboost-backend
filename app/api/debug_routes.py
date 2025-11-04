@@ -18,7 +18,11 @@ import logging
 logger = logging.getLogger(__name__)
 
 debug_router = APIRouter(prefix="/api/debug", tags=["Debug"])
-vector_store = VectorStoreService()
+
+# Lazy initialization - only connects when called
+def get_vector_store():
+    """Get VectorStoreService instance - connects to Qdrant on first call"""
+    return VectorStoreService()
 
 
 @debug_router.get("/match/{contract_id}")
@@ -39,6 +43,8 @@ async def debug_match_scoring(
     """
     
     try:
+        vector_store = get_vector_store()
+        
         # 1. Get contract from Qdrant
         scroll_result = vector_store.client.scroll(
             collection_name="legal_documents",
@@ -211,6 +217,7 @@ async def debug_match_scoring(
 async def check_qdrant_status():
     """Check Qdrant collections and data quality"""
     try:
+        vector_store = get_vector_store()
         collections = vector_store.client.get_collections().collections
         
         collection_info = []
