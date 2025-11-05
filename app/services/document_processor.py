@@ -9,22 +9,43 @@ from app.core.config import settings
 import hashlib
 from datetime import datetime, timedelta
 import uuid
+import logging
+
+logger = logging.getLogger(__name__)
 
 class DocumentProcessor:
     def __init__(self):
-        # Use QDRANT_URL if available (for cloud), otherwise use host/port (for local)
-        if settings.QDRANT_URL and "cloud.qdrant.io" in settings.QDRANT_URL:
-            self.qdrant = QdrantClient(
-                url=settings.QDRANT_URL,
-                api_key=settings.QDRANT_API_KEY
-            )
-        else:
-            self.qdrant = QdrantClient(
-                host=settings.QDRANT_HOST,
-                port=settings.QDRANT_PORT
-            )
-        self.llm_service = LLMService()
-        self._ensure_collection_exists()
+        """Initialize with retry logic for Qdrant connection"""
+        import time
+        max_retries = 5
+        retry_delay = 2
+        
+        for attempt in range(max_retries):
+            try:
+                # Use QDRANT_URL if available (for cloud), otherwise use host/port (for local)
+                if settings.QDRANT_URL and "cloud.qdrant.io" in settings.QDRANT_URL:
+                    self.qdrant = QdrantClient(
+                        url=settings.QDRANT_URL,
+                        api_key=settings.QDRANT_API_KEY
+                    )
+                else:
+                    # Railway internal connection
+                    self.qdrant = QdrantClient(url=settings.QDRANT_URL)
+                
+                self.llm_service = LLMService()
+                self._ensure_collection_exists()
+                
+                logger.info(f"✅ DocumentProcessor connected to Qdrant on attempt {attempt + 1}")
+                break
+                
+            except Exception as e:
+                if attempt < max_retries - 1:
+                    logger.warning(f"Qdrant connection attempt {attempt + 1} failed: {e}. Retrying in {retry_delay}s...")
+                    time.sleep(retry_delay)
+                    retry_delay *= 2  # Exponential backoff
+                else:
+                    logger.error(f"Failed to connect to Qdrant after {max_retries} attempts")
+                    raise
     
     def _ensure_collection_exists(self):
         """Create user_documents collection if it doesn't exist"""
@@ -146,7 +167,6 @@ class DocumentProcessor:
         Sorts by: 1) New contracts first, 2) Then similarity score
         """
         # Get all document chunks for this user
-        # Get all document chunks for this user
         search_result = self.qdrant.scroll(
             collection_name="user_documents",
             limit=100,
@@ -204,5 +224,13 @@ class DocumentProcessor:
         
         return results[:limit]
 
-# Singleton instance
-processor = DocumentProcessor()
+
+# Lazy initialization - only create when actually needed
+_processor_instance = None
+
+def get_processor():
+    """Get or create DocumentProcessor singleton with lazy initialization"""
+    global _processor_instance
+    if _processor_instance is None:
+        _processor_instance = DocumentProcessor()
+    return _processor_instance

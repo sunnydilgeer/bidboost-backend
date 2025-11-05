@@ -32,7 +32,7 @@ from qdrant_client.models import Filter, FieldCondition, MatchValue
 from fastapi import APIRouter, HTTPException, status, Depends, UploadFile, File, BackgroundTasks
 from app.services.vector_store import VectorStoreService
 from app.services.llm import LLMService
-from app.services.document_processor import processor
+from app.services.document_processor import get_processor
 import os 
 import shutil 
 from app.core.auth import User, get_current_active_user
@@ -47,8 +47,14 @@ logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/api", tags=["Contracts"])
 debug_router = APIRouter(prefix="/api/debug", tags=["Debug"])
 
-vector_store = VectorStoreService()
-llm_service = LLMService()
+# Lazy initialization functions - only connect when called
+def get_vector_store():
+    """Get VectorStoreService instance - connects to Qdrant on first call"""
+    return VectorStoreService()
+
+def get_llm_service():
+    """Get LLMService instance - connects on first call"""
+    return LLMService()
 
 # ========== HELPER FUNCTION ==========
 
@@ -94,6 +100,8 @@ async def debug_match_scoring(
     """
     
     try:
+        vector_store = get_vector_store()
+        
         # 1. Get contract from Qdrant
         scroll_result = vector_store.client.scroll(
             collection_name="legal_documents",
@@ -243,6 +251,7 @@ async def debug_match_scoring(
 async def check_qdrant_status():
     """Check Qdrant collections and data quality"""
     try:
+        vector_store = get_vector_store()
         collections = vector_store.client.get_collections().collections
         
         collection_info = []
@@ -497,6 +506,9 @@ async def add_capability(
 ):
     """Add a new capability and sync to Qdrant vector store"""
     try:
+        vector_store = get_vector_store()
+        llm_service = get_llm_service()
+        
         profile = get_company_profile(db, current_user.firm_id)
         
         # Create capability in database first
@@ -545,6 +557,9 @@ async def update_capability(
 ):
     """Update an existing capability and re-sync to Qdrant"""
     try:
+        vector_store = get_vector_store()
+        llm_service = get_llm_service()
+        
         profile = get_company_profile(db, current_user.firm_id)
         
         # Verify capability belongs to this company
@@ -602,6 +617,8 @@ async def delete_capability(
 ):
     """Delete a capability and remove from Qdrant"""
     try:
+        vector_store = get_vector_store()
+        
         profile = get_company_profile(db, current_user.firm_id)
         
         # Verify capability belongs to this company
@@ -916,6 +933,8 @@ async def sync_contracts(
     Safely fetches large numbers of contracts in batches of 100.
     """
     
+    vector_store = get_vector_store()
+    llm_service = get_llm_service()
     contract_service = ContractFetcherService()
     total_synced = 0
     batch_count = 0
@@ -981,6 +1000,9 @@ async def get_recommended_contracts(
     Use this for the default contracts page view (no search query needed).
     """
     try:
+        vector_store = get_vector_store()
+        llm_service = get_llm_service()
+        
         logger.info(f"Fetching recommended contracts for {current_user.email}")
         
         # Get company profile to use capabilities as search basis
@@ -1113,6 +1135,9 @@ async def search_contracts(
     based on company capabilities, past wins, and search preferences.
     """
     try:
+        vector_store = get_vector_store()
+        llm_service = get_llm_service()
+        
         logger.info(f"Contract search by {current_user.email}: '{search_request.query}' (match_scoring={include_match_scores})")
         
         # Get more results if scoring enabled (some may be filtered out by preferences)
@@ -1254,6 +1279,8 @@ async def get_contract_details(
 ) -> Dict:
     """Get full details for a specific contract opportunity"""
     try:
+        vector_store = get_vector_store()
+        
         # Query Qdrant for this specific contract
         scroll_result = vector_store.client.scroll(
             collection_name=vector_store.collection_name,
@@ -1356,6 +1383,8 @@ async def upload_company_document(
 ):
     """Upload capability document and process in background"""
     
+    processor = get_processor()
+    
     # ✅ Get user_id from JWT token
     user_id = current_user.email  # Using email as user_id
     
@@ -1411,6 +1440,7 @@ async def get_document_matches(
 ):
     """Get contract matches based on uploaded documents"""
     
+    processor = get_processor()
     user_id = current_user.email  # ✅ Get from JWT
     
     matches = await processor.find_matching_contracts(user_id, limit)
@@ -1565,6 +1595,8 @@ async def unsave_contract(
 async def setup_qdrant_indexes():
     """One-time setup: Create required Qdrant indexes"""
     try:
+        vector_store = get_vector_store()
+        
         # Create document_type index
         vector_store.client.create_payload_index(
             collection_name=vector_store.collection_name,
@@ -1634,6 +1666,8 @@ async def update_contract_status(
 async def reset_contracts():
     """Delete all contracts and start fresh"""
     try:
+        vector_store = get_vector_store()
+        
         vector_store.client.delete_collection("legal_documents")
         vector_store._ensure_collection()  # Recreate
         
