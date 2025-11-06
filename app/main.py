@@ -5,7 +5,7 @@ from slowapi import Limiter, _rate_limit_exceeded_handler
 from slowapi.util import get_remote_address
 from slowapi.errors import RateLimitExceeded
 from app.core.config import settings
-from app.api.routes import router
+from app.api.routes import router, debug_router
 from app.auth.register import router as register_router
 from app.auth.login import router as login_router
 from app.database import init_db, engine
@@ -96,14 +96,8 @@ app.include_router(login_router, prefix="/api/auth")  # Login endpoint
 app.include_router(company.router)  # Company profile routes
 
 # 🆕 ADD DEBUG ROUTER (after app is created, with error handling)
-try:
-    from app.api.debug_routes import debug_router
-    app.include_router(debug_router)
-    logger.info("✓ Debug routes registered at /api/debug")
-except ImportError as e:
-    logger.warning(f"⚠️ Debug routes not available: {e}")
-except Exception as e:
-    logger.error(f"❌ Failed to register debug routes: {e}")
+app.include_router(debug_router)
+logger.info("✓ Debug routes registered at /api/debug")
 
 @app.on_event("startup")
 async def startup_event():
