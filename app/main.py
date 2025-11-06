@@ -94,9 +94,9 @@ app.include_router(router)  # Main API routes (query, ingest, conversations, etc
 app.include_router(register_router, prefix="/api/auth")  # Registration endpoint
 app.include_router(login_router, prefix="/api/auth")  # Login endpoint
 app.include_router(company.router)  # Company profile routes
+app.include_router(debug_router)  # ✅ Keep this here
 
 # 🆕 ADD DEBUG ROUTER (after app is created, with error handling)
-app.include_router(debug_router)
 logger.info("✓ Debug routes registered at /api/debug")
 
 @app.on_event("startup")
