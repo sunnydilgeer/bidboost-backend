@@ -5,6 +5,7 @@ from app.services.match_scoring import ContractMatchScorer
 from app.services.capability_store import CapabilityStoreService 
 from app.models.contract import Contract
 from app.models import User as DBUser
+from app.api.debug_routes import debug_router  # Import the real one
 from app.models.company import CompanyProfile, CompanyCapability, PastWin, SearchPreference
 from app.models.schemas import (
     ContractSyncResponse, 
@@ -44,7 +45,6 @@ from datetime import datetime
 logger = logging.getLogger(__name__)
 
 router = APIRouter(prefix="/api", tags=["Contracts"])
-debug_router = APIRouter(prefix="/api/debug", tags=["Debug"])
 
 # Lazy initialization functions - only connect when called
 def get_vector_store():

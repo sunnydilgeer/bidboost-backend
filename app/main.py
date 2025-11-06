@@ -5,7 +5,8 @@ from slowapi import Limiter, _rate_limit_exceeded_handler
 from slowapi.util import get_remote_address
 from slowapi.errors import RateLimitExceeded
 from app.core.config import settings
-from app.api.routes import router, debug_router
+from app.api.routes import router
+from app.api.debug_routes import debug_router
 from app.auth.register import router as register_router
 from app.auth.login import router as login_router
 from app.database import init_db, engine
