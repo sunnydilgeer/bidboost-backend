@@ -243,3 +243,8 @@ async def check_qdrant_status():
             "error": str(e),
             "status": "❌ Qdrant connection failed"
         }
+
+@debug_router.get("/test-deployment")
+async def test_deployment():
+    """Test endpoint to verify debug_routes.py is actually deployed"""
+    return {"message": "Debug routes ARE working!", "timestamp": "2025-11-06-v2"}
