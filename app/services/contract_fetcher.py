@@ -169,3 +169,38 @@ class ContractFetcherService:
     async def close(self):
         """Close the HTTP client."""
         await self.client.aclose()
+
+    async def fetch_contracts_before_date(
+    self,
+    published_to: datetime,
+    limit: int = 100
+) -> List[ContractOpportunity]:
+    """
+    Fetch contracts published BEFORE a specific date.
+    API returns newest first, so this gets the most recent contracts before the cutoff.
+    
+    Args:
+        published_to: End date for filtering (contracts before this date)
+        limit: Max contracts to fetch (default 100, max 100 per API rules)
+    """
+    try:
+        params = {
+            "limit": limit,
+            "publishedTo": published_to.isoformat(),
+            "format": "json"
+        }
+        
+        logger.info(f"Fetching contracts before {published_to.isoformat()} (limit: {limit})")
+        
+        response = await self.client.get(self.BASE_URL, params=params)
+        response.raise_for_status()
+        
+        data = response.json()
+        contracts = self._parse_contracts(data)
+        
+        logger.info(f"Successfully fetched {len(contracts)} contracts before {published_to.isoformat()}")
+        return contracts
+        
+    except Exception as e:
+        logger.error(f"Failed to fetch contracts before {published_to.isoformat()}: {str(e)}")
+        raise
