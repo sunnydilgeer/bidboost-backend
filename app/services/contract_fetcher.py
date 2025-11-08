@@ -57,58 +57,46 @@ class ContractFetcherService:
             raise
     
     async def fetch_contracts_with_cursor(
-        self,
-        published_from: datetime,
-        limit: int = 100,
-        cursor: Optional[str] = None
-    ) -> Tuple[List[ContractOpportunity], Optional[str]]:
-        """
-        Fetch contracts using cursor-based pagination (RECOMMENDED METHOD).
-        Returns tuple of (contracts, next_cursor).
-        
-        Args:
-            published_from: Start date for filtering
-            limit: Max contracts per page (default 100, max 100 per API rules)
-            cursor: Pagination cursor from previous response (None for first page)
-            
-        Returns:
-            Tuple of (list of contracts, next cursor or None)
-        """
-        try:
+    self,
+    published_from: datetime,
+    limit: int = 100,
+    cursor: Optional[str] = None
+) -> Tuple[List[ContractOpportunity], Optional[str]]:
+    """Fetch contracts using cursor (links.next URL)."""
+    try:
+        # If cursor provided, use it as the complete URL
+        if cursor:
+            url = cursor
+            logger.info(f"Fetching from cursor URL: {cursor[:100]}...")
+        else:
+            # First request - build params
+            url = self.BASE_URL
             params = {
                 "limit": limit,
                 "publishedFrom": published_from.isoformat(),
                 "format": "json"
             }
-            
-            # Add cursor if provided (not for first request)
-            if cursor:
-                params["cursor"] = cursor
-            
-            logger.info(f"Fetching contracts with cursor: {cursor or 'initial'} (limit: {limit})")
-            
-            response = await self.client.get(self.BASE_URL, params=params)
-            response.raise_for_status()
-            
-            data = response.json()
-            contracts = self._parse_contracts(data)
-            
-            # Extract next cursor from response
-            # Try multiple possible locations in API response
-            next_cursor = (
-                data.get('cursor') or 
-                data.get('next_cursor') or 
-                data.get('nextCursor') or
-                data.get('links', {}).get('next') or
-                data.get('meta', {}).get('cursor')
-            )
-            
-            logger.info(f"Successfully fetched {len(contracts)} contracts. Next cursor: {next_cursor or 'none'}")
-            return contracts, next_cursor
-            
-        except Exception as e:
-            logger.error(f"Failed to fetch contracts with cursor {cursor}: {str(e)}")
-            raise
+            logger.info(f"Fetching initial page (limit: {limit})")
+        
+        # Make request (with or without params)
+        if cursor:
+            response = await self.client.get(url)
+        else:
+            response = await self.client.get(url, params=params)
+        
+        response.raise_for_status()
+        data = response.json()
+        contracts = self._parse_contracts(data)
+        
+        # Extract next URL from links.next
+        next_cursor = data.get('links', {}).get('next')
+        
+        logger.info(f"Fetched {len(contracts)} contracts. Has next page: {bool(next_cursor)}")
+        return contracts, next_cursor
+        
+    except Exception as e:
+        logger.error(f"Failed to fetch contracts: {str(e)}")
+        raise
     
     def _parse_contracts(self, api_data: Dict[str, Any]) -> List[ContractOpportunity]:
         """Parse API response into ContractOpportunity objects."""
