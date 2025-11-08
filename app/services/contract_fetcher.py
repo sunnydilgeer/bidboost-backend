@@ -25,7 +25,7 @@ class ContractFetcherService:
         """
         Fetch contracts using cursor pagination (RECOMMENDED).
         The cursor is actually a full URL from links.next.
-        ALL FILTERING DONE CLIENT-SIDE (tag + closing date).
+        ALL FILTERING DONE CLIENT-SIDE (tender.status="active" + closing date).
         """
         try:
             # If cursor provided, use it as the complete URL
@@ -55,7 +55,7 @@ class ContractFetcherService:
             contracts = self._parse_contracts(data)
             next_cursor = data.get('links', {}).get('next')
             
-            logger.info(f"Fetched {len(contracts)} OPEN TENDER opportunities. Has next page: {bool(next_cursor)}")
+            logger.info(f"Fetched {len(contracts)} ACTIVE tender opportunities. Has next page: {bool(next_cursor)}")
             return contracts, next_cursor
             
         except Exception as e:
@@ -65,7 +65,7 @@ class ContractFetcherService:
     def _parse_contracts(self, api_data: Dict[str, Any]) -> List[ContractOpportunity]:
         """
         Parse API response into ContractOpportunity objects.
-        FILTERS: Only "tender" tags (active opportunities) + open closing dates.
+        FILTERS: Only tender.status="active" (live opportunities) + open closing dates.
         """
         contracts = []
         releases = api_data.get("releases", [])
@@ -73,13 +73,14 @@ class ContractFetcherService:
         
         for release in releases:
             try:
-                # ✅ FILTER 1: Only process "tender" tags (active opportunities)
-                tags = release.get("tag", [])
-                if "tender" not in tags:
-                    logger.debug(f"Skipping non-tender: {release.get('id')} (tags: {tags})")
+                tender = release.get("tender", {})
+                
+                # ✅ FILTER 1: Only process "active" tender status (live opportunities)
+                tender_status = tender.get("status")
+                if tender_status != "active":
+                    logger.debug(f"Skipping non-active tender: {release.get('id')} (status: {tender_status})")
                     continue
                 
-                tender = release.get("tender", {})
                 buyer = release.get("buyer", {})
                 
                 # Parse dates
@@ -146,7 +147,7 @@ class ContractFetcherService:
                 logger.warning(f"Failed to parse contract {release.get('id', 'unknown')}: {str(e)}")
                 continue
         
-        logger.info(f"Parsed {len(contracts)} TENDER opportunities out of {len(releases)} total releases")
+        logger.info(f"Parsed {len(contracts)} ACTIVE tender opportunities out of {len(releases)} total releases")
         return contracts
     
     async def fetch_contracts(
