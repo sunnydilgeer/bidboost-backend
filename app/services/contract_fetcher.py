@@ -25,7 +25,7 @@ class ContractFetcherService:
         """
         Fetch contracts using cursor pagination (RECOMMENDED).
         The cursor is actually a full URL from links.next.
-        NOW WITH POST-FETCH FILTERING FOR OPEN CONTRACTS ONLY.
+        ALL FILTERING DONE CLIENT-SIDE (tag + closing date).
         """
         try:
             # If cursor provided, use it as the complete URL
@@ -34,7 +34,7 @@ class ContractFetcherService:
                 logger.info(f"Fetching from next page URL")
                 response = await self.client.get(url)
             else:
-                # First request - build params
+                # First request - build params (NO API FILTERS - they limit results)
                 url = self.BASE_URL
                 params = {
                     "limit": limit,
@@ -46,10 +46,7 @@ class ContractFetcherService:
                     params["publishedFrom"] = published_from.isoformat()
                     logger.info(f"Fetching initial page (limit: {limit}, published from: {published_from.date()})")
                 else:
-                    logger.info(f"Fetching initial page (limit: {limit}, ALL published dates)")
-                
-                # Always filter by closing date (only open contracts)
-                params["closingDate[from]"] = datetime.now(timezone.utc).isoformat()
+                    logger.info(f"Fetching initial page (limit: {limit}, ALL dates - client-side filtering)")
                 
                 response = await self.client.get(url, params=params)
             
