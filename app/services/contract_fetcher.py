@@ -73,19 +73,16 @@ class ContractFetcherService:
                 params = {
                     "limit": limit,
                     "publishedFrom": published_from.isoformat(),
+                    "closingDate[from]": datetime.utcnow().isoformat(),  # NEW: Only open contracts
                     "format": "json"
                 }
-                logger.info(f"Fetching initial page (limit: {limit})")
                 response = await self.client.get(url, params=params)
             
             response.raise_for_status()
             data = response.json()
             contracts = self._parse_contracts(data)
-            
-            # Extract next page URL from links.next
             next_cursor = data.get('links', {}).get('next')
-            
-            logger.info(f"Fetched {len(contracts)} contracts. Has next page: {bool(next_cursor)}")
+
             return contracts, next_cursor
             
         except Exception as e:

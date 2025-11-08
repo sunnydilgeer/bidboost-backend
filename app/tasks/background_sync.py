@@ -1,5 +1,3 @@
-# app/tasks/background_sync.py - COMPLETE REWRITE
-
 import asyncio
 import logging
 from datetime import datetime, timedelta
@@ -10,12 +8,15 @@ from app.services.llm import LLMService
 
 logger = logging.getLogger(__name__)
 
-async def sync_contracts_background(limit: int = 10000, days_back: int = 365):
+async def sync_contracts_background(days_back: int = 365):
     """
-    Background task to sync contracts using cursor-based pagination.
-    This is the proper way to paginate with the UK Contracts Finder API.
+    Background task to sync ALL open contracts (no arbitrary limit).
+    Uses cursor-based pagination and filters for closing_date > today.
+    
+    Args:
+        days_back: How many days back to look for published contracts
     """
-    logger.info(f"🚀 Starting background sync: {limit} contracts, {days_back} days back")
+    logger.info(f"🚀 Starting background sync: ALL open contracts from last {days_back} days")
     
     contract_service = ContractFetcherService()
     vector_store = VectorStoreService()
@@ -31,21 +32,20 @@ async def sync_contracts_background(limit: int = 10000, days_back: int = 365):
     published_from = datetime.utcnow() - timedelta(days=days_back)
     
     try:
-        while total_synced < limit:
+        while True:  # Keep syncing until no more open contracts
             try:
                 batch_num += 1
                 logger.info(f"📦 Processing batch {batch_num} (cursor: {cursor or 'initial'})")
                 
-                # Fetch contracts with cursor
+                # Fetch contracts with cursor (already filtered by closing_date in contract_fetcher)
                 contracts, next_cursor = await contract_service.fetch_contracts_with_cursor(
                     published_from=published_from,
                     limit=batch_size,
                     cursor=cursor
                 )
                 
-                # Stop if no more contracts
                 if not contracts:
-                    logger.info(f"No more contracts found at batch {batch_num}")
+                    logger.info(f"✅ No more open contracts found at batch {batch_num}")
                     break
                 
                 # Store in Qdrant
@@ -57,20 +57,16 @@ async def sync_contracts_background(limit: int = 10000, days_back: int = 365):
                 # Move to next cursor
                 cursor = next_cursor
                 
-                # Stop if no more pages
                 if not cursor:
-                    logger.info(f"✅ Reached end of results (no more cursor)")
+                    logger.info(f"✅ Reached end of results - all open contracts synced")
                     break
                 
                 logger.info(f"📅 Next cursor: {cursor}")
-                
-                # Small delay between batches
                 await asyncio.sleep(1)
                 
             except Exception as e:
                 total_failed += 1
                 logger.error(f"❌ Error in batch {batch_num}: {str(e)}")
-                # Try to continue with next cursor if available
                 if not cursor:
                     break
                 continue
