@@ -39,7 +39,7 @@ async def sync_contracts_background(days_back: int = 365):
                 
                 # Fetch contracts with cursor (already filtered by closing_date in contract_fetcher)
                 contracts, next_cursor = await contract_service.fetch_contracts_with_cursor(
-                    published_from=published_from,
+                    published_from=None,
                     limit=batch_size,
                     cursor=cursor
                 )

@@ -18,7 +18,7 @@ class ContractFetcherService:
     
     async def fetch_contracts_with_cursor(
         self,
-        published_from: datetime,
+        published_from: Optional[datetime] = None,  # Now optional
         limit: int = 100,
         cursor: Optional[str] = None
     ) -> Tuple[List[ContractOpportunity], Optional[str]]:
@@ -38,11 +38,19 @@ class ContractFetcherService:
                 url = self.BASE_URL
                 params = {
                     "limit": limit,
-                    "publishedFrom": published_from.isoformat(),
-                    "closingDate[from]": datetime.utcnow().isoformat(),  # API filter (may not work)
                     "format": "json"
                 }
-                logger.info(f"Fetching initial page (limit: {limit})")
+                
+                # Only add publishedFrom if provided
+                if published_from:
+                    params["publishedFrom"] = published_from.isoformat()
+                    logger.info(f"Fetching initial page (limit: {limit}, published from: {published_from.date()})")
+                else:
+                    logger.info(f"Fetching initial page (limit: {limit}, ALL published dates)")
+                
+                # Always filter by closing date (only open contracts)
+                params["closingDate[from]"] = datetime.now(timezone.utc).isoformat()
+                
                 response = await self.client.get(url, params=params)
             
             response.raise_for_status()
