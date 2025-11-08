@@ -1,6 +1,6 @@
 import httpx
 from typing import List, Dict, Any, Optional, Tuple
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 import logging
 from app.models.schemas import ContractOpportunity
 
@@ -64,7 +64,7 @@ class ContractFetcherService:
         """
         contracts = []
         releases = api_data.get("releases", [])
-        now = datetime.utcnow()
+        now = datetime.now(timezone.utc)  # Timezone-aware
         
         for release in releases:
             try:
