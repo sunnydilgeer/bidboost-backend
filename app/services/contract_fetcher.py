@@ -18,7 +18,7 @@ class ContractFetcherService:
     
     async def fetch_contracts_with_cursor(
         self,
-        published_from: Optional[datetime] = None,  # Now optional
+        published_from: Optional[datetime] = None,
         limit: int = 100,
         cursor: Optional[str] = None
     ) -> Tuple[List[ContractOpportunity], Optional[str]]:
@@ -55,10 +55,10 @@ class ContractFetcherService:
             
             response.raise_for_status()
             data = response.json()
-            contracts = self._parse_contracts(data)  # Now filters closed contracts
+            contracts = self._parse_contracts(data)
             next_cursor = data.get('links', {}).get('next')
             
-            logger.info(f"Fetched {len(contracts)} OPEN contracts. Has next page: {bool(next_cursor)}")
+            logger.info(f"Fetched {len(contracts)} OPEN TENDER opportunities. Has next page: {bool(next_cursor)}")
             return contracts, next_cursor
             
         except Exception as e:
@@ -68,14 +68,20 @@ class ContractFetcherService:
     def _parse_contracts(self, api_data: Dict[str, Any]) -> List[ContractOpportunity]:
         """
         Parse API response into ContractOpportunity objects.
-        FILTERS OUT CLOSED CONTRACTS (closing_date < now).
+        FILTERS: Only "tender" tags (active opportunities) + open closing dates.
         """
         contracts = []
         releases = api_data.get("releases", [])
-        now = datetime.now(timezone.utc)  # Timezone-aware
+        now = datetime.now(timezone.utc)
         
         for release in releases:
             try:
+                # ✅ FILTER 1: Only process "tender" tags (active opportunities)
+                tags = release.get("tag", [])
+                if "tender" not in tags:
+                    logger.debug(f"Skipping non-tender: {release.get('id')} (tags: {tags})")
+                    continue
+                
                 tender = release.get("tender", {})
                 buyer = release.get("buyer", {})
                 
@@ -96,7 +102,7 @@ class ContractFetcherService:
                     except:
                         pass
                 
-                # ✅ CRITICAL FILTER: Skip closed contracts
+                # ✅ FILTER 2: Skip closed contracts
                 if closing_date and closing_date < now:
                     logger.debug(f"Skipping closed contract: {release.get('id')} (closed: {closing_date.date()})")
                     continue
@@ -143,7 +149,7 @@ class ContractFetcherService:
                 logger.warning(f"Failed to parse contract {release.get('id', 'unknown')}: {str(e)}")
                 continue
         
-        logger.info(f"Parsed {len(contracts)} open contracts out of {len(releases)} total releases")
+        logger.info(f"Parsed {len(contracts)} TENDER opportunities out of {len(releases)} total releases")
         return contracts
     
     async def fetch_contracts(
