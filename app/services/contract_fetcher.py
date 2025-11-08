@@ -1,6 +1,8 @@
+# app/services/contract_fetcher.py - COMPLETE REWRITE
+
 import httpx
 import logging
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Any, Optional, Tuple
 from datetime import datetime, timedelta
 from app.models.schemas import ContractOpportunity
 
@@ -23,16 +25,14 @@ class ContractFetcherService:
     ) -> List[ContractOpportunity]:
         """
         Fetch recent contract opportunities from Contracts Finder.
-        NOTE: offset parameter is kept for backwards compatibility but is NOT used
-        because the UK API ignores offset when publishedFrom is present.
+        NOTE: This is kept for backwards compatibility but cursor-based pagination is preferred.
         
         Args:
             limit: Max contracts to fetch (default 100, max 100 per API rules)
             days_back: How many days back to search (default 7)
-            offset: DEPRECATED - ignored by UK API when using publishedFrom
+            offset: DEPRECATED - not reliable with this API
         """
         try:
-            # Calculate date filter
             published_from = (datetime.utcnow() - timedelta(days=days_back)).isoformat()
             
             params = {
@@ -56,18 +56,23 @@ class ContractFetcherService:
             logger.error(f"Failed to fetch contracts: {str(e)}")
             raise
     
-    async def fetch_contracts_from_date(
+    async def fetch_contracts_with_cursor(
         self,
         published_from: datetime,
-        limit: int = 100
-    ) -> List[ContractOpportunity]:
+        limit: int = 100,
+        cursor: Optional[str] = None
+    ) -> Tuple[List[ContractOpportunity], Optional[str]]:
         """
-        Fetch contracts published after a specific date.
-        This is the correct method for pagination with the UK Contracts Finder API.
+        Fetch contracts using cursor-based pagination (RECOMMENDED METHOD).
+        Returns tuple of (contracts, next_cursor).
         
         Args:
-            published_from: Start date for filtering (contracts after this date)
-            limit: Max contracts to fetch (default 100, max 100 per API rules)
+            published_from: Start date for filtering
+            limit: Max contracts per page (default 100, max 100 per API rules)
+            cursor: Pagination cursor from previous response (None for first page)
+            
+        Returns:
+            Tuple of (list of contracts, next cursor or None)
         """
         try:
             params = {
@@ -76,7 +81,11 @@ class ContractFetcherService:
                 "format": "json"
             }
             
-            logger.info(f"Fetching contracts from {published_from.isoformat()} (limit: {limit})")
+            # Add cursor if provided (not for first request)
+            if cursor:
+                params["cursor"] = cursor
+            
+            logger.info(f"Fetching contracts with cursor: {cursor or 'initial'} (limit: {limit})")
             
             response = await self.client.get(self.BASE_URL, params=params)
             response.raise_for_status()
@@ -84,46 +93,21 @@ class ContractFetcherService:
             data = response.json()
             contracts = self._parse_contracts(data)
             
-            logger.info(f"Successfully fetched {len(contracts)} contracts from {published_from.isoformat()}")
-            return contracts
+            # Extract next cursor from response
+            # Try multiple possible locations in API response
+            next_cursor = (
+                data.get('cursor') or 
+                data.get('next_cursor') or 
+                data.get('nextCursor') or
+                data.get('links', {}).get('next') or
+                data.get('meta', {}).get('cursor')
+            )
+            
+            logger.info(f"Successfully fetched {len(contracts)} contracts. Next cursor: {next_cursor or 'none'}")
+            return contracts, next_cursor
             
         except Exception as e:
-            logger.error(f"Failed to fetch contracts from {published_from.isoformat()}: {str(e)}")
-            raise
-    
-    async def fetch_contracts_before_date(
-        self,
-        published_to: datetime,
-        limit: int = 100
-    ) -> List[ContractOpportunity]:
-        """
-        Fetch contracts published BEFORE a specific date.
-        API returns newest first, so this gets the most recent contracts before the cutoff.
-        
-        Args:
-            published_to: End date for filtering (contracts before this date)
-            limit: Max contracts to fetch (default 100, max 100 per API rules)
-        """
-        try:
-            params = {
-                "limit": limit,
-                "publishedTo": published_to.isoformat(),
-                "format": "json"
-            }
-            
-            logger.info(f"Fetching contracts before {published_to.isoformat()} (limit: {limit})")
-            
-            response = await self.client.get(self.BASE_URL, params=params)
-            response.raise_for_status()
-            
-            data = response.json()
-            contracts = self._parse_contracts(data)
-            
-            logger.info(f"Successfully fetched {len(contracts)} contracts before {published_to.isoformat()}")
-            return contracts
-            
-        except Exception as e:
-            logger.error(f"Failed to fetch contracts before {published_to.isoformat()}: {str(e)}")
+            logger.error(f"Failed to fetch contracts with cursor {cursor}: {str(e)}")
             raise
     
     def _parse_contracts(self, api_data: Dict[str, Any]) -> List[ContractOpportunity]:

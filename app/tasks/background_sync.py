@@ -1,3 +1,5 @@
+# app/tasks/background_sync.py - COMPLETE REWRITE
+
 import asyncio
 import logging
 from datetime import datetime, timedelta
@@ -10,17 +12,8 @@ logger = logging.getLogger(__name__)
 
 async def sync_contracts_background(limit: int = 10000, days_back: int = 365):
     """
-    Background task to sync large number of contracts without timeout.
-    
-    Strategy: UK Contracts Finder API returns newest contracts first when using publishedFrom.
-    Since offset doesn't work with publishedFrom, we:
-    1. Start from oldest date (days_back ago)
-    2. Fetch 100 contracts
-    3. Find the OLDEST published_date in that batch
-    4. Set next publishedFrom to 1 second BEFORE that oldest date
-    5. Repeat, working backwards through time
-    
-    This ensures we get all contracts without duplicates.
+    Background task to sync contracts using cursor-based pagination.
+    This is the proper way to paginate with the UK Contracts Finder API.
     """
     logger.info(f"🚀 Starting background sync: {limit} contracts, {days_back} days back")
     
@@ -29,47 +22,47 @@ async def sync_contracts_background(limit: int = 10000, days_back: int = 365):
     llm_service = LLMService()
     
     batch_size = 100
-    batches = limit // batch_size
-    
     total_synced = 0
     total_failed = 0
+    batch_num = 0
+    cursor = None
     
-    # Start from NOW and work backwards in time (API returns newest first)
-    current_date = datetime.utcnow()
-    earliest_date = datetime.utcnow() - timedelta(days=days_back)
+    # Start date for filtering
+    published_from = datetime.utcnow() - timedelta(days=days_back)
     
     try:
-        batch_num = 0
-        
-        while batch_num < batches and current_date > earliest_date:
+        while total_synced < limit:
             try:
                 batch_num += 1
-                logger.info(f"📦 Processing batch {batch_num}/{batches} (publishedTo: {current_date.isoformat()})")
+                logger.info(f"📦 Processing batch {batch_num} (cursor: {cursor or 'initial'})")
                 
-                # Fetch contracts published BEFORE current_date
-                contracts = await contract_service.fetch_contracts_before_date(
-                    published_to=current_date,
-                    limit=batch_size
+                # Fetch contracts with cursor
+                contracts, next_cursor = await contract_service.fetch_contracts_with_cursor(
+                    published_from=published_from,
+                    limit=batch_size,
+                    cursor=cursor
                 )
                 
                 # Stop if no more contracts
                 if not contracts:
-                    logger.info(f"No more contracts found before {current_date.isoformat()}")
+                    logger.info(f"No more contracts found at batch {batch_num}")
                     break
                 
                 # Store in Qdrant
                 await vector_store.add_contracts(contracts, llm_service)
                 total_synced += len(contracts)
                 
-                logger.info(f"✅ Batch {batch_num}/{batches} complete. Synced: {len(contracts)} | Total: {total_synced}")
+                logger.info(f"✅ Batch {batch_num} complete. Synced: {len(contracts)} | Total: {total_synced}")
                 
-                # Find OLDEST contract in this batch to set next boundary
-                oldest_date = min(c.published_date for c in contracts if c.published_date)
+                # Move to next cursor
+                cursor = next_cursor
                 
-                # Move boundary to just before oldest contract (work backwards)
-                current_date = oldest_date - timedelta(seconds=1)
+                # Stop if no more pages
+                if not cursor:
+                    logger.info(f"✅ Reached end of results (no more cursor)")
+                    break
                 
-                logger.info(f"📅 Next batch will fetch contracts before: {current_date.isoformat()}")
+                logger.info(f"📅 Next cursor: {cursor}")
                 
                 # Small delay between batches
                 await asyncio.sleep(1)
@@ -77,8 +70,9 @@ async def sync_contracts_background(limit: int = 10000, days_back: int = 365):
             except Exception as e:
                 total_failed += 1
                 logger.error(f"❌ Error in batch {batch_num}: {str(e)}")
-                # Move backwards anyway to avoid infinite loop
-                current_date = current_date - timedelta(hours=1)
+                # Try to continue with next cursor if available
+                if not cursor:
+                    break
                 continue
         
         logger.info(f"🎉 Background sync complete! Total synced: {total_synced} | Failed batches: {total_failed}")
