@@ -1712,10 +1712,10 @@ async def sync_contracts_background_endpoint(
     """
     from app.tasks.background_sync import sync_contracts_background
     
-    background_tasks.add_task(sync_contracts_background, limit, days_back)
+    background_tasks.add_task(sync_contracts_background, days_back)
     
     return {
-        "message": f"Background sync started for {limit} contracts over {days_back} days",
-        "status": "processing",
-        "note": "Check Railway logs to monitor progress. Search for 🚀 emoji."
+    "message": f"Background sync started for ALL open contracts from last {days_back} days",
+    "status": "processing",
+    "note": "Check Railway logs to monitor progress. Search for 🚀 emoji."
     }
