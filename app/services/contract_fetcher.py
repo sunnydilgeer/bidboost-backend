@@ -1,4 +1,4 @@
-# app/services/contract_fetcher.py - COMPLETE REWRITE
+# app/services/contract_fetcher.py - COMPLETE CLEAN REWRITE
 
 import httpx
 import logging
@@ -24,13 +24,8 @@ class ContractFetcherService:
         offset: int = 0
     ) -> List[ContractOpportunity]:
         """
-        Fetch recent contract opportunities from Contracts Finder.
-        NOTE: This is kept for backwards compatibility but cursor-based pagination is preferred.
-        
-        Args:
-            limit: Max contracts to fetch (default 100, max 100 per API rules)
-            days_back: How many days back to search (default 7)
-            offset: DEPRECATED - not reliable with this API
+        Fetch recent contract opportunities (legacy method).
+        Use fetch_contracts_with_cursor for proper pagination.
         """
         try:
             published_from = (datetime.utcnow() - timedelta(days=days_back)).isoformat()
@@ -57,57 +52,54 @@ class ContractFetcherService:
             raise
     
     async def fetch_contracts_with_cursor(
-    self,
-    published_from: datetime,
-    limit: int = 100,
-    cursor: Optional[str] = None
-) -> Tuple[List[ContractOpportunity], Optional[str]]:
-    """Fetch contracts using cursor (links.next URL)."""
-    try:
-        # If cursor provided, use it as the complete URL
-        if cursor:
-            url = cursor
-            logger.info(f"Fetching from cursor URL: {cursor[:100]}...")
-        else:
-            # First request - build params
-            url = self.BASE_URL
-            params = {
-                "limit": limit,
-                "publishedFrom": published_from.isoformat(),
-                "format": "json"
-            }
-            logger.info(f"Fetching initial page (limit: {limit})")
-        
-        # Make request (with or without params)
-        if cursor:
-            response = await self.client.get(url)
-        else:
-            response = await self.client.get(url, params=params)
-        
-        response.raise_for_status()
-        data = response.json()
-        contracts = self._parse_contracts(data)
-        
-        # Extract next URL from links.next
-        next_cursor = data.get('links', {}).get('next')
-        
-        logger.info(f"Fetched {len(contracts)} contracts. Has next page: {bool(next_cursor)}")
-        return contracts, next_cursor
-        
-    except Exception as e:
-        logger.error(f"Failed to fetch contracts: {str(e)}")
-        raise
+        self,
+        published_from: datetime,
+        limit: int = 100,
+        cursor: Optional[str] = None
+    ) -> Tuple[List[ContractOpportunity], Optional[str]]:
+        """
+        Fetch contracts using cursor pagination (RECOMMENDED).
+        The cursor is actually a full URL from links.next.
+        """
+        try:
+            # If cursor provided, use it as the complete URL
+            if cursor:
+                url = cursor
+                logger.info(f"Fetching from next page URL")
+                response = await self.client.get(url)
+            else:
+                # First request - build params
+                url = self.BASE_URL
+                params = {
+                    "limit": limit,
+                    "publishedFrom": published_from.isoformat(),
+                    "format": "json"
+                }
+                logger.info(f"Fetching initial page (limit: {limit})")
+                response = await self.client.get(url, params=params)
+            
+            response.raise_for_status()
+            data = response.json()
+            contracts = self._parse_contracts(data)
+            
+            # Extract next page URL from links.next
+            next_cursor = data.get('links', {}).get('next')
+            
+            logger.info(f"Fetched {len(contracts)} contracts. Has next page: {bool(next_cursor)}")
+            return contracts, next_cursor
+            
+        except Exception as e:
+            logger.error(f"Failed to fetch contracts: {str(e)}")
+            raise
     
     def _parse_contracts(self, api_data: Dict[str, Any]) -> List[ContractOpportunity]:
         """Parse API response into ContractOpportunity objects."""
         contracts = []
         
-        # Handle OCDS format - contracts are in 'releases' array
         releases = api_data.get('releases', [])
         
         for release in releases:
             try:
-                # Extract basic fields following OCDS schema
                 tender = release.get('tender', {})
                 buyer = release.get('buyer', {})
                 
