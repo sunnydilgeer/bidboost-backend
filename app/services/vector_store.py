@@ -1,4 +1,4 @@
-from qdrant_client import QdrantClient
+from qdrant_client import QdrantClient, models
 from qdrant_client.models import Distance, VectorParams, PointStruct, Filter, FieldCondition, MatchValue, FilterSelector
 from typing import List, Dict, Any, Optional
 import uuid
@@ -51,6 +51,9 @@ class VectorStoreService:
                 vectors_config=VectorParams(
                     size=768,  # nomic-embed-text dimension
                     distance=Distance.COSINE
+                ),
+                optimizers_config=models.OptimizersConfigDiff(
+                    indexing_threshold=1000  # NEW: Changed from default 10000
                 )
             )
             logger.info(f"Created collection: {self.collection_name}")
