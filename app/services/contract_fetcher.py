@@ -1,55 +1,20 @@
-# app/services/contract_fetcher.py - COMPLETE CLEAN REWRITE
-
 import httpx
-import logging
 from typing import List, Dict, Any, Optional, Tuple
 from datetime import datetime, timedelta
+import logging
 from app.models.schemas import ContractOpportunity
 
 logger = logging.getLogger(__name__)
 
 class ContractFetcherService:
-    """Service to fetch contract opportunities from Contracts Finder API."""
-    
     BASE_URL = "https://www.contractsfinder.service.gov.uk/Published/Notices/OCDS/Search"
-    TIMEOUT = 30.0
     
     def __init__(self):
-        self.client = httpx.AsyncClient(timeout=self.TIMEOUT)
+        self.client = httpx.AsyncClient(timeout=30.0)
     
-    async def fetch_contracts(
-        self, 
-        limit: int = 100,
-        days_back: int = 7,
-        offset: int = 0
-    ) -> List[ContractOpportunity]:
-        """
-        Fetch recent contract opportunities (legacy method).
-        Use fetch_contracts_with_cursor for proper pagination.
-        """
-        try:
-            published_from = (datetime.utcnow() - timedelta(days=days_back)).isoformat()
-            
-            params = {
-                "limit": limit,
-                "publishedFrom": published_from,
-                "format": "json"
-            }
-            
-            logger.info(f"Fetching contracts from {published_from} (limit: {limit})")
-            
-            response = await self.client.get(self.BASE_URL, params=params)
-            response.raise_for_status()
-            
-            data = response.json()
-            contracts = self._parse_contracts(data)
-            
-            logger.info(f"Successfully fetched {len(contracts)} contracts")
-            return contracts
-            
-        except Exception as e:
-            logger.error(f"Failed to fetch contracts: {str(e)}")
-            raise
+    async def close(self):
+        """Close the HTTP client"""
+        await self.client.aclose()
     
     async def fetch_contracts_with_cursor(
         self,
@@ -60,6 +25,7 @@ class ContractFetcherService:
         """
         Fetch contracts using cursor pagination (RECOMMENDED).
         The cursor is actually a full URL from links.next.
+        NOW WITH POST-FETCH FILTERING FOR OPEN CONTRACTS ONLY.
         """
         try:
             # If cursor provided, use it as the complete URL
@@ -73,16 +39,18 @@ class ContractFetcherService:
                 params = {
                     "limit": limit,
                     "publishedFrom": published_from.isoformat(),
-                    "closingDate[from]": datetime.utcnow().isoformat(),  # NEW: Only open contracts
+                    "closingDate[from]": datetime.utcnow().isoformat(),  # API filter (may not work)
                     "format": "json"
                 }
+                logger.info(f"Fetching initial page (limit: {limit})")
                 response = await self.client.get(url, params=params)
             
             response.raise_for_status()
             data = response.json()
-            contracts = self._parse_contracts(data)
+            contracts = self._parse_contracts(data)  # Now filters closed contracts
             next_cursor = data.get('links', {}).get('next')
-
+            
+            logger.info(f"Fetched {len(contracts)} OPEN contracts. Has next page: {bool(next_cursor)}")
             return contracts, next_cursor
             
         except Exception as e:
@@ -90,26 +58,75 @@ class ContractFetcherService:
             raise
     
     def _parse_contracts(self, api_data: Dict[str, Any]) -> List[ContractOpportunity]:
-        """Parse API response into ContractOpportunity objects."""
+        """
+        Parse API response into ContractOpportunity objects.
+        FILTERS OUT CLOSED CONTRACTS (closing_date < now).
+        """
         contracts = []
-        
-        releases = api_data.get('releases', [])
+        releases = api_data.get("releases", [])
+        now = datetime.utcnow()
         
         for release in releases:
             try:
-                tender = release.get('tender', {})
-                buyer = release.get('buyer', {})
+                tender = release.get("tender", {})
+                buyer = release.get("buyer", {})
                 
+                # Parse dates
+                published_date_str = release.get("date")
+                published_date = None
+                if published_date_str:
+                    try:
+                        published_date = datetime.fromisoformat(published_date_str.replace('Z', '+00:00'))
+                    except:
+                        pass
+                
+                closing_date_str = tender.get("tenderPeriod", {}).get("endDate")
+                closing_date = None
+                if closing_date_str:
+                    try:
+                        closing_date = datetime.fromisoformat(closing_date_str.replace('Z', '+00:00'))
+                    except:
+                        pass
+                
+                # ✅ CRITICAL FILTER: Skip closed contracts
+                if closing_date and closing_date < now:
+                    logger.debug(f"Skipping closed contract: {release.get('id')} (closed: {closing_date.date()})")
+                    continue
+                
+                # Parse value
+                value = None
+                value_data = tender.get("value", {})
+                if value_data and "amount" in value_data:
+                    try:
+                        value = float(value_data["amount"])
+                    except:
+                        pass
+                
+                # Parse CPV codes
+                cpv_codes = []
+                items = tender.get("items", [])
+                for item in items:
+                    classification = item.get("classification", {})
+                    if classification.get("scheme") == "CPV":
+                        cpv_codes.append(classification.get("id", ""))
+                
+                # Parse region (if available)
+                region = None
+                delivery_addresses = tender.get("deliveryAddresses", [])
+                if delivery_addresses:
+                    region = delivery_addresses[0].get("region")
+                
+                # Create contract object
                 contract = ContractOpportunity(
-                    notice_id=release.get('id', ''),
-                    title=tender.get('title', 'Untitled'),
-                    description=tender.get('description', ''),
-                    buyer_name=buyer.get('name', 'Unknown'),
-                    published_date=self._parse_date(release.get('date')),
-                    closing_date=self._parse_date(tender.get('tenderPeriod', {}).get('endDate')),
-                    value=self._extract_value(tender.get('value')),
-                    cpv_codes=self._extract_cpv_codes(tender.get('classification')),
-                    region=self._extract_region(tender.get('deliveryAddresses'))
+                    notice_id=release.get("id", ""),
+                    title=tender.get("title", ""),
+                    description=tender.get("description", ""),
+                    buyer_name=buyer.get("name", "Unknown Buyer"),
+                    published_date=published_date,
+                    closing_date=closing_date,
+                    value=value,
+                    cpv_codes=cpv_codes,
+                    region=region
                 )
                 
                 contracts.append(contract)
@@ -118,50 +135,36 @@ class ContractFetcherService:
                 logger.warning(f"Failed to parse contract {release.get('id', 'unknown')}: {str(e)}")
                 continue
         
+        logger.info(f"Parsed {len(contracts)} open contracts out of {len(releases)} total releases")
         return contracts
     
-    def _parse_date(self, date_str: Optional[str]) -> Optional[datetime]:
-        """Parse ISO date string to datetime."""
-        if not date_str:
-            return None
+    async def fetch_contracts(
+        self,
+        limit: int = 100,
+        days_back: int = 90,
+        offset: int = 0
+    ) -> List[ContractOpportunity]:
+        """
+        Fetch contracts using offset pagination (NOT RECOMMENDED - use cursor instead).
+        UK API ignores offset parameter, always returns same results.
+        """
         try:
-            return datetime.fromisoformat(date_str.replace('Z', '+00:00'))
-        except:
-            return None
-    
-    def _extract_value(self, value_obj: Optional[Dict]) -> Optional[float]:
-        """Extract monetary value from OCDS value object."""
-        if not value_obj:
-            return None
-        
-        amount = value_obj.get('amount')
-        if amount is None:
-            return None
-        
-        try:
-            return float(amount)
-        except (ValueError, TypeError):
-            return None
-    
-    def _extract_cpv_codes(self, classification: Optional[Dict]) -> List[str]:
-        """Extract CPV codes from classification object."""
-        if not classification:
-            return []
-        
-        codes = []
-        if 'id' in classification:
-            codes.append(classification['id'])
-        
-        return codes
-    
-    def _extract_region(self, addresses: Optional[List[Dict]]) -> Optional[str]:
-        """Extract region from delivery addresses."""
-        if not addresses or not addresses[0]:
-            return None
-        
-        address = addresses[0]
-        return address.get('region') or address.get('locality')
-    
-    async def close(self):
-        """Close the HTTP client."""
-        await self.client.aclose()
+            published_from = datetime.utcnow() - timedelta(days=days_back)
+            
+            params = {
+                "limit": limit,
+                "publishedFrom": published_from.isoformat(),
+                "format": "json"
+            }
+            
+            response = await self.client.get(self.BASE_URL, params=params)
+            response.raise_for_status()
+            
+            data = response.json()
+            contracts = self._parse_contracts(data)
+            
+            return contracts
+            
+        except Exception as e:
+            logger.error(f"Failed to fetch contracts: {str(e)}")
+            raise
