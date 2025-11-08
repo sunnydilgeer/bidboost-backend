@@ -1,6 +1,6 @@
 import asyncio
 import logging
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from typing import Optional
 from app.services.contract_fetcher import ContractFetcherService
 from app.services.vector_store import VectorStoreService
@@ -124,8 +124,8 @@ async def sync_contracts_background(days_back: int = 365):
             days_start = chunk * chunk_size_days
             days_end = min((chunk + 1) * chunk_size_days, days_back)
             
-            published_from = datetime.utcnow() - timedelta(days=days_end)
-            published_to = datetime.utcnow() - timedelta(days=days_start)
+            published_from = datetime.now(timezone.utc) - timedelta(days=days_end)
+            published_to = datetime.now(timezone.utc) - timedelta(days=days_start)
             
             logger.info(f"📅 Chunk {chunk+1}/{chunks}: {published_from.date()} to {published_to.date()}")
             
