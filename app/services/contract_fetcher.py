@@ -19,15 +19,17 @@ class ContractFetcherService:
         self, 
         limit: int = 100,
         days_back: int = 7,
-        offset: int = 0  # NEW: Add offset parameter
+        offset: int = 0
     ) -> List[ContractOpportunity]:
         """
         Fetch recent contract opportunities from Contracts Finder.
+        NOTE: offset parameter is kept for backwards compatibility but is NOT used
+        because the UK API ignores offset when publishedFrom is present.
         
         Args:
             limit: Max contracts to fetch (default 100, max 100 per API rules)
             days_back: How many days back to search (default 7)
-            offset: Pagination offset (default 0)
+            offset: DEPRECATED - ignored by UK API when using publishedFrom
         """
         try:
             # Calculate date filter
@@ -35,12 +37,11 @@ class ContractFetcherService:
             
             params = {
                 "limit": limit,
-                "offset": offset,  # NEW: Use offset parameter
                 "publishedFrom": published_from,
                 "format": "json"
             }
             
-            logger.info(f"Fetching contracts from {published_from} (limit: {limit}, offset: {offset})")
+            logger.info(f"Fetching contracts from {published_from} (limit: {limit})")
             
             response = await self.client.get(self.BASE_URL, params=params)
             response.raise_for_status()
@@ -48,11 +49,46 @@ class ContractFetcherService:
             data = response.json()
             contracts = self._parse_contracts(data)
             
-            logger.info(f"Successfully fetched {len(contracts)} contracts at offset {offset}")
+            logger.info(f"Successfully fetched {len(contracts)} contracts")
             return contracts
             
         except Exception as e:
             logger.error(f"Failed to fetch contracts: {str(e)}")
+            raise
+    
+    async def fetch_contracts_from_date(
+        self,
+        published_from: datetime,
+        limit: int = 100
+    ) -> List[ContractOpportunity]:
+        """
+        Fetch contracts published after a specific date.
+        This is the correct method for pagination with the UK Contracts Finder API.
+        
+        Args:
+            published_from: Start date for filtering (contracts after this date)
+            limit: Max contracts to fetch (default 100, max 100 per API rules)
+        """
+        try:
+            params = {
+                "limit": limit,
+                "publishedFrom": published_from.isoformat(),
+                "format": "json"
+            }
+            
+            logger.info(f"Fetching contracts from {published_from.isoformat()} (limit: {limit})")
+            
+            response = await self.client.get(self.BASE_URL, params=params)
+            response.raise_for_status()
+            
+            data = response.json()
+            contracts = self._parse_contracts(data)
+            
+            logger.info(f"Successfully fetched {len(contracts)} contracts from {published_from.isoformat()}")
+            return contracts
+            
+        except Exception as e:
+            logger.error(f"Failed to fetch contracts from {published_from.isoformat()}: {str(e)}")
             raise
     
     def _parse_contracts(self, api_data: Dict[str, Any]) -> List[ContractOpportunity]:
@@ -83,7 +119,7 @@ class ContractFetcherService:
                 contracts.append(contract)
                 
             except Exception as e:
-                logger.warning(f"Failed to parse contract: {str(e)}")
+                logger.warning(f"Failed to parse contract {release.get('id', 'unknown')}: {str(e)}")
                 continue
         
         return contracts
