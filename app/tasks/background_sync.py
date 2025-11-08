@@ -24,9 +24,9 @@ async def sync_date_range(
     batch_num = 0
     cursor = None
     
-    # Add publishedTo filter to params (will be used in first request only)
-    # We'll pass this to the fetcher somehow - for now just log it
-    logger.info(f"Syncing from {published_from.date()} to {published_to.date()}")
+    logger.info(f"🔍 DEBUG: Starting date range sync")
+    logger.info(f"🔍 DEBUG: published_from = {published_from}")
+    logger.info(f"🔍 DEBUG: published_to = {published_to}")
     
     while True:
         try:
@@ -39,21 +39,43 @@ async def sync_date_range(
                 cursor=cursor
             )
             
-            # Filter by publishedTo (client-side since API doesn't support it well)
-            filtered_contracts = [
-                c for c in contracts 
-                if c.published_date and c.published_date <= published_to
-            ]
+            # DEBUG: Log what we got
+            logger.info(f"🔍 DEBUG Batch {batch_num}: Fetched {len(contracts)} TENDER contracts from API")
+            
+            if contracts:
+                # DEBUG: Show first and last contract details
+                first = contracts[0]
+                last = contracts[-1]
+                logger.info(f"🔍 DEBUG First contract: ID={first.notice_id}, published={first.published_date}, closing={first.closing_date}")
+                logger.info(f"🔍 DEBUG Last contract: ID={last.notice_id}, published={last.published_date}, closing={last.closing_date}")
+            
+            # Filter by date range (published_from <= published_date <= published_to)
+            filtered_contracts = []
+            for c in contracts:
+                if c.published_date:
+                    in_range = published_from <= c.published_date <= published_to
+                    logger.debug(f"Contract {c.notice_id}: published={c.published_date}, in_range={in_range}")
+                    if in_range:
+                        filtered_contracts.append(c)
+                else:
+                    logger.debug(f"Contract {c.notice_id}: No published_date, skipping")
+            
+            # DEBUG: Show filtering results
+            logger.info(f"🔍 DEBUG: {len(contracts)} fetched -> {len(filtered_contracts)} after date filter")
+            
+            if filtered_contracts:
+                logger.info(f"🔍 DEBUG: First filtered contract published: {filtered_contracts[0].published_date}")
+                logger.info(f"🔍 DEBUG: Last filtered contract published: {filtered_contracts[-1].published_date}")
             
             if not filtered_contracts:
-                logger.info(f"No more contracts in this date range")
+                logger.info(f"No more contracts in this date range at batch {batch_num}")
                 break
             
             # Store in Qdrant
             await vector_store.add_contracts(filtered_contracts, llm_service)
             total_synced += len(filtered_contracts)
             
-            logger.info(f"Batch {batch_num}: {len(filtered_contracts)} contracts | Range total: {total_synced}")
+            logger.info(f"✅ Batch {batch_num}: Stored {len(filtered_contracts)} contracts | Range total: {total_synced}")
             
             # Move to next cursor
             cursor = next_cursor
@@ -62,17 +84,18 @@ async def sync_date_range(
                 logger.info(f"Reached end of results for this date range")
                 break
             
-            # Stop if we've gone past the date range
+            # Stop if we've gone past the date range start
             if contracts and contracts[-1].published_date and contracts[-1].published_date < published_from:
-                logger.info(f"Passed date range start, stopping")
+                logger.info(f"Passed date range start ({published_from}), stopping")
                 break
             
             await asyncio.sleep(1)
             
         except Exception as e:
-            logger.error(f"Error in batch {batch_num}: {str(e)}")
+            logger.error(f"❌ Error in batch {batch_num}: {str(e)}", exc_info=True)
             break
     
+    logger.info(f"🔍 DEBUG: Date range complete. Total synced: {total_synced}")
     return total_synced
 
 
@@ -93,6 +116,8 @@ async def sync_contracts_background(days_back: int = 365):
     total_synced = 0
     chunk_size_days = 30
     chunks = (days_back + chunk_size_days - 1) // chunk_size_days  # Ceiling division
+    
+    logger.info(f"🔍 DEBUG: Total chunks to process: {chunks}")
     
     try:
         for chunk in range(chunks):
@@ -124,7 +149,7 @@ async def sync_contracts_background(days_back: int = 365):
         }
         
     except Exception as e:
-        logger.error(f"Chunked sync failed: {str(e)}")
+        logger.error(f"❌ Chunked sync failed: {str(e)}", exc_info=True)
         return {
             "status": "failed",
             "total_synced": total_synced,
