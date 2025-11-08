@@ -103,7 +103,8 @@ class VectorStoreService:
         
         self.client.upsert(
             collection_name=self.collection_name,
-            points=points
+            points=points,
+            wait=True  # ← ADD THIS to ensure data is committed before returning
         )
         
         logger.info(f"Added {len(points)} legal document chunks to vector store")
