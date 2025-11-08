@@ -1,3 +1,4 @@
+# app/services/contract_fetcher.py
 import httpx
 from typing import List, Dict, Any, Optional, Tuple
 from datetime import datetime, timedelta, timezone
@@ -19,35 +20,33 @@ class ContractFetcherService:
     async def fetch_contracts_with_cursor(
         self,
         published_from: Optional[datetime] = None,
+        published_to: Optional[datetime] = None,
         limit: int = 100,
         cursor: Optional[str] = None
     ) -> Tuple[List[ContractOpportunity], Optional[str]]:
         """
-        Fetch contracts using cursor pagination (RECOMMENDED).
-        The cursor is actually a full URL from links.next.
-        ALL FILTERING DONE CLIENT-SIDE (tender.status="active" + closing date).
+        Fetch contracts using cursor pagination.
+        CRITICAL: Must use BOTH publishedFrom AND publishedTo for API to work properly.
         """
         try:
-            # If cursor provided, use it as the complete URL
             if cursor:
                 url = cursor
                 logger.info(f"Fetching from next page URL")
                 response = await self.client.get(url)
             else:
-                # First request - build params (NO API FILTERS - they limit results)
                 url = self.BASE_URL
                 params = {
                     "limit": limit,
                     "format": "json"
                 }
                 
-                # Only add publishedFrom if provided
+                # CRITICAL: API requires BOTH parameters to filter properly
                 if published_from:
                     params["publishedFrom"] = published_from.isoformat()
-                    logger.info(f"Fetching initial page (limit: {limit}, published from: {published_from.date()})")
-                else:
-                    logger.info(f"Fetching initial page (limit: {limit}, ALL dates - client-side filtering)")
+                if published_to:
+                    params["publishedTo"] = published_to.isoformat()
                 
+                logger.info(f"Fetching contracts: {published_from.date() if published_from else 'any'} to {published_to.date() if published_to else 'any'}")
                 response = await self.client.get(url, params=params)
             
             response.raise_for_status()
@@ -55,7 +54,7 @@ class ContractFetcherService:
             contracts = self._parse_contracts(data)
             next_cursor = data.get('links', {}).get('next')
             
-            logger.info(f"Fetched {len(contracts)} ACTIVE tender opportunities. Has next page: {bool(next_cursor)}")
+            logger.info(f"Fetched {len(contracts)} ACTIVE contracts. Has next page: {bool(next_cursor)}")
             return contracts, next_cursor
             
         except Exception as e:
@@ -65,7 +64,7 @@ class ContractFetcherService:
     def _parse_contracts(self, api_data: Dict[str, Any]) -> List[ContractOpportunity]:
         """
         Parse API response into ContractOpportunity objects.
-        FILTERS: Only tender.status="active" (live opportunities) + open closing dates.
+        FILTERS: tender.status="active" + closing_date > now
         """
         contracts = []
         releases = api_data.get("releases", [])
@@ -75,10 +74,10 @@ class ContractFetcherService:
             try:
                 tender = release.get("tender", {})
                 
-                # ✅ FILTER 1: Only process "active" tender status (live opportunities)
+                # FILTER 1: Only "active" status (live opportunities)
                 tender_status = tender.get("status")
                 if tender_status != "active":
-                    logger.debug(f"Skipping non-active tender: {release.get('id')} (status: {tender_status})")
+                    logger.debug(f"Skipping non-active: {release.get('id')} (status: {tender_status})")
                     continue
                 
                 buyer = release.get("buyer", {})
@@ -100,9 +99,9 @@ class ContractFetcherService:
                     except:
                         pass
                 
-                # ✅ FILTER 2: Skip closed contracts
+                # FILTER 2: Skip closed contracts
                 if closing_date and closing_date < now:
-                    logger.debug(f"Skipping closed contract: {release.get('id')} (closed: {closing_date.date()})")
+                    logger.debug(f"Skipping closed: {release.get('id')} (closed: {closing_date.date()})")
                     continue
                 
                 # Parse value
@@ -122,7 +121,7 @@ class ContractFetcherService:
                     if classification.get("scheme") == "CPV":
                         cpv_codes.append(classification.get("id", ""))
                 
-                # Parse region (if available)
+                # Parse region
                 region = None
                 delivery_addresses = tender.get("deliveryAddresses", [])
                 if delivery_addresses:
@@ -147,7 +146,7 @@ class ContractFetcherService:
                 logger.warning(f"Failed to parse contract {release.get('id', 'unknown')}: {str(e)}")
                 continue
         
-        logger.info(f"Parsed {len(contracts)} ACTIVE tender opportunities out of {len(releases)} total releases")
+        logger.info(f"Parsed {len(contracts)} ACTIVE contracts out of {len(releases)} total")
         return contracts
     
     async def fetch_contracts(
@@ -156,10 +155,7 @@ class ContractFetcherService:
         days_back: int = 90,
         offset: int = 0
     ) -> List[ContractOpportunity]:
-        """
-        Fetch contracts using offset pagination (NOT RECOMMENDED - use cursor instead).
-        UK API ignores offset parameter, always returns same results.
-        """
+        """Legacy method - use fetch_contracts_with_cursor instead"""
         try:
             published_from = datetime.utcnow() - timedelta(days=days_back)
             
