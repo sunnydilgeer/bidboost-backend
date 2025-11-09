@@ -15,6 +15,13 @@ from contextlib import asynccontextmanager
 
 import logging
 
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
+
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -33,26 +40,36 @@ async def lifespan(app: FastAPI):
     except Exception as e:
         logger.error(f"❌ Failed to start email scheduler: {e}")
     
+    # Start the CSV contract sync service
+    csv_scheduler = None
+    try:
+        from app.tasks.csv_sync import start_sync_service
+        csv_scheduler = await start_sync_service()
+        logger.info("✅ CSV contract sync service initialized")
+    except Exception as e:
+        logger.error(f"❌ Failed to start CSV sync service: {e}")
+    
     yield  # Application runs here
     
     # ========== SHUTDOWN ==========
     logger.info("🛑 Shutting down FastAPI application...")
     
-    # Stop the scheduler gracefully
+    # Stop the email scheduler
     try:
         from app.tasks.email_scheduler import email_scheduler
         email_scheduler.shutdown()
         logger.info("✅ Email scheduler stopped")
     except Exception as e:
         logger.error(f"❌ Error stopping email scheduler: {e}")
+    
+    # Stop the CSV sync scheduler
+    if csv_scheduler:
+        try:
+            csv_scheduler.shutdown()
+            logger.info("✅ CSV sync scheduler stopped")
+        except Exception as e:
+            logger.error(f"❌ Error stopping CSV sync scheduler: {e}")
 
-
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-)
-logger = logging.getLogger(__name__)
 
 # Initialize rate limiter
 limiter = Limiter(key_func=get_remote_address)
@@ -95,10 +112,10 @@ app.include_router(router)  # Main API routes (query, ingest, conversations, etc
 app.include_router(register_router, prefix="/api/auth")  # Registration endpoint
 app.include_router(login_router, prefix="/api/auth")  # Login endpoint
 app.include_router(company.router)  # Company profile routes
-app.include_router(debug_router)  # ✅ Keep this here
+app.include_router(debug_router)  # Debug routes
 
-# 🆕 ADD DEBUG ROUTER (after app is created, with error handling)
 logger.info("✓ Debug routes registered at /api/debug")
+
 
 @app.on_event("startup")
 async def startup_event():
@@ -120,6 +137,7 @@ async def startup_event():
     logger.info(f"Docs available at: http://{settings.API_HOST}:{settings.API_PORT}/docs")
     logger.info("=" * 60)
 
+
 @app.on_event("shutdown")
 async def shutdown_event():
     """Cleanup on shutdown"""
@@ -129,6 +147,7 @@ async def shutdown_event():
         logger.info("✓ Database connections closed")
     except Exception as e:
         logger.error(f"Error closing database connections: {e}")
+
 
 @app.get("/")
 async def root():
@@ -141,6 +160,7 @@ async def root():
         "health": "/health",
         "status": "operational"
     }
+
 
 @app.get("/health")
 async def health_check():
@@ -163,6 +183,7 @@ async def health_check():
         "version": "1.0.0",
         "database": db_status
     }
+
 
 @app.get("/ready")
 async def readiness_check():
@@ -211,15 +232,6 @@ async def readiness_check():
         "services": services
     }
 
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(
-        "app.main:app",
-        host=settings.API_HOST,
-        port=settings.API_PORT,
-        reload=True,
-        log_level="info"
-    )
 
 @app.post("/admin/trigger-email-job/{job_id}", tags=["Admin"])
 async def trigger_email_job(job_id: str):
@@ -243,3 +255,73 @@ async def trigger_email_job(job_id: str):
             "success": False,
             "error": f"Failed to trigger job: {str(e)}"
         }
+
+
+@app.post("/admin/sync-contracts", tags=["Admin"])
+async def trigger_contract_sync():
+    """
+    Manually trigger CSV contract sync for testing/admin use.
+    
+    This endpoint:
+    - Downloads the latest CSV from Contracts Finder
+    - Processes all open/active contracts
+    - Upserts them to Qdrant vector store
+    """
+    try:
+        from app.tasks.csv_sync import manual_sync
+        result = await manual_sync()
+        
+        return {
+            "success": result["status"] == "complete",
+            "message": "Contract sync completed successfully" if result["status"] == "complete" else "Contract sync failed",
+            "details": result
+        }
+    except Exception as e:
+        logger.error(f"Manual sync endpoint error: {e}")
+        return {
+            "success": False,
+            "message": f"Failed to trigger sync: {str(e)}",
+            "details": None
+        }
+
+
+@app.get("/admin/sync-status", tags=["Admin"])
+async def get_sync_status():
+    """
+    Get the status of the contract sync service.
+    
+    Returns information about:
+    - Next scheduled sync time
+    - Last sync result (if available)
+    - Contract counts in Qdrant
+    """
+    try:
+        from app.services.vector_store import VectorStoreService
+        
+        vector_store = VectorStoreService()
+        contract_count = vector_store.get_document_count(document_type="contract_opportunity")
+        
+        return {
+            "success": True,
+            "contract_count": contract_count,
+            "next_sync": "Daily at 7:00 AM UTC",
+            "message": f"CSV sync service is running. {contract_count} contracts in database."
+        }
+    except Exception as e:
+        logger.error(f"Sync status error: {e}")
+        return {
+            "success": False,
+            "error": str(e),
+            "message": "Failed to get sync status"
+        }
+
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(
+        "app.main:app",
+        host=settings.API_HOST,
+        port=settings.API_PORT,
+        reload=True,
+        log_level="info"
+    )
