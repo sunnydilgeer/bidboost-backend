@@ -40,11 +40,24 @@ async def lifespan(app: FastAPI):
     except Exception as e:
         logger.error(f"❌ Failed to start email scheduler: {e}")
     
-    # Start the CSV contract sync service
+    # Start the CSV contract sync service (non-blocking for Railway startup)
     csv_scheduler = None
     try:
-        from app.tasks.csv_sync import start_sync_service
-        csv_scheduler = await start_sync_service()
+        from app.tasks.csv_sync import setup_scheduler
+        import asyncio
+        
+        # Setup scheduler WITHOUT running initial sync (to avoid Railway timeout)
+        csv_scheduler = setup_scheduler()
+        csv_scheduler.start()
+        
+        # Run initial sync in background after startup completes
+        async def background_initial_sync():
+            await asyncio.sleep(5)  # Wait for app to fully start
+            from app.tasks.csv_sync import sync_contracts_from_csv
+            logger.info("🔄 Running initial CSV sync in background...")
+            await sync_contracts_from_csv()
+        
+        asyncio.create_task(background_initial_sync())
         logger.info("✅ CSV contract sync service initialized")
     except Exception as e:
         logger.error(f"❌ Failed to start CSV sync service: {e}")
