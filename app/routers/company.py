@@ -2,6 +2,7 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from typing import List
+import logging
 from app.database import get_db
 from app.models.schemas import (
     CompanyProfileCreate, CompanyProfileResponse, CompanyProfileFull, CompanyProfileResponse,
@@ -11,7 +12,12 @@ from app.models.schemas import (
 )
 from app.models.company import CompanyProfile, CompanyCapability, PastWin, SearchPreference, CompanySize
 from app.core.auth import get_current_user
+from app.services.capability_store import CapabilityStoreService
+from app.services.llm import LLMService
+from app.core.config import settings
+from qdrant_client import QdrantClient
 
+logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/api/company", tags=["Company Profile"])
 
 # ========== COMPANY PROFILE ENDPOINTS ==========
@@ -134,7 +140,7 @@ def delete_company_profile(
 # ========== CAPABILITIES ENDPOINTS ==========
 
 @router.post("/capabilities", response_model=CompanyCapabilityResponse, status_code=status.HTTP_201_CREATED)
-def add_capability(
+async def add_capability(
     capability_data: CompanyCapabilityCreate,
     db: Session = Depends(get_db),
     current_user = Depends(get_current_user)
@@ -152,15 +158,35 @@ def add_capability(
             detail="Company profile not found. Create one first."
         )
     
+    # Create capability in database
     capability = CompanyCapability(
         company_id=company.id,
         capability_text=capability_data.capability_text,
-        category=capability_data.category,
+        category=capability_data.category
     )
     
     db.add(capability)
     db.commit()
     db.refresh(capability)
+    
+    # Embed capability in Qdrant for semantic matching
+    try:
+        qdrant_client = QdrantClient(url=settings.QDRANT_URL, api_key=settings.QDRANT_API_KEY)
+        capability_store = CapabilityStoreService(qdrant_client)
+        llm_service = LLMService()
+        
+        qdrant_id = await capability_store.add_capability(capability, llm_service)
+        
+        # Update capability with qdrant_id
+        capability.qdrant_id = qdrant_id
+        db.commit()
+        db.refresh(capability)
+        
+        logger.info(f"✅ Capability {capability.id} embedded in Qdrant with ID {qdrant_id}")
+    
+    except Exception as e:
+        logger.error(f"Failed to embed capability in Qdrant: {str(e)}")
+        # Don't fail the request - capability is still in database
     
     return capability
 
