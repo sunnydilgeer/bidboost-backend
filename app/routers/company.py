@@ -156,7 +156,6 @@ def add_capability(
         company_id=company.id,
         capability_text=capability_data.capability_text,
         category=capability_data.category,
-        years_experience=capability_data.years_experience
     )
     
     db.add(capability)
