@@ -1648,7 +1648,7 @@ async def setup_qdrant_indexes():
         }
 
 
-@router.put("/contracts/save/{notice_id}/status")
+@router.put("/contracts/save/{notice_id:path}/status")  # ✅ Added :path
 async def update_contract_status(
     notice_id: str,
     request: UpdateContractStatusRequest,
