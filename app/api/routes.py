@@ -1818,7 +1818,7 @@ async def trigger_daily_emails_now(
         raise HTTPException(status_code=500, detail=str(e))
 
 
-@router.post("/admin/reset-last-email/{email}", tags=["Admin"])
+@router.post("/admin/reset-last-email/{email}", tags=["Contracts"])
 async def reset_last_email(email: str, db: Session = Depends(get_db)):
     """Reset last_email_sent_at to 1 day ago for testing"""
     from datetime import datetime, timedelta
