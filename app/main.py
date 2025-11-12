@@ -31,14 +31,13 @@ async def lifespan(app: FastAPI):
     # ========== STARTUP ==========
     logger.info("🚀 Starting FastAPI application...")
     
-    # TEMPORARILY DISABLED - causing Railway timeout
     # Start the email scheduler
     email_scheduler = None
     try:
         from app.tasks.email_scheduler import email_scheduler
         email_scheduler.start()
-    #     logger.info("✅ Email scheduler initialized and running")
         logger.info("✅ Email scheduler initialized and running")
+    except Exception as e:
         logger.error(f"❌ Failed to start email scheduler: {e}")
     
     # Start the CSV contract sync service (non-blocking for Railway startup)
@@ -66,23 +65,16 @@ async def lifespan(app: FastAPI):
     yield  # Application runs here
     
     # ========== SHUTDOWN ==========
-    logger.info("🛑 Shutting down FastAPI application...")
+    logger.info("�� Shutting down FastAPI application...")
     
-    # # Stop the email scheduler
-    # if email_scheduler:
-    #     try:
-    #         email_scheduler.shutdown()
-    #         logger.info("✅ Email scheduler stopped")
-    #     except Exception as e:
-    #         logger.error(f"❌ Error stopping email scheduler: {e}")
-    
-    # Stop the CSV sync scheduler
-    if csv_scheduler:
+    # Stop the email scheduler
+    if email_scheduler:
         try:
-            csv_scheduler.shutdown()
-            logger.info("✅ CSV sync scheduler stopped")
+            email_scheduler.shutdown()
+            logger.info("✅ Email scheduler stopped")
         except Exception as e:
-            logger.error(f"❌ Error stopping CSV sync scheduler: {e}")   
+            logger.error(f"❌ Error stopping email scheduler: {e}")
+    
     # Stop the CSV sync scheduler
     if csv_scheduler:
         try:
@@ -418,12 +410,6 @@ async def get_scheduler_status():
         return {
             "success": True,
             "scheduler_running": email_scheduler.scheduler.running,
-            "jobs": jobs
-        }
-    except Exception as e:
-        logger.error(f"Scheduler status error: {e}")
-        return {
-            "success": False,
             "jobs": jobs
         }
     except Exception as e:
