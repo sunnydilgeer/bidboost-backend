@@ -1753,3 +1753,84 @@ async def sync_contracts_background_endpoint(
     "status": "processing",
     "note": "Check Railway logs to monitor progress. Search for 🚀 emoji."
     }
+
+@router.post("/admin/test-email")
+async def test_email_system(
+    current_user: User = Depends(get_current_active_user)
+):
+    """Test email system - sends a test email immediately"""
+    from app.tasks.email_scheduler import email_scheduler
+    from app.services.email_service import email_service
+    
+    # Test 1: Check SendGrid connection
+    if not email_service.test_connection():
+        raise HTTPException(
+            status_code=500,
+            detail="SendGrid API key not configured"
+        )
+    
+    # Test 2: Send test email
+    test_contracts = [
+        {
+            "notice_id": "test-123",
+            "title": "Test Contract - IT Services",
+            "buyer_name": "Test Government Department",
+            "value": "£50,000",
+            "deadline": "2025-12-15",
+            "match_score": 87,
+            "match_reason": "This is a test email to verify your setup"
+        }
+    ]
+    
+    success = email_service.send_new_contracts_email(
+        to_email=current_user.email,
+        user_name=current_user.full_name,
+        contracts=test_contracts,
+        total_new_contracts=1
+    )
+    
+    if success:
+        return {
+            "success": True,
+            "message": f"Test email sent to {current_user.email}",
+            "scheduler_status": "running" if email_scheduler.scheduler.running else "stopped"
+        }
+    else:
+        raise HTTPException(
+            status_code=500,
+            detail="Failed to send test email"
+        )
+
+
+@router.post("/admin/trigger-daily-emails")
+async def trigger_daily_emails_now(
+    current_user: User = Depends(get_current_active_user)
+):
+    """Manually trigger the daily email job (for testing)"""
+    from app.tasks.email_scheduler import email_scheduler
+    
+    try:
+        email_scheduler.run_job_now('daily_contract_emails')
+        return {
+            "success": True,
+            "message": "Daily email job triggered - check logs for results"
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+    @router.post("/admin/reset-last-email/{email}", tags=["Admin"])
+async def reset_last_email(email: str, db: Session = Depends(get_db)):
+    """Reset last_email_sent_at to 1 day ago for testing"""
+    from datetime import datetime, timedelta
+    
+    user = db.query(DBUser).filter(DBUser.email == email).first()
+    if not user:
+        raise HTTPException(status_code=404, detail="User not found")
+    
+    user.last_email_sent_at = datetime.utcnow() - timedelta(days=1)
+    db.commit()
+    
+    return {
+        "success": True,
+        "message": f"Reset last_email_sent_at for {email} to yesterday"
+    }
