@@ -12,7 +12,6 @@ from app.auth.login import router as login_router
 from app.database import init_db, engine
 from app.routers import company
 from contextlib import asynccontextmanager
-
 import logging
 
 # Configure logging
@@ -33,6 +32,7 @@ async def lifespan(app: FastAPI):
     logger.info("🚀 Starting FastAPI application...")
     
     # Start the email scheduler
+    email_scheduler = None
     try:
         from app.tasks.email_scheduler import email_scheduler
         email_scheduler.start()
@@ -68,12 +68,12 @@ async def lifespan(app: FastAPI):
     logger.info("🛑 Shutting down FastAPI application...")
     
     # Stop the email scheduler
-    try:
-        from app.tasks.email_scheduler import email_scheduler
-        email_scheduler.shutdown()
-        logger.info("✅ Email scheduler stopped")
-    except Exception as e:
-        logger.error(f"❌ Error stopping email scheduler: {e}")
+    if email_scheduler:
+        try:
+            email_scheduler.shutdown()
+            logger.info("✅ Email scheduler stopped")
+        except Exception as e:
+            logger.error(f"❌ Error stopping email scheduler: {e}")
     
     # Stop the CSV sync scheduler
     if csv_scheduler:
@@ -87,7 +87,7 @@ async def lifespan(app: FastAPI):
 # Initialize rate limiter
 limiter = Limiter(key_func=get_remote_address)
 
-# CREATE APP INSTANCE FIRST
+# CREATE APP INSTANCE
 app = FastAPI(
     title="Contract Discovery API",
     description="Government contract matching platform with email notifications",
@@ -99,9 +99,10 @@ app = FastAPI(
 origins = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
+    "https://bidboost.ai",
+    "https://www.bidboost.ai",
     "https://bidboost-mkjdofs0x-sunny-dilgeers-projects.vercel.app",
-    "https://*.vercel.app",  # Allow all Vercel preview deployments
-    "*",  # Temporarily allow all for testing
+    "https://*.vercel.app",
 ]
 
 app.add_middleware(
@@ -113,7 +114,7 @@ app.add_middleware(
     expose_headers=["*"],
 )
 
-# Add audit logging middleware (BEFORE routes, AFTER CORS)
+# Add audit logging middleware
 app.add_middleware(AuditMiddleware)
 
 # Add rate limiting middleware
@@ -121,20 +122,20 @@ app.state.limiter = limiter
 app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
 # Include all API routes
-app.include_router(router)  # Main API routes (query, ingest, conversations, etc.)
-app.include_router(register_router, prefix="/api/auth")  # Registration endpoint
-app.include_router(login_router, prefix="/api/auth")  # Login endpoint
-app.include_router(company.router)  # Company profile routes
-app.include_router(debug_router)  # Debug routes
+app.include_router(router)
+app.include_router(register_router, prefix="/api/auth")
+app.include_router(login_router, prefix="/api/auth")
+app.include_router(company.router)
+app.include_router(debug_router)
 
-logger.info("✓ Debug routes registered at /api/debug")
+logger.info("✓ All routes registered")
 
 
 @app.on_event("startup")
 async def startup_event():
     """Initialize database and log startup information"""
     logger.info("=" * 60)
-    logger.info("Legal RAG API Starting...")
+    logger.info("Contract Discovery API Starting...")
     logger.info(f"Environment: {settings.ENVIRONMENT}")
     logger.info(f"API Host: {settings.API_HOST}:{settings.API_PORT}")
     
@@ -154,7 +155,7 @@ async def startup_event():
 @app.on_event("shutdown")
 async def shutdown_event():
     """Cleanup on shutdown"""
-    logger.info("Legal RAG API shutting down...")
+    logger.info("Contract Discovery API shutting down...")
     try:
         engine.dispose()
         logger.info("✓ Database connections closed")
@@ -166,7 +167,7 @@ async def shutdown_event():
 async def root():
     """Root endpoint with API information"""
     return {
-        "message": "Legal RAG API - Document Intelligence for UK Law Firms",
+        "message": "Contract Discovery API - Government Contract Matching",
         "version": "1.0.0",
         "docs": "/docs",
         "redoc": "/redoc",
@@ -191,7 +192,7 @@ async def health_check():
     
     return {
         "status": "healthy" if db_status == "healthy" else "degraded",
-        "service": "legal-rag-api",
+        "service": "contract-discovery-api",
         "environment": settings.ENVIRONMENT,
         "version": "1.0.0",
         "database": db_status
@@ -254,6 +255,7 @@ async def trigger_email_job(job_id: str):
     job_id options:
     - daily_contract_emails
     - deadline_reminders
+    - sync_contracts_daily
     """
     try:
         from app.tasks.email_scheduler import email_scheduler
@@ -264,9 +266,69 @@ async def trigger_email_job(job_id: str):
             "note": "Check server logs for execution status"
         }
     except Exception as e:
+        logger.error(f"Failed to trigger job {job_id}: {e}")
         return {
             "success": False,
             "error": f"Failed to trigger job: {str(e)}"
+        }
+
+
+@app.post("/admin/test-email", tags=["Admin"])
+async def test_email_system():
+    """
+    Test email system - sends a test email to verify SendGrid setup.
+    No authentication required for testing.
+    """
+    try:
+        from app.services.email_service import email_service
+        
+        # Test SendGrid connection
+        if not email_service.test_connection():
+            return {
+                "success": False,
+                "error": "SendGrid API key not configured"
+            }
+        
+        # Send test email (hardcoded for testing)
+        test_contracts = [
+            {
+                "notice_id": "test-123",
+                "title": "Test Contract - IT Services",
+                "buyer_name": "Test Government Department",
+                "value": "£50,000",
+                "deadline": "2025-12-15",
+                "match_score": 87,
+                "match_reason": "This is a test email to verify your notification setup"
+            }
+        ]
+        
+        # Use a test email or get from environment
+        import os
+        test_email = os.getenv("TEST_EMAIL", "test@example.com")
+        
+        success = email_service.send_new_contracts_email(
+            to_email=test_email,
+            user_name="Test User",
+            contracts=test_contracts,
+            total_new_contracts=1
+        )
+        
+        if success:
+            return {
+                "success": True,
+                "message": f"Test email sent to {test_email}",
+                "note": "Check your inbox (and spam folder)"
+            }
+        else:
+            return {
+                "success": False,
+                "error": "Failed to send test email"
+            }
+    except Exception as e:
+        logger.error(f"Email test failed: {e}")
+        return {
+            "success": False,
+            "error": str(e)
         }
 
 
@@ -326,6 +388,34 @@ async def get_sync_status():
             "success": False,
             "error": str(e),
             "message": "Failed to get sync status"
+        }
+
+
+@app.get("/admin/scheduler-status", tags=["Admin"])
+async def get_scheduler_status():
+    """Get status of email scheduler and its jobs"""
+    try:
+        from app.tasks.email_scheduler import email_scheduler
+        
+        jobs = []
+        for job in email_scheduler.scheduler.get_jobs():
+            jobs.append({
+                "id": job.id,
+                "name": job.name,
+                "next_run": str(job.next_run_time) if job.next_run_time else "Not scheduled",
+                "trigger": str(job.trigger)
+            })
+        
+        return {
+            "success": True,
+            "scheduler_running": email_scheduler.scheduler.running,
+            "jobs": jobs
+        }
+    except Exception as e:
+        logger.error(f"Scheduler status error: {e}")
+        return {
+            "success": False,
+            "error": str(e)
         }
 
 
