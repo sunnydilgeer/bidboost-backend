@@ -33,13 +33,13 @@ async def lifespan(app: FastAPI):
     
     # TEMPORARILY DISABLED - causing Railway timeout
     # Start the email scheduler
-    # email_scheduler = None
-    # try:
-    #     from app.tasks.email_scheduler import email_scheduler
-    #     email_scheduler.start()
+    email_scheduler = None
+    try:
+        from app.tasks.email_scheduler import email_scheduler
+        email_scheduler.start()
     #     logger.info("✅ Email scheduler initialized and running")
-    # except Exception as e:
-    #     logger.error(f"❌ Failed to start email scheduler: {e}")
+        logger.info("✅ Email scheduler initialized and running")
+        logger.error(f"❌ Failed to start email scheduler: {e}")
     
     # Start the CSV contract sync service (non-blocking for Railway startup)
     csv_scheduler = None
@@ -407,16 +407,23 @@ async def get_scheduler_status():
         
         jobs = []
         for job in email_scheduler.scheduler.get_jobs():
+            next_run = email_scheduler.scheduler.get_job(job.id).next_run_time if email_scheduler.scheduler.get_job(job.id) else None
             jobs.append({
                 "id": job.id,
                 "name": job.name,
-                "next_run": str(job.next_run_time) if job.next_run_time else "Not scheduled",
+                "next_run": str(next_run) if next_run else "Not scheduled",
                 "trigger": str(job.trigger)
             })
         
         return {
             "success": True,
             "scheduler_running": email_scheduler.scheduler.running,
+            "jobs": jobs
+        }
+    except Exception as e:
+        logger.error(f"Scheduler status error: {e}")
+        return {
+            "success": False,
             "jobs": jobs
         }
     except Exception as e:
