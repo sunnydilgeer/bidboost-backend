@@ -1551,7 +1551,7 @@ async def save_contract(
         )
 
 
-@router.delete("/contracts/save/{notice_id}")
+@router.delete("/contracts/save/{notice_id:path}")  # ✅ Added :path to accept slashes
 async def unsave_contract(
     notice_id: str,
     current_user: User = Depends(get_current_active_user),
@@ -1559,21 +1559,55 @@ async def unsave_contract(
 ):
     """Remove a contract from user's saved list"""
     try:
+        logger.info(f"=" * 80)
+        logger.info(f"🗑️ DELETE REQUEST RECEIVED")
+        logger.info(f"Raw notice_id received: '{notice_id}'")
+        logger.info(f"notice_id type: {type(notice_id)}")
+        logger.info(f"notice_id length: {len(notice_id)}")
+        logger.info(f"User email: {current_user.email}")
+        logger.info(f"=" * 80)
+        
+        # Query for the saved contract
         saved_contract = db.query(SavedContract).filter(
             SavedContract.user_email == current_user.email,
             SavedContract.notice_id == notice_id
         ).first()
         
         if not saved_contract:
+            logger.warning(f"❌ Contract NOT FOUND in database")
+            
+            # Debug: Show all saved contracts for this user
+            all_saved = db.query(SavedContract).filter(
+                SavedContract.user_email == current_user.email
+            ).all()
+            
+            logger.info(f"📋 User has {len(all_saved)} total saved contracts:")
+            for sc in all_saved:
+                logger.info(f"  - ID: {sc.id}")
+                logger.info(f"    notice_id: '{sc.notice_id}'")
+                logger.info(f"    title: {sc.contract_title[:50]}...")
+                logger.info(f"    Match? {sc.notice_id == notice_id}")
+                logger.info(f"    Lengths: DB={len(sc.notice_id)}, Request={len(notice_id)}")
+                
+                # Character-by-character comparison
+                if sc.notice_id != notice_id:
+                    logger.info(f"    Character comparison:")
+                    for i, (c1, c2) in enumerate(zip(sc.notice_id, notice_id)):
+                        if c1 != c2:
+                            logger.info(f"      Position {i}: DB='{c1}' (ord={ord(c1)}) vs Request='{c2}' (ord={ord(c2)})")
+                logger.info("")
+            
             raise HTTPException(
                 status_code=status.HTTP_404_NOT_FOUND,
-                detail="Saved contract not found"
+                detail=f"Saved contract not found. Looking for: '{notice_id}'"
             )
         
+        # Delete the contract
+        logger.info(f"✅ Found saved contract ID: {saved_contract.id}")
         db.delete(saved_contract)
         db.commit()
         
-        logger.info(f"User {current_user.email} unsaved contract {notice_id}")
+        logger.info(f"✅ Successfully deleted contract {notice_id}")
         
         return {
             "success": True,
@@ -1583,7 +1617,7 @@ async def unsave_contract(
     except HTTPException:
         raise
     except Exception as e:
-        logger.error(f"Failed to unsave contract: {str(e)}")
+        logger.error(f"Failed to unsave contract: {str(e)}", exc_info=True)
         db.rollback()
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
