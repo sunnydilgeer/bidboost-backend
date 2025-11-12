@@ -31,14 +31,15 @@ async def lifespan(app: FastAPI):
     # ========== STARTUP ==========
     logger.info("🚀 Starting FastAPI application...")
     
+    # TEMPORARILY DISABLED - causing Railway timeout
     # Start the email scheduler
-    email_scheduler = None
-    try:
-        from app.tasks.email_scheduler import email_scheduler
-        email_scheduler.start()
-        logger.info("✅ Email scheduler initialized and running")
-    except Exception as e:
-        logger.error(f"❌ Failed to start email scheduler: {e}")
+    # email_scheduler = None
+    # try:
+    #     from app.tasks.email_scheduler import email_scheduler
+    #     email_scheduler.start()
+    #     logger.info("✅ Email scheduler initialized and running")
+    # except Exception as e:
+    #     logger.error(f"❌ Failed to start email scheduler: {e}")
     
     # Start the CSV contract sync service (non-blocking for Railway startup)
     csv_scheduler = None
@@ -67,14 +68,21 @@ async def lifespan(app: FastAPI):
     # ========== SHUTDOWN ==========
     logger.info("🛑 Shutting down FastAPI application...")
     
-    # Stop the email scheduler
-    if email_scheduler:
-        try:
-            email_scheduler.shutdown()
-            logger.info("✅ Email scheduler stopped")
-        except Exception as e:
-            logger.error(f"❌ Error stopping email scheduler: {e}")
+    # # Stop the email scheduler
+    # if email_scheduler:
+    #     try:
+    #         email_scheduler.shutdown()
+    #         logger.info("✅ Email scheduler stopped")
+    #     except Exception as e:
+    #         logger.error(f"❌ Error stopping email scheduler: {e}")
     
+    # Stop the CSV sync scheduler
+    if csv_scheduler:
+        try:
+            csv_scheduler.shutdown()
+            logger.info("✅ CSV sync scheduler stopped")
+        except Exception as e:
+            logger.error(f"❌ Error stopping CSV sync scheduler: {e}")   
     # Stop the CSV sync scheduler
     if csv_scheduler:
         try:
