@@ -1801,7 +1801,6 @@ async def test_email_system(
             detail="Failed to send test email"
         )
 
-
 @router.post("/admin/trigger-daily-emails")
 async def trigger_daily_emails_now(
     current_user: User = Depends(get_current_active_user)
@@ -1818,19 +1817,20 @@ async def trigger_daily_emails_now(
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-    @router.post("/admin/reset-last-email/{email}", tags=["Admin"])
-    async def reset_last_email(email: str, db: Session = Depends(get_db)):
-        """Reset last_email_sent_at to 1 day ago for testing"""
-        from datetime import datetime, timedelta
+
+@router.post("/admin/reset-last-email/{email}", tags=["Admin"])
+async def reset_last_email(email: str, db: Session = Depends(get_db)):
+    """Reset last_email_sent_at to 1 day ago for testing"""
+    from datetime import datetime, timedelta
     
-        user = db.query(DBUser).filter(DBUser.email == email).first()
-        if not user:
-            raise HTTPException(status_code=404, detail="User not found")
+    user = db.query(DBUser).filter(DBUser.email == email).first()
+    if not user:
+        raise HTTPException(status_code=404, detail="User not found")
     
-        user.last_email_sent_at = datetime.utcnow() - timedelta(days=1)
-        db.commit()
+    user.last_email_sent_at = datetime.utcnow() - timedelta(days=1)
+    db.commit()
     
-        return {
-            "success": True,
-            "message": f"Reset last_email_sent_at for {email} to yesterday"
+    return {
+        "success": True,
+        "message": f"Reset last_email_sent_at for {email} to yesterday"
     }
