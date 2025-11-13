@@ -107,11 +107,16 @@ origins = [
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=[
+        "http://localhost:3000",
+        "http://127.0.0.1:3000",
+        "https://bidboost-myencybps-sunny-dilgeers-projects.vercel.app",  # Add this line
+        # Add any other Vercel preview URLs if needed
+        "https://*.vercel.app",  # Or use wildcard for all Vercel deployments
+    ],
     allow_credentials=True,
-    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allow_methods=["*"],
     allow_headers=["*"],
-    expose_headers=["*"],
 )
 
 # Add audit logging middleware
