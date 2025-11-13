@@ -50,10 +50,12 @@ class ContractMatchScorer:
         # 1. Capability Matching (40% weight) - Semantic similarity
         capability_score = self._calculate_capability_score(contract, profile.capabilities)
         scores["capability_score"] = capability_score
-        if capability_score > 0.7:
+        if capability_score > 0.6:
             scores["match_reasons"].append(f"Strong capability match ({capability_score:.0%})")
-        elif capability_score > 0.5:
+        elif capability_score > 0.4:
             scores["match_reasons"].append(f"Good capability match ({capability_score:.0%})")
+        elif capability_score > 0.25:
+            scores["match_reasons"].append(f"Moderate capability match ({capability_score:.0%})")
         
         # 2. Past Win Matching (30% weight) - Similar contracts won
         past_win_score, win_reasons = self._calculate_past_win_score(contract, profile.past_wins)
