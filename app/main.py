@@ -31,8 +31,10 @@ async def lifespan(app: FastAPI):
     # ========== STARTUP ==========
     logger.info("🚀 Starting FastAPI application...")
     
-    # Start the email scheduler
     email_scheduler = None
+    csv_scheduler = None
+    
+    # Start the email scheduler
     try:
         from app.tasks.email_scheduler import email_scheduler
         email_scheduler.start()
@@ -40,23 +42,26 @@ async def lifespan(app: FastAPI):
     except Exception as e:
         logger.error(f"❌ Failed to start email scheduler: {e}")
     
-    # Start the CSV contract sync service (non-blocking for Railway startup)
-    csv_scheduler = None
+    # Start the CSV contract sync service (non-blocking)
     try:
         from app.tasks.csv_sync import setup_scheduler
         import asyncio
         
-        # Setup scheduler WITHOUT running initial sync (to avoid Railway timeout)
         csv_scheduler = setup_scheduler()
         csv_scheduler.start()
         
-        # Run initial sync in background after startup completes
+        # Run initial sync in background AFTER startup completes
         async def background_initial_sync():
-            await asyncio.sleep(5)  # Wait for app to fully start
-            from app.tasks.csv_sync import sync_contracts_from_csv
-            logger.info("🔄 Running initial CSV sync in background...")
-            await sync_contracts_from_csv()
+            try:
+                await asyncio.sleep(10)  # Wait 10 seconds for app to fully start
+                from app.tasks.csv_sync import sync_contracts_from_csv
+                logger.info("🔄 Running initial CSV sync in background...")
+                await sync_contracts_from_csv()
+                logger.info("✅ Initial CSV sync complete")
+            except Exception as e:
+                logger.error(f"❌ Background CSV sync failed: {e}")
         
+        # Fire and forget - don't await
         asyncio.create_task(background_initial_sync())
         logger.info("✅ CSV contract sync service initialized")
     except Exception as e:
@@ -65,7 +70,7 @@ async def lifespan(app: FastAPI):
     yield  # Application runs here
     
     # ========== SHUTDOWN ==========
-    logger.info("�� Shutting down FastAPI application...")
+    logger.info("🛑 Shutting down FastAPI application...")
     
     # Stop the email scheduler
     if email_scheduler:
@@ -92,31 +97,27 @@ app = FastAPI(
     title="Contract Discovery API",
     description="Government contract matching platform with email notifications",
     version="1.0.0",
-    lifespan=lifespan  
+    lifespan=lifespan
 )
 
-# CORS middleware - configured for development and production
-origins = [
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
-    "https://bidboost.ai",
-    "https://www.bidboost.ai",
-    "https://bidboost-mkjdofs0x-sunny-dilgeers-projects.vercel.app",
-    "https://*.vercel.app",
-]
-
+# ========== CORS CONFIGURATION ==========
+# Allow requests from your frontend domains
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
+        # Local development
         "http://localhost:3000",
         "http://127.0.0.1:3000",
-        "https://bidboost-myencybps-sunny-dilgeers-projects.vercel.app",  # Add this line
-        # Add any other Vercel preview URLs if needed
-        "https://*.vercel.app",  # Or use wildcard for all Vercel deployments
+        # Production Vercel deployment
+        "https://bidboost-myencybps-sunny-dilgeers-projects.vercel.app",
+        # Production domains (when ready)
+        "https://bidboost.ai",
+        "https://www.bidboost.ai",
     ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
+    expose_headers=["*"],  # Allow frontend to read all response headers
 )
 
 # Add audit logging middleware
@@ -126,7 +127,7 @@ app.add_middleware(AuditMiddleware)
 app.state.limiter = limiter
 app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
-# Include all API routes
+# ========== INCLUDE ROUTERS ==========
 app.include_router(router)
 app.include_router(register_router, prefix="/api/auth")
 app.include_router(login_router, prefix="/api/auth")
@@ -167,6 +168,8 @@ async def shutdown_event():
     except Exception as e:
         logger.error(f"Error closing database connections: {e}")
 
+
+# ========== ROOT ENDPOINTS ==========
 
 @app.get("/")
 async def root():
@@ -235,14 +238,14 @@ async def readiness_check():
         services["vector_db"] = f"not ready: {str(e)}"
         logger.error(f"Qdrant readiness check failed: {e}")
     
-    # Check Ollama
+    # Check Ollama (optional - might not be used if using OpenAI)
     try:
         async with httpx.AsyncClient(timeout=2.0) as client:
             response = await client.get(f"{settings.OLLAMA_URL}/api/tags")
             services["llm"] = "ready" if response.status_code == 200 else "not ready"
     except Exception as e:
         services["llm"] = f"not ready: {str(e)}"
-        logger.error(f"Ollama readiness check failed: {e}")
+        logger.warning(f"Ollama readiness check failed (this is OK if using OpenAI): {e}")
     
     all_ready = all(status == "ready" for status in services.values())
     
@@ -251,6 +254,8 @@ async def readiness_check():
         "services": services
     }
 
+
+# ========== ADMIN ENDPOINTS ==========
 
 @app.post("/admin/trigger-email-job/{job_id}", tags=["Admin"])
 async def trigger_email_job(job_id: str):
@@ -424,6 +429,8 @@ async def get_scheduler_status():
             "error": str(e)
         }
 
+
+# ========== MAIN ENTRY POINT ==========
 
 if __name__ == "__main__":
     import uvicorn
