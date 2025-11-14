@@ -102,22 +102,23 @@ app = FastAPI(
 
 # ========== CORS CONFIGURATION ==========
 # Allow requests from your frontend domains
+# ========== CORS CONFIGURATION ==========
+# Allow requests from your frontend domains
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         # Local development
         "http://localhost:3000",
         "http://127.0.0.1:3000",
-        # Production Vercel deployment
-        "https://bidboost-myencybps-sunny-dilgeers-projects.vercel.app",
-        # Production domains (when ready)
-        "https://bidboost.ai",
+        # Specific production domains
+        "https://bidboost-ooaqyryk4-sunny-dilgeers-projects.vercel.app",
         "https://www.bidboost.ai",
     ],
+    allow_origin_regex=r"https://.*\.vercel\.app",  # Regex for ALL Vercel deployments
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
-    expose_headers=["*"],  # Allow frontend to read all response headers
+    expose_headers=["*"],
 )
 
 # Add audit logging middleware
