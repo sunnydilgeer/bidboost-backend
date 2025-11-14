@@ -1865,7 +1865,7 @@ async def get_match_recommendations(
                 "capabilities_count": len(profile.capabilities) if profile.capabilities else 0,
                 "past_wins_count": len(profile.past_wins) if profile.past_wins else 0,
                 "preferences_set": profile.search_preference is not None,
-                "firm_name": profile.firm_name
+                "firm_name": profile.company_name
             }
         }
         
