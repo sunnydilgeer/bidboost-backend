@@ -1838,7 +1838,7 @@ async def reset_last_email(email: str, db: Session = Depends(get_db)):
 @router.get("/user/match-improvement-recommendations")
 async def get_match_recommendations(
     db: Session = Depends(get_db),
-    current_user: User = Depends(get_current_user)
+    current_user: User = Depends(get_current_active_user)
 ):
     """Get personalized recommendations to improve match scores."""
     try:
