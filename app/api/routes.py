@@ -1195,7 +1195,7 @@ async def search_contracts(
                 if match_scores:
                     contract_result.match_scores = match_scores
                     contract_result.total_match_score = match_scores["total_score"]
-                    contract_result.match_reasons = match_scores.get("match_reasons", [])  # 🔧 BUG FIX
+                    contract_result.match_reasons = match_scores.get("match_reasons", [])  
                     search_results.append(contract_result)
                 else:
                     # Contract filtered out by hard filters (value range, excluded keywords)
@@ -1834,3 +1834,41 @@ async def reset_last_email(email: str, db: Session = Depends(get_db)):
         "success": True,
         "message": f"Reset last_email_sent_at for {email} to yesterday"
     }
+
+@router.get("/user/match-improvement-recommendations")
+async def get_match_recommendations(
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user)
+):
+    """Get personalized recommendations to improve match scores."""
+    try:
+        # Initialize scorer with db and qdrant client
+        scorer = ContractMatchScorer(db, qdrant_client)
+        
+        # Generate recommendations
+        recommendations = scorer.get_improvement_recommendations(current_user.firm_id)
+        
+        # Get current profile counts for display
+        profile = db.query(CompanyProfile).filter(
+            CompanyProfile.firm_id == current_user.firm_id
+        ).first()
+        
+        if not profile:
+            raise HTTPException(status_code=404, detail="Company profile not found")
+        
+        return {
+            "recommendations": recommendations,
+            "current_profile": {
+                "capabilities_count": len(profile.capabilities) if profile.capabilities else 0,
+                "past_wins_count": len(profile.past_wins) if profile.past_wins else 0,
+                "preferences_set": profile.search_preference is not None,
+                "firm_name": profile.firm_name
+            }
+        }
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error generating match recommendations: {str(e)}", exc_info=True)
+        raise HTTPException(status_code=500, detail=f"Failed to generate recommendations: {str(e)}")
+
