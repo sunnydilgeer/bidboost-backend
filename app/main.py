@@ -102,8 +102,6 @@ app = FastAPI(
 
 # ========== CORS CONFIGURATION ==========
 # Allow requests from your frontend domains
-# ========== CORS CONFIGURATION ==========
-# Allow requests from your frontend domains
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
