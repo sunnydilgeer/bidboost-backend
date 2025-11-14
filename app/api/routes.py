@@ -1842,8 +1842,11 @@ async def get_match_recommendations(
 ):
     """Get personalized recommendations to improve match scores."""
     try:
+        # Use the same pattern as other endpoints
+        vector_store = get_vector_store()  # ← Get VectorStoreService
+        
         # Initialize scorer with db and qdrant client
-        scorer = ContractMatchScorer(db, qdrant_client)
+        scorer = ContractMatchScorer(db, vector_store.client)  # ← Use .client property
         
         # Generate recommendations
         recommendations = scorer.get_improvement_recommendations(current_user.firm_id)
@@ -1871,4 +1874,3 @@ async def get_match_recommendations(
     except Exception as e:
         logger.error(f"Error generating match recommendations: {str(e)}", exc_info=True)
         raise HTTPException(status_code=500, detail=f"Failed to generate recommendations: {str(e)}")
-
