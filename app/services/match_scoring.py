@@ -22,152 +22,152 @@ class ContractMatchScorer:
         self.qdrant = qdrant_client
 
     def get_improvement_recommendations(
-    self, 
-    firm_id: str
-) -> List[Dict[str, any]]:
-    """Generate actionable recommendations to improve match scores."""
-    
-    # Load company profile with all relationships
-    profile = self.db.query(CompanyProfile).filter(
-        CompanyProfile.firm_id == firm_id
-    ).first()
-    
-    if not profile:
-        logger.warning(f"No profile found for firm {firm_id}")
-        return []
-    
-    recommendations = []
-    
-    # 1. PAST WINS ANALYSIS (30% weight potential)
-    past_wins_count = len(profile.past_wins) if profile.past_wins else 0
-    
-    if past_wins_count == 0:
-        recommendations.append({
-            "category": "past_wins",
-            "current_score": 0.0,
-            "potential_score": 30.0,
-            "priority": "high",
-            "action": "Add 1-2 similar past contract wins to demonstrate relevant experience",
-            "impact": "+30% to total match score",
-            "icon": "🎯",
-            "specific_actions": [
-                "Add a past win in your main capability area",
-                "Include contract value and buyer organization name",
-                "Focus on government/public sector contracts"
-            ]
-        })
-    elif past_wins_count < 3:
-        potential_boost = (3 - past_wins_count) * 10
-        recommendations.append({
-            "category": "past_wins",
-            "current_score": past_wins_count * 10.0,
-            "potential_score": 30.0,
-            "priority": "medium",
-            "action": f"Add {3 - past_wins_count} more past wins to strengthen your track record",
-            "impact": f"+{potential_boost}% potential boost",
-            "icon": "📈",
-            "specific_actions": [
-                "Add wins from different government buyers",
-                "Include recent contracts (last 2-3 years)",
-                f"Aim for at least 3 past wins for credibility"
-            ]
-        })
-    
-    # 2. CAPABILITIES ANALYSIS (40% weight potential)
-    capabilities_count = len(profile.capabilities) if profile.capabilities else 0
-    
-    if capabilities_count < 3:
-        recommendations.append({
-            "category": "capabilities",
-            "current_score": capabilities_count * 10.0,
-            "potential_score": 40.0,
-            "priority": "high" if capabilities_count < 2 else "medium",
-            "action": f"Add {max(3 - capabilities_count, 1)} domain-specific capabilities",
-            "impact": f"+{min(15, (3 - capabilities_count) * 5)}% potential boost",
-            "icon": "💡",
-            "specific_actions": [
-                "Use specific terminology like 'Fleet Management Systems' instead of 'IT Services'",
-                "Add 'Digital Transformation for Government' or 'Cloud Infrastructure Migration'",
-                "Match language from contracts you're interested in"
-            ]
-        })
-    elif capabilities_count < 5:
-        # Check if capabilities are too generic
-        generic_keywords = ["it", "software", "services", "solutions", "general", "consulting"]
-        generic_count = 0
+        self, 
+        firm_id: str
+    ) -> List[Dict[str, any]]:
+        """Generate actionable recommendations to improve match scores."""
         
-        for cap in profile.capabilities:
-            cap_text_lower = cap.capability_text.lower()
-            if any(keyword in cap_text_lower for keyword in generic_keywords):
-                generic_count += 1
+        # Load company profile with all relationships
+        profile = self.db.query(CompanyProfile).filter(
+            CompanyProfile.firm_id == firm_id
+        ).first()
         
-        if generic_count > capabilities_count / 2:
+        if not profile:
+            logger.warning(f"No profile found for firm {firm_id}")
+            return []
+        
+        recommendations = []
+        
+        # 1. PAST WINS ANALYSIS (30% weight potential)
+        past_wins_count = len(profile.past_wins) if profile.past_wins else 0
+        
+        if past_wins_count == 0:
             recommendations.append({
-                "category": "capabilities",
-                "current_score": capabilities_count * 8.0,
-                "potential_score": 40.0,
-                "priority": "medium",
-                "action": "Make capabilities more specific to improve semantic matching",
-                "impact": "+10-15% better relevance scores",
-                "icon": "🎨",
+                "category": "past_wins",
+                "current_score": 0.0,
+                "potential_score": 30.0,
+                "priority": "high",
+                "action": "Add 1-2 similar past contract wins to demonstrate relevant experience",
+                "impact": "+30% to total match score",
+                "icon": "🎯",
                 "specific_actions": [
-                    "Replace 'IT Services' → 'Cybersecurity Auditing & Compliance'",
-                    "Replace 'Software Development' → 'GOV.UK Service Standard Development'",
-                    "Use exact phrases from top-scoring contracts"
+                    "Add a past win in your main capability area",
+                    "Include contract value and buyer organization name",
+                    "Focus on government/public sector contracts"
                 ]
             })
-    
-    # 3. SEARCH PREFERENCES ANALYSIS (30% weight optimization)
-    prefs = profile.search_preference
-    missing_prefs = []
-    potential_impact = 0
-    
-    if not prefs:
-        recommendations.append({
-            "category": "preferences",
-            "current_score": 0.0,
-            "potential_score": 30.0,
-            "priority": "low",
-            "action": "Set search preferences to filter and focus results",
-            "impact": "+30% better targeted results",
-            "icon": "⚙️",
-            "specific_actions": [
-                "Set minimum/maximum contract values",
-                "Add preferred regions (e.g., London, South East)",
-                "Add keywords for your specialization"
-            ]
-        })
-    else:
-        if not prefs.min_contract_value and not prefs.max_contract_value:
-            missing_prefs.append("contract value range")
-            potential_impact += 8
+        elif past_wins_count < 3:
+            potential_boost = (3 - past_wins_count) * 10
+            recommendations.append({
+                "category": "past_wins",
+                "current_score": past_wins_count * 10.0,
+                "potential_score": 30.0,
+                "priority": "medium",
+                "action": f"Add {3 - past_wins_count} more past wins to strengthen your track record",
+                "impact": f"+{potential_boost}% potential boost",
+                "icon": "📈",
+                "specific_actions": [
+                    "Add wins from different government buyers",
+                    "Include recent contracts (last 2-3 years)",
+                    f"Aim for at least 3 past wins for credibility"
+                ]
+            })
         
-        if not prefs.preferred_regions or len(prefs.preferred_regions) == 0:
-            missing_prefs.append("preferred regions")
-            potential_impact += 10
+        # 2. CAPABILITIES ANALYSIS (40% weight potential)
+        capabilities_count = len(profile.capabilities) if profile.capabilities else 0
         
-        if not prefs.keywords or len(prefs.keywords) == 0:
-            missing_prefs.append("target keywords")
-            potential_impact += 7
+        if capabilities_count < 3:
+            recommendations.append({
+                "category": "capabilities",
+                "current_score": capabilities_count * 10.0,
+                "potential_score": 40.0,
+                "priority": "high" if capabilities_count < 2 else "medium",
+                "action": f"Add {max(3 - capabilities_count, 1)} domain-specific capabilities",
+                "impact": f"+{min(15, (3 - capabilities_count) * 5)}% potential boost",
+                "icon": "💡",
+                "specific_actions": [
+                    "Use specific terminology like 'Fleet Management Systems' instead of 'IT Services'",
+                    "Add 'Digital Transformation for Government' or 'Cloud Infrastructure Migration'",
+                    "Match language from contracts you're interested in"
+                ]
+            })
+        elif capabilities_count < 5:
+            # Check if capabilities are too generic
+            generic_keywords = ["it", "software", "services", "solutions", "general", "consulting"]
+            generic_count = 0
+            
+            for cap in profile.capabilities:
+                cap_text_lower = cap.capability_text.lower()
+                if any(keyword in cap_text_lower for keyword in generic_keywords):
+                    generic_count += 1
+            
+            if generic_count > capabilities_count / 2:
+                recommendations.append({
+                    "category": "capabilities",
+                    "current_score": capabilities_count * 8.0,
+                    "potential_score": 40.0,
+                    "priority": "medium",
+                    "action": "Make capabilities more specific to improve semantic matching",
+                    "impact": "+10-15% better relevance scores",
+                    "icon": "🎨",
+                    "specific_actions": [
+                        "Replace 'IT Services' → 'Cybersecurity Auditing & Compliance'",
+                        "Replace 'Software Development' → 'GOV.UK Service Standard Development'",
+                        "Use exact phrases from top-scoring contracts"
+                    ]
+                })
         
-        if missing_prefs:
+        # 3. SEARCH PREFERENCES ANALYSIS (30% weight optimization)
+        prefs = profile.search_preference
+        missing_prefs = []
+        potential_impact = 0
+        
+        if not prefs:
             recommendations.append({
                 "category": "preferences",
-                "current_score": 30.0 - potential_impact,
+                "current_score": 0.0,
                 "potential_score": 30.0,
                 "priority": "low",
-                "action": f"Complete your search preferences: {', '.join(missing_prefs)}",
-                "impact": f"+{potential_impact}% optimization",
-                "icon": "🎯",
-                "specific_actions": [f"Add {pref}" for pref in missing_prefs]
+                "action": "Set search preferences to filter and focus results",
+                "impact": "+30% better targeted results",
+                "icon": "⚙️",
+                "specific_actions": [
+                    "Set minimum/maximum contract values",
+                    "Add preferred regions (e.g., London, South East)",
+                    "Add keywords for your specialization"
+                ]
             })
-    
-    # Sort by priority: high → medium → low
-    priority_order = {"high": 0, "medium": 1, "low": 2}
-    recommendations.sort(key=lambda x: priority_order[x["priority"]])
-    
-    logger.info(f"Generated {len(recommendations)} recommendations for firm {firm_id}")
-    return recommendations
+        else:
+            if not prefs.min_contract_value and not prefs.max_contract_value:
+                missing_prefs.append("contract value range")
+                potential_impact += 8
+            
+            if not prefs.preferred_regions or len(prefs.preferred_regions) == 0:
+                missing_prefs.append("preferred regions")
+                potential_impact += 10
+            
+            if not prefs.keywords or len(prefs.keywords) == 0:
+                missing_prefs.append("target keywords")
+                potential_impact += 7
+            
+            if missing_prefs:
+                recommendations.append({
+                    "category": "preferences",
+                    "current_score": 30.0 - potential_impact,
+                    "potential_score": 30.0,
+                    "priority": "low",
+                    "action": f"Complete your search preferences: {', '.join(missing_prefs)}",
+                    "impact": f"+{potential_impact}% optimization",
+                    "icon": "🎯",
+                    "specific_actions": [f"Add {pref}" for pref in missing_prefs]
+                })
+        
+        # Sort by priority: high → medium → low
+        priority_order = {"high": 0, "medium": 1, "low": 2}
+        recommendations.sort(key=lambda x: priority_order[x["priority"]])
+        
+        logger.info(f"Generated {len(recommendations)} recommendations for firm {firm_id}")
+        return recommendations
     
     def score_contract(self, contract: Contract, firm_id: str) -> Optional[Dict]:
         """
