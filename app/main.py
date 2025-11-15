@@ -108,7 +108,12 @@ app.add_middleware(
         # Local development
         "http://localhost:3000",
         "http://127.0.0.1:3000",
-        # Specific production domains
+        
+        # Production
+        "https://bidmatch.co",
+        "https://www.bidmatch.co",  # (optional but recommended)
+        
+        # Old/other domains
         "https://bidboost-ooaqyryk4-sunny-dilgeers-projects.vercel.app",
         "https://www.bidboost.ai",
     ],
