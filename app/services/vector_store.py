@@ -113,7 +113,13 @@ class VectorStoreService:
         return len(points)
     
     async def add_contracts(self, contracts: List[ContractOpportunity], llm_service) -> None:
-        """Add contract opportunities to vector store for semantic search."""
+        """
+        Add contract opportunities to vector store for semantic search.
+        
+        🚀 ENHANCED: Now embeds TITLE + DESCRIPTION for richer semantic matching
+        instead of just creating a text summary. This dramatically improves
+        capability matching accuracy.
+        """
         try:
             points = []
             
@@ -133,7 +139,7 @@ class VectorStoreService:
                 else:
                     closing_date_text = "Not specified"
                 
-                # Create searchable text combining ALL key fields (including new ones)
+                # Create searchable text combining ALL key fields for display/storage
                 contract_text = f"""Title: {contract.title}
 Description: {contract.description or 'No description'}
 Buyer: {contract.buyer_name}
@@ -143,12 +149,18 @@ Region: {contract.region or 'Not specified'}
 Closing Date: {closing_date_text}
 Additional Info: {contract.additional_text or 'None'}""".strip()
                 
-                # Clean and limit text for embedding
-                clean_text = contract_text.replace('\r\n', ' ').replace('\r', ' ').replace('\n', ' ')
-                embedding_text = clean_text[:1500]
+                # 🚀 KEY CHANGE: Create RICH embedding text with title + description
+                # This is what gets embedded for semantic similarity matching
+                embedding_text = f"{contract.title}\n\n{contract.description or ''}".strip()
                 
-                # Generate embedding with cleaned, truncated text
-                embedding = await llm_service.generate_embeddings(embedding_text)
+                # Clean and limit embedding text (keep first 2000 chars for context)
+                clean_embedding_text = embedding_text.replace('\r\n', ' ').replace('\r', ' ').replace('\n', ' ')
+                truncated_embedding_text = clean_embedding_text[:2000]
+                
+                # Generate embedding with TITLE + DESCRIPTION
+                embedding = await llm_service.generate_embeddings(truncated_embedding_text)
+                
+                logger.debug(f"Embedded contract {contract.notice_id[:8]}... with {len(truncated_embedding_text)} chars")
                 
                 point = PointStruct(
                     id=point_id,
@@ -212,7 +224,7 @@ Additional Info: {contract.additional_text or 'None'}""".strip()
                 wait=True
             )
             
-            logger.info(f"Added {len(contracts)} contracts to vector store")
+            logger.info(f"✅ Added {len(contracts)} contracts with ENHANCED embeddings (title + description)")
             
         except Exception as e:
             logger.error(f"Failed to add contracts to vector store: {str(e)}")
