@@ -53,7 +53,7 @@ class VectorStoreService:
                     distance=Distance.COSINE
                 ),
                 optimizers_config=models.OptimizersConfigDiff(
-                    indexing_threshold=1000  # NEW: Changed from default 10000
+                    indexing_threshold=1000
                 )
             )
             logger.info(f"Created collection: {self.collection_name}")
@@ -67,7 +67,6 @@ class VectorStoreService:
             )
             logger.info(f"Created index on document_type field")
         except Exception as e:
-            # Index might already exist
             logger.debug(f"Index creation skipped: {e}")
     
     async def add_documents(self, documents: List[Dict], llm_service):
@@ -107,7 +106,7 @@ class VectorStoreService:
         self.client.upsert(
             collection_name=self.collection_name,
             points=points,
-            wait=True  # ← ADD THIS to ensure data is committed before returning
+            wait=True
         )
         
         logger.info(f"Added {len(points)} legal document chunks to vector store")
@@ -121,6 +120,7 @@ class VectorStoreService:
             for contract in contracts:
                 # Generate deterministic UUID from notice_id to prevent duplicates
                 point_id = str(uuid.UUID(hashlib.md5(contract.notice_id.encode()).hexdigest()))
+                
                 # Safe value formatting
                 if contract.value is not None:
                     value_text = f"£{contract.value:,.2f}"
@@ -133,37 +133,69 @@ class VectorStoreService:
                 else:
                     closing_date_text = "Not specified"
                 
-                # Create searchable text combining key fields
+                # Create searchable text combining ALL key fields (including new ones)
                 contract_text = f"""Title: {contract.title}
 Description: {contract.description or 'No description'}
 Buyer: {contract.buyer_name}
 Value: {value_text}
 CPV Codes: {', '.join(contract.cpv_codes) if contract.cpv_codes else 'None'}
 Region: {contract.region or 'Not specified'}
-Closing Date: {closing_date_text}""".strip()
+Closing Date: {closing_date_text}
+Additional Info: {contract.additional_text or 'None'}""".strip()
                 
                 # Clean and limit text for embedding
                 clean_text = contract_text.replace('\r\n', ' ').replace('\r', ' ').replace('\n', ' ')
-                embedding_text = clean_text[:1500]  # Limit to 1500 characters
+                embedding_text = clean_text[:1500]
                 
                 # Generate embedding with cleaned, truncated text
                 embedding = await llm_service.generate_embeddings(embedding_text)
                 
                 point = PointStruct(
-                    id=point_id,  # Deterministic UUID prevents duplicates
+                    id=point_id,
                     vector=embedding,
                     payload={
-                        "content": contract_text,  # Store full text for display
+                        "content": contract_text,
                         "document_type": "contract_opportunity",
                         "metadata": {
+                            # Core fields
                             "notice_id": contract.notice_id,
                             "title": contract.title,
+                            "description": contract.description,
                             "buyer_name": contract.buyer_name,
+                            
+                            # Dates
                             "published_date": contract.published_date.isoformat() if contract.published_date else None,
                             "closing_date": contract.closing_date.isoformat() if contract.closing_date else None,
+                            "closing_time": contract.closing_time,
+                            "start_date": contract.start_date.isoformat() if contract.start_date else None,
+                            "end_date": contract.end_date.isoformat() if contract.end_date else None,
+                            
+                            # Financial
                             "value": contract.value,
+                            "value_low": contract.value_low,
+                            "value_high": contract.value_high,
+                            
+                            # Location
+                            "region": contract.region,
+                            "postcode": contract.postcode,
+                            
+                            # Classification
                             "cpv_codes": contract.cpv_codes,
-                            "region": contract.region
+                            "notice_type": contract.notice_type,
+                            
+                            # Contact information
+                            "contact_name": contract.contact_name,
+                            "contact_email": contract.contact_email,
+                            "contact_phone": contract.contact_phone,
+                            "contact_address": contract.contact_address,
+                            "contact_website": contract.contact_website,
+                            
+                            # Additional metadata
+                            "additional_text": contract.additional_text,
+                            "attachments": contract.attachments,
+                            "links": contract.links,
+                            "suitable_for_sme": contract.suitable_for_sme,
+                            "suitable_for_vco": contract.suitable_for_vco
                         },
                         # Top-level fields for easy filtering
                         "notice_id": contract.notice_id,
@@ -177,8 +209,7 @@ Closing Date: {closing_date_text}""".strip()
             self.client.upsert(
                 collection_name=self.collection_name,
                 points=points,
-                wait=True  # ← ADD THIS to ensure data is committed before returning
-
+                wait=True
             )
             
             logger.info(f"Added {len(contracts)} contracts to vector store")
@@ -255,7 +286,7 @@ Closing Date: {closing_date_text}""".strip()
         formatted_results = []
         for result in results:
             formatted_result = {
-                "id": result.id,  # Qdrant point ID
+                "id": result.id,
                 "content": result.payload["content"],
                 "metadata": result.payload.get("metadata", {}),
                 "score": result.score,

@@ -183,15 +183,48 @@ class ErrorResponse(BaseModel):
 
 class ContractOpportunity(BaseModel):
     """Model for a contract opportunity from Contracts Finder"""
+    # Core identification
     notice_id: str = Field(..., description="Unique notice identifier")
     title: str = Field(..., description="Contract title")
-    description: Optional[str] = Field(None, description="Contract description")
+    description: Optional[str] = Field(None, description="Full contract description/scope")
+    
+    # Buyer information
     buyer_name: str = Field(..., description="Purchasing organization")
+    
+    # Dates
     published_date: datetime = Field(..., description="Publication date")
-    closing_date: Optional[datetime] = Field(None, description="Application deadline")
-    value: Optional[float] = Field(None, description="Contract value")
-    cpv_codes: Optional[List[str]] = Field(default_factory=list, description="CPV classification codes")
+    closing_date: Optional[datetime] = Field(None, description="Application deadline date")
+    closing_time: Optional[str] = Field(None, description="Application deadline time (e.g., '12:00', '17:00')")
+    start_date: Optional[datetime] = Field(None, description="Expected contract start date")
+    end_date: Optional[datetime] = Field(None, description="Expected contract end date")
+    
+    # Financial
+    value: Optional[float] = Field(None, description="Contract value (low estimate)")
+    value_low: Optional[float] = Field(None, description="Minimum contract value")
+    value_high: Optional[float] = Field(None, description="Maximum contract value")
+    
+    # Location
     region: Optional[str] = Field(None, description="Geographic region")
+    postcode: Optional[str] = Field(None, description="Contract location postcode")
+    
+    # Classification
+    cpv_codes: Optional[List[str]] = Field(default_factory=list, description="CPV classification codes")
+    notice_type: Optional[str] = Field(None, description="Type of notice (Contract, Award, etc.)")
+    
+    # Contact information
+    contact_name: Optional[str] = Field(None, description="Contact person name")
+    contact_email: Optional[str] = Field(None, description="Contact email address")
+    contact_phone: Optional[str] = Field(None, description="Contact telephone")
+    contact_address: Optional[str] = Field(None, description="Full contact address")
+    contact_website: Optional[str] = Field(None, description="Contact website URL")
+    
+    # Additional metadata
+    additional_text: Optional[str] = Field(None, description="Additional context (funding sources, etc.)")
+    attachments: Optional[str] = Field(None, description="Links to tender documents")
+    links: Optional[str] = Field(None, description="Related URLs")
+    suitable_for_sme: Optional[bool] = Field(None, description="Suitable for SMEs")
+    suitable_for_vco: Optional[bool] = Field(None, description="Suitable for VCOs")
+
 
 class ContractSyncResponse(BaseModel):
     """Response for contract sync operation"""
@@ -229,12 +262,31 @@ class ContractSearchResult(BaseModel):
     value: Optional[float]
     region: Optional[str]
     closing_date: Optional[str]
-    score: float  # Semantic similarity score
+    score: float
     
-    # Personalized match scoring fields
+    # NEW FIELDS - Add these
+    closing_time: Optional[str] = None
+    start_date: Optional[str] = None
+    end_date: Optional[str] = None
+    value_low: Optional[float] = None
+    value_high: Optional[float] = None
+    postcode: Optional[str] = None
+    notice_type: Optional[str] = None
+    contact_name: Optional[str] = None
+    contact_email: Optional[str] = None
+    contact_phone: Optional[str] = None
+    contact_address: Optional[str] = None
+    contact_website: Optional[str] = None
+    additional_text: Optional[str] = None
+    attachments: Optional[str] = None
+    links: Optional[str] = None
+    suitable_for_sme: Optional[bool] = None
+    suitable_for_vco: Optional[bool] = None
+    
+    # Match scoring fields
     match_scores: Optional[Dict[str, Any]] = None
     total_match_score: Optional[float] = None
-    match_reasons: Optional[List[str]] = None  # 🔧 ADDED: For "Why this matches" tags
+    match_reasons: Optional[List[str]] = None
     
     class Config:
         from_attributes = True
