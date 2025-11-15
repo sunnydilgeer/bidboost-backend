@@ -106,11 +106,12 @@ class CSVContractProcessor:
             logger.warning(f"⚠️ Could not parse value: {value_str}")
             return None
     
-    def _clean_text(self, text: Optional[str]) -> str:
+    def _clean_text(self, text: Optional[str]) -> Optional[str]:
         """Clean text fields (remove excess whitespace, etc.)"""
         if not text:
-            return ""
-        return " ".join(text.strip().split())
+            return None
+        cleaned = " ".join(text.strip().split())
+        return cleaned if cleaned else None
     
     def _parse_cpv_codes(self, cpv_str: Optional[str]) -> List[str]:
         """Parse CPV codes string into list (matches API format)"""
@@ -121,13 +122,26 @@ class CSVContractProcessor:
         codes = cpv_str.replace(";", ",").split(",")
         return [code.strip() for code in codes if code.strip()]
     
+    def _parse_boolean(self, value_str: Optional[str]) -> Optional[bool]:
+        """Parse boolean values from CSV (Yes/No, True/False, etc.)"""
+        if not value_str or value_str.strip() == "":
+            return None
+        
+        value_str = value_str.strip().lower()
+        if value_str in ("yes", "true", "1", "y"):
+            return True
+        elif value_str in ("no", "false", "0", "n"):
+            return False
+        
+        return None
+    
     def row_to_contract(self, row: dict) -> Optional[ContractOpportunity]:
         """
         Convert CSV row to ContractOpportunity object.
         FILTERS: Status="Open" + closing_date > now
         """
         try:
-            # FILTER 1: Only "Open" status (matches API "active" filter)
+            # FILTER 1: Only "Open" status
             status = row.get("Status", "").strip()
             if status.lower() != "open":
                 logger.debug(f"Skipping non-open: {row.get('Notice Identifier')} (status: {status})")
@@ -136,24 +150,26 @@ class CSVContractProcessor:
             # Parse dates
             published_date = self._parse_date(row.get("Published Date"))
             closing_date = self._parse_date(row.get("Closing Date"))
+            start_date = self._parse_date(row.get("Start Date"))
+            end_date = self._parse_date(row.get("End Date"))
             
-            # Skip if no closing date (invalid contract)
+            # Skip if no closing date
             if not closing_date:
                 logger.debug(f"Skipping - no closing date: {row.get('Notice Identifier')}")
                 return None
             
-            # FILTER 2: Skip closed contracts (matches API filter)
+            # FILTER 2: Skip closed contracts
             now = datetime.now(timezone.utc)
             if closing_date < now:
                 logger.debug(f"Skipping closed: {row.get('Notice Identifier')} (closed: {closing_date.date()})")
                 return None
             
-            # Skip if no published date (schema requires it)
+            # Skip if no published date
             if not published_date:
                 logger.debug(f"Skipping - no published date: {row.get('Notice Identifier')}")
                 return None
             
-            # Parse value (prioritize Value Low, fallback to Value High)
+            # Parse values
             value_low = self._parse_value(row.get("Value Low"))
             value_high = self._parse_value(row.get("Value High"))
             value = value_low if value_low else value_high
@@ -161,17 +177,61 @@ class CSVContractProcessor:
             # Parse CPV codes
             cpv_codes = self._parse_cpv_codes(row.get("Cpv Codes"))
             
-            # Build ContractOpportunity (matches API schema exactly)
+            # Parse boolean fields
+            suitable_for_sme = self._parse_boolean(row.get("Suitable for SME"))
+            suitable_for_vco = self._parse_boolean(row.get("Suitable for VCO"))
+            
+            # Build full contact address from multiple fields
+            contact_address_parts = [
+                row.get("Contact Address 1", ""),
+                row.get("Contact Address 2", ""),
+                row.get("Contact Town", ""),
+                row.get("Contact Postcode", ""),
+                row.get("Contact Country", "")
+            ]
+            contact_address = ", ".join([p.strip() for p in contact_address_parts if p and p.strip()])
+            
+            # Build ContractOpportunity with ALL fields
             contract = ContractOpportunity(
-                notice_id=self._clean_text(row.get("Notice Identifier")),
-                title=self._clean_text(row.get("Title")),
+                # Core fields
+                notice_id=self._clean_text(row.get("Notice Identifier")) or "UNKNOWN",
+                title=self._clean_text(row.get("Title")) or "Untitled Contract",
                 description=self._clean_text(row.get("Description")),
                 buyer_name=self._clean_text(row.get("Organisation Name")) or "Unknown Buyer",
+                
+                # Dates
                 published_date=published_date,
                 closing_date=closing_date,
+                closing_time=self._clean_text(row.get("Closing Time")),
+                start_date=start_date,
+                end_date=end_date,
+                
+                # Financial
                 value=value,
+                value_low=value_low,
+                value_high=value_high,
+                
+                # Location
                 region=self._clean_text(row.get("Region")),
-                cpv_codes=cpv_codes
+                postcode=self._clean_text(row.get("Postcode")),
+                
+                # Classification
+                cpv_codes=cpv_codes,
+                notice_type=self._clean_text(row.get("Notice Type")),
+                
+                # Contact information
+                contact_name=self._clean_text(row.get("Contact Name")),
+                contact_email=self._clean_text(row.get("Contact Email")),
+                contact_phone=self._clean_text(row.get("Contact Telephone")),
+                contact_address=contact_address if contact_address else None,
+                contact_website=self._clean_text(row.get("Contact Website")),
+                
+                # Additional metadata
+                additional_text=self._clean_text(row.get("Additional Text")),
+                attachments=self._clean_text(row.get("Attachments")),
+                links=self._clean_text(row.get("Links")),
+                suitable_for_sme=suitable_for_sme,
+                suitable_for_vco=suitable_for_vco
             )
             
             return contract
@@ -221,8 +281,12 @@ async def main():
             print(f"\n📋 Example contract:")
             print(f"  Title: {contracts[0].title}")
             print(f"  Buyer: {contracts[0].buyer_name}")
+            print(f"  Description: {contracts[0].description[:100] if contracts[0].description else 'N/A'}...")
             print(f"  Closing: {contracts[0].closing_date}")
+            print(f"  Closing Time: {contracts[0].closing_time or 'N/A'}")
             print(f"  Value: £{contracts[0].value:,.2f}" if contracts[0].value else "  Value: N/A")
+            print(f"  Contact: {contracts[0].contact_name or 'N/A'} ({contracts[0].contact_email or 'N/A'})")
+            print(f"  SME Suitable: {contracts[0].suitable_for_sme}")
     finally:
         await processor.close()
 

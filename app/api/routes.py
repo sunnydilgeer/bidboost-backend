@@ -1169,7 +1169,25 @@ async def search_contracts(
                 value=result.get("value"),
                 region=result.get("region"),
                 closing_date=metadata.get("closing_date"),
-                score=result.get("score", 0.0)
+                score=result.get("score", 0.0),
+
+                closing_time=metadata.get("closing_time"),
+                start_date=metadata.get("start_date"),
+                end_date=metadata.get("end_date"),
+                value_low=metadata.get("value_low"),
+                value_high=metadata.get("value_high"),
+                postcode=metadata.get("postcode"),
+                notice_type=metadata.get("notice_type"),
+                contact_name=metadata.get("contact_name"),
+                contact_email=metadata.get("contact_email"),
+                contact_phone=metadata.get("contact_phone"),
+                contact_address=metadata.get("contact_address"),
+                contact_website=metadata.get("contact_website"),
+                additional_text=metadata.get("additional_text"),
+                attachments=metadata.get("attachments"),
+                links=metadata.get("links"),
+                suitable_for_sme=metadata.get("suitable_for_sme"),
+                suitable_for_vco=metadata.get("suitable_for_vco")
             )
             
             # Add personalized match scoring
