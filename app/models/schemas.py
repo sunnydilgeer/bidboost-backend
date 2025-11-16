@@ -258,7 +258,7 @@ class ContractSearchResult(BaseModel):
     notice_id: str
     title: str
     buyer_name: str
-    description: str
+    description: Optional[str] = None
     value: Optional[float]
     region: Optional[str]
     closing_date: Optional[str]
