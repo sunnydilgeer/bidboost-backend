@@ -439,6 +439,38 @@ class PreferencesResponse(BaseModel):
     class Config:
         from_attributes = True
 
+class AwardedContract(BaseModel):
+    """FTS awarded contract (completed procurement)"""
+    # Identifiers
+    tender_id: str
+    notice_type: str = "award"
+    url: str
+    
+    # Core fields (for matching)
+    title: str
+    description: Optional[str] = None
+    cpv_codes: List[str] = Field(default_factory=list)
+    
+    # Award details
+    supplier_name: Optional[str] = None  # Changed from required to optional
+    contract_value_text: Optional[str] = None
+    contract_value: Optional[float] = None
+    award_date: Optional[str] = None  # Changed from datetime to str (we'll parse later)
+    contract_dates: Optional[List[str]] = Field(default_factory=list)
+    
+    # Buyer info
+    buyer_name: Optional[str] = None  # Changed from required to optional
+    buyer_region: Optional[str] = None
+    buyer_email: Optional[str] = None
+    buyer_website: Optional[str] = None
+    
+    # Additional
+    reference: Optional[str] = None
+    suitable_for_sme: Optional[bool] = None
+    
+    # Metadata
+    scraped_at: Optional[datetime] = Field(default_factory=lambda: datetime.now())
+
 # ========== FULL COMPANY PROFILE RESPONSE ==========
 
 class CompanyProfileResponse(BaseModel):

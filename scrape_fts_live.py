@@ -132,29 +132,43 @@ def parse_eu_standard_format(page):
             except:
                 pass
     
-    # Check if it's an award (Section five)
-    is_award = "Section five" in full_text or "five.2" in full_text
+    # Check if it's an award - Support both formats
+    is_award = any([
+        "Section five" in full_text,
+        "Section V" in full_text,
+        "V.2" in full_text,
+        "five.2" in full_text
+    ])
     
     if is_award:
         data["notice_type"] = "award"
         
-        # Award date (five.2.1)
-        award_date = extract_text_between(full_text, "five.2.1) Date of conclusion", ["five.2.2", "five.2.3"])
+        # Award date - Support both formats
+        award_date = (
+            extract_text_between(full_text, "V.2.1) Date of conclusion", ["V.2.2", "V.2.3"]) or
+            extract_text_between(full_text, "five.2.1) Date of conclusion", ["five.2.2", "five.2.3"])
+        )
         data["award_date"] = award_date
         
-        # Supplier (five.2.3)
-        supplier_section = extract_text_between(full_text, "five.2.3) Name and address of the contractor", ["Country", "NUTS", "five.2.4"])
+        # Supplier - Support both formats
+        supplier_section = (
+            extract_text_between(full_text, "V.2.3) Name and address of the contractor", ["Country", "NUTS", "V.2.4"]) or
+            extract_text_between(full_text, "five.2.3) Name and address of the contractor", ["Country", "NUTS", "five.2.4"])
+        )
         if supplier_section:
             lines = [l.strip() for l in supplier_section.split('\n') if l.strip()]
             data["supplier_name"] = lines[0] if lines else None
         
         # SME status
         if "The contractor is an SME" in full_text:
-            sme_section = extract_text_between(full_text, "The contractor is an SME", ["five.2.4", "Section"])
+            sme_section = extract_text_between(full_text, "The contractor is an SME", ["V.2.4", "five.2.4", "Section"])
             data["suitable_for_sme"] = "Yes" in sme_section if sme_section else None
         
-        # Contract value (five.2.4)
-        contract_value_section = extract_text_between(full_text, "five.2.4) Information on value", ["Section six", "five.2.5"])
+        # Contract value - Support both formats
+        contract_value_section = (
+            extract_text_between(full_text, "V.2.4) Information on value", ["Section", "V.2.5"]) or
+            extract_text_between(full_text, "five.2.4) Information on value", ["Section six", "five.2.5"])
+        )
         if contract_value_section:
             value_match = re.search(r'Total value[^\d]*([\d,]+)', contract_value_section)
             if value_match:
@@ -166,29 +180,52 @@ def parse_eu_standard_format(page):
     else:
         data["notice_type"] = "opportunity"
         
-        # Deadline extraction - ENHANCED with corrigendum support
-        deadline = extract_text_between(full_text, "four.2.2) Time limit for receipt of tenders", ["four.2.3", "four.2.4"])
+        # Deadline extraction - Support BOTH Roman numerals and lowercase
+        deadline = (
+            extract_text_between(full_text, "IV.2.2) Time limit for receipt of tenders", ["IV.2.3", "IV.2.4"]) or
+            extract_text_between(full_text, "four.2.2) Time limit for receipt of tenders", ["four.2.3", "four.2.4"])
+        )
         if not deadline:
-            deadline = extract_text_between(full_text, "four.2.6) Minimum time frame", ["four.2.7", "Section"])
+            deadline = (
+                extract_text_between(full_text, "IV.2.6) Minimum time frame", ["IV.2.7", "Section"]) or
+                extract_text_between(full_text, "four.2.6) Minimum time frame", ["four.2.7", "Section"])
+            )
         if not deadline:
-            deadline = extract_text_between(full_text, "four.2.7) Conditions for opening", ["four.2.8", "Section"])
+            deadline = (
+                extract_text_between(full_text, "IV.2.7) Conditions for opening", ["IV.2.8", "Section"]) or
+                extract_text_between(full_text, "four.2.7) Conditions for opening", ["four.2.8", "Section"])
+            )
+        if not deadline:
+            # Look for "or requests to participate" section format
+            deadline_section = extract_text_between(full_text, "or requests to participate", ["Date", "Local time"])
+            if deadline_section and "IV.2.2)" in deadline_section:
+                # Extract date and time separately
+                date_match = re.search(r'Date\n\n(\d{1,2}\s+\w+\s+202\d)', full_text)
+                time_match = re.search(r'Local time\n\n(\d{1,2}:\d{2}[ap]m)', full_text)
+                if date_match:
+                    deadline = date_match.group(1)
+                    if time_match:
+                        deadline += f", {time_match.group(1)}"
         if not deadline:
             deadline_match = re.search(r'Time limit[^\n]*:\s*([^\n]+)', full_text)
             if deadline_match:
                 deadline = deadline_match.group(1)
         
-        # 🔥 NEW: Check for corrigendum/correction notices
-        if not deadline and ("Section seven" in full_text or "VII. Changes" in full_text):
+        # Check for corrigendum/correction notices
+        if not deadline and any(["Section seven" in full_text, "Section VII" in full_text, "VII. Changes" in full_text]):
             deadline = parse_eu_corrigendum_deadline(full_text)
             if deadline:
                 print(f"  ✅ Found deadline in CORRIGENDUM: {deadline}")
         
         data["deadline"] = deadline
     
-    # Authority (one.1)
-    authority_section = extract_text_between(full_text, "one.1) Name and addresses", ["Contact", "Country", "one.2"])
+    # Authority - Support both formats
+    authority_section = (
+        extract_text_between(full_text, "I.1) Name and addresses", ["Contact", "Country", "I.2"]) or
+        extract_text_between(full_text, "one.1) Name and addresses", ["Contact", "Country", "one.2"])
+    )
     if authority_section:
-        lines = [l.strip() for l in authority_section.split('\n') if l.strip() and not l.startswith('one.')]
+        lines = [l.strip() for l in authority_section.split('\n') if l.strip() and not l.startswith(('one.', 'I.'))]
         data["authority_name"] = lines[0] if lines else None
     
     # Authority email
@@ -468,7 +505,18 @@ def scrape_fts():
         base_url = "https://www.find-tender.service.gov.uk/Search/Results?stage=1&status=Open&page="
         page_no = 1
         
+        # 🔥 PAGE LIMIT: Only scrape recent data (pages 1-150)
+        MAX_PAGES = 150
+        
         while True:
+            # Stop after reaching page limit
+            if page_no > MAX_PAGES:
+                print(f"\n{'='*60}")
+                print(f"[✅] Reached page limit ({MAX_PAGES}). Stopping scrape.")
+                print(f"[info] This ensures only recent opportunities are captured.")
+                print('='*60)
+                break
+            
             search_url = f"{base_url}{page_no}"
             print(f"\n{'='*60}")
             print(f"[page {page_no}] {search_url}")

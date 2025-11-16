@@ -6,7 +6,7 @@ import hashlib
 import logging
 import time
 from app.core.config import settings
-from app.models.schemas import ContractOpportunity
+from app.models.schemas import ContractOpportunity, AwardedContract
 
 logger = logging.getLogger(__name__)
 
@@ -228,6 +228,82 @@ Additional Info: {contract.additional_text or 'None'}""".strip()
             
         except Exception as e:
             logger.error(f"Failed to add contracts to vector store: {str(e)}")
+            raise
+    
+    async def add_fts_awards(self, awards: List[AwardedContract], llm_service) -> None:
+        """
+        Add FTS awarded contracts to vector store for past wins analysis.
+        Similar to add_contracts but for completed awards.
+        """
+        try:
+            points = []
+            
+            for award in awards:
+                # Generate deterministic UUID from tender_id
+                point_id = str(uuid.UUID(hashlib.md5(award.tender_id.encode()).hexdigest()))
+                
+                # Format value
+                value_text = f"£{award.contract_value:,.2f}" if award.contract_value else "Not specified"
+                
+                # Create searchable text
+                award_text = f"""Title: {award.title}
+Description: {award.description or 'No description'}
+Supplier: {award.supplier_name or 'Not specified'}
+Buyer: {award.buyer_name or 'Not specified'}
+Value: {value_text}
+CPV Codes: {', '.join(award.cpv_codes) if award.cpv_codes else 'None'}
+Region: {award.buyer_region or 'Not specified'}
+Award Date: {award.award_date or 'Not specified'}
+Reference: {award.reference or 'None'}""".strip()
+                
+                # Create embedding text (title + description)
+                embedding_text = f"{award.title}\n\n{award.description or ''}".strip()
+                clean_embedding_text = embedding_text[:2000]
+                
+                # Generate embedding
+                embedding = await llm_service.generate_embeddings(clean_embedding_text)
+                
+                point = PointStruct(
+                    id=point_id,
+                    vector=embedding,
+                    payload={
+                        "content": award_text,
+                        "document_type": "fts_award",
+                        "metadata": {
+                            "tender_id": award.tender_id,
+                            "title": award.title,
+                            "description": award.description,
+                            "supplier_name": award.supplier_name,
+                            "buyer_name": award.buyer_name,
+                            "contract_value": award.contract_value,
+                            "award_date": award.award_date,
+                            "cpv_codes": award.cpv_codes,
+                            "buyer_region": award.buyer_region,
+                            "buyer_email": award.buyer_email,
+                            "reference": award.reference,
+                            "suitable_for_sme": award.suitable_for_sme,
+                            "url": award.url,
+                        },
+                        # Top-level fields for filtering
+                        "tender_id": award.tender_id,
+                        "supplier_name": award.supplier_name,
+                        "buyer_name": award.buyer_name,
+                        "contract_value": award.contract_value,
+                        "buyer_region": award.buyer_region,
+                    }
+                )
+                points.append(point)
+            
+            self.client.upsert(
+                collection_name=self.collection_name,
+                points=points,
+                wait=True
+            )
+            
+            logger.info(f"✅ Added {len(awards)} FTS awarded contracts to vector store")
+            
+        except Exception as e:
+            logger.error(f"Failed to add FTS awards to vector store: {str(e)}")
             raise
     
     async def search(
