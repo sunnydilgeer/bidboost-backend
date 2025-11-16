@@ -1853,6 +1853,16 @@ async def reset_last_email(email: str, db: Session = Depends(get_db)):
         "message": f"Reset last_email_sent_at for {email} to yesterday"
     }
 
+@router.post("/admin/sync-fts")
+async def sync_fts_manually(
+    current_user: User = Depends(get_current_active_user)
+):
+    """Manually trigger FTS sync on production"""
+    from app.tasks.fts_sync import sync_fts_contracts
+    
+    result = await sync_fts_contracts()
+    return result
+
 @router.get("/user/match-improvement-recommendations")
 async def get_match_recommendations(
     db: Session = Depends(get_db),
