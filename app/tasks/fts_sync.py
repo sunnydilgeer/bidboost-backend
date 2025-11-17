@@ -18,7 +18,7 @@ from app.services.llm import LLMService
 logger = logging.getLogger(__name__)
 
 # Path to FTS scraped data
-FTS_JSON_PATH = "fts_live_rich.json"
+FTS_JSON_PATH = "fts_live_rich_v2.json"
 
 
 async def sync_fts_contracts() -> Dict[str, Any]:
