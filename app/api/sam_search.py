@@ -143,8 +143,8 @@ def format_sam_contract(result: dict, match_scores: Optional[dict] = None) -> di
 @router.post("/search", response_model=SAMSearchResponse)
 async def search_sam_contracts(
     request: SAMSearchRequest,
-    #current_user: User = Depends(get_current_active_user),
-    #db: Session = Depends(get_db)
+    current_user: User = Depends(get_current_active_user),
+    db: Session = Depends(get_db)
 ):
     """Search SAM.GOV contracts with semantic similarity"""
     try:
@@ -166,7 +166,7 @@ async def search_sam_contracts(
             formatted_contract = format_sam_contract(result)
             formatted_results.append(SAMContractResult(**formatted_contract))
         
-        #logger.info(f"SAM search '{request.query}' by {current_user.email}: {len(formatted_results)} results")
+        logger.info(f"SAM search '{request.query}' by {current_user.email}: {len(formatted_results)} results")
         
         return SAMSearchResponse(
             query=request.query,
