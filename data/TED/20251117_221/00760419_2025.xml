@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractAwardNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractAwardNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ccts-cct="urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDataTypes-2" xmlns:udt="urn:oasis:names:specification:bdndr:schema:xsd:UnqualifiedDataTypes-1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<ext:UBLExtensions>
+		<ext:UBLExtension>
+			<ext:ExtensionContent>
+				<efext:EformsExtension>
+					<efac:NoticeResult>
+						<efac:LotResult>
+							<cbc:ID>RES-0001</cbc:ID>
+							<cbc:TenderResultCode listName="winner-selection-status">open-nw</cbc:TenderResultCode>
+							<efac:TenderLot>
+								<cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+							</efac:TenderLot>
+						</efac:LotResult>
+					</efac:NoticeResult>
+					<efac:NoticeSubType>
+						<cbc:SubTypeCode listName="notice-subtype">29</cbc:SubTypeCode>
+					</efac:NoticeSubType>
+					<efac:Organizations>
+						<efac:Organization>
+							<efac:Company>
+								<cac:PartyIdentification>
+									<cbc:ID>ORG-0001</cbc:ID>
+								</cac:PartyIdentification>
+								<cac:PartyName>
+									<cbc:Name languageID="DEU">AOK Bayern -  Die Gesundheitskasse</cbc:Name>
+								</cac:PartyName>
+								<cac:PostalAddress>
+									<cbc:StreetName>Carl-Wery-Str. 28</cbc:StreetName>
+									<cbc:CityName>München</cbc:CityName>
+									<cbc:PostalZone>81379</cbc:PostalZone>
+									<cbc:CountrySubentityCode listName="nuts-lvl3">DE212</cbc:CountrySubentityCode>
+									<cac:Country>
+										<cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+									</cac:Country>
+								</cac:PostalAddress>
+								<cac:PartyLegalEntity>
+									<cbc:CompanyID>DE811695320</cbc:CompanyID>
+								</cac:PartyLegalEntity>
+								<cac:Contact>
+									<cbc:Name>Vergabestelle SGB V</cbc:Name>
+									<cbc:Telephone>08962730267</cbc:Telephone>
+									<cbc:ElectronicMail>vergabestelle1@by.aok.de</cbc:ElectronicMail>
+								</cac:Contact>
+							</efac:Company>
+						</efac:Organization>
+						<efac:Organization>
+							<efac:Company>
+								<cac:PartyIdentification>
+									<cbc:ID>ORG-0002</cbc:ID>
+								</cac:PartyIdentification>
+								<cac:PartyName>
+									<cbc:Name languageID="DEU">Vergabekammern des Bundes beim Bundeskartellamt</cbc:Name>
+								</cac:PartyName>
+								<cac:PostalAddress>
+									<cbc:CityName>Bonn</cbc:CityName>
+									<cbc:PostalZone>53113</cbc:PostalZone>
+									<cbc:CountrySubentityCode listName="nuts-lvl3">DEA22</cbc:CountrySubentityCode>
+									<cac:Country>
+										<cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+									</cac:Country>
+								</cac:PostalAddress>
+								<cac:PartyLegalEntity>
+									<cbc:CompanyID>t:022894990</cbc:CompanyID>
+								</cac:PartyLegalEntity>
+								<cac:Contact>
+									<cbc:Telephone>022894990</cbc:Telephone>
+									<cbc:ElectronicMail>vk@bundeskartellamt.bund.de</cbc:ElectronicMail>
+								</cac:Contact>
+							</efac:Company>
+						</efac:Organization>
+					<efac:Organization><efac:Company><cac:PartyIdentification><cbc:ID schemeName="organization">ORG-0003</cbc:ID></cac:PartyIdentification><cac:PartyName><cbc:Name languageID="DEU">Datenservice Öffentlicher Einkauf (in Verantwortung des Beschaffungsamts des BMI)</cbc:Name></cac:PartyName><cac:PostalAddress><cbc:CityName>Bonn</cbc:CityName><cbc:PostalZone>53119</cbc:PostalZone><cbc:CountrySubentityCode listName="nuts">DEA22</cbc:CountrySubentityCode><cac:Country><cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode></cac:Country></cac:PostalAddress><cac:PartyLegalEntity><cbc:CompanyID schemeID="002">0204:994-DOEVD-83</cbc:CompanyID></cac:PartyLegalEntity><cac:Contact><cbc:Telephone>+49228996100</cbc:Telephone><cbc:ElectronicMail>noreply.esender_hub@bescha.bund.de</cbc:ElectronicMail></cac:Contact></efac:Company></efac:Organization></efac:Organizations>
+				<efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00760419-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+			</ext:ExtensionContent>
+		</ext:UBLExtension>
+	</ext:UBLExtensions>
+	<cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+	<cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+	<cbc:ProfileID>eforms-sdk-1.13</cbc:ProfileID>
+	<cbc:ID schemeName="notice-id">32dc896c-ce62-42b0-98c6-4c455a55f11d</cbc:ID>
+	<cbc:ContractFolderID>f5699ab3-90e0-4233-8296-6a514aea2c77</cbc:ContractFolderID>
+	<cbc:IssueDate>2025-11-14+01:00</cbc:IssueDate>
+	<cbc:IssueTime>14:48:10+01:00</cbc:IssueTime>
+	<cbc:VersionID>01</cbc:VersionID>
+	<cbc:RequestedPublicationDate>2025-11-14+01:00</cbc:RequestedPublicationDate>
+	<cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+	<cbc:NoticeTypeCode listName="result">can-standard</cbc:NoticeTypeCode>
+	<cbc:NoticeLanguageCode listID="eu-official-language">DEU</cbc:NoticeLanguageCode>
+	<cac:ContractingParty>
+		<cac:ContractingPartyType>
+			<cbc:PartyTypeCode listName="buyer-legal-type">body-pl-ra</cbc:PartyTypeCode>
+		</cac:ContractingPartyType>
+		<cac:ContractingActivity>
+			<cbc:ActivityTypeCode listName="authority-activity">health</cbc:ActivityTypeCode>
+		</cac:ContractingActivity>
+		<cac:Party>
+			<cac:PartyIdentification>
+				<cbc:ID>ORG-0001</cbc:ID>
+			</cac:PartyIdentification>
+		<cac:ServiceProviderParty><cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode><cac:Party><cac:PartyIdentification><cbc:ID schemeName="organization">ORG-0003</cbc:ID></cac:PartyIdentification></cac:Party></cac:ServiceProviderParty></cac:Party>
+	</cac:ContractingParty>
+	<cac:TenderingTerms>
+		<ext:UBLExtensions>
+			<ext:UBLExtension>
+				<ext:ExtensionContent>
+					<efext:EformsExtension>
+						<efac:StrategicProcurement>
+							<efbc:ApplicableLegalBasis listName="cvd-scope">false</efbc:ApplicableLegalBasis>
+						</efac:StrategicProcurement>
+						<efac:StrategicProcurement>
+							<efbc:ApplicableLegalBasis listName="eed-scope">false</efbc:ApplicableLegalBasis>
+						</efac:StrategicProcurement>
+					</efext:EformsExtension>
+				</ext:ExtensionContent>
+			</ext:UBLExtension>
+		</ext:UBLExtensions>
+		<cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+		<cac:ProcurementLegislationDocumentReference>
+			<cbc:ID>vgv</cbc:ID>
+		</cac:ProcurementLegislationDocumentReference>
+		<cac:AppealTerms>
+			<cac:PresentationPeriod>
+				<cbc:Description languageID="DEU">§ 135 GWB Unwirksamkeit (1) Ein öffentlicher Auftrag ist von Anfang an unwirksam, wenn der öffentliche Auftraggeber  1. gegen § 134 verstoßen hat oder 2. den Auftrag ohne vorherige Veröffentlichung einer Bekanntmachung im Amtsblatt der Europäischen Union vergeben hat, ohne dass dies aufgrund Gesetzes gestattet ist, und dieser Verstoß in einem Nachprüfungsverfahren festgestellt worden ist. (2) Die Unwirksamkeit nach Absatz 1 kann nur festgestellt werden, wenn sie im Nachprüfungsverfahren innerhalb von 30 Kalendertagen nach der Information der betroffenen Bieter und Bewerber durch den öffentlichen Auftraggeber über den Abschluss des Vertrags, jedoch nicht später als sechs Monate nach Vertragsschluss geltend gemacht worden ist. Hat der Auftraggeber die Auftragsvergabe im Amtsblatt der Europäischen Union bekannt gemacht, endet die Frist zur Geltendmachung der Unwirksamkeit 30 Kalendertage nach Veröffentlichung der Bekanntmachung der Auftragsvergabe im Amtsblatt der Europäischen Union.  (3) Die Unwirksamkeit nach Absatz 1 Nummer 2 tritt nicht ein, wenn 1. der öffentliche Auftraggeber der Ansicht ist, dass die Auftragsvergabe ohne vorherige Veröffentlichung einer Bekanntmachung im Amtsblatt der Europäischen Union zulässig ist, 2. der öffentliche Auftraggeber eine Bekanntmachung im Amtsblatt der Europäischen Union veröffentlicht hat, mit der er die Absicht bekundet, den Vertrag abzuschließen, und 3. der Vertrag nicht vor Ablauf einer Frist von mindestens zehn Kalendertagen, gerechnet ab dem Tag nach der Veröffentlichung dieser Bekanntmachung, abgeschlossen wurde. Die Bekanntmachung nach Satz 1 Nummer 2 muss den Namen und die Kontaktdaten des öffentlichen Auftraggebers, die Beschreibung des Vertragsgegenstands, die Begründung der Entscheidung des Auftraggebers, den Auftrag ohne vorherige Veröffentlichung einer Bekanntmachung im Amtsblatt der Europäischen Union zu vergeben, und den Namen und die Kontaktdaten des Unternehmens, das den Zuschlag erhalten soll, umfassen.  § 160 GWB Einleitung, Antrag  (1) Die Vergabekammer leitet ein Nachprüfungsverfahren nur auf Antrag ein.  (2) Antragsbefugt ist jedes Unternehmen, das ein Interesse an dem öffentlichen Auftrag oder der Konzession hat und eine Verletzung in seinen Rechten nach § 97 Absatz 6 durch Nichtbeachtung von Vergabevorschriften geltend macht. Dabei ist darzulegen, dass dem Unternehmen durch die behauptete Verletzung der Vergabevorschriften ein Schaden entstanden ist oder zu entstehen droht.  (3) Der Antrag ist unzulässig, soweit 1. der Antragsteller den geltend gemachten Verstoß gegen Vergabevorschriften vor Einreichen des Nachprüfungsantrags erkannt und gegenüber dem Auftraggeber nicht innerhalb einer Frist von zehn Kalendertagen gerügt hat; der Ablauf der Frist nach § 134 Absatz 2 bleibt unberührt, 2. Verstöße gegen Vergabevorschriften, die aufgrund der Bekanntmachung erkennbar sind, nicht spätestens bis zum Ablauf der in der Bekanntmachung benannten Frist zur Bewerbung oder zur Angebotsabgabe gegenüber dem Auftraggeber gerügt werden, 3. Verstöße gegen Vergabevorschriften, die erst in den Vergabeunterlagen erkennbar sind, nicht spätestens bis zum Ablauf der Frist zur Bewerbung oder zur Angebotsabgabe gegenüber dem Auftraggeber gerügt werden, 4. mehr als 15 Kalendertage nach Eingang der Mitteilung des Auftraggebers, einer Rüge nicht abhelfen zu wollen, vergangen sind. Satz 1 gilt nicht bei einem Antrag auf Feststellung der Unwirksamkeit des Vertrags nach § 135 Absatz 1 Nummer 2. § 134 Absatz 1 Satz 2 bleibt unberührt.</cbc:Description>
+			</cac:PresentationPeriod>
+			<cac:AppealReceiverParty>
+				<cac:PartyIdentification>
+					<cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+				</cac:PartyIdentification>
+			</cac:AppealReceiverParty>
+		</cac:AppealTerms>
+	</cac:TenderingTerms>
+	<cac:TenderingProcess>
+		<cbc:Description languageID="DEU">Es handelt sich nicht um ein offenes Verfahren, sondern um ein sog. open-house-Modell! Das Formular für das offene Verfahren wird lediglich deshalb verwandt, da kein Formular für das open-house-Modell existiert. Verträge, die im open-house-Modell geschlossen werden, unterfallen mangels Auswahlentscheidung nicht dem Vergaberecht. Eine Unterwerfung unter vergaberechtliche Regelungen ist mit der Verwendung dieses Formulars nicht verbunden.</cbc:Description>
+		<cbc:ProcedureCode listName="procurement-procedure-type">open</cbc:ProcedureCode>
+		<cac:ProcessJustification>
+			<cbc:ProcessReasonCode listName="accelerated-procedure">false</cbc:ProcessReasonCode>
+		</cac:ProcessJustification>
+		<cac:AuctionTerms>
+			<cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+		</cac:AuctionTerms>
+	</cac:TenderingProcess>
+	<cac:ProcurementProject>
+		<cbc:ID schemeName="internalID">25-146</cbc:ID>
+		<cbc:Name languageID="DEU">Open House Arzneimittelrabattverträge Bekanntmachung geschlossener Verträge 13.10.2025 bis 12.11.2025</cbc:Name>
+		<cbc:Description languageID="DEU">Mit der vorliegenden Bekanntmachung veröffentlicht die AOK Bayern aus Gründen der Transparenz alle im Rahmen der Open House Verfahren für Arzneimittelrabattverträge gem. § 130a Abs. 8 SGB V sowie § 130a Abs. 8c SGB V im Zeitraum vom 13.10.2025 bis 12.11.2025 geschlossenen Verträge.   Die AOK Bayern beabsichtigt, mit allen interessierten pharmazeutischen Unternehmen nicht-exklusive Rabattvereinbarungen über die im jeweiligen Verfahren genannten Wirkstoffe nach § 130a Abs. 8 SGB V bzw. § 130a Abs. 8c SGB V zu schließen. Die AOK Bayern bietet allen interessierten pharmazeutischen Unternehmen, die die unten genannten Eignungsvoraussetzungen erfüllen, den Abschluss identischer und nicht individuell verhandelbarer Rabattvereinbarungen an. Ein Vertragsschluss ist während der Laufzeit jederzeit möglich. Die Verträge können mit einer Frist von einem Monat zum Monatsende gekündigt werden. Bei Inkrafttreten eines durch bundesweite oder landesspezifische, im offenen Verfahren geschlossenen Rabattvertrags über Arzneimittel mit dem auftragsgegenständlichen Wirkstoff treten die open-house-Vereinbarungen automatisch für die entsprechende Laufzeit außer Kraft. Ein Vertrag wird mit allen interessierten pharmazeutischen Unternehmen geschlossen, die ihre Eignung durch eine ausgefüllte und unterschriebene Eigenerklärung zur Zuverlässigkeit nachweisen. Einzelheiten können der Auftragsbekanntmachung zum jeweiligen Open House Verfahren im Amtsblatt der Europäische Union entnommen werden.  Im Zeitraum vom 13.10.2025 bis 12.11.2025 geschlossene Verträge:  Adalimumab: EMRAmed Arzneimittel GmbH Anakinra: Abacus Medicine AS, Paranova Pack AS Eribulin: Zentiva Pharma GmbH Apremilast: Amgen GmbH Aripiprazol Depot: Allomedic GmbH, Orifarm GmbH Bevacizumab: Zentiva Pharma GmbH Certolizumab pegol: kohlpharma GmbH, Medicopharm AG Colchicin: Aliud Pharma GmbH, ratiopharm GmbH, Stadapharm GmbH Denosumab: kohlpharma GmbH, Abacus Medicine AG, Gedeon Richter Pharma GmbH, Stadapharm GmbH Dimethylfumarat: Puren Pharma GmbH Blutzuckerteststreifen: aktivmed GmbH Dornase alfa: 1 0 1 Carefarm GmbH, Abacus Medicine AS, axicorp Pharma BV, EMRAmed Arzneimittel GmbH, kohlpharma GmbH, Orifarm GmbH, Originalis BV Eltrombopag ausgenommen SAA: Cipla Europe NV, AbZ-Pharma GmbH, Accord Healthcare SL U, ratiopharm GmbH, Viatris Healthcare GmbH, Zentiva Pharma GmbH, Abdi Farma GmbH, Elpen Pharma GmbH Etanercept: kohlpharma GmbH Fampridin: Hexal AG Leuprorelin: 1 0 1 Carefarm GmbH, Aaragon Pharma sro, Abacus Medicine AS, Accord Healthcare SL U, axicorp Pharma BV, EMRAmed Arzneimittel GmbH, Endomedica GmbH, Hexal AG, kohlpharma GmbH, Orifarm GmbH, Originalis BV, ratiopharm GmbH, Takeda GmbH Naproxen: Aliud Pharma GmbH Octreotid: 1 0 1 Carefarm GmbH, Aaragon Pharma sro, Abacus Medicine AS, axicorp Pharma BV, kohlpharma GmbH, Orifarm GmbH, Originalis BV, ratiopharm GmbH Omalizumab: Abacus Medicine AS, Novartis Pharma GmbH, Orifarm GmbH Paliperidon 3 MON: Abacus Medicine AS, Originalis BV Pomalidomid: Aliud Pharma GmbH, Stadapharm GmbH Ranibizumab Durchstechflasche: Allomedic GmbH Rivaroxaban FTA (ausgenommen 2,5): Puren Pharma GmbH, Accord Healthcare SL U, Heumann Pharma GmbH &amp; Co. Generica KG Tamsulosin und Dutasterid: Medical Valley Invest AB Tapentadol: 1 A Pharma GmbH Teriparatid: 2care4 ApS, Allomedic GmbH Therapie-Allergene: Orifarm GmbH Timolol und Brinzolamid: Aliud Pharma GmbH, Cranach Pharma GmbH, Micro Labs GmbH, Zentiva Pharma GmbH Tofacitinib: Abacus Medicine AS Tolvaptan: 1 A Pharma GmbH Umeclidiniumbromid: EMRAmed Arzneimittel GmbH Meropenem: Grindeks Kalceks Deutschland GmbH Risankizumab: AbbVie Deutschland GmbH &amp; Co. KG, EurimPharm Arzneimittel GmbH Allergenextrakte aus Gräserpollen zur sublingualen Anwendung: CC Pharma GmbH, EurimPharm Arzneimittel GmbH Formoterol und Aclidiniumbromid: Medicopharm AG Pegfilgrastim: 14U Pharma GmbH, ACA Müller ADAG Pharma AG, CC Pharma GmbH, EurimPharm Arzneimittel GmbH, Medicopharm AG, Mundipharma GmbH, Stadapharm GmbH Tacrolimus: Bodensee Pharma GmbH Timolol und Tafluprost: Santen GmbH</cbc:Description>
+		<cbc:ProcurementTypeCode listName="contract-nature">supplies</cbc:ProcurementTypeCode>
+		<cbc:Note languageID="DEU">#Bekanntmachungs-ID: CXP4Y6YMDUW#
+
+
+Die als zuständige Stelle für Rechtsbehelfs-/Nachprüfungsverfahren benannten Vergabekammern des Bundes sind zuständig für die Überprüfung von Vergabeverfahren für öffentliche Aufträge im Anwendungsbereich des Kartellvergaberechts. Nach Auffassung der Auftraggeberin handelt es sich vorliegend nicht um einen öffentlichen Auftrag in diesem Sinne. Zuständig ist demnach das jeweils örtlich zuständige Sozialgericht. Für die Einlegung von Rechtsbehelfen gelten die Fristen des SGG.</cbc:Note>
+		<cac:MainCommodityClassification>
+			<cbc:ItemClassificationCode listName="cpv">33600000</cbc:ItemClassificationCode>
+		</cac:MainCommodityClassification>
+		<cac:RealizedLocation>
+			<cac:Address>
+				<cbc:Region>anyw-cou</cbc:Region>
+				<cac:Country>
+					<cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:Address>
+		</cac:RealizedLocation>
+	</cac:ProcurementProject>
+	<cac:ProcurementProjectLot>
+		<cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+		<cac:TenderingTerms>
+			<ext:UBLExtensions>
+				<ext:UBLExtension>
+					<ext:ExtensionContent>
+						<efext:EformsExtension>
+							<efac:StrategicProcurement>
+								<efbc:ApplicableLegalBasis listName="cvd-scope">false</efbc:ApplicableLegalBasis>
+							</efac:StrategicProcurement>
+							<efac:StrategicProcurement>
+								<efbc:ApplicableLegalBasis listName="eed-scope">false</efbc:ApplicableLegalBasis>
+							</efac:StrategicProcurement>
+						</efext:EformsExtension>
+					</ext:ExtensionContent>
+				</ext:UBLExtension>
+			</ext:UBLExtensions>
+			<cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+			<cac:ContractExecutionRequirement>
+				<cbc:ExecutionRequirementCode listName="fsr">false</cbc:ExecutionRequirementCode>
+			</cac:ContractExecutionRequirement>
+			<cac:AwardingTerms>
+				<cac:AwardingCriterion>
+					<cbc:CalculationExpression languageID="DEU">Die AOK Bayern bietet allen interessierten pharmazeutischen Unternehmen, die die unten genannten Eignungsvoraussetzungen erfüllen, den Abschluss identischer und nicht individuell verhandelbarer Rabattvereinbarungen an.</cbc:CalculationExpression>
+					<cac:SubordinateAwardingCriterion>
+						<cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+						<cbc:Description languageID="DEU">Preis</cbc:Description>
+					</cac:SubordinateAwardingCriterion>
+				</cac:AwardingCriterion>
+			</cac:AwardingTerms>
+			<cac:AdditionalInformationParty>
+				<cac:PartyIdentification>
+					<cbc:ID>ORG-0001</cbc:ID>
+				</cac:PartyIdentification>
+			</cac:AdditionalInformationParty>
+			<cac:AppealTerms>
+				<cac:PresentationPeriod>
+					<cbc:Description languageID="DEU">§ 135 GWB Unwirksamkeit (1) Ein öffentlicher Auftrag ist von Anfang an unwirksam, wenn der öffentliche Auftraggeber  1. gegen § 134 verstoßen hat oder 2. den Auftrag ohne vorherige Veröffentlichung einer Bekanntmachung im Amtsblatt der Europäischen Union vergeben hat, ohne dass dies aufgrund Gesetzes gestattet ist, und dieser Verstoß in einem Nachprüfungsverfahren festgestellt worden ist. (2) Die Unwirksamkeit nach Absatz 1 kann nur festgestellt werden, wenn sie im Nachprüfungsverfahren innerhalb von 30 Kalendertagen nach der Information der betroffenen Bieter und Bewerber durch den öffentlichen Auftraggeber über den Abschluss des Vertrags, jedoch nicht später als sechs Monate nach Vertragsschluss geltend gemacht worden ist. Hat der Auftraggeber die Auftragsvergabe im Amtsblatt der Europäischen Union bekannt gemacht, endet die Frist zur Geltendmachung der Unwirksamkeit 30 Kalendertage nach Veröffentlichung der Bekanntmachung der Auftragsvergabe im Amtsblatt der Europäischen Union.  (3) Die Unwirksamkeit nach Absatz 1 Nummer 2 tritt nicht ein, wenn 1. der öffentliche Auftraggeber der Ansicht ist, dass die Auftragsvergabe ohne vorherige Veröffentlichung einer Bekanntmachung im Amtsblatt der Europäischen Union zulässig ist, 2. der öffentliche Auftraggeber eine Bekanntmachung im Amtsblatt der Europäischen Union veröffentlicht hat, mit der er die Absicht bekundet, den Vertrag abzuschließen, und 3. der Vertrag nicht vor Ablauf einer Frist von mindestens zehn Kalendertagen, gerechnet ab dem Tag nach der Veröffentlichung dieser Bekanntmachung, abgeschlossen wurde. Die Bekanntmachung nach Satz 1 Nummer 2 muss den Namen und die Kontaktdaten des öffentlichen Auftraggebers, die Beschreibung des Vertragsgegenstands, die Begründung der Entscheidung des Auftraggebers, den Auftrag ohne vorherige Veröffentlichung einer Bekanntmachung im Amtsblatt der Europäischen Union zu vergeben, und den Namen und die Kontaktdaten des Unternehmens, das den Zuschlag erhalten soll, umfassen.  § 160 GWB Einleitung, Antrag  (1) Die Vergabekammer leitet ein Nachprüfungsverfahren nur auf Antrag ein.  (2) Antragsbefugt ist jedes Unternehmen, das ein Interesse an dem öffentlichen Auftrag oder der Konzession hat und eine Verletzung in seinen Rechten nach § 97 Absatz 6 durch Nichtbeachtung von Vergabevorschriften geltend macht. Dabei ist darzulegen, dass dem Unternehmen durch die behauptete Verletzung der Vergabevorschriften ein Schaden entstanden ist oder zu entstehen droht.  (3) Der Antrag ist unzulässig, soweit 1. der Antragsteller den geltend gemachten Verstoß gegen Vergabevorschriften vor Einreichen des Nachprüfungsantrags erkannt und gegenüber dem Auftraggeber nicht innerhalb einer Frist von zehn Kalendertagen gerügt hat; der Ablauf der Frist nach § 134 Absatz 2 bleibt unberührt, 2. Verstöße gegen Vergabevorschriften, die aufgrund der Bekanntmachung erkennbar sind, nicht spätestens bis zum Ablauf der in der Bekanntmachung benannten Frist zur Bewerbung oder zur Angebotsabgabe gegenüber dem Auftraggeber gerügt werden, 3. Verstöße gegen Vergabevorschriften, die erst in den Vergabeunterlagen erkennbar sind, nicht spätestens bis zum Ablauf der Frist zur Bewerbung oder zur Angebotsabgabe gegenüber dem Auftraggeber gerügt werden, 4. mehr als 15 Kalendertage nach Eingang der Mitteilung des Auftraggebers, einer Rüge nicht abhelfen zu wollen, vergangen sind. Satz 1 gilt nicht bei einem Antrag auf Feststellung der Unwirksamkeit des Vertrags nach § 135 Absatz 1 Nummer 2. § 134 Absatz 1 Satz 2 bleibt unberührt.</cbc:Description>
+				</cac:PresentationPeriod>
+				<cac:AppealReceiverParty>
+					<cac:PartyIdentification>
+						<cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+					</cac:PartyIdentification>
+				</cac:AppealReceiverParty>
+			</cac:AppealTerms>
+		</cac:TenderingTerms>
+		<cac:TenderingProcess>
+			<cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+			<cac:AuctionTerms>
+				<cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+			</cac:AuctionTerms>
+			<cac:ContractingSystem>
+				<cbc:ContractingSystemTypeCode listName="framework-agreement">fa-wo-rc</cbc:ContractingSystemTypeCode>
+			</cac:ContractingSystem>
+			<cac:ContractingSystem>
+				<cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+			</cac:ContractingSystem>
+		</cac:TenderingProcess>
+		<cac:ProcurementProject>
+			<cbc:ID schemeName="internalID">25-146</cbc:ID>
+			<cbc:Name languageID="DEU">Open House Arzneimittelrabattverträge Bekanntmachung geschlossener Verträge 13.10.2025 bis 12.11.2025</cbc:Name>
+			<cbc:Description languageID="DEU">.Siehe kurze Beschreibung</cbc:Description>
+			<cbc:ProcurementTypeCode listName="contract-nature">supplies</cbc:ProcurementTypeCode>
+			<cac:ProcurementAdditionalType>
+				<cbc:ProcurementTypeCode listName="strategic-procurement">none</cbc:ProcurementTypeCode>
+			</cac:ProcurementAdditionalType>
+			<cac:MainCommodityClassification>
+				<cbc:ItemClassificationCode listName="cpv">33600000</cbc:ItemClassificationCode>
+			</cac:MainCommodityClassification>
+			<cac:RealizedLocation>
+				<cac:Address>
+					<cbc:Region>anyw-cou</cbc:Region>
+					<cac:Country>
+						<cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+					</cac:Country>
+				</cac:Address>
+			</cac:RealizedLocation>
+		</cac:ProcurementProject>
+	</cac:ProcurementProjectLot>
+	<cac:TenderResult>
+		<cbc:AwardDate>2000-01-01Z</cbc:AwardDate>
+	</cac:TenderResult>
+</ContractAwardNotice>

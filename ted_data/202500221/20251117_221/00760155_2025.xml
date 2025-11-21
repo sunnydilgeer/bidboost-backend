@@ -1,0 +1,669 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><ContractAwardNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractAwardNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+  <ext:UBLExtensions>
+    <ext:UBLExtension>
+      <ext:ExtensionContent>
+        <efext:EformsExtension>
+          <efac:NoticeResult>
+            <cbc:TotalAmount currencyID="DKK">1400000</cbc:TotalAmount>
+            <efac:LotResult>
+              <cbc:ID schemeName="result">RES-0000</cbc:ID>
+              <efac:LotTender>
+                <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+              </efac:LotTender>
+              <efac:SettledContract>
+                <cbc:ID schemeName="contract">CON-0001</cbc:ID>
+              </efac:SettledContract>
+              <efac:TenderLot>
+                <cbc:ID schemeName="Lot">LOT-0000</cbc:ID>
+              </efac:TenderLot>
+            </efac:LotResult>
+            <efac:LotTender>
+              <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+              <cac:LegalMonetaryTotal>
+                <cbc:PayableAmount currencyID="DKK">1400000</cbc:PayableAmount>
+              </cac:LegalMonetaryTotal>
+              <efac:SubcontractingTerm>
+                <efbc:TermCode listName="applicability">no</efbc:TermCode>
+              </efac:SubcontractingTerm>
+              <efac:TenderingParty>
+                <cbc:ID schemeName="tendering-party">TPA-0002</cbc:ID>
+              </efac:TenderingParty>
+              <efac:TenderLot>
+                <cbc:ID schemeName="Lot">LOT-0000</cbc:ID>
+              </efac:TenderLot>
+              <efac:TenderReference>
+                <cbc:ID>104828</cbc:ID>
+              </efac:TenderReference>
+            </efac:LotTender>
+            <efac:SettledContract>
+              <cbc:ID schemeName="contract">CON-0001</cbc:ID>
+              <cbc:AwardDate>2025-11-13+01:00</cbc:AwardDate>
+              <cbc:Title languageID="DAN">Arbejde med forankring af bæredygtighed i Kolding Kommune / HABITURA ApS</cbc:Title>
+              <efac:ContractReference>
+                <cbc:ID>104828</cbc:ID>
+              </efac:ContractReference>
+              <efac:LotTender>
+                <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+              </efac:LotTender>
+            </efac:SettledContract>
+            <efac:TenderingParty>
+              <cbc:ID schemeName="tendering-party">TPA-0002</cbc:ID>
+              <cbc:Name>HABITURA ApS</cbc:Name>
+              <efac:Tenderer>
+                <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+              </efac:Tenderer>
+            </efac:TenderingParty>
+          </efac:NoticeResult>
+          <efac:NoticeSubType>
+            <cbc:SubTypeCode listName="notice-subtype">25</cbc:SubTypeCode>
+          </efac:NoticeSubType>
+          <efac:Organizations>
+            <efac:Organization>
+              <efac:Company>
+                <cbc:WebsiteURI>https://www.kolding.dk</cbc:WebsiteURI>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <cbc:Name languageID="DAN">Kolding kommune</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>Akseltorv 1</cbc:StreetName>
+                  <cbc:CityName>Kolding</cbc:CityName>
+                  <cbc:PostalZone>6000</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">DK032</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">DNK</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID>29189897</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Name>Jeppe Kjærager</cbc:Name>
+                  <cbc:Telephone>+45 79797979</cbc:Telephone>
+                  <cbc:ElectronicMail>jepkj@kolding.dk</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+            <efac:Organization>
+              <efac:Company>
+                <cbc:WebsiteURI>https://www.comdia.com/</cbc:WebsiteURI>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-1000</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <cbc:Name languageID="DAN">Comdia ApS</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>Lindvedvej 73</cbc:StreetName>
+                  <cbc:CityName>Odense S</cbc:CityName>
+                  <cbc:PostalZone>5260</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">DK031</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">DNK</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID>33501404</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Telephone>+45 7199 3672</cbc:Telephone>
+                  <cbc:ElectronicMail>support@comdia.com</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+            <efac:Organization>
+              <efac:Company>
+                <cbc:WebsiteURI>http://www.klfu.dk</cbc:WebsiteURI>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-1001</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <cbc:Name languageID="DAN">Klagenævnet for Udbud</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>Nævnenes Hus, Toldboden 2</cbc:StreetName>
+                  <cbc:CityName>Viborg</cbc:CityName>
+                  <cbc:PostalZone>8800</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">DK041</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">DNK</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID>37795526</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Telephone>+45 7240 5600</cbc:Telephone>
+                  <cbc:ElectronicMail>klfu@naevneneshus.dk</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+            <efac:Organization>
+              <efac:Company>
+                <cbc:WebsiteURI>https://www.kfst.dk/</cbc:WebsiteURI>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-1002</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <cbc:Name languageID="DAN">Konkurrence- og Forbrugerstyrelsen</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>Carl Jacobsens Vej 35</cbc:StreetName>
+                  <cbc:CityName>Valby</cbc:CityName>
+                  <cbc:PostalZone>2500</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">DK012</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">DNK</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID>10294819</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Telephone>+45 4171 5000</cbc:Telephone>
+                  <cbc:ElectronicMail>kfst@kfst.dk</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+            <efac:Organization>
+              <efac:Company>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <cbc:Name languageID="DAN">HABITURA ApS</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>Søren Frichs Vej 20</cbc:StreetName>
+                  <cbc:CityName>Aarhus C</cbc:CityName>
+                  <cbc:PostalZone>8000</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">DK042</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">DNK</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID>39988399</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:ElectronicMail>mads@habitura.com</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+          </efac:Organizations>
+        <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00760155-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+      </ext:ExtensionContent>
+    </ext:UBLExtension>
+  </ext:UBLExtensions>
+  <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+  <cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+  <cbc:ID schemeName="notice-id">95c718e0-08ab-486d-838b-f342eaf539ec</cbc:ID>
+  <cbc:ContractFolderID>018c5cbe-eb6f-45d0-a5c9-363640424f84</cbc:ContractFolderID>
+  <cbc:IssueDate>2025-11-14+01:00</cbc:IssueDate>
+  <cbc:IssueTime>08:38:18+01:00</cbc:IssueTime>
+  <cbc:VersionID>01</cbc:VersionID>
+  <cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+  <cbc:NoticeTypeCode listName="dir-awa-pre">veat</cbc:NoticeTypeCode>
+  <cbc:NoticeLanguageCode>DAN</cbc:NoticeLanguageCode>
+  <cac:ContractingParty>
+    <cac:ContractingPartyType>
+      <cbc:PartyTypeCode listName="buyer-legal-type">ra</cbc:PartyTypeCode>
+    </cac:ContractingPartyType>
+    <cac:ContractingActivity>
+      <cbc:ActivityTypeCode listName="authority-activity">gen-pub</cbc:ActivityTypeCode>
+    </cac:ContractingActivity>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:ServiceProviderParty>
+        <cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode>
+        <cac:Party>
+          <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-1000</cbc:ID>
+          </cac:PartyIdentification>
+        </cac:Party>
+      </cac:ServiceProviderParty>
+    </cac:Party>
+  </cac:ContractingParty>
+  <cac:TenderingProcess>
+    <cbc:ProcedureCode listName="procurement-procedure-type">neg-wo-call</cbc:ProcedureCode>
+    <cac:ProcessJustification>
+      <cbc:ProcessReasonCode listName="direct-award-justification">technical</cbc:ProcessReasonCode>
+      <cbc:ProcessReason languageID="DAN">Kolding Kommune er ikke bekendt med andre selskaber som er i stand til at levere det ønskede programmel.</cbc:ProcessReason>
+    </cac:ProcessJustification>
+  </cac:TenderingProcess>
+  <cac:ProcurementProject>
+    <cbc:ID schemeName="InternalID">603673</cbc:ID>
+    <cbc:Name languageID="DAN">Arbejde med forankring af bæredygtighed i Kolding Kommune</cbc:Name>
+    <cbc:Description languageID="DAN">Tildelingen sker i henhold til udbudslovens § 80, stk. 3, nr. 2, da den ønskede løsning, Kolding Kommune bekendt, kun kan leveres af én aktør grundet tekniske årsager og integration med eksisterende systemer. Forud for nærværende profylakse, har ordregiver gennemført markedsafdækning og afholdt møder med potentielle tilbudsgivere som entydig understøtter tesen om at der på udbudstidspunktet kun findes én konditionsmæssig antagelig tilbudsgiver.
+
+Kolding Kommune søger et system som opfylder følgende krav og behov:
+
+Systemet er en succes, når det understøtter os i følgende effekter. 
+
+• 
+
+Høj grad af medarbejderengagement og oplevet meningsfuldhed 
+
+• 
+
+Gennemførsel af mikroprojekter med dokumenteret effekt 
+
+• 
+
+Positivt bidrag til bæredygtighedskultur og mindset 
+
+• 
+
+Decentral forankring gennem retention og vedholdenhed 
+
+• 
+
+Kvalitativ og kvantitativ dokumentation som bidrager til ESG-afrapporteringen
+
+
+Overordnede behov 
+
+• 
+
+Et digitalt værktøj, der understøtter strategisk prioritering, samskabelse, forbedringsarbejde og rapportering af bæredygtighedsindsatser. 
+
+• 
+
+En platform, der kan tilpasses den overordnet ESG-ramme og Kolding Kommunes bæredygtighedspolitik, herunder de 6 fokusområder. 
+
+• 
+
+En løsning, der er brugervenlig, motiverende og ressourceeffektiv for medarbejdere i en travl hverdag. 
+
+• 
+
+Mulighed for decentral implementering i afdelinger med lokal tilpasning og ejerskab. 
+
+C. 
+
+Krav til funktionalitet 
+
+Løsningen skal være intuitiv opbygget Softwaremoduler, hvor man guides fra High-Level elementer om indsatsområderne Environment (miljø), Social (sociale forhold) og Governance (ledelse). 
+
+Modul 
+
+Funktion 
+
+ESG-Strategirum 
+
+Digital vidensbank med ESG-temaer, mulighed for tilpasning og versionering. Ledelse og centrale medarbejder kan tage strategiske vurderinger på vegne af hver enkelt afdeling. 
+
+ESG-Indsatskatalog 
+
+Visualisering og prioritering af ESG-temaer til strategisk planlægning 
+
+ESG-Forbedringsrum 
+
+Faciliterer samskabelse af forbedringsprojekter med fokus på kvalitet og ressourceeffektivitet. 
+
+ESG-Måltalsrum 
+
+Let og overskuelig dataindsamling til afdelingsvise delrapporter 
+
+Synergirapport 
+
+Samlet overblik over indsatser og synergier på tværs af afdelinger 
+
+Ledelses- og Direktionsrapport 
+
+Udtræk af kvalitative og kvantitative data til ledelsesniveau
+
+Tilpasnings- og implementeringsstøtte 
+
+• 
+
+Facilitering af procesdesign og organisering 
+
+• 
+
+Tilpasning af begreber, motivationsfaktorer og ESG-temaer 
+
+• 
+
+Projektledelse og rådgivning vedr. drømmeresultater og målepunkter 
+
+• 
+
+Tilpasning af skabeloner og rapporteringsformater 
+
+• 
+
+Ad hoc sparring og tilpasning baseret på projektets løbende udvikling 
+
+E. 
+
+Tekniske krav 
+
+• 
+
+Webbaseret platform med sikkert login og databeskyttelse (GDPR-compliant) 
+
+• 
+
+Integration med Kolding Kommunes eksisterende IT-infrastruktur 
+
+• 
+
+Automatiseret brugerstyring via FK eller Microsoft Entra ID 
+
+• 
+
+Understøttelse af datavisualisering og eksport til rapporteringsformater (PDF, Excel, PowerPoint) 
+
+• 
+
+Skal kunne håndtere flere samtidige brugere og afdelinger 
+
+• 
+
+Skalerbarhed til store dele af organisationen, opdelt i etaper 
+
+F. 
+
+Brugerkrav 
+
+• 
+
+Intuitiv brugergrænseflade med minimal oplæring 
+
+• 
+
+Rollebaseret adgang og funktionalitet 
+
+• 
+
+Skal understøtte både strategisk og operationelt arbejde
+
+Skal fremme engagement og ejerskab hos medarbejdere 
+
+• 
+
+Løsningen skal kunne favne optil 100 afdelinger, med hver deres rum 
+
+• 
+
+Skal kunne tilpasses Kolding kommunes arbejde med pt 6 centrale fokusområder for bæredygtighed</cbc:Description>
+    <cbc:ProcurementTypeCode listName="contract-nature">supplies</cbc:ProcurementTypeCode>
+    <cac:ProcurementAdditionalType>
+      <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+    </cac:ProcurementAdditionalType>
+    <cac:MainCommodityClassification>
+      <cbc:ItemClassificationCode listName="cpv">48190000</cbc:ItemClassificationCode>
+    </cac:MainCommodityClassification>
+    <cac:AdditionalCommodityClassification>
+      <cbc:ItemClassificationCode listName="cpv">48100000</cbc:ItemClassificationCode>
+    </cac:AdditionalCommodityClassification>
+    <cac:AdditionalCommodityClassification>
+      <cbc:ItemClassificationCode listName="cpv">48614000</cbc:ItemClassificationCode>
+    </cac:AdditionalCommodityClassification>
+    <cac:AdditionalCommodityClassification>
+      <cbc:ItemClassificationCode listName="cpv">90712000</cbc:ItemClassificationCode>
+    </cac:AdditionalCommodityClassification>
+    <cac:AdditionalCommodityClassification>
+      <cbc:ItemClassificationCode listName="cpv">90700000</cbc:ItemClassificationCode>
+    </cac:AdditionalCommodityClassification>
+    <cac:RealizedLocation>
+      <cac:Address>
+        <cbc:CountrySubentityCode listName="nuts">DK032</cbc:CountrySubentityCode>
+        <cac:Country>
+          <cbc:IdentificationCode listName="country">DNK</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:RealizedLocation>
+  </cac:ProcurementProject>
+  <cac:ProcurementProjectLot>
+    <cbc:ID schemeName="Lot">LOT-0000</cbc:ID>
+    <cac:TenderingTerms>
+      <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+      <cac:AdditionalInformationParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+        </cac:PartyIdentification>
+      </cac:AdditionalInformationParty>
+      <cac:AppealTerms>
+        <cac:PresentationPeriod>
+          <cbc:Description languageID="DAN">I henhold til lov om Klagenævnet for Udbud m.v. (loven kan hentes på www.retsinformation.dk), gælder følgende frister for indgivelse af klage:
+Klage over ikke at være blevet udvalgt skal være indgivet til Klagenævnet for Udbud inden 20 kalenderdage, jf.lovens § 7, stk. 1, fra dagen efter afsendelse af en underretning til de berørte ansøgere om, hvem der er blevet udvalgt, når underretningen er ledsaget af en begrundelse for beslutningen i overensstemmelse med lovens §2, stk. 1, nr. 1, og udbudslovens § 171, stk. 2.
+I andre situationer skal klage over udbud, jf.lovens § 7, stk. 2, være indgivet til Klagenævnet for Udbud inden:
+1) 45 kalenderdage efter at ordregiveren har offentliggjort en bekendtgørelse i Den Europæiske Unions Tidende om, at ordregiveren har indgået en kontrakt.Fristen regnes fra dagen efter den dag, hvor bekendtgørelsen er blevet offentliggjort.
+2) 20 kalenderdage regnet fra dagen efter at ordregiveren har meddelt sin beslutning, jf.udbudslovens § 185, stk. 2.
+Senest samtidig med at en klage indgives til Klagenævnet for Udbud, skal klageren skriftligt underrette ordregiveren om, at klage indgives til Klagenævnet for Udbud, og om hvorvidt klagen er indgivet i standstill - perioden, jf.lovens § 6, stk. 4.I tilfælde hvor klagen ikke er indgivet i standstill - perioden, skal klageren tillige angive, hvorvidt der begæres opsættende virkning af klagen, jf.lovens § 12, stk. 1.
+Klagenævnet for Udbuds e-mailadresse er angivet i punkt VI.4.1).
+Klagenævnet for Udbuds klagevejledning kan findes på: www.erhvervsstyrelsen.dk.</cbc:Description>
+        </cac:PresentationPeriod>
+        <cac:AppealInformationParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-1002</cbc:ID>
+          </cac:PartyIdentification>
+        </cac:AppealInformationParty>
+        <cac:AppealReceiverParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-1001</cbc:ID>
+          </cac:PartyIdentification>
+        </cac:AppealReceiverParty>
+      </cac:AppealTerms>
+    </cac:TenderingTerms>
+    <cac:TenderingProcess>
+      <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+      <cac:ContractingSystem>
+        <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+      </cac:ContractingSystem>
+      <cac:ContractingSystem>
+        <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+      </cac:ContractingSystem>
+    </cac:TenderingProcess>
+    <cac:ProcurementProject>
+      <cbc:ID schemeName="InternalID">603673</cbc:ID>
+      <cbc:Name languageID="DAN">Arbejde med forankring af bæredygtighed i Kolding Kommune</cbc:Name>
+      <cbc:Description languageID="DAN">Tildelingen sker i henhold til udbudslovens § 80, stk. 3, nr. 2, da den ønskede løsning, Kolding Kommune bekendt, kun kan leveres af én aktør grundet tekniske årsager og integration med eksisterende systemer. Forud for nærværende profylakse, har ordregiver gennemført markedsafdækning og afholdt møder med potentielle tilbudsgivere som entydig understøtter tesen om at der på udbudstidspunktet kun findes én konditionsmæssig antagelig tilbudsgiver.
+
+Kolding Kommune søger et system som opfylder følgende krav og behov:
+
+Systemet er en succes, når det understøtter os i følgende effekter. 
+
+• 
+
+Høj grad af medarbejderengagement og oplevet meningsfuldhed 
+
+• 
+
+Gennemførsel af mikroprojekter med dokumenteret effekt 
+
+• 
+
+Positivt bidrag til bæredygtighedskultur og mindset 
+
+• 
+
+Decentral forankring gennem retention og vedholdenhed 
+
+• 
+
+Kvalitativ og kvantitativ dokumentation som bidrager til ESG-afrapporteringen
+
+
+Overordnede behov 
+
+• 
+
+Et digitalt værktøj, der understøtter strategisk prioritering, samskabelse, forbedringsarbejde og rapportering af bæredygtighedsindsatser. 
+
+• 
+
+En platform, der kan tilpasses den overordnet ESG-ramme og Kolding Kommunes bæredygtighedspolitik, herunder de 6 fokusområder. 
+
+• 
+
+En løsning, der er brugervenlig, motiverende og ressourceeffektiv for medarbejdere i en travl hverdag. 
+
+• 
+
+Mulighed for decentral implementering i afdelinger med lokal tilpasning og ejerskab. 
+
+C. 
+
+Krav til funktionalitet 
+
+Løsningen skal være intuitiv opbygget Softwaremoduler, hvor man guides fra High-Level elementer om indsatsområderne Environment (miljø), Social (sociale forhold) og Governance (ledelse). 
+
+Modul 
+
+Funktion 
+
+ESG-Strategirum 
+
+Digital vidensbank med ESG-temaer, mulighed for tilpasning og versionering. Ledelse og centrale medarbejder kan tage strategiske vurderinger på vegne af hver enkelt afdeling. 
+
+ESG-Indsatskatalog 
+
+Visualisering og prioritering af ESG-temaer til strategisk planlægning 
+
+ESG-Forbedringsrum 
+
+Faciliterer samskabelse af forbedringsprojekter med fokus på kvalitet og ressourceeffektivitet. 
+
+ESG-Måltalsrum 
+
+Let og overskuelig dataindsamling til afdelingsvise delrapporter 
+
+Synergirapport 
+
+Samlet overblik over indsatser og synergier på tværs af afdelinger 
+
+Ledelses- og Direktionsrapport 
+
+Udtræk af kvalitative og kvantitative data til ledelsesniveau
+
+Tilpasnings- og implementeringsstøtte 
+
+• 
+
+Facilitering af procesdesign og organisering 
+
+• 
+
+Tilpasning af begreber, motivationsfaktorer og ESG-temaer 
+
+• 
+
+Projektledelse og rådgivning vedr. drømmeresultater og målepunkter 
+
+• 
+
+Tilpasning af skabeloner og rapporteringsformater 
+
+• 
+
+Ad hoc sparring og tilpasning baseret på projektets løbende udvikling 
+
+E. 
+
+Tekniske krav 
+
+• 
+
+Webbaseret platform med sikkert login og databeskyttelse (GDPR-compliant) 
+
+• 
+
+Integration med Kolding Kommunes eksisterende IT-infrastruktur 
+
+• 
+
+Automatiseret brugerstyring via FK eller Microsoft Entra ID 
+
+• 
+
+Understøttelse af datavisualisering og eksport til rapporteringsformater (PDF, Excel, PowerPoint) 
+
+• 
+
+Skal kunne håndtere flere samtidige brugere og afdelinger 
+
+• 
+
+Skalerbarhed til store dele af organisationen, opdelt i etaper 
+
+F. 
+
+Brugerkrav 
+
+• 
+
+Intuitiv brugergrænseflade med minimal oplæring 
+
+• 
+
+Rollebaseret adgang og funktionalitet 
+
+• 
+
+Skal understøtte både strategisk og operationelt arbejde
+
+Skal fremme engagement og ejerskab hos medarbejdere 
+
+• 
+
+Løsningen skal kunne favne optil 100 afdelinger, med hver deres rum 
+
+• 
+
+Skal kunne tilpasses Kolding kommunes arbejde med pt 6 centrale fokusområder for bæredygtighed</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">supplies</cbc:ProcurementTypeCode>
+      <cac:ProcurementAdditionalType>
+        <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+      </cac:ProcurementAdditionalType>
+      <cac:ProcurementAdditionalType>
+        <cbc:ProcurementTypeCode listName="strategic-procurement">none</cbc:ProcurementTypeCode>
+      </cac:ProcurementAdditionalType>
+      <cac:ProcurementAdditionalType>
+        <cbc:ProcurementTypeCode listName="gpp-criteria">none</cbc:ProcurementTypeCode>
+      </cac:ProcurementAdditionalType>
+      <cac:ProcurementAdditionalType>
+        <cbc:ProcurementTypeCode listName="accessibility">n-inc</cbc:ProcurementTypeCode>
+      </cac:ProcurementAdditionalType>
+      <cac:MainCommodityClassification>
+        <cbc:ItemClassificationCode listName="cpv">48190000</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+        <cbc:ItemClassificationCode listName="cpv">48100000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+        <cbc:ItemClassificationCode listName="cpv">48614000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+        <cbc:ItemClassificationCode listName="cpv">90712000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+        <cbc:ItemClassificationCode listName="cpv">90700000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:RealizedLocation>
+        <cac:Address>
+          <cbc:CountrySubentityCode listName="nuts">DK032</cbc:CountrySubentityCode>
+          <cac:Country>
+            <cbc:IdentificationCode listName="country">DNK</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:RealizedLocation>
+      <cac:PlannedPeriod>
+        <cbc:StartDate>2025-12-01+01:00</cbc:StartDate>
+        <cbc:EndDate>2029-11-30+01:00</cbc:EndDate>
+      </cac:PlannedPeriod>
+      <cac:ContractExtension>
+        <cbc:MaximumNumberNumeric>0</cbc:MaximumNumberNumeric>
+      </cac:ContractExtension>
+    </cac:ProcurementProject>
+  </cac:ProcurementProjectLot>
+  <cac:TenderResult>
+    <cbc:AwardDate>2000-01-01+01:00</cbc:AwardDate>
+  </cac:TenderResult>
+</ContractAwardNotice>

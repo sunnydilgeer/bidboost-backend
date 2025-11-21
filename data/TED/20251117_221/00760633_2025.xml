@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><PriorInformationNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:PriorInformationNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+  <ext:UBLExtensions>
+    <ext:UBLExtension>
+      <ext:ExtensionContent>
+        <efext:EformsExtension>
+          <efbc:TransmissionDate>2025-11-13+00:00</efbc:TransmissionDate>
+          <efbc:TransmissionTime>14:14:45+00:00</efbc:TransmissionTime>
+          <efac:NoticeSubType>
+            <cbc:SubTypeCode listName="notice-subtype">4</cbc:SubTypeCode>
+          </efac:NoticeSubType>
+          <efac:Organizations>
+            <efac:Organization>
+              <efac:Company>
+                <cbc:WebsiteURI>http://www.sykehusinnkjop.no</cbc:WebsiteURI>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                </cac:PartyIdentification>
+                
+                <cac:PartyName>
+                  <cbc:Name languageID="ENG">SYKEHUSINNKJØP HF</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>Postboks 40</cbc:StreetName>
+                  <cbc:CityName>VADSØ</cbc:CityName>
+                  <cbc:PostalZone>9811</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">NOZZZ</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">NOR</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID schemeID="002">916879067</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Name>Postmottak Sykehusinnkjøp</cbc:Name>
+                  <cbc:Telephone>+47 78950700</cbc:Telephone>
+                  <cbc:ElectronicMail>post@sykehusinnkjop.no</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+            <efac:Organization>
+              <efac:Company>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                </cac:PartyIdentification>
+                
+                <cac:PartyName>
+                  <cbc:Name languageID="ENG">INDRE OG ØSTRE FINNMARK TINGRETT</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:CityName>VADSØ</cbc:CityName>
+                  <cbc:PostalZone>9811</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">NO073</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">NOR</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID schemeID="002">926722840</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Telephone>78 01 17 00</cbc:Telephone>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+          </efac:Organizations>
+        <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00760633-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+      </ext:ExtensionContent>
+    </ext:UBLExtension>
+  </ext:UBLExtensions>
+  <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+  <cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+  <cbc:ID schemeName="notice-id">372e1f85-0d83-438f-8a06-0382ea43f303</cbc:ID>
+  <cbc:IssueDate>2025-11-13+00:00</cbc:IssueDate>
+  <cbc:IssueTime>14:14:30+00:00</cbc:IssueTime>
+  <cbc:VersionID>01</cbc:VersionID>
+  <cbc:PlannedDate>2026-05-25Z</cbc:PlannedDate>
+  <cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+  <cbc:NoticeTypeCode listName="planning">pin-only</cbc:NoticeTypeCode>
+  <cbc:NoticeLanguageCode>ENG</cbc:NoticeLanguageCode>
+  
+  <cac:ContractingParty>
+    <cac:ContractingPartyType>
+      <cbc:PartyTypeCode listName="buyer-legal-type">body-pl</cbc:PartyTypeCode>
+    </cac:ContractingPartyType>
+    <cac:ContractingActivity>
+      <cbc:ActivityTypeCode listName="authority-activity">health</cbc:ActivityTypeCode>
+    </cac:ContractingActivity>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+      </cac:PartyIdentification>
+    </cac:Party>
+  </cac:ContractingParty>
+  <cac:TenderingTerms>
+    <cac:ProcurementLegislationDocumentReference>
+      <cbc:ID>Anskaffelsesforskriften</cbc:ID>
+      
+      <cbc:DocumentDescription languageID="ENG">.</cbc:DocumentDescription>
+    </cac:ProcurementLegislationDocumentReference>
+  </cac:TenderingTerms>
+  <cac:ProcurementProject>
+    <cbc:ID>2025/56677</cbc:ID>
+    
+    <cbc:Name languageID="ENG">Prior information notice: Laboratory information system (LIMS) for the health companies in Helse Nord.</cbc:Name>
+    
+    <cbc:Description languageID="ENG">Invitation to market dialogue. Sykehusinnkjøp HF hereby invites tenderers to a market dialogue for the procurement of a laboratory information system for the health companies in Helse Nord. The market dialogue is a part of the preliminary work for the procurement and is being carried out because the Contracting Authority would like input for the procurement from potential suppliers, possibly also from other interested parties. As a part of this process, suppliers are invited to provide input to the procurement prior to the announcement. The feedback makes it possible to make a decision about the type of procurement and procurement procedure. Based on input from the market dialogue, the Contracting Authority will, as needed, open to a closer dialogue with some of the suppliers for further details and discussions. The contracting authority would like input on the following points: Short presentation of the supplier/tendererWhich the specialist areas the system is meant to cover (see further information on all disciplines within the laboratory service in annex "Invitation to market dialogue") About the solution, including brief information on functionality, possibilities and limitations, and: Describe how the system is built up in the tender documentation. modules, and which advantages this provides. How the system is deployed to clients; web based and/or sw deployed on clients. By the latter; whether there are specific requirements for clients. How the system will be deployed back-end. Describe how the system supports portable devices (tablets etc.). References to customers where the system is in use (and possibly which parts of the system they use). The tenderer ́s thoughts on how the system will support future development within the disciplines, e.g. within AI, integrations (i.a. FHIR), personalised medicine, etc. Input for the procurement as regards the expected functionality described in chapter 5 (see annex "Invitation to Market Dialogue"):How does the system ensure user friendliness, intuitive user interface and training? How does the system cover the overall description and for each of the disciplines covered by the solution? If there is functionality that cannot be offered we would like to know this. Which disciplines the solution covers and whether it covers all disciplines within the laboratory service (note possible exceptions for transfusion medicine/blood bank). How the system supports decision support functionality. How the solution supports artificial intelligence. How the system supports personalised medicine. How does the system support different integration mechanisms with other systems (FHIR, message exchange in accordance with Norwegian requirements, etc.?) Delivery. Which factors affect delivery time and how do you handle risk? All the functionalities are ready developed and can be delivered. If there is functionality that needs to be developed, it is desirable to know. Delivery model: cloud and/or local installation. If the system is cloud compatible; about Norwegian requirements are complied with. Whether there are specific requirements for HW and underlying SW-platform for customers. Short proposals as to how the system will be implemented at Customer Provisions that the Customer is expected to fulfil. Frequency of release bicycles and response to new functionality and error recovery. Integrations: does this require assistance from customers? Describe the pricing model and what factors affect the total cost of ownership (TCO) Licenses Maintenance/support price driven factors. And input that the tenderer deems important. Deadline for written feedback on the above mentioned points from interested parties: 28.11.2025. This is only a prior information notice in order to get information on the market and to have a dialogue with relevant suppliers. The actual competition may be announced at a later date. Feedback on or questions to the market survey is done in the Mercell communication module. After this market survey, the contracting authority will assess the need to hold meetings(s) with relevant interested parties.</cbc:Description>
+    <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+    <cac:MainCommodityClassification>
+      <cbc:ItemClassificationCode listName="cpv">72000000</cbc:ItemClassificationCode>
+    </cac:MainCommodityClassification>
+    <cac:AdditionalCommodityClassification>
+      <cbc:ItemClassificationCode listName="cpv">48100000</cbc:ItemClassificationCode>
+    </cac:AdditionalCommodityClassification>
+    <cac:AdditionalCommodityClassification>
+      <cbc:ItemClassificationCode listName="cpv">48180000</cbc:ItemClassificationCode>
+    </cac:AdditionalCommodityClassification>
+    <cac:AdditionalCommodityClassification>
+      <cbc:ItemClassificationCode listName="cpv">48814200</cbc:ItemClassificationCode>
+    </cac:AdditionalCommodityClassification>
+    <cac:AdditionalCommodityClassification>
+      <cbc:ItemClassificationCode listName="cpv">48814400</cbc:ItemClassificationCode>
+    </cac:AdditionalCommodityClassification>
+    <cac:AdditionalCommodityClassification>
+      <cbc:ItemClassificationCode listName="cpv">72230000</cbc:ItemClassificationCode>
+    </cac:AdditionalCommodityClassification>
+    <cac:AdditionalCommodityClassification>
+      <cbc:ItemClassificationCode listName="cpv">72260000</cbc:ItemClassificationCode>
+    </cac:AdditionalCommodityClassification>
+    <cac:AdditionalCommodityClassification>
+      <cbc:ItemClassificationCode listName="cpv">72261000</cbc:ItemClassificationCode>
+    </cac:AdditionalCommodityClassification>
+    <cac:RealizedLocation>
+      <cac:Address>
+        <cbc:CountrySubentityCode listName="nuts">NO071</cbc:CountrySubentityCode>
+        <cac:Country>
+          <cbc:IdentificationCode listName="country">NOR</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:RealizedLocation>
+    <cac:RealizedLocation>
+      <cac:Address>
+        <cbc:CountrySubentityCode listName="nuts">NO072</cbc:CountrySubentityCode>
+        <cac:Country>
+          <cbc:IdentificationCode listName="country">NOR</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:RealizedLocation>
+    <cac:RealizedLocation>
+      <cac:Address>
+        <cbc:CountrySubentityCode listName="nuts">NO073</cbc:CountrySubentityCode>
+        <cac:Country>
+          <cbc:IdentificationCode listName="country">NOR</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:RealizedLocation>
+  </cac:ProcurementProject>
+  <cac:ProcurementProjectLot>
+    <cbc:ID schemeName="Part">PAR-0000</cbc:ID>
+    <cac:TenderingTerms>
+      <cac:CallForTendersDocumentReference>
+        <ext:UBLExtensions>
+          <ext:UBLExtension>
+            <ext:ExtensionContent>
+              <efext:EformsExtension>
+                <efac:OfficialLanguages>
+                  <cac:Language>
+                    <cbc:ID>NOR</cbc:ID>
+                  </cac:Language>
+                </efac:OfficialLanguages>
+              </efext:EformsExtension>
+            </ext:ExtensionContent>
+          </ext:UBLExtension>
+        </ext:UBLExtensions>
+        <cbc:ID>270137714</cbc:ID>
+        <cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+        <cac:Attachment>
+          <cac:ExternalReference>
+            <cbc:URI>https://permalink.mercell.com/270137714.aspx</cbc:URI>
+          </cac:ExternalReference>
+        </cac:Attachment>
+      </cac:CallForTendersDocumentReference>
+      <cac:TendererQualificationRequest>
+        <cac:SpecificTendererRequirement>
+          <cbc:TendererRequirementTypeCode listName="reserved-procurement">none</cbc:TendererRequirementTypeCode>
+        </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:ContractExecutionRequirement>
+        <cbc:ExecutionRequirementCode listName="reserved-execution">no</cbc:ExecutionRequirementCode>
+      </cac:ContractExecutionRequirement>
+      <cac:AppealTerms>
+        <cac:AppealInformationParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+          </cac:PartyIdentification>
+        </cac:AppealInformationParty>
+        <cac:AppealReceiverParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+          </cac:PartyIdentification>
+        </cac:AppealReceiverParty>
+      </cac:AppealTerms>
+    </cac:TenderingTerms>
+    <cac:TenderingProcess>
+      <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+    </cac:TenderingProcess>
+    <cac:ProcurementProject>
+      <cbc:ID>2025/56677</cbc:ID>
+      
+      <cbc:Name languageID="ENG">Prior information notice: Laboratory information system (LIMS) for the health companies in Helse Nord.</cbc:Name>
+      
+      <cbc:Description languageID="ENG">Invitation to market dialogue. Sykehusinnkjøp HF hereby invites tenderers to a market dialogue for the procurement of a laboratory information system for the health companies in Helse Nord. The market dialogue is a part of the preliminary work for the procurement and is being carried out because the Contracting Authority would like input for the procurement from potential suppliers, possibly also from other interested parties. As a part of this process, suppliers are invited to provide input to the procurement prior to the announcement. The feedback makes it possible to make a decision about the type of procurement and procurement procedure. Based on input from the market dialogue, the Contracting Authority will, as needed, open to a closer dialogue with some of the suppliers for further details and discussions. The contracting authority would like input on the following points: Short presentation of the supplier/tendererWhich the specialist areas the system is meant to cover (see further information on all disciplines within the laboratory service in annex "Invitation to market dialogue") About the solution, including brief information on functionality, possibilities and limitations, and: Describe how the system is built up in the tender documentation. modules, and which advantages this provides. How the system is deployed to clients; web based and/or sw deployed on clients. By the latter; whether there are specific requirements for clients. How the system will be deployed back-end. Describe how the system supports portable devices (tablets etc.). References to customers where the system is in use (and possibly which parts of the system they use). The tenderer ́s thoughts on how the system will support future development within the disciplines, e.g. within AI, integrations (i.a. FHIR), personalised medicine, etc. Input for the procurement as regards the expected functionality described in chapter 5 (see annex "Invitation to Market Dialogue"):How does the system ensure user friendliness, intuitive user interface and training? How does the system cover the overall description and for each of the disciplines covered by the solution? If there is functionality that cannot be offered we would like to know this. Which disciplines the solution covers and whether it covers all disciplines within the laboratory service (note possible exceptions for transfusion medicine/blood bank). How the system supports decision support functionality. How the solution supports artificial intelligence. How the system supports personalised medicine. How does the system support different integration mechanisms with other systems (FHIR, message exchange in accordance with Norwegian requirements, etc.?) Delivery. Which factors affect delivery time and how do you handle risk? All the functionalities are ready developed and can be delivered. If there is functionality that needs to be developed, it is desirable to know. Delivery model: cloud and/or local installation. If the system is cloud compatible; about Norwegian requirements are complied with. Whether there are specific requirements for HW and underlying SW-platform for customers. Short proposals as to how the system will be implemented at Customer Provisions that the Customer is expected to fulfil. Frequency of release bicycles and response to new functionality and error recovery. Integrations: does this require assistance from customers? Describe the pricing model and what factors affect the total cost of ownership (TCO) Licenses Maintenance/support price driven factors. And input that the tenderer deems important. Deadline for written feedback on the above mentioned points from interested parties: 28.11.2025. This is only a prior information notice in order to get information on the market and to have a dialogue with relevant suppliers. The actual competition may be announced at a later date. Feedback on or questions to the market survey is done in the Mercell communication module. After this market survey, the contracting authority will assess the need to hold meetings(s) with relevant interested parties.</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+      <cac:MainCommodityClassification>
+        <cbc:ItemClassificationCode listName="cpv">72000000</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+        <cbc:ItemClassificationCode listName="cpv">48100000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+        <cbc:ItemClassificationCode listName="cpv">48180000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+        <cbc:ItemClassificationCode listName="cpv">48814200</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+        <cbc:ItemClassificationCode listName="cpv">48814400</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+        <cbc:ItemClassificationCode listName="cpv">72230000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+        <cbc:ItemClassificationCode listName="cpv">72260000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+        <cbc:ItemClassificationCode listName="cpv">72261000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:RealizedLocation>
+        <cac:Address>
+          <cbc:CountrySubentityCode listName="nuts">NO071</cbc:CountrySubentityCode>
+          <cac:Country>
+            <cbc:IdentificationCode listName="country">NOR</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:RealizedLocation>
+      <cac:RealizedLocation>
+        <cac:Address>
+          <cbc:CountrySubentityCode listName="nuts">NO072</cbc:CountrySubentityCode>
+          <cac:Country>
+            <cbc:IdentificationCode listName="country">NOR</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:RealizedLocation>
+      <cac:RealizedLocation>
+        <cac:Address>
+          <cbc:CountrySubentityCode listName="nuts">NO073</cbc:CountrySubentityCode>
+          <cac:Country>
+            <cbc:IdentificationCode listName="country">NOR</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:RealizedLocation>
+    </cac:ProcurementProject>
+  </cac:ProcurementProjectLot>
+</PriorInformationNotice>

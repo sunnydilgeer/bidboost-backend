@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <ext:UBLExtensions>
+      <ext:UBLExtension>
+         <ext:ExtensionContent>
+            <efext:EformsExtension>
+               <efac:NoticeSubType>
+                  <cbc:SubTypeCode listName="notice-subtype">16</cbc:SubTypeCode>
+               </efac:NoticeSubType>
+               <efac:Organizations>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://marches.cinor.fr</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="FRA">COMMUNAUTE INTERCOMMUNALE NORD REUNION</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>Direction de la commande publique</cbc:StreetName>
+                           <cbc:AdditionalStreetName>3 RUE DE LA SOLIDARITE - CS 61025</cbc:AdditionalStreetName>
+                           <cbc:CityName>Sainte Clotilde CEDEX</cbc:CityName>
+                           <cbc:PostalZone>97495</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">FRY40</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">FRA</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>24974011900063</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>02 62 92 34 27</cbc:Telephone>
+                           <cbc:ElectronicMail>achat.marche@cinor.re</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>http://la-reunion.tribunal-administratif.fr</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="FRA">Tribunal administratif de la Réunion</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>27 rue Félix Guyon, CS 61107</cbc:StreetName>
+                           <cbc:CityName>Saint-Denis CEDEX</cbc:CityName>
+                           <cbc:PostalZone>97404</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">FRY40</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">FRA</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>17974005500019</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>02 62 92 43 60</cbc:Telephone>
+                           <cbc:Telefax>02 62 92 43 62</cbc:Telefax>
+                           <cbc:ElectronicMail>greffe.ta-reunion@juradm.fr</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+               </efac:Organizations>
+            <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00759813-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+         </ext:ExtensionContent>
+      </ext:UBLExtension>
+   </ext:UBLExtensions>
+   <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+   <cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+   <cbc:ID schemeName="notice-id">0875ee0d-1bfe-4c8a-8b9d-bb45638c8721</cbc:ID>
+   <cbc:ContractFolderID>3bd462f1-b038-4824-b9a6-f67160fff78b</cbc:ContractFolderID>
+   <cbc:IssueDate>2025-11-14+02:00</cbc:IssueDate>
+   <cbc:IssueTime>06:55:22+02:00</cbc:IssueTime>
+   <cbc:VersionID>01</cbc:VersionID>
+   <cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+   <cbc:NoticeTypeCode listName="competition">cn-standard</cbc:NoticeTypeCode>
+   <cbc:NoticeLanguageCode listName="language">FRA</cbc:NoticeLanguageCode>
+   <cac:ContractingParty>
+      <cbc:BuyerProfileURI>https://marches.cinor.fr</cbc:BuyerProfileURI>
+      <cac:ContractingPartyType>
+         <cbc:PartyTypeCode listName="buyer-legal-type">la</cbc:PartyTypeCode>
+      </cac:ContractingPartyType>
+      <cac:ContractingActivity>
+         <cbc:ActivityTypeCode listName="authority-activity">gen-pub</cbc:ActivityTypeCode>
+      </cac:ContractingActivity>
+      <cac:Party>
+         <cac:PartyIdentification>
+            <cbc:ID>ORG-0001</cbc:ID>
+         </cac:PartyIdentification>
+      </cac:Party>
+   </cac:ContractingParty>
+   <cac:TenderingTerms>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-grounds-source">epo-notice</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-bre-lab-law</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="FRA">Les autres motifs d'exclusion sont précisées dans le DCE.</cbc:Description>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:LotDistribution>
+         <cbc:MaximumLotsAwardedNumeric>2</cbc:MaximumLotsAwardedNumeric>
+         <cbc:MaximumLotsSubmittedNumeric>2</cbc:MaximumLotsSubmittedNumeric>
+      </cac:LotDistribution>
+   </cac:TenderingTerms>
+   <cac:TenderingProcess>
+      <cbc:ProcedureCode listName="procurement-procedure-type">open</cbc:ProcedureCode>
+      <cac:ProcessJustification>
+         <cbc:ProcessReasonCode listName="accelerated-procedure">false</cbc:ProcessReasonCode>
+      </cac:ProcessJustification>
+   </cac:TenderingProcess>
+   <cac:ProcurementProject>
+      <cbc:Name languageID="FRA">Fourniture et maintenance des bacs poubelles de la CINOR</cbc:Name>
+      <cbc:Description languageID="FRA">Le marché consiste en :
+TRANCHE FERME :
+- La fourniture de bacs poubelles neufs destinés à la collecte des ordures ménagères résiduelles, des déchets recyclables, et des biodéchets (lots 1 et 2).
+- La fourniture de bacs poubelles neufs destinés à la collecte des ordures ménagères résiduelles, des déchets recyclables, et des biodéchets (lots 1 et 2).
+- La maintenance du parc de bacs poubelles, appartenant à la CINOR (lots 1 et 2).
+- La mise à disposition temporaire des bacs poubelles (lots 1 et 2).
+- La reprise et le recyclage des bacs usagés (lots 1 et 2).
+- La gestion informatisée du parc de contenants (lots 1 et 2).
+- La gestion et l'enregistrement des appels, et l'organisation des livraisons (lots 1 et 2).
+
+TRANCHES OPTIONNELLES (TO) :
+- TO N°1 (lots 1 et 2) : Des campagnes de puçage.
+- TO N°2 (lots 1 et 2): Analyses et enquêtes de dotation en vue d'une maintenance préventive ou de mise à jour/ajustements des dotations sur tout ou partie du parc.
+- TO N°3 (lot 2) : Fourniture, mise en place et maintenance des abri-bacs biodéchets.
+
+La valeur estimée et la valeur maximale de l'accord-cadre mentionnées à la rubrique 2.1.3 du présent avis sont celles du montant cumulé des lots 1 et 2 sur la durée totale du marché (4 ans).</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">supplies</cbc:ProcurementTypeCode>
+      <cbc:Note languageID="FRA">Pour l'heure limite de réception des offres, il s'agit de l'heure locale (Ile de la Réunion). - Procédure conjointe ? Non. Il n'y a pas de nombre maximal de participants. - Informations sur les lots : Division en lots : oui.  Pour chaque lot, il s’agit d’un accord cadre à bons de commande mono-attributaire. Il est possible de soumettre des offres pour tous les lots. - Il s'agit d'un marché renouvelable. Calendrier prévisionnel de publication des prochains avis : Vers JANVIER 2030 pour le prochain avis (pour un marché qui débuterait en Juin 2030). - Vers NOVEMBRE 2033 pour le 2e prochain avis (pour un marché qui débuterait en AVRIL 2033). - Durée globale : Le marché est passé pour une durée d'un (1) an, renouvelable tacitement trois (3) fois, soit quatre (4) ans maximum à compter de la date de notification du marché. La date prévisionnelle de notification du marché est prévue pour le mois de avril 2025. Le Titulaire disposera d'un délai de préparation à compter de la notification du marché de 3 mois maximum. Concernant les tranches optionnelles, elles sont déclenchées par un ordre de service spécifique. - Date prévisionnelle de démarrage de la prestation : JUILLET 2026. -Procédure conjointe ? Non. -Informations sur les membres du personnel responsables de l'exécution du marché : Non. - La prestation est réservée à une profession déterminée : Non. -Conditions particulières d'exécution : OUI. Pour chaque lot et afin de respecter les objectifs fixés par la loi AGEC, les produits fournis dans le cadre du présent marché devront intégrer une proportion minimale selon le calendrier suivant : Avant 2027, au moins 20 % de matière recyclée provenant de bacs usagés, et/ou de déchets post-industriels et/ou post-ménagers et 5% issu du réemploi ou de réutilisation de bacs ou pièces détachées. Et à compter de 2027 : au moins 25 % de matière recyclée provenant de bacs usagés, et/ou de déchets post-industriels et/ou post-ménagers et 10% issu du réemploi ou de réutilisation de bacs ou pièces détachées . En application des dispositions des articles L. 2111-1 et L. 2112-2 du code de la commande publique, le marché comporte une clause sociale d'insertion obligatoire. -Autres informations complémentaires : Conditions d'obtention du Dossier de consultation : uniquement téléchargeable sur le site www.cinor.re, Rubrique : Marchés publics encours (cliquer sur l'action : accéder à la consultation) ou sur le lien direct : https://marches.cinor.fr. Le formulaire d'aide à la dématérialisation est disponible sur le site https://marches.cinor.fr. Rubrique : Aide. -Conditions d'obtention des renseignements complémentaires : toutes les questions devront être transmises par voie électronique sur le site internet : https://marches.cinor.fr et ce dans les conditions spécifiées à l'article 6 du règlement de consultation. -Pour les modalités de remise des candidatures et des offres : uniquement par voie électronique (sur le site internet : https://marches.cinor.fr) et ce dans les conditions spécifiées à l'article 5 du règlement de consultation. Enfin, il est précisé qu'il ne pourra être exigé que du seul candidat auquel il est envisagé d'attribuer le marché public qu'il justifie ne pas être dans un cas d'interdiction de soumissionner, et notamment les documents justificatifs et moyens de preuve mentionnées à l'article R. 2143-6et suivants du code de la commande publique. - Modalités d'ouverture des offres : La date et heure de l'ouverture des offres n'est pas connue de manière certaine à ce stade de la procédure. La séance d'ouverture n'est pas publique (les candidats n'y sont pas admis). Unité monétaire : euros.</cbc:Note>
+      <cac:RequestedTenderTotal>
+         <ext:UBLExtensions>
+            <ext:UBLExtension>
+               <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                     <efbc:FrameworkMaximumAmount currencyID="EUR">8150000</efbc:FrameworkMaximumAmount>
+                  </efext:EformsExtension>
+               </ext:ExtensionContent>
+            </ext:UBLExtension>
+         </ext:UBLExtensions>
+         <cbc:EstimatedOverallContractAmount currencyID="EUR">6040330</cbc:EstimatedOverallContractAmount>
+      </cac:RequestedTenderTotal>
+      <cac:MainCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">34928480</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:RealizedLocation>
+         <cac:Address>
+            <cbc:CityName>Territoire de la CINOR</cbc:CityName>
+            <cbc:PostalZone>97490</cbc:PostalZone>
+            <cbc:CountrySubentityCode listName="nuts">FRY40</cbc:CountrySubentityCode>
+            <cac:Country>
+               <cbc:IdentificationCode listName="country">FRA</cbc:IdentificationCode>
+            </cac:Country>
+         </cac:Address>
+      </cac:RealizedLocation>
+   </cac:ProcurementProject>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+      <cac:TenderingTerms>
+         <ext:UBLExtensions>
+            <ext:UBLExtension>
+               <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-suit-reg-trade</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="FRA">Habilitation à exercer l’activité professionnelle, y compris exigences relatives à l’inscription au registre du commerce ou de la profession.
+Pièces de candidature réclamées :
+A) Lettre de candidature (formulaire DC1) renseignée, comprenant la déclaration sur l’honneur justifiant que le candidat n’entre pas dans l’un des cas d’exclusion prévus aux articles L. 2141-1 à L. 2141-5 ou aux articles L. 2141-7 à L. 2141-10 du code de la commande publique,  et notamment qu'il satisfait aux obligations concernant l'emploi des travailleurs handicapés définies aux articles L. 5212-1 à L. 5212-11 du code du travail ;
+B) Un justificatif d'inscription au registre du commerce ou de la profession (ou numéro unique d'identification permettant à l'acheteur d'accéder aux informations pertinentes par le biais d'un système électronique mentionné au 1° de l'article R. 2143-13 du code de la commande publique), OU récépissé du dépôt de déclaration auprès d'un centre de formalités des entreprises pour les personnes en cours d'inscription, ou équivalent.</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-other</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="FRA">Capacité économique et financière :
+C) Déclaration concernant le chiffre d'affaires global du candidat portant au maximum sur les trois derniers exercices disponibles en fonction de la date de création de l'entreprise ou du début d'activité de l'opérateur économique, dans la mesure où les informations sur ces chiffres d'affaires sont disponibles.
+NB : Si, pour une raison justifiée, l'opérateur économique n'est pas en mesure de produire les renseignements demandés par l'acheteur, il est autorisé à prouver sa capacité par tout autre moyen considéré comme approprié par l’acheteur (exemple : attestations d'assurances pour risques professionnels ou garanties bancaires ou bilans prévisionnels...).</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-ref-supply</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="FRA">Capacité technique et professionnelle
+D) Déclaration du candidat indiquant les effectifs moyens annuels et l'importance du personnel d'encadrement pendant les 3 dernières années,
+E) Déclaration indiquant les moyens matériels dont le candidat dispose pour la réalisation de marchés de même nature ;
+F) Présentation d'une liste des principales fournitures ou services effectués au cours des trois dernières années, indiquant le montant, la date et le destinataire public ou privé. Les livraisons sont prouvées par des attestations du destinataire ou, à défaut, par une déclaration de l'opérateur économique ;
+NB : Si le candidat s’appuie sur les capacités d’autres opérateurs économiques, il justifie des capacités de ce ou ces opérateurs économiques et apporte la preuve qu’il en disposera pour l’exécution du marché public. Cette preuve peut être apportée par tout moyen approprié. 
+NB En cas de groupement, l'ensemble des cotraitants fournira obligatoirement l'intégralité des pièces demandées. 
+Nb : l’acheteur public accepte que le candidat présente sa candidature dans les conditions posées à l’article R. 2143-4 et aux articles R. 2143-13 et R. 2143-14 du code de la commande publique.</cbc:Description>
+                     </efac:SelectionCriteria>
+                  </efext:EformsExtension>
+               </ext:ExtensionContent>
+            </ext:UBLExtension>
+         </ext:UBLExtensions>
+         <cbc:VariantConstraintCode listName="permission">not-allowed</cbc:VariantConstraintCode>
+         <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+         <cbc:RequiredCurriculaCode listName="requirement-stage">not-requ</cbc:RequiredCurriculaCode>
+         <cac:CallForTendersDocumentReference>
+            <cbc:ID>DCE DEMAT</cbc:ID>
+            <cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+            <cac:Attachment>
+               <cac:ExternalReference>
+                  <cbc:URI>https://marches.cinor.fr</cbc:URI>
+               </cac:ExternalReference>
+            </cac:Attachment>
+         </cac:CallForTendersDocumentReference>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="selection-criteria-source">epo-notice</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="reserved-procurement">none</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="conditions">performance</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="reserved-execution">no</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="einvoicing">required</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="ecatalog-submission">not-allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:AdditionalInformationParty>
+            <cac:PartyIdentification>
+               <cbc:ID>ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:AdditionalInformationParty>
+         <cac:DocumentProviderParty>
+            <cac:PartyIdentification>
+               <cbc:ID>ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:DocumentProviderParty>
+         <cac:TenderRecipientParty>
+            <cbc:EndpointID>https://marches.cinor.fr</cbc:EndpointID>
+            <cac:PartyIdentification>
+               <cbc:ID>ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:TenderRecipientParty>
+         <cac:TenderEvaluationParty>
+            <cac:PartyIdentification>
+               <cbc:ID>ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:TenderEvaluationParty>
+         <cac:TenderValidityPeriod>
+            <cbc:DurationMeasure unitCode="DAY">180</cbc:DurationMeasure>
+         </cac:TenderValidityPeriod>
+         <cac:AppealTerms>
+            <cac:AppealInformationParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealInformationParty>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+            <cac:MediationParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0001</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:MediationParty>
+         </cac:AppealTerms>
+         <cac:Language>
+            <cbc:ID>FRA</cbc:ID>
+         </cac:Language>
+         <cac:PostAwardProcess>
+            <cbc:ElectronicOrderUsageIndicator>true</cbc:ElectronicOrderUsageIndicator>
+            <cbc:ElectronicPaymentUsageIndicator>true</cbc:ElectronicPaymentUsageIndicator>
+         </cac:PostAwardProcess>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <cbc:SubmissionMethodCode listName="esubmission">required</cbc:SubmissionMethodCode>
+         <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+         <cac:TenderSubmissionDeadlinePeriod>
+            <cbc:EndDate>2025-12-31+02:00</cbc:EndDate>
+            <cbc:EndTime>12:00:00+02:00</cbc:EndTime>
+         </cac:TenderSubmissionDeadlinePeriod>
+         <cac:AuctionTerms>
+            <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+         </cac:AuctionTerms>
+         <cac:FrameworkAgreement>
+            <cbc:MaximumOperatorQuantity>0</cbc:MaximumOperatorQuantity>
+            <cac:SubsequentProcessTenderRequirement>
+               <cbc:Name>buyer-categories</cbc:Name>
+            </cac:SubsequentProcessTenderRequirement>
+         </cac:FrameworkAgreement>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="framework-agreement">fa-wo-rc</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:Name languageID="FRA">Fourniture et Maintenance des bacs poubelles de la CINOR sur Saint Denis</cbc:Name>
+         <cbc:Description languageID="FRA">TRANCHE FERME (Durée : un (1) an, renouvelable tacitement trois (3) fois, soit quatre (4) ans maximum) :
+- La fourniture de bacs poubelles neufs destinés à la collecte des ordures ménagères résiduelles, des déchets recyclables, et des biodéchets.
+- La fourniture de bacs poubelles neufs destinés à la collecte des ordures ménagères résiduelles, des déchets recyclables, et des biodéchets.
+- La maintenance du parc de bacs poubelles, appartenant à la CINOR.
+- La mise à disposition temporaire des bacs poubelles. 
+- La reprise et le recyclage des bacs usagés.
+- La gestion informatisée du parc de contenants. 
+- La gestion et l'enregistrement des appels, et l'organisation des livraisons. 
+
+TRANCHES OPTIONNELLES (TO) :
+- TO N°1 (Durée : un (1) an, renouvelable tacitement une (1) fois, soit deux (2) ans maximum) : Des campagnes de puçage.
+- TO N°2 (Durée : un (1) an, renouvelable tacitement deux (2) fois, soit trois (3) ans maximum) : Analyses et enquêtes de dotation en vue d'une maintenance préventive ou de mise à jour/ajustements des dotations sur tout ou partie du parc.
+
+La valeur estimée et la valeur maximale de l'accord-cadre mentionnées à la rubrique 5.1.5 du présent avis sont celles du montant du lot 1 sur la durée totale du marché (4 ans).</cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">supplies</cbc:ProcurementTypeCode>
+         <cac:RequestedTenderTotal>
+            <ext:UBLExtensions>
+               <ext:UBLExtension>
+                  <ext:ExtensionContent>
+                     <efext:EformsExtension>
+                        <efbc:FrameworkMaximumAmount currencyID="EUR">4830000</efbc:FrameworkMaximumAmount>
+                     </efext:EformsExtension>
+                  </ext:ExtensionContent>
+               </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:EstimatedOverallContractAmount currencyID="EUR">3577870</cbc:EstimatedOverallContractAmount>
+         </cac:RequestedTenderTotal>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">34928480</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">44613800</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">50800000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:RealizedLocation>
+            <cac:Address>
+               <cbc:CityName>Commune de Saint-Denis (Ile de la Réunion)</cbc:CityName>
+               <cbc:CountrySubentityCode listName="nuts">FRY40</cbc:CountrySubentityCode>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">FRA</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+         <cac:PlannedPeriod>
+            <cbc:DurationMeasure unitCode="YEAR">4</cbc:DurationMeasure>
+         </cac:PlannedPeriod>
+         <cac:ContractExtension>
+            <cbc:OptionsDescription languageID="FRA">Le marché comporte la possibilité de mise en oeuvre d'avenants conformément aux dispositions du CCAG visé à l'article 2 du CCAP (cf. articles 6.2, 7.2 et 25 de ce CCAG).
+Il  pourra être procédé à la cession d'un contrat au profit d'un nouveau titulaire dans les conditions mentionnées au CCAP. Dans le cas où il s’agit de prestations à prix unitaires et où le montant de ces prestations exécutées atteint le montant prévu par le marché avant son terme, la poursuite de l'exécution des prestations pourra être effectuée par avenant ou être décidée unilatéralement par le Pouvoir adjudicateur (décision de poursuivre), dans la limite de 25 % maximum d’augmentation du montant initial.</cbc:OptionsDescription>
+         </cac:ContractExtension>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0002</cbc:ID>
+      <cac:TenderingTerms>
+         <ext:UBLExtensions>
+            <ext:UBLExtension>
+               <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-suit-reg-trade</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="FRA">Se référer aux pièces de candidature détaillées dans le lot 1.</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-other</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="FRA">Se référer aux pièces de candidature détaillées dans le lot 1.</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-ref-supply</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="FRA">Se référer aux pièces de candidature détaillées dans le lot 1.</cbc:Description>
+                     </efac:SelectionCriteria>
+                  </efext:EformsExtension>
+               </ext:ExtensionContent>
+            </ext:UBLExtension>
+         </ext:UBLExtensions>
+         <cbc:VariantConstraintCode listName="permission">not-allowed</cbc:VariantConstraintCode>
+         <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+         <cbc:RequiredCurriculaCode listName="requirement-stage">not-requ</cbc:RequiredCurriculaCode>
+         <cac:CallForTendersDocumentReference>
+            <cbc:ID>DCE DEMAT</cbc:ID>
+            <cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+            <cac:Attachment>
+               <cac:ExternalReference>
+                  <cbc:URI>https://marches.cinor.fr</cbc:URI>
+               </cac:ExternalReference>
+            </cac:Attachment>
+         </cac:CallForTendersDocumentReference>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="selection-criteria-source">epo-notice</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="reserved-procurement">none</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="conditions">performance</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="reserved-execution">no</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="einvoicing">required</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="ecatalog-submission">not-allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:AdditionalInformationParty>
+            <cac:PartyIdentification>
+               <cbc:ID>ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:AdditionalInformationParty>
+         <cac:DocumentProviderParty>
+            <cac:PartyIdentification>
+               <cbc:ID>ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:DocumentProviderParty>
+         <cac:TenderRecipientParty>
+            <cbc:EndpointID>https://marches.cinor.fr</cbc:EndpointID>
+            <cac:PartyIdentification>
+               <cbc:ID>ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:TenderRecipientParty>
+         <cac:TenderEvaluationParty>
+            <cac:PartyIdentification>
+               <cbc:ID>ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:TenderEvaluationParty>
+         <cac:TenderValidityPeriod>
+            <cbc:DurationMeasure unitCode="DAY">180</cbc:DurationMeasure>
+         </cac:TenderValidityPeriod>
+         <cac:AppealTerms>
+            <cac:AppealInformationParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealInformationParty>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+            <cac:MediationParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0001</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:MediationParty>
+         </cac:AppealTerms>
+         <cac:Language>
+            <cbc:ID>FRA</cbc:ID>
+         </cac:Language>
+         <cac:PostAwardProcess>
+            <cbc:ElectronicOrderUsageIndicator>true</cbc:ElectronicOrderUsageIndicator>
+            <cbc:ElectronicPaymentUsageIndicator>true</cbc:ElectronicPaymentUsageIndicator>
+         </cac:PostAwardProcess>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <cbc:SubmissionMethodCode listName="esubmission">required</cbc:SubmissionMethodCode>
+         <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+         <cac:TenderSubmissionDeadlinePeriod>
+            <cbc:EndDate>2025-12-31+02:00</cbc:EndDate>
+            <cbc:EndTime>12:00:00+02:00</cbc:EndTime>
+         </cac:TenderSubmissionDeadlinePeriod>
+         <cac:AuctionTerms>
+            <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+         </cac:AuctionTerms>
+         <cac:FrameworkAgreement>
+            <cbc:MaximumOperatorQuantity>0</cbc:MaximumOperatorQuantity>
+            <cac:SubsequentProcessTenderRequirement>
+               <cbc:Name>buyer-categories</cbc:Name>
+            </cac:SubsequentProcessTenderRequirement>
+         </cac:FrameworkAgreement>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="framework-agreement">fa-wo-rc</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:Name languageID="FRA">Fourniture et Maintenance des bacs poubelles de la CINOR sur Sainte-Marie et Sainte-Suzanne</cbc:Name>
+         <cbc:Description languageID="FRA">TRANCHE FERME (Durée : un (1) an, renouvelable tacitement trois (3) fois, soit quatre (4) ans maximum) :
+- La fourniture de bacs poubelles neufs destinés à la collecte des ordures ménagères résiduelles, des déchets recyclables, et des biodéchets.
+- La fourniture de bacs poubelles neufs destinés à la collecte des ordures ménagères résiduelles, des déchets recyclables, et des biodéchets.
+- La maintenance du parc de bacs poubelles, appartenant à la CINOR. 
+- La mise à disposition temporaire des bacs poubelles. 
+- La reprise et le recyclage des bacs usagés. 
+- La gestion informatisée du parc de contenants. 
+- La gestion et l'enregistrement des appels, et l'organisation des livraisons. 
+
+TRANCHES OPTIONNELLES (TO) :
+- TO N°1 (Durée : un (1) an, renouvelable tacitement une (1) fois, soit deux (2) ans maximum) : Des campagnes de puçage.
+- TO N°2 (Durée : un (1) an, renouvelable tacitement deux (2) fois, soit trois (3) ans maximum) : Analyses et enquêtes de dotation en vue d'une maintenance préventive ou de mise à jour/ajustements des dotations sur tout ou partie du parc.
+- TO N°3 (Durée : un (1) an, renouvelable tacitement deux (2) fois, soit trois (3) ans maximum) : Fourniture, mise en place et maintenance des abri-bacs biodéchets.
+
+La valeur estimée et la valeur maximale de l'accord-cadre mentionnées à la rubrique 5.1.5 du présent avis sont celles du montant du lot 2 sur la durée totale du marché (4 ans).</cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">supplies</cbc:ProcurementTypeCode>
+         <cac:RequestedTenderTotal>
+            <ext:UBLExtensions>
+               <ext:UBLExtension>
+                  <ext:ExtensionContent>
+                     <efext:EformsExtension>
+                        <efbc:FrameworkMaximumAmount currencyID="EUR">3320000</efbc:FrameworkMaximumAmount>
+                     </efext:EformsExtension>
+                  </ext:ExtensionContent>
+               </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:EstimatedOverallContractAmount currencyID="EUR">2462460</cbc:EstimatedOverallContractAmount>
+         </cac:RequestedTenderTotal>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">34928480</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">44613800</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">50800000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:RealizedLocation>
+            <cac:Address>
+               <cbc:CityName>Communes de Sainte-Marie et Sainte-Suzanne (Ile de la Réunion)</cbc:CityName>
+               <cbc:CountrySubentityCode listName="nuts">FRY40</cbc:CountrySubentityCode>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">FRA</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+         <cac:PlannedPeriod>
+            <cbc:DurationMeasure unitCode="YEAR">4</cbc:DurationMeasure>
+         </cac:PlannedPeriod>
+         <cac:ContractExtension>
+            <cbc:OptionsDescription languageID="FRA">Cf. rubrique "Description des options" du lot 1.</cbc:OptionsDescription>
+         </cac:ContractExtension>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+</ContractNotice>

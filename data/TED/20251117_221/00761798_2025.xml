@@ -1,0 +1,694 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ccts-cct="urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDataTypes-2" xmlns:udt="urn:oasis:names:specification:bdndr:schema:xsd:UnqualifiedDataTypes-1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<ext:UBLExtensions>
+		<ext:UBLExtension>
+			<ext:ExtensionContent>
+				<efext:EformsExtension>
+					<efac:NoticeSubType>
+						<cbc:SubTypeCode listName="notice-subtype">16</cbc:SubTypeCode>
+					</efac:NoticeSubType>
+					<efac:Organizations>
+						<efac:Organization>
+							<efac:Company>
+								<cbc:WebsiteURI>https://www.gelsenkirchen.de</cbc:WebsiteURI>
+								<cac:PartyIdentification>
+									<cbc:ID>ORG-0001</cbc:ID>
+								</cac:PartyIdentification>
+								<cac:PartyName>
+									<cbc:Name languageID="DEU">Stadt Gelsenkirchen</cbc:Name>
+								</cac:PartyName>
+								<cac:PostalAddress>
+									<cbc:StreetName>Wildenbruchplatz 7 (Eingang Augustastraße)</cbc:StreetName>
+									<cbc:CityName>Gelsenkirchen</cbc:CityName>
+									<cbc:PostalZone>45888</cbc:PostalZone>
+									<cbc:CountrySubentityCode listName="nuts-lvl3">DEA32</cbc:CountrySubentityCode>
+									<cac:Country>
+										<cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+									</cac:Country>
+								</cac:PostalAddress>
+								<cac:PartyLegalEntity>
+									<cbc:CompanyID>05513-31001-73</cbc:CompanyID>
+								</cac:PartyLegalEntity>
+								<cac:Contact>
+									<cbc:Name>Referat 10 - Personal und Organisation, 10/4.2 - Zentrale Vergabestelle</cbc:Name>
+									<cbc:Telephone>+49 2091699782</cbc:Telephone>
+									<cbc:Telefax>+49 2091693530</cbc:Telefax>
+									<cbc:ElectronicMail>zentrale.vergabestelle@gelsenkirchen.de</cbc:ElectronicMail>
+								</cac:Contact>
+							</efac:Company>
+						</efac:Organization>
+						<efac:Organization>
+							<efac:Company>
+								<cbc:WebsiteURI>https://www.bezreg-muenster.de/de/wirtschaft_finanzen_kommunalaufsicht/vergabekammer_westfalen/index.html</cbc:WebsiteURI>
+								<cac:PartyIdentification>
+									<cbc:ID>ORG-0002</cbc:ID>
+								</cac:PartyIdentification>
+								<cac:PartyName>
+									<cbc:Name languageID="DEU">Vergabekammer Westfalen bei der Bezirksregierung Münster</cbc:Name>
+								</cac:PartyName>
+								<cac:PostalAddress>
+									<cbc:StreetName>Domplatz 1-3</cbc:StreetName>
+									<cbc:CityName>Münster</cbc:CityName>
+									<cbc:PostalZone>48143</cbc:PostalZone>
+									<cbc:CountrySubentityCode listName="nuts-lvl3">DEA33</cbc:CountrySubentityCode>
+									<cac:Country>
+										<cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+									</cac:Country>
+								</cac:PostalAddress>
+								<cac:PartyLegalEntity>
+									<cbc:CompanyID>05515-03004-07</cbc:CompanyID>
+								</cac:PartyLegalEntity>
+								<cac:Contact>
+									<cbc:Name>Geschäftsstelle der Vergabekammer</cbc:Name>
+									<cbc:Telephone>+49 2514112735</cbc:Telephone>
+									<cbc:Telefax>+49 2514112165</cbc:Telefax>
+									<cbc:ElectronicMail>poststelle@brms.nrw.de</cbc:ElectronicMail>
+								</cac:Contact>
+							</efac:Company>
+						</efac:Organization>
+					<efac:Organization><efac:Company><cac:PartyIdentification><cbc:ID schemeName="organization">ORG-0003</cbc:ID></cac:PartyIdentification><cac:PartyName><cbc:Name languageID="DEU">Datenservice Öffentlicher Einkauf (in Verantwortung des Beschaffungsamts des BMI)</cbc:Name></cac:PartyName><cac:PostalAddress><cbc:CityName>Bonn</cbc:CityName><cbc:PostalZone>53119</cbc:PostalZone><cbc:CountrySubentityCode listName="nuts">DEA22</cbc:CountrySubentityCode><cac:Country><cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode></cac:Country></cac:PostalAddress><cac:PartyLegalEntity><cbc:CompanyID schemeID="002">0204:994-DOEVD-83</cbc:CompanyID></cac:PartyLegalEntity><cac:Contact><cbc:Telephone>+49228996100</cbc:Telephone><cbc:ElectronicMail>noreply.esender_hub@bescha.bund.de</cbc:ElectronicMail></cac:Contact></efac:Company></efac:Organization></efac:Organizations>
+				<efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00761798-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+			</ext:ExtensionContent>
+		</ext:UBLExtension>
+	</ext:UBLExtensions>
+	<cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+	<cbc:CustomizationID>eforms-sdk-1.12</cbc:CustomizationID>
+	<cbc:ProfileID>eforms-sdk-1.12</cbc:ProfileID>
+	<cbc:ID schemeName="notice-id">cd22a37a-b355-4856-b3d9-b294f2d994d0</cbc:ID>
+	<cbc:ContractFolderID>904d9beb-9cb8-4062-8266-9732d48165ef</cbc:ContractFolderID>
+	<cbc:IssueDate>2025-11-14+01:00</cbc:IssueDate>
+	<cbc:IssueTime>00:01:30+01:00</cbc:IssueTime>
+	<cbc:VersionID>01</cbc:VersionID>
+	<cbc:RequestedPublicationDate>2025-11-14+01:00</cbc:RequestedPublicationDate>
+	<cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+	<cbc:NoticeTypeCode listName="competition">cn-standard</cbc:NoticeTypeCode>
+	<cbc:NoticeLanguageCode listID="eu-official-language">DEU</cbc:NoticeLanguageCode>
+	<cac:ContractingParty>
+		<cbc:BuyerProfileURI>https://www.gelsenkirchen.de/de/Rathaus/Informationen/Kommunale_Ausschreibungen/</cbc:BuyerProfileURI>
+		<cac:ContractingPartyType>
+			<cbc:PartyTypeCode listName="buyer-legal-type">la</cbc:PartyTypeCode>
+		</cac:ContractingPartyType>
+		<cac:ContractingActivity>
+			<cbc:ActivityTypeCode listName="authority-activity">gen-pub</cbc:ActivityTypeCode>
+		</cac:ContractingActivity>
+		<cac:Party>
+			<cac:PartyIdentification>
+				<cbc:ID>ORG-0001</cbc:ID>
+			</cac:PartyIdentification>
+		<cac:ServiceProviderParty><cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode><cac:Party><cac:PartyIdentification><cbc:ID schemeName="organization">ORG-0003</cbc:ID></cac:PartyIdentification></cac:Party></cac:ServiceProviderParty></cac:Party>
+	</cac:ContractingParty>
+	<cac:TenderingTerms>
+		<ext:UBLExtensions>
+			<ext:UBLExtension>
+				<ext:ExtensionContent>
+					<efext:EformsExtension>
+						<efac:StrategicProcurement>
+							<efbc:ApplicableLegalBasis listName="cvd-scope">false</efbc:ApplicableLegalBasis>
+						</efac:StrategicProcurement>
+					</efext:EformsExtension>
+				</ext:ExtensionContent>
+			</ext:UBLExtension>
+		</ext:UBLExtensions>
+		<cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+		<cac:RequiredFinancialGuarantee>
+			<cbc:GuaranteeTypeCode listName="tender-guarantee-required">true</cbc:GuaranteeTypeCode>
+			<cbc:Description languageID="DEU">Soweit die Auftragssumme mindestens 250.000 EUR beträgt, ist Sicherheit für die Vertragserfüllung in Höhe von 5 % der Auftragssumme (inkl. Umsatzsteuer, ohne Nachträge) zu leisten. Die Sicherheitsleistung für die Vertragserfüllung wird in Teilbeträgen von den Zahlungen einbehalten (10 % der jeweiligen Zahlung, bis 5 % der Auftragssumme erreicht sind), sofern keine Bürgschaft in entsprechender Höhe eingereicht wurde.
+
+Die Sicherheit für die Mängelansprüche beträgt 3 % der Summe der Abschlagszahlungen zum Zeitpunkt der Abnahme (vorläufige Abrechnungssumme). Die Sicherheitsleistung für die Mängelansprüche wird von der Schlussrechnung einbehalten, sofern keine Bürgschaft in entsprechender Höhe eingereicht wurde.</cbc:Description>
+		</cac:RequiredFinancialGuarantee>
+		<cac:ProcurementLegislationDocumentReference>
+			<cbc:ID>vob-a-eu</cbc:ID>
+		</cac:ProcurementLegislationDocumentReference>
+		<cac:CallForTendersDocumentReference>
+			<ext:UBLExtensions>
+				<ext:UBLExtension>
+					<ext:ExtensionContent>
+						<efext:EformsExtension>
+							<efac:OfficialLanguages>
+								<cac:Language>
+									<cbc:ID>DEU</cbc:ID>
+								</cac:Language>
+							</efac:OfficialLanguages>
+						</efext:EformsExtension>
+					</ext:ExtensionContent>
+				</ext:UBLExtension>
+			</ext:UBLExtensions>
+			<cbc:ID>SomeTenderDocID1</cbc:ID>
+			<cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+		</cac:CallForTendersDocumentReference>
+		<cac:TendererQualificationRequest>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-natl-bre-nat-law</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Zwingender Ausschlussgrund gemäß §§ 6 e und 6f VOB/A EU iVm § 124 Abs. 2 GWB iVm § 21 des Arbeitnehmer-Entsendegesetzes, § 98c des Aufenthaltsgesetzes, § 19 des Mindestlohngesetzes, § 21 des Schwarzarbeitsbekämpfungsgesetzes und § 22 des Lieferkettensorgfaltspflichtengesetzes - Eigenerklärung zur Eignung - Formular VVB 124</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-part</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Zwingender Ausschlussgrund gemäß §§ 6 e und 6f VOB/A EU iVm §§ 123 - 126 GWB - Eigenerklärung zur Eignung - Formular VVB 124</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-terror</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Zwingender Ausschlussgrund gemäß §§ 6 e und 6f VOB/A EU iVm §§ 123 - 126 GWB - Eigenerklärung zur Eignung - Formular VVB 124</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-laund</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Zwingender Ausschlussgrund gemäß §§ 6 e und 6f VOB/A EU iVm §§ 123 - 126 GWB - Eigenerklärung zur Eignung - Formular VVB 124</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-fraud</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Zwingender Ausschlussgrund gemäß §§ 6 e und 6f VOB/A EU iVm §§ 123 - 126 GWB - Eigenerklärung zur Eignung - Formular VVB 124</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-corrpt</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Zwingender Ausschlussgrund gemäß §§ 6 e und 6f Vergabe- und Vertragsordnung für Bauleistungen - Teil A Abschnitt 2(VOB/A EU) in Verbindung mit (iVm) §§ 123 - 126 Gesetz gegen Wettbewerbsbeschränkungen (GWB) - Eigenerklärung zur Eignung - Formular VVB 124</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-traffick</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Zwingender Ausschlussgrund gemäß §§ 6 e und 6f VOB/A EU iVm §§ 123 - 126 GWB - Eigenerklärung zur Eignung - Formular VVB 124</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-pmt-bre-tax</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Zwingender Ausschlussgrund gemäß §§ 6 e und 6f VOB/A EU iVm §§ 123 - 126 GWB - Eigenerklärung zur Eignung - Formular VVB 124</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-pmt-bre-ssc</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Zwingender Ausschlussgrund gemäß §§ 6 e und 6f VOB/A EU iVm §§ 123 - 126 GWB - Eigenerklärung zur Eignung - Formular VVB 124</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-bre-env-law</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Fakultativer Ausschlussgrund gemäß §§ 6 e und 6f VOB/A EU iVm §§ 124 - 126 GWB - Eigenerklärung zur Eignung - Formular VVB 124</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-bre-soc-law</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Fakultativer Ausschlussgrund gemäß §§ 6 e und 6f VOB/A EU iVm §§ 124 - 126 GWB - Eigenerklärung zur Eignung - Formular VVB 124</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-bre-lab-law</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Fakultativer Ausschlussgrund gemäß §§ 6 e und 6f VOB/A EU iVm §§ 124 - 126 GWB - Eigenerklärung zur Eignung - Formular VVB 124</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-insolvency</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Fakultativer Ausschlussgrund gemäß §§ 6 e und 6f VOB/A EU iVm §§ 124 - 126 GWB - Eigenerklärung zur Eignung - Formular VVB 124</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-liq-admin</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Fakultativer Ausschlussgrund gemäß §§ 6 e und 6f VOB/A EU iVm §§ 124 - 126 GWB - Eigenerklärung zur Eignung - Formular VVB 124</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-as-susp</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Fakultativer Ausschlussgrund gemäß §§ 6 e und 6f VOB/A EU iVm §§ 124 - 126 GWB - Eigenerklärung zur Eignung - Formular VVB 124</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-other</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Fakultativer Ausschlussgrund gemäß §§ 6 e und 6f Vergabe- und Vertragsordnung für Bauleistungen - Teil A Abschnitt 2(VOB/A EU) in Verbindung mit (iVm) §§ 124 - 126 Gesetz gegen Wettbewerbsbeschränkungen (GWB) - Eigenerklärung zur Eignung - Formular VVB 124</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-misconduct</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Fakultativer Ausschlussgrund gemäß §§ 6 e und 6f VOB/A EU iVm §§ 124 - 126 GWB - Eigenerklärung zur Eignung - Formular VVB 124</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-distortion</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Fakultativer Ausschlussgrund gemäß §§ 6 e und 6f VOB/A EU iVm §§ 124 - 126 GWB - Eigenerklärung zur Eignung - Formular VVB 124</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-partic-confl</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Fakultativer Ausschlussgrund gemäß §§ 6 e und 6f VOB/A EU iVm §§ 124 - 126 GWB - Eigenerklärung zur Eignung - Formular VVB 124</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-prep-confl</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Fakultativer Ausschlussgrund gemäß §§ 6 e und 6f VOB/A EU iVm §§ 124 - 126 GWB - Eigenerklärung zur Eignung - Formular VVB 124</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-sanction</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Fakultativer Ausschlussgrund gemäß §§ 6 e und 6f VOB/A EU iVm §§ 124 - 126 GWB - Eigenerklärung zur Eignung - Formular VVB 124</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-misrepresent</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Fakultativer Ausschlussgrund gemäß §§ 6 e und 6f VOB/A EU iVm §§ 124 - 126 GWB - Eigenerklärung zur Eignung - Formular VVB 124</cbc:Description>
+			</cac:SpecificTendererRequirement>
+		</cac:TendererQualificationRequest>
+		<cac:TendererQualificationRequest>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-grounds-source">epo-notice</cbc:TendererRequirementTypeCode>
+			</cac:SpecificTendererRequirement>
+		</cac:TendererQualificationRequest>
+		<cac:TenderRecipientParty>
+			<cac:PartyIdentification>
+				<cbc:ID>ORG-0001</cbc:ID>
+			</cac:PartyIdentification>
+		</cac:TenderRecipientParty>
+		<cac:AppealTerms>
+			<cac:PresentationPeriod>
+				<cbc:Description languageID="DEU">Genaue Angaben zu den Fristen für die Einlegung von Rechtsbehelfen:
+
+Es wird darauf hingewiesen, dass bei Beanstandung im Hinblick auf das Vergabeverfahren (gemäß § 160 Abs. 3 GWB) die Bewerber*innen/Bieter*innen Verstöße gegen Vergabevorschriften, die sie erkannt haben, gegenüber der Vergabestelle innerhalb von 10 Kalendertagen zu rügen haben und weiterhin Verstöße gegen Vergabevorschriften, die aus der Bekanntmachung oder den Vergabeunterlagen erkennbar sind, von den Bewerber*innen/Bieter*innen spätestens bis zum Ablauf der Frist zur Bewerbung oder zur Angebotsabgabe gegenüber der Vergabestelle zu rügen sind, damit die Bewerber*innen/Bieter*innen für den Fall, dass der Rüge nicht abgeholfen wird, ein Nachprüfungsverfahren vor der Vergabekammer anstreben können.
+Ergeht eine Mitteilung des Auftraggebers, der Rüge nicht abhelfen zu wollen, kann der Bewerber/Bieter / die Bewerberin/Bieterin wegen Nichtbeachtung der Vergabevorschriften ein Nachprüfungsverfahren nur innerhalb von 15 Kalendertagen nach Eingang dieser Mitteilung vor der Vergabekammer beantragen.
+
+Nach Absendung der Mitteilung des Auftraggebers über die beabsichtigte Vergabe (gemäß § 134 Abs. 2 GWB) muss ein Nachprüfungsverfahren spätestens innerhalb von 15 Kalendertagen vor der Vergabekammer beantragt werden. Bei Übermittlung der Mitteilung auf elektronischem Weg verkürzt sich die Frist auf 10 Kalendertage.
+
+Nach Ablauf der jeweiligen Fristen ist der Antrag gemäß § 160 Abs. 3 GWB unzulässig.
+
+Auskünfte über die Einlegung von Rechtsbehelfen sind ebenfalls bei der Vergabekammer Westfalen bei der Bezirksregierung Münster erhältlich.</cbc:Description>
+			</cac:PresentationPeriod>
+			<cac:AppealInformationParty>
+				<cac:PartyIdentification>
+					<cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+				</cac:PartyIdentification>
+			</cac:AppealInformationParty>
+			<cac:AppealReceiverParty>
+				<cac:PartyIdentification>
+					<cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+				</cac:PartyIdentification>
+			</cac:AppealReceiverParty>
+		</cac:AppealTerms>
+		<cac:Language>
+			<cbc:ID>DEU</cbc:ID>
+		</cac:Language>
+	</cac:TenderingTerms>
+	<cac:TenderingProcess>
+		<cbc:ProcedureCode listName="procurement-procedure-type">open</cbc:ProcedureCode>
+		<cbc:AccessToolsURI>https://www.vergabe.metropoleruhr.de/VMPSatellite/notice/CXS0Y6SYTSVUH0KE</cbc:AccessToolsURI>
+		<cac:ProcessJustification>
+			<cbc:ProcessReasonCode listName="accelerated-procedure">false</cbc:ProcessReasonCode>
+		</cac:ProcessJustification>
+		<cac:AuctionTerms>
+			<cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+		</cac:AuctionTerms>
+	</cac:TenderingProcess>
+	<cac:ProcurementProject>
+		<cbc:ID schemeName="internalID">10/4.2-2025-0299</cbc:ID>
+		<cbc:Name languageID="DEU">Dachdeckungs- und Dachabdichtungsarbeiten, Klempnerarbeiten, Arbeiten an schadstoffbelasteten baulichen und technischen Anlagen - IGA 2027, Kohlenbunkerensemble, Grothusstraße 25, 45883 Gelsenkirchen</cbc:Name>
+		<cbc:Description languageID="DEU">Dachdeckungs- und Dachabdichtungsarbeiten
+Klempnerarbeiten
+Arbeiten an schadstoffbelasteten baulichen und technischen Anlagen</cbc:Description>
+		<cbc:ProcurementTypeCode listName="contract-nature">works</cbc:ProcurementTypeCode>
+		<cbc:Note languageID="DEU">#Bekanntmachungs-ID: CXS0Y6SYTSVUH0KE#
+
+
+Das Offene Verfahren erfolgt gemäß VOB/A - Abschnitt 2, dem Tariftreue- und Vergabegesetz Nordrhein-Westfalen (TVgG-NRW), den Teilnahmebedingungen und den Besonderen Vertragsbedingungen.
+Für das Vergabeverfahren und die spätere Ausführung gilt die VOB (Teil A, B und C) in der Fassung der Gesamtausgabe 2019, einschließlich Ergänzungsband 2023, sowie der Änderungsbekanntmachung vom 25.09.2023.
+ 
+Nebenangebote müssen als Mindestanforderung, sofern in den Vergabeunterlagen keine weitergehenden Anforderungen gestellt werden, den Konstruktionsprinzipien und den vom Auftraggeber vorgesehenen Planungsvorgaben entsprechen.
+
+Soweit die Auftragssumme mindestens 250.000 EUR beträgt, ist Sicherheit für die Vertragserfüllung in Höhe von 5 % der Auftragssumme (inkl. Umsatzsteuer, ohne Nachträge) zu leisten. Die Sicherheitsleistung für die Vertragserfüllung wird in Teilbeträgen von den Zahlungen einbehalten (10 % der jeweiligen Zahlung, bis 5 % der Auftragssumme erreicht sind), sofern keine Bürgschaft in entsprechender Höhe eingereicht wurde.
+
+Die Sicherheit für die Mängelansprüche beträgt 3 % der Summe der Abschlagszahlungen zum Zeitpunkt der Abnahme (vorläufige Abrechnungssumme). Die Sicherheitsleistung für die Mängelansprüche wird von der Schlussrechnung einbehalten, sofern keine Bürgschaft in entsprechender Höhe eingereicht wurde.
+
+Fragen sind in Textform, bis zur angegebenen Frist für die Auskunftserteilung, über die Vergabeplattform an die Vergabestelle zu richten. Verbindliche Antworten erfolgen in Textform über die Vergabeplattform zur entsprechenden Vergabe.
+
+Ein übermittelter oder auf der Vergabeplattform eingestellter Nachtrag wird Teil der Vergabe-unterlagen.
+
+Als Grundlage für das Angebot gilt das in der letzten Fassung eingestellte Leistungsverzeichnis.
+
+Zur Sicherstellung einer vollumfänglichen elektronischen Kommunikation (z.B. Benachrichtigungen, bei Änderung der Vergabeunterlagen, u.s.w.) wird dem/der Bewerber*in/Bieter*in dringend empfohlen, sich auf der Vergabeplattform anzumelden und für dieses Vergabeverfahren freizuschalten.
+
+Mit der Registrierung auf der Vergabeplattform erhält der/die Bewerber*in/Bieter*in Zugriff auf ein individuelles Postfach. Dieses wird für die Zustellung von rechtserheblichen und verfahrenserheblichen Erklärungen im Vergabeverfahren genutzt. Es wird darauf hingewiesen, dass rechtserhebliche und verfahrenserhebliche Erklärungen an die bei der Registrierung angegebene E-Mail-Adresse versendet werden.
+
+Nicht angemeldete/freigeschaltete Bietende müssen regelmäßig die Vergabeunterlagen auf Änderungen überprüfen.
+
+Es sind nur noch elektronische Angebote über das Bietertool der Vergabeplattform zugelassen.
+
+Informationen zu den zu verwendenden elektronischen Mitteln, den technischen Parametern zur Einreichung elektronischer Teilnahmeanträge und Angeboten sowie zur Verschlüsselungs- und Zeiterfassungsverfahren entnehmen Sie bitte den auf dem Vergabemarktplatz des Landes NRW hinterlegten Nutzungsbedingungen.
+
+Eine Übermittlung der Angebote auf dem Postweg und auf anderen elektronischen Wegen (z.B. per E-Mail, CD, Telefax oder über die Kommunikation der Vergabeplattform) ist nicht gestattet. Diese Angebote werden von der Wertung ausgeschlossen.
+
+Der/Die Bieter*in trägt das Risiko der Übermittlung und des rechtzeitigen und vollständigen Eingangs seines/ihres Angebotes.
+
+Fehlende Unterlagen sind spätestens innerhalb von 6 Kalendertagen nach Aufforderung durch den Auftraggeber vorzulegen.
+
+Die Ergebnisse der Angebotseröffnung werden elektronisch über die Vergabeplattform zur Verfügung gestellt.
+
+Die spätere Auftragsvergabe erfolgt durch die Bedarfsstelle (Fachdienststelle) der Stadt Gelsenkirchen. Die Zustellung des Auftragsschreibens erfolgt elektronisch über die Vergabeplattform. 
+
+Verwenden Sie bitte für die Angebotsabgabe kein gesondertes Anschreiben!
+
+Sämtliche Angaben, die mit dem Angebot zu machen sind, sind an den dafür vorgesehenen Stellen in den Vergabeunterlagen vorzunehmen.
+
+
+Wichtiger Hinweis!
+Die Stadtverwaltung Gelsenkirchen hat in der Zeit  vom 24.12.2025 bis 02.01.2026 Betriebsferien.
+Eine eventuelle Kommunikation im neuen Jahr kann frühestens ab dem 05.01.2026 erfolgen.
+
+Aufgrund der Betriebsferien zum Jahreswechsel und der Umstellung auf das neue Haushaltsjahr beträgt die Bindefrist mehr als 60 Kalendertage.</cbc:Note>
+		<cac:MainCommodityClassification>
+			<cbc:ItemClassificationCode listName="cpv">45261210</cbc:ItemClassificationCode>
+		</cac:MainCommodityClassification>
+		<cac:AdditionalCommodityClassification>
+			<cbc:ItemClassificationCode listName="cpv">45261300</cbc:ItemClassificationCode>
+		</cac:AdditionalCommodityClassification>
+		<cac:AdditionalCommodityClassification>
+			<cbc:ItemClassificationCode listName="cpv">45262660</cbc:ItemClassificationCode>
+		</cac:AdditionalCommodityClassification>
+		<cac:RealizedLocation>
+			<cac:Address>
+				<cbc:StreetName>Grothusstraße 205</cbc:StreetName>
+				<cbc:CityName>Gelsenkirchen</cbc:CityName>
+				<cbc:PostalZone>45883</cbc:PostalZone>
+				<cbc:CountrySubentityCode listName="nuts">DEA32</cbc:CountrySubentityCode>
+				<cac:Country>
+					<cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:Address>
+		</cac:RealizedLocation>
+	</cac:ProcurementProject>
+	<cac:ProcurementProjectLot>
+		<cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+		<cac:TenderingTerms>
+			<ext:UBLExtensions>
+				<ext:UBLExtension>
+					<ext:ExtensionContent>
+						<efext:EformsExtension>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-staff-yrly-avg-mp</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Angabe der Arbeitskräfte (T2-VOB) (Auf Anforderung der Vergabestelle; Mittels Eigenerklärung): Angabe der Zahl der in den letzten drei abgeschlossenen Kalenderjahren jahresdurchschnittlich beschäftigten Arbeitskräfte, gegliedert nach Lohngruppen mit extra ausgewiesenem Leitungspersonal.</cbc:Description>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-to-spec</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Angabe der Umsätze der letzten 3 abgeschlossenen Geschäftsjahre (netto)  (T2-VOB) (Mit dem Angebot; Mittels Eigenerklärung): Angabe der Umsätze des Unternehmens in den letzten 3 abgeschlossenen Geschäftsjahren (netto) im Formblatt 124 (Eigenerklärung zur Eignung).</cbc:Description>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-staff-qual</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Fach- und Sachkundenachweis/e TRGS (T2-VOB/UVgO/VgV/RV) (Auf Anforderung der Vergabestelle; Mittels Dritterklärung): Fach- bzw. Sachkundenachweis gemäß: 
+
+- TRGS 519
+
+- TRGS 524
+
+Die Fach- bzw. Sachkunde nach TRGS 519 und TRGS 524 muss durch Mitarbeitende im eigenen Betrieb nachgewiesen werden.</cbc:Description>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-other</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Formblatt VVB 221 o. VVB 222 (T2-VOB) (Mit dem Angebot; Mittels Eigenerklärung): Das Formblatt VVB 221 oder 222 ist vom/von der Bieter*in vollständig ausgefüllt einzureichen.</cbc:Description>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-suit-reg-trade</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Nachweis über den Auszug aus dem Handelsregister (T2-VOB/RV) (Auf Anforderung der Vergabestelle; Mittels Dritterklärung): Vorlage des Handelsregisterauszuges - sofern eine Verpflichtung zur Eintragung besteht.</cbc:Description>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-suit-reg-prof</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Nachweis über die Berufsregistereintragungen (T2-VOB/RV) (Auf Anforderung der Vergabestelle; Mittels Dritterklärung): Vorlage der Gewerbeanmeldung, der Eintragung in die Handwerksrolle (Handwerkskarte) bzw. bei der Industrie- und Handelskammer - sofern eine Verpflichtung zur Eintragung in die genannten Register besteht.</cbc:Description>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-other</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Nachweis über die Mitgliedschaft in der Berufsgenossenschaft (T2-VOB/RV) (Auf Anforderung der Vergabestelle; Mittels Dritterklärung): Unbedenklichkeitsbescheinigung der Berufsgenossenschaft des zuständigen Versicherungsträgers mit Angabe der Lohnsummen.</cbc:Description>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-ref-work</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Nachweis von 3 Referenzen (T2-VOB/RV) (Auf Anforderung der Vergabestelle; Mittels Eigenerklärung): 3 Referenznachweise über die Ausführung von Leistungen in den letzten fünf Kalenderjahren, bzw. dem in der Auftragsbekanntmachung angegebenen Zeitraum, die mit der zu vergebenden Leistung vergleichbar sind, mit den im Formblatt 124 (Eigenerklärung zur Eignung) geforderten Angaben.</cbc:Description>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-other</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Nachweis zur Zahlung von Steuern, Abgaben und Beiträgen (T2-VOB/RV) (Auf Anforderung der Vergabestelle; Mittels Dritterklärung): Nachweis, dass die Verpflichtung zur Zahlung von Steuern und Abgaben sowie der Beiträge zur Sozialversicherung, soweit sie der Pflicht zur Beitragszahlung unterfallen, ordnungsgemäß erfüllt wurde, durch Vorlage der:
+- Unbedenklichkeitsbescheinigung des Finanzamtes bzw. Bescheinigung in Steuersachen
+- Freistellungsbescheinigung nach § 48b Einkommensteuergesetz
+- Unbedenklichkeitsbescheinigung der tariflichen Sozialkasse. Falls das Unternehmen nicht beitragspflichtig ist, wird diesbezüglich um eine Mitteilung in Textform gebeten.</cbc:Description>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-other</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Nur falls zutreffend - Vorlage des Insolvenzplans (T2-VOB/RV) (Auf Anforderung der Vergabestelle; Mittels Dritterklärung): Nur falls ein Insolvenzverfahren beantragt oder eröffnet wurde, ist ein rechtskräftig bestätigter Insolvenzplan vorzulegen.</cbc:Description>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-other</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Urkalkulation (T2-VOB) (Auf Anforderung der Vergabestelle; Keine oder anderweitige Formerfordernis): Die Urkalkulation ist vom/von der Bieter*in in einem verschlossenen und gekennzeichneten Umschlag einzureichen.</cbc:Description>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-ins</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Versicherungsnachweis - Mindestdeckungssummen (T2-VOB/RV) (Auf Anforderung der Vergabestelle; Mittels Dritterklärung): Nachweis einer Haftpflichtversicherung mit Mindestdeckungssummen von 5.000.000 EUR für Personenschäden und 1.000.000 EUR für Sach- und Vermögensschäden, jeweils pro Schadensfall und Schadensjahr.
+
+In dem Fall, dass keine Versicherung in der geforderten Höhe vorliegt, ist eine Bestätigung einer Versicherung vorzulegen, die die Absicht bestätigt, im Auftragsfall eine Versicherung in der geforderten Höhe abzuschließen. Vor Ausführungsbeginn ist der Versicherungsabschluss mit den geforderten Mindestdeckungssummen nachzuweisen.</cbc:Description>
+							</efac:SelectionCriteria>
+							<efac:StrategicProcurement>
+								<efbc:ApplicableLegalBasis listName="cvd-scope">false</efbc:ApplicableLegalBasis>
+							</efac:StrategicProcurement>
+						</efext:EformsExtension>
+					</ext:ExtensionContent>
+				</ext:UBLExtension>
+			</ext:UBLExtensions>
+			<cbc:VariantConstraintCode listName="permission">allowed</cbc:VariantConstraintCode>
+			<cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+			<cbc:RequiredCurriculaCode listName="requirement-stage">not-requ</cbc:RequiredCurriculaCode>
+			<cbc:MultipleTendersCode listName="permission">allowed</cbc:MultipleTendersCode>
+			<cac:RequiredFinancialGuarantee>
+				<cbc:GuaranteeTypeCode listName="tender-guarantee-required">true</cbc:GuaranteeTypeCode>
+				<cbc:Description languageID="DEU">Soweit die Auftragssumme mindestens 250.000 EUR beträgt, ist Sicherheit für die Vertragserfüllung in Höhe von 5 % der Auftragssumme (inkl. Umsatzsteuer, ohne Nachträge) zu leisten. Die Sicherheitsleistung für die Vertragserfüllung wird in Teilbeträgen von den Zahlungen einbehalten (10 % der jeweiligen Zahlung, bis 5 % der Auftragssumme erreicht sind), sofern keine Bürgschaft in entsprechender Höhe eingereicht wurde.
+
+Die Sicherheit für die Mängelansprüche beträgt 3 % der Summe der Abschlagszahlungen zum Zeitpunkt der Abnahme (vorläufige Abrechnungssumme). Die Sicherheitsleistung für die Mängelansprüche wird von der Schlussrechnung einbehalten, sofern keine Bürgschaft in entsprechender Höhe eingereicht wurde.</cbc:Description>
+			</cac:RequiredFinancialGuarantee>
+			<cac:CallForTendersDocumentReference>
+				<ext:UBLExtensions>
+					<ext:UBLExtension>
+						<ext:ExtensionContent>
+							<efext:EformsExtension>
+								<efac:OfficialLanguages>
+									<cac:Language>
+										<cbc:ID>DEU</cbc:ID>
+									</cac:Language>
+								</efac:OfficialLanguages>
+							</efext:EformsExtension>
+						</ext:ExtensionContent>
+					</ext:UBLExtension>
+				</ext:UBLExtensions>
+				<cbc:ID>SomeTenderDocID1</cbc:ID>
+				<cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+				<cac:Attachment>
+					<cac:ExternalReference>
+						<cbc:URI>https://www.vergabe.metropoleruhr.de/VMPSatellite/notice/CXS0Y6SYTSVUH0KE/documents</cbc:URI>
+					</cac:ExternalReference>
+				</cac:Attachment>
+			</cac:CallForTendersDocumentReference>
+			<cac:PaymentTerms>
+				<cbc:Note languageID="DEU">Gemäß VOB/B</cbc:Note>
+			</cac:PaymentTerms>
+			<cac:TendererQualificationRequest>
+				<cbc:CompanyLegalFormCode listName="required">true</cbc:CompanyLegalFormCode>
+				<cbc:CompanyLegalForm languageID="DEU">Die Bietergemeinschaft muss einen Vertreter bevollmächtigten der die Mitglieder gegenüber dem Auftraggeber rechtsverbindlich vertritt und zur Entgegennahme der Zahlungen mit befreiender Wirkung berechtigt ist. Alle Mitglieder müssen als Gesamtschuldner haften.</cbc:CompanyLegalForm>
+			</cac:TendererQualificationRequest>
+			<cac:TendererQualificationRequest>
+				<cac:SpecificTendererRequirement>
+					<cbc:TendererRequirementTypeCode listName="missing-info-submission">late-all</cbc:TendererRequirementTypeCode>
+					<cbc:Description languageID="DEU">Die fehlenden Unterlagen, deren Vorlage mit Teilnahmeantrag/Angebotsabgabe gefordert waren, können mit einer Frist von 6 Kalendertagen nachgereicht werden.</cbc:Description>
+				</cac:SpecificTendererRequirement>
+			</cac:TendererQualificationRequest>
+			<cac:TendererQualificationRequest>
+				<cac:SpecificTendererRequirement>
+					<cbc:TendererRequirementTypeCode listName="reserved-procurement">none</cbc:TendererRequirementTypeCode>
+				</cac:SpecificTendererRequirement>
+			</cac:TendererQualificationRequest>
+			<cac:TendererQualificationRequest>
+				<cac:SpecificTendererRequirement>
+					<cbc:TendererRequirementTypeCode listName="selection-criteria-source">epo-notice</cbc:TendererRequirementTypeCode>
+				</cac:SpecificTendererRequirement>
+			</cac:TendererQualificationRequest>
+			<cac:ContractExecutionRequirement>
+				<cbc:ExecutionRequirementCode listName="reserved-execution">no</cbc:ExecutionRequirementCode>
+			</cac:ContractExecutionRequirement>
+			<cac:ContractExecutionRequirement>
+				<cbc:ExecutionRequirementCode listName="ecatalog-submission">not-allowed</cbc:ExecutionRequirementCode>
+			</cac:ContractExecutionRequirement>
+			<cac:ContractExecutionRequirement>
+				<cbc:ExecutionRequirementCode listName="einvoicing">required</cbc:ExecutionRequirementCode>
+			</cac:ContractExecutionRequirement>
+			<cac:ContractExecutionRequirement>
+				<cbc:ExecutionRequirementCode listName="conditions">performance</cbc:ExecutionRequirementCode>
+				<cbc:Description languageID="DEU">Einzureichende Unterlagen:
+- Angabe, dass nachweislich keine schwere Verfehlung begangen wurde (T2-VOB/RV) ( mittels Eigenerklärung vorzulegen): Angabe im Formblatt 124 (Eigenerklärung zur Eignung), dass nachweislich keine schwere Verfehlung begangen wurde, die die Zuverlässigkeit als Bewerber*in oder Bieter*in in Frage stellt.
+- Eigenerklärung - Sanktionen EU (T2-VOB-EU/RV-EU/VgV) ( mittels Eigenerklärung vorzulegen): Abgabe der Eigenerklärung zur Umsetzung von Artikel 5ki der Verordnung (EU) 2022/576 des Rates vom 8. April 2022 - Eigenerklärung Sanktionspaket 5 EU</cbc:Description>
+			</cac:ContractExecutionRequirement>
+			<cac:ContractExecutionRequirement>
+				<cbc:ExecutionRequirementCode listName="fsr">false</cbc:ExecutionRequirementCode>
+			</cac:ContractExecutionRequirement>
+			<cac:AwardingTerms>
+				<cac:AwardingCriterion>
+					<cac:SubordinateAwardingCriterion>
+						<ext:UBLExtensions>
+							<ext:UBLExtension>
+								<ext:ExtensionContent>
+									<efext:EformsExtension>
+										<efac:AwardCriterionParameter>
+											<efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+											<efbc:ParameterNumeric>100</efbc:ParameterNumeric>
+										</efac:AwardCriterionParameter>
+									</efext:EformsExtension>
+								</ext:ExtensionContent>
+							</ext:UBLExtension>
+						</ext:UBLExtensions>
+						<cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+						<cbc:Name languageID="DEU">Preis</cbc:Name>
+						<cbc:Description languageID="DEU">Preiskriterium für "Niedrigster Preis (ohne Kriterien)"</cbc:Description>
+					</cac:SubordinateAwardingCriterion>
+				</cac:AwardingCriterion>
+			</cac:AwardingTerms>
+			<cac:AdditionalInformationParty>
+				<cac:PartyIdentification>
+					<cbc:ID>ORG-0001</cbc:ID>
+				</cac:PartyIdentification>
+			</cac:AdditionalInformationParty>
+			<cac:TenderRecipientParty>
+				<cbc:EndpointID>https://www.vergabe.metropoleruhr.de/VMPSatellite/notice/CXS0Y6SYTSVUH0KE</cbc:EndpointID>
+				<cac:PartyIdentification>
+					<cbc:ID>ORG-0001</cbc:ID>
+				</cac:PartyIdentification>
+			</cac:TenderRecipientParty>
+			<cac:TenderValidityPeriod>
+				<cbc:DurationMeasure unitCode="DAY">84</cbc:DurationMeasure>
+			</cac:TenderValidityPeriod>
+			<cac:AppealTerms>
+				<cac:PresentationPeriod>
+					<cbc:Description languageID="DEU">Genaue Angaben zu den Fristen für die Einlegung von Rechtsbehelfen:
+
+Es wird darauf hingewiesen, dass bei Beanstandung im Hinblick auf das Vergabeverfahren (gemäß § 160 Abs. 3 GWB) die Bewerber*innen/Bieter*innen Verstöße gegen Vergabevorschriften, die sie erkannt haben, gegenüber der Vergabestelle innerhalb von 10 Kalendertagen zu rügen haben und weiterhin Verstöße gegen Vergabevorschriften, die aus der Bekanntmachung oder den Vergabeunterlagen erkennbar sind, von den Bewerber*innen/Bieter*innen spätestens bis zum Ablauf der Frist zur Bewerbung oder zur Angebotsabgabe gegenüber der Vergabestelle zu rügen sind, damit die Bewerber*innen/Bieter*innen für den Fall, dass der Rüge nicht abgeholfen wird, ein Nachprüfungsverfahren vor der Vergabekammer anstreben können.
+Ergeht eine Mitteilung des Auftraggebers, der Rüge nicht abhelfen zu wollen, kann der Bewerber/Bieter / die Bewerberin/Bieterin wegen Nichtbeachtung der Vergabevorschriften ein Nachprüfungsverfahren nur innerhalb von 15 Kalendertagen nach Eingang dieser Mitteilung vor der Vergabekammer beantragen.
+
+Nach Absendung der Mitteilung des Auftraggebers über die beabsichtigte Vergabe (gemäß § 134 Abs. 2 GWB) muss ein Nachprüfungsverfahren spätestens innerhalb von 15 Kalendertagen vor der Vergabekammer beantragt werden. Bei Übermittlung der Mitteilung auf elektronischem Weg verkürzt sich die Frist auf 10 Kalendertage.
+
+Nach Ablauf der jeweiligen Fristen ist der Antrag gemäß § 160 Abs. 3 GWB unzulässig.
+
+Auskünfte über die Einlegung von Rechtsbehelfen sind ebenfalls bei der Vergabekammer Westfalen bei der Bezirksregierung Münster erhältlich.</cbc:Description>
+				</cac:PresentationPeriod>
+				<cac:AppealInformationParty>
+					<cac:PartyIdentification>
+						<cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+					</cac:PartyIdentification>
+				</cac:AppealInformationParty>
+				<cac:AppealReceiverParty>
+					<cac:PartyIdentification>
+						<cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+					</cac:PartyIdentification>
+				</cac:AppealReceiverParty>
+			</cac:AppealTerms>
+			<cac:Language>
+				<cbc:ID>DEU</cbc:ID>
+			</cac:Language>
+			<cac:PostAwardProcess>
+				<cbc:ElectronicOrderUsageIndicator>true</cbc:ElectronicOrderUsageIndicator>
+				<cbc:ElectronicPaymentUsageIndicator>true</cbc:ElectronicPaymentUsageIndicator>
+			</cac:PostAwardProcess>
+			<cac:SecurityClearanceTerm>
+				<cbc:Code listName="required">false</cbc:Code>
+			</cac:SecurityClearanceTerm>
+		</cac:TenderingTerms>
+		<cac:TenderingProcess>
+			<cbc:SubmissionMethodCode listName="esubmission">required</cbc:SubmissionMethodCode>
+			<cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+			<cbc:AccessToolsURI>https://www.vergabe.metropoleruhr.de/VMPSatellite/notice/CXS0Y6SYTSVUH0KE</cbc:AccessToolsURI>
+			<cac:TenderSubmissionDeadlinePeriod>
+				<cbc:EndDate>2025-12-16+01:00</cbc:EndDate>
+				<cbc:EndTime>14:00:00+01:00</cbc:EndTime>
+			</cac:TenderSubmissionDeadlinePeriod>
+			<cac:AdditionalInformationRequestPeriod>
+				<cbc:EndDate>2025-12-08+01:00</cbc:EndDate>
+				<cbc:EndTime>23:59:59+01:00</cbc:EndTime>
+			</cac:AdditionalInformationRequestPeriod>
+			<cac:OpenTenderEvent>
+				<cbc:OccurrenceDate>2025-12-16+01:00</cbc:OccurrenceDate>
+				<cbc:OccurrenceTime>14:00:00+01:00</cbc:OccurrenceTime>
+			</cac:OpenTenderEvent>
+			<cac:AuctionTerms>
+				<cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+			</cac:AuctionTerms>
+			<cac:ContractingSystem>
+				<cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+			</cac:ContractingSystem>
+			<cac:ContractingSystem>
+				<cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+			</cac:ContractingSystem>
+		</cac:TenderingProcess>
+		<cac:ProcurementProject>
+			<cbc:ID schemeName="internalID">10/4.2-2025-0299</cbc:ID>
+			<cbc:Name languageID="DEU">Dachdeckungs- und Dachabdichtungsarbeiten, Klempnerarbeiten, Arbeiten an schadstoffbelasteten baulichen und technischen Anlagen - IGA 2027, Kohlenbunkerensemble, Grothusstraße 25, 45883 Gelsenkirchen</cbc:Name>
+			<cbc:Description languageID="DEU">Schadstoffsanierung Dach Kohlenbunker:
+
+180 m2 Einhausung des Treppenturms im Schwarzbereich incl. Treppengeländer mit 0,2 mm PE-Folie.
+485 m2 Entfernen PAK- und asbesthaltiger Dachabdichtungen der Flachdächer und Attikabereiche.
+35 t Entsorgung PAK- und asbesthaltiger Dachabdichtungen.
+485 m2 Grob- und Feinreinigung der Schwarzbereiche.
+485 m2 Entfernen und Entsorgen von Schotter-/Kiesschüttungen auf Flachdachflächen.
+
+Dachabdichtung und Sockelabdichtung Kohlenbunker:
+
+735 m2 Untergrund der Flachdachflächen und Attikabereiche reinigen.
+735 m2 Voranstrich aus Bitumenlösung auf Flachdachflächen und Attika.
+266 m2 Dampfsperrschicht aus Elastomerbitumen-Schweißbahn mit Verbundeinlage auf Flachdach-und Attikaflächen.
+167 m2 Wärmedämmschicht als Flachdachdämmung MW DAA, 0,040 W/(mK), Dicke 160 mm.
+61 m2 Gefälledämmschicht als Flachdachdämmung MW DAA, 0,040 W/(MK), Dicke 40-100 mm.
+15 m2 Ausgleichsschüttung als gebundene, mineralische, nichtbrennbare Schüttung in Streifen, Dicke 8-40 mm.
+206 m2 2-lagige Dachabdichtung incl. Attikaanschlüsse aus PYE-G200-S4 und PYE/PYP-KTP 300 S5.
+568 m2 2-lagige Dachabdichtung incl. Attikaanschlüsse aus PYE-KTG KSP-S3 und PYE/PYP-KTP 300 S5.
+18 m Wandanschlüsse der Dachabdichtung mit Kappleisten.
+486 m2 Schutzlage über der Dachabdichtung aus PES/PP-Fasermatten, Dicke 10 mm.
+167 m2 Schutzlage über der Dachabdichtung aus PES/PP-Fasermatten, Dicke 6 mm.
+24 Stück Eindichten von Dachabläufen DN 100 und Dachdurchdringungen.
+593 m2 Ziersplittschüttung auf Flachdachflächen, Körnung 6/8 mm, Dicke 30 mm.
+60 m2 Dachaufbau für intensive Dachbegrünung, bestehend aus Drän- und Speicherelementen aus HDPE-Kunststoff, Abdeckung aus Filtervlies 125 g/m2, 15 cm Untersubstrat Körnung 0/16 mm, 30 cm Obersubstrat als Vegitationsschicht für Intensivbegrünung sowie 31 m Randeinfassung aus verzinktem und farbbeschichtetem Stahl 420x5 mm.
+7 m2 Abdichtung des Übergangs zur Bandbrücke , Voranstrich aus Bitumenlösung, Dampfsperrschicht aus Elastomerbitumen-Schweißbahn mit Verbundeinlage, Gefälledämmung aus Schaumglas CG DAA dh 0,0380 W/(mK) und 1-lagiger Abdichtung DE/E1 PYE-KTP 5.
+100 m Abdichtung von Profilstahlträgern in Dachflächen mit Flüssigkunststoff aus PUR, 1-komponentig, mit Einlage aus Polyestervlies 165 g/m2.
+14 Stück Abdichtung von Rundrohr- und Profilstahl-Stützen in Dachflächen mit Flüssigkunststoff aus PUR, 1-komponentig, mit Einlage aus Polyestervlies 165 g/m2, incl. Reinigung und Grundierung des Untergrundes.
+10 m Abdichtung von Lüftungselementen in Dachflächen mit Flüssigkunststoff aus PUR, 1-komponentig, mit Einlage aus Polyestervlies 165 g/m2, incl. Reinigung und Grundierung des Untergrundes.
+74 m Sockelabdichtung von Wänden im EG, 2-lagig mit DU/E1 PYE KTG KSP 3,5, incl. Voranstrich aus Bitumenlösung und Dämmkeil aus Mineraldämmplatten WAP aus Porenbeton.  
+27 m Sockelabdichtung von Eingangsfassaden, Fenstern und Türen mit Flüssigkunststoff aus PUR, 1-komponentig, mit Einlage aus Polyestervlies 165 g/m2, incl. Reinigung und Grundierung des Untergrundes.
+8 Stück Sockelabdichtung von Profilstahlstützen mit Flüssigkunststoff aus PUR, 1-komponentig, mit Einlage aus Polyestervlies 165 g/m2, incl. Reinigung und Grundierung des Untergrundes.
+7 m2 Abdichtung eines Aufzugsschachts mit Flüssigkunststoff aus PUR, 1-komponentig, mit Einlage aus Polyestervlies 165 g/m2, incl. Gefällespachtelung, Reinigung und Grundierung des Untergrundes. 
+
+Dachreparatur Kohlenmischanlage:
+
+370 m2 Reinigung und Prüfung von Flachdachflächen.
+
+10 Stück Reparatur beschädigter Kleinstflächen bis 0,25 m2 in der Dachabdichtung 1-lagig mit Polymerbitumenbahn PYE KTG 4,5
+15 Stück Reparatur beschädigter Kleinstflächen über 0,25 bis 0,50 m2 in der Dachabdichtung 1-lagig mit Polymerbitumenbahn PYE KTG 4,5
+6 Stück Reparatur beschädigter Kleinstfächen über 0,50 bis 0,75 m2 in der Dachabdichtung 1-lagig mit Polymerbitumenbahn PYE KTG 4,5
+4 Stück Reparatur beschädigter Kleinstflächen über 0,75 bis 1,00 m2 in der Dachabdichtung 1-lagig mit Polymerbitumenbahn PYE KTG 4,5
+19 m2 Reparatur beschädigter Kleinflächen über 1,00 bis 5,00 m2 in der Dachabdichtung 1-lagig mit Polymerbitumenbahn PYE KTG 4,5
+128 m Reparatur von Attika- und Wandanschlüssen einlagig mit Polymerbitumenbahn PYE KTG 4,5, Breite ca. 60 cm, incl. Wandanschlussschienen. 
+
+Klempnerarbeiten Kohlenbunker:
+
+136 m Attikaabdeckungen aus gekantetem Aluminium in verschiedenen Abmessungen, incl. Profilhalter, Eckausbildung und Endausbildung.
+73 m vertikale Attikabekleidungen aus Aluminium in verschiedenen Abmessungen, incl. Ausschnitte für Dachentwässerung.
+74 m Wandabdeckungen als 2-teiliges Anschlussprofil aus gekantetem Aluminium, Breite ca. 60 mm.
+170 m Regenfallrohre DN 100 aus Stahl, verzinkt und farbbeschichtet, incl. Rohrbögen.
+25 m Regenfallrohre DN 70 aus Stahl, verzinkt und farbbeschichtet, incl. Rohrbögen.
+6 Stück Regenstandrohre DN 100 aus Stahl, verzinkt und farbbeschichtet, mit Revisionsöffnung.
+1 Stück Regenstandrohr DN 100 aus Stahl, verzinkt und farbbeschichtet, mit Reduzierstück DN 100/DN 70 und Revisionsöffnung.
+4 Stück Attikaabläufe DN 100 mit Notentwässerung, aus PUR und Edelstahl mit Kiesfang.
+4 Stück Notentwässerungen DN 100 aus PUR und Edelstahl mit Kiesfang.
+
+2 Stück Absturzsicherungssysteme auf den Dachflächen des Kohlenbunkers über 1. und 2. OG als permanentes Seilsicherungssystem aus Edelstahl mit allen erforderlichen Systemkomponenten wie Stützrohre, Seile, Gabelköpfe, Kraftbegrenzer, Kurvenelemente etc.
+
+Klempnerarbeiten Bandbrücke:
+2 Stück Entwässerungsrinnen aus verzinktem Stahl, Breite 200 mm, Länge ca. 1300 mm, mit Ablaufstutzen, Endkappen und Gitterrostabdeckung.
+19 m Regenfallrohre DN 100 aus Stahl, verzinkt und farbbeschichtet, incl. Rohrbögen.
+2 Stück Regenstandrohre DN 100 aus Stahl, verzinkt und farbbeschichtet.
+
+Klempnerarbeiten Kohlenmischanlage:
+26 m Regenfallrohre DN 100 aus Stahl, verzinkt und farbbeschichtet. 2 Stück Regenstandrohre DN 100 aus Stahl, verzinkt und farbbeschichtet.</cbc:Description>
+			<cbc:ProcurementTypeCode listName="contract-nature">works</cbc:ProcurementTypeCode>
+			<cbc:Note languageID="DEU">#Besonders auch geeignet für:selbst#, #Besonders auch geeignet für:other-sme#</cbc:Note>
+			<cbc:SMESuitableIndicator>true</cbc:SMESuitableIndicator>
+			<cac:ProcurementAdditionalType>
+				<cbc:ProcurementTypeCode listName="strategic-procurement">none</cbc:ProcurementTypeCode>
+			</cac:ProcurementAdditionalType>
+			<cac:MainCommodityClassification>
+				<cbc:ItemClassificationCode listName="cpv">45261210</cbc:ItemClassificationCode>
+			</cac:MainCommodityClassification>
+			<cac:AdditionalCommodityClassification>
+				<cbc:ItemClassificationCode listName="cpv">45261300</cbc:ItemClassificationCode>
+			</cac:AdditionalCommodityClassification>
+			<cac:AdditionalCommodityClassification>
+				<cbc:ItemClassificationCode listName="cpv">45262660</cbc:ItemClassificationCode>
+			</cac:AdditionalCommodityClassification>
+			<cac:RealizedLocation>
+				<cac:Address>
+					<cbc:StreetName>Grothusstraße 205</cbc:StreetName>
+					<cbc:CityName>Gelsenkirchen</cbc:CityName>
+					<cbc:PostalZone>45883</cbc:PostalZone>
+					<cbc:CountrySubentityCode listName="nuts">DEA32</cbc:CountrySubentityCode>
+					<cac:Country>
+						<cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+					</cac:Country>
+				</cac:Address>
+			</cac:RealizedLocation>
+			<cac:PlannedPeriod>
+				<cbc:StartDate>2026-04-01+02:00</cbc:StartDate>
+				<cbc:EndDate>2026-07-23+02:00</cbc:EndDate>
+			</cac:PlannedPeriod>
+		</cac:ProcurementProject>
+	</cac:ProcurementProjectLot>
+</ContractNotice>

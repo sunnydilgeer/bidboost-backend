@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractAwardNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractAwardNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+   <ext:UBLExtensions>
+      <ext:UBLExtension>
+         <ext:ExtensionContent>
+            <efext:EformsExtension>
+               <efac:NoticeResult>
+                  <cbc:TotalAmount currencyID="PLN">794383</cbc:TotalAmount>
+                  <efac:LotResult>
+                     <cbc:ID schemeName="result">RES-0001</cbc:ID>
+                     <cbc:HigherTenderAmount currencyID="PLN">1288618</cbc:HigherTenderAmount>
+                     <cbc:LowerTenderAmount currencyID="PLN">794383</cbc:LowerTenderAmount>
+                     <cbc:TenderResultCode listName="winner-selection-status">selec-w</cbc:TenderResultCode>
+                     <efac:LotTender>
+                        <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                     </efac:LotTender>
+                     <efac:ReceivedSubmissionsStatistics>
+                        <efbc:StatisticsCode listName="received-submission-type">t-esubm</efbc:StatisticsCode>
+                        <efbc:StatisticsNumeric>5</efbc:StatisticsNumeric>
+                     </efac:ReceivedSubmissionsStatistics>
+                     <efac:SettledContract>
+                        <cbc:ID schemeName="contract">CON-0001</cbc:ID>
+                     </efac:SettledContract>
+                     <efac:TenderLot>
+                        <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+                     </efac:TenderLot>
+                  </efac:LotResult>
+                  <efac:LotTender>
+                     <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                     <cbc:RankCode>1</cbc:RankCode>
+                     <efbc:TenderRankedIndicator>true</efbc:TenderRankedIndicator>
+                     <efbc:TenderVariantIndicator>false</efbc:TenderVariantIndicator>
+                     <cac:LegalMonetaryTotal>
+                        <cbc:PayableAmount currencyID="PLN">794383</cbc:PayableAmount>
+                     </cac:LegalMonetaryTotal>
+                     <efac:SubcontractingTerm>
+                        <efbc:TermDescription languageID="POL">Część prac projektowych, robót budowlanych i instalacyjnych</efbc:TermDescription>
+                        <efbc:TermPercent>78</efbc:TermPercent>
+                        <efbc:TermCode listName="applicability">yes</efbc:TermCode>
+                        <efbc:PercentageKnownIndicator>true</efbc:PercentageKnownIndicator>
+                        <efbc:ValueKnownIndicator>false</efbc:ValueKnownIndicator>
+                     </efac:SubcontractingTerm>
+                     <efac:TenderingParty>
+                        <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+                     </efac:TenderingParty>
+                     <efac:TenderLot>
+                        <cbc:ID>LOT-0001</cbc:ID>
+                     </efac:TenderLot>
+                     <efac:TenderReference>
+                        <cbc:ID>Oferta nr 1 Konsorcjum: Lider Adamietz Warszawa Sp. zo.o.; Partner Eksa Sp. zo.o.</cbc:ID>
+                     </efac:TenderReference>
+                  </efac:LotTender>
+                  <efac:SettledContract>
+                     <cbc:ID schemeName="contract">CON-0001</cbc:ID>
+                     <cbc:AwardDate>2025-10-23+02:00</cbc:AwardDate>
+                     <cbc:IssueDate>2025-11-07+01:00</cbc:IssueDate>
+                     <cbc:Title languageID="POL">Umowa nr EZ.28.141.2025</cbc:Title>
+                     <efac:ContractReference>
+                        <cbc:ID>EZ.28.141.2025</cbc:ID>
+                     </efac:ContractReference>
+                     <efac:LotTender>
+                        <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                     </efac:LotTender>
+                  </efac:SettledContract>
+                  <efac:TenderingParty>
+                     <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+                     <cbc:Name>Oferta nr 1 Konsorcjum: Lider Adamietz Warszawa Sp. zo.o.; Partner Eksa Sp. zo.o.</cbc:Name>
+                     <efac:Tenderer>
+                        <cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+                     </efac:Tenderer>
+                  </efac:TenderingParty>
+               </efac:NoticeResult>
+               <efac:NoticeSubType>
+                  <cbc:SubTypeCode listName="notice-subtype">29</cbc:SubTypeCode>
+               </efac:NoticeSubType>
+               <efac:Organizations>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://przetargi.kopernik.lodz.pl/</cbc:WebsiteURI>
+                        <cbc:EndpointID>https://ezamowienia.gov.pl</cbc:EndpointID>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Wojewódzkie Wielospecjalistyczne Centrum Onkologii i Traumatologii im. M. Kopernika w Łodzi</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>Wojewódzkie Wielospecjalistyczne Centrum Onkologii i Traumatologii im.M.Kopernika w Łodzi, ul. Pabianicka 62</cbc:StreetName>
+                           <cbc:Department>Dział Zamówień Publicznych</cbc:Department>
+                           <cbc:CityName>Łódź</cbc:CityName>
+                           <cbc:PostalZone>93-513 </cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL711</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>7292345599</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Name>Dział Zamówień Publicznych</cbc:Name>
+                           <cbc:Telephone>426895912</cbc:Telephone>
+                           <cbc:ElectronicMail>przetargi@kopernik.lodz.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://www.uzp.gov.pl/kio</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Krajowa Izba Odwoławcza</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>ul. Postępu 17a</cbc:StreetName>
+                           <cbc:CityName>Warszawa</cbc:CityName>
+                           <cbc:PostalZone>02-676</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL911</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>Regon: 211228381</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>22 4587801</cbc:Telephone>
+                           <cbc:Telefax>22 4587800</cbc:Telefax>
+                           <cbc:ElectronicMail>odwolania@uzp.gov.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>www.adamietz.waw.pl</cbc:WebsiteURI>
+                        <efbc:CompanySizeCode listName="economic-operator-size">large</efbc:CompanySizeCode>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Konsorcjum: Lider Adamietz Warszawa Sp.zo.o., Partner Eksa Sp.zo.o.</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName> Lider ul. Zagadki 19/ Parner ul. Senatorska 21</cbc:StreetName>
+                           <cbc:CityName>Warszawa/Łódź</cbc:CityName>
+                           <cbc:PostalZone>02-494/93-192</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL911</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>Regon: Lider 523554452; Regon: Partner 470524207</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+48 692403850</cbc:Telephone>
+                           <cbc:ElectronicMail>przetargi@adamietz.waw.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efbc:NaturalPersonIndicator>false</efbc:NaturalPersonIndicator>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://op.europa.eu</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0000</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Publications Office of the European Union</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:CityName>Luxembourg</cbc:CityName>
+                           <cbc:PostalZone>2417</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">LU000</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">LUX</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>PUBL</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+352 29291</cbc:Telephone>
+                           <cbc:ElectronicMail>ted@publications.europa.eu</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+               </efac:Organizations>
+            <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00761780-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+         </ext:ExtensionContent>
+      </ext:UBLExtension>
+   </ext:UBLExtensions>
+   <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+   <cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+   <cbc:ID schemeName="notice-id">c59605ed-0410-429c-80c8-5fea06dfbb36</cbc:ID>
+   <cbc:ContractFolderID>71aedd77-37df-4b8b-b841-5d303e552ee8</cbc:ContractFolderID>
+   <cbc:IssueDate>2025-11-14Z</cbc:IssueDate>
+   <cbc:IssueTime>07:27:57Z</cbc:IssueTime>
+   <cbc:VersionID>01</cbc:VersionID>
+   <cbc:RequestedPublicationDate>2025-11-17Z</cbc:RequestedPublicationDate>
+   <cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+   <cbc:NoticeTypeCode listName="result">can-standard</cbc:NoticeTypeCode>
+   <cbc:NoticeLanguageCode listName="language">POL</cbc:NoticeLanguageCode>
+   <cac:ContractingParty>
+      <cac:ContractingPartyType>
+         <cbc:PartyTypeCode listName="buyer-legal-type">body-pl</cbc:PartyTypeCode>
+      </cac:ContractingPartyType>
+      <cac:ContractingActivity>
+         <cbc:ActivityTypeCode listName="authority-activity">health</cbc:ActivityTypeCode>
+      </cac:ContractingActivity>
+      <cac:Party>
+         <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+         </cac:PartyIdentification>
+         <cac:ServiceProviderParty>
+            <cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode>
+            <cac:Party>
+               <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0000</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:Party>
+         </cac:ServiceProviderParty>
+      </cac:Party>
+   </cac:ContractingParty>
+   <cac:TenderingProcess>
+      <cbc:ProcedureCode listName="procurement-procedure-type">open</cbc:ProcedureCode>
+      <cac:NoticeDocumentReference>
+         <cbc:ID schemeName="ojs-notice-id">482145-2025</cbc:ID>
+      </cac:NoticeDocumentReference>
+      <cac:ProcessJustification>
+         <cbc:ProcessReasonCode listName="accelerated-procedure">false</cbc:ProcessReasonCode>
+      </cac:ProcessJustification>
+   </cac:TenderingProcess>
+   <cac:ProcurementProject>
+      <cbc:ID schemeName="InternalID">EZ.28.141.2025</cbc:ID>
+      <cbc:Name languageID="POL">„Roboty budowlano-instalacyjne związane z dostawą urządzenia-Akceleratora radioterapeutycznego dla Zakładu Teleradioterapii Wojewódzkiego Wielospecjalistycznego Centrum Onkologii i Traumatologii im. M. Kopernika w Łodzi”</cbc:Name>
+      <cbc:Description languageID="POL">1.	Przedmiotem niniejszego zamówienia jest wykonanie Dokumentacji Projektowej wraz z pełnieniem nadzoru autorskiego oraz zrealizowanie na podstawie opracowanej Dokumentacji Projektowej całości robót budowlanych dla zadania pn. „Roboty budowlano-instalacyjne związane z dostawą urządzenia-Akceleratora radioterapeutycznego dla Zakładu Teleradioterapii Wojewódzkiego Wielospecjalistycznego Centrum Onkologii i Traumatologii im. M. Kopernika w Łodzi”
+2.	Zakres zamówienia obejmuje zaprojektowanie i wykonanie robót budowlanych. Ponadto obejmuje  uzyskanie na rzecz Zamawiającego wszelkich niezbędnych decyzji, uzgodnień, opinii, pozwoleń i innych dokumentów umożliwiających zgodne z obowiązującymi przepisami wybudowanie i użytkowanie zmodernizowanych obiektów Szpitala im. Kopernika w Łodzi - jeżeli dotyczy.
+3.	Całość robót należy wykonać zgodnie z Programem Funkcjonalno-Użytkowym (dalej zw. PFU) stanowiącym Załącznik nr 2 do SWZ.
+4.	Przedmiotowa robota budowlana finansowana jest ze środków własnych Zamawiającego.</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">works</cbc:ProcurementTypeCode>
+      <cbc:Note languageID="POL">Przystępując do przetargu Wykonawca jest obowiązany wnieść wadium w łącznej wysokości: 26 000,00 zł. Szczegółowe warunki dotyczące wadium zawarte są w Rozdziale XV SWZ. Zamawiający ustala zabezpieczenie należytego wykonania umowy zawartej w wyniku postępowania o udzielenie niniejszego zamówienia w wysokości 5% ceny podanej w ofercie wraz z podatkiem VAT. Warunki dotyczące zabezpieczenia zawarte są w Rozdziale XXVII SWZ. Postępowanie jest prowadzone zgodnie z zasadami przewidzianymi dla tzw. „procedury odwróconej”. Warunki realizacji umowy: Warunki i sposób realizacji przedmiotu zamówienia określone zostały we wzorze umowy stanowiącym załącznik nr 9 do SWZ. Zamawiający przewiduje możliwość dokonania zmian postanowień zawartej umowy w stosunku do treści oferty, na podstawie której dokonano wyboru Wykonawcy, ale tylko jeśli stosowne zmiany zostały dopuszczone we wzoru umowy. Wykonawca, ma obowiązek zawrzeć umowę w sprawie zamówienia na warunkach określonych we wzorze umowy, które stanowi Załącznik Nr 9 do SWZ z uwzględnieniem wprowadzonych w trakcie trwania postępowania zmian. Umowa zostanie uzupełniona o zapisy wynikające ze złożonej oferty. Z postępowania o udzielenie zamówienia publicznego Zamawiający wykluczy Wykonawcę
+zgodnie z przesłankami zawartymi w art.108 ust.1 i 2 uPzp oraz art. 5k Rozporządzenia Rady (UE) 2022/576 z dnia 8 kwietnia 2022 r. w sprawie zmiany rozporządzenia (UE) nr 833/2014 dotyczącego środków ograniczających w związku z działaniami Rosji destabilizującymi sytuację na Ukrainie (Dz.Urz.UE L11 z 8.4.2022r ) i na podstawie art. 7 ust. 1 ustawy z dnia 13 kwietnia 2022 r. o szczególnych rozwiązaniach w zakresie przeciwdziałania wspieraniu agresji na Ukrainę oraz służących ochronie bezpieczeństwa narodowego (t.j. Dz. U. z 2022 r. poz.835). W terminie składania ofert określonym w SWZ wykonawca zobowiązany jest złożyć Zamawiającemu Aktualne nadzień składania ofert oświadczenie Wykonawcy stanowiące wstępne potwierdzenie braku podstaw do wykluczenia, złożone na formularzu jednolitego europejskiego dokumentu zamówienia (ESPD dalej:„JEDZ”) W zakresie kryterium kwalifikacji określonych w Rozdziale XII SWZ Wykonawca może ograniczyć się do wypełniania sekcji αczęści IV formularza Jednolitego Europejskiego Dokumentu Zamówienia oraz Oświadczenie zgodnie z załącznikiem nr 3A,3B (jeśli dotyczy) do SWZ.W celu potwierdzenia braku podstaw wykluczenia, o których mowa w Rozdziale XIII SWZ oraz potwierdzenia spełniania warunków udziału w postępowaniu Zamawiający żąda przedstawienia podmiotowych środków dowodowych określonych w Rozdziale XIV SWZ.W terminie składania ofert określonym w SWZ wykonawca zobowiązany jest złożyć Zamawiającemu Ofertę zawierającą– wykaz zgodnie z Rozdziałem XX SWZ. W postępowaniu o udzielenie zamówienia komunikacja między Zamawiającym a Wykonawcami odbywa się drogą elektroniczną przy użyciu:1.1.Platformy ezamówienia która jest dostępna pod adresemhttps://ezamowienia.gov.pl.,1.2.poczty elektronicznej przetargi@kopernik.lodz.pl (w wyjątkowych sytuacjach braku możliwości komunikacji przez Platformy ezamówienia), z zastrzeżeniem że złożenie oferty następuje wyłącznie przy użyciu Platformy ezamówienia.1.3.poczty elektronicznej podanej przez Wykonawcę (w wyjątkowych sytuacjach braku możliwości komunikacji przez Platformy ezamówienia),w szczególności w celu zawiadomienia o wyborze oferty najkorzystniejszej. Szczegółowe zasady komunikacji zostały opisane w Rozdziale XVI SWZ. Państwa dane osobowe przetwarzane będą na podstawie przepisów art. 6 ust.1 pkt c) oraz art. 9, art. 10 RODO w związku przepisami określonymi w art. 18, art. 19, art. 124 oraz art. 128 ustawy z dnia 11 września 2019r. Postępowanie jest prowadzone zgodnie z zasadami przewidzianymi dla tzw. „procedury odwróconej”(art. 139 ust.1 ustawy pzp). Zamawiający wymaga złożenia oferty po odbyciu wizji lokalnej przez wykonawcę - szczegółowo opisanej w Rozdziale VIII SWZ. </cbc:Note>
+      <cac:MainCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">45215140</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">71220000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">45000000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">45300000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">45400000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">51000000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">71000000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:RealizedLocation>
+         <cac:Address>
+            <cbc:StreetName>ul. Pabianicka 62</cbc:StreetName>
+            <cbc:CityName>Łódź</cbc:CityName>
+            <cbc:PostalZone>93-513</cbc:PostalZone>
+            <cbc:CountrySubentityCode listName="nuts">PL711</cbc:CountrySubentityCode>
+            <cac:Country>
+               <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+            </cac:Country>
+         </cac:Address>
+      </cac:RealizedLocation>
+   </cac:ProcurementProject>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+      <cac:TenderingTerms>
+         <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+         <cac:AwardingTerms>
+            <cac:AwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>60</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                  <cbc:Description languageID="POL">Cena</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>10</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+                  <cbc:Description languageID="POL">Przedłużenie minimalnego (24-miesięcznego) okresu gwarancji jakości i rękojmi na dostarczone i wbudowane w ramach zamówienia urządzenia i akcesoria</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>30</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+                  <cbc:Description languageID="POL">Przedłużenie minimalnego (60-miesięcznego) okresu gwarancji jakości i rękojmi na roboty budowlane</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+            </cac:AwardingCriterion>
+         </cac:AwardingTerms>
+         <cac:AppealTerms>
+            <cac:PresentationPeriod>
+               <cbc:Description languageID="POL">
+1.	Środki ochrony prawnej przysługują Wykonawcy, jeżeli ma lub miał interes w uzyskaniu zamówienia oraz poniósł lub może ponieść szkodę w wyniku naruszenia przez Zamawiającego przepisów uPzp. 
+2.	Odwołanie przysługuje na: 
+2.1.	niezgodną z przepisami ustawy czynność Zamawiającego, podjętą w postępowaniu o udzielenie zamówienia, w tym na projektowane postanowienie umowy; 
+2.2.	zaniechanie czynności w postępowaniu o udzielenie zamówienia, do której Zamawiający był obowiązany na podstawie ustawy. 
+3.	Odwołanie wnosi się do Prezesa Krajowej Izby Odwoławczej w formie pisemnej albo w formie elektronicznej albo w postaci elektronicznej opatrzone podpisem zaufanym.
+4.	Na orzeczenie Krajowej Izby Odwoławczej oraz postanowienie Prezesa Krajowej Izby Odwoławczej,  
+o którym mowa w art. 519 ust. 1 uPzp, stronom oraz uczestnikom postępowania odwoławczego przysługuje skarga do sądu. 
+5.	Skargę wnosi się do Sądu Okręgowego w Warszawie za pośrednictwem Prezesa Krajowej Izby Odwoławczej. 
+6.	Szczegółowe informacje dotyczące środków ochrony prawnej określone są w Dziale IX „Środki ochrony prawnej” uPzp. 
+</cbc:Description>
+            </cac:PresentationPeriod>
+            <cac:AppealInformationParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealInformationParty>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+         </cac:AppealTerms>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+         <cac:AuctionTerms>
+            <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+         </cac:AuctionTerms>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:ID schemeName="InternalID">EZ.28.141.2025</cbc:ID>
+         <cbc:Name languageID="POL">„Roboty budowlano-instalacyjne związane z dostawą urządzenia-Akceleratora radioterapeutycznego dla Zakładu Teleradioterapii Wojewódzkiego Wielospecjalistycznego Centrum Onkologii i Traumatologii im. M. Kopernika w Łodzi”</cbc:Name>
+         <cbc:Description languageID="POL">1.	Przedmiotem niniejszego zamówienia jest wykonanie Dokumentacji Projektowej wraz z pełnieniem nadzoru autorskiego oraz zrealizowanie na podstawie opracowanej Dokumentacji Projektowej całości robót budowlanych dla zadania pn. „Roboty budowlano-instalacyjne związane z dostawą urządzenia-Akceleratora radioterapeutycznego dla Zakładu Teleradioterapii Wojewódzkiego Wielospecjalistycznego Centrum Onkologii i Traumatologii im. M. Kopernika w Łodzi”
+2.	Zakres zamówienia obejmuje zaprojektowanie i wykonanie robót budowlanych. Ponadto obejmuje  uzyskanie na rzecz Zamawiającego wszelkich niezbędnych decyzji, uzgodnień, opinii, pozwoleń i innych dokumentów umożliwiających zgodne z obowiązującymi przepisami wybudowanie i użytkowanie zmodernizowanych obiektów Szpitala im. Kopernika w Łodzi - jeżeli dotyczy.
+3.	Całość robót należy wykonać zgodnie z Programem Funkcjonalno-Użytkowym (dalej zw. PFU) stanowiącym Załącznik nr 2 do SWZ.</cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">works</cbc:ProcurementTypeCode>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">45215140</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">71220000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">45000000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">45300000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">45400000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">51000000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">71000000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:RealizedLocation>
+            <cac:Address>
+               <cbc:StreetName>Wojewódzkie Wielospecjalistyczne Centrum Onkologii i Traumatologii im.M.Kopernika w Łodzi, ul. Pabianicka 62</cbc:StreetName>
+               <cbc:CityName>Łódź</cbc:CityName>
+               <cbc:PostalZone>93-513</cbc:PostalZone>
+               <cbc:CountrySubentityCode listName="nuts">PL711</cbc:CountrySubentityCode>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+         <cac:PlannedPeriod>
+            <cbc:DurationMeasure unitCode="MONTH">4</cbc:DurationMeasure>
+         </cac:PlannedPeriod>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+   <cac:TenderResult>
+      <cbc:AwardDate>2000-01-01Z</cbc:AwardDate>
+   </cac:TenderResult>
+</ContractAwardNotice>

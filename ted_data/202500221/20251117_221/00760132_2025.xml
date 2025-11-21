@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><PriorInformationNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:PriorInformationNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+   <ext:UBLExtensions>
+      <ext:UBLExtension>
+         <ext:ExtensionContent>
+            <efext:EformsExtension>
+               <efac:NoticeSubType>
+                  <cbc:SubTypeCode listName="notice-subtype">1</cbc:SubTypeCode>
+               </efac:NoticeSubType>
+               <efac:Organizations>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://instytutksiazki.pl/pl/</cbc:WebsiteURI>
+                        <cbc:EndpointID>https://platformazakupowa.pl/pn/instytutksiazki</cbc:EndpointID>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Instytut Książki</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>ul. Wróblewskiego 6</cbc:StreetName>
+                           <cbc:CityName>Kraków</cbc:CityName>
+                           <cbc:PostalZone>31-148</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL213</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>6762670222</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>(+48) 12 61 71 900</cbc:Telephone>
+                           <cbc:ElectronicMail>biuro@instytutksiazki.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://op.europa.eu</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0000</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Publications Office of the European Union</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:CityName>Luxembourg</cbc:CityName>
+                           <cbc:PostalZone>2417</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">LU000</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">LUX</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>PUBL</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+352 29291</cbc:Telephone>
+                           <cbc:ElectronicMail>ted@publications.europa.eu</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+               </efac:Organizations>
+            <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00760132-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+         </ext:ExtensionContent>
+      </ext:UBLExtension>
+   </ext:UBLExtensions>
+   <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+   <cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+   <cbc:ID schemeName="notice-id">5fe17a0c-5bb3-4eec-8bec-d855d9ac1e02</cbc:ID>
+   <cbc:IssueDate>2025-11-14Z</cbc:IssueDate>
+   <cbc:IssueTime>11:31:51Z</cbc:IssueTime>
+   <cbc:VersionID>01</cbc:VersionID>
+   <cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+   <cbc:NoticeTypeCode listName="planning">pin-buyer</cbc:NoticeTypeCode>
+   <cbc:NoticeLanguageCode listName="language">POL</cbc:NoticeLanguageCode>
+   <cac:ContractingParty>
+      <cbc:BuyerProfileURI>https://platformazakupowa.pl/pn/instytutksiazki</cbc:BuyerProfileURI>
+      <cac:ContractingPartyType>
+         <cbc:PartyTypeCode listName="buyer-legal-type">body-pl-cga</cbc:PartyTypeCode>
+      </cac:ContractingPartyType>
+      <cac:ContractingActivity>
+         <cbc:ActivityTypeCode listName="authority-activity">rcr</cbc:ActivityTypeCode>
+      </cac:ContractingActivity>
+      <cac:Party>
+         <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+         </cac:PartyIdentification>
+         <cac:ServiceProviderParty>
+            <cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode>
+            <cac:Party>
+               <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0000</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:Party>
+         </cac:ServiceProviderParty>
+      </cac:Party>
+   </cac:ContractingParty>
+   <cac:ProcurementProject>
+      <cbc:Name languageID="POL">Organizacja VI Światowego Kongresu Tłumaczy Literatury Polskiej w Krakowie w dniach 2­ - 4 lipca 2026r.</cbc:Name>
+      <cbc:Description languageID="POL">Opis przedmiotu zamówienia: 1. Kongres będzie miał miejsce w ICE Kraków, ul. Marii Konopnickiej 17, Kraków, dalej ICE. Zamawiający samodzielnie zawrze umowę najmu z Operatorem ICE. 2. Zamawiający opracuje program Kongresu, w szczególności przewiduje, iż w dniach od 2.07.2026 od godzin porannych 4.07.2026 do 
+godzin południowych będą się odbywały całodzienne spotkania (czas trwania 1 panelu – około 1 godzina), z przerwami na przerwy kawowe i posiłki. W godzinach wieczornych 3.07.2026 odbędzie się Gala rozdania Nagród Transatlantyk. 3. Zamawiający przewiduje udział około 225 osób przyjezdnych, 50 panelistów, 50 wolnych słuchaczy. Maksymalna liczba gości podczas jednego wydarzenia (np. Inauguracja lub Gala) nie przekroczy 500 uczestników. Osoby zaproszone pochodzić będą z różnych kontynentów, w tym przeważająca liczba osób pochodzi z Europy. 4. Zamawiający przewiduje organizację stoisk dla około 30 wydawców w kuluarach ICE. 5. Zamawiający dokonał wstępnych rezerwacji noclegów dla gości Kongresu w hotelach w bliskiej lokalizacji ICE. Zamawiający pokrywa koszty noclegów tłumaczom w dniach 1­5 lipca (4 doby). 6. Liczbę tłumaczy i autorów z Polski wymagających zakupu biletów / pokrycia przez Wykonawcę kosztów przejazdu samochodem, Zamawiający szacuje na max.: 50 7. Liczbę tłumaczy i autorów z zagranicy wymagających zakupu biletów / pokrycia przez Wykonawcę kosztów przejazdu samochodem, Zamawiający szacuje na max.: 225. Wykonawca jest zobowiązany w szczególności do: 1. Organizacja i prowadzenie biura organizacyjnego Kongresu. Biuro winno realizować wszystkie prace organizacyjne i kontakty z uczestnikami Kongresu, zapewniając uczestnikom możliwość kontaktu osobistego, mailowego i głosowego od momentu zawarcia umowy. 2. Zapewnienie hostów/ hostess do obsługi Kongresu. 3. Przygotowanie sal do sesji np. zmiany ustawienia scen, stołów i krzeseł, wyposażenia, oznakowania. 4. Przygotowywanie organizacyjne sesji, np, pozyskiwanie i wgrywanie prezentacji, zapewnienie i obsługa sprzętu. 5. Organizacja szatni oraz recepcji. 6. Zapewnienie i ustawienie stanowisk dla wystawców – około 30 wydawców. 7. Prowadzenie korespondencji z uczestnikami w celu ustalenia wszelkich spraw organizacyjnych, np. dotyczących terminów ich przyjazdu i wyjazdu, zakwaterowania, zakupu biletów / zwrotów kosztów podróży samochodem. 8. Wykupienie ubezpieczenia
+dla uczestników. 9. Organizacja transportu ­ zakup biletów lotniczych/kolejowych lub pokrycia kosztów innego środka transportu dla uczestników Kongresu z miejsca wskazanego przez uczestnika. 10. Organizacja transportu ­ zapewnienie transferów dla każdego z gości Kongresu w Krakowie (lotnisko/dworzec – hotel). 11. Zapewnienie
+noclegów dla uczestników Kongresu – Wykonawca przejmie rezerwacje dokonane przez Zamawiającego. 12. Przygotowanie do produkcji i wykonanie (dostarczenie i montaż) materiałów graficznych wg projektu Zamawiającego na potrzeby Kongresu, np. banery, plansze, oznakowanie ICE Kraków, identyfikatory, zaproszenia. 13. Przygotowanie do produkcji, wydrukowanie i zainstalowanie wystawy wg projektu Zamawiającego na około 20 ekspozytorach w ICE Kraków. 14. Przygotowanie do produkcji i wykonanie materiałów konferencyjnych wg projektu Zamawiającego np. torba, notes, długopis. 15. Stworzenie formularza on­line do rejestracji uczestników na panelach, który zostanie uruchomiony na stronie internetowej Zamawiającego. 16. Rejestracja audio­video sesji wraz z auto deskrypcją w języku polskim. Zapisany materiał zostanie przekazany Zamawiającemu na dysku zewnętrznym bezpośrednio po zakończeniu transmisji. 17. Zapewnienie usług gastronomicznych: przerwy kawowe, obiady, bankiet po Gali Transatlantyk.
+Zamawiający przewiduje powtórzenie podobnych usług  w stosunku do zamówienia podstawowego w ramach zamówień dotyczących kompleksowej organizacji kolejnych wydarzeń/kongresów/konferencji.
+Wewnętrzny identyfikator: OZP.261.24.2025/PZP</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+      <cac:MainCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">79950000</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:RealizedLocation>
+         <cac:Address>
+            <cbc:StreetName>ul. Wróblewskiego 6</cbc:StreetName>
+            <cbc:CityName>Kraków</cbc:CityName>
+            <cbc:PostalZone>31-148</cbc:PostalZone>
+            <cbc:CountrySubentityCode listName="nuts">PL213</cbc:CountrySubentityCode>
+            <cac:Country>
+               <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+            </cac:Country>
+         </cac:Address>
+      </cac:RealizedLocation>
+   </cac:ProcurementProject>
+</PriorInformationNotice>

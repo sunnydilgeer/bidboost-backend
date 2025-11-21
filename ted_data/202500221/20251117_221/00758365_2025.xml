@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ccts-cct="urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDataTypes-2" xmlns:udt="urn:oasis:names:specification:bdndr:schema:xsd:UnqualifiedDataTypes-1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<ext:UBLExtensions>
+		<ext:UBLExtension>
+			<ext:ExtensionContent>
+				<efext:EformsExtension>
+					<efac:NoticeSubType>
+						<cbc:SubTypeCode listName="notice-subtype">16</cbc:SubTypeCode>
+					</efac:NoticeSubType>
+					<efac:Organizations>
+						<efac:Organization>
+							<efac:Company>
+								<cac:PartyIdentification>
+									<cbc:ID>ORG-0001</cbc:ID>
+								</cac:PartyIdentification>
+								<cac:PartyName>
+									<cbc:Name languageID="DEU">München Klinik gGmbH</cbc:Name>
+								</cac:PartyName>
+								<cac:PostalAddress>
+									<cbc:StreetName>Thalkirchner Straße 48</cbc:StreetName>
+									<cbc:CityName>München</cbc:CityName>
+									<cbc:PostalZone>80337</cbc:PostalZone>
+									<cbc:CountrySubentityCode listName="nuts-lvl3">DE212</cbc:CountrySubentityCode>
+									<cac:Country>
+										<cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+									</cac:Country>
+								</cac:PostalAddress>
+								<cac:PartyLegalEntity>
+									<cbc:CompanyID>DE814184919</cbc:CompanyID>
+								</cac:PartyLegalEntity>
+								<cac:Contact>
+									<cbc:Telephone>000</cbc:Telephone>
+									<cbc:ElectronicMail>thomas.borde@muenchen-klinik.de</cbc:ElectronicMail>
+								</cac:Contact>
+							</efac:Company>
+						</efac:Organization>
+						<efac:Organization>
+							<efac:Company>
+								<cbc:WebsiteURI>https://www.regierung.oberbayern.bayern.de/behoerde/mittelinstanz/vergabekammer</cbc:WebsiteURI>
+								<cac:PartyIdentification>
+									<cbc:ID>ORG-0002</cbc:ID>
+								</cac:PartyIdentification>
+								<cac:PartyName>
+									<cbc:Name languageID="DEU">Regierung von Oberbayern - Vergabekammer Südbayern</cbc:Name>
+								</cac:PartyName>
+								<cac:PostalAddress>
+									<cbc:StreetName>Maximilianstr. 39</cbc:StreetName>
+									<cbc:CityName>München</cbc:CityName>
+									<cbc:PostalZone>80538</cbc:PostalZone>
+									<cbc:CountrySubentityCode listName="nuts-lvl3">DE212</cbc:CountrySubentityCode>
+									<cac:Country>
+										<cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+									</cac:Country>
+								</cac:PostalAddress>
+								<cac:PartyLegalEntity>
+									<cbc:CompanyID>09-0318006-60</cbc:CompanyID>
+								</cac:PartyLegalEntity>
+								<cac:Contact>
+									<cbc:Telephone>+49 8921762411</cbc:Telephone>
+									<cbc:Telefax>+49 8921762847</cbc:Telefax>
+									<cbc:ElectronicMail>vergabekammer.suedbayern@reg-ob.bayern.de</cbc:ElectronicMail>
+								</cac:Contact>
+							</efac:Company>
+						</efac:Organization>
+					<efac:Organization><efac:Company><cac:PartyIdentification><cbc:ID schemeName="organization">ORG-0003</cbc:ID></cac:PartyIdentification><cac:PartyName><cbc:Name languageID="DEU">Datenservice Öffentlicher Einkauf (in Verantwortung des Beschaffungsamts des BMI)</cbc:Name></cac:PartyName><cac:PostalAddress><cbc:CityName>Bonn</cbc:CityName><cbc:PostalZone>53119</cbc:PostalZone><cbc:CountrySubentityCode listName="nuts">DEA22</cbc:CountrySubentityCode><cac:Country><cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode></cac:Country></cac:PostalAddress><cac:PartyLegalEntity><cbc:CompanyID schemeID="002">0204:994-DOEVD-83</cbc:CompanyID></cac:PartyLegalEntity><cac:Contact><cbc:Telephone>+49228996100</cbc:Telephone><cbc:ElectronicMail>noreply.esender_hub@bescha.bund.de</cbc:ElectronicMail></cac:Contact></efac:Company></efac:Organization></efac:Organizations>
+				<efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00758365-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+			</ext:ExtensionContent>
+		</ext:UBLExtension>
+	</ext:UBLExtensions>
+	<cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+	<cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+	<cbc:ProfileID>eforms-sdk-1.13</cbc:ProfileID>
+	<cbc:ID schemeName="notice-id">36232b5a-d2fe-412a-9d0a-dfd107f8e7fc</cbc:ID>
+	<cbc:ContractFolderID>40fe18a2-aa0d-469d-ab70-c578465eb50a</cbc:ContractFolderID>
+	<cbc:IssueDate>2025-11-14+01:00</cbc:IssueDate>
+	<cbc:IssueTime>14:36:26+01:00</cbc:IssueTime>
+	<cbc:VersionID>01</cbc:VersionID>
+	<cbc:RequestedPublicationDate>2025-11-14+01:00</cbc:RequestedPublicationDate>
+	<cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+	<cbc:NoticeTypeCode listName="competition">cn-standard</cbc:NoticeTypeCode>
+	<cbc:NoticeLanguageCode listID="eu-official-language">DEU</cbc:NoticeLanguageCode>
+	<cac:ContractingParty>
+		<cbc:BuyerProfileURI>https://www.muenchen-klinik.de/</cbc:BuyerProfileURI>
+		<cac:ContractingPartyType>
+			<cbc:PartyTypeCode listName="buyer-legal-type">pub-undert-ra</cbc:PartyTypeCode>
+		</cac:ContractingPartyType>
+		<cac:ContractingActivity>
+			<cbc:ActivityTypeCode listName="authority-activity">health</cbc:ActivityTypeCode>
+		</cac:ContractingActivity>
+		<cac:Party>
+			<cac:PartyIdentification>
+				<cbc:ID>ORG-0001</cbc:ID>
+			</cac:PartyIdentification>
+		<cac:ServiceProviderParty><cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode><cac:Party><cac:PartyIdentification><cbc:ID schemeName="organization">ORG-0003</cbc:ID></cac:PartyIdentification></cac:Party></cac:ServiceProviderParty></cac:Party>
+	</cac:ContractingParty>
+	<cac:TenderingTerms>
+		<ext:UBLExtensions>
+			<ext:UBLExtension>
+				<ext:ExtensionContent>
+					<efext:EformsExtension>
+						<efac:StrategicProcurement>
+							<efbc:ApplicableLegalBasis listName="cvd-scope">false</efbc:ApplicableLegalBasis>
+						</efac:StrategicProcurement>
+						<efac:StrategicProcurement>
+							<efbc:ApplicableLegalBasis listName="eed-scope">false</efbc:ApplicableLegalBasis>
+						</efac:StrategicProcurement>
+					</efext:EformsExtension>
+				</ext:ExtensionContent>
+			</ext:UBLExtension>
+		</ext:UBLExtensions>
+		<cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+		<cac:RequiredFinancialGuarantee>
+			<cbc:GuaranteeTypeCode listName="tender-guarantee-required">false</cbc:GuaranteeTypeCode>
+		</cac:RequiredFinancialGuarantee>
+		<cac:ProcurementLegislationDocumentReference>
+			<cbc:ID>vgv</cbc:ID>
+		</cac:ProcurementLegislationDocumentReference>
+		<cac:CallForTendersDocumentReference>
+			<ext:UBLExtensions>
+				<ext:UBLExtension>
+					<ext:ExtensionContent>
+						<efext:EformsExtension>
+							<efac:OfficialLanguages>
+								<cac:Language>
+									<cbc:ID>DEU</cbc:ID>
+								</cac:Language>
+							</efac:OfficialLanguages>
+						</efext:EformsExtension>
+					</ext:ExtensionContent>
+				</ext:UBLExtension>
+			</ext:UBLExtensions>
+			<cbc:ID>SomeTenderDocID1</cbc:ID>
+			<cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+		</cac:CallForTendersDocumentReference>
+		<cac:TendererQualificationRequest>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-natl-bre-nat-law</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Beschreibung und Nachweis über die Anlage 2F2 Eigenerklärungen zur Eignung; auf die §§ 123, 124 GWB verwiesen.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-part</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Beschreibung und Nachweis über die Anlage 2F2 Eigenerklärungen zur Eignung; auf die §§ 123, 124 GWB verwiesen.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-terror</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Beschreibung und Nachweis über die Anlage 2F2 Eigenerklärungen zur Eignung; auf die §§ 123, 124 GWB verwiesen.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-laund</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Beschreibung und Nachweis über die Anlage 2F2 Eigenerklärungen zur Eignung; auf die §§ 123, 124 GWB verwiesen.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-fraud</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Beschreibung und Nachweis über die Anlage 2F2 Eigenerklärungen zur Eignung; auf die §§ 123, 124 GWB verwiesen.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-corrpt</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Beschreibung und Nachweis über die Anlage 2F2 Eigenerklärungen zur Eignung; auf die §§ 123, 124 GWB verwiesen.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-traffick</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Beschreibung und Nachweis über die Anlage 2F2 Eigenerklärungen zur Eignung; auf die §§ 123, 124 GWB verwiesen.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-pmt-bre-tax</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Beschreibung und Nachweis über die Anlage 2F2 Eigenerklärungen zur Eignung; auf die §§ 123, 124 GWB verwiesen.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-pmt-bre-ssc</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Beschreibung und Nachweis über die Anlage 2F2 Eigenerklärungen zur Eignung; auf die §§ 123, 124 GWB verwiesen.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-bre-env-law</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Beschreibung und Nachweis über die Anlage 2F2 Eigenerklärungen zur Eignung; auf die §§ 123, 124 GWB verwiesen.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-bre-soc-law</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Beschreibung und Nachweis über die Anlage 2F2 Eigenerklärungen zur Eignung; auf die §§ 123, 124 GWB verwiesen.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-bre-lab-law</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Beschreibung und Nachweis über die Anlage 2F2 Eigenerklärungen zur Eignung; auf die §§ 123, 124 GWB verwiesen.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-insolvency</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Beschreibung und Nachweis über die Anlage 2F2 Eigenerklärungen zur Eignung; auf die §§ 123, 124 GWB verwiesen.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-liq-admin</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Beschreibung und Nachweis über die Anlage 2F2 Eigenerklärungen zur Eignung; auf die §§ 123, 124 GWB verwiesen.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-as-susp</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Beschreibung und Nachweis über die Anlage 2F2 Eigenerklärungen zur Eignung; auf die §§ 123, 124 GWB verwiesen.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-other</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Beschreibung und Nachweis über die Anlage 2F2 Eigenerklärungen zur Eignung; auf die §§ 123, 124 GWB verwiesen.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-misconduct</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Beschreibung und Nachweis über die Anlage 2F2 Eigenerklärungen zur Eignung; auf die §§ 123, 124 GWB verwiesen.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-distortion</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Beschreibung und Nachweis über die Anlage 2F2 Eigenerklärungen zur Eignung; auf die §§ 123, 124 GWB verwiesen.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-partic-confl</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Beschreibung und Nachweis über die Anlage 2F2 Eigenerklärungen zur Eignung; auf die §§ 123, 124 GWB verwiesen.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-prep-confl</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Beschreibung und Nachweis über die Anlage 2F2 Eigenerklärungen zur Eignung; auf die §§ 123, 124 GWB verwiesen.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-sanction</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Beschreibung und Nachweis über die Anlage 2F2 Eigenerklärungen zur Eignung; auf die §§ 123, 124 GWB verwiesen.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-misrepresent</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Beschreibung und Nachweis über die Anlage 2F2 Eigenerklärungen zur Eignung; auf die §§ 123, 124 GWB verwiesen.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+		</cac:TendererQualificationRequest>
+		<cac:TendererQualificationRequest>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-grounds-source">epo-notice</cbc:TendererRequirementTypeCode>
+			</cac:SpecificTendererRequirement>
+		</cac:TendererQualificationRequest>
+		<cac:TenderRecipientParty>
+			<cac:PartyIdentification>
+				<cbc:ID>ORG-0001</cbc:ID>
+			</cac:PartyIdentification>
+		</cac:TenderRecipientParty>
+		<cac:AppealTerms>
+			<cac:PresentationPeriod>
+				<cbc:Description languageID="DEU">1) Rügeerfordernis Es wird darauf hingewiesen, dass bei Beanstandungen im Hinblick auf das hiesige Vergabeverfahren die Bewerber Verstöße gegen Vergabevorschriften, die sie erkannt haben, gegenüber der Vergabestelle innerhalb von 10 Kalendertagen zu rügen haben und weiterhin Verstöße gegen Vergabevorschriften, die erst in diesen Teilnahmeunterlagen für diesen Teilnahmewettbewerb oder den Vergabeunterlagen zur Abforderung der Erstangebote erkennbar sind, von den Bewerbern spätestens bis zum Ablauf der Frist zur Bewerbung oder Abgabe der Erstangebote gegenüber der Vergabestelle zu rügen sind (vgl. § 160 Abs. 3 Satz 1 Nr. 1, 2 und Nr. 3 GWB), damit die Bewerber für den Fall, dass der Rüge nicht abgeholfen wird, ein Nachprüfungsverfahren vor der Vergabekammer anstreben können. Sofern die Vergabestelle einer Rüge nicht abhilft, kann der betreffende Bewerber nur innerhalb von längstens 15 Kalendertagen nach Eingang des Antwortschreibens an den Rügenden diesbezüglich ein Nachprüfungsverfahren vor der Vergabekammer einleiten (vgl. § 160 Abs. 3 Satz 1 Nr. 4 GWB) *** 2) Ein Nachprüfungsantrag zur Vergabekammer ist nach § 160 Abs. 3 S. 1 Nr. 4 GWB unzulässig, soweit mehr als 15 Kalendertage nach Eingang der Mitteilung des Auftraggebers, einer Rüge nicht abhelfen zu wollen, vergangen sind. *** 3) Insbesondere § 160 Abs. 3 Satz 1 Nr. 1, Nr. 2 und 3 GWB sowie § 134 Abs. 2 GWB sind zu beachten.  *** 4) Die Frist zur Geltendmachung der Unwirksamkeit des Vertragsschlusses nach § 135 GWB endet spätestens 30 Kalendertage nach Veröffentlichung der Bekanntmachung der Auftragsvergabe im Amtsblatt der Europäischen Union, vgl. § 135 Abs. 2 Satz 2 GWB.  ***</cbc:Description>
+			</cac:PresentationPeriod>
+			<cac:AppealReceiverParty>
+				<cac:PartyIdentification>
+					<cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+				</cac:PartyIdentification>
+			</cac:AppealReceiverParty>
+		</cac:AppealTerms>
+		<cac:Language>
+			<cbc:ID>DEU</cbc:ID>
+		</cac:Language>
+	</cac:TenderingTerms>
+	<cac:TenderingProcess>
+		<cbc:ProcedureCode listName="procurement-procedure-type">comp-dial</cbc:ProcedureCode>
+		<cbc:AccessToolsURI>https://www.dtvp.de/Satellite/notice/CXP4YL5MDKT</cbc:AccessToolsURI>
+		<cac:AuctionTerms>
+			<cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+		</cac:AuctionTerms>
+	</cac:TenderingProcess>
+	<cac:ProcurementProject>
+		<cbc:ID schemeName="internalID">2988/25</cbc:ID>
+		<cbc:Name languageID="DEU">KRANKENHAUSINFORMATIONSSYSTEM</cbc:Name>
+		<cbc:Description languageID="DEU">Krankenhausinformationssystem</cbc:Description>
+		<cbc:ProcurementTypeCode listName="contract-nature">supplies</cbc:ProcurementTypeCode>
+		<cbc:Note languageID="DEU">#Bekanntmachungs-ID: CXP4YL5MDKT#
+
+
+Bei allen Verfahrensarten mit Ausnahme des offenen Verfahrens kann der öffentliche Auftraggeber die Zahl der geeigneten Bewerber, die zur Abgabe eines Angebots aufgefordert oder zur Verhandlung oder dem wettbewerblichen Dialog eingeladen werden, begrenzen, sofern genügend geeignete Bewerber zur Verfügung stehen. Dazu gibt der öffentliche Auftraggeber in der Auftragsbekanntmachung oder der Aufforderung zur Interessensbestätigung die von ihm vorgesehenen objektiven und nicht-diskriminierenden Eignungskriterien für die Begrenzung der Zahl, die vorgesehene Mindestzahl und gegebenenfalls auch die Höchstzahl der einzuladenden Bewerber an. Der Auftraggeber fordert die drei bis fünf Unternehmen mit den höchsten Punktzahlen in der Prüfung der Auswahl-/Bewertungskriterien zur Teilnahme am Dialog auf (§ 18 Abs. 4 und 5 VgV). Dazu wertet die Vergabestelle die Teilnahmeanträge zunächst nach form- und fristgerechtem Eingang aus und prüft die Vollständigkeit der Unterlagen. Hierbei wird auch geprüft, inwiefern der Bewerber die aufgestellten Mindestanforderungen an die Eignung (A-Kriterien) erfüllt. Teilnahmeanträge, die die Mindestanforderungen nicht erfüllen, werden zwingend aus dem weiteren Vergabeverfahren ausgeschlossen. A-Kriterien sind als solche gekennzeichnet. Die verbliebenen Teilnahmeanträge wertet die Vergabestelle im Hinblick auf die B-Kriterien aus. B-Kriterien sind als solche gekennzeichnet. *** Die Punktzahlen ermittelt der Aufraggeber wie folgt:  Auswahlkriterium 1: Durchschnittlicher jährlicher Umsatz des Bewerbers in den drei letzten abgeschlossenen Geschäftsjahren mit vergleichbaren Leistungen, vgl. Ziffer C. III 2 Nr. 3 im Dokument "Anlage 0_MüK_Aufforderung zur Abgabe eines Teilnahmeantrags KIS" gemäß Ziffer 5.1.9 dieser Bekanntmachung - max. 100 Punkte möglich. *** Auswahlkriterium 2: Anzahl der eingereichten wertbaren Referenzen nach Ziffer C III 3 Nr. 6 im Dokument "Anlage 0_MüK_Aufforderung zur Abgabe eines Teilnahmeantrags KIS" gemäß Ziffer 5.1.9 dieser Bekanntmachung - max. 65 Punkte möglich. *** Auswahlkriterium 3: Qualität der eingereichten wertbaren Referenzen nach Ziffer C III 3 Nr. 6 im Dokument "Anlage 0_MüK_Aufforderung zur Abgabe eines Teilnahmeantrags KIS" gemäß Ziffer 5.1.9 dieser Bekanntmachung - max. 735 Punkte möglich. *** Auswahlkriterium 4: Mitarbeiterverhältnis nach Ziffer C III 3 Nr. 10a und 10b im Dokument "Anlage 0_MüK_Aufforderung zur Abgabe eines Teilnahmeantrags KIS" gemäß Ziffer 5.1.9 dieser Bekanntmachung - - max. 100 Punkte möglich. *** Es werden mindestens drei und maximal fünf Unternehmen zur Teilnahme am Dialog zugelassen. Die Reihenfolge bestimmt sich nach den Punktzahlen in der Prüfung der Bewertungskriterien. Haben mehrere Bewerber dieselbe Punktzahl, erhalten diese denselben Rang. Bei mehreren Bewerbern auf demselben Rang, werden diese zugelassen, bis mindestens drei und maximal fünf Bewerber zugelassen sind. Soweit erforderlich entscheidet bei Punktegleichstand die erreichte Punktzahl im Auswahlkriterium Nr. 3.  Der Auftraggeber behält sich vor, Bewerber zum Bieterwettbewerb nachzunominieren, sofern nach ergangener Aufforderung zum Dialog ein Unternehmen nachträglich aufgrund fehlender Eignung oder eines Ausschlussgrundes nach §§ 123, 124 GWB vom weiteren Verfahren ausgeschlossen worden ist oder es erklärt, dass es keinen Lösungsvorschlag abgeben und sich an dem Vergabeverfahren nicht mehr beteiligen werde. Nachnominiert werden können ausschließlich geeignete Unternehmen, die einen Teilnahmeantrag innerhalb der Teilnahmefrist eingereicht haben und bei denen kein Ausschlussgrund nach §§ 123, 124 GWB oder ein anderer gesetzlich zulässiger Ausschlussgrund besteht. Ein Anspruch auf eine Nachnominierung besteht nicht.</cbc:Note>
+		<cac:MainCommodityClassification>
+			<cbc:ItemClassificationCode listName="cpv">48000000</cbc:ItemClassificationCode>
+		</cac:MainCommodityClassification>
+		<cac:AdditionalCommodityClassification>
+			<cbc:ItemClassificationCode listName="cpv">48180000</cbc:ItemClassificationCode>
+		</cac:AdditionalCommodityClassification>
+		<cac:AdditionalCommodityClassification>
+			<cbc:ItemClassificationCode listName="cpv">72000000</cbc:ItemClassificationCode>
+		</cac:AdditionalCommodityClassification>
+		<cac:AdditionalCommodityClassification>
+			<cbc:ItemClassificationCode listName="cpv">72212180</cbc:ItemClassificationCode>
+		</cac:AdditionalCommodityClassification>
+		<cac:RealizedLocation>
+			<cac:Address>
+				<cbc:CountrySubentityCode listName="nuts">DE212</cbc:CountrySubentityCode>
+				<cac:Country>
+					<cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:Address>
+		</cac:RealizedLocation>
+	</cac:ProcurementProject>
+	<cac:ProcurementProjectLot>
+		<cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+		<cac:TenderingTerms>
+			<ext:UBLExtensions>
+				<ext:UBLExtension>
+					<ext:ExtensionContent>
+						<efext:EformsExtension>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-suit-reg-trade</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Nachweis über die Eintragung in einem Berufs- oder Handelsregister (z.B. Handelsregisterauszug) (§ 122 Abs.2 Nr.1 GWB i.V.m. § 44 Abs.1 VgV) oder sonstige Bescheinigung oder Erklärung i.S. von Anhang VII Teil B und C der Richtlinie 2014/24/EG, wenn dies nach den Rechtsvorschriften des jeweiligen Niederlassungs- bzw. Herkunftsstaates Voraussetzung für die erlaubte Berufsausübung ist.</cbc:Description>
+								<efbc:SecondStageIndicator>false</efbc:SecondStageIndicator>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-to-spec-avg</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Erklärung zum Umsatz bezogen auf die Leistungsart, die Gegenstand der Vergabe ist, für die letzten drei abgeschlossenen Geschäftsjahre (§ 122 Abs.2 Nr.2 GWB i.V.m. § 45 Abs. 4 Nr. 4 VgV).  Mindestanforderung:  Durchschnittlicher Jahresumsatz im Tätigkeitsbereich des Auftrages (Bereich Krankenhausinformationssysteme und/oder Projektarbeit/-beratung im Krankenhaussektor), bezogen auf die letzten drei abgeschlossenen Geschäftsjahre, in EUR netto (Durchschnitt mind. 10.000.000 EUR).</cbc:Description>
+								<efbc:SecondStageIndicator>true</efbc:SecondStageIndicator>
+								<efac:CriterionParameter>
+									<efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+									<efbc:ParameterNumeric>100.0</efbc:ParameterNumeric>
+								</efac:CriterionParameter>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-ins</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Erklärung zur Berufs- oder Betriebshaftpflichtversicherung (§ 122 Abs.2 Nr.2 GWB i.V.m. § 45 Abs.1 Nr.3 VgV).  Mindestanforderung:  Nachweis einer Firmenhaftpflichtversicherung mit folgenden Deckungssummen:  Personen- und Sachschäden: Mindestens 5.000.000,00 Euro pro Schadensfall, zweifach maximiert im Jahr  Vermögensschäden: Mindestens 5.000.000,00 Euro pro Schadensfall, zweifach maximiert im Jahr  Nachweis der aufgeführten Versicherungen durch Eigenerklärung nach Anlage 2F2.4 oder Bescheinigung des Versicherungsgebers oder Bescheinigung eines Versicherungsgebers, dass eine entsprechende Versicherung im Auftragsfall abgeschlossen wird (jeweils Kopie ausreichend).  Die Haftpflichtversicherung muss bei einem in der EU zugelassenen Haftpflichtversicherer oder Kreditinstitut abgeschlossen worden sein. Die Haftpflichtversicherung muss während der gesamten Vertragslaufzeit aufrechterhalten und nachgewiesen werden. Der Bieter hat zu gewährleisten, dass zur Deckung eines Schadens aus dem Vertrag Versicherungsschutz in Höhe der im Vertrag genannten Deckungssummen besteht.</cbc:Description>
+								<efbc:SecondStageIndicator>false</efbc:SecondStageIndicator>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-ref-supply</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Erklärung zur beruflichen Leistungsfähigkeit (§ 122 Abs.2 Nr.3 GWB i.V.m. § 46 Abs.3 Nr.1 VgV) durch Eigenerklärung des Bieters:  Einreichung von mindestens drei geeigneten Referenzen über vergleichbare Liefer- und Dienstleistungsaufträge aus den letzten fünf Jahren (2020-2025), welche die Mindestanforderungen erfüllen.  Mindestanforderungen an die Projektreferenzen: - KIS-Einführungen mit vollständiger Abdeckung der Kernfunktionen (darunter wird seitens des Auftraggebers folgendes verstanden: Patientenmanagement (mit Aufnahme, Verlegung, Entlassung, Bettenplanung und (Behandlungs-)Vertrag; Medizinische Dokumentation (mit Anamnese, medizinischen Basisdaten, Befundung, Arztbriefschreibung, Diagnosen- und Prozedurenerfassung); Medikationsmanagement (mit Verordnung, Verabreichung, Kontrolle und idealerweise AMTS-Prüfung); OP-Management (mit Planung, Dokumentation, Materialerfassung und  Anästhesie); Pflegedokumentation (mit Pflegeplanung und -dokumentation); Abrechnung (mit DRG-Kodierung, Leistungserfassung, §301 SGB V, ambulante Abrechnungsarten, EBM und GOÄ) sowie Implementierung von Schnittstellen (mit mind. 10 Fremdsystemen über Hl7v2 und/oder FHIR bidirektional angebunden)  - Das Referenzprojekt ist im Geltungsbereich der Verordnung zur Bestimmung Kritischer Infrastrukturen nach dem BSI-Gesetz (BSI-Kritisverordnung - BSI-KritisV) umgesetzt worden.  - Das Referenzprojekt ist in einem Krankenhaus mit mindestens 800 Betten (gemäß dem Krankenhausbettenplan) implementiert worden. Ein Krankenhaus muss dabei eine selbstständige Krankenhauseinheit (z.B. Krankenhäuser mit eigener Krankenhausnummer) sein. Verbünde von Krankenhäusern werden nur dann als eine einheitliche Referenz anerkannt, wenn zwischen diesen ein klarer Funktionszusammenhang besteht und das KIS gemeinsam von allen Krankenhäusern betrieben/genutzt wird.  - Durchführung in deutscher Sprache in einem Krankenhaus in der DACH-Region (Deutschland, Österreich, Schweiz).  - Die Referenz wird nur gewertet, wenn das Projekt eine technische KIS-Implementierung umfasst und bereits ein (teilweiser) Echtbetrieb vorliegt. Ein (teilweiser) Echtbetrieb bedeutet, dass in (Pilot-)Abteilungen/ Kliniken bereits erste klinische und/ oder administrative Endanwender das KIS in ihrer alltäglichen Arbeit nutzen.  Auf Anlage 2F4 wird verwiesen.</cbc:Description>
+								<efbc:SecondStageIndicator>true</efbc:SecondStageIndicator>
+								<efac:CriterionParameter>
+									<efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+									<efbc:ParameterNumeric>800.0</efbc:ParameterNumeric>
+								</efac:CriterionParameter>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-subc</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Falls Leistungen nicht vom Auftragnehmer selbst, sondern von Dritten (sog. Nachunternehmer oder Subunternehmer) ausgeführt werden sollen: Erklärung zum Einsatz von Nachunternehmern nebst Verpflichtungserklärung des Nachunternehmers *** Beruft sich ein Bieter zum Nachweis seiner Eignung (wirtschaftliche und finanzielle sowie technische und berufliche Leistungsfähigkeit) auf die Kapazitäten anderer Unternehmen (sog. Eignungsleihe), so nachweisen, dass ihm die für den Auftrag erforderlichen Mittel tatsächlich zur Verfügung stehen (für die technische und berufliche Leistungsfähigkeit muss der Eignungsleihende Nachunternehmer sein, nimmt der Bieter für die wirtschaftliche und finanzielle Leistungsfähigkeit die Kapazitäten anderer Unternehmen in Anspruch, müssen diese gemeinsam für die Auftragsausführung haften; die Haftungserklärung ist gleichzeitig mit der "Verpflichtungserklärung" abzugeben).</cbc:Description>
+								<efbc:SecondStageIndicator>false</efbc:SecondStageIndicator>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-staff-qual</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Das für den Einsatz angedachte Personal muss mindestens über das Niveau C1 in Deutsch des gemeinsamen europäischen Referenzrahmens für Sprachen verfügen.</cbc:Description>
+								<efbc:SecondStageIndicator>false</efbc:SecondStageIndicator>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-staff-yrly-avg-mp</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Nachweis der in den letzten 3 Jahren (2022, 2023, 2024) Beschäftigten des Bewerbers/ der Bewerbergemeinschaft gemäß § 46 Abs.3 Nr.8 VgV. (Gesamtzahl Beschäftigten). Anzugeben sind:  - Festangestellte Beschäftigte aus dem Bereich Informationssysteme im Gesundheits-wesen - Festangestellte Beschäftigte aus dem Bereich Softwareentwicklung für Krankenhäuser - Fachkräfte aus dem Bereich Krankenhausinformationssysteme - Mitarbeiter aus dem Bereich Vertrieb Mindestanforderung:  Als Mindestanforderung müssen Bewerber in den letzten drei abgeschlossenen Geschäftsjahren (2022 bis 2024) im Durchschnitt mindestens 75 festangestellte Beschäftigte aus dem Bereich Informationssysteme im Gesundheitswesen, mindestens 50 festangestellte Beschäftigte aus dem Bereich Softwareentwicklung für Krankenhäuser sowie mindestens 50 Fachkräfte aus dem Bereich Krankenhausinformationssysteme nachweisen.</cbc:Description>
+								<efbc:SecondStageIndicator>true</efbc:SecondStageIndicator>
+								<efac:CriterionParameter>
+									<efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+									<efbc:ParameterNumeric>100.0</efbc:ParameterNumeric>
+								</efac:CriterionParameter>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-qual-inst</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Der Bewerber hat eine gültige Zertifizierung seines Informationssicherheitsmanagementsystem (ISMS) entweder nach ISO/IEC 27001 (nativ) oder über eine Zertifizierung nach DIN ISO/IEC 27001 auf Basis IT-Grundschutz oder eine gleichwertige Zertifizierung nachzuweisen.</cbc:Description>
+								<efbc:SecondStageIndicator>false</efbc:SecondStageIndicator>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-other</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Nur auf Nachfrage der Vergabestelle: Darstellung der gesellschaftsrechtlichen Strukturen des Bewerbers</cbc:Description>
+								<efbc:SecondStageIndicator>false</efbc:SecondStageIndicator>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-ratio</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Nur auf gesonderte Nachfrage der Vergabestelle: Jahresabschlüsse oder Auszüge von Jahresabschlüssen, falls deren Veröffentlichung in dem Land, in dem der Bewerber oder Bieter niedergelassen ist, gesetzlich vorgeschrieben ist.</cbc:Description>
+								<efbc:SecondStageIndicator>false</efbc:SecondStageIndicator>
+							</efac:SelectionCriteria>
+							<efac:StrategicProcurement>
+								<efbc:ApplicableLegalBasis listName="cvd-scope">false</efbc:ApplicableLegalBasis>
+							</efac:StrategicProcurement>
+							<efac:StrategicProcurement>
+								<efbc:ApplicableLegalBasis listName="eed-scope">false</efbc:ApplicableLegalBasis>
+							</efac:StrategicProcurement>
+						</efext:EformsExtension>
+					</ext:ExtensionContent>
+				</ext:UBLExtension>
+			</ext:UBLExtensions>
+			<cbc:VariantConstraintCode listName="permission">not-allowed</cbc:VariantConstraintCode>
+			<cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+			<cbc:MultipleTendersCode listName="permission">not-allowed</cbc:MultipleTendersCode>
+			<cac:RequiredFinancialGuarantee>
+				<cbc:GuaranteeTypeCode listName="tender-guarantee-required">false</cbc:GuaranteeTypeCode>
+			</cac:RequiredFinancialGuarantee>
+			<cac:CallForTendersDocumentReference>
+				<ext:UBLExtensions>
+					<ext:UBLExtension>
+						<ext:ExtensionContent>
+							<efext:EformsExtension>
+								<efac:OfficialLanguages>
+									<cac:Language>
+										<cbc:ID>DEU</cbc:ID>
+									</cac:Language>
+								</efac:OfficialLanguages>
+							</efext:EformsExtension>
+						</ext:ExtensionContent>
+					</ext:UBLExtension>
+				</ext:UBLExtensions>
+				<cbc:ID>SomeTenderDocID1</cbc:ID>
+				<cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+				<cac:Attachment>
+					<cac:ExternalReference>
+						<cbc:URI>https://www.dtvp.de/Satellite/notice/CXP4YL5MDKT/documents</cbc:URI>
+					</cac:ExternalReference>
+				</cac:Attachment>
+			</cac:CallForTendersDocumentReference>
+			<cac:TendererQualificationRequest>
+				<cbc:CompanyLegalFormCode listName="required">false</cbc:CompanyLegalFormCode>
+			</cac:TendererQualificationRequest>
+			<cac:TendererQualificationRequest>
+				<cac:SpecificTendererRequirement>
+					<cbc:TendererRequirementTypeCode listName="missing-info-submission">late-all</cbc:TendererRequirementTypeCode>
+					<cbc:Description languageID="DEU">Die Einreichung zusätzlicher Nachweise und Erklärungen durch den Bieter ist zulässig. Hat der Auftraggeber nach Auswertung der eingereichten Erklärungen und Nachweise Zweifel an der Eignung eines Bieters, kann er den Bieter zur Erläuterung der von ihm eingereichten Unterlagen auffordern; im Übrigen behält sich der Auftraggeber die Nachforderung gemäß § 56 VgV vor.</cbc:Description>
+				</cac:SpecificTendererRequirement>
+			</cac:TendererQualificationRequest>
+			<cac:TendererQualificationRequest>
+				<cac:SpecificTendererRequirement>
+					<cbc:TendererRequirementTypeCode listName="reserved-procurement">none</cbc:TendererRequirementTypeCode>
+				</cac:SpecificTendererRequirement>
+			</cac:TendererQualificationRequest>
+			<cac:TendererQualificationRequest>
+				<cac:SpecificTendererRequirement>
+					<cbc:TendererRequirementTypeCode listName="selection-criteria-source">epo-notice</cbc:TendererRequirementTypeCode>
+				</cac:SpecificTendererRequirement>
+			</cac:TendererQualificationRequest>
+			<cac:ContractExecutionRequirement>
+				<cbc:ExecutionRequirementCode listName="reserved-execution">no</cbc:ExecutionRequirementCode>
+			</cac:ContractExecutionRequirement>
+			<cac:ContractExecutionRequirement>
+				<cbc:ExecutionRequirementCode listName="ecatalog-submission">not-allowed</cbc:ExecutionRequirementCode>
+			</cac:ContractExecutionRequirement>
+			<cac:ContractExecutionRequirement>
+				<cbc:ExecutionRequirementCode listName="einvoicing">required</cbc:ExecutionRequirementCode>
+			</cac:ContractExecutionRequirement>
+			<cac:ContractExecutionRequirement>
+				<cbc:ExecutionRequirementCode listName="conditions">performance</cbc:ExecutionRequirementCode>
+				<cbc:Description languageID="DEU">Erklärung Nichtvorliegen von Ausschlussgründen (§ 123 GWB)  Erklärung Nichtvorliegen von Ausschlussgründen (§ 124 GWB)  Erklärung zur Selbstreinigung (§ 125 GWB) - falls zutreffend -  Eigenerklärung Russlandsanktionen  Erklärung zur Einhaltung des MiLoG  Eigenerklärung zur Anerkennung der Antikorruptionserklärung  Scientology-Schutzerklärung  Eigenerklärung zum Vorliegen eines rechtskräftig festgestellten Verstoßes nach § 24 Absatz 1 Lieferkettensorgfaltspflichtengesetz (LkSG) mit einer Geldbuße unter Berücksichtigung von § 22 Absatz 2 LkSG - falls zutreffend</cbc:Description>
+			</cac:ContractExecutionRequirement>
+			<cac:ContractExecutionRequirement>
+				<cbc:ExecutionRequirementCode listName="fsr">false</cbc:ExecutionRequirementCode>
+			</cac:ContractExecutionRequirement>
+			<cac:AwardingTerms>
+				<cac:AwardingCriterion>
+					<cac:SubordinateAwardingCriterion>
+						<ext:UBLExtensions>
+							<ext:UBLExtension>
+								<ext:ExtensionContent>
+									<efext:EformsExtension>
+										<efac:AwardCriterionParameter>
+											<efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+											<efbc:ParameterNumeric>35.0</efbc:ParameterNumeric>
+										</efac:AwardCriterionParameter>
+									</efext:EformsExtension>
+								</ext:ExtensionContent>
+							</ext:UBLExtension>
+						</ext:UBLExtensions>
+						<cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+						<cbc:Name languageID="DEU">Preis</cbc:Name>
+						<cbc:Description languageID="DEU">Preis</cbc:Description>
+					</cac:SubordinateAwardingCriterion>
+					<cac:SubordinateAwardingCriterion>
+						<ext:UBLExtensions>
+							<ext:UBLExtension>
+								<ext:ExtensionContent>
+									<efext:EformsExtension>
+										<efac:AwardCriterionParameter>
+											<efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+											<efbc:ParameterNumeric>20.0</efbc:ParameterNumeric>
+										</efac:AwardCriterionParameter>
+									</efext:EformsExtension>
+								</ext:ExtensionContent>
+							</ext:UBLExtension>
+						</ext:UBLExtensions>
+						<cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+						<cbc:Name languageID="DEU">Erfüllungsgrad Leistungsverzeichnis</cbc:Name>
+						<cbc:Description languageID="DEU">Erfüllungsgrad Leistungsverzeichnis</cbc:Description>
+					</cac:SubordinateAwardingCriterion>
+					<cac:SubordinateAwardingCriterion>
+						<ext:UBLExtensions>
+							<ext:UBLExtension>
+								<ext:ExtensionContent>
+									<efext:EformsExtension>
+										<efac:AwardCriterionParameter>
+											<efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+											<efbc:ParameterNumeric>35.0</efbc:ParameterNumeric>
+										</efac:AwardCriterionParameter>
+									</efext:EformsExtension>
+								</ext:ExtensionContent>
+							</ext:UBLExtension>
+						</ext:UBLExtensions>
+						<cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+						<cbc:Name languageID="DEU">Lösungskonzepte</cbc:Name>
+						<cbc:Description languageID="DEU">Lösungskonzepte</cbc:Description>
+					</cac:SubordinateAwardingCriterion>
+					<cac:SubordinateAwardingCriterion>
+						<ext:UBLExtensions>
+							<ext:UBLExtension>
+								<ext:ExtensionContent>
+									<efext:EformsExtension>
+										<efac:AwardCriterionParameter>
+											<efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+											<efbc:ParameterNumeric>10.0</efbc:ParameterNumeric>
+										</efac:AwardCriterionParameter>
+									</efext:EformsExtension>
+								</ext:ExtensionContent>
+							</ext:UBLExtension>
+						</ext:UBLExtensions>
+						<cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+						<cbc:Name languageID="DEU">Teststellung</cbc:Name>
+						<cbc:Description languageID="DEU">Teststellung</cbc:Description>
+					</cac:SubordinateAwardingCriterion>
+				</cac:AwardingCriterion>
+			</cac:AwardingTerms>
+			<cac:AdditionalInformationParty>
+				<cac:PartyIdentification>
+					<cbc:ID>ORG-0001</cbc:ID>
+				</cac:PartyIdentification>
+			</cac:AdditionalInformationParty>
+			<cac:TenderRecipientParty>
+				<cbc:EndpointID>https://www.dtvp.de/Satellite/notice/CXP4YL5MDKT</cbc:EndpointID>
+				<cac:PartyIdentification>
+					<cbc:ID>ORG-0001</cbc:ID>
+				</cac:PartyIdentification>
+			</cac:TenderRecipientParty>
+			<cac:AppealTerms>
+				<cac:PresentationPeriod>
+					<cbc:Description languageID="DEU">1) Rügeerfordernis Es wird darauf hingewiesen, dass bei Beanstandungen im Hinblick auf das hiesige Vergabeverfahren die Bewerber Verstöße gegen Vergabevorschriften, die sie erkannt haben, gegenüber der Vergabestelle innerhalb von 10 Kalendertagen zu rügen haben und weiterhin Verstöße gegen Vergabevorschriften, die erst in diesen Teilnahmeunterlagen für diesen Teilnahmewettbewerb oder den Vergabeunterlagen zur Abforderung der Erstangebote erkennbar sind, von den Bewerbern spätestens bis zum Ablauf der Frist zur Bewerbung oder Abgabe der Erstangebote gegenüber der Vergabestelle zu rügen sind (vgl. § 160 Abs. 3 Satz 1 Nr. 1, 2 und Nr. 3 GWB), damit die Bewerber für den Fall, dass der Rüge nicht abgeholfen wird, ein Nachprüfungsverfahren vor der Vergabekammer anstreben können. Sofern die Vergabestelle einer Rüge nicht abhilft, kann der betreffende Bewerber nur innerhalb von längstens 15 Kalendertagen nach Eingang des Antwortschreibens an den Rügenden diesbezüglich ein Nachprüfungsverfahren vor der Vergabekammer einleiten (vgl. § 160 Abs. 3 Satz 1 Nr. 4 GWB) *** 2) Ein Nachprüfungsantrag zur Vergabekammer ist nach § 160 Abs. 3 S. 1 Nr. 4 GWB unzulässig, soweit mehr als 15 Kalendertage nach Eingang der Mitteilung des Auftraggebers, einer Rüge nicht abhelfen zu wollen, vergangen sind. *** 3) Insbesondere § 160 Abs. 3 Satz 1 Nr. 1, Nr. 2 und 3 GWB sowie § 134 Abs. 2 GWB sind zu beachten.  *** 4) Die Frist zur Geltendmachung der Unwirksamkeit des Vertragsschlusses nach § 135 GWB endet spätestens 30 Kalendertage nach Veröffentlichung der Bekanntmachung der Auftragsvergabe im Amtsblatt der Europäischen Union, vgl. § 135 Abs. 2 Satz 2 GWB.  ***</cbc:Description>
+				</cac:PresentationPeriod>
+				<cac:AppealReceiverParty>
+					<cac:PartyIdentification>
+						<cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+					</cac:PartyIdentification>
+				</cac:AppealReceiverParty>
+			</cac:AppealTerms>
+			<cac:Language>
+				<cbc:ID>DEU</cbc:ID>
+			</cac:Language>
+			<cac:PostAwardProcess>
+				<cbc:ElectronicOrderUsageIndicator>false</cbc:ElectronicOrderUsageIndicator>
+				<cbc:ElectronicPaymentUsageIndicator>true</cbc:ElectronicPaymentUsageIndicator>
+			</cac:PostAwardProcess>
+			<cac:SecurityClearanceTerm>
+				<cbc:Code listName="required">false</cbc:Code>
+			</cac:SecurityClearanceTerm>
+		</cac:TenderingTerms>
+		<cac:TenderingProcess>
+			<cbc:SubmissionMethodCode listName="esubmission">required</cbc:SubmissionMethodCode>
+			<cbc:CandidateReductionConstraintIndicator>true</cbc:CandidateReductionConstraintIndicator>
+			<cbc:GovernmentAgreementConstraintIndicator>false</cbc:GovernmentAgreementConstraintIndicator>
+			<cbc:AccessToolsURI>https://www.dtvp.de/Satellite/notice/CXP4YL5MDKT</cbc:AccessToolsURI>
+			<cac:ParticipationRequestReceptionPeriod>
+				<cbc:EndDate>2025-12-15+01:00</cbc:EndDate>
+				<cbc:EndTime>10:00:00+01:00</cbc:EndTime>
+			</cac:ParticipationRequestReceptionPeriod>
+			<cac:EconomicOperatorShortList>
+				<cbc:LimitationDescription>true</cbc:LimitationDescription>
+				<cbc:MaximumQuantity>5</cbc:MaximumQuantity>
+				<cbc:MinimumQuantity>3</cbc:MinimumQuantity>
+			</cac:EconomicOperatorShortList>
+			<cac:AuctionTerms>
+				<cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+			</cac:AuctionTerms>
+			<cac:ContractingSystem>
+				<cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+			</cac:ContractingSystem>
+			<cac:ContractingSystem>
+				<cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+			</cac:ContractingSystem>
+		</cac:TenderingProcess>
+		<cac:ProcurementProject>
+			<cbc:ID schemeName="internalID">2988/25</cbc:ID>
+			<cbc:Name languageID="DEU">KRANKENHAUSINFORMATIONSSYSTEM</cbc:Name>
+			<cbc:Description languageID="DEU">Der vorliegende Ausschreibungsgegenstand beinhaltet die Lieferung, Implementierung und den (optionalen) Betrieb eines klinischen Arbeitsplatzsystems mit integrierter Patientenadministration und Abrechnung (im Folgenden mit Krankenhausinformationssystem (KIS) bezeichnet) als Generalunternehmer. Projekte dieser Art sind hochkomplex und erfordern ein abgestimmtes Zusammenspiel von Menschen, Prozessen und IT. Zugleich bietet sie die einmalige Chance, die klinische IT-Landschaft grundlegend zu modernisieren und eine zukunftsfähige, digitale Plattform zu etablieren. Die München Klinik gGmbH beabsichtigt im Rahmen eines Wettbewerblichen Dialogs mit zwei bis drei Präsenzrunden - mit vorgeschaltetem Teilnahmewettbewerb (TNW) - die Implementierung und den Betrieb eines Krankenhausinformationssystems (KIS) für die München Klinik gGmbH zu vergeben. Das Projekt umfasst die Einführung eines Krankenhausinformationssystems (KIS), welches ein klinisches Arbeitsplatzsystem (KAS) mit integrierter Patientenverwaltung und Abrechnung umfasst. Ziel ist es, eine durchgängige, effiziente und zukunftsfähige Unterstützung der administrativen und klinischen Prozesse bereitzustellen und den Betrieb langfristig sicherzustellen.   Die Einzelheiten sind der Anlage 1 zu diesen Vergabeunterlagen zu entnehmen.</cbc:Description>
+			<cbc:ProcurementTypeCode listName="contract-nature">supplies</cbc:ProcurementTypeCode>
+			<cbc:Note languageID="DEU">A) Die Vergabeunterlagen stehen ausschließlich auf der Vergabeplattform DTVP zum Herunterladen zur Verfügung. Sofern während des Vergabeverfahrens Änderungen an den Vergabeunterlagen vorgenommen oder zusätzliche Informationen bereitgestellt werden, erfolgt dies ebenfalls ausschließlich auf elektronischem Weg über die Vergabeplattform. Die potentiellen Bieter werden hierüber nur gesondert informiert, wenn Sie sich auf der Vergabeplattform registrieren. Anderenfalls obliegt es den Bietern selbst, regelmäßig zu prüfen, ob auf der Vergabeplattform neue Informationen zum Verfahren bereitstehen. ***** B) Die Angebote sind in Textform ausschließlich über die Vergabeplattform DTVP einzureichen. Auf postalischem Wege oder per E-Mail übermittelte Angebote sind nicht zugelassen. ***** C) Die Bieter haben eine Eigenerklärung darüber einzureichen, ob Ausschlussgründe nach § 123 Abs. 1 bis 4 GWB und § 124 Abs. 1 GWB, nach §§ 21 Abs. 1 und Abs. 3 i. V. m. § 23 Abs. 2 und Abs. 3 AEntG, nach §§ 19 Abs. 1 und Abs. 3 i. V. m. § 21 MiLoG , § 21 SchwarzArbG und nach Bekanntmachung der Bayerischen Staatsregierung Vom 29. Oktober 1996 Nr. 476-2-151 (AllMBl. S.701, StAnz. Nr. 44) vorliegen (s. Anlage 2 Eigenerklärungen Eignung). ***** D) Sofern sich Bietergemeinschaften beteiligen, ist mit dem Angebot eine von allen Mitgliedern der Bietergemeinschaft unterzeichnete Bietergemeinschaftserklärung vorzulegen, in der u. a. ein bevollmächtigter Vertreter benannt wird und die gesamtschuldnerische Haftung der Mitglieder im Auftragsfall erklärt wird. Das Formblatt Eignung und die weiteren Eigenerklärungen sind in diesem Fall von jedem Mitglied der Bietergemeinschaft vorzulegen. Die Eignung der Mitglieder einer ordnungsgemäß teilnehmenden Bietergemeinschaft (Referenzen, Umsatzzahlen etc.) wird kumulativ berücksichtigt. ***** E) Das Formblatt Eignung (Anlage 2F2.1) sowie die Anlage 2F3 Eigenerklärung Russlandsanktionen sind auch zu verwenden von Nachunternehmen, welche Teile des Auftrags erbringen sollen (Unteraufträge gemäß § 36 VgV), und Drittunternehmen, auf deren Eignung sich der Bieter/die Bietergemeinschaft beruft (Eignungsleihe gemäß § 47 VgV). Drittunternehmen müssen ebenfalls die Eigenerklärung zum Nichtvorliegen von Ausschlussgründen abgeben. Darüber hinaus sind Angaben zu denjenigen Eignungskriterien zu machen, die der Bieter/die Bietergemeinschaft im Rahmen der Eignungsleihe in Anspruch nehmen will. ***** F) Fragen zu den Vergabeunterlagen (Bieterfragen) sind im Hinblick auf § 20 Abs. 3 Nr. 1 VgV spätestens 10 Kalendertage vor Ablauf der Frist in Textform über den entsprechenden Projektraum des Vergabeportals zu stellen. ****</cbc:Note>
+			<cbc:SMESuitableIndicator>false</cbc:SMESuitableIndicator>
+			<cac:ProcurementAdditionalType>
+				<cbc:ProcurementTypeCode listName="strategic-procurement">none</cbc:ProcurementTypeCode>
+			</cac:ProcurementAdditionalType>
+			<cac:MainCommodityClassification>
+				<cbc:ItemClassificationCode listName="cpv">48000000</cbc:ItemClassificationCode>
+			</cac:MainCommodityClassification>
+			<cac:AdditionalCommodityClassification>
+				<cbc:ItemClassificationCode listName="cpv">48180000</cbc:ItemClassificationCode>
+			</cac:AdditionalCommodityClassification>
+			<cac:AdditionalCommodityClassification>
+				<cbc:ItemClassificationCode listName="cpv">72000000</cbc:ItemClassificationCode>
+			</cac:AdditionalCommodityClassification>
+			<cac:AdditionalCommodityClassification>
+				<cbc:ItemClassificationCode listName="cpv">72212180</cbc:ItemClassificationCode>
+			</cac:AdditionalCommodityClassification>
+			<cac:RealizedLocation>
+				<cac:Address>
+					<cbc:CountrySubentityCode listName="nuts">DE212</cbc:CountrySubentityCode>
+					<cac:Country>
+						<cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+					</cac:Country>
+				</cac:Address>
+			</cac:RealizedLocation>
+			<cac:PlannedPeriod>
+				<cbc:DescriptionCode listName="duration">UNKNOWN</cbc:DescriptionCode>
+			</cac:PlannedPeriod>
+			<cac:ContractExtension>
+				<cbc:OptionsDescription languageID="DEU">Optionale Angebotsbestandteile werden erst mit Abfrage des Angebotes im Wettbewerblichen Dialog verbindlich festgelegt.</cbc:OptionsDescription>
+			</cac:ContractExtension>
+		</cac:ProcurementProject>
+	</cac:ProcurementProjectLot>
+</ContractNotice>

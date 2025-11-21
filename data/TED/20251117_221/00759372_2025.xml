@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractAwardNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractAwardNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+   <ext:UBLExtensions>
+      <ext:UBLExtension>
+         <ext:ExtensionContent>
+            <efext:EformsExtension>
+               <efac:NoticeResult>
+                  <cbc:TotalAmount currencyID="PLN">4840000</cbc:TotalAmount>
+                  <efac:LotResult>
+                     <cbc:ID schemeName="result">RES-0001</cbc:ID>
+                     <cac:FinancingParty>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                        </cac:PartyIdentification>
+                     </cac:FinancingParty>
+                     <cac:PayerParty>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                        </cac:PartyIdentification>
+                     </cac:PayerParty>
+                     <efac:LotTender>
+                        <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                     </efac:LotTender>
+                     <efac:SettledContract>
+                        <cbc:ID schemeName="contract">CON-0001</cbc:ID>
+                     </efac:SettledContract>
+                     <efac:TenderLot>
+                        <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+                     </efac:TenderLot>
+                  </efac:LotResult>
+                  <efac:LotTender>
+                     <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                     <efac:SubcontractingTerm>
+                        <efbc:TermCode listName="applicability">no</efbc:TermCode>
+                     </efac:SubcontractingTerm>
+                     <efac:TenderingParty>
+                        <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+                     </efac:TenderingParty>
+                     <efac:TenderLot>
+                        <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+                     </efac:TenderLot>
+                     <efac:TenderReference>
+                        <cbc:ID>Formularz negocjacyjny z dnia 14.11.2025 r.</cbc:ID>
+                     </efac:TenderReference>
+                  </efac:LotTender>
+                  <efac:SettledContract>
+                     <cbc:ID schemeName="contract">CON-0001</cbc:ID>
+                     <cac:SignatoryParty>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                        </cac:PartyIdentification>
+                     </cac:SignatoryParty>
+                     <efac:ContractReference>
+                        <cbc:ID>Zaproszenie do negocjacji z dnia 31.10.2025 r.</cbc:ID>
+                     </efac:ContractReference>
+                     <efac:LotTender>
+                        <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                     </efac:LotTender>
+                  </efac:SettledContract>
+                  <efac:TenderingParty>
+                     <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+                     <cbc:Name>Vulcan sp. z o.o.</cbc:Name>
+                     <efac:Tenderer>
+                        <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                     </efac:Tenderer>
+                  </efac:TenderingParty>
+               </efac:NoticeResult>
+               <efac:NoticeSubType>
+                  <cbc:SubTypeCode listName="notice-subtype">25</cbc:SubTypeCode>
+               </efac:NoticeSubType>
+               <efac:Organizations>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://bip.erzeszow.pl</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Gmina Miasto Rzeszów - Urząd Miasta Rzeszowa</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>ul. ul. Rynek 1</cbc:StreetName>
+                           <cbc:CityName>Rzeszów</cbc:CityName>
+                           <cbc:PostalZone>35-064</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL823</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>NIP: 8133734188</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>REGON: 000650614</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+48 17 875 46 36</cbc:Telephone>
+                           <cbc:ElectronicMail>przetargi@erzeszow.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">VULCAN sp. z o. o.</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>ul. Wołowska 6</cbc:StreetName>
+                           <cbc:CityName>Wrocław</cbc:CityName>
+                           <cbc:PostalZone>51-116</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL514</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>NIP 898 001 44 51 REGON 005993000</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+48717572929</cbc:Telephone>
+                           <cbc:ElectronicMail>zam_pub@vulcan.edu.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://www.uzp.gov.pl/kio</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Krajowa Izba Odwoławcza</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>ul. Postępu 17a</cbc:StreetName>
+                           <cbc:CityName>Warszawa</cbc:CityName>
+                           <cbc:PostalZone>02-676</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL911</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:Contact>
+                           <cbc:Telephone>+48224587801</cbc:Telephone>
+                           <cbc:ElectronicMail>odwolania@uzp.gov.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+               </efac:Organizations>
+            <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00759372-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+         </ext:ExtensionContent>
+      </ext:UBLExtension>
+   </ext:UBLExtensions>
+   <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+   <cbc:CustomizationID>eforms-sdk-1.12</cbc:CustomizationID>
+   <cbc:ID schemeName="notice-id">be83fbe6-72dd-4240-86de-119337602b07</cbc:ID>
+   <cbc:ContractFolderID>96e60dcf-801d-4c8e-9af3-0096bc3753d0</cbc:ContractFolderID>
+   <cbc:IssueDate>2025-11-14+01:00</cbc:IssueDate>
+   <cbc:IssueTime>12:51:06+01:00</cbc:IssueTime>
+   <cbc:VersionID>02</cbc:VersionID>
+   <cbc:RequestedPublicationDate>2025-11-14+01:00</cbc:RequestedPublicationDate>
+   <cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+   <cbc:NoticeTypeCode listName="dir-awa-pre">veat</cbc:NoticeTypeCode>
+   <cbc:NoticeLanguageCode>POL</cbc:NoticeLanguageCode>
+   <cac:ContractingParty>
+      <cac:ContractingPartyType>
+         <cbc:PartyTypeCode listName="buyer-legal-type">la</cbc:PartyTypeCode>
+      </cac:ContractingPartyType>
+      <cac:ContractingActivity>
+         <cbc:ActivityTypeCode listName="authority-activity">gen-pub</cbc:ActivityTypeCode>
+      </cac:ContractingActivity>
+      <cac:Party>
+         <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+         </cac:PartyIdentification>
+      </cac:Party>
+   </cac:ContractingParty>
+   <cac:TenderingTerms>
+      <cac:ProcurementLegislationDocumentReference>
+         <cbc:ID>Ustawa Prawo Zamówień Publicznych - Ustawa Prawo Zamówień Publicznych</cbc:ID>
+      </cac:ProcurementLegislationDocumentReference>
+   </cac:TenderingTerms>
+   <cac:TenderingProcess>
+      <cbc:ProcedureCode listName="procurement-procedure-type">neg-wo-call</cbc:ProcedureCode>
+      <cac:ProcessJustification>
+         <cbc:ProcessReasonCode listName="direct-award-justification">exclusive</cbc:ProcessReasonCode>
+         <cbc:ProcessReason languageID="POL">Stan faktyczny i prawny:
+Gmina Miasto Rzeszów zawarła z Infast sp. z o.o. umowę z 27.10.2014 r. na realizację inwestycji „Zaprojektowanie i wykonanie regionalnej sieci szerokopasmowej aglomeracji rzeszowskiej ResMAN – Etap II”. Na mocy §6 umowy Wykonawca udzielił Zamawiającemu 15-letniej licencji na korzystanie z oprogramowań i systemów działających w sieci ResMAN, w tym Oprogramowania VULCAN. Licencja obejmuje m.in. prawo zwielokrotniania, modyfikacji i udzielania sublicencji. Zamawiający nadal korzysta z Oprogramowania VULCAN na podstawie ważnej licencji. Zamawiający  jednak nie otrzymał kodu źródłowego do oprogramowania. 
+Uzasadnienie wyboru trybu:
+Zamawiający planuje udzielić zamówienia publicznego w trybie art. 305 pkt 1 w zw. z art. 214 ust. 1 pkt 1 lit. a i b p.z.p. (zamówienie z wolnej ręki) na utrzymanie systemu i asystę techniczną Oprogramowania VULCAN (m.in Arkusz  VULCAN, Dziennik VULCAN, Plan lekcji Optivum, MOL NET+, Finanse VULCAN, Środki Trwałe VULCAN, Płace VULCAN, Kadry VULCAN, Pracownik VULCAN, Inwentarz VULCAN, Magazyn VULCAN, Stołówka VULCAN, Nadzór Finansowy VULCAN, Nadzór płacowy VULCAN, Nadzór kadrowy VULCAN, Nabór do przedszkoli, szkół podstawowych, ponadpodstawowych, rekrutacja do internatów, dotacje dla szkół niepublicznych, dotacje podręcznikowe, Artykuł 30, SIGMA, eKZP Casco). Z oprogramowania korzysta ponad 100 jednostek organizacyjnych Miasta Rzeszowa. Obecny okres wsparcia technicznego wygasa 30.11.2025 r.
+Zawarcie nowej umowy jest konieczne dla zapewnienia ciągłości, spójnej i efektywnej pracy jednostek oświatowych. Utrzymanie i asysta techniczna mogą być świadczone wyłącznie przez VULCAN sp. z o.o. z siedzibą we Wrocławiu, która posiada majątkowe prawa autorskie, kody źródłowe i wyłączne prawa do modyfikacji, uaktualnień oraz świadczenia wsparcia technicznego wszystkich modułów. Jedynie moduł PKZP jest objęty prawami Casco sp. z o.o., jednak VULCAN jest jego jedynym dystrybutorem na rynku oświatowym.
+VULCAN nie udziela innym podmiotom licencji obejmujących modyfikację czy dostęp do kodu źródłowego, nie współpracuje z innymi wykonawcami i nie przekazuje im „know-how” w zakresie utrzymania i rozwoju oprogramowania. Ochrona tych praw autorskich i technicznych stanowi przesłankę z art. 214 ust. 1 pkt 1 lit. b p.z.p.
+Bez dostępu do kodu źródłowego utrzymanie systemu jest niemożliwe, gdyż uniemożliwia analizę błędów, wprowadzanie poprawek czy optymalizację. Brak wiedzy o architekturze systemu prowadziłby do błędów i utraty stabilności. Oprogramowanie VULCAN jest rozbudowane i skomplikowane, dlatego tylko jego twórca posiada niezbędne zasoby i kompetencje techniczne. Zlecenie utrzymania innemu podmiotowi byłoby nieefektywne i kosztowne. Wobec tego spełnione są przesłanki z art. 214 ust. 1 pkt 1 lit. a p.z.p. – przyczyny techniczne o obiektywnym charakterze.
+Zgodnie z orzecznictwem KIO, powołanie się na przyczyny techniczne dotyczy sytuacji, gdy tylko jeden wykonawca dysponuje technologią, standardami czy narzędziami niezbędnymi do wykonania zamówienia (Komentarz do art. 214 p.z.p., LEX/el. 2025). W analizowanym przypadku tylko VULCAN posiada kody źródłowe, know-how i środowisko techniczne umożliwiające pełną obsługę systemu.
+Brak możliwości zastosowania rozwiązań alternatywnych:
+Zamawiający ustalił, że nie istnieją podstawy do rozszerzenia zamówienia na wdrożenie alternatywnego systemu. Posiadana licencja na oprogramowanie VULCAN obowiązuje, a zakup innego oprogramowania skutkowałby niegospodarnością środków publicznych. Koszty wdrożenia nowego systemu obejmowałyby nie tylko zakup licencji, ale też szkolenia, migrację danych, integrację systemów i spadek wydajności pracy w ponad 100 jednostkach.
+Zmiana oprogramowania wiązałaby się z ryzykiem utraty danych, błędów integracji i destabilizacji systemów, a ponadto – jak ustalono w badaniu rynku – brak jest rozwiązań równoważnych zapewniających pełną funkcjonalność modułów VULCAN.
+Zgodnie z utrwalonym orzecznictwem KIO (m.in. uchwała z 6.02.2014 r., KIO/KD 4/14), równoważność nie oznacza obowiązku wymiany systemu, lecz jego modernizację. Nie można wymagać od zamawiającego zakupu nowego systemu tylko po to, by dopuścić innych wykonawców. Przedmiotem zamówienia jest wyłącznie utrzymanie istniejącego oprogramowania, nie zaś jego wymiana.
+Podsumowanie:
+Utrzymanie i asysta techniczna Oprogramowania VULCAN może być realizowane wyłącznie przez VULCAN sp. z o.o., która posiada pełne prawa autorskie, kody źródłowe oraz niezbędne know-how. Brak jest rozwiązań alternatywnych lub technicznie równoważnych, a powierzenie zadania innemu podmiotowi byłoby nieefektywne i ryzykowne.
+Zamówienie spełnia przesłanki z art. 305 pkt 1 w zw. z art. 214 ust. 1 pkt 1 lit. a i b p.z.p. i może zostać udzielone w trybie zamówienia z wolnej ręki wykonawcy VULCAN sp. z o.o.</cbc:ProcessReason>
+      </cac:ProcessJustification>
+   </cac:TenderingProcess>
+   <cac:ProcurementProject>
+      <cbc:ID schemeName="InternalID">ZP-A.271.125.2025</cbc:ID>
+      <cbc:Name languageID="POL">Zapewnienie świadczenia wsparcia technicznego producenta oprogramowania niezbędnego do działalności jednostek organizacyjnych Gminy Miasta Rzeszów - VULCAN</cbc:Name>
+      <cbc:Description languageID="POL">Świadczenie usługi utrzymania, serwisu oraz asysty technicznej Systemu w zakresie oprogramowania VULCAN, niezbędnego do funkcjonowania 109 jednostek organizacyjnych Gminy Miasta Rzeszów</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+      <cac:MainCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">72253200</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:RealizedLocation>
+         <cac:Address>
+            <cbc:CityName>Rzeszów</cbc:CityName>
+            <cbc:CountrySubentityCode listName="nuts">PL823</cbc:CountrySubentityCode>
+            <cac:Country>
+               <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+            </cac:Country>
+         </cac:Address>
+      </cac:RealizedLocation>
+   </cac:ProcurementProject>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+      <cac:TenderingTerms>
+         <cac:AdditionalInformationParty>
+            <cac:PartyIdentification>
+               <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:AdditionalInformationParty>
+         <cac:AppealTerms>
+            <cac:AppealInformationParty>
+               <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealInformationParty>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+         </cac:AppealTerms>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:ID schemeName="InternalID">ZP-A.271.125.2025</cbc:ID>
+         <cbc:Name languageID="POL">Zapewnienie świadczenia wsparcia technicznego producenta oprogramowania niezbędnego do działalności jednostek organizacyjnych Gminy Miasta Rzeszów - VULCAN</cbc:Name>
+         <cbc:Description languageID="POL">Świadczenie usługi utrzymania, serwisu oraz asysty technicznej Systemu w zakresie oprogramowania VULCAN, niezbędnego do funkcjonowania 109 jednostek organizacyjnych Gminy Miasta Rzeszów</cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+         <cbc:Note languageID="POL">Zamówienie realizowane będzie przez 36 miesięcy od dnia podpisania umowy, lecz nie wcześniej niż od 1 grudnia 2025 r.</cbc:Note>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">72253200</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:RealizedLocation>
+            <cac:Address>
+               <cbc:CityName>Rzeszów</cbc:CityName>
+               <cbc:CountrySubentityCode listName="nuts">PL823</cbc:CountrySubentityCode>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+         <cac:PlannedPeriod>
+            <cbc:DurationMeasure unitCode="MONTH">36</cbc:DurationMeasure>
+         </cac:PlannedPeriod>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+   <cac:TenderResult>
+      <cbc:AwardDate>2000-01-01Z</cbc:AwardDate>
+   </cac:TenderResult>
+</ContractAwardNotice>

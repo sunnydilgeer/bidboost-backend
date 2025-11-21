@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractAwardNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractAwardNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:xsi="http://www.w3.org/2001/XMLSchema">
+  <ext:UBLExtensions>
+    <ext:UBLExtension>
+      <ext:ExtensionContent>
+        <efext:EformsExtension>
+          <efbc:TransmissionDate>2025-11-12+01:00</efbc:TransmissionDate>
+          <efbc:TransmissionTime>12:30:48+01:00</efbc:TransmissionTime>
+          <efac:NoticeResult>
+            <efac:LotResult>
+              <cbc:ID schemeName="result">RES-0001</cbc:ID>
+              <cbc:TenderResultCode listName="winner-selection-status">clos-nw</cbc:TenderResultCode>
+              <efac:AppealRequestsStatistics>
+                <efbc:StatisticsCode listName="review-type">complainants</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:AppealRequestsStatistics>
+              <efac:AppealRequestsStatistics>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:AppealRequestsStatistics>
+              <efac:DecisionReason>
+                <efbc:DecisionReasonCode listName="non-award-justification">one-admis</efbc:DecisionReasonCode>
+              </efac:DecisionReason>
+              <efac:LotTender>
+                <cbc:ID schemeName="tender">TEN-1446</cbc:ID>
+              </efac:LotTender>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">part-req</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">tenders</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>1</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-esubm</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>1</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-micro</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-small</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-med</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-sme</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-oth-eea</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-no-eea</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-verif-inad</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-verif-inad-low</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-no-verif</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:TenderLot>
+                <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+              </efac:TenderLot>
+            </efac:LotResult>
+            <efac:LotTender>
+              <cbc:ID schemeName="tender">TEN-1446</cbc:ID>
+              <efac:SubcontractingTerm>
+                <efbc:TermCode listName="applicability">no</efbc:TermCode>
+              </efac:SubcontractingTerm>
+              <efac:TenderingParty>
+                <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+              </efac:TenderingParty>
+              <efac:TenderLot>
+                <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+              </efac:TenderLot>
+              <efac:TenderReference>
+                <cbc:ID>EKR001185302025/1446</cbc:ID>
+              </efac:TenderReference>
+            </efac:LotTender>
+            <efac:TenderingParty>
+              <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+              <efac:Tenderer>
+                <cbc:ID schemeName="organization">ORG-0006</cbc:ID>
+              </efac:Tenderer>
+            </efac:TenderingParty>
+          </efac:NoticeResult>
+          <efac:NoticeSubType>
+            <cbc:SubTypeCode listName="notice-subtype">30</cbc:SubTypeCode>
+          </efac:NoticeSubType>
+          <efac:Organizations>
+            <efac:Organization>
+              <efbc:AcquiringCPBIndicator>false</efbc:AcquiringCPBIndicator>
+              <efbc:AwardingCPBIndicator>false</efbc:AwardingCPBIndicator>
+              <efac:Company>
+                <cbc:WebsiteURI>https://www.mavcsoport.hu</cbc:WebsiteURI>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <cbc:Name languageID="HUN">MÁV Személyszállítási Zártkörűen Működő Részvénytársaság</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>Üllői Út 131.</cbc:StreetName>
+                  <cbc:CityName>Budapest</cbc:CityName>
+                  <cbc:PostalZone>1091</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">HU110</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">HUN</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID>13834492244</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Name>Ujvári Attila</cbc:Name>
+                  <cbc:Telephone>+36 300745511</cbc:Telephone>
+                  <cbc:ElectronicMail>ujvari.attila2@mavcsoport.hu</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+            <efac:Organization>
+              <efac:Company>
+                <cbc:WebsiteURI>https://www.mavcsoport.hu</cbc:WebsiteURI>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <cbc:Name languageID="HUN">MÁV Szolgáltató Központ Zártkörűen Működő Részvénytársaság</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>Dévai Utca 23.</cbc:StreetName>
+                  <cbc:CityName>Budapest</cbc:CityName>
+                  <cbc:PostalZone>1134</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">HU110</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">HUN</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID>14130179244</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Name>Ujvári Attila</cbc:Name>
+                  <cbc:Telephone>+36 300745511</cbc:Telephone>
+                  <cbc:ElectronicMail>ujvari.attila2@mavcsoport.hu</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+            <efac:Organization>
+              <efac:Company>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0006</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <cbc:Name languageID="HUN">Prompt Security Zártkörűen Működő Részvénytársaság</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>Telek Utca 5.</cbc:StreetName>
+                  <cbc:CityName>Budapest</cbc:CityName>
+                  <cbc:PostalZone>1152</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">HU110</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">HUN</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID>25332519242</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Telephone>+36 303599965</cbc:Telephone>
+                  <cbc:ElectronicMail>som.renata@erteklogisztika.hu</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+            <efac:Organization>
+              <efac:Company>
+                <cbc:WebsiteURI>https://kozbeszerzes.hu</cbc:WebsiteURI>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0004</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <cbc:Name languageID="HUN">Közbeszerzési Hatóság Közbeszerzési Döntőbizottság</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>Riadó u. 5</cbc:StreetName>
+                  <cbc:CityName>Budapest</cbc:CityName>
+                  <cbc:PostalZone>1026</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">HU110</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">HUN</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID>EKRSZ_40664534_2</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Telephone>+36 18828592</cbc:Telephone>
+                  <cbc:Telefax>+36 18828593</cbc:Telefax>
+                  <cbc:ElectronicMail>dontobizottsag@kt.hu</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+            <efac:Organization>
+              <efac:Company>
+                <cbc:WebsiteURI>https://kozbeszerzes.hu</cbc:WebsiteURI>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0005</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <cbc:Name languageID="HUN">Közbeszerzési Hatóság</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>Riadó utca 5.</cbc:StreetName>
+                  <cbc:CityName>Budapest</cbc:CityName>
+                  <cbc:PostalZone>1026</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">HU110</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">HUN</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID>EKRSZ_40664534</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Telephone>+36 18828635</cbc:Telephone>
+                  <cbc:ElectronicMail>hirdetmeny@kt.hu</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+          </efac:Organizations>
+        <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00760533-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+      </ext:ExtensionContent>
+    </ext:UBLExtension>
+  </ext:UBLExtensions>
+  <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+  <cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+  <cbc:ID schemeName="notice-id">caf90a86-83c4-4673-97bf-b578261a4473</cbc:ID>
+  <cbc:ContractFolderID>4a91c5a6-7b44-4db8-a0ca-5adf1abb8fa1</cbc:ContractFolderID>
+  <cbc:IssueDate>2025-11-14+01:00</cbc:IssueDate>
+  <cbc:IssueTime>10:49:26+01:00</cbc:IssueTime>
+  <cbc:VersionID>02</cbc:VersionID>
+  <cbc:RegulatoryDomain>32014L0025</cbc:RegulatoryDomain>
+  <cbc:NoticeTypeCode listName="result">can-standard</cbc:NoticeTypeCode>
+  <cbc:NoticeLanguageCode>HUN</cbc:NoticeLanguageCode>
+  <cac:ContractingParty>
+    <cbc:BuyerProfileURI>https://www.mavcsoport.hu</cbc:BuyerProfileURI>
+    <cac:ContractingPartyType>
+      <cbc:PartyTypeCode listName="buyer-legal-type">body-pl</cbc:PartyTypeCode>
+    </cac:ContractingPartyType>
+    <cac:ContractingActivity>
+      <cbc:ActivityTypeCode listName="authority-activity">gen-pub</cbc:ActivityTypeCode>
+    </cac:ContractingActivity>
+    <cac:ContractingActivity>
+      <cbc:ActivityTypeCode listName="entity-activity">rail</cbc:ActivityTypeCode>
+    </cac:ContractingActivity>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:ServiceProviderParty>
+        <cbc:ServiceTypeCode listName="organisation-role">serv-prov</cbc:ServiceTypeCode>
+        <cac:Party>
+          <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+          </cac:PartyIdentification>
+        </cac:Party>
+      </cac:ServiceProviderParty>
+      <cac:ServiceProviderParty>
+        <cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode>
+        <cac:Party>
+          <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0005</cbc:ID>
+          </cac:PartyIdentification>
+        </cac:Party>
+      </cac:ServiceProviderParty>
+    </cac:Party>
+  </cac:ContractingParty>
+  <cac:TenderingProcess>
+    <cbc:Description languageID="HUN">Ajánlatkérő a közbeszerzési eljárást a Kbt. 81. §-a szerinti uniós nyílt közbeszerzési eljárás szabályai szerint folytatja le.</cbc:Description>
+    <cbc:ProcedureCode listName="procurement-procedure-type">open</cbc:ProcedureCode>
+    <cac:NoticeDocumentReference>
+      <cbc:ID schemeName="ojs-notice-id">529122-2025</cbc:ID>
+    </cac:NoticeDocumentReference>
+    <cac:ProcessJustification>
+      <cbc:ProcessReasonCode listName="accelerated-procedure">false</cbc:ProcessReasonCode>
+    </cac:ProcessJustification>
+  </cac:TenderingProcess>
+  <cac:ProcurementProject>
+    <cbc:ID schemeName="InternalID">EKR001185302025</cbc:ID>
+    <cbc:Name languageID="HUN">Pénz- és értékszállítási szolgáltatás beszerzése</cbc:Name>
+    <cbc:Description languageID="HUN">Vállalkozási keretszerződés keretében pénz- és értékszállítási szolgáltatás menetrend szerinti és eseti jelleggel, továbbá a cash-in automaták ürítése és bevétel szállítása.</cbc:Description>
+    <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+    <cbc:Note languageID="HUN">A szerződéshez kapcsolódó költséghatékonysági, kockázatcsökkentő és hatékonyságnövelő szempontokat is figyelembe véve ajánlatkérő nem biztosítja a részekre történő ajánlattétel lehetőségét, figyelemmel az alábbiakra: Tekintettel arra, hogy Ajánlatkérő országos szinten látja el az autóbuszos személyszállítási közszolgáltatást, az egységes színvonalú, központilag szervezett és irányított feladatellátás a jelen beszerzés tárgyát képező feladatok esetén elengedhetetlen annak érdekében, hogy az országos szolgáltatási igény azonos műszaki, technológiai és adminisztratív rendszerben kerüljön végrehajtásra. A közbeszerzés földrajzi egységek alapján történő részekre bontása a hatékony és felelős gazdálkodás elvére tekintettel nem megvalósítható, figyelemmel arra, hogy az eltérő folyamatok alkalmazása esetén a felhasznált kellékek (göngyölegek), szállítási technológiák és adminisztratív különbözőségek jelentős mértékű kockázatot jelentenének azáltal, hogy kizárnák az „átjárhatóság” lehetőségét az egyes területek között, továbbá a beszerzés részfeladatokra, illetve földrajzilag történő megosztása a szolgáltatás egységességét, azonos színvonalát veszélyeztetné, illetve a különböző eljárási rend összehangolása jelentős adminisztratív többlet terhet és többlet költséget róna ajánlatkérőre biztonsági, forgalmi és pénzügyi szempontból. 1. A Közbeszerzési Dokumentumok (továbbiakban „KD”) a 424/2017. (XII. 19.) Korm. rendelet vonatkozó bekezdései alapján korlátlanul és teljes körűen, közvetlenül és térítésmentesen elektronikusan elérhetőek az EKR rendszerben. 2. Az ajánlatnak tartalmaznia kell a felhívásban és a KD-ban meghatározott valamennyi dokumentumot (űrlapot, elektronikusan csatolandó nyilatkozatot / igazolást). Az ajánlat megtételével kapcsolatban az ajánlatkérő kifejezetten felhívja a figyelmet a Kbt. 41/A. - 41/B. § rendelkezéseire. 3. Hiánypótlás a Kbt. 71.§ szerint biztosított azzal, hogy AK a Kbt. 71. § (6) bekezdése szerinti korlátozást nem alkalmazza. 4. Ajánlatkérő a műszaki, szakmai alkalmassági feltételeket a Közbeszerzési Hatóság „bronz” fokozatú minősítéséhez képest szigorúbban állapította meg tekintettel arra, hogy az előírt követelményeket a minősítés nem tartalmazza. A követelmények megállapításánál Ajánlatkérő, olyan alkalmassági feltételek meglétét írta elő, melyek a szerződés teljesítéséhez elengedhetetlenül szükséges és a potenciális ajánlattevők által teljesíthető. 5. AK alkalmazza a Kbt. 75. § (2) bek. e) pontját. 6. Üzleti titok: Kbt. 44. § (1)-(4) bek; 424/2017. (XII. 19.) Korm. rendelet. 11. § (4). 7. Valamennyi igazolást és dokumentumot magyar nyelven kell benyújtani. AK ajánlattevő általi fordítást elfogad; tartalmának helyességéért ajánlattevő felel. AK kizárólag a fordítás szövegét vizsgálja. 8. Az ajánlatban nyilatkozni szükséges a Kbt. 65.§ (7), 66.§ (2) és (6) a) és b) szerint (nemleges nyilatkozat is csatolandó) 9. AK közli, hogy a nem forintban rendelkezésre álló adatokat eredeti devizanemben kéri megadni. Az idegen devizanemben megadott értékek, adatok forintra történő átszámítására ajánlatkérő az eljárást megindító felhívás feladásának napján érvényes MNB devizaárfolyamot alkalmazza, illetve ennek hiányában az ECB által ugyanebben az időpontban jegyzett devizák keresztárfolyamából számított árfolyam kerül alkalmazásra. 10. Jelen felhívásban, valamint a KD-ban nem szabályozott kérdésekben a Kbt., végrehajtási rendeletei (különös tekintettel az elektronikus közbeszerzés részletes szabályairól szóló 424/2017. (XII. 19.) Korm. rendelet), továbbá a magyar jog rendelkezései az irányadóak. 11. A MÁV Személyszállítási Zrt. adatkezelési tájékoztatója a https://www.mavcsoport.hu/sites/default/files/upload/page/adatkezelesi_tajekoztato_kapcs.adatok_besz._es_kozbesz._elj-ban._2025.01.01.pdf oldalon érhető el. 12. A Kbt. 66. § (5) bekezdése alapján az ajánlatnak felolvasólapot kell tartalmaznia, amely feltünteti a Kbt. 68. § (4) bekezdése szerinti összes adatot. 13. Ajánlattevőnek folyamatban lévő változásbejegyzési eljárás esetében csatolni kell a cégbírósághoz benyújtott változásbejegyzési kérelmet és az annak érkezéséről a cégbíróság által megküldött igazolást. Amennyiben ajánlattevővel szemben nincs folyamatban változásbejegyzési eljárás, úgy erre vonatkozó nyilatkozatát köteles az ajánlathoz csatolni. 14. AT-nek a Kbt. 73. § (5) bekezdése alapján Ajánlatkérő a dokumentációban ad tájékoztatást azoknak a szervezeteknek (hatóságoknak) a nevéről és címéről (elérhetőség), amelyektől az ajánlattevő a megfelelő környezetvédelmi, szociális és munkajogi rendelkezésekre vonatkozó tájékoztatást kaphat. 15. A jelen ajánlati felhívásban és a közbeszerzési dokumentumokban nem szabályozott kérdésekben a közbeszerzésekről szóló 2015. évi CXLIII. törvény és az egyéb vonatkozó jogszabályokban foglaltak az irányadóak. 16. Az eljárásban nem lehet ajánlattevő, a szerződés értékének 10 %-át meghaladó mértékben igénybe venni kívánt alvállalkozó, szállító, alkalmasság igazolásában részt vevő olyan gazdasági szereplő, aki az Európai Unió Tanácsa által 2022. április 8. napján elfogadott Oroszország elleni szankciók kibővítéséről szóló rendeletben foglalt tilalom személyi hatálya alá tartozik. 17. A kötöttség időtartama: ajánlattételi határidő lejártától számított 30 nap. 18. Ajánlatkérő a Kbt. 35. § (8) bekezdése alapján rögzíti, hogy nem teszi lehetővé a szerződés teljesítése érdekében gazdálkodó szervezet (projekttársaság) létrehozását. 19. Nyertes AT-nek legkésőbb a szerződéskötés időpontjára rendelkeznie kell pénz- és értékszállításra vonatkozó felelősségbiztosítással a szerződéstervezetben rögzített feltételek szerint: - minimálisan 30.000.000,- Ft / káresemény és - minimálisan 100.000.000,- Ft / biztosítási időszak (a biztosítási időszak 1 (azaz egy) biztosítási év), valamint - járdakockázati limitként minimálisan 20.000.000,- Ft / biztosítási esemény. 20. A felhívás és közbeszerzési dokumentumok esetleges ellentmondása esetén a felhívás előírásai az irányadóak. 21. Karakterkorlát miatti esetleges rövidítések: Kbt. = 2015. évi CXLIII. törvény; Szvmt. = 2005. évi CXXXIII. törvény; AK = Ajánlatkérő; AT = Ajánlattevő; KD = Közbeszerzési Dokumentumok; EEKD = egységes európai közbeszerzési dokumentum; EKR = Elektronikus Közbeszerzési Rendszer. 22. AK felhívja a figyelmet, hogy az eljárást megindító felhívás EKR-ben megjelenő adattartalma a TED-en megjelenő hirdetmény adattartalmánál bővebb lehet. Eredménytelenné nyilvánítás dátuma: 2025.11.05. Eredménytelenség indoka: Eljárásban 1 ajánlat került benyújtásra és az eljárásban a Kbt. 75. § (2) bekezdés e) pont szerinti eredménytelenségi ok előírásra került.</cbc:Note>
+    <cac:MainCommodityClassification>
+      <cbc:ItemClassificationCode listName="cpv">79710000</cbc:ItemClassificationCode>
+    </cac:MainCommodityClassification>
+    <cac:RealizedLocation>
+      <cbc:Description languageID="HUN">A teljesítési helyek a Szerződés 1. számú mellékletében kerülnek részletesen megadásra. Ajánlatkérő kizárólagos, egyoldalú választása alapján jogosult megrendelésében a Szerződés időbeli hatálya alatt további teljesítési helyszíneket a Szerződés „hatálya alá vonni”, azaz az Ajánlattevő által teljesítendő, a Szerződésben meghatározott feladatokat ezen felkeresési helyek vonatkozásban is megrendelni.</cbc:Description>
+      <cac:Address>
+        <cbc:Region>anyw-cou</cbc:Region>
+        <cac:Country>
+          <cbc:IdentificationCode listName="country">HUN</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:RealizedLocation>
+  </cac:ProcurementProject>
+  <cac:ProcurementProjectLot>
+    <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+    <cac:TenderingTerms>
+      <ext:UBLExtensions>
+        <ext:UBLExtension>
+          <ext:ExtensionContent>
+            <efext:EformsExtension>
+              <efac:StrategicProcurement>
+                <efbc:ApplicableLegalBasis listName="ipi-scope">false</efbc:ApplicableLegalBasis>
+              </efac:StrategicProcurement>
+              <efac:StrategicProcurement>
+                <efbc:ApplicableLegalBasis listName="cvd-scope">false</efbc:ApplicableLegalBasis>
+              </efac:StrategicProcurement>
+            </efext:EformsExtension>
+          </ext:ExtensionContent>
+        </ext:UBLExtension>
+      </ext:UBLExtensions>
+      <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+      <cac:AwardingTerms>
+        <cac:AwardingCriterion>
+          <cbc:Description languageID="HUN">Ajánlatkérő a benyújtott ajánlatokat a Kbt. 76. § (2) bekezdés c) pontja alapján a legjobb ár-érték arány elve alapján értékeli. Az értékelési részszempontok értékelése során adható pontszámok 0-10 pontig terjedhetnek. Az Ár jellegű szempontok tekintetében a benyújtott ajánlatok a Közbeszerzési Hatóság keretében működő Tanácsnak a nyertes ajánlattevő kiválasztására szolgáló értékelési szempontrendszer alkalmazásáról (2025. május 29.) útmutatója szerinti fordított arányosítás módszerével kerülnek értékelésre. A minőségi szempont tekintetében a benyújtott ajánlatok a Közbeszerzési Hatóság keretében működő Tanácsnak a nyertes ajánlattevő kiválasztására szolgáló értékelési szempontrendszer alkalmazásáról (2025. május 29.) útmutatója szerinti abszolút értékelési módszerrel, azon belül pontozással kerülnek értékelésre. Az értékelési módszerek részletes ismertetését a KD tartalmazza.</cbc:Description>
+          <cac:SubordinateAwardingCriterion>
+            <ext:UBLExtensions>
+              <ext:UBLExtension>
+                <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                    <efac:AwardCriterionParameter>
+                      <efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+                      <efbc:ParameterNumeric>10</efbc:ParameterNumeric>
+                    </efac:AwardCriterionParameter>
+                  </efext:EformsExtension>
+                </ext:ExtensionContent>
+              </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+            <cbc:Description languageID="HUN">Diszpécseri szolgálat üzemeltetése online és telefonon keresztül a hét minden napján 24 órában (igen/nem)</cbc:Description>
+          </cac:SubordinateAwardingCriterion>
+          <cac:SubordinateAwardingCriterion>
+            <ext:UBLExtensions>
+              <ext:UBLExtension>
+                <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                    <efac:AwardCriterionParameter>
+                      <efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+                      <efbc:ParameterNumeric>60</efbc:ParameterNumeric>
+                    </efac:AwardCriterionParameter>
+                  </efext:EformsExtension>
+                </ext:ExtensionContent>
+              </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+            <cbc:Description languageID="HUN">Pénz- és értékszállítás díja (nettó Ft/alkalom/létesítmény)</cbc:Description>
+          </cac:SubordinateAwardingCriterion>
+          <cac:SubordinateAwardingCriterion>
+            <ext:UBLExtensions>
+              <ext:UBLExtension>
+                <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                    <efac:AwardCriterionParameter>
+                      <efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+                      <efbc:ParameterNumeric>30</efbc:ParameterNumeric>
+                    </efac:AwardCriterionParameter>
+                  </efext:EformsExtension>
+                </ext:ExtensionContent>
+              </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+            <cbc:Description languageID="HUN">Cash-in automata ürítés és bevételszállítás díja (nettó Ft/alkalom/automata)</cbc:Description>
+          </cac:SubordinateAwardingCriterion>
+        </cac:AwardingCriterion>
+      </cac:AwardingTerms>
+      <cac:AdditionalInformationParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+        </cac:PartyIdentification>
+      </cac:AdditionalInformationParty>
+      <cac:AppealTerms>
+        <cac:PresentationPeriod>
+          <cbc:Description languageID="HUN">Kbt. 148 § -ában meghatározottak szerint.</cbc:Description>
+        </cac:PresentationPeriod>
+        <cac:AppealInformationParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0004</cbc:ID>
+          </cac:PartyIdentification>
+        </cac:AppealInformationParty>
+        <cac:AppealReceiverParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0004</cbc:ID>
+          </cac:PartyIdentification>
+        </cac:AppealReceiverParty>
+      </cac:AppealTerms>
+    </cac:TenderingTerms>
+    <cac:TenderingProcess>
+      <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+      <cac:AuctionTerms>
+        <cbc:AuctionConstraintIndicator>true</cbc:AuctionConstraintIndicator>
+      </cac:AuctionTerms>
+      <cac:ContractingSystem>
+        <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+      </cac:ContractingSystem>
+      <cac:ContractingSystem>
+        <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+      </cac:ContractingSystem>
+    </cac:TenderingProcess>
+    <cac:ProcurementProject>
+      <cbc:ID schemeName="InternalID">EKR001185302025/1</cbc:ID>
+      <cbc:Name languageID="HUN">Pénz- és értékszállítási szolgáltatás beszerzése</cbc:Name>
+      <cbc:Description languageID="HUN">Vállalkozási keretszerződés keretében pénz- és értékszállítási szolgáltatás biztosítása az alábbi tervezett igények szerint: Ajánlatkérő által meghatározott keretmennyiség a szerződés időtartama (6 hónap) alatt összesen: 17.018 alkalom az alábbiak szerint: - pénztári szállítás összesen 11.356 alkalom, - cash-in automata ürítés összesen 5.662 alkalom. Ajánlatkérő igényét a szerződés időtartama alatt várható, legmagasabb várható beszerzési mennyiség előzetes meghatározásával állapította meg, amelytől a tényleges szolgáltatás megrendelési szükséglet – a szerződés időtartama alatt felmerülő konkrét igényekre tekintettel – eltérhet. A Kbt. 58. § (1) bekezdése alapján a szerződéses teljes mennyiséghez képest Ajánlatkérő eltérhet (mennyiségi eltérés), és a megkötésre kerülő szerződés alapján kizárólag arra vállal kötelezettséget, hogy a megrendelések leadására legalább a fenti, szerződésben megjelölt keretmennyiség 60%-áig kerül sor, az alábbiak szerint: - pénztári szállítás a szerződés alapidőtartama tekintetében: 6.814 alkalom, - cash-in automata ürítés a szerződés alapidőtartama tekintetében: 3.397 alkalom. A szerződést a Felek 6 hónapra kötik. Amennyiben a keretmennyiség a 6 hónapos időtartam alatt nem kerül teljes mértékben kimerítésre, úgy Ajánlatkérő fenntartja magának a jogot a szerződés ezen időtartamának legfeljebb 3 hónappal – de legfeljebb a keretmennyiség kimerüléséig – történő egyoldalú meghosszabbítására. A szolgáltatással érintett ingatlanok köre a szerződés időtartama alatt változhat, azzal, hogy valamennyi teljesítési helyszín Magyarországon található. A szerződés során ellátandó feladatok: Nyertes Ajánlattevő biztosítja Ajánlatkérő (országos) működési területén az autóbuszos közlekedéshez kapcsolódó forgalmi, műszaki és ügyviteli létesítményeiben, objektumaiban, helyiségeiben üzemelő elővételi pénztár, bérletpénztár, gyűjtőpénztár, nemzetközi pénztár, egyéb pénzkezelő helyek, valamint a műszaki létesítmények területein kihelyezett pénztárak, továbbá trezorok, illetve cash-in készpénzgyűjtő terminálok menetrendszerinti és eseti jellegű pénz- és értékszállítási – speciális pénztárolók esetében igény szerint ürítési – feladatainak ellátását: • A menetrendszerinti pénz- és értékszállítási feladatok az Ajánlatkérő igényeivel és elvárásaival összhangban, azoknak megfelelően, előre elkészített és az Ajánlatkérő által jóváhagyott menetrend (szállítási ütemterv) alapján történő elvégzése, Ajánlatkérő által meghatározott és a befizetési rendszerbe bekapcsolt egységek (pénztárak, automata készpénzfeldolgozó egységek, pénzleadó automaták stb.) között és részére. Ezeket az egységeket jelen műszaki leírás 1. számú melléklete tartalmazza. • A pénz- és értékszállítási szolgáltatást Ajánlatkérő munkanapokon és szombati napokon (teljesítési napok) kívánja igénybe venni. Vasárnap és ünnepnapokon a szolgáltatást Ajánlatkérő nem kívánja igénybe venni. • Nyertes Ajánlattevő vállalja, hogy az elnyert szolgáltatás megkezdéséig elkészíti a feladat elvárt szintű végrehajtásához nélkülözhetetlen, gyűjtőhely típusokra lebontott Pénz- és Értékszállítási Eljárási Rendet, melyet az Ajánlatkérő hagy jóvá. • A pénz- és értékszállítási folyamatoknak úgy kell teljesülnie, hogy az semmiképp se akadályozza vagy lehetetlenítse el Ajánlatkérő üzemszerű működését és készpénz-bevételének fluiditását. • A pénz- és értékszállítási folyamat a készpénz felkeresési helyen történő átvételétől az Ajánlatkérő által kijelölt/meghatározott értéktárba, vagy Ajánlatkérő által megadott és meghatározott telephelyre, székhelyre, egyéb értékmegőrzést vagy feldolgozást végző létesítménybe (továbbiakban: célállomás) történő beszállításáig és dokumentált módon történő átadásáig tart. Az átvett készpénzért nyertes Ajánlattevő a felkeresési helyen történő átvétel pillanatától, annak célállomáson történő átadásáig – egyszemélyben – teljes felelősséggel tartozik. A feladatok részletezése a közbeszerzési dokumentáció részét képező műszaki leírásban került részletesen meghatározásra. Ajánlatkérő felhívja a gazdasági szereplők figyelmét, hogy a közbeszerzési dokumentumokban esetlegesen szereplő, meghatározott gyártmányra, típusra történő hivatkozások csak a tárgy jellegének egyértelmű meghatározása érdekében történtek. Ajánlatkérő a közbeszerzési eljárásokban az alkalmasság és a kizáró okok igazolásának, valamint a közbeszerzési műszaki leírás meghatározásának módjáról szóló 321/2015. (X. 30.) Korm. rendelet 46. §-ának (3) bekezdésében foglaltak alapján azzal mindenben egyenértékű terméket elfogad.</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+      <cbc:Note languageID="HUN">Felek a Szerződést határozott időtartamra kötik, hatálya a Szerződés mindkét Fél által történő aláírást követő napon lép hatályba. Megrendelő a szolgáltatás nyújtását a Szerződés hatálybalépésétől számított 6 hónapos időtartamig, vagy amennyiben az hamarabb bekövetkezik, a jelen Szerződés II. fejezetében rögzített keretmennyiség kimerüléséig rendeli meg. Felek rögzítik, hogy amennyiben a fenti 6 hónapos időtartam leteltét megelőzően Megrendelő által hasonló tárgyban lefolytatott közbeszerzési eljárás eredményeképpen kötendő szerződés hatályba lép, úgy annak hatályba lépése napján jelen szerződés hatályát veszti. Eredménytelenné nyilvánítás dátuma: 2025.11.05. Eredménytelenség indoka: Eljárásban 1 ajánlat került benyújtásra és az eljárásban a Kbt. 75. § (2) bekezdés e) pont szerinti eredménytelenségi ok előírásra került.</cbc:Note>
+      <cac:ProcurementAdditionalType>
+        <cbc:ProcurementTypeCode listName="gpp-criteria">none</cbc:ProcurementTypeCode>
+      </cac:ProcurementAdditionalType>
+      <cac:MainCommodityClassification>
+        <cbc:ItemClassificationCode listName="cpv">79710000</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:RealizedLocation>
+        <cbc:Description languageID="HUN">A teljesítési helyek a Szerződés 1. számú mellékletében kerülnek részletesen megadásra. Ajánlatkérő kizárólagos, egyoldalú választása alapján jogosult megrendelésében a Szerződés időbeli hatálya alatt további teljesítési helyszíneket a Szerződés „hatálya alá vonni”, azaz az Ajánlattevő által teljesítendő, a Szerződésben meghatározott feladatokat ezen felkeresési helyek vonatkozásban is megrendelni.</cbc:Description>
+        <cac:Address>
+          <cbc:CountrySubentityCode listName="nuts">HUZZZ</cbc:CountrySubentityCode>
+          <cac:Country>
+            <cbc:IdentificationCode listName="country">HUN</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:RealizedLocation>
+      <cac:PlannedPeriod>
+        <cbc:DurationMeasure unitCode="MONTH">6</cbc:DurationMeasure>
+      </cac:PlannedPeriod>
+      <cac:ContractExtension>
+        <cbc:MaximumNumberNumeric>1</cbc:MaximumNumberNumeric>
+        <cac:Renewal>
+          <cac:Period>
+            <cbc:Description languageID="HUN">A szerződéses időtartam meghosszabbításának ismertetése: Ajánlatkérő jogosult egyoldalú nyilatkozata alapján egy alkalommal, legfeljebb 3 hónapra szóló határozott időtartamra a szerződés időtartamát meghosszabbítani, amennyiben a szerződés 6 hónapos időtartama alatt a keretmennyiség nem kerül teljes mértékben kimerítésre Ajánlatkérő által. Ajánlatkérő legkésőbb a Szerződés lejártának időpontja előtt 10 nappal, írásban közölt egyoldalú jognyilatkozatával jogosult meghosszabbítani a Szerződést. Részletes leírást a KD részét képező szerződéstervezet tartalmazza.</cbc:Description>
+          </cac:Period>
+        </cac:Renewal>
+      </cac:ContractExtension>
+    </cac:ProcurementProject>
+  </cac:ProcurementProjectLot>
+  <cac:TenderResult>
+    <cbc:AwardDate>2000-01-01Z</cbc:AwardDate>
+  </cac:TenderResult>
+</ContractAwardNotice>

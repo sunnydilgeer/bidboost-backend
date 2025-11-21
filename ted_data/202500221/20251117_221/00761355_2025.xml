@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <ext:UBLExtensions>
+      <ext:UBLExtension>
+         <ext:ExtensionContent>
+            <efext:EformsExtension>
+               <efac:NoticeSubType>
+                  <cbc:SubTypeCode listName="notice-subtype">16</cbc:SubTypeCode>
+               </efac:NoticeSubType>
+               <efac:Organizations>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="DEU">Gemeinde Teuschenthal</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>Am Busch 19</cbc:StreetName>
+                           <cbc:CityName>Teutschenthal OT Angersdorf</cbc:CityName>
+                           <cbc:PostalZone>06179</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">DEE0B</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>Nicht einschlägig</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Name>abante Rechtsanwaltsgesellschaft mbH &amp; Co. KG</cbc:Name>
+                           <cbc:Telephone>+49 341 238 203 00</cbc:Telephone>
+                           <cbc:ElectronicMail>vergabeverfahren@abante.de</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://lvwa.sachsen-anhalt.de/das-lvwa/wirtschaft-bauwesen-verkehr/wirtschaft/vergabekammern</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="DEU">Vergabekammer Sachsen-Anhalt</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>Landesverwaltungsamt Ernst-Kamieth-Straße 2</cbc:StreetName>
+                           <cbc:CityName>Halle (Saale)</cbc:CityName>
+                           <cbc:PostalZone>06112</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">DEE02</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>nicht einschlägig</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+49 345 5140</cbc:Telephone>
+                           <cbc:ElectronicMail>vergabekammer@lvwa.sachsen-anhalt.de</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+               <efac:Organization><efac:Company><cac:PartyIdentification><cbc:ID schemeName="organization">ORG-0003</cbc:ID></cac:PartyIdentification><cac:PartyName><cbc:Name languageID="DEU">Datenservice Öffentlicher Einkauf (in Verantwortung des Beschaffungsamts des BMI)</cbc:Name></cac:PartyName><cac:PostalAddress><cbc:CityName>Bonn</cbc:CityName><cbc:PostalZone>53119</cbc:PostalZone><cbc:CountrySubentityCode listName="nuts">DEA22</cbc:CountrySubentityCode><cac:Country><cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode></cac:Country></cac:PostalAddress><cac:PartyLegalEntity><cbc:CompanyID schemeID="002">0204:994-DOEVD-83</cbc:CompanyID></cac:PartyLegalEntity><cac:Contact><cbc:Telephone>+49228996100</cbc:Telephone><cbc:ElectronicMail>noreply.esender_hub@bescha.bund.de</cbc:ElectronicMail></cac:Contact></efac:Company></efac:Organization></efac:Organizations>
+            <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00761355-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+         </ext:ExtensionContent>
+      </ext:UBLExtension>
+   </ext:UBLExtensions>
+   <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+   <cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+   <cbc:ProfileID>eforms-sdk-1.13</cbc:ProfileID>
+   <cbc:ID schemeName="notice-id">019a2f68-eada-457e-86f9-aaa8d82dba91</cbc:ID>
+   <cbc:ContractFolderID>019a2f67-e416-4c39-a068-9fa8c9392e60</cbc:ContractFolderID>
+   <cbc:IssueDate>2025-11-13+01:00</cbc:IssueDate>
+   <cbc:IssueTime>17:15:25+01:00</cbc:IssueTime>
+   <cbc:VersionID>01</cbc:VersionID>
+   <cbc:RequestedPublicationDate>2025-11-13+01:00</cbc:RequestedPublicationDate>
+   <cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+   <cbc:NoticeTypeCode listName="competition">cn-standard</cbc:NoticeTypeCode>
+   <cbc:NoticeLanguageCode listName="language">DEU</cbc:NoticeLanguageCode>
+   <cac:ContractingParty>
+      <cac:ContractingPartyType>
+         <cbc:PartyTypeCode listName="buyer-legal-type">body-pl-la</cbc:PartyTypeCode>
+      </cac:ContractingPartyType>
+      <cac:ContractingActivity>
+         <cbc:ActivityTypeCode listName="authority-activity">gen-pub</cbc:ActivityTypeCode>
+      </cac:ContractingActivity>
+      <cac:Party>
+         <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+         </cac:PartyIdentification>
+      <cac:ServiceProviderParty><cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode><cac:Party><cac:PartyIdentification><cbc:ID schemeName="organization">ORG-0003</cbc:ID></cac:PartyIdentification></cac:Party></cac:ServiceProviderParty></cac:Party>
+   </cac:ContractingParty>
+   <cac:TenderingTerms>
+      <cac:ProcurementLegislationDocumentReference>
+         <cbc:ID>vob-a-eu</cbc:ID>
+      </cac:ProcurementLegislationDocumentReference>
+      <cac:ProcurementLegislationDocumentReference>
+         <cbc:ID>CrossBorderLaw</cbc:ID>
+         <cbc:DocumentDescription languageID="DEU">CrossBorderLaw</cbc:DocumentDescription>
+      </cac:ProcurementLegislationDocumentReference>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-grounds-source">epo-notice</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-grounds-source">epo-procurement-document</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-corrpt</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">vgl. § 123 Abs. 1 Nr. 6, 7, 8, 9 GWB: "Öffentliche Auftraggeber schließen ein Unternehmen zu jedem Zeitpunkt des Vergabeverfahrens von der Teilnahme aus, wenn sie Kenntnis davon haben, dass eine Person, deren Verhalten nach Absatz 3 dem Unternehmen zuzurechnen ist, rechtskräftig verurteilt oder gegen das Unternehmen eine Geldbuße nach § 30 des Gesetzes über Ordnungswidrigkeiten rechtskräftig festgesetzt worden ist wegen einer Straftat nach: (...) 6. § 299 des Strafgesetzbuchs (Bestechlichkeit und Bestechung im geschäftlichen Verkehr), §§ 299a und 299b des Strafgesetzbuchs (Bestechlichkeit und Bestechung im Gesundheitswesen), 7. § 108e des Strafgesetzbuchs (Bestechlichkeit und Bestechung von Mandatsträgern) oder § 108f des Strafgesetzbuchs (unzulässige Interessenwahrnehmung), 8. den §§ 333 und 334 des Strafgesetzbuchs (Vorteilsgewährung und Bestechung), jeweils auch in Verbindung mit § 335a des Strafgesetzbuchs (Ausländische und internationale Bedienstete), 9. Artikel 2 § 2 des Gesetzes zur Bekämpfung internationaler Bestechung (Bestechung ausländischer Abgeordneter im Zusammenhang mit internationalem Geschäftsverkehr)"</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-fraud</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">vgl. § 123 Abs. 1 Nr. 4, 5 GWB: "Öffentliche Auftraggeber schließen ein Unternehmen zu jedem Zeitpunkt des Vergabeverfahrens von der Teilnahme aus, wenn sie Kenntnis davon haben, dass eine Person, deren Verhalten nach Absatz 3 dem Unternehmen zuzurechnen ist, rechtskräftig verurteilt oder gegen das Unternehmen eine Geldbuße nach § 30 des Gesetzes über Ordnungswidrigkeiten rechtskräftig festgesetzt worden ist wegen einer Straftat nach: (...) 4. § 263 des Strafgesetzbuchs (Betrug), soweit sich die Straftat gegen den Haushalt der Europäischen Union oder gegen Haushalte richtet, die von der Europäischen Union oder in ihrem Auftrag verwaltet werden, 5. § 264 des Strafgesetzbuchs (Subventionsbetrug), soweit sich die Straftat gegen den Haushalt der Europäischen Union oder gegen Haushalte richtet, die von der Europäischen Union oder in ihrem Auftrag verwaltet werden</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-part</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">vgl. § 123 Abs. 1 Nr. 1 GWB: "Öffentliche Auftraggeber schließen ein Unternehmen zu jedem Zeitpunkt des Vergabeverfahrens von der Teilnahme aus, wenn sie Kenntnis davon haben, dass eine Person, deren Verhalten nach Absatz 3 dem Unternehmen zuzurechnen ist, rechtskräftig verurteilt oder gegen das Unternehmen eine Geldbuße nach § 30 des Gesetzes über Ordnungswidrigkeiten rechtskräftig festgesetzt worden ist wegen einer Straftat nach: (...) 1. § 129 des Strafgesetzbuchs (Bildung krimineller Vereinigungen), § 129a des Strafgesetzbuchs (Bildung terroristischer Vereinigungen) oder § 129b des Strafgesetzbuchs (Kriminelle und terroristische Vereinigungen im Ausland)"</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-terror</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">vgl. § 123 Abs. 1 Nr. 1 GWB: "Öffentliche Auftraggeber schließen ein Unternehmen zu jedem Zeitpunkt des Vergabeverfahrens von der Teilnahme aus, wenn sie Kenntnis davon haben, dass eine Person, deren Verhalten nach Absatz 3 dem Unternehmen zuzurechnen ist, rechtskräftig verurteilt oder gegen das Unternehmen eine Geldbuße nach § 30 des Gesetzes über Ordnungswidrigkeiten rechtskräftig festgesetzt worden ist wegen einer Straftat nach: 1. § 129 des Strafgesetzbuchs (Bildung krimineller Vereinigungen), § 129a des Strafgesetzbuchs (Bildung terroristischer Vereinigungen) oder § 129b des Strafgesetzbuchs (Kriminelle und terroristische Vereinigungen im Ausland)"</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-as-susp</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">vgl. § 124 Abs. 1 Nr. 2 GWB: "Öffentliche Auftraggeber können unter Berücksichtigung des Grundsatzes der Verhältnismäßigkeit ein Unternehmen zu jedem Zeitpunkt des Vergabeverfahrens von der Teilnahme an einem Vergabeverfahren ausschließen, wenn (...) 2. das Unternehmen zahlungsunfähig ist, über das Vermögen des Unternehmens ein Insolvenzverfahren oder ein vergleichbares Verfahren beantragt oder eröffnet worden ist, die Eröffnung eines solchen Verfahrens mangels Masse abgelehnt worden ist, sich das Unternehmen im Verfahren der Liquidation befindet oder seine Tätigkeit eingestellt hat"</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-laund</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">vgl. § 123 Abs. 1 Nr. 2, 3 GWB: "Öffentliche Auftraggeber schließen ein Unternehmen zu jedem Zeitpunkt des Vergabeverfahrens von der Teilnahme aus, wenn sie Kenntnis davon haben, dass eine Person, deren Verhalten nach Absatz 3 dem Unternehmen zuzurechnen ist, rechtskräftig verurteilt oder gegen das Unternehmen eine Geldbuße nach § 30 des Gesetzes über Ordnungswidrigkeiten rechtskräftig festgesetzt worden ist wegen einer Straftat nach: (...) 2. § 89c des Strafgesetzbuchs (Terrorismusfinanzierung) oder wegen der Teilnahme an einer solchen Tat oder wegen der Bereitstellung oder Sammlung finanzieller Mittel in Kenntnis dessen, dass diese finanziellen Mittel ganz oder teilweise dazu verwendet werden oder verwendet werden sollen, eine Tat nach § 89a Absatz 2 Nummer 2 des Strafgesetzbuchs zu begehen, 3. § 261 des Strafgesetzbuchs (Geldwäsche)"</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-liq-admin</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">vgl. § 124 Abs. 1 Nr. 2 GWB: "Öffentliche Auftraggeber können unter Berücksichtigung des Grundsatzes der Verhältnismäßigkeit ein Unternehmen zu jedem Zeitpunkt des Vergabeverfahrens von der Teilnahme an einem Vergabeverfahren ausschließen, wenn (...) 2. das Unternehmen zahlungsunfähig ist, über das Vermögen des Unternehmens ein Insolvenzverfahren oder ein vergleichbares Verfahren beantragt oder eröffnet worden ist, die Eröffnung eines solchen Verfahrens mangels Masse abgelehnt worden ist, sich das Unternehmen im Verfahren der Liquidation befindet oder seine Tätigkeit eingestellt hat"</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-partic-confl</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">vgl. § 124 Abs. 1 Nr. 5 GWB: "Öffentliche Auftraggeber können unter Berücksichtigung des Grundsatzes der Verhältnismäßigkeit ein Unternehmen zu jedem Zeitpunkt des Vergabeverfahrens von der Teilnahme an einem Vergabeverfahren ausschließen, wenn (...) 5. ein Interessenkonflikt bei der Durchführung des Vergabeverfahrens besteht, der die Unparteilichkeit und Unabhängigkeit einer für den öffentlichen Auftraggeber tätigen Person bei der Durchführung des Vergabeverfahrens beeinträchtigen könnte und der durch andere, weniger einschneidende Maßnahmen nicht wirksam beseitigt werden kann"</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-sanction</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">vgl. § 124 Abs. 1 Nr. 7 GWB: "Öffentliche Auftraggeber können unter Berücksichtigung des Grundsatzes der Verhältnismäßigkeit ein Unternehmen zu jedem Zeitpunkt des Vergabeverfahrens von der Teilnahme an einem Vergabeverfahren ausschließen, wenn (...) 7. das Unternehmen eine wesentliche Anforderung bei der Ausführung eines früheren öffentlichen Auftrags oder Konzessionsvertrags erheblich oder fortdauernd mangelhaft erfüllt hat und dies zu einer vorzeitigen Beendigung, zu Schadensersatz oder zu einer vergleichbaren Rechtsfolge geführt hat"</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-traffick</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">vgl. § 123 Abs. 1 Nr. 10 GWB: "Öffentliche Auftraggeber schließen ein Unternehmen zu jedem Zeitpunkt des Vergabeverfahrens von der Teilnahme aus, wenn sie Kenntnis davon haben, dass eine Person, deren Verhalten nach Absatz 3 dem Unternehmen zuzurechnen ist, rechtskräftig verurteilt oder gegen das Unternehmen eine Geldbuße nach § 30 des Gesetzes über Ordnungswidrigkeiten rechtskräftig festgesetzt worden ist wegen einer Straftat nach: (...) 10. den §§ 232, 232a Absatz 1 bis 5, den §§ 232b bis 233a des Strafgesetzbuches (Menschenhandel, Zwangsprostitution, Zwangsarbeit, Ausbeutung der Arbeitskraft, Ausbeutung unter Ausnutzung einer Freiheitsberaubung)."</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-other</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">vgl. § 124 Abs. 1 Nr. 2 GWB: "Öffentliche Auftraggeber können unter Berücksichtigung des Grundsatzes der Verhältnismäßigkeit ein Unternehmen zu jedem Zeitpunkt des Vergabeverfahrens von der Teilnahme an einem Vergabeverfahren ausschließen, wenn (...) 2. das Unternehmen zahlungsunfähig ist, über das Vermögen des Unternehmens ein Insolvenzverfahren oder ein vergleichbares Verfahren beantragt oder eröffnet worden ist, die Eröffnung eines solchen Verfahrens mangels Masse abgelehnt worden ist, sich das Unternehmen im Verfahren der Liquidation befindet oder seine Tätigkeit eingestellt hat"</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-natl-bre-nat-law</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">vgl. § 123 Abs. 2 GWB: "§ 21 des Arbeitnehmer-Entsendegesetzes, § 98c des Aufenthaltsgesetzes, § 19 des Mindestlohngesetzes, § 21 des Schwarzarbeitsbekämpfungsgesetzes und § 22 des Lieferkettensorgfaltspflichtengesetzes vom 16. Juli 2021 (BGBl. I S. 2959) bleiben unberührt."</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-misconduct</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">vgl. § 124 Abs. 1 Nr. 3 GWB: "Öffentliche Auftraggeber können unter Berücksichtigung des Grundsatzes der Verhältnismäßigkeit ein Unternehmen zu jedem Zeitpunkt des Vergabeverfahrens von der Teilnahme an einem Vergabeverfahren ausschließen, wenn (...) 3. das Unternehmen im Rahmen der beruflichen Tätigkeit nachweislich eine schwere Verfehlung begangen hat, durch die die Integrität des Unternehmens infrage gestellt wird; § 123 Absatz 3 ist entsprechend anzuwenden"</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-misrepresent</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">vgl. § 124 Abs. 1 Nr. 8, 9 GWB: "Öffentliche Auftraggeber können unter Berücksichtigung des Grundsatzes der Verhältnismäßigkeit ein Unternehmen zu jedem Zeitpunkt des Vergabeverfahrens von der Teilnahme an einem Vergabeverfahren ausschließen, wenn (...) 8. das Unternehmen in Bezug auf Ausschlussgründe oder Eignungskriterien eine schwerwiegende Täuschung begangen oder Auskünfte zurückgehalten hat oder nicht in der Lage ist, die erforderlichen Nachweise zu übermitteln, 9. das Unternehmen
+a) versucht hat, die Entscheidungsfindung des öffentlichen Auftraggebers in unzulässiger Weise zu beeinflussen,
+b) versucht hat, vertrauliche Informationen zu erhalten, durch die es unzulässige Vorteile beim Vergabeverfahren erlangen könnte, oder
+c) fahrlässig oder vorsätzlich irreführende Informationen übermittelt hat, die die Vergabeentscheidung des öffentlichen Auftraggebers erheblich beeinflussen könnten, oder versucht hat, solche Informationen zu übermitteln."</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-bre-lab-law</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">vgl. § 124 Abs. 1 Nr. 1 GWB: "Öffentliche Auftraggeber können unter Berücksichtigung des Grundsatzes der Verhältnismäßigkeit ein Unternehmen zu jedem Zeitpunkt des Vergabeverfahrens von der Teilnahme an einem Vergabeverfahren ausschließen, wenn 1. das Unternehmen bei der Ausführung öffentlicher Aufträge nachweislich gegen geltende umwelt-, sozial- oder arbeitsrechtliche Verpflichtungen verstoßen hat"</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-bre-soc-law</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">vgl. § 124 Abs. 1 Nr. 1 GWB: "Öffentliche Auftraggeber können unter Berücksichtigung des Grundsatzes der Verhältnismäßigkeit ein Unternehmen zu jedem Zeitpunkt des Vergabeverfahrens von der Teilnahme an einem Vergabeverfahren ausschließen, wenn 1. das Unternehmen bei der Ausführung öffentlicher Aufträge nachweislich gegen geltende umwelt-, sozial- oder arbeitsrechtliche Verpflichtungen verstoßen hat"</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-bre-env-law</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">vgl. § 124 Abs. 1 Nr. 1 GWB: "Öffentliche Auftraggeber können unter Berücksichtigung des Grundsatzes der Verhältnismäßigkeit ein Unternehmen zu jedem Zeitpunkt des Vergabeverfahrens von der Teilnahme an einem Vergabeverfahren ausschließen, wenn 1. das Unternehmen bei der Ausführung öffentlicher Aufträge nachweislich gegen geltende umwelt-, sozial- oder arbeitsrechtliche Verpflichtungen verstoßen hat"</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-pmt-bre-ssc</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">vgl. § 123 Abs. 4 S. 1 GWB: "Öffentliche Auftraggeber schließen ein Unternehmen zu jedem Zeitpunkt des Vergabeverfahrens von der Teilnahme an einem Vergabeverfahren aus, wenn 1. das Unternehmen seinen Verpflichtungen zur Zahlung von Steuern, Abgaben oder Beiträgen zur Sozialversicherung nicht nachgekommen ist und dies durch eine rechtskräftige Gerichts- oder bestandskräftige Verwaltungsentscheidung festgestellt wurde oder 2. die öffentlichen Auftraggeber auf sonstige geeignete Weise die Verletzung einer Verpflichtung nach Nummer 1 nachweisen können."</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-pmt-bre-tax</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">vgl. § 123 Abs. 4 S. 1 GWB: "Öffentliche Auftraggeber schließen ein Unternehmen zu jedem Zeitpunkt des Vergabeverfahrens von der Teilnahme an einem Vergabeverfahren aus, wenn 1. das Unternehmen seinen Verpflichtungen zur Zahlung von Steuern, Abgaben oder Beiträgen zur Sozialversicherung nicht nachgekommen ist und dies durch eine rechtskräftige Gerichts- oder bestandskräftige Verwaltungsentscheidung festgestellt wurde oder 2. die öffentlichen Auftraggeber auf sonstige geeignete Weise die Verletzung einer Verpflichtung nach Nummer 1 nachweisen können."</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-distortion</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">vgl. § 124 Abs. 1 Nr. 4 GWB: "Öffentliche Auftraggeber können unter Berücksichtigung des Grundsatzes der Verhältnismäßigkeit ein Unternehmen zu jedem Zeitpunkt des Vergabeverfahrens von der Teilnahme an einem Vergabeverfahren ausschließen, wenn (...) 4. der öffentliche Auftraggeber über hinreichende Anhaltspunkte dafür verfügt, dass das Unternehmen mit anderen Unternehmen Vereinbarungen getroffen oder Verhaltensweisen aufeinander abgestimmt hat, die eine Verhinderung, Einschränkung oder Verfälschung des Wettbewerbs bezwecken oder bewirken"</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-prep-confl</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">vgl. § 124 Abs. 1 Nr. 6 GWB: "Öffentliche Auftraggeber können unter Berücksichtigung des Grundsatzes der Verhältnismäßigkeit ein Unternehmen zu jedem Zeitpunkt des Vergabeverfahrens von der Teilnahme an einem Vergabeverfahren ausschließen, wenn (...) 6. eine Wettbewerbsverzerrung daraus resultiert, dass das Unternehmen bereits in die Vorbereitung des Vergabeverfahrens einbezogen war, und diese Wettbewerbsverzerrung nicht durch andere, weniger einschneidende Maßnahmen beseitigt werden kann"</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-insolvency</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">vgl. § 124 Abs. 1 Nr. 2 GWB: "Öffentliche Auftraggeber können unter Berücksichtigung des Grundsatzes der Verhältnismäßigkeit ein Unternehmen zu jedem Zeitpunkt des Vergabeverfahrens von der Teilnahme an einem Vergabeverfahren ausschließen, wenn (...) 2. das Unternehmen zahlungsunfähig ist, über das Vermögen des Unternehmens ein Insolvenzverfahren oder ein vergleichbares Verfahren beantragt oder eröffnet worden ist, die Eröffnung eines solchen Verfahrens mangels Masse abgelehnt worden ist, sich das Unternehmen im Verfahren der Liquidation befindet oder seine Tätigkeit eingestellt hat"</cbc:Description>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+   </cac:TenderingTerms>
+   <cac:TenderingProcess>
+      <cbc:ProcedureCode listName="procurement-procedure-type">open</cbc:ProcedureCode>
+      <cac:ProcessJustification>
+         <cbc:ProcessReasonCode listName="accelerated-procedure">false</cbc:ProcessReasonCode>
+      </cac:ProcessJustification>
+   </cac:TenderingProcess>
+   <cac:ProcurementProject>
+      <cbc:ID>498/24</cbc:ID>
+      <cbc:Name languageID="DEU">Neubau Kita Angersdorf, Los 18 – Fernmelde- und informationstechnische Anlagen</cbc:Name>
+      <cbc:Description languageID="DEU">Neubau Kita Angersdorf, Los 18 – Fernmelde- und informationstechnische Anlagen</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">works</cbc:ProcurementTypeCode>
+      <cac:RequestedTenderTotal>
+         <cbc:EstimatedOverallContractAmount currencyID="EUR">208283</cbc:EstimatedOverallContractAmount>
+      </cac:RequestedTenderTotal>
+      <cac:MainCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">45214100</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">45000000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">45314000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">31625200</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">31625300</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">45316200</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">50312600</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:RealizedLocation>
+         <cac:Address>
+            <cbc:StreetName>An der Feuerwache</cbc:StreetName>
+            <cbc:CityName>Teuschenthal</cbc:CityName>
+            <cbc:PostalZone>06179</cbc:PostalZone>
+            <cbc:CountrySubentityCode listName="nuts">DEE0B</cbc:CountrySubentityCode>
+            <cac:Country>
+               <cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+            </cac:Country>
+         </cac:Address>
+      </cac:RealizedLocation>
+   </cac:ProcurementProject>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+      <cac:TenderingTerms>
+         <ext:UBLExtensions>
+            <ext:UBLExtension>
+               <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-suit-reg-trade</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">Der Bieter, die Mitglieder der Bietergemeinschaft, der/die Eignungsleihgeber und der/die Unterauftragnehmer muss/müssen Angaben zu seiner/ihrer Identität und Existenz machen. Gefordert sind die folgenden Angaben: Name, Anschrift, Ansprechpartner nebst Kontaktdaten, Zweigstellen/Niederlassungen, Unternehmensgröße, Rechtsform, Gewerbeanmeldung, Handelsregistereintragung, Berufsregistereintragung, Kammermitgliedschaften.	Dies ist nachzuweisen durch Eigenerklärungen (Anlage B.7), wobei sich der Auftraggeber u. a. die Anforderungen von Auszügen aus dem Handelsregister vorbehält.	Die Eigenerklärung/en ist/sind mit dem Angebot einzureichen für den Bieter, für jedes Mitglied der Bietergemeinschaft und für den/die Eignungsleihgeber. Für den/die Unterauftragnehmer ist sie erst auf gesonderte Anforderung des Auftraggebers einzureichen, außer der Unterauftragnehmer ist zugleich Eignungsleihgeber; in diesem Fall ist die Erklärung mit dem Angebot und nicht erst auf Anforderung einzureichen.</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-other</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">Der Bieter, die Mitglieder der Bietergemeinschaft, der/die Eignungsleihgeber und der/die Unterauftragnehmer dürfen keine Ausschlussgründe verwirklichen, insbesondere nicht nach § 6e EU VOB/A i. V. m. §§ 123, 124 GWB. Sollten sie Ausschlussgründe verwirklichen, haben sie hierzu nähere Angaben zu machen und ggf. eine Selbstreinigung nachzuweisen.	Der Nachweis erfolgt durch Eigenerklärungen (Anlage B.7), wobei sich der Auftraggeber u. a. die Anforderungen von Registerauszügen etc. vorbehält.	Die Eigenerklärung/en ist/sind mit dem Angebot einzureichen für den Bieter, für jedes Mitglied der Bietergemeinschaft und für den/die Eignungsleihgeber. Für den/die Unterauftragnehmer ist sie erst auf gesonderte Anforderung des Auftraggebers einzureichen, außer der Unterauftragnehmer ist zugleich Eignungsleihgeber; in diesem Fall ist die Erklärung mit dem Angebot und nicht erst auf Anforderung einzureichen.</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-subc</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">Mitglieder und Leistungsteile der Bietergemeinschaft
+Falls das Angebot von einer Bietergemeinschaft abgegeben wird, müssen alle Mitglieder der Bietergemeinschaft die jeweils anderen Mitglieder der Bietergemeinschaft benennen und mitteilen, welche Leistungsteile sie im Rahmen der Bietergemeinschaft voraussichtlich erbringen werden.	Der Nachweis erfolgt durch Eigenerklärungen (Anlage B.7).	Die Eigenerklärung/en ist/sind mit dem Angebot einzureichen für jedes Mitglied der Bietergemeinschaft.
+Leistungen der Unterauftragnehmer
+Falls der Einsatz von Unterauftragnehmern vorgesehen ist, muss der Bieter bzw. die Bietergemeinschaft die Leistungen benennen, die er bzw. sie voraussichtlich an Unterauftragnehmer zu vergeben beabsichtigt.	Der Nachweis erfolgt durch Eigenerklärung (Anlage B.7).	Die Eigenerklärung ist mit dem Angebot einzureichen für den Bieter bzw. die Bietergemeinschaft.
+Leistungen der Eignungsleihgeber
+Falls eine Eignungsleihe vorgesehen ist, muss der Bieter bzw. die Bietergemeinschaft angeben, wofür und in welchem Umfang dies vorgesehen ist, und der Unterauftragnehmer, der seine Eignung verleiht, bzw. der Eignungsleihgeber, ob und ggf. welchen Leistungsteil er übernimmt, welche Kapazitäten er verleiht, dass er die Kapazitäten tatsächlich zur Verfügung stellt, dass er – bei Leihe der beruflichen Leistungsfähigkeit – den betreffenden Leistungsteil auch selbst erbringt, und dass er – bei Leihe der wirtschaftlich-finanziellen Leistungsfähigkeit – die gesamtschuldnerische Haftung übernimmt.	Der Nachweis erfolgt durch Eigenerklärung (Anlage B.7).	Die Eigenerklärung ist mit dem Angebot einzureichen für den Bieter bzw. die Bietergemeinschaft sowie für den/die Unterauftragnehmer, der seine Eignung verleiht/verleihen, bzw. den Eignungsleihgeber.</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-other</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">Der Bieter, die Mitglieder der Bietergemeinschaft, der/die Eignungsleihgeber und der/die Unterauftragnehmer muss/müssen nachweisen, dass er/sie seine/ihre Verpflichtung zur Zahlung von Steuern und Abgaben sowie der Beiträge zur Sozialversicherung, soweit sie der Pflicht zur Beitragszahlung unterfallen, ordnungsgemäß erfüllt.	Der Nachweis erfolgt durch Eigenerklärung (Anlage B.7), wobei sich der Auftraggeber u. a. die Anforderung einer Unbedenklichkeitsbescheinigung der tariflichen Sozialkasse, einer Unbedenklichkeitsbescheinigung des Finanzamtes bzw. Bescheinigung in Steuersachen (jeweils nicht älter als 6 Monate, gerechnet ab dem Tag des Ablaufs der Angebotsfrist) sowie einer Freistellungsbescheinigung nach § 48b EstG vorbehält.	Die Eigenerklärung ist mit dem Angebot einzureichen für den Bieter bzw. die Bietergemeinschaft sowie für den/die Unterauftragnehmer, der seine Eignung verleiht/verleihen, bzw. den Eignungsleihgeber.</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-suit-reg-prof</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">Der Bieter, die Mitglieder der Bietergemeinschaft, der/die Eignungsleihgeber und der/die Unterauftragnehmer erklärt, dass er/sie Mitglied der Berufsgenossenschaft ist.	Der Nachweis erfolgt durch Eigenerklärung (Anlage B.7), wobei sich der Auftraggeber u. a. die Anforderung einer qualifizierten Unbedenklichkeitsbescheinigung der Berufsgenossenschaft des zuständigen Versicherungsträgers mit Angabe der Lohnsummen (nicht älter als 6 Monate, gerechnet ab dem Tag des Ablaufs der Angebotsfrist) vorbehält.	Die Eigenerklärung ist mit dem Angebot einzureichen für den Bieter bzw. die Bietergemeinschaft sowie für den/die Unterauftragnehmer, der seine Eignung verleiht/verleihen, bzw. den Eignungsleihgeber.</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-to-gen</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">Der Bieter, die Mitglieder der Bietergemeinschaft und der/die Eignungsleihgeber (falls er die Eignung in wirtschaftlich-finanzieller Hinsicht verleiht) muss/müssen sowohl seinen/ihren jeweiligen Gesamtumsatz in den Geschäftsjahren 2022, 2023 und 2024 (dies sind die letzten drei abgeschlossenen Geschäftsjahre) angeben. Bei einem unterjährig endenden Geschäftsjahr kommt es auf die letzten drei abgeschlossenen Geschäftsjahre vor der Absendung der EU-weiten Bekanntmachung an.	Der Nachweis erfolgt durch Eigenerklärungen (Anlage B.7), wobei sich der Auftraggeber u. a. die Anforderung von Gewinn- und Verlustrechnungen etc. vorbehält.	Die Eigenerklärung ist mit dem Angebot einzureichen für den Bieter, für jedes Mitglied der Bietergemeinschaft sowie für den/die Unterauftragnehmer, der seine Eignung in wirtschaftlich-finanzieller Hinsicht verleiht/verleihen, bzw. den Eignungsleihgeber in wirtschaftlich-finanzieller Hinsicht.</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-ins</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">Der Bieter bzw. die Bietergemeinschaft und der/die Eignungsleihgeber (falls er die Eignung in wirtschaftlich-finanzieller Hinsicht verleiht) muss/müssen das Bestehen einer marktüblichen Industriehaftpflichtversicherung oder einer vergleichbaren Versicherung ab Leistungsbeginn bei einem in der EU zugelassenen Versicherungsunternehmen mit folgender Deckung nachweisen:
+• für Personenschäden mind. 3 Mio. €
+• für Sachschäden mind. 2 Mio. €
+• für Vermögensschäden mind. 1 Mio. €
+Die Gesamtleistung für alle Versicherungsfälle eines Versicherungsjahres darf nicht auf weniger als das Zweifache der Deckungssummen begrenzt sein. Als versicherte Risiken müssen alle wesentlichen Tätigkeiten umfasst sein, die der Auftragnehmer nach dem ausgeschriebenen Vertrag erbringt.	Der Nachweis erfolgt durch Eigenerklärungen (Anlage B.7), wobei sich der Auftraggeber u. a. die Anforderung der Versicherungspolice oder einer Versicherungsbestätigung vorbehält.	Die Eigenerklärung ist mit dem Angebot einzureichen für den Bieter bzw. die Bietergemeinschaft sowie für den/die Unterauftragnehmer, der seine Eignung in wirtschaftlich-finanzieller Hinsicht verleiht/verleihen, bzw. den Eignungsleihgeber in wirtschaftlich-finanzieller Hinsicht.</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-ref-work</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">Der Bieter bzw. die Bietergemeinschaft, der/die Eignungsleihgeber (falls er die Eignung in technisch-beruflicher Hinsicht verleiht/verleihen) und der/die Unterauftragnehmer (soweit er/sie den betreffenden Leistungsteil selbst erbringt/erbringen) muss/müssen mindestens drei Referenzaufträge aus diesem oder den letzten bis zu fünf abgeschlossenen Kalenderjahren nachweisen. Zu diesem Zweck muss er bzw. müssen sie Angaben zum Referenznehmer (wer hat die vergleichbaren Leistungen erbracht?), zum Referenzgeber (an wen wurden die vergleichbaren Leistungen erbracht?) und zum Referenzinhalt (worin bestanden die vergleichbaren Leistungen?) machen. Im Einzelnen wird verlangt, das Projekt und die erbrachte Leistung dem Inhalt, dem Zeitraum, dem Umfang und dem Wert nach zu beschreiben.	Der Nachweis erfolgt durch Eigenerklärungen (Anlage B.7), wobei sich der Auftraggeber u. a. die Anforderung von Referenzbestätigungen vorbehält.	Die Eigenerklärung ist mit dem Angebot einzureichen für den Bieter bzw. die Bietergemeinschaft, für den/die Eignungsleihgeber (falls er/sie die Eignung in technisch-beruflicher Hinsicht verleiht/verleihen) sowie für den/die Unterauftragnehmer, wenn er/sie zugleich seine Eignung verleiht/verleihen. Für den/die Unterauftragnehmer ist die Eigenerklärung erst auf gesonderte Anforderung des Auftraggebers einzureichen, soweit er/sie den betreffenden Leistungsteil selbst erbringt/erbringen, außer der Unterauftragnehmer ist zugleich Eignungsleihgeber; in diesem Fall ist die Erklärung mit dem Angebot und nicht erst auf Anforderung einzureichen.</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-staff-yrly-avg-mp</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">Der Bieter bzw. die Bietergemeinschaft, der/die Eignungsleihgeber (falls er die Eignung in technisch-beruflicher Hinsicht verleiht/verleihen) und der/die Unterauftragnehmer muss/müssen nachweisen, dass für die Ausführung der Leistungen erforderlichen Arbeitskräfte zur Verfügung stehen. Zu diesem Zweck ist die Zahl der in den letzten drei abgeschlossenen Kalenderjahren jahresdurchschnittlich beschäftigten Arbeitskräfte gegliedert nach Lohngruppen mit gesondert ausgewiesenem technischem Leitungspersonal anzugeben.	Der Nachweis erfolgt durch Eigenerklärungen (Anlage B.7).	Die Eigenerklärung ist mit dem Angebot einzureichen für den Bieter bzw. die Bietergemeinschaft, für den/die Eignungsleihgeber (falls er/sie die Eignung in technisch-beruflicher Hinsicht verleiht/verleihen) sowie für den/die Unterauftragnehmer, wenn er/sie zugleich seine Eignung verleiht/verleihen.</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-sec-inf</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">Der Bieter, die Mitglieder der Bietergemeinschaft, der/die Eignungsleihgeber und der/die Unterauftragnehmer müssen alle ihm/ihnen seitens des Auftraggebers mündlich, schriftlich oder elektronisch zur Verfügung gestellten, nicht allgemein zugänglichen Daten vertraulich behandeln (Verschwiegenheitspflicht) und dürfen sie nur zur Durchführung dieses Vergabeverfahrens sowie des sich ggf. anschließenden Auftrags und/oder zur Erfüllung rechtlicher Pflichten zu verarbeiten.	Der Nachweis erfolgt durch Eigenerklärungen (Anlage B.7), wobei sich der Auftraggeber vorbehält, Nachweise zu den Datensicherheitsmaßnahmen zu verlangen.	Die Eigenerklärung/en ist/sind mit dem Angebot einzureichen für den Bieter, für jedes Mitglied der Bietergemeinschaft und für den/die Eignungsleihgeber. Für den/die Unterauftragnehmer ist sie erst auf gesonderte Anforderung des Auftraggebers einzureichen, außer der Unterauftragnehmer ist zugleich Eignungsleihgeber; in diesem Fall ist die Erklärung mit dem Angebot und nicht erst auf Anforderung einzureichen.</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-other</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">„Russland-Erklärung“
+Der Bieter, die Mitglieder der Bietergemeinschaft, der/die Eignungsleihgeber und der/die Unterauftragnehmer dürfen nicht von Artikel 5k Absatz 1 der Verordnung (EU) Nr. 833/2014 in der Fassung des Art. 1 Ziff. 23 Verordnung (EU) 2022/576 des Rates vom 8. April 2022 betroffen sein („Russland-Erklärung“).	Der Nachweis erfolgt durch Eigenerklärungen (Anlage B.7).	Die Eigenerklärung/en ist/sind mit dem Angebot einzureichen für den Bieter, für jedes Mitglied der Bietergemeinschaft und für den/die Eignungsleihgeber. Für den/die Unterauftragnehmer ist sie erst auf gesonderte Anforderung des Auftraggebers einzureichen, außer der Unterauftragnehmer ist zugleich Eignungsleihgeber; in diesem Fall ist die Erklärung mit dem Angebot und nicht erst auf Anforderung einzureichen.
+Eigenerklärungen nach Landesrecht
+Der Bieter und alle Mitglieder der Bietergemeinschaft geben die Eigenerklärung zu Tariftreue, Mindeststundenentgelt und Entgeltgleichheit (§11 TVergG LSA) Ergänzende Vertragsbedingungen (auch für Nachunternehmer) sowie die Eigenerklärung zum Nachunternehmereinsatz (§ 14 Abs. 2 und 4 TVergG LSA) ab.	Der Nachweis erfolgt durch Eigenerklärungen (Anlage B.7).	Die Eigenerklärung/en ist/sind mit dem Angebot einzureichen für den Bieter und für jedes Mitglied der Bietergemeinschaft.
+Belehrung gemäß Verpflichtungsgesetz
+Der Bieter, die Mitglieder der Bietergemeinschaft, der/die Eignungsleihgeber und der/die Unterauftragnehmer müssen die für den Auftrag eingesetzten Mitarbeiter verpflichten, an der Belehrung gemäß Verpflichtungsgesetz mitzuwirken.	Der Nachweis erfolgt durch Eigenerklärungen (Anlage B.7).	Die Eigenerklärung/en ist/sind mit dem Angebot einzureichen für den Bieter, für jedes Mitglied der Bietergemeinschaft und für den/die Eignungsleihgeber. Für den/die Unterauftragnehmer ist sie erst auf gesonderte Anforderung des Auftraggebers einzureichen, außer der Unterauftragnehmer ist zugleich Eignungsleihgeber; in diesem Fall ist die Erklärung mit dem Angebot und nicht erst auf Anforderung einzureichen.</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-staff-qual</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">	Der Bieter bzw. die Bietergemeinschaft, der/die Eignungsleihgeber (falls er die Eignung in technisch-beruflicher Hinsicht verleiht/verleihen) und der/die Unterauftragnehmer (soweit er/sie den betreffenden Leistungsteil selbst erbringt/erbringen) muss/müssen mindestens drei Referenzaufträge aus diesem oder den letzten bis zu fünf abgeschlossenen Kalenderjahren nachweisen. Zu diesem Zweck muss er bzw. müssen sie Angaben zum Referenznehmer (wer hat die vergleichbaren Leistungen erbracht?), zum Referenzgeber (an wen wurden die vergleichbaren Leistungen erbracht?) und zum Referenzinhalt (worin bestanden die vergleichbaren Leistungen?) machen. Im Einzelnen wird verlangt, das Projekt und die erbrachte Leistung dem Inhalt, dem Zeitraum, dem Umfang und dem Wert nach zu beschreiben.	Der Nachweis erfolgt durch Eigenerklärungen (Anlage B.7), wobei sich der Auftraggeber u. a. die Anforderung von Referenzbestätigungen vorbehält.	Die Eigenerklärung ist mit dem Angebot einzureichen für den Bieter bzw. die Bietergemeinschaft, für den/die Eignungsleihgeber (falls er/sie die Eignung in technisch-beruflicher Hinsicht verleiht/verleihen) sowie für den/die Unterauftragnehmer, wenn er/sie zugleich seine Eignung verleiht/verleihen. Für den/die Unterauftragnehmer ist die Eigenerklärung erst auf gesonderte Anforderung des Auftraggebers einzureichen, soweit er/sie den betreffenden Leistungsteil selbst erbringt/erbringen, außer der Unterauftragnehmer ist zugleich Eignungsleihgeber; in diesem Fall ist die Erklärung mit dem Angebot und nicht erst auf Anforderung einzureichen.</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-staff-qual</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">	Der Bieter bzw. die Bietergemeinschaft, der/die Eignungsleihgeber (falls er die Eignung in technisch-beruflicher Hinsicht verleiht/verleihen) und der/die Unterauftragnehmer muss/müssen nachweisen, dass für die Ausführung der Leistungen erforderlichen Arbeitskräfte zur Verfügung stehen. Zu diesem Zweck ist die Zahl der in den letzten drei abgeschlossenen Kalenderjahren jahresdurchschnittlich beschäftigten Arbeitskräfte gegliedert nach Lohngruppen mit gesondert ausgewiesenem technischem Leitungspersonal anzugeben.	Der Nachweis erfolgt durch Eigenerklärungen (Anlage B.7).	Die Eigenerklärung ist mit dem Angebot einzureichen für den Bieter bzw. die Bietergemeinschaft, für den/die Eignungsleihgeber (falls er/sie die Eignung in technisch-beruflicher Hinsicht verleiht/verleihen) sowie für den/die Unterauftragnehmer, wenn er/sie zugleich seine Eignung verleiht/verleihen.</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-staff-qual</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">	Der Bieter bzw. die Bietergemeinschaft, der/die Eignungsleihgeber (falls er die Eignung in technisch-beruflicher Hinsicht verleiht/verleihen) und der/die Unterauftragnehmer muss/müssen (soweit er/sie den betreffenden Leistungsteil selbst erbringt/erbringen) nachweisen, dass eine Zertifizierung nach DIN VDE 0834 vorliegt. Alternativ genügt, dass ein Mitarbeiter des Bieters bzw. der Bietergemeinschaft, ein Mitarbeiter des/der Eignungsleihgeber(s) (falls er die Eignung in technisch-beruflicher Hinsicht verleiht/verleihen) bzw. ein Mitarbeiter des/der Unterauftragnehmer(s) (soweit er/sie den betreffenden Leistungsteil selbst erbringt/erbringen) als „Fachkraft für Rufanlagen nach DIN VDE 0834“ zertifiziert ist. Das Eignungskriterium gilt als erfüllt, wenn einer der beiden alternativ geforderten Eignungsnachweise erbracht wurde.	Der Nachweis erfolgt durch Vorlage eines Sachkundenachweises oder eines entsprechenden Zertifikates.	Der Nachweis ist auf Anforderung des Auftraggebers einzureichen für den Bieter bzw. die Bietergemeinschaft, für den/die Eignungsleihgeber (falls er/sie die Eignung in technisch-beruflicher Hinsicht verleiht/verleihen) sowie für den/die Unterauftragnehmer, sowohl wenn er/sie zugleich seine Eignung verleiht/verleihen als auch wenn er/sie den betreffenden Leistungsteil selbst erbringt/erbringen. </cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:StrategicProcurement>
+                        <efbc:ApplicableLegalBasis listName="cvd-scope">false</efbc:ApplicableLegalBasis>
+                     </efac:StrategicProcurement>
+                  </efext:EformsExtension>
+               </ext:ExtensionContent>
+            </ext:UBLExtension>
+         </ext:UBLExtensions>
+         <cbc:VariantConstraintCode listName="permission">not-allowed</cbc:VariantConstraintCode>
+         <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+         <cbc:RecurringProcurementIndicator>false</cbc:RecurringProcurementIndicator>
+         <cbc:MultipleTendersCode listName="permission">not-allowed</cbc:MultipleTendersCode>
+         <cac:CallForTendersDocumentReference>
+            <ext:UBLExtensions>
+               <ext:UBLExtension>
+                  <ext:ExtensionContent>
+                     <efext:EformsExtension>
+                        <efac:OfficialLanguages>
+                           <cac:Language>
+                              <cbc:ID>DEU</cbc:ID>
+                           </cac:Language>
+                        </efac:OfficialLanguages>
+                     </efext:EformsExtension>
+                  </ext:ExtensionContent>
+               </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:ID>n/a</cbc:ID>
+            <cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+            <cac:Attachment>
+               <cac:ExternalReference>
+                  <cbc:URI>https://www.evergabe.de/unterlagen/019a2f67-e416-4c39-a068-9fa8c9392e60/zustellweg-auswaehlen</cbc:URI>
+               </cac:ExternalReference>
+            </cac:Attachment>
+         </cac:CallForTendersDocumentReference>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="selection-criteria-source">epo-procurement-document</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="selection-criteria-source">epo-notice</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cbc:CompanyLegalFormCode listName="required">false</cbc:CompanyLegalFormCode>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="missing-info-submission">late-all</cbc:TendererRequirementTypeCode>
+               <cbc:Description languageID="DEU">Die Nachforderungen erfolgen nach Ermessen sowie unter
+Beachtung der einschlägigen Rechtsnormen.</cbc:Description>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="reserved-procurement">none</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="reserved-execution">no</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="einvoicing">allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="ecatalog-submission">not-allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:AwardingTerms>
+            <cac:AwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">dec-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>1</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="DEU">Es entfallen 100 % der Angebotswertung auf den angebotenen Preis.</cbc:Name>
+                  <cbc:Description languageID="DEU">Es entfallen 100 % der Angebotswertung auf den angebotenen Preis.</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+            </cac:AwardingCriterion>
+         </cac:AwardingTerms>
+         <cac:AdditionalInformationParty>
+            <cac:PartyIdentification>
+               <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:AdditionalInformationParty>
+         <cac:DocumentProviderParty>
+            <cac:PartyIdentification>
+               <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:DocumentProviderParty>
+         <cac:TenderRecipientParty>
+            <cbc:EndpointID>https://www.evergabe.de/unterlagen/019a2f67-e416-4c39-a068-9fa8c9392e60/zustellweg-auswaehlen</cbc:EndpointID>
+         </cac:TenderRecipientParty>
+         <cac:TenderValidityPeriod>
+            <cbc:DurationMeasure unitCode="DAY">64</cbc:DurationMeasure>
+         </cac:TenderValidityPeriod>
+         <cac:AppealTerms>
+            <cac:PresentationPeriod>
+               <cbc:Description languageID="DEU">(1) Die Vergabekammer leitet ein
+Nachprüfungsverfahren nur auf Antrag ein. (2) Antragsbefugt ist jedes Unternehmen, das ein
+Interesse an dem öffentlichen Auftrag oder der Konzession hat und eine Verletzung in seinen
+Rechten nach § 97 Absatz 6 durch Nichtbeachtung von Vergabevorschriften geltend macht.
+Dabei ist darzulegen, dass dem Unternehmen durch die behauptete Verletzung der
+Vergabevorschriften ein Schaden entstanden ist oder zu entstehen droht. (3) Der Antrag ist
+unzulässig, soweit 1. der Antragsteller den geltend gemachten Verstoß gegen
+Vergabevorschriften vor Einreichen des Nachprüfungsantrags erkannt und gegenüber dem
+Auftraggeber nicht innerhalb einer Frist von zehn Kalendertagen gerügt hat; der Ablauf der
+Frist nach § 134 Absatz 2 bleibt unberührt, 2. Verstöße gegen Vergabevorschriften, die
+aufgrund der Bekanntmachung erkennbar sind, nicht spätestens bis zum Ablauf der in der
+Bekanntmachung benannten Frist zur Bewerbung oder zur Angebotsabgabe gegenüber dem
+Auftraggeber gerügt werden, 3. Verstöße gegen Vergabevorschriften, die erst in den
+Vergabeunterlagen erkennbar sind, nicht spätestens bis zum Ablauf der Frist zur Bewerbung
+oder zur Angebotsabgabe gegenüber dem Auftraggeber gerügt werden, 4. mehr als 15
+Kalendertage nach Eingang der Mitteilung des Auftraggebers, einer Rüge nicht abhelfen zu
+wollen, vergangen sind. Satz 1 gilt nicht bei einem Antrag auf Feststellung der Unwirksamkeit
+des Vertrags nach § 135 Absatz 1 Nummer 2. § 134 Absatz 1 Satz 2 bleibt unberührt.</cbc:Description>
+            </cac:PresentationPeriod>
+            <cac:AppealInformationParty>
+               <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealInformationParty>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+         </cac:AppealTerms>
+         <cac:Language>
+            <cbc:ID>DEU</cbc:ID>
+         </cac:Language>
+         <cac:PostAwardProcess>
+            <cbc:ElectronicOrderUsageIndicator>true</cbc:ElectronicOrderUsageIndicator>
+            <cbc:ElectronicPaymentUsageIndicator>true</cbc:ElectronicPaymentUsageIndicator>
+         </cac:PostAwardProcess>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <cbc:SubmissionMethodCode listName="esubmission">required</cbc:SubmissionMethodCode>
+         <cbc:GovernmentAgreementConstraintIndicator>false</cbc:GovernmentAgreementConstraintIndicator>
+         <cac:TenderSubmissionDeadlinePeriod>
+            <cbc:EndDate>2025-12-16+01:00</cbc:EndDate>
+            <cbc:EndTime>12:00:00+01:00</cbc:EndTime>
+         </cac:TenderSubmissionDeadlinePeriod>
+         <cac:OpenTenderEvent>
+            <cbc:OccurrenceDate>2025-12-16+01:00</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>12:05:00+01:00</cbc:OccurrenceTime>
+         </cac:OpenTenderEvent>
+         <cac:AuctionTerms>
+            <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+         </cac:AuctionTerms>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:ID>LOT-0001</cbc:ID>
+         <cbc:Name languageID="DEU">Neubau Kita Angersdorf, Los 18 – Fernmelde- und informationstechnische Anlagen</cbc:Name>
+         <cbc:Description languageID="DEU">Geplant ist der Neubau einer Kindertagesstätte im Ortsteil Angersdorf. Die
+Baumaßnahme umfasst die Errichtung eines zweigeschossigen Gebäudes in Holz- Massiv-
+Hybridbauweise und die dazugehörigen Außenanlagen, inkl. Erschließung der Liegenschaft.
+Erschlossen ist das Grundstück über eine Anliegerstraße (Ahornstraße / An der Feuerwache), welche von der L163 (Lauchstädter Straße) abzweigt. Diese Anliegerstraßen (Ahornstraße /
+An der Feuerwache) und der angrenzende Parkplatz sind mit Bitumenbelag befestigt. Die von
+dort weiterführende Zuwegung am Baufeld ist ein unbefestigter Rasenweg. In der Vornutzung
+lag das Gelände brach, bzw. war landwirtschaftlich genutzt. Die Tragfähigkeit und
+Befahrbarkeit ist daher z.T. eingeschränkt, bzw. im Rohzustand nur Witterungsabhängig.
+Durch ein Drittgewerk ist die Baustelleneinrichtung vorhanden. Das Bedeutet, dass eine WCContainer
+(geschlechtergetrennt mit 3 WC-Anlagen, 2 Urinale, 2 Waschbecken) vorhanden ist.
+Ein Pausencontainer steht nicht zur Verfügung. Die Baustelle ist mittels Bauzauns und mobiler
+Videoüberwachung gesichert. Bauwasser und Baustrom sind eingerichtet. Eventuelle
+Mobilkräne sind eigenverantwortlich in die eigene Baustelleneinrichtung einzukalkulieren.
+(siehe BE-Plan) Die hiesige Ausschreibung betrifft die Fernmelde- und informationstechnischen Anlagen.</cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">works</cbc:ProcurementTypeCode>
+         <cbc:Note languageID="DEU">#Besonders auch geeignet für:selbst#</cbc:Note>
+         <cbc:SMESuitableIndicator>true</cbc:SMESuitableIndicator>
+         <cac:ProcurementAdditionalType>
+            <cbc:ProcurementTypeCode listName="strategic-procurement">none</cbc:ProcurementTypeCode>
+         </cac:ProcurementAdditionalType>
+         <cac:ProcurementAdditionalType>
+            <cbc:ProcurementTypeCode listName="accessibility">n-inc</cbc:ProcurementTypeCode>
+         </cac:ProcurementAdditionalType>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">45214100</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:RealizedLocation>
+            <cac:Address>
+               <cbc:StreetName>An der Feuerwache</cbc:StreetName>
+               <cbc:CityName>Teutschenthal OT Angersdorf</cbc:CityName>
+               <cbc:PostalZone>06179</cbc:PostalZone>
+               <cbc:CountrySubentityCode listName="nuts">DEE0B</cbc:CountrySubentityCode>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+         <cac:PlannedPeriod>
+            <cbc:DurationMeasure unitCode="WEEK">51</cbc:DurationMeasure>
+         </cac:PlannedPeriod>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+</ContractNotice>

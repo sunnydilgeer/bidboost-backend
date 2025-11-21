@@ -1,0 +1,894 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+   <ext:UBLExtensions>
+      <ext:UBLExtension>
+         <ext:ExtensionContent>
+            <efext:EformsExtension>
+               <efac:NoticeSubType>
+                  <cbc:SubTypeCode listName="notice-subtype">16</cbc:SubTypeCode>
+               </efac:NoticeSubType>
+               <efac:Organizations>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>www.uck.pl</cbc:WebsiteURI>
+                        <cbc:EndpointID>https://uck-gdansk.ezamawiajacy.pl/pn/UCK-GDANSK/</cbc:EndpointID>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Uniwersyteckie Centrum Kliniczne</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>ul. Dębinki 7</cbc:StreetName>
+                           <cbc:Department>Dział Zamówień Publicznych</cbc:Department>
+                           <cbc:CityName>Gdańsk</cbc:CityName>
+                           <cbc:PostalZone>80-952</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL633</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>NIP 9570730409</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Name>Dział Zamówień Publicznych</cbc:Name>
+                           <cbc:Telephone>585844899</cbc:Telephone>
+                           <cbc:ElectronicMail>jfudyma@uck.gda.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>www.uzp.gov.pl/kio</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Krajowa Izba Odwoławcza</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>ul. Postępu 17a</cbc:StreetName>
+                           <cbc:CityName>Warszawa</cbc:CityName>
+                           <cbc:PostalZone>02-676</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL911</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>.</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Name>Prezes Krajowej Izby Odwołąwczej</cbc:Name>
+                           <cbc:Telephone>(22) 458 78 01</cbc:Telephone>
+                           <cbc:ElectronicMail>odwolania@uzp.gov.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://op.europa.eu</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0000</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Publications Office of the European Union</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:CityName>Luxembourg</cbc:CityName>
+                           <cbc:PostalZone>2417</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">LU000</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">LUX</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>PUBL</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+352 29291</cbc:Telephone>
+                           <cbc:ElectronicMail>ted@publications.europa.eu</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+               </efac:Organizations>
+            <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00759277-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+         </ext:ExtensionContent>
+      </ext:UBLExtension>
+   </ext:UBLExtensions>
+   <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+   <cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+   <cbc:ID schemeName="notice-id">5ad828af-d716-4e74-998d-f8e495ec81e1</cbc:ID>
+   <cbc:ContractFolderID>feef0e87-3154-44e7-94e5-eb37bd2b3528</cbc:ContractFolderID>
+   <cbc:IssueDate>2025-11-14Z</cbc:IssueDate>
+   <cbc:IssueTime>12:09:43Z</cbc:IssueTime>
+   <cbc:VersionID>01</cbc:VersionID>
+   <cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+   <cbc:NoticeTypeCode listName="competition">cn-standard</cbc:NoticeTypeCode>
+   <cbc:NoticeLanguageCode listName="language">POL</cbc:NoticeLanguageCode>
+   <cac:ContractingParty>
+      <cbc:BuyerProfileURI>https://uck-gdansk.ezamawiajacy.pl</cbc:BuyerProfileURI>
+      <cac:ContractingPartyType>
+         <cbc:PartyTypeCode listName="buyer-legal-type">body-pl</cbc:PartyTypeCode>
+      </cac:ContractingPartyType>
+      <cac:ContractingActivity>
+         <cbc:ActivityTypeCode listName="authority-activity">health</cbc:ActivityTypeCode>
+      </cac:ContractingActivity>
+      <cac:Party>
+         <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+         </cac:PartyIdentification>
+         <cac:ServiceProviderParty>
+            <cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode>
+            <cac:Party>
+               <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0000</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:Party>
+         </cac:ServiceProviderParty>
+      </cac:Party>
+   </cac:ContractingParty>
+   <cac:TenderingTerms>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-grounds-source">epo-procurement-document</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="POL">Dotyczy wykluczenia z art. 108 ust. 1 pkt 6 ustawy Pzp
+Brak podstaw do wykluczenia, o którym mowa powyżej zostanie wstępnie zweryfikowana na podstawie przedłożonego wraz z ofertą wypełnionego Jednolitego Europejskiego Dokumentu Zamówienia.
+Wykonawca, którego oferta została najwyżej oceniona w przedmiotowym postępowaniu  w celu potwierdzenia braku podstaw do wykluczenia, na wezwanie Zamawiającego złoży następujący dokument:
+Oświadczenie wykonawcy o aktualności informacji zawartych w oświadczeniu, o którym mowa w art. 125 ust. 1 ustawy Pzp, w zakresie podstaw do wykluczenia, o którym mowa w art. 108 ust. 1 pkt 6 ustawy Pzp.
+Szczegółowy opis w SWZ.</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:Description languageID="POL">Dotyczy wykluczenia z art. 109 ust. 1 pkt 4 ustawy Pzp
+Brak podstaw do wykluczenia, o którym mowa powyżej zostanie wstępnie zweryfikowana na podstawie przedłożonego wraz z ofertą wypełnionego Jednolitego Europejskiego Dokumentu Zamówienia.
+Wykonawca, którego oferta została najwyżej oceniona w przedmiotowym postępowaniu  w celu potwierdzenia braku podstaw do wykluczenia, na wezwanie Zamawiającego złoży następujący dokument:
+Odpis lub informacji z Krajowego Rejestru Sądowego lub z Centralnej Ewidencji i Informacji o Działalności Gospodarczej, w zakresie art. 109 ust. 1 pkt 4) ustawy Pzp, sporządzonych nie wcześniej niż 3 miesiące przed jej złożeniem, jeżeli odrębne przepisy wymagają wpisu do rejestracji lub ewidencji.
+Szczegółowy opis w SWZ.</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:Description languageID="POL">Dotyczy wykluczenia z art. 109 ust. 1 pkt 4 ustawy Pzp
+Brak podstaw do wykluczenia, o którym mowa powyżej zostanie wstępnie zweryfikowana na podstawie przedłożonego wraz z ofertą wypełnionego Jednolitego Europejskiego Dokumentu Zamówienia.
+Wykonawca, którego oferta została najwyżej oceniona w przedmiotowym postępowaniu  w celu potwierdzenia braku podstaw do wykluczenia, na wezwanie Zamawiającego złoży następujący dokument:
+Odpis lub informacji z Krajowego Rejestru Sądowego lub z Centralnej Ewidencji i Informacji o Działalności Gospodarczej, w zakresie art. 109 ust. 1 pkt 4) ustawy Pzp, sporządzonych nie wcześniej niż 3 miesiące przed jej złożeniem, jeżeli odrębne przepisy wymagają wpisu do rejestracji lub ewidencji.
+Szczegółowy opis w SWZ.</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:Description languageID="POL">Dotyczy wykluczenia z art. 108 ust. 1 pkt 1 i 2 ustawy Pzp
+Brak podstaw do wykluczenia, o którym mowa powyżej zostanie wstępnie zweryfikowana na podstawie przedłożonego wraz z ofertą wypełnionego Jednolitego Europejskiego Dokumentu Zamówienia.
+Wykonawca, którego oferta została najwyżej oceniona w przedmiotowym postępowaniu  w celu potwierdzenia braku podstaw do wykluczenia, na wezwanie Zamawiającego złoży następujący dokument:
+Informację z Krajowego Rejestru Karnego w zakresie art. 108 ust. 1 pkt 1 i 2 ustawy PZP, sporządzonej nie wcześniej niż 6 miesięcy przed jej złożeniem,
+Szczegółowy opis w SWZ</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:Description languageID="POL">Dotyczy wykluczenia z art. 108 ust. 1 pkt 1 i 2 ustawy Pzp
+Brak podstaw do wykluczenia, o którym mowa powyżej zostanie wstępnie zweryfikowana na podstawie przedłożonego wraz z ofertą wypełnionego Jednolitego Europejskiego Dokumentu Zamówienia.
+Wykonawca, którego oferta została najwyżej oceniona w przedmiotowym postępowaniu  w celu potwierdzenia braku podstaw do wykluczenia, na wezwanie Zamawiającego złoży następujący dokument:
+Informację z Krajowego Rejestru Karnego w zakresie art. 108 ust. 1 pkt 1 i 2 ustawy PZP, sporządzonej nie wcześniej niż 6 miesięcy przed jej złożeniem,
+Szczegółowy opis w SWZ</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:Description languageID="POL">Dotyczy wykluczenia z art. 108 ust. 1 pkt 1 lit. h i 2 ustawy Pzp
+Brak podstaw do wykluczenia, o którym mowa powyżej zostanie wstępnie zweryfikowana na podstawie przedłożonego wraz z ofertą wypełnionego Jednolitego Europejskiego Dokumentu Zamówienia.
+Wykonawca, którego oferta została najwyżej oceniona w przedmiotowym postępowaniu  w celu potwierdzenia braku podstaw do wykluczenia, na wezwanie Zamawiającego złoży następujący dokument:
+Informację z Krajowego Rejestru Karnego w zakresie art. 108 ust. 1 pkt 1 i 2 ustawy PZP, sporządzonej nie wcześniej niż 6 miesięcy przed jej złożeniem,
+Szczegółowy opis w SWZ</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:Description languageID="POL">Dotyczy wykluczenia z art. 109 ust. 1 pkt 4 ustawy Pzp
+Brak podstaw do wykluczenia, o którym mowa powyżej zostanie wstępnie zweryfikowana na podstawie przedłożonego wraz z ofertą wypełnionego Jednolitego Europejskiego Dokumentu Zamówienia.
+Wykonawca, którego oferta została najwyżej oceniona w przedmiotowym postępowaniu  w celu potwierdzenia braku podstaw do wykluczenia, na wezwanie Zamawiającego złoży następujący dokument:
+Odpis lub informacji z Krajowego Rejestru Sądowego lub z Centralnej Ewidencji i Informacji o Działalności Gospodarczej, w zakresie art. 109 ust. 1 pkt 4) ustawy Pzp, sporządzonych nie wcześniej niż 3 miesiące przed jej złożeniem, jeżeli odrębne przepisy wymagają wpisu do rejestracji lub ewidencji.
+Szczegółowy opis w SWZ</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:Description languageID="POL">Dotyczy wykluczenia z art. 108 ust. 1 pkt 3 ustawy Pzp
+Brak podstaw do wykluczenia, o którym mowa powyżej zostanie wstępnie zweryfikowana na podstawie przedłożonego wraz z ofertą wypełnionego Jednolitego Europejskiego Dokumentu Zamówienia.
+Wykonawca, którego oferta została najwyżej oceniona w przedmiotowym postępowaniu  w celu potwierdzenia braku podstaw do wykluczenia, na wezwanie Zamawiającego złoży następujący dokument:
+Oświadczenie wykonawcy o aktualności informacji zawartych w oświadczeniu, o którym mowa w art. 125 ust. 1 ustawy Pzp, w zakresie podstaw do wykluczenia, o którym mowa w art. 108 ust. 1 pkt 3 ustawy Pzp.
+Szczegółowy opis w SWZ.</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:Description languageID="POL">Dotyczy wykluczenia z art. 108 ust. 1 pkt 3 ustawy Pzp
+Brak podstaw do wykluczenia, o którym mowa powyżej zostanie wstępnie zweryfikowana na podstawie przedłożonego wraz z ofertą wypełnionego Jednolitego Europejskiego Dokumentu Zamówienia.
+Wykonawca, którego oferta została najwyżej oceniona w przedmiotowym postępowaniu  w celu potwierdzenia braku podstaw do wykluczenia, na wezwanie Zamawiającego złoży następujący dokument:
+Oświadczenie wykonawcy o aktualności informacji zawartych w oświadczeniu, o którym mowa w art. 125 ust. 1 ustawy Pzp, w zakresie podstaw do wykluczenia, o którym mowa w art. 108 ust. 1 pkt 3 ustawy Pzp.
+Szczegółowy opis w SWZ.</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:Description languageID="POL">Dotyczy wykluczenia z art. 108 ust. 1 pkt 1 i 4 ustawy Pzp oraz postaw wykluczenia wskazanych art. 7 ust. 1 ustawy z dnia 13 kwietnia 2022 – o szczególnych rozwiązaniach w zakresie przeciwdziałania wspieraniu agresji na Ukrainę oraz służących ochronie bezpieczeństwa narodowego (Dz.U. z 2023 r. poz. 129 z poźn. zm.)
+Brak podstaw do wykluczenia, o którym mowa powyżej zostanie wstępnie zweryfikowana na podstawie przedłożonego wraz z ofertą wypełnionego Jednolitego Europejskiego Dokumentu Zamówienia oraz oświadczenia złożonego wraz z ofertą.
+Wykonawca, którego oferta została najwyżej oceniona w przedmiotowym postępowaniu  w celu potwierdzenia braku podstaw do wykluczenia, na wezwanie Zamawiającego złoży następujące dokumenty:
+a) Informację z Krajowego Rejestru Karnego w zakresie art. 108 ust. 1 pkt 1 i 4 ustawy PZP, sporządzonej nie wcześniej niż 6 miesięcy przed jej złożeniem,
+b) Oświadczenie wykonawcy o aktualności informacji zawartych w oświadczeniu, o którym mowa w art. 125 ust. 1 ustawy Pzp, w zakresie podstaw do wykluczenia, o którym mowa w art. 108 ust. 1 pkt 4 ustawy Pzp.
+c) Oświadczenie o aktualności złożonego oświadczenia o braku podstaw do wykluczenia o którym u mowa w art. 7 ust. 1 z dnia 13 kwietnia 2022 r. o szczególnych rozwiązaniach w zakresie przeciwdziałania wspieraniu agresji na Ukrainę oraz służących ochronie bezpieczeństwa narodowego  (Dz.U. z 2023 r. poz. 129 z poźn. zm.)
+Szczegółowy opis w SWZ.</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:Description languageID="POL">Dotyczy wykluczenia z art. 108 ust. 1 pkt 5 ustawy Pzp
+Brak podstaw do wykluczenia, o którym mowa powyżej zostanie wstępnie zweryfikowana na podstawie przedłożonego wraz z ofertą wypełnionego Jednolitego Europejskiego Dokumentu Zamówienia.
+Wykonawca, którego oferta została najwyżej oceniona w przedmiotowym postępowaniu  w celu potwierdzenia braku podstaw do wykluczenia, na wezwanie Zamawiającego złoży następujący dokument:
+Oświadczenie wykonawcy o aktualności informacji zawartych w oświadczeniu, o którym mowa w art. 125 ust. 1 ustawy Pzp, w zakresie podstaw do wykluczenia, o którym mowa w art. 108 ust. 1 pkt 5 ustawy Pzp.
+Szczegółowy opis w SWZ.</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:Description languageID="POL">Dotyczy wykluczenia z art. 108 ust. 1 pkt 1 i 2 ustawy Pzp
+Brak podstaw do wykluczenia, o którym mowa powyżej zostanie wstępnie zweryfikowana na podstawie przedłożonego wraz z ofertą wypełnionego Jednolitego Europejskiego Dokumentu Zamówienia.
+Wykonawca, którego oferta została najwyżej oceniona w przedmiotowym postępowaniu  w celu potwierdzenia braku podstaw do wykluczenia, na wezwanie Zamawiającego złoży następujący dokument:
+Informację z Krajowego Rejestru Karnego w zakresie art. 108 ust. 1 pkt 1 i 2 ustawy PZP, sporządzonej nie wcześniej niż 6 miesięcy przed jej złożeniem,
+Szczegółowy opis w SWZ</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:Description languageID="POL">Dotyczy wykluczenia z art. 108 ust. 1 pkt 1 i 2 ustawy Pzp
+Brak podstaw do wykluczenia, o którym mowa powyżej zostanie wstępnie zweryfikowana na podstawie przedłożonego wraz z ofertą wypełnionego Jednolitego Europejskiego Dokumentu Zamówienia.
+Wykonawca, którego oferta została najwyżej oceniona w przedmiotowym postępowaniu  w celu potwierdzenia braku podstaw do wykluczenia, na wezwanie Zamawiającego złoży następujący dokument:
+Informację z Krajowego Rejestru Karnego w zakresie art. 108 ust. 1 pkt 1 i 2 ustawy PZP, sporządzonej nie wcześniej niż 6 miesięcy przed jej złożeniem,
+Szczegółowy opis w SWZ</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:Description languageID="POL">Dotyczy wykluczenia z art. 108 ust. 1 pkt 1 i 2 ustawy Pzp
+Brak podstaw do wykluczenia, o którym mowa powyżej zostanie wstępnie zweryfikowana na podstawie przedłożonego wraz z ofertą wypełnionego Jednolitego Europejskiego Dokumentu Zamówienia.
+Wykonawca, którego oferta została najwyżej oceniona w przedmiotowym postępowaniu  w celu potwierdzenia braku podstaw do wykluczenia, na wezwanie Zamawiającego złoży następujący dokument:
+Informację z Krajowego Rejestru Karnego w zakresie art. 108 ust. 1 pkt 1 i 2 ustawy PZP, sporządzonej nie wcześniej niż 6 miesięcy przed jej złożeniem,
+Szczegółowy opis w SWZ</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:Description languageID="POL">Dotyczy wykluczenia z art. 108 ust. 1 pkt 1 i 2 ustawy Pzp
+Brak podstaw do wykluczenia, o którym mowa powyżej zostanie wstępnie zweryfikowana na podstawie przedłożonego wraz z ofertą wypełnionego Jednolitego Europejskiego Dokumentu Zamówienia.
+Wykonawca, którego oferta została najwyżej oceniona w przedmiotowym postępowaniu  w celu potwierdzenia braku podstaw do wykluczenia, na wezwanie Zamawiającego złoży następujący dokument:
+Informację z Krajowego Rejestru Karnego w zakresie art. 108 ust. 1 pkt 1 i 2 ustawy PZP, sporządzonej nie wcześniej niż 6 miesięcy przed jej złożeniem,
+Szczegółowy opis w SWZ</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:Description languageID="POL">Dotyczy wykluczenia z art. 109 ust. 1 pkt 4 ustawy Pzp
+Brak podstaw do wykluczenia, o którym mowa powyżej zostanie wstępnie zweryfikowana na podstawie przedłożonego wraz z ofertą wypełnionego Jednolitego Europejskiego Dokumentu Zamówienia.
+Wykonawca, którego oferta została najwyżej oceniona w przedmiotowym postępowaniu  w celu potwierdzenia braku podstaw do wykluczenia, na wezwanie Zamawiającego złoży następujący dokument:
+Odpis lub informacji z Krajowego Rejestru Sądowego lub z Centralnej Ewidencji i Informacji o Działalności Gospodarczej, w zakresie art. 109 ust. 1 pkt 4) ustawy Pzp, sporządzonych nie wcześniej niż 3 miesiące przed jej złożeniem, jeżeli odrębne przepisy wymagają wpisu do rejestracji lub ewidencji.
+Szczegółowy opis w SWZ</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:Description languageID="POL">Dotyczy wykluczenia z art. 109 ust. 1 pkt 4 ustawy Pzp
+Brak podstaw do wykluczenia, o którym mowa powyżej zostanie wstępnie zweryfikowana na podstawie przedłożonego wraz z ofertą wypełnionego Jednolitego Europejskiego Dokumentu Zamówienia.
+Wykonawca, którego oferta została najwyżej oceniona w przedmiotowym postępowaniu  w celu potwierdzenia braku podstaw do wykluczenia, na wezwanie Zamawiającego złoży następujący dokument:
+Odpis lub informacji z Krajowego Rejestru Sądowego lub z Centralnej Ewidencji i Informacji o Działalności Gospodarczej, w zakresie art. 109 ust. 1 pkt 4) ustawy Pzp, sporządzonych nie wcześniej niż 3 miesiące przed jej złożeniem, jeżeli odrębne przepisy wymagają wpisu do rejestracji lub ewidencji.
+Szczegółowy opis w SWZ</cbc:Description>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:LotDistribution>
+         <cbc:MaximumLotsAwardedNumeric>3</cbc:MaximumLotsAwardedNumeric>
+         <cbc:MaximumLotsSubmittedNumeric>3</cbc:MaximumLotsSubmittedNumeric>
+      </cac:LotDistribution>
+   </cac:TenderingTerms>
+   <cac:TenderingProcess>
+      <ext:UBLExtensions>
+         <ext:UBLExtension>
+            <ext:ExtensionContent>
+               <efext:EformsExtension>
+                  <efbc:ProcedureRelaunchIndicator>false</efbc:ProcedureRelaunchIndicator>
+               </efext:EformsExtension>
+            </ext:ExtensionContent>
+         </ext:UBLExtension>
+      </ext:UBLExtensions>
+      <cbc:ProcedureCode listName="procurement-procedure-type">open</cbc:ProcedureCode>
+      <cac:ProcessJustification>
+         <cbc:ProcessReasonCode listName="accelerated-procedure">true</cbc:ProcessReasonCode>
+         <cbc:ProcessReason languageID="POL">Dostawa opatrunków specjalistycznych została ujęta w "Planie postępowań o udzielenie zamówień na rok 2025" Uniwersyteckiego Centrum Klinicznego w Gdańsku. Postępowanie przetargowe o numerze 218/PN/2025 na dostawę opatrunków specjalistycznych dla UCK nie zostało rozstrzygnięte w zakresie dwóch pakietów. Wyroby medyczne będące przedmiotem niniejszego postępowania są niezbędne dla zapewnienia prawidłowego funkcjonowania całego szpitala. W związku z powyższym aby zapewnić dostęp do przedmiotowego asortymentu oraz zachować ciągłość pracy, Zamawiający - ogłaszając nowe postępowanie - skorzystał z dyspozycji art. 138 ust 2 pkt 2 ustawy PZP.</cbc:ProcessReason>
+      </cac:ProcessJustification>
+   </cac:TenderingProcess>
+   <cac:ProcurementProject>
+      <cbc:ID schemeName="InternalID">330/PN/2025</cbc:ID>
+      <cbc:Name languageID="POL">330/PN/2025 - Dostawa opatrunków specjalistycznych dla UCK</cbc:Name>
+      <cbc:Description languageID="POL">1.Przedmiotem zamówienia jest dostawa opatrunków specjalistycznych dla UCK w asortymencie, szacunkowej ilości oraz wymaganiach określonych w załączniku nr 3 do SWZ.
+2. Zaoferowane wyroby medyczne muszą być zgodne z ustawą z dnia z dnia 7 kwietnia 2022 r. o wyrobach medycznych (tj. Dz. U. z 2024, poz. 1620) oraz w wydanych na podstawie tejże ustawy, aktach wykonawczych. 
+3.Zamawiający dopuszcza składanie ofert częściowych. Pod pojęciem oferty częściowej rozumie się pojedyncze pakiety ustalone w załączniku nr 3 do SWZ. Wykonawca może złożyć ofertę na jedną, kilka lub wszystkie części.
+4.Dostawy będą następować sukcesywnie, w ilości i asortymencie, zgodnie z zamówieniami częściowymi Zamawiającego w terminie do 4 dni od daty złożenia zamówienia. Zamawiany asortyment Wykonawca zobowiązany będzie dostarczyć na własny koszt do Apteki Szpitalnej. 
+5.W przypadku, gdy Zamawiający użył w opisie przedmiotu zamówienia oznaczeń norm, ocen technicznych, specyfikacji technicznych i systemów referencji technicznych, o których mowa w art. 101 ust. 1 pkt 2 oraz ust. 3 ustawy Pzp, dopuszcza się rozwiązania równoważne. Każdorazowo, gdy wskazana jest w niniejszej SWZ lub załącznikach do SWZ norma, należy przyjąć, że w odniesieniu do niej użyto sformułowania „lub równoważna”. W przypadku gdy opis przedmiotu zamówienia odnosi się do norm, ocen technicznych, specyfikacji technicznych i systemów referencji technicznych, o których mowa w ust. 1 pkt 2 oraz ust. 3, zamawiający nie może odrzucić oferty tylko dlatego, że oferowane dostawy nie są zgodne z normami, ocenami technicznymi, specyfikacjami technicznymi i systemami referencji technicznych, do których opis przedmiotu zamówienia się odnosi, pod warunkiem że wykonawca udowodni w ofercie, w szczególności za pomocą przedmiotowych środków dowodowych, o których mowa w art. 104-107, że proponowane rozwiązania w równoważnym stopniu spełniają wymagania określone w opisie przedmiotu zamówienia.
+6.Zamawiający wymaga złożenia ofert w postaci elektronicznej. Szczegółowy opis (instrukcja) składania ofert w postaci elektronicznej zawarty został w ust XIV SWZ.
+7. Zamawiający informuje, iż w przedmiotowym postępowaniu o udzielenie zamówienia publicznego zastosowana zostanie tzw. „odwrócona kolejność oceny ofert”, o której mowa w art. 139 ustawy PZP. Zamawiający stosując powyższą procedurę, w pierwszej kolejności dokona badania i oceny ofert, a następnie dokona kwalifikacji podmiotowej wykonawcy, którego oferta została najwyżej oceniona w zakresie braku podstaw do wykluczenia.</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">supplies</cbc:ProcurementTypeCode>
+      <cbc:Note languageID="POL">1. Szczegółowy opis kryteriów oceny ofert oraz warunków udziału w postępowaniu został określone w dokumentacji postępowania.
+2. Zamawiający nie dopuszcza składania ofert wariantowych.
+3. Zamawiający wymaga złożenia ofert w postaci elektronicznej. Szczegółowy opis (instrukcja) składania ofert w postaci elektronicznej zawarty został w rozdz. XIV SWZ.
+4. Zamawiający informuje, iż w przedmiotowym postępowaniu o udzielenie zamówienia publicznego zastosowana zostanie tzw. „odwrócona kolejność oceny ofert”, o której mowa w art.139 ustawy PZP.
+5. Zamawiający stosując powyższą procedurę, w pierwszej kolejności dokona badania i oceny ofert, a następnie dokona kwalifikacji podmiotowej wykonawcy, którego oferta została najwyżej oceniona w zakresie braku podstaw do wykluczenia.
+6. Brak podstaw do wykluczenia o którym mowa w art. 108 oraz art. 109 ust. 1 pkt 4 ustawy PZP zostanie wstępnie zweryfikowany na podstawie przedłożonego wraz z ofertą wypełnionego Jednolitego Europejskiego Dokumentu Zamówienia.
+- W postępowaniu mają zastosowanie przesłanki wykluczenia na podstawie art. 7 ust. 1 ustawy z dnia 13 kwietnia 2022 r., o szczególnych rozwiązaniach w zakresie przeciwdziałania wspieraniu agresji na Ukrainę oraz służących ochronie bezpieczeństwa narodowego (Dz.U. z 2025, poz. 514).
+- W postępowaniu mają zastosowanie przesłanki wykluczenia na podstawie art. 5k dodanego do rozporządzenia Rady (UE) nr 833/2014 z dnia 31 lipca 2014 r. dotyczącego środków ograniczających w związku z działaniami Rosji destabilizującymi sytuację na Ukrainie (Dz. Urz. UE nr L 229 z 31.7.2014 ) na mocy art. 1 pkt 23 rozporządzenia 2022/576
+7. Wykaz podmiotowych środków dowodowych zawiera rozdział IX SWZ.
+8. Dokumenty i oświadczenia składane wraz z ofertą zostały wskazane w Rozdziale XIV SWZ.
+9. Wszelkie nieuregulowane w niniejszym SWZ czynności, uprawnienia, obowiązki Wykonawców i Zamawiającego, których ustawa nie nakazała zawierać Zamawiającemu w SWZ, a które mogą przyczynić się
+do właściwego przebiegu postępowania, reguluje ustawa PZP.
+10. Zamawiający przewiduje dokonanie zmian umowy w toku jej realizacji w przypadku zaistnienia okoliczności, o których mowa w art. 455 ustawy PZP.
+11. Zamawiający dopuszcza zmianę umowy zgodnie z załącznikiem 4 do SWZ.
+12. Zamawiający nie wymaga wniesienia wadium w przedmiotowym postępowaniu.
+13. Informacje o środkach komunikacji elektronicznej, przy użyciu których zamawiający będzie komunikował się z wykonawcami, oraz informacje o wymaganiach technicznych i organizacyjnych sporządzania, wysyłania i odbierania korespondencji elektronicznej zostały wskazane w Rozdziale X SWZ.
+14. Opis sposobu przygotowania i złożenia oferty został wskazany w Rozdziale XIV SWZ.
+15. Szczegóły opis dotyczący składania oferty przez Wykonawców wspólnie ubiegających się o udzielenie zamówienia (konsorcjum), Zamawiający umieścił w SWZ.
+16. Klauzula informacyjna dotycząca Rozporządzenia o Ochronie Danych Osobowych (RODO) - szczegółowy opis w ust. XXVI SWZ.
+</cbc:Note>
+      <cac:MainCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">33141110</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:RealizedLocation>
+         <cac:Address>
+            <cbc:StreetName>Uniwersyteckie Centrum Kliniczne</cbc:StreetName>
+            <cbc:AdditionalStreetName>Apteka Szpitalna</cbc:AdditionalStreetName>
+            <cbc:CityName>Gdańsk</cbc:CityName>
+            <cbc:PostalZone>80-214</cbc:PostalZone>
+            <cbc:CountrySubentityCode listName="nuts">PL633</cbc:CountrySubentityCode>
+            <cac:AddressLine>
+               <cbc:Line>ul. Smoluchowskiego 17</cbc:Line>
+            </cac:AddressLine>
+            <cac:Country>
+               <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+            </cac:Country>
+         </cac:Address>
+      </cac:RealizedLocation>
+   </cac:ProcurementProject>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+      <cac:TenderingTerms>
+         <cbc:VariantConstraintCode listName="permission">not-allowed</cbc:VariantConstraintCode>
+         <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+         <cbc:RecurringProcurementIndicator>false</cbc:RecurringProcurementIndicator>
+         <cac:RequiredFinancialGuarantee>
+            <cbc:GuaranteeTypeCode listName="tender-guarantee-required">false</cbc:GuaranteeTypeCode>
+         </cac:RequiredFinancialGuarantee>
+         <cac:CallForTendersDocumentReference>
+            <cbc:ID>https://uck-gdansk.ezamawiajacy.pl/pn/UCK-GDANSK/demand/247600/notice/public/details</cbc:ID>
+            <cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+            <cac:Attachment>
+               <cac:ExternalReference>
+                  <cbc:URI>https://uck-gdansk.ezamawiajacy.pl/pn/UCK-GDANSK/demand/247600/notice/public/details</cbc:URI>
+               </cac:ExternalReference>
+            </cac:Attachment>
+         </cac:CallForTendersDocumentReference>
+         <cac:PaymentTerms>
+            <cbc:Note languageID="POL">Zgodnie z zapisami SWZ</cbc:Note>
+         </cac:PaymentTerms>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="selection-criteria-source">epo-procurement-document</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="reserved-procurement">none</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="reserved-execution">no</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="conditions">performance</cbc:ExecutionRequirementCode>
+            <cbc:Description languageID="POL">Zgodnie z załącznikiem nr 4 do SWZ</cbc:Description>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="einvoicing">allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="ecatalog-submission">not-allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:AwardingTerms>
+            <cac:AwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>60</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                  <cbc:Description languageID="POL">Waga: 60 %
+Liczba punktów jaką można uzyskać w kryterium cena, obliczona zostanie na podstawie wzoru określonego w Specyfikacji warunków zamówienia w Rozdziale  XVIII. Opis kryteriów oceny ofert wraz z podaniem wag tych kryteriów i sposobu oceny ofert.</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>40</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+                  <cbc:Description languageID="POL">Termin dostawy - Waga: 40 %
+Liczba punktów jaką można uzyskać w kryterium termin dostawy, został określony w Specyfikacji warunków zamówienia w Rozdziale XVIII.</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+            </cac:AwardingCriterion>
+         </cac:AwardingTerms>
+         <cac:TenderRecipientParty>
+            <cbc:EndpointID>https://uck-gdansk.ezamawiajacy.pl/pn/UCK-GDANSK/demand/247600/notice/public/details</cbc:EndpointID>
+            <cac:PartyIdentification>
+               <cbc:ID>ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:TenderRecipientParty>
+         <cac:TenderEvaluationParty>
+            <cac:PartyIdentification>
+               <cbc:ID>ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:TenderEvaluationParty>
+         <cac:TenderValidityPeriod>
+            <cbc:DurationMeasure unitCode="DAY">90</cbc:DurationMeasure>
+         </cac:TenderValidityPeriod>
+         <cac:AppealTerms>
+            <cac:PresentationPeriod>
+               <cbc:Description languageID="POL">1. Odwołanie wnosi się w terminie: 
+a) 10 dni od dnia przekazania informacji o czynności zamawiającego stanowiącej podstawę jego wniesienia, jeżeli informacja została przekazana przy użyciu środków komunikacji elektronicznej, 
+b) 15 dni od dnia przekazania informacji o czynności zamawiającego stanowiącej podstawę jego wniesienia, jeżeli informacja została przekazana w sposób inny niż określony w lit. a;
+2. Odwołanie wobec treści ogłoszenia wszczynającego postępowanie o udzielenie zamówienia lub konkurs lub wobec treści dokumentów zamówienia wnosi się w terminie 10 dni od dnia publikacji ogłoszenia w Dzienniku Urzędowym Unii Europejskiej lub zamieszczenia dokumentów zamówienia na stronie internetowej, w przypadku zamówień, których wartość jest równa albo przekracza progi unijne.
+3. Odwołanie w przypadkach innych niż określone w ust. 1 i 2 wnosi się w terminie	10 dni od dnia, w którym powzięto lub przy zachowaniu należytej staranności można było powziąć wiadomość o okolicznościach stanowiących podstawę jego wniesienia, w przypadku zamówień, których wartość jest równa albo przekracza progi unijne.
+4. Zasady wnoszenia środków ochrony prawnej w niniejszym postępowaniu regulują przepisy Działu IX ustawy z dnia 11 września 2019 roku Prawo zamówień Publicznych.</cbc:Description>
+            </cac:PresentationPeriod>
+            <cac:AppealInformationParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealInformationParty>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+         </cac:AppealTerms>
+         <cac:Language>
+            <cbc:ID>POL</cbc:ID>
+         </cac:Language>
+         <cac:PostAwardProcess>
+            <cbc:ElectronicOrderUsageIndicator>true</cbc:ElectronicOrderUsageIndicator>
+            <cbc:ElectronicPaymentUsageIndicator>true</cbc:ElectronicPaymentUsageIndicator>
+         </cac:PostAwardProcess>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <ext:UBLExtensions>
+            <ext:UBLExtension>
+               <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                     <efbc:ProcedureRelaunchIndicator>false</efbc:ProcedureRelaunchIndicator>
+                  </efext:EformsExtension>
+               </ext:ExtensionContent>
+            </ext:UBLExtension>
+         </ext:UBLExtensions>
+         <cbc:SubmissionMethodCode listName="esubmission">required</cbc:SubmissionMethodCode>
+         <cbc:GovernmentAgreementConstraintIndicator>false</cbc:GovernmentAgreementConstraintIndicator>
+         <cac:TenderSubmissionDeadlinePeriod>
+            <cbc:EndDate>2025-12-02+01:00</cbc:EndDate>
+            <cbc:EndTime>09:30:00+01:00</cbc:EndTime>
+         </cac:TenderSubmissionDeadlinePeriod>
+         <cac:OpenTenderEvent>
+            <cbc:OccurrenceDate>2025-12-02+01:00</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>10:00:00+01:00</cbc:OccurrenceTime>
+            <cbc:Description languageID="POL">Informacje o osobach upoważnionych i procedurze otwarcia: Zgodnie z rozdziałem XVI SWZ.</cbc:Description>
+            <cac:OccurenceLocation>
+               <cbc:Description languageID="POL">https://uck-gdansk.ezamawiajacy.pl/pn/UCK-GDANSK/demand/247600/notice/public/details</cbc:Description>
+            </cac:OccurenceLocation>
+         </cac:OpenTenderEvent>
+         <cac:AuctionTerms>
+            <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+         </cac:AuctionTerms>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:ID schemeName="InternalID">Pakiet 1</cbc:ID>
+         <cbc:Name languageID="POL">Pakiet 1</cbc:Name>
+         <cbc:Description languageID="POL">Przedmiotem zamówienia jest dostawa opatrunków specjalistycznych w asortymencie, szacunkowej ilości oraz wymaganiach określonych w załączniku nr 3 do SWZ.</cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">supplies</cbc:ProcurementTypeCode>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">33141110</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:RealizedLocation>
+            <cac:Address>
+               <cbc:StreetName>Uniwersyteckie Centrum Kliniczne</cbc:StreetName>
+               <cbc:AdditionalStreetName>Apteka Szpitalna</cbc:AdditionalStreetName>
+               <cbc:CityName>Gdańsk</cbc:CityName>
+               <cbc:PostalZone>80-214</cbc:PostalZone>
+               <cbc:CountrySubentityCode listName="nuts">PL633</cbc:CountrySubentityCode>
+               <cac:AddressLine>
+                  <cbc:Line>ul. Smoluchowskiego 17</cbc:Line>
+               </cac:AddressLine>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+         <cac:PlannedPeriod>
+            <cbc:DurationMeasure unitCode="MONTH">12</cbc:DurationMeasure>
+         </cac:PlannedPeriod>
+         <cac:ContractExtension>
+            <cbc:OptionsDescription languageID="POL">Zgodnie z zapisami w załączniku nr 4 do SWZ.</cbc:OptionsDescription>
+         </cac:ContractExtension>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0002</cbc:ID>
+      <cac:TenderingTerms>
+         <cbc:VariantConstraintCode listName="permission">not-allowed</cbc:VariantConstraintCode>
+         <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+         <cbc:RecurringProcurementIndicator>false</cbc:RecurringProcurementIndicator>
+         <cac:RequiredFinancialGuarantee>
+            <cbc:GuaranteeTypeCode listName="tender-guarantee-required">false</cbc:GuaranteeTypeCode>
+         </cac:RequiredFinancialGuarantee>
+         <cac:CallForTendersDocumentReference>
+            <cbc:ID>https://uck-gdansk.ezamawiajacy.pl/pn/UCK-GDANSK/demand/247600/notice/public/details</cbc:ID>
+            <cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+            <cac:Attachment>
+               <cac:ExternalReference>
+                  <cbc:URI>https://uck-gdansk.ezamawiajacy.pl/pn/UCK-GDANSK/demand/247600/notice/public/details</cbc:URI>
+               </cac:ExternalReference>
+            </cac:Attachment>
+         </cac:CallForTendersDocumentReference>
+         <cac:PaymentTerms>
+            <cbc:Note languageID="POL">Zgodnie z zapisami SWZ</cbc:Note>
+         </cac:PaymentTerms>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="selection-criteria-source">epo-procurement-document</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="reserved-procurement">none</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="reserved-execution">no</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="conditions">performance</cbc:ExecutionRequirementCode>
+            <cbc:Description languageID="POL">Zgodnie z załącznikiem nr 4 do SWZ</cbc:Description>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="einvoicing">allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="ecatalog-submission">not-allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:AwardingTerms>
+            <cac:AwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>60</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                  <cbc:Description languageID="POL">Waga: 60 %
+Liczba punktów jaką można uzyskać w kryterium cena, obliczona zostanie na podstawie wzoru określonego w Specyfikacji warunków zamówienia w Rozdziale  XVIII. Opis kryteriów oceny ofert wraz z podaniem wag tych kryteriów i sposobu oceny ofert.</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>40</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+                  <cbc:Description languageID="POL">Termin dostawy - Waga: 40 %
+Liczba punktów jaką można uzyskać w kryterium termin dostawy, został określony w Specyfikacji warunków zamówienia w Rozdziale XVIII.</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+            </cac:AwardingCriterion>
+         </cac:AwardingTerms>
+         <cac:TenderRecipientParty>
+            <cbc:EndpointID>https://uck-gdansk.ezamawiajacy.pl/pn/UCK-GDANSK/demand/247600/notice/public/details</cbc:EndpointID>
+            <cac:PartyIdentification>
+               <cbc:ID>ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:TenderRecipientParty>
+         <cac:TenderEvaluationParty>
+            <cac:PartyIdentification>
+               <cbc:ID>ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:TenderEvaluationParty>
+         <cac:TenderValidityPeriod>
+            <cbc:DurationMeasure unitCode="DAY">90</cbc:DurationMeasure>
+         </cac:TenderValidityPeriod>
+         <cac:AppealTerms>
+            <cac:PresentationPeriod>
+               <cbc:Description languageID="POL">1. Odwołanie wnosi się w terminie: 
+a) 10 dni od dnia przekazania informacji o czynności zamawiającego stanowiącej podstawę jego wniesienia, jeżeli informacja została przekazana przy użyciu środków komunikacji elektronicznej, 
+b) 15 dni od dnia przekazania informacji o czynności zamawiającego stanowiącej podstawę jego wniesienia, jeżeli informacja została przekazana w sposób inny niż określony w lit. a;
+2. Odwołanie wobec treści ogłoszenia wszczynającego postępowanie o udzielenie zamówienia lub konkurs lub wobec treści dokumentów zamówienia wnosi się w terminie 10 dni od dnia publikacji ogłoszenia w Dzienniku Urzędowym Unii Europejskiej lub zamieszczenia dokumentów zamówienia na stronie internetowej, w przypadku zamówień, których wartość jest równa albo przekracza progi unijne.
+3. Odwołanie w przypadkach innych niż określone w ust. 1 i 2 wnosi się w terminie 10 dni od dnia, w którym powzięto lub przy zachowaniu należytej staranności można było powziąć wiadomość o okolicznościach stanowiących podstawę jego wniesienia, w przypadku zamówień, których wartość jest równa albo przekracza progi unijne.
+4. Zasady wnoszenia środków ochrony prawnej w niniejszym postępowaniu regulują przepisy Działu IX ustawy z dnia 11 września 2019 roku Prawo zamówień Publicznych.</cbc:Description>
+            </cac:PresentationPeriod>
+            <cac:AppealInformationParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealInformationParty>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+         </cac:AppealTerms>
+         <cac:Language>
+            <cbc:ID>POL</cbc:ID>
+         </cac:Language>
+         <cac:PostAwardProcess>
+            <cbc:ElectronicOrderUsageIndicator>true</cbc:ElectronicOrderUsageIndicator>
+            <cbc:ElectronicPaymentUsageIndicator>true</cbc:ElectronicPaymentUsageIndicator>
+         </cac:PostAwardProcess>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <ext:UBLExtensions>
+            <ext:UBLExtension>
+               <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                     <efbc:ProcedureRelaunchIndicator>false</efbc:ProcedureRelaunchIndicator>
+                  </efext:EformsExtension>
+               </ext:ExtensionContent>
+            </ext:UBLExtension>
+         </ext:UBLExtensions>
+         <cbc:SubmissionMethodCode listName="esubmission">required</cbc:SubmissionMethodCode>
+         <cbc:GovernmentAgreementConstraintIndicator>false</cbc:GovernmentAgreementConstraintIndicator>
+         <cac:TenderSubmissionDeadlinePeriod>
+            <cbc:EndDate>2025-12-02+01:00</cbc:EndDate>
+            <cbc:EndTime>09:30:00+01:00</cbc:EndTime>
+         </cac:TenderSubmissionDeadlinePeriod>
+         <cac:OpenTenderEvent>
+            <cbc:OccurrenceDate>2025-12-02+01:00</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>10:00:00+01:00</cbc:OccurrenceTime>
+            <cbc:Description languageID="POL">Informacje o osobach upoważnionych i procedurze otwarcia: Zgodnie z rozdziałem XVI SWZ.</cbc:Description>
+            <cac:OccurenceLocation>
+               <cbc:Description languageID="POL">https://uck-gdansk.ezamawiajacy.pl/pn/UCK-GDANSK/demand/247600/notice/public/details</cbc:Description>
+            </cac:OccurenceLocation>
+         </cac:OpenTenderEvent>
+         <cac:AuctionTerms>
+            <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+         </cac:AuctionTerms>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:ID schemeName="InternalID">Pakiet 2</cbc:ID>
+         <cbc:Name languageID="POL">Pakiet 2</cbc:Name>
+         <cbc:Description languageID="POL">Przedmiotem zamówienia jest dostawa opatrunków specjalistycznych w asortymencie, szacunkowej ilości oraz wymaganiach określonych w załączniku nr 3 do SWZ.</cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">supplies</cbc:ProcurementTypeCode>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">33141110</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:RealizedLocation>
+            <cac:Address>
+               <cbc:StreetName>Uniwersyteckie Centrum Kliniczne</cbc:StreetName>
+               <cbc:AdditionalStreetName>Apteka Szpitalna</cbc:AdditionalStreetName>
+               <cbc:CityName>Gdańsk</cbc:CityName>
+               <cbc:PostalZone>80-214</cbc:PostalZone>
+               <cbc:CountrySubentityCode listName="nuts">PL633</cbc:CountrySubentityCode>
+               <cac:AddressLine>
+                  <cbc:Line>ul. Smoluchowskiego 17</cbc:Line>
+               </cac:AddressLine>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+         <cac:PlannedPeriod>
+            <cbc:DurationMeasure unitCode="MONTH">12</cbc:DurationMeasure>
+         </cac:PlannedPeriod>
+         <cac:ContractExtension>
+            <cbc:OptionsDescription languageID="POL">Zgodnie z zapisami w załączniku nr 4 do SWZ.</cbc:OptionsDescription>
+         </cac:ContractExtension>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0003</cbc:ID>
+      <cac:TenderingTerms>
+         <cbc:VariantConstraintCode listName="permission">not-allowed</cbc:VariantConstraintCode>
+         <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+         <cbc:RecurringProcurementIndicator>false</cbc:RecurringProcurementIndicator>
+         <cac:RequiredFinancialGuarantee>
+            <cbc:GuaranteeTypeCode listName="tender-guarantee-required">false</cbc:GuaranteeTypeCode>
+         </cac:RequiredFinancialGuarantee>
+         <cac:CallForTendersDocumentReference>
+            <cbc:ID>https://uck-gdansk.ezamawiajacy.pl/pn/UCK-GDANSK/demand/247600/notice/public/details</cbc:ID>
+            <cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+            <cac:Attachment>
+               <cac:ExternalReference>
+                  <cbc:URI>https://uck-gdansk.ezamawiajacy.pl/pn/UCK-GDANSK/demand/247600/notice/public/details</cbc:URI>
+               </cac:ExternalReference>
+            </cac:Attachment>
+         </cac:CallForTendersDocumentReference>
+         <cac:PaymentTerms>
+            <cbc:Note languageID="POL">Zgodnie z zapisami SWZ</cbc:Note>
+         </cac:PaymentTerms>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="selection-criteria-source">epo-procurement-document</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="reserved-procurement">none</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="reserved-execution">no</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="conditions">performance</cbc:ExecutionRequirementCode>
+            <cbc:Description languageID="POL">Zgodnie z załącznikiem nr 4 do SWZ</cbc:Description>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="einvoicing">allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="ecatalog-submission">not-allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:AwardingTerms>
+            <cac:AwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>60</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                  <cbc:Description languageID="POL">Waga: 60 %
+Liczba punktów jaką można uzyskać w kryterium cena, obliczona zostanie na podstawie wzoru określonego w Specyfikacji warunków zamówienia w Rozdziale  XVIII. Opis kryteriów oceny ofert wraz z podaniem wag tych kryteriów i sposobu oceny ofert.</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>40</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+                  <cbc:Description languageID="POL">Termin dostawy - Waga: 40 %
+Liczba punktów jaką można uzyskać w kryterium termin dostawy, został określony w Specyfikacji warunków zamówienia w Rozdziale XVIII.</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+            </cac:AwardingCriterion>
+         </cac:AwardingTerms>
+         <cac:TenderRecipientParty>
+            <cbc:EndpointID>https://uck-gdansk.ezamawiajacy.pl/pn/UCK-GDANSK/demand/247600/notice/public/details</cbc:EndpointID>
+            <cac:PartyIdentification>
+               <cbc:ID>ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:TenderRecipientParty>
+         <cac:TenderEvaluationParty>
+            <cac:PartyIdentification>
+               <cbc:ID>ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:TenderEvaluationParty>
+         <cac:TenderValidityPeriod>
+            <cbc:DurationMeasure unitCode="DAY">90</cbc:DurationMeasure>
+         </cac:TenderValidityPeriod>
+         <cac:AppealTerms>
+            <cac:PresentationPeriod>
+               <cbc:Description languageID="POL">1. Odwołanie wnosi się w terminie: 
+a) 10 dni od dnia przekazania informacji o czynności zamawiającego stanowiącej podstawę jego wniesienia, jeżeli informacja została przekazana przy użyciu środków komunikacji elektronicznej, 
+b) 15 dni od dnia przekazania informacji o czynności zamawiającego stanowiącej podstawę jego wniesienia, jeżeli informacja została przekazana w sposób inny niż określony w lit. a;
+2. Odwołanie wobec treści ogłoszenia wszczynającego postępowanie o udzielenie zamówienia lub konkurs lub wobec treści dokumentów zamówienia wnosi się w terminie 10 dni od dnia publikacji ogłoszenia w Dzienniku Urzędowym Unii Europejskiej lub zamieszczenia dokumentów zamówienia na stronie internetowej, w przypadku zamówień, których wartość jest równa albo przekracza progi unijne.
+3. Odwołanie w przypadkach innych niż określone w ust. 1 i 2 wnosi się w terminie	10 dni od dnia, w którym powzięto lub przy zachowaniu należytej staranności można było powziąć wiadomość o okolicznościach stanowiących podstawę jego wniesienia, w przypadku zamówień, których wartość jest równa albo przekracza progi unijne.
+4. Zasady wnoszenia środków ochrony prawnej w niniejszym postępowaniu regulują przepisy Działu IX ustawy z dnia 11 września 2019 roku Prawo zamówień Publicznych.</cbc:Description>
+            </cac:PresentationPeriod>
+            <cac:AppealInformationParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealInformationParty>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+         </cac:AppealTerms>
+         <cac:Language>
+            <cbc:ID>POL</cbc:ID>
+         </cac:Language>
+         <cac:PostAwardProcess>
+            <cbc:ElectronicOrderUsageIndicator>true</cbc:ElectronicOrderUsageIndicator>
+            <cbc:ElectronicPaymentUsageIndicator>true</cbc:ElectronicPaymentUsageIndicator>
+         </cac:PostAwardProcess>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <ext:UBLExtensions>
+            <ext:UBLExtension>
+               <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                     <efbc:ProcedureRelaunchIndicator>false</efbc:ProcedureRelaunchIndicator>
+                  </efext:EformsExtension>
+               </ext:ExtensionContent>
+            </ext:UBLExtension>
+         </ext:UBLExtensions>
+         <cbc:SubmissionMethodCode listName="esubmission">required</cbc:SubmissionMethodCode>
+         <cbc:GovernmentAgreementConstraintIndicator>false</cbc:GovernmentAgreementConstraintIndicator>
+         <cac:TenderSubmissionDeadlinePeriod>
+            <cbc:EndDate>2025-12-02+01:00</cbc:EndDate>
+            <cbc:EndTime>09:30:00+01:00</cbc:EndTime>
+         </cac:TenderSubmissionDeadlinePeriod>
+         <cac:OpenTenderEvent>
+            <cbc:OccurrenceDate>2025-12-02+01:00</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>10:00:00+01:00</cbc:OccurrenceTime>
+            <cbc:Description languageID="POL">Informacje o osobach upoważnionych i procedurze otwarcia: Zgodnie z rozdziałem XVI SWZ.</cbc:Description>
+            <cac:OccurenceLocation>
+               <cbc:Description languageID="POL">https://uck-gdansk.ezamawiajacy.pl/pn/UCK-GDANSK/demand/247600/notice/public/details</cbc:Description>
+            </cac:OccurenceLocation>
+         </cac:OpenTenderEvent>
+         <cac:AuctionTerms>
+            <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+         </cac:AuctionTerms>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:ID schemeName="InternalID">Pakiet 3</cbc:ID>
+         <cbc:Name languageID="POL">Pakiet 3</cbc:Name>
+         <cbc:Description languageID="POL">Przedmiotem zamówienia jest dostawa opatrunków specjalistycznych w asortymencie, szacunkowej ilości oraz wymaganiach określonych w załączniku nr 3 do SWZ.</cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">supplies</cbc:ProcurementTypeCode>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">33141110</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:RealizedLocation>
+            <cac:Address>
+               <cbc:StreetName>Uniwersyteckie Centrum Kliniczne</cbc:StreetName>
+               <cbc:AdditionalStreetName>Apteka Szpitalna</cbc:AdditionalStreetName>
+               <cbc:CityName>Gdańsk</cbc:CityName>
+               <cbc:PostalZone>80-214</cbc:PostalZone>
+               <cbc:CountrySubentityCode listName="nuts">PL633</cbc:CountrySubentityCode>
+               <cac:AddressLine>
+                  <cbc:Line>ul. Smoluchowskiego 17</cbc:Line>
+               </cac:AddressLine>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+         <cac:PlannedPeriod>
+            <cbc:DurationMeasure unitCode="MONTH">12</cbc:DurationMeasure>
+         </cac:PlannedPeriod>
+         <cac:ContractExtension>
+            <cbc:OptionsDescription languageID="POL">Zgodnie z zapisami w załączniku nr 4 do SWZ.</cbc:OptionsDescription>
+         </cac:ContractExtension>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+</ContractNotice>

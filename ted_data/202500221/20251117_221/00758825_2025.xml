@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <ext:UBLExtensions>
+      <ext:UBLExtension>
+         <ext:ExtensionContent>
+            <efext:EformsExtension>
+               <efac:NoticeSubType>
+                  <cbc:SubTypeCode listName="notice-subtype">16</cbc:SubTypeCode>
+               </efac:NoticeSubType>
+               <efac:Organizations>
+                  <efac:Organization>
+                     <efbc:AcquiringCPBIndicator>false</efbc:AcquiringCPBIndicator>
+                     <efbc:AwardingCPBIndicator>false</efbc:AwardingCPBIndicator>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://www.lwb.de</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-7001</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="DEU">Leipziger Wohnungs-und Baugesellschaft mbH</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>Wintergartenstraße 4</cbc:StreetName>
+                           <cbc:CityName>Leipzig</cbc:CityName>
+                           <cbc:PostalZone>04103</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">DED51</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>USt-ID. DE141498380</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Name>Zentraler Einkauf</cbc:Name>
+                           <cbc:Telephone>+49 341 9922 0</cbc:Telephone>
+                           <cbc:ElectronicMail>einkauf@lwb.de</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-7004</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="DEU">1. Vergabekammer des Freistaates Sachsen bei der Landesdirektion Sachsen, DS Leipzig</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>Braustraße 2</cbc:StreetName>
+                           <cbc:CityName>Leipzig</cbc:CityName>
+                           <cbc:PostalZone>04107</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">DED51</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>keine</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+49 3419773800</cbc:Telephone>
+                           <cbc:ElectronicMail>vergabekammer@lds-sachsen.de</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+               <efac:Organization><efac:Company><cac:PartyIdentification><cbc:ID schemeName="organization">ORG-7005</cbc:ID></cac:PartyIdentification><cac:PartyName><cbc:Name languageID="DEU">Datenservice Öffentlicher Einkauf (in Verantwortung des Beschaffungsamts des BMI)</cbc:Name></cac:PartyName><cac:PostalAddress><cbc:CityName>Bonn</cbc:CityName><cbc:PostalZone>53119</cbc:PostalZone><cbc:CountrySubentityCode listName="nuts">DEA22</cbc:CountrySubentityCode><cac:Country><cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode></cac:Country></cac:PostalAddress><cac:PartyLegalEntity><cbc:CompanyID schemeID="002">0204:994-DOEVD-83</cbc:CompanyID></cac:PartyLegalEntity><cac:Contact><cbc:Telephone>+49228996100</cbc:Telephone><cbc:ElectronicMail>noreply.esender_hub@bescha.bund.de</cbc:ElectronicMail></cac:Contact></efac:Company></efac:Organization></efac:Organizations>
+            <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00758825-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+         </ext:ExtensionContent>
+      </ext:UBLExtension>
+   </ext:UBLExtensions>
+   <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+   <cbc:CustomizationID>eforms-sdk-1.12</cbc:CustomizationID>
+   <cbc:ProfileID>eforms-sdk-1.12</cbc:ProfileID>
+   <cbc:ID schemeName="notice-id">3ebc320c-98e9-4276-ab3d-3caed611c64f</cbc:ID>
+   <cbc:ContractFolderID>2aa18093-61d6-484c-9f35-3a769311e9d0</cbc:ContractFolderID>
+   <cbc:IssueDate>2025-11-14+01:00</cbc:IssueDate>
+   <cbc:IssueTime>07:32:59+01:00</cbc:IssueTime>
+   <cbc:VersionID>01</cbc:VersionID>
+   <cbc:RequestedPublicationDate>2025-11-14+01:00</cbc:RequestedPublicationDate>
+   <cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+   <cbc:NoticeTypeCode listName="competition">cn-standard</cbc:NoticeTypeCode>
+   <cbc:NoticeLanguageCode listName="language">DEU</cbc:NoticeLanguageCode>
+   <cac:ContractingParty>
+      <cac:ContractingPartyType>
+         <cbc:PartyTypeCode listName="buyer-legal-type">pub-undert</cbc:PartyTypeCode>
+      </cac:ContractingPartyType>
+      <cac:ContractingActivity>
+         <cbc:ActivityTypeCode listName="authority-activity">hc-am</cbc:ActivityTypeCode>
+      </cac:ContractingActivity>
+      <cac:Party>
+         <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-7001</cbc:ID>
+         </cac:PartyIdentification>
+      <cac:ServiceProviderParty><cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode><cac:Party><cac:PartyIdentification><cbc:ID schemeName="organization">ORG-7005</cbc:ID></cac:PartyIdentification></cac:Party></cac:ServiceProviderParty></cac:Party>
+   </cac:ContractingParty>
+   <cac:TenderingTerms>
+      <cac:ProcurementLegislationDocumentReference>
+         <cbc:ID>vob-a-eu</cbc:ID>
+      </cac:ProcurementLegislationDocumentReference>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-grounds-source">epo-notice</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-other</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-corrpt</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-part</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-distortion</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-bre-env-law</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-laund</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-fraud</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-traffick</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-insolvency</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-bre-lab-law</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-liq-admin</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-misrepresent</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-partic-confl</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-prep-confl</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-misconduct</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-sanction</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-bre-soc-law</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-pmt-bre-ssc</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-as-susp</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-pmt-bre-tax</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-terror</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-natl-bre-nat-law</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">Verstoß gegen Verpflichtungen, die auf rein nationalen
+Ausschlussgründen beruhen: Es gelten die gesetzlichen
+Ausschlussgründe nach §§ 123 bis 126 GWB. Das
+Nichtvorliegen von Ausschlussgründen ist durch eine
+Eigenerklärung nachzuweisen.</cbc:Description>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+   </cac:TenderingTerms>
+   <cac:TenderingProcess>
+      <cbc:ProcedureCode listName="procurement-procedure-type">open</cbc:ProcedureCode>
+      <cac:ProcessJustification>
+         <cbc:ProcessReasonCode listName="accelerated-procedure">false</cbc:ProcessReasonCode>
+      </cac:ProcessJustification>
+   </cac:TenderingProcess>
+   <cac:ProcurementProject>
+      <cbc:ID>LWB_ZE-2025-0204</cbc:ID>
+      <cbc:Name languageID="DEU">Komplexsaierung Kochstraße 59 - 63 Los 7 Tischler</cbc:Name>
+      <cbc:Description languageID="DEU">Los 7 Tischler</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">works</cbc:ProcurementTypeCode>
+      <cbc:Note languageID="DEU">1. Die Kommunikation im Vergabeverfahren:
+Die Kommunikation für Verfahren mit ausschließlicher
+elektronischer Angebotsabgabe erfolgt nur über die Plattform
+evergabe.de. Informationen über Änderungen der
+Bekanntmachung/Vergabeunterlagen sowie nach der
+Angebostöffnung folgende Kommunikation (z.B.
+Bieterinformation) werden elektonisch über evergabe.de
+bereitsgestellt. Auch die Bieterfragen zu den
+Vergabeunterlagen müssen elektronisch über evergabe.de
+gestellt werden. Deren Beantwortung erfolgt ebenfalls
+elektronisch über die Plattform. Werden die erforderlichen
+Unterlagen ohne Registrierung kostenfrei durch die Bewerber
+heruntergeladen, erfolgt keine automatische Benachrichtigung
+über mögliche Änderungen zur Vergabe. Informationen zu den
+technischen Anforderungen und Hilfe bei technischen
+Problemen erhalten Sie unter evergabe.de.
+
+2. Auskünfte/Rückfragen zum Verfahren:
+Bieterfragen sind bis zum  01.12.2025  zugelassen, für später eingehende Fragen
+kann eine rechtzeitige Beantwortung nicht sichergestellt werden.
+
+3. Werden im Vergabeverfahren mehrere Versionen der
+Vergabeunterlagen zur Verfügung gestellt, ist zwingend die
+aktuellste Version zur Angebotsabgabe zu verwenden.
+Andernfalls kann das Angebot ausgeschlossen werden.
+
+4. Die Einreichung der Angebote per Telefax, E-Mail oder über
+die Nachrichtenfunktion der Vergabeplattform ist nicht zulässig.
+Elektronische Angebotsabgabe ist nur in Textform mit den dafür vorgesehenen elektronischen Dokumenten zugelassen Angebotsschreiben  und Eigenerklärungen sind in Textform zu zeichnen.
+
+5. Nicht fristgerecht eingereichte Angebote werden im weiteren
+Verfahren nicht berücksichtigt.
+
+6. Nicht deutschsprachigen Nachweisen ist eine Übersetzung in
+Deutsch beizufügen.
+
+7. Allgemeine Werbebroschüren und weitere Unterlagen zur
+Vorstellung des Bieters sowie zusätzliche Angaben, die über
+die geforderten hinausgehen, sind nicht erwünscht und werden
+nicht berücksichtigt.</cbc:Note>
+      <cac:MainCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">45421000</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:RealizedLocation>
+         <cac:Address>
+            <cbc:StreetName>Kochstraße 59 - 63</cbc:StreetName>
+            <cbc:CityName>Leipzig</cbc:CityName>
+            <cbc:PostalZone>04275</cbc:PostalZone>
+            <cbc:CountrySubentityCode listName="nuts">DED51</cbc:CountrySubentityCode>
+            <cac:Country>
+               <cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+            </cac:Country>
+         </cac:Address>
+      </cac:RealizedLocation>
+   </cac:ProcurementProject>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0000</cbc:ID>
+      <cac:TenderingTerms>
+         <ext:UBLExtensions>
+            <ext:UBLExtension>
+               <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-staff-qual</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">1. Kriterium Eignung zur Berufsausübung
+Der Bieter hat zum Nachweis seiner Befähigung und
+Erlaubnis zur Berufsausübung mit Angebotsabgabe
+eine Eigenerklärung zur Eignung (Formblatt 124 der
+Vergabeunterlagen) mit folgenden Angaben
+einzureichen:
+1.1. Eintragung in das Berufs- oder
+Handelsregister des Sitzes oder Wohnsitzes -
+zumZeitpunkt der Angebotsabgabe nicht älter als 1 Jahr; 
+1.2. Eintragung in die Handwerksrolle des Sitzes
+oder Wohnsitzes- soweit zutreffend mit Nachweise der
+Fachkunde als Tischler oder Einbau nenormter Baufertigteile mit Handwerksrolle, Mitgliedschaft in IHK etc.) -
+1.3. Angabe, dass nachweislich keine schwere
+Verfehlungbegangen wurde, die die Zuverlässigkeit
+als Bewerber in Frage stellt;
+1.4. gültige Unbedenklichkeitsbescheinigung der
+Berufsgenossenschaft;
+2. Der Nachweis der Eignung
+kann auch durch einen Eintrag in die Liste des
+Vereins für die Präqualifikation von
+Bauunternehmen e. V. (Präqualifikationsverzeichnis)
+geführt werden; 3. Beim vorgesehenen
+Einsatz von Nachunternehmen hat der
+Auftragnehmer, nach gesonderter Aufforderung
+durch die Vergabestelle, geeignete Nachweise auch vom Nachunternehmer vorzulegen, um eine
+wirtschaftlich, technisch und organisatorisch
+ordnungsgemäße Vertragserfüllung zu
+gewährleisten. Die Verpflichtungserklärung für
+Leistungen anderer Unternehmen Formblatt
+236 liegt den Verdingungsunterlagen bei; 4. Gelangt
+das Angebot eines nicht präqualifizierten Bieters in
+die engere Wahl, sind die im Formblatt 124
+angegebenen Bescheinigungen
+innerhalb von 6 Kalendertagen nach Aufforderung
+vorzulegen. Formblatt 124 liegt den
+Verdingungsunterlagen bei.</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-other</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">1. Kriterium: Wirtschaftliche und finanzielle
+Leistungsfähigkeit
+Der Bieter hat zum Nachweis seiner wirtschaftlichen
+und finanziellen Leistungsfähigkeit mit Angebotsabgabe eine
+Eigenerklärung zur Eignung (Formblatt 124 der
+Vergabeunterlagen) mit folgenden Angaben
+einzureichen:
+1.1. Umsatz des Unternehmens
+jeweils bezogen auf die letzten 3 abgeschlossenen
+Geschäftsjahre (2022-2024), soweit er Bauleistungen
+und andere Leistungen betrifft, die mit der zu
+vergebenden Leistung vergleichbar sind, unter
+Einschluss des Anteils bei gemeinsam mit anderen
+Unternehmen ausgeführten Aufträgen;
+1.2. Angaben zu Insolvenzverfahren und Liquidation;
+1.3. Angaben zur Zahlung von Steuern;
+Abgaben und Beiträgen zur gesetzlichen
+Sozialversicherung;
+Unbedenklichkeitsbescheinigungen der
+Krankenkassen;
+1.4. Der Nachweis einer bestehenden
+Betriebshaftpflichtversicherung für 2025/2026 mit
+Angabe der Deckungssummen. Der Nachweis des
+Versicherungsschutzes kann durch eine Bestätigung
+der Versicherung (z. B. in Form einer
+Kopie der Versicherungspolice) geführt werden.
+2. der Nachweis der Eignung kann auch
+durch einen Eintrag in die Liste des Vereins für die
+Präqualifikation von Bauunternehmen e. V.
+(Präqualifikationsverzeichnis) geführt werden; 3. beim
+vorgesehenen Einsatz von
+Nachunternehmen hat der Auftragnehmer, nach
+gesonderter Aufforderung durch die
+Vergabestelle, geeignete Nachweise auch vom
+Nachunternehmer vorzulegen, um eine wirtschaftlich, technisch und organisatorisch
+ordnungsgemäße Vertragserfüllung zu
+gewährleisten; 4. gelangt das Angebot eines nicht
+präqualifizierten Bieters in die engere Wahl,
+sind die im Formblatt 124 angegebenen
+Bescheinigungen innerhalb von 6 Kalendertagen
+nach Aufforderung vorzulegen. Formblatt 124 liegt
+den Verdingungsunterlagen bei.</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-ref-work</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">Kriterium: Technische und berufliche
+Leistungsfähigkeit
+Der Bieter hat zum Nachweis seiner technischen und
+beruflichen Leistungsfähigkeit mit Angebotsabgabe
+eine Eigenerklärung zur Eignung mit folgenden
+Angaben einzureichen:
+1.1. Angaben über die Zahl der in den letzten 3
+abgeschlossenen Kalenderjahren (2022-2024)
+jahresdurchschnittlich beschäftigten Arbeitskräfte,
+gegliedert nach Lohngruppen mit gesondert
+ausgewiesenem technischen Leitungspersonal;
+1.2. eine Erklärung, aus der hervorgeht, über welche
+Ausstattung, welche Geräte und welche technische Ausrüstung das Unternehmen für die
+Ausführung des Auftrags verfügt;
+1.3.Vorlage von 3 Referenzen in den letzten 5
+abgeschlossenen Geschäftsjahren (2020 -2024) die
+mit der ausgeschriebenen Leistung (Menge/Umfang
+und Art der Leistung vergleichbar sind.
+Sind vergleichbare Referenzen bei
+präqualifizierten Bietern nicht in der PQ Datenbank
+hinterlegt, hat der Bieter geeignete
+Referenzen zusätzlich mit dem Angebot vorzulegen!
+2. Der Nachweis der Eignung kann auch
+durch einen Eintrag in die Liste des Vereins für die
+Präqualifikation von Bauunternehmen e. V.
+(Präqualifikationsverzeichnis) geführt werden; 3.
+Beim
+vorgesehenen Einsatz von
+Nachunternehmen hat der Auftragnehmer, nach
+gesonderter Aufforderung durch die
+Vergabestelle, geeignete Nachweise auch vom
+Nachunternehmer vorzulegen, um eine
+wirtschaftlich, technisch und organisatorisch
+ordnungsgemäße Vertragserfüllung zu
+gewährleisten; 4. Gelangt das Angebot eines nicht
+präqualifizierten Bieters in die engere Wahl, sind die
+im Formblatt 124 benannten
+Referenzbescheinigungen innerhalb von 6
+Kalendertagen nach Aufforderung durch die
+Vergabestelle vorzulegen. Formblatt 124 liegt den
+Verdingungsunterlagen bei.
+:</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:StrategicProcurement>
+                        <efbc:ApplicableLegalBasis listName="cvd-scope">false</efbc:ApplicableLegalBasis>
+                     </efac:StrategicProcurement>
+                  </efext:EformsExtension>
+               </ext:ExtensionContent>
+            </ext:UBLExtension>
+         </ext:UBLExtensions>
+         <cbc:VariantConstraintCode listName="permission">not-allowed</cbc:VariantConstraintCode>
+         <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+         <cbc:RequiredCurriculaCode listName="requirement-stage">not-requ</cbc:RequiredCurriculaCode>
+         <cbc:RecurringProcurementIndicator>false</cbc:RecurringProcurementIndicator>
+         <cbc:MultipleTendersCode listName="permission">not-allowed</cbc:MultipleTendersCode>
+         <cac:CallForTendersDocumentReference>
+            <ext:UBLExtensions>
+               <ext:UBLExtension>
+                  <ext:ExtensionContent>
+                     <efext:EformsExtension>
+                        <efac:OfficialLanguages>
+                           <cac:Language>
+                              <cbc:ID>DEU</cbc:ID>
+                           </cac:Language>
+                        </efac:OfficialLanguages>
+                     </efext:EformsExtension>
+                  </ext:ExtensionContent>
+               </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:ID>TenderDoc</cbc:ID>
+            <cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+            <cac:Attachment>
+               <cac:ExternalReference>
+                  <cbc:URI>https://www.evergabe.de/unterlagen/54321-Tender-19a00c89263-754fa7c445b9d0fc</cbc:URI>
+               </cac:ExternalReference>
+            </cac:Attachment>
+         </cac:CallForTendersDocumentReference>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="selection-criteria-source">epo-notice</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="missing-info-submission">late-all</cbc:TendererRequirementTypeCode>
+               <cbc:Description languageID="DEU">Eine Nachforderung von Unterlagen erfolgt gemäß § 16a  VOB/A-EU.</cbc:Description>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="reserved-procurement">none</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="reserved-execution">no</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="conditions">performance</cbc:ExecutionRequirementCode>
+            <cbc:Description languageID="DEU">Bewerbergemeinschaften haben mit ihrem Angebot eine von allen Mitgliedern unterzeichnete Erklärung abzugeben ( Formblatt 234 anbei), in der:
+— die Bildung einer Arbeitsgemeinschaft im Auftragsfall erklärt wird,
+— alle Mitglieder aufgeführt sind,
+— ein von allen Mitgliedern gegenüber dem Auftraggeber im Vergabeverfahren und darüber hinausuneingeschränkt für jedes Mitglied bevollmächtigter Vertreter mit Geldempfangsvollmacht bezeichnet ist und -die gesamtschuldnerische Haftung aller Mitglieder erklärt wird.</cbc:Description>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="einvoicing">allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="ecatalog-submission">not-allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:AwardingTerms>
+            <cac:AwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>100.00</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="DEU">Preis</cbc:Name>
+                  <cbc:Description languageID="DEU">wirtschaftlichster Gesamtpreis</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+            </cac:AwardingCriterion>
+         </cac:AwardingTerms>
+         <cac:AdditionalInformationParty>
+            <cac:PartyIdentification>
+               <cbc:ID schemeName="organization">ORG-7001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:AdditionalInformationParty>
+         <cac:TenderRecipientParty>
+            <cbc:EndpointID>https://www.evergabe.de</cbc:EndpointID>
+            <cac:PartyIdentification>
+               <cbc:ID schemeName="organization">ORG-7001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:TenderRecipientParty>
+         <cac:TenderValidityPeriod>
+            <cbc:DurationMeasure unitCode="DAY">60</cbc:DurationMeasure>
+         </cac:TenderValidityPeriod>
+         <cac:AppealTerms>
+            <cac:PresentationPeriod>
+               <cbc:Description languageID="DEU">Einlegung von Rechtsbehelfen
+Genaue Angaben zu den Fristen für die Einlegung von Rechtsbehelfen:
+Ein Antrag auf Einleitung eines Nachprüfungsverfahrens ist gemäß § 160 Abs. 3 GWB unzulässig, soweit:
+1) der Antragsteller den geltend gemachten Verstoß gegen Vergabevorschriften vor Einreichung des Nachprüfungsantrags erkannt und gegenüber dem Auftraggeber nicht innerhalb einer Frist von 10 Kalendertagen gerügt hat; der Ablauf der Frist nach § 134 Absatz 2 bleibt unberührt,
+2) Verstöße gegen Vergabevorschriften, die aufgrund der Bekanntmachung erkennbar sind, nicht spätestens bis zum Ablauf der in der Bekanntmachung benannten Frist zur Bewerbung oder zur Angebotsabgabe gegenüber dem Auftraggeber gerügt werden,
+3) Verstöße gegen Vergabevorschriften, die erst in den Vergabeunterlagen erkennbar sind, nicht spätestens bis zum Ablauf der Frist zur Bewerbung oder zur Angebotsabgabe gegenüber dem Auftraggeber gerügt werden,
+4) mehr als 15 Kalendertage nach Eingang der Mitteilung des Auftraggebers, einer Rüge nicht abhelfen zu wollen, vergangen sind. Satz 1 gilt nicht bei einem Antrag auf Feststellung der Unwirksamkeit des Vertrags nach § 135 Absatz 1 Nummer 2. § 134 Absatz 1 Satz 2 GWB bleibt unberührt.</cbc:Description>
+            </cac:PresentationPeriod>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-7004</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+         </cac:AppealTerms>
+         <cac:Language>
+            <cbc:ID>DEU</cbc:ID>
+         </cac:Language>
+         <cac:PostAwardProcess>
+            <cbc:ElectronicOrderUsageIndicator>false</cbc:ElectronicOrderUsageIndicator>
+            <cbc:ElectronicPaymentUsageIndicator>true</cbc:ElectronicPaymentUsageIndicator>
+         </cac:PostAwardProcess>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <cbc:SubmissionMethodCode listName="esubmission">allowed</cbc:SubmissionMethodCode>
+         <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+         <cac:TenderSubmissionDeadlinePeriod>
+            <cbc:EndDate>2025-12-15+01:00</cbc:EndDate>
+            <cbc:EndTime>08:00:00+01:00</cbc:EndTime>
+         </cac:TenderSubmissionDeadlinePeriod>
+         <cac:OpenTenderEvent>
+            <cbc:OccurrenceDate>2025-12-15+01:00</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>08:00:00+01:00</cbc:OccurrenceTime>
+            <cbc:Description languageID="DEU">elektronische Angebotsabgabe, bei der Öffnung der Angebote sind nur die Vertreter des Auftragsgebers anwesend</cbc:Description>
+            <cac:OccurenceLocation>
+               <cbc:Description languageID="DEU">siehe a) Vergabestelle</cbc:Description>
+            </cac:OccurenceLocation>
+         </cac:OpenTenderEvent>
+         <cac:AuctionTerms>
+            <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+         </cac:AuctionTerms>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:ID>LOT-0000</cbc:ID>
+         <cbc:Name languageID="DEU">Komplexsaierung Kochstraße 59 - 63 Los 7 Tischler</cbc:Name>
+         <cbc:Description languageID="DEU">Baustelleneinrichtung/-beräumung 1 psch
+Wohnungsabschlusstüren mit Zargen, Holz 40 Stk
+Holzumfassungszargen 163 Stk
+Wohnraumtüren, Holz 163 Stk
+Licht- bzw. Glasausschnitte 40 Stk.
+Innentüren aufarbeiten 10 Stk
+Brandschutztüren mit Zargen T30-RS, Stahlblech 15 Stk
+Stahlblechtür mit Zargen 7 Stk
+Systemtrennwand-Stahllamellen 50 m
+Stahllamellentüren mit Drückergarnituren 42 Stk.
+Fahrradständer für 7 Fahrräder 2 Stk.</cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">works</cbc:ProcurementTypeCode>
+         <cbc:SMESuitableIndicator>false</cbc:SMESuitableIndicator>
+         <cac:ProcurementAdditionalType>
+            <cbc:ProcurementTypeCode listName="strategic-procurement">none</cbc:ProcurementTypeCode>
+         </cac:ProcurementAdditionalType>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">45421000</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:PlannedPeriod>
+            <cbc:StartDate>2026-09-07+02:00</cbc:StartDate>
+            <cbc:EndDate>2027-05-14+02:00</cbc:EndDate>
+         </cac:PlannedPeriod>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+</ContractNotice>

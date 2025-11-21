@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractAwardNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractAwardNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+   <ext:UBLExtensions>
+      <ext:UBLExtension>
+         <ext:ExtensionContent>
+            <efext:EformsExtension>
+               <efac:NoticeResult>
+                  <efac:LotTender>
+                     <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                     <efbc:TenderRankedIndicator>false</efbc:TenderRankedIndicator>
+                     <efac:SubcontractingTerm>
+                        <efbc:TermCode listName="applicability">no</efbc:TermCode>
+                     </efac:SubcontractingTerm>
+                     <efac:TenderingParty>
+                        <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+                     </efac:TenderingParty>
+                     <efac:TenderLot>
+                        <cbc:ID>LOT-0001</cbc:ID>
+                     </efac:TenderLot>
+                     <efac:TenderReference>
+                        <cbc:ID>oferta KPFP sp. z o.o.</cbc:ID>
+                     </efac:TenderReference>
+                  </efac:LotTender>
+                  <efac:SettledContract>
+                     <cbc:ID schemeName="contract">CON-0001</cbc:ID>
+                     <cbc:Title languageID="POL">Umowa Operacyjna - Pożyczka</cbc:Title>
+                     <efac:ContractReference>
+                        <cbc:ID>Umowa Operacyjna - Pożyczka</cbc:ID>
+                     </efac:ContractReference>
+                     <efac:LotTender>
+                        <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                     </efac:LotTender>
+                     <efac:Funding>
+                        <efbc:FinancingIdentifier>EFRR w ramach Programu Fundusze Europejskie dla Kujaw i Pomorza na lata 2021-2027, Umowa nr UM_WR.431.3.055.2024</efbc:FinancingIdentifier>
+                        <cbc:FundingProgramCode listName="eu-programme">ERDF_2021</cbc:FundingProgramCode>
+                        <cbc:Description languageID="POL">Projekt "Regionalna Instytucja Finansowa - KPFR IF 2021-2027"</cbc:Description>
+                     </efac:Funding>
+                  </efac:SettledContract>
+                  <efac:TenderingParty>
+                     <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+                     <cbc:Name>Kujawsko-Pomorski Fundusz Pożyczkowy sp. z o.o.</cbc:Name>
+                     <efac:Tenderer>
+                        <cbc:ID schemeName="organization">ORG-0004</cbc:ID>
+                     </efac:Tenderer>
+                  </efac:TenderingParty>
+               </efac:NoticeResult>
+               <efac:NoticeSubType>
+                  <cbc:SubTypeCode listName="notice-subtype">25</cbc:SubTypeCode>
+               </efac:NoticeSubType>
+               <efac:Organizations>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>www.kpfr.pl</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Kujawsko-Pomorski Fundusz Rozwoju sp. z o.o.</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>ul. Przedzamcze 8</cbc:StreetName>
+                           <cbc:CityName>Toruń</cbc:CityName>
+                           <cbc:PostalZone>87-100</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL613</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>KRS: 0000671974, NIP: 9562324238, Regon: 366974655</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+48 56 475 63 00</cbc:Telephone>
+                           <cbc:ElectronicMail>biuro@kpfr.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://www.gov.pl/web/uzp/krajowa-izba-odwolawcza</cbc:WebsiteURI>
+                        <cbc:EndpointID>https://epuap.gov.pl/wps/portal/strefa-klienta/katalog-spraw/opis-uslugi/odwolanie-do-krajowej-izby-odwolawczej/UZP</cbc:EndpointID>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Krajowa Izba Odwoławcza</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>ul. Postępu 17A</cbc:StreetName>
+                           <cbc:CityName>Warszawa</cbc:CityName>
+                           <cbc:PostalZone>02-676</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL911</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>NIP: 5262239325, Regon: 010828091</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Name>Sekretariat Biura Odwołań</cbc:Name>
+                           <cbc:Telephone>+48 22 458 78 01</cbc:Telephone>
+                           <cbc:Telefax>+48 22 458 78 00</cbc:Telefax>
+                           <cbc:ElectronicMail>odwolania@uzp.gov.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>www.kpfp.org.pl</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0004</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Kujawsko-Pomorski Fundusz Pożyczkowy sp. z o.o.</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>ul. Henryka Sienkiewicza 38</cbc:StreetName>
+                           <cbc:CityName>Toruń</cbc:CityName>
+                           <cbc:PostalZone>87-100</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL613</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>KRS: 0000225897, NIP: 956-21-38-642, Regon: 871723445</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+48 56 475 62 90</cbc:Telephone>
+                           <cbc:ElectronicMail>biuro@kpfp.org.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efbc:NaturalPersonIndicator>false</efbc:NaturalPersonIndicator>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://op.europa.eu</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0000</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Publications Office of the European Union</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:CityName>Luxembourg</cbc:CityName>
+                           <cbc:PostalZone>2417</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">LU000</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">LUX</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>PUBL</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+352 29291</cbc:Telephone>
+                           <cbc:ElectronicMail>ted@publications.europa.eu</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+               </efac:Organizations>
+            <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00762018-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+         </ext:ExtensionContent>
+      </ext:UBLExtension>
+   </ext:UBLExtensions>
+   <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+   <cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+   <cbc:ID schemeName="notice-id">76541738-9e7c-44f1-881f-b9eb08d5541b</cbc:ID>
+   <cbc:ContractFolderID>012f3e77-574b-4706-9f4d-56978006af48</cbc:ContractFolderID>
+   <cbc:IssueDate>2025-11-14Z</cbc:IssueDate>
+   <cbc:IssueTime>11:38:45Z</cbc:IssueTime>
+   <cbc:VersionID>01</cbc:VersionID>
+   <cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+   <cbc:NoticeTypeCode listName="dir-awa-pre">veat</cbc:NoticeTypeCode>
+   <cbc:NoticeLanguageCode listName="language">POL</cbc:NoticeLanguageCode>
+   <cac:ContractingParty>
+      <cbc:BuyerProfileURI>https://platformazakupowa.pl/pn/kpfr</cbc:BuyerProfileURI>
+      <cac:ContractingPartyType>
+         <cbc:PartyTypeCode listName="buyer-legal-type">body-pl-ra</cbc:PartyTypeCode>
+      </cac:ContractingPartyType>
+      <cac:ContractingActivity>
+         <cbc:ActivityTypeCode listName="authority-activity">econ-aff</cbc:ActivityTypeCode>
+      </cac:ContractingActivity>
+      <cac:Party>
+         <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+         </cac:PartyIdentification>
+         <cac:ServiceProviderParty>
+            <cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode>
+            <cac:Party>
+               <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0000</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:Party>
+         </cac:ServiceProviderParty>
+      </cac:Party>
+   </cac:ContractingParty>
+   <cac:TenderingTerms>
+      <cac:ProcurementLegislationDocumentReference>
+         <cbc:ID>LocalLegalBasis</cbc:ID>
+         <cbc:DocumentDescription languageID="POL">art. 214 ust. 1 pkt. 12 ustawy Prawo zamówień publicznych</cbc:DocumentDescription>
+      </cac:ProcurementLegislationDocumentReference>
+   </cac:TenderingTerms>
+   <cac:TenderingProcess>
+      <cbc:ProcedureCode listName="procurement-procedure-type">neg-wo-call</cbc:ProcedureCode>
+      <cac:ProcessJustification>
+         <cbc:ProcessReasonCode listName="direct-award-justification">in-house</cbc:ProcessReasonCode>
+         <cbc:ProcessReason languageID="POL">Art. 214 ust. 1 pkt. 12 pzp wskazuje, że zamówienie może zostać udzielone w trybie zamówienia z wolnej ręki, gdy udzielane jest przez zamawiającego, o którym mowa w art. 4 i art. 5 ust. 1 pkt 1,  innej osobie prawnej kontrolowanej przez tego samego zamawiającego, jeżeli spełnione są następujące warunki:
+a) zamawiający, któremu udzielane jest zamówienie, sprawuje nad zamawiającym udzielającym zamówienia kontrolę odpowiadającą kontroli sprawowanej nad własnymi jednostkami, polegającą na dominującym wpływie na cele strategiczne oraz istotne decyzje dotyczące zarządzania sprawami kontrolowanego zamawiającego; warunek ten jest również spełniony, gdy kontrolę taką sprawuje inna osoba prawna kontrolowana przez zamawiającego, któremu udzielane jest zamówienie,
+b) ponad 90% działalności kontrolowanego zamawiającego dotyczy wykonywania zadań powierzonych mu przez zamawiającego sprawującego kontrolę, o której mowa w lit. a, lub przez inną osobę prawną, nad którą ten zamawiający sprawuje kontrolę, o której mowa w lit. a,
+c) w kontrolowanym zamawiającym i w zamawiającym sprawującym kontrolę nie ma bezpośredniego udziału kapitału prywatnego.
+Zamawiający i Wykonawca (Kujawsko-Pomorski Fundusz Pożyczkowy sp. z o.o. z siedzibą w Toruniu, ul. Sienkiewicza 38, KRS: 0000225897, NIP: 956-21-38-642, Regon: 871723445) są spółkami, które kontroluje ten sam zamawiający - Województwo Kujawsko-Pomorskie, tak jak własne jednostki organizacyjne. W każdej ze spółek, w ostatnich trzech latach, średniorocznie, ponad 90% przychodów pochodziło z zadań powierzonych spółkom przez WK-P, co potwierdzają dokumenty finansowe Zamawiającego oraz dokumenty i wyjaśnienia przedłożone przez Wykonawcę. W obu spółkach nie ma udziału kapitału prywatnego. Tym samym obie spółki posiadają status spółek in-house zgodnie z art. 214 ust. 1 pkt. 12 pzp. 
+Jednocześnie Wykonawca jest jedyną spółką in-house kontrolowaną przez tego samego zamawiającego co Zamawiający Kujawsko-Pomorski Fundusz Rozwoju sp. z o.o., tj. przez Województwo Kujawsko-Pomorskie, zdolną do wykonania zamówienia, posiadającą wieloletnie doświadczenie w udzielaniu pożyczek, posiadającą odpowiedni potencjał ekonomiczny, prawny i organizacyjny, w tym wykwalifikowaną kadrę oraz odpowiednie procedury i systemy m.in. w zakresie księgowości, kontroli i ochrony danych osobowych.</cbc:ProcessReason>
+      </cac:ProcessJustification>
+   </cac:TenderingProcess>
+   <cac:ProcurementProject>
+      <cbc:ID schemeName="InternalID">KPFR/PF/WR/5/2025</cbc:ID>
+      <cbc:Name languageID="POL">Wybór Pośrednika Finansowego w celu ustanowienia i zarządzania Funduszem Szczegółowym dla Pożyczek w ramach Działania 2.14 FEdKP 2021-2027</cbc:Name>
+      <cbc:Description languageID="POL">1. Przedmiotem Zamówienia jest wybór Wykonawcy (zwanego również „Pośrednikiem Finansowym” lub „PF”), który świadczyć będzie zleconą przez Zamawiającego usługę ustanowienia i zarządzania Funduszem Szczegółowym, do którego Zamawiający wniesie Bezpośredni Wkład Finansowy ze środków Projektu „Regionalna Instytucja Finansowa - KPFR IF 2021-2027” oraz Wkład Krajowy, z których udzielane będą Pożyczki na zmniejszenie zużycia zasobów i ograniczanie wytwarzania odpadów w przedsiębiorstwach na terenie województwa kujawsko-pomorskiego z możliwością częściowego umorzenia oraz które będą podlegały zwrotowi do Zamawiającego na warunkach określonych w „Istotnych Postanowieniach Umowy Operacyjnej” (dalej: IPUO). Parametry udzielanych przez Wykonawcę Pożyczek zostały określone w „Metryce Instrumentu Finansowego - Ekopożyczka z premią dla przedsiębiorstw- transformacja w kierunku GOZ”” stanowiącej załącznik nr 2 do „IPUO”.
+2. Wkład Krajowy zostanie wniesiony przez Zamawiającego na podstawie Umowy nr ZW-I.273.8.2024 o powierzeniu zadania publicznego zawartej w dniu 31.01.2024 r. przez Za-mawiającego z instytucją dysponującą tymi środkami – Województwo Kujawsko-Pomorskie. Środki przeznaczone na Wkład Krajowy w niniejszym postępowaniu będą wykorzystywane w ramach Strategii Inwestycyjnej dla reużycia środków finansowych zwróconych z instrumentów finansowych i pomocy zwrotnej w ramach Regionalnego Programu Operacyjnego Województwa Kujawsko-Pomorskiego na lata 2014- 2020.
+3. Usługa będąca przedmiotem niniejszego Zamówienia może być świadczona w odniesieniu do przedsięwzięć określonych w „Metryce Instrumentu Finansowego – Ekopożyczka z premią dla przedsiębiorstw- transformacja w kierunku GOZ”, realizowanych przez Ostatecznych Odbiorców wyłącznie na terenie województwa kujawsko-pomorskiego.
+4. Wykonawcę będzie świadczył usługi ustanowienia i zarządzania Funduszem Szczegółowym, polegającej na udzielaniu wsparcia finansowego w łącznej wysokości 24 705 367,18 zł z wkładu finansowego wniesionego z Funduszu Powierniczego przez Zamawiającego do utworzonego przez Pośrednika Finansowego Funduszu Szczegółowego. Z tego kwota 20 628 251,43 zł pochodzić będzie z Bezpośredniego wkładu finansowego, pozostałe tj. kwota 4 077 115,75 zł z Wkładu Krajowego.
+5. Wykonawca w ramach realizacji Zamówienia zobowiązany jest do osiągnięcia następujących wskaźników :
+1) Przedsiębiorstwa objęte wsparciem (w tym: mikro, małe, średnie, duże) – co najmniej 26 przedsiębiorstw. Wskaźnik musi zostać osiągnięty nie później niż do 31.12.2029 r.
+2) Przedsiębiorstwa objęte wsparciem w formie dotacji – co najmniej 26 przedsiębiorstw. Wskaźnik musi zostać osiągnięty nie później niż do 31.12.2029 r.
+3) Przedsiębiorstwa objęte wsparciem z instrumentów finansowych – co najmniej 26 przedsiębiorstw. Wskaźnik musi zostać osiągnięty nie później niż do 31.12.2029 r.
+6. Na podstawie art. 95 ust. 1 PZP Zamawiający zobowiązuje Pośrednika Finansowego do zatrudniania na podstawie stosunku pracy osób, które będą wykonywały w ramach przedmiotowego Zamówienia czynności w zakresie:
+1) analizy wniosków o udzielenie Pożyczki,
+2) rozliczenia i kontroli Pożyczki,
+3) monitorowania i windykacji spłat Pożyczki,
+4) sporządzania sprawozdań z realizacji Zamówienia
+- jeżeli wykonywanie tych czynności polega na wykonywaniu pracy w rozumieniu art. 22 § 1 ustawy z dnia 26 czerwca 1974 r. – Kodeks pracy (Dz. U. 2025 r. poz. 277 z późn. zm.).
+Zamawiający dopuszcza zatrudnienie na podstawie umowy o pracę na czas określony, nieokreślony, na zastępstwo w zakresie i na zasadach określonych w Kodeksie pracy, w pełnym lub częściowym wymiarze czasu pracy. W celu weryfikacji obowiązku zatrudnienia na podstawie stosunku pracy każdorazowo na wezwanie Zamawiającego we wskazanym w tym wezwaniu terminie – nie krótszym jednak niż 10 dni Pośrednik Finansowy zobowiązuje się przedłożyć Zamawiającemu, w tym w celu przekazania Instytucji Zarządzającej FEdKP oświadczenie Pośrednika Finansowego o zatrudnieniu na podstawie umowy o pracę osób wykonujących czynności określone powyżej. Zakres oświadczenia określają IPUO.
+</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+      <cbc:Note languageID="POL">Projekt zamówienia w pełni lub częściowo finansowany z funduszy UE. Zamówienie realizowane jest w ramach projektu pn. „Regionalna Instytucja Finansowa - KPFR IF 2021-2027” współfinansowanego z Programu Fundusze Europejskie dla Kujaw i Pomorza na lata 2021-2027. KLAUZULA INFORMACYJNA DOT. PRZETWARZANA DANYCH OSOBOWYCH. Zgodnie z art. 13 i/lub 14 Ogólnego
+Rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w
+sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie
+swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne
+rozporządzenie o ochronie danych) (Dz. Urz. UE L 119 z 04.05.2016 z późn. zm.), zwanym
+dalej RODO, Zamawiający informuje, iż: 1. Administratorem danych osobowych w
+przedmiotowym postępowaniu o udzielenie zamówienia publicznego jest: Kujawsko-Pomorski
+Fundusz Rozwoju Regionalnego Sp. z o.o., ul. Przedzamcze 8, 87-100—Toruń. Administrator
+wyznaczył Inspektora Ochrony Danych osobowych, z którym w sprawie przetwarzania Pani
+/Pana danych osobowych, można się kontaktować pisemnie poprzez kierowanie
+korespondencji na adres siedziby Spółki lub mailowo na adres e-mail: iod@kpfr.pl. 2. Dane
+osobowe przetwarzane będą na podstawie i w celu: a) związanym z przeprowadzeniem
+postępowania o udzielenie zamówienia publicznego na podstawie ustawy z dnia 11.09. 2019
+roku – Prawo zamówień publicznych (t.j. Dz. U. z 2024 r., poz. 1320 z późn. zm.), zwaną dalej
+Prawo zamówień publicznych, oraz rozporządzenia Ministra Rozwoju, Pracy i Techonologii z
+dnia 23 grudnia 2020 r. w sprawie rodzajów środków podmiotowych oraz innych dokumentów i
+oświadczeń, jakich może żądać zamawiający od wykonawcy (Dz. U. z 2020 r. poz. 2415 ze
+zm.) o ile osoba, której dane dotyczą przystąpi do postępowania lub też zostanie
+oddelegowana przez pracodawcę/zleceniodawcę do reprezentowania Wykonawcy lub też
+podjęcia działań w imieniu Wykonawcy w przedmiotowym postępowaniu, b) związanym z
+realizowaniem projektu: „Regionalna Instytucja Finansowa – KPFR IF 2021-2027”, na
+podstawie Umowy nr UM_WR.431.3.055.2024 z dnia 26.06.2024 r., zgodnie z przepisami
+prawa w związku z art. 6 ust. 1 lit.) c RODO, w tym w szczególności: - Rozporządzenia
+Parlamentu Europejskiego i Rady (UE) Nr 2021/1060 z dnia 24.06.2021 r. ustanawiającego wspólne przepisy dotyczące Europejskiego Funduszu Rozwoju Regionalnego, Europejskiego
+Funduszu Społecznego Plus, Funduszu Spójności, Funduszu na rzecz Sprawiedliwej
+Transformacji i Europejskiego Funduszu Morskiego, Rybackiego i Akwakultury, a także
+przepisy finansowe na potrzeby tych funduszy oraz na potrzeby Funduszu Azylu, Migracji i
+Integracji, Funduszu Bezpieczeństwa Wewnętrznego i Instrumentu Wsparcia Finansowego na
+rzecz Zarządzania Granicami i Polityki Wizowej (Dz. Urz. UE L 231.159 z dnia 30.06.2021 r.),
+- Rozporządzenia Parlamentu Europejskiego i Rady (UE) nr 2021/1058 z dnia 24 czerwca
+2021 r. w sprawie Europejskiego Funduszu Rozwoju Regionalnego i Funduszu Spójności (Dz.
+U. UE L 231.60 z dnia 30.06.2021 r. z późn. zm.), - Rozporządzenia Parlamentu
+Europejskiego i Rady (UE, Euratom) 2018/1046 z dnia 18 lipca 2018 r. w sprawie zasad
+finansowych mających zastosowanie do budżetu ogólnego Unii, zmieniającego
+rozporządzenia (UE) nr 1296/2013, (UE) nr 1301/2013, (UE) nr 1303/2013, (UE) nr 1304
+/2013, (UE) nr 1309/2013, (UE) nr 1316/2013, (UE) nr 223/2014 i (UE) nr 283/2014 oraz
+decyzję nr 541/2014/UE, a także uchylającego rozporządzenie (UE, Euratom) nr 966/2012
+(Dz. Urz. UE L 193.1 z dnia 30 lipca 2018 r. z późn. zm.), - Ustawy z dnia 28 kwietnia 2022 r.
+o zasadach realizacji zadań finansowanych ze środków europejskich w perspektywie
+finansowej 2021-2027 (Dz. U. z 2022 r. poz. 1079), c) realizacji umowy – w związku z art. 6
+ust. 1 lit. b) RODO, jeśli oferta zawierająca dane osobowe zostanie uznana za
+najkorzystniejszą w przedmiotowym postępowaniu, d) ochrony prawnie uzasadnionych
+interesów Administratora, tj. niezbędnych do wykonania zadań Administratora związanych z
+realizacją niniejszego postępowania o udzielenia zamówienia publicznego i rozliczenia
+otrzymanego dofinansowania/wsparcia publicznego w ramach realizowanego projektu, w
+celach archiwizacyjnych, statystycznych oraz jeżeli dana oferta zostanie wybrana jako
+najkorzystniejsza w przedmiotowym postępowaniu – w celu dochodzenia roszczeń w związku
+z zawartą umową oraz w celach kontaktowych z przedstawicielem/osobą umocowaną do
+kontaktów – w związku z art. 6 ust. 1 lit. f) RODO, e) przekazania danych innym podmiotom,
+upoważnionym z mocy prawa np. na podstawie przepisów podatkowych, ubezpieczeń
+społecznych, prawa zamówień publicznych, czy dostępu do informacji publicznej – w związku
+z art. 6 ust. 1 lit. c) RODO. 3. odbiorcami danych osobowych są lub mogą być następujące
+podmioty i osoby: a) wszystkie zainteresowane podmioty i osoby fizyczne, które złożą wniosek
+o udostępnienie informacji i dokumentów pozyskanych w prowadzonym postępowaniu o
+udzielenie zamówienia publicznego, gdyż co do zasady postępowanie o udzielenie
+zamówienia publicznego, jest jawne. Ograniczenie dostępu do danych, może nastąpić jedynie
+w szczególnych przypadkach, jeśli jest to uzasadnione ochroną prywatności (zgodnie z art. 8
+ust. 4 pkt 1 i 2 ustawy prawo zamówień publicznych), b) podmioty uprawnione z mocy prawa
+do uzyskania danych osobowych, jak np. Urząd Skarbowy, ZUS, Urząd Zamówień
+Publicznych, Krajowa Administracja Skarbowa), c) oraz inne podmioty uczestniczące w
+przedmiotowym postępowaniu o udzielenie zamówienia publicznego oraz realizacji umowy, tj.
+podmioty, które w imieniu Administratora przetwarzają dane osobowe na podstawie zawartej z
+nim umowy powierzenia przetwarzania danych lub udostępnienia danych, jak np.: banki, firmy
+audytowe i konsultingowe, firmy prawnicze, firmy świadczące usługi IT i cloud, administratorzy
+poczty elektronicznej (e-mail) i strony internetowej, firmy świadczące usługi pocztowe i
+kurierskie, a także dostawcy usług elektronicznej platformy zakupowej, poprzez którą odbywa
+się postępowanie o udzielenie zamówienia publicznego oraz korespondencja (kontakt) z
+Wykonawcą. 4. Dane osobowe przetwarzane będą (w tym przechowywane), do momentu
+wygaśnięcia obowiązku przechowywania danych wynikających z przepisów prawa
+określonych w pkt 2 lit. a) i b) niniejszej informacji (tj. do zakończenia realizacji wymienionego
+projektu i rozliczenia udzielonego wsparcia finansowego lub innego wsparcia publicznego w
+ramach realizacji projektu), a także po jej zakończeniu w celach: a) dochodzenia ewentualnie
+powstałych roszczeń w związku z realizacją zawartej umowy, b) wykonania obowiązków wynikających z przepisów prawa, w tym w szczególności podatkowych i rachunkowych, c)
+statystycznych i archiwizacyjnych. 5. Dane osobowe nie będą przekazywane do Państwa
+trzeciego lub organizacji międzynarodowej, poza Europejski Obszar Gospodarczy. 6. Dane
+osobowe nie będą podlegały profilowaniu (nie będą podejmowane w sposób
+zautomatyzowany, zgodnie z art. 22 RODO). 7. Osoba, której dane osobowe są przetwarzane
+ma prawo do żądania od Administratora dostępu do danych osobowych oraz otrzymania ich
+kopii, ich sprostowania (poprawiania) danych, usunięcia, w sytuacji gdy przetwarzanie danych
+nie następuje w celu wywiązania się z obowiązku wynikającego z przepisu prawa lub
+ograniczenia przetwarzania danych (przy czym przepisy odrębne mogą wyłączyć możliwość
+skorzystania z tego prawa) oraz prawo do wniesienia sprzeciwu wobec przetwarzania danych i
+prawo do przenoszenia danych osobowych, o ile przetwarzanie odbywa się w sposób
+zautomatyzowany. 8. Skorzystanie z prawa do sprostowania danych, nie może skutkować
+zmianą wyniku postępowania o udzielenie zamówienia publicznego ani zmianą postanowień
+umowy w zakresie niezgodnym z ustawą prawo zamówień publicznych oraz nie może
+naruszać integralności protokołu oraz jego załączników. Prawo do ograniczenia przetwarzania
+nie ma zastosowania w odniesieniu do przechowywania, w celu zapewnienia korzystania ze
+środków ochrony prawnej lub w celu ochrony praw innej osoby fizycznej lub prawnej, lub z
+uwagi na ważne względy interesu publicznego Unii Europejskiej lub państwa członkowskiego.
+9. Osoba, której dana osobowe są przetwarzane ma prawo wniesienia skargi do organu
+nadzorczego, tj. Prezesa Urzędu Ochrony Danych Osobowych, na przetwarzanie danych
+przez Administratora. 10. Podanie danych osobowych w związku z udziałem w
+przedmiotowym postępowaniu o zamówienie publiczne nie jest obowiązkowe, ale może być
+warunkiem niezbędnym do wzięcia w nim udziału. Wynika to stąd, że w zależności od
+przedmiotu zamówienia, Zamawiający może żądać ich podania na podstawie przepisów
+ustawy prawo zamówień publicznych i wydanych do niej przepisów wykonawczych
+(rozporządzenia określającego rodzaje dokumentów, jakie może żądać zamawiający od
+wykonawcy w postępowaniu o udzielenie zamówienia). 11. W przypadku gdy wykonanie
+obowiązków, o których mowa w art. 15 ust. 1-3 RODO (prawo osoby do uzyskania od
+administratora potwierdzenia, czy przetwarzane są dane osobowe jej dotyczące, a jeżeli ma to
+miejsce, prawo do uzyskania dostępu do nich; prawo do bycia poinformowaną o odpowiednich
+zabezpieczeniach, o których mowa w art. 46 RODO związanych z przekazaniem w przypadku
+przekazywania danych do państwa trzeciego lub organizacji międzynarodowej; prawo do
+otrzymania kopii danych), wymagałoby niewspółmiernie dużego wysiłku, zamawiający może
+żądać od osoby, której dane dotyczą, wskazania dodatkowych informacji mających na celu
+sprecyzowanie żądania, w szczególności podania nazwy lub daty postępowania o udzielenie
+zamówienia publicznego. Uprawnienie przysługuje zamawiającemu zarówno w trakcie trwania
+postępowania, jak i po jego zakończeniu w okresie przechowywania protokołu z
+postępowania; 12. Wystąpienie z żądaniem, o którym mowa w art. 18 ust. 1 RODO (prawo
+żądania od administratora ograniczenia przetwarzania danych), nie ogranicza przetwarzania
+danych osobowych do czasu zakończenia postępowania o udzielenie zamówienia publicznego.</cbc:Note>
+      <cac:MainCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">66000000</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:RealizedLocation>
+         <cbc:Description languageID="POL">Usługi objęte zamówieniem będą realizowane tylko na obszarze województwa kujawsko-pomorskiego.</cbc:Description>
+         <cac:Address>
+            <cbc:CountrySubentityCode listName="nuts">PL613</cbc:CountrySubentityCode>
+            <cac:Country>
+               <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+            </cac:Country>
+         </cac:Address>
+      </cac:RealizedLocation>
+   </cac:ProcurementProject>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+      <cac:TenderingTerms>
+         <cbc:FundingProgramCode listName="eu-funded">eu-funds</cbc:FundingProgramCode>
+         <cac:AwardingTerms>
+            <cac:AwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>100</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                  <cbc:Description languageID="POL">cena 100%</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+            </cac:AwardingCriterion>
+         </cac:AwardingTerms>
+         <cac:AppealTerms>
+            <cac:PresentationPeriod>
+               <cbc:Description languageID="POL">1. Odwołanie wobec treści ogłoszenia wnosi się w terminie 10 dni od dnia opublikowania ogłoszenia w Dzienniku Urzędowym Unii
+Europejskiej 2. Odwołanie wnosi się w terminie: 1) 10 dni od dnia przekazania informacji o czynności zamawiającego stanowiącej podstawę jego wniesienia, jeżeli informacja została przekazana przy użyciu środków komunikacji
+elektronicznej, 2) 15 dni od dnia przekazania informacji o czynności zamawiającego
+stanowiącej podstawę jego wniesienia, jeżeli informacja została przekazana w sposób inny niż
+określony w pkt 1). 3. Odwołanie w przypadkach innych niż określone w pkt 1 i 2 wnosi się w
+terminie 10 dni od dnia, w którym powzięto lub przy zachowaniu należytej staranności można
+było powziąć wiadomość o okolicznościach stanowiących podstawę jego wniesienia.</cbc:Description>
+            </cac:PresentationPeriod>
+            <cac:AppealInformationParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0003</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealInformationParty>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0003</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+         </cac:AppealTerms>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <cbc:GovernmentAgreementConstraintIndicator>false</cbc:GovernmentAgreementConstraintIndicator>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:Name languageID="POL">Ekopożyczka z premią - GOZ</cbc:Name>
+         <cbc:Description languageID="POL">1. Przedmiotem Zamówienia jest wybór Wykonawcy (zwanego również „Pośrednikiem Finansowym” lub „PF”), który świadczyć będzie zleconą przez Zamawiającego usługę ustanowienia i zarządzania Funduszem Szczegółowym, do którego Zamawiający wniesie Bezpośredni Wkład Finansowy ze środków Projektu „Regionalna Instytucja Finansowa - KPFR IF 2021-2027” oraz Wkład Krajowy, z których udzielane będą Pożyczki na zmniejszenie zużycia zasobów i ograniczanie wytwarzania odpadów w przedsiębiorstwach na terenie województwa kujawsko-pomorskiego z możliwością częściowego umorzenia oraz które będą podlegały zwrotowi do Zamawiającego na warunkach określonych w „Istotnych Postanowieniach Umowy Operacyjnej” (dalej: IPUO). Parametry udzielanych przez Wykonawcę Pożyczek zostały określone w „Metryce Instrumentu Finansowego - Ekopożyczka z premią dla przedsiębiorstw- transformacja w kierunku GOZ”” stanowiącej załącznik nr 2 do „IPUO”.
+2. Wkład Krajowy zostanie wniesiony przez Zamawiającego na podstawie Umowy nr ZW-I.273.8.2024 o powierzeniu zadania publicznego zawartej w dniu 31.01.2024 r. przez Za-mawiającego z instytucją dysponującą tymi środkami – Województwo Kujawsko-Pomorskie. Środki przeznaczone na Wkład Krajowy w niniejszym postępowaniu będą wykorzystywane w ramach Strategii Inwestycyjnej dla reużycia środków finansowych zwróconych z instrumentów finansowych i pomocy zwrotnej w ramach Regionalnego Programu Operacyjnego Województwa Kujawsko-Pomorskiego na lata 2014- 2020.
+3. Usługa będąca przedmiotem niniejszego Zamówienia może być świadczona w odniesieniu do przedsięwzięć określonych w „Metryce Instrumentu Finansowego – Ekopożyczka z premią dla przedsiębiorstw- transformacja w kierunku GOZ”, realizowanych przez Ostatecznych Odbiorców wyłącznie na terenie województwa kujawsko-pomorskiego.
+4. Wykonawcę będzie świadczył usługi ustanowienia i zarządzania Funduszem Szczegółowym, polegającej na udzielaniu wsparcia finansowego w łącznej wysokości 24 705 367,18 zł z wkładu finansowego wniesionego z Funduszu Powierniczego przez Zamawiającego do utworzonego przez Pośrednika Finansowego Funduszu Szczegółowego. Z tego kwota 20 628 251,43 zł pochodzić będzie z Bezpośredniego wkładu finansowego, pozostałe tj. kwota 4 077 115,75 zł z Wkładu Krajowego.
+5. Wykonawca w ramach realizacji Zamówienia zobowiązany jest do osiągnięcia następujących wskaźników :
+1) Przedsiębiorstwa objęte wsparciem (w tym: mikro, małe, średnie, duże) – co najmniej 26 przedsiębiorstw. Wskaźnik musi zostać osiągnięty nie później niż do 31.12.2029 r.
+2) Przedsiębiorstwa objęte wsparciem w formie dotacji – co najmniej 26 przedsiębiorstw. Wskaźnik musi zostać osiągnięty nie później niż do 31.12.2029 r.
+3) Przedsiębiorstwa objęte wsparciem z instrumentów finansowych – co najmniej 26 przedsiębiorstw. Wskaźnik musi zostać osiągnięty nie później niż do 31.12.2029 r.
+6. Na podstawie art. 95 ust. 1 PZP Zamawiający zobowiązuje Pośrednika Finansowego do zatrudniania na podstawie stosunku pracy osób, które będą wykonywały w ramach przedmiotowego Zamówienia czynności w zakresie:
+1) analizy wniosków o udzielenie Pożyczki,
+2) rozliczenia i kontroli Pożyczki,
+3) monitorowania i windykacji spłat Pożyczki,
+4) sporządzania sprawozdań z realizacji Zamówienia
+- jeżeli wykonywanie tych czynności polega na wykonywaniu pracy w rozumieniu art. 22 § 1 ustawy z dnia 26 czerwca 1974 r. – Kodeks pracy (Dz. U. 2025 r. poz. 277 z późn. zm.).
+Zamawiający dopuszcza zatrudnienie na podstawie umowy o pracę na czas określony, nieokreślony, na zastępstwo w zakresie i na zasadach określonych w Kodeksie pracy, w pełnym lub częściowym wymiarze czasu pracy. W celu weryfikacji obowiązku zatrudnienia na podstawie stosunku pracy każdorazowo na wezwanie Zamawiającego we wskazanym w tym wezwaniu terminie – nie krótszym jednak niż 10 dni Pośrednik Finansowy zobowiązuje się przedłożyć Zamawiającemu, w tym w celu przekazania Instytucji Zarządzającej FEdKP oświadczenie Pośrednika Finansowego o zatrudnieniu na podstawie umowy o pracę osób wykonujących czynności określone powyżej. Zakres oświadczenia określają IPUO.</cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+         <cac:ProcurementAdditionalType>
+            <cbc:ProcurementTypeCode listName="accessibility">inc</cbc:ProcurementTypeCode>
+         </cac:ProcurementAdditionalType>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">66000000</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:RealizedLocation>
+            <cbc:Description languageID="POL">zamówienie będzie realizowane na obszarze całego województwa kujawsko-pomorskiego</cbc:Description>
+            <cac:Address>
+               <cbc:CountrySubentityCode listName="nuts">PL613</cbc:CountrySubentityCode>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+         <cac:PlannedPeriod>
+            <cbc:EndDate>2045-01-31+01:00</cbc:EndDate>
+         </cac:PlannedPeriod>
+         <cac:ContractExtension>
+            <cbc:OptionsDescription languageID="POL">Zamawiający w ramach Zamówienia przewiduje możliwość zastosowania Prawa Opcji na zasadach określonych w Umowie Operacyjnej. 
+Wysokość środków udostępnianych Wykonawcy w ramach Prawa Opcji może wynosić do 100% wysokości pierwotnego wkładu z Funduszu Powierniczego wniesionego przez Zamawiającego do Funduszu Szczegółowego. Pożyczki udzielane przez Wykonawcę ze środków udostępnionych na podstawie Prawa Opcji będą udzielane w oparciu o zasady zawarte w Metryce stanowiącej załącznik do IPUO oraz w protokole z negocjacji stosowane do Zamówienia podstawowego.
+</cbc:OptionsDescription>
+         </cac:ContractExtension>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+   <cac:TenderResult>
+      <cbc:AwardDate>2000-01-01Z</cbc:AwardDate>
+   </cac:TenderResult>
+</ContractAwardNotice>

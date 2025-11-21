@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractAwardNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractAwardNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+   <ext:UBLExtensions>
+      <ext:UBLExtension>
+         <ext:ExtensionContent>
+            <efext:EformsExtension>
+               <efac:NoticeResult>
+                  <efac:LotResult>
+                     <cbc:ID schemeName="result">RES-0001</cbc:ID>
+                     <efac:LotTender>
+                        <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                     </efac:LotTender>
+                     <efac:SettledContract>
+                        <cbc:ID schemeName="contract">CON-0001</cbc:ID>
+                     </efac:SettledContract>
+                     <efac:TenderLot>
+                        <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+                     </efac:TenderLot>
+                  </efac:LotResult>
+                  <efac:LotTender>
+                     <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                     <efac:TenderingParty>
+                        <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+                     </efac:TenderingParty>
+                     <efac:TenderLot>
+                        <cbc:ID>LOT-0001</cbc:ID>
+                     </efac:TenderLot>
+                     <efac:TenderReference>
+                        <cbc:ID>7761509217</cbc:ID>
+                     </efac:TenderReference>
+                  </efac:LotTender>
+                  <efac:SettledContract>
+                     <cbc:ID schemeName="contract">CON-0001</cbc:ID>
+                     <efac:ContractReference>
+                        <cbc:ID>25-001739</cbc:ID>
+                     </efac:ContractReference>
+                     <efac:LotTender>
+                        <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                     </efac:LotTender>
+                  </efac:SettledContract>
+                  <efac:TenderingParty>
+                     <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+                     <efac:Tenderer>
+                        <cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+                     </efac:Tenderer>
+                  </efac:TenderingParty>
+               </efac:NoticeResult>
+               <efac:NoticeSubType>
+                  <cbc:SubTypeCode listName="notice-subtype">25</cbc:SubTypeCode>
+               </efac:NoticeSubType>
+               <efac:Organizations>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://www.uni-rostock.de/</cbc:WebsiteURI>
+                        <cbc:EndpointID>https://www.uni-rostock.de/</cbc:EndpointID>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="DEU">Universität Rostock </cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>Schwaansche Str. 2</cbc:StreetName>
+                           <cbc:Department>Beschaffung</cbc:Department>
+                           <cbc:CityName>Rostock</cbc:CityName>
+                           <cbc:PostalZone>18055</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">DE803</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:Contact>
+                           <cbc:Name>Mathias Evert</cbc:Name>
+                           <cbc:Telephone>+49 381 498 1530</cbc:Telephone>
+                           <cbc:ElectronicMail>ausschreibungen@uni-rostock.de</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://www.mv-regierung.de</cbc:WebsiteURI>
+                        <cbc:EndpointID>https://www.mv-regierung.de</cbc:EndpointID>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="DEU">Vergabekammern beim Ministerium für Wirtschaft, Infrastruktur, Tourismus und Arbeit Mecklenburg-Vorpommern</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName> Johannes-Stelling Straße 14</cbc:StreetName>
+                           <cbc:CityName>Schwerin</cbc:CityName>
+                           <cbc:PostalZone>19053</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">DE804</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>VKMV</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="DEU">Carl Zeiss Microscopy Deutschland GmbH</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>Carl-Zeiss-Str. 22</cbc:StreetName>
+                           <cbc:CityName>Oberkochen</cbc:CityName>
+                           <cbc:PostalZone>73447</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">DE11D</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>DE331313340</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efbc:NaturalPersonIndicator>false</efbc:NaturalPersonIndicator>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://op.europa.eu</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0000</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="DEU">Publications Office of the European Union</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:CityName>Luxembourg</cbc:CityName>
+                           <cbc:PostalZone>2417</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">LU000</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">LUX</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>PUBL</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+352 29291</cbc:Telephone>
+                           <cbc:ElectronicMail>ted@publications.europa.eu</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+               </efac:Organizations>
+            <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00760276-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+         </ext:ExtensionContent>
+      </ext:UBLExtension>
+   </ext:UBLExtensions>
+   <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+   <cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+   <cbc:ID schemeName="notice-id">a9988604-acef-4772-812b-07d7914470db</cbc:ID>
+   <cbc:ContractFolderID>bcd9aff1-6ff6-4474-a265-c143ac79c55b</cbc:ContractFolderID>
+   <cbc:IssueDate>2025-11-14Z</cbc:IssueDate>
+   <cbc:IssueTime>11:02:25Z</cbc:IssueTime>
+   <cbc:VersionID>01</cbc:VersionID>
+   <cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+   <cbc:NoticeTypeCode listName="dir-awa-pre">veat</cbc:NoticeTypeCode>
+   <cbc:NoticeLanguageCode listName="language">DEU</cbc:NoticeLanguageCode>
+   <cac:ContractingParty>
+      <cac:ContractingPartyType>
+         <cbc:PartyTypeCode listName="buyer-legal-type">body-pl</cbc:PartyTypeCode>
+      </cac:ContractingPartyType>
+      <cac:ContractingActivity>
+         <cbc:ActivityTypeCode listName="authority-activity">education</cbc:ActivityTypeCode>
+      </cac:ContractingActivity>
+      <cac:Party>
+         <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+         </cac:PartyIdentification>
+         <cac:ServiceProviderParty>
+            <cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode>
+            <cac:Party>
+               <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0000</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:Party>
+         </cac:ServiceProviderParty>
+      </cac:Party>
+   </cac:ContractingParty>
+   <cac:TenderingProcess>
+      <cbc:ProcedureCode listName="procurement-procedure-type">neg-wo-call</cbc:ProcedureCode>
+      <cac:ProcessJustification>
+         <cbc:ProcessReasonCode listName="direct-award-justification">technical</cbc:ProcessReasonCode>
+         <cbc:ProcessReason languageID="DEU">Zur Erforschung neuartiger Materialien und Werkstoffe bietet die 3D Charakterisierung mittels Röntgenmikrocomputertomographie (µCT) wertvolle Erkenntnisse, die komplementär zu anderen Mikroskopiearten (optisch, elektronenbasiert) ist. So können beispielsweise Abbauprozesse degradierbarer Implantatmaterialien charakterisiert werden, sowie das Wachstum des umgebenden Gewebes und es kann grundsätzlich eine breite Auswahl an Forschungsfragen beantwortet werden. Neueste Labor-µCT Geräte bieten über den herkömmlichen absorptionsbasierten Kontrast hinaus auch die Möglichkeit propagationsbasierten Phasenkontrast zu nutzen, um Komponenten mit ähnlichen, niedrigen Absorptionskoeffizienten unterscheiden zu können. Dies ist besonders wertvoll für die Untersuchung weicher biologischer Gewebe, wie Muskeln, Gehirn, o.ä., ebenso wie beispielsweise für Kohlenstofffaserverstärkte Kunststoffe. Über diese Kontrastmöglichkeit hinaus ist für metallbasierte Werkstoffe die Untersuchung der Korngrößen und -verteilung besonders wichtig, um die Eigenschaften des Werkstoffes zu ermitteln und mit der Mikrostruktur zu korrelieren. Hier bietet die Beugungskontrasttomographie (DCT, im Englischen häufig auch Grain Mapping) eine besondere Möglichkeit die Kornstruktur zu ermitteln.
+Für die Erforschung neuester Materialien, sowohl im Bereich der Strukturmaterialien, als auch der Biomaterialien, sowie für die Untersuchung biomedizinischer Fragestellungen soll ein Röntgenmikroskop beschafft werden. Das Ziel der Anschaffung ist neben Spitzenforschung insbesondere die breite Nutzbarkeit (Usability, Automatisierung, Durchsatz) zur hohen Auslastung im Department Life, Light &amp; Matter der interdisziplinären Fakultät. Vor dem Hintergrund der breiten Anwendungsgebiete ist es notwendig, dass das Gerät eine Reihe von Anforderungen erfüllt:
+- A1. Submikrometer-Auflösung (&lt;1 µm) über einen relativ hohen Energiebereich bis 160 kV, auch bei großem Arbeitsabstand.
+- A2. Phasenkontrast (propagationsbasiert) inkl. Phasenrückgewinnungs-Software. 
+- A3. Großer Probenraum (Proben bis ~250 mm Kantenlänge) – auch für in situ Peripherie, Tischlast ≥10 kg; Oversize/large-FOV-Scans (Stitching). 
+- A4. In situ Schnittstelle (Heizen/Kühlen/Zug/Druck), kombinierbar mit Tomographie.
+- A5. Beugungskontrast-Tomographie (DCT) zur 3D-Mikrostrukturanalyse inkl. geeigneter Auswerte-Software. 
+- A6. Hoher Durchsatz und Bedienfreundlichkeit (Automatisierung, Workflow-Guidance, KI-Unterstützung bzw. Bildverbesserungsalgorithmen). 
+Im Rahmen der Vorbereitung auf die Gerätebeschaffung wurde eine gründliche technische Marktanalyse vorgenommen, um ein umfassendes Bild des verfügbaren Marktangebots zu gewinnen. Ein Gerät das alle gewünschten Anforderungen erfüllt ist ausschließlich das Zeiss Xradia Versa 730. Kein anderes Gerät, bspw. der Hersteller Bruker, Rigaku, TESCAN, Baker Hughes oder Nikon, erfüllt die Anforderungen A1-A6 und bietet insbesondere die Möglichkeit für Beugungskontrasttomographie zusätzlich zum Röntgenmikroskop inkl. propagationsbasiertem Phasenkontrast. Der Vertrieb des Zeiss Xradia Versa 730 erfolgt in Deutschland ausschließlich über Zeiss. Damit ist eine sachlich begründete Ausschließlichkeit gegeben.</cbc:ProcessReason>
+      </cac:ProcessJustification>
+   </cac:TenderingProcess>
+   <cac:ProcurementProject>
+      <cbc:ID schemeName="InternalID">25-01739</cbc:ID>
+      <cbc:Name languageID="DEU">3D-Röntgenmikroskop</cbc:Name>
+      <cbc:Description languageID="DEU">Zur Erforschung neuartiger Materialien und Werkstoffe bietet die 3D Charakterisierung mittels Röntgenmikrocomputertomographie (µCT) wertvolle Erkenntnisse, die komplementär zu anderen Mikroskopiearten (optisch, elektronenbasiert) ist. So können beispielsweise Abbauprozesse degradierbarer Implantatmaterialien charakterisiert werden, sowie das Wachstum des umgebenden Gewebes und es kann grundsätzlich eine breite Auswahl an Forschungsfragen beantwortet werden. Neueste Labor-µCT Geräte bieten über den herkömmlichen absorptionsbasierten Kontrast hinaus auch die Möglichkeit propagationsbasierten Phasenkontrast zu nutzen, um Komponenten mit ähnlichen, niedrigen Absorptionskoeffizienten unterscheiden zu können. Dies ist besonders wertvoll für die Untersuchung weicher biologischer Gewebe, wie Muskeln, Gehirn, o.ä., ebenso wie beispielsweise für Kohlenstofffaserverstärkte Kunststoffe. Über diese Kontrastmöglichkeit hinaus ist für metallbasierte Werkstoffe die Untersuchung der Korngrößen und -verteilung besonders wichtig, um die Eigenschaften des Werkstoffes zu ermitteln und mit der Mikrostruktur zu korrelieren. Hier bietet die Beugungskontrasttomographie (DCT, im Englischen häufig auch Grain Mapping) eine besondere Möglichkeit die Kornstruktur zu ermitteln.
+Für die Erforschung neuester Materialien, sowohl im Bereich der Strukturmaterialien, als auch der Biomaterialien, sowie für die Untersuchung biomedizinischer Fragestellungen soll ein Röntgenmikroskop beschafft werden. Das Ziel der Anschaffung ist neben Spitzenforschung insbesondere die breite Nutzbarkeit (Usability, Automatisierung, Durchsatz) zur hohen Auslastung im Department Life, Light &amp; Matter der interdisziplinären Fakultät. Vor dem Hintergrund der breiten Anwendungsgebiete ist es notwendig, dass das Gerät eine Reihe von Anforderungen erfüllt:
+- A1. Submikrometer-Auflösung (&lt;1 µm) über einen relativ hohen Energiebereich bis 160 kV, auch bei großem Arbeitsabstand.
+- A2. Phasenkontrast (propagationsbasiert) inkl. Phasenrückgewinnungs-Software. 
+- A3. Großer Probenraum (Proben bis ~250 mm Kantenlänge) – auch für in situ Peripherie, Tischlast ≥10 kg; Oversize/large-FOV-Scans (Stitching). 
+- A4. In situ Schnittstelle (Heizen/Kühlen/Zug/Druck), kombinierbar mit Tomographie.
+- A5. Beugungskontrast-Tomographie (DCT) zur 3D-Mikrostrukturanalyse inkl. geeigneter Auswerte-Software. 
+- A6. Hoher Durchsatz und Bedienfreundlichkeit (Automatisierung, Workflow-Guidance, KI-Unterstützung bzw. Bildverbesserungsalgorithmen). 
+Im Rahmen der Vorbereitung auf die Gerätebeschaffung wurde eine gründliche technische Marktanalyse vorgenommen, um ein umfassendes Bild des verfügbaren Marktangebots zu gewinnen. Ein Gerät das alle gewünschten Anforderungen erfüllt ist ausschließlich das Zeiss Xradia Versa 730. Kein anderes Gerät, bspw. der Hersteller Bruker, Rigaku, TESCAN, Baker Hughes oder Nikon, erfüllt die Anforderungen A1-A6 und bietet insbesondere die Möglichkeit für Beugungskontrasttomographie zusätzlich zum Röntgenmikroskop inkl. propagationsbasiertem Phasenkontrast. Der Vertrieb des Zeiss Xradia Versa 730 erfolgt in Deutschland ausschließlich über Zeiss. Damit ist eine sachlich begründete Ausschließlichkeit gegeben.</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">supplies</cbc:ProcurementTypeCode>
+      <cac:MainCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">38000000</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:RealizedLocation>
+         <cac:Address>
+            <cbc:StreetName>Albert-Einstein-Str. 25</cbc:StreetName>
+            <cbc:CityName>Rostock</cbc:CityName>
+            <cbc:PostalZone>18059</cbc:PostalZone>
+            <cbc:CountrySubentityCode listName="nuts">DE803</cbc:CountrySubentityCode>
+            <cac:Country>
+               <cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+            </cac:Country>
+         </cac:Address>
+      </cac:RealizedLocation>
+   </cac:ProcurementProject>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+      <cac:TenderingTerms>
+         <cac:AppealTerms>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+         </cac:AppealTerms>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <cbc:GovernmentAgreementConstraintIndicator>false</cbc:GovernmentAgreementConstraintIndicator>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:ID schemeName="InternalID">25-01739</cbc:ID>
+         <cbc:Name languageID="DEU">3D-Röntgenmikroskop</cbc:Name>
+         <cbc:Description languageID="DEU">Zur Erforschung neuartiger Materialien und Werkstoffe bietet die 3D Charakterisierung mittels Röntgenmikrocomputertomographie (µCT) wertvolle Erkenntnisse, die komplementär zu anderen Mikroskopiearten (optisch, elektronenbasiert) ist. So können beispielsweise Abbauprozesse degradierbarer Implantatmaterialien charakterisiert werden, sowie das Wachstum des umgebenden Gewebes und es kann grundsätzlich eine breite Auswahl an Forschungsfragen beantwortet werden. Neueste Labor-µCT Geräte bieten über den herkömmlichen absorptionsbasierten Kontrast hinaus auch die Möglichkeit propagationsbasierten Phasenkontrast zu nutzen, um Komponenten mit ähnlichen, niedrigen Absorptionskoeffizienten unterscheiden zu können. Dies ist besonders wertvoll für die Untersuchung weicher biologischer Gewebe, wie Muskeln, Gehirn, o.ä., ebenso wie beispielsweise für Kohlenstofffaserverstärkte Kunststoffe. Über diese Kontrastmöglichkeit hinaus ist für metallbasierte Werkstoffe die Untersuchung der Korngrößen und -verteilung besonders wichtig, um die Eigenschaften des Werkstoffes zu ermitteln und mit der Mikrostruktur zu korrelieren. Hier bietet die Beugungskontrasttomographie (DCT, im Englischen häufig auch Grain Mapping) eine besondere Möglichkeit die Kornstruktur zu ermitteln.
+Für die Erforschung neuester Materialien, sowohl im Bereich der Strukturmaterialien, als auch der Biomaterialien, sowie für die Untersuchung biomedizinischer Fragestellungen soll ein Röntgenmikroskop beschafft werden. Das Ziel der Anschaffung ist neben Spitzenforschung insbesondere die breite Nutzbarkeit (Usability, Automatisierung, Durchsatz) zur hohen Auslastung im Department Life, Light &amp; Matter der interdisziplinären Fakultät. Vor dem Hintergrund der breiten Anwendungsgebiete ist es notwendig, dass das Gerät eine Reihe von Anforderungen erfüllt:
+- A1. Submikrometer-Auflösung (&lt;1 µm) über einen relativ hohen Energiebereich bis 160 kV, auch bei großem Arbeitsabstand.
+- A2. Phasenkontrast (propagationsbasiert) inkl. Phasenrückgewinnungs-Software. 
+- A3. Großer Probenraum (Proben bis ~250 mm Kantenlänge) – auch für in situ Peripherie, Tischlast ≥10 kg; Oversize/large-FOV-Scans (Stitching). 
+- A4. In situ Schnittstelle (Heizen/Kühlen/Zug/Druck), kombinierbar mit Tomographie.
+- A5. Beugungskontrast-Tomographie (DCT) zur 3D-Mikrostrukturanalyse inkl. geeigneter Auswerte-Software. 
+- A6. Hoher Durchsatz und Bedienfreundlichkeit (Automatisierung, Workflow-Guidance, KI-Unterstützung bzw. Bildverbesserungsalgorithmen). 
+Im Rahmen der Vorbereitung auf die Gerätebeschaffung wurde eine gründliche technische Marktanalyse vorgenommen, um ein umfassendes Bild des verfügbaren Marktangebots zu gewinnen. Ein Gerät das alle gewünschten Anforderungen erfüllt ist ausschließlich das Zeiss Xradia Versa 730. Kein anderes Gerät, bspw. der Hersteller Bruker, Rigaku, TESCAN, Baker Hughes oder Nikon, erfüllt die Anforderungen A1-A6 und bietet insbesondere die Möglichkeit für Beugungskontrasttomographie zusätzlich zum Röntgenmikroskop inkl. propagationsbasiertem Phasenkontrast. Der Vertrieb des Zeiss Xradia Versa 730 erfolgt in Deutschland ausschließlich über Zeiss. Damit ist eine sachlich begründete Ausschließlichkeit gegeben.</cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">supplies</cbc:ProcurementTypeCode>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">38000000</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:RealizedLocation>
+            <cac:Address>
+               <cbc:Region>anyw-cou</cbc:Region>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+   <cac:TenderResult>
+      <cbc:AwardDate>2000-01-01Z</cbc:AwardDate>
+   </cac:TenderResult>
+</ContractAwardNotice>

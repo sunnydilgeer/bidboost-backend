@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ccts-cct="urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDataTypes-2" xmlns:udt="urn:oasis:names:specification:bdndr:schema:xsd:UnqualifiedDataTypes-1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<ext:UBLExtensions>
+		<ext:UBLExtension>
+			<ext:ExtensionContent>
+				<efext:EformsExtension>
+					<efac:NoticeSubType>
+						<cbc:SubTypeCode listName="notice-subtype">16</cbc:SubTypeCode>
+					</efac:NoticeSubType>
+					<efac:Organizations>
+						<efac:Organization>
+							<efac:Company>
+								<cbc:WebsiteURI>https://www.bundesimmobilien.de/</cbc:WebsiteURI>
+								<cac:PartyIdentification>
+									<cbc:ID>ORG-0001</cbc:ID>
+								</cac:PartyIdentification>
+								<cac:PartyName>
+									<cbc:Name languageID="DEU">Bundesanstalt für Immobilienaufgaben c/o GESA Gesellschaft zur Entwicklung und Sanierung von Altstandorten mbH</cbc:Name>
+								</cac:PartyName>
+								<cac:PostalAddress>
+									<cbc:StreetName>Schöneberger Ufer 89-91</cbc:StreetName>
+									<cbc:CityName>Berlin</cbc:CityName>
+									<cbc:PostalZone>10785</cbc:PostalZone>
+									<cbc:CountrySubentityCode listName="nuts-lvl3">DE300</cbc:CountrySubentityCode>
+									<cac:Country>
+										<cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+									</cac:Country>
+								</cac:PostalAddress>
+								<cac:PartyLegalEntity>
+									<cbc:CompanyID>HRB 103 629 B</cbc:CompanyID>
+								</cac:PartyLegalEntity>
+								<cac:Contact>
+									<cbc:Telephone>+49 3024513-428</cbc:Telephone>
+									<cbc:ElectronicMail>criese@goerg.de</cbc:ElectronicMail>
+								</cac:Contact>
+							</efac:Company>
+						</efac:Organization>
+						<efac:Organization>
+							<efac:Company>
+								<cac:PartyIdentification>
+									<cbc:ID>ORG-0002</cbc:ID>
+								</cac:PartyIdentification>
+								<cac:PartyName>
+									<cbc:Name languageID="DEU">Vergabekammer des Bundes</cbc:Name>
+								</cac:PartyName>
+								<cac:PostalAddress>
+									<cbc:StreetName>Villemombler Str. 76</cbc:StreetName>
+									<cbc:CityName>Bonn</cbc:CityName>
+									<cbc:PostalZone>53123</cbc:PostalZone>
+									<cbc:CountrySubentityCode listName="nuts-lvl3">DE300</cbc:CountrySubentityCode>
+									<cac:Country>
+										<cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+									</cac:Country>
+								</cac:PostalAddress>
+								<cac:PartyLegalEntity>
+									<cbc:CompanyID>t:022894990</cbc:CompanyID>
+								</cac:PartyLegalEntity>
+								<cac:Contact>
+									<cbc:Telephone>+49 2289499-0</cbc:Telephone>
+									<cbc:ElectronicMail>vk@bundeskartellamt.bund.de</cbc:ElectronicMail>
+								</cac:Contact>
+							</efac:Company>
+						</efac:Organization>
+					<efac:Organization><efac:Company><cac:PartyIdentification><cbc:ID schemeName="organization">ORG-0003</cbc:ID></cac:PartyIdentification><cac:PartyName><cbc:Name languageID="DEU">Datenservice Öffentlicher Einkauf (in Verantwortung des Beschaffungsamts des BMI)</cbc:Name></cac:PartyName><cac:PostalAddress><cbc:CityName>Bonn</cbc:CityName><cbc:PostalZone>53119</cbc:PostalZone><cbc:CountrySubentityCode listName="nuts">DEA22</cbc:CountrySubentityCode><cac:Country><cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode></cac:Country></cac:PostalAddress><cac:PartyLegalEntity><cbc:CompanyID schemeID="002">0204:994-DOEVD-83</cbc:CompanyID></cac:PartyLegalEntity><cac:Contact><cbc:Telephone>+49228996100</cbc:Telephone><cbc:ElectronicMail>noreply.esender_hub@bescha.bund.de</cbc:ElectronicMail></cac:Contact></efac:Company></efac:Organization></efac:Organizations>
+				<efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00760421-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+			</ext:ExtensionContent>
+		</ext:UBLExtension>
+	</ext:UBLExtensions>
+	<cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+	<cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+	<cbc:ProfileID>eforms-sdk-1.13</cbc:ProfileID>
+	<cbc:ID schemeName="notice-id">0625cbab-d379-4bad-a712-c1d479c26acd</cbc:ID>
+	<cbc:ContractFolderID>ffbc5029-fdd8-4176-9548-1fe416ef0ac1</cbc:ContractFolderID>
+	<cbc:IssueDate>2025-11-14+01:00</cbc:IssueDate>
+	<cbc:IssueTime>13:12:28+01:00</cbc:IssueTime>
+	<cbc:VersionID>01</cbc:VersionID>
+	<cbc:RequestedPublicationDate>2025-11-14+01:00</cbc:RequestedPublicationDate>
+	<cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+	<cbc:NoticeTypeCode listName="competition">cn-standard</cbc:NoticeTypeCode>
+	<cbc:NoticeLanguageCode listID="eu-official-language">DEU</cbc:NoticeLanguageCode>
+	<cac:ContractingParty>
+		<cbc:BuyerProfileURI>https://www.gesa-info.de/</cbc:BuyerProfileURI>
+		<cac:ContractingPartyType>
+			<cbc:PartyTypeCode listName="buyer-legal-type">pub-undert</cbc:PartyTypeCode>
+		</cac:ContractingPartyType>
+		<cac:ContractingActivity>
+			<cbc:ActivityTypeCode listName="authority-activity">econ-aff</cbc:ActivityTypeCode>
+		</cac:ContractingActivity>
+		<cac:Party>
+			<cac:PartyIdentification>
+				<cbc:ID>ORG-0001</cbc:ID>
+			</cac:PartyIdentification>
+		<cac:ServiceProviderParty><cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode><cac:Party><cac:PartyIdentification><cbc:ID schemeName="organization">ORG-0003</cbc:ID></cac:PartyIdentification></cac:Party></cac:ServiceProviderParty></cac:Party>
+	</cac:ContractingParty>
+	<cac:TenderingTerms>
+		<ext:UBLExtensions>
+			<ext:UBLExtension>
+				<ext:ExtensionContent>
+					<efext:EformsExtension>
+						<efac:StrategicProcurement>
+							<efbc:ApplicableLegalBasis listName="cvd-scope">false</efbc:ApplicableLegalBasis>
+						</efac:StrategicProcurement>
+						<efac:StrategicProcurement>
+							<efbc:ApplicableLegalBasis listName="eed-scope">false</efbc:ApplicableLegalBasis>
+						</efac:StrategicProcurement>
+					</efext:EformsExtension>
+				</ext:ExtensionContent>
+			</ext:UBLExtension>
+		</ext:UBLExtensions>
+		<cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+		<cac:RequiredFinancialGuarantee>
+			<cbc:GuaranteeTypeCode listName="tender-guarantee-required">false</cbc:GuaranteeTypeCode>
+		</cac:RequiredFinancialGuarantee>
+		<cac:ProcurementLegislationDocumentReference>
+			<cbc:ID>vgv</cbc:ID>
+		</cac:ProcurementLegislationDocumentReference>
+		<cac:CallForTendersDocumentReference>
+			<ext:UBLExtensions>
+				<ext:UBLExtension>
+					<ext:ExtensionContent>
+						<efext:EformsExtension>
+							<efac:OfficialLanguages>
+								<cac:Language>
+									<cbc:ID>DEU</cbc:ID>
+								</cac:Language>
+							</efac:OfficialLanguages>
+						</efext:EformsExtension>
+					</ext:ExtensionContent>
+				</ext:UBLExtension>
+			</ext:UBLExtensions>
+			<cbc:ID>SomeTenderDocID1</cbc:ID>
+			<cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+		</cac:CallForTendersDocumentReference>
+		<cac:TendererQualificationRequest>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-natl-bre-nat-law</cbc:TendererRequirementTypeCode>
+			</cac:SpecificTendererRequirement>
+		</cac:TendererQualificationRequest>
+		<cac:TendererQualificationRequest>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-grounds-source">epo-notice</cbc:TendererRequirementTypeCode>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-grounds-source">epo-procurement-document</cbc:TendererRequirementTypeCode>
+			</cac:SpecificTendererRequirement>
+		</cac:TendererQualificationRequest>
+		<cac:TenderRecipientParty>
+			<cac:PartyIdentification>
+				<cbc:ID>ORG-0001</cbc:ID>
+			</cac:PartyIdentification>
+		</cac:TenderRecipientParty>
+		<cac:AppealTerms>
+			<cac:PresentationPeriod>
+				<cbc:Description languageID="DEU">-</cbc:Description>
+			</cac:PresentationPeriod>
+			<cac:AppealReceiverParty>
+				<cac:PartyIdentification>
+					<cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+				</cac:PartyIdentification>
+			</cac:AppealReceiverParty>
+		</cac:AppealTerms>
+		<cac:Language>
+			<cbc:ID>DEU</cbc:ID>
+		</cac:Language>
+	</cac:TenderingTerms>
+	<cac:TenderingProcess>
+		<cbc:Description languageID="DEU">Siehe hierzu die Darstellung in den Bewerbungsinformationen.</cbc:Description>
+		<cbc:ProcedureCode listName="procurement-procedure-type">neg-w-call</cbc:ProcedureCode>
+		<cbc:AccessToolsURI>https://www.dtvp.de/Satellite/notice/CXP4Y995TWS</cbc:AccessToolsURI>
+		<cac:ProcessJustification>
+			<cbc:ProcessReasonCode listName="accelerated-procedure">false</cbc:ProcessReasonCode>
+		</cac:ProcessJustification>
+		<cac:AuctionTerms>
+			<cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+		</cac:AuctionTerms>
+	</cac:TenderingProcess>
+	<cac:ProcurementProject>
+		<cbc:ID schemeName="internalID">28102025</cbc:ID>
+		<cbc:Name languageID="DEU">GESA mbH - Baufeldfreimachung, Entsorgung und Sanierung Einsatztrainingszentrum (ETZ) und THW-Betriebsgelände 24534 Neumünster, Färberstraße 92, BImA-WE-Nr. 138460</cbc:Name>
+		<cbc:Description languageID="DEU">Gegenstand des zu vergebenden Auftrags sind Leistungen zur Ausführung des 2. Bauabschnitts der Baufeldfreimachung am Standort Färberstraße 92 in 24534 Neumünster, der für den Neubau eines Ein-satztrainingszentrums (ETZ) der Generalzolldirektion und eines neues THW-Betriebsgeländes entwickelt wird.  Der aktuell vorbereitete 2. Bauabschnitt der Baufeldfreimachung umfasst die Bauleistungen zur Ausführung des Abbruchs der noch bestehenden ober- und unterirdischen Bebauung, einschließlich der ehe-maligen Gerbgruben sowie die Sanierung innerhalb der Sanierungszonen (SZ) 1, 2 und 3b i.S. einer nachnutzungsbezogenen Sanierung. Die dabei entstehenden Abfälle sind fachgerecht zu entsorgen. Bei allen Eingriffen in den Untergrund, wie auch bei der weiteren Grundstücksentwicklung, sind die am Standort bekannten Kontaminationen des Bodens und des Grundwassers zu beachten. Die vorgenannten Leistungen werden in den Vergabeunterlagen, insbesondere in der Leistungsbeschreibung (Anlage C2) und im behördlich genehmigten Sanierungsplan (Anlage J) genauer spezifiziert.</cbc:Description>
+		<cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+		<cbc:Note languageID="DEU">#Bekanntmachungs-ID: CXP4Y995TWS#</cbc:Note>
+		<cac:RequestedTenderTotal>
+			<cbc:EstimatedOverallContractAmount currencyID="EUR">12250000.00</cbc:EstimatedOverallContractAmount>
+		</cac:RequestedTenderTotal>
+		<cac:MainCommodityClassification>
+			<cbc:ItemClassificationCode listName="cpv">90522300</cbc:ItemClassificationCode>
+		</cac:MainCommodityClassification>
+		<cac:AdditionalCommodityClassification>
+			<cbc:ItemClassificationCode listName="cpv">90522400</cbc:ItemClassificationCode>
+		</cac:AdditionalCommodityClassification>
+		<cac:AdditionalCommodityClassification>
+			<cbc:ItemClassificationCode listName="cpv">90732300</cbc:ItemClassificationCode>
+		</cac:AdditionalCommodityClassification>
+		<cac:AdditionalCommodityClassification>
+			<cbc:ItemClassificationCode listName="cpv">90743200</cbc:ItemClassificationCode>
+		</cac:AdditionalCommodityClassification>
+		<cac:RealizedLocation>
+			<cac:Address>
+				<cbc:StreetName>Färberstraße 92</cbc:StreetName>
+				<cbc:CityName>Neumünster</cbc:CityName>
+				<cbc:PostalZone>24534</cbc:PostalZone>
+				<cbc:CountrySubentityCode listName="nuts">DEF04</cbc:CountrySubentityCode>
+				<cac:Country>
+					<cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:Address>
+		</cac:RealizedLocation>
+	</cac:ProcurementProject>
+	<cac:ProcurementProjectLot>
+		<cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+		<cac:TenderingTerms>
+			<ext:UBLExtensions>
+				<ext:UBLExtension>
+					<ext:ExtensionContent>
+						<efext:EformsExtension>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-suit-reg-trade</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Aktueller Auszug aus dem Handelsregister oder eines vergleichbaren Registerauszuges (zum Zeitpunkt der Abgabe des Teilnahmeantrages nicht älter als sechs Monate, Kopie ausreichend).</cbc:Description>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-suit-reg-prof</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Nachweis über Mitgliedschaft in Berufsgenossenschaft.</cbc:Description>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-ins</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Nachweis einer Berufs- oder Betriebshaftpflichtversicherung mit einer Deckungssumme in Höhe von EUR 5 Mio. für Personen-, Sach- und Vermögensschäden sowie in Höhe von EUR 1 Mio. für Umweltschäden (alternativ genügt die Eigenerklärung, dass im Auftragsfall eine Versicherung mit Deckungssummen in der jeweils geforderten Höhe abgeschlossen wird).</cbc:Description>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-to-spec-avg</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Leistungsbezogene Jahresumsätze gemäß Formblatt 124 (vgl. Anlage N) im Mittel der letzten drei abgeschlossenen Geschäftsjahre für vergleichbare Leistungen:  o Gesamtleistung: mind. 5.000.000 EUR netto mit folgenden Umsätzen für die Teilleistungen:   - Entkernung/Gebäuderückbau: mind. 750.000 EUR netto,  - Bodensanierung: mind. 2.000.000 EUR netto, - Entsorgungsleistungen: mind. 1.000.000 EUR netto.</cbc:Description>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-ref-services</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Mindestens 3 vergleichbare Unternehmensreferenzen des Auftragnehmers der letzten fünf Kalenderjahre gemäß Formblatt 124 (vgl. Anlage N) für die folgenden, kumulativ vorliegenden Teilleistungen und jeweils mit den entsprechenden Mindestauftragswerten:   - Entkernung/Gebäuderückbau: 250.000 EUR netto  - Bodensanierung: 1.000.000 EUR netto  Entsorgungsleistungen: 1.000.000 EUR netto.  (Diese Teilleistungen können jeweils einzeln/für sich oder auch zusammen in einer abgeschlossenen Baumaßnahme zur Ausführung gekommen sein. In letzterem Fall sind die Anteile der jeweiligen Teilleistung nachzuweisen.)</cbc:Description>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-qual-inst</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">- Sach- und Fachkundenachweise (sind zu erbringen durch einen Einzelbieter oder ein Mitglied einer Bietergemeinschaft oder einen Nachunternehmer):  - Zulassung zur Durchführung von Arbeiten an schwach gebundenen Asbestprodukten gem. TRGS 519, Nr. 3.1, - Sachkundenachweis TRGS 519, - Fachkundenachweis TRGS 521, - Sachkundenachweis DGUV-R 101-004,  - Sachkundenachweis DGUV-R 312-906,  - Fachbetrieb § 62 AwSV,  - Erlaubnis nach § 7 SprengG, - Befähigung nach § 20 SprengG.</cbc:Description>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-mgmt-qual</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Genehmigungsfähiges Entsorgungskonzept:   Das Entsorgungskonzept muss für alle Abfallteilströme gemäß LV Pos. 10.02 bis 10.03 (vgl. auch Anlage K) je mindestens eine zugelassene Entsorgungsanlage mit ausreichender Annahmekapazität angeben. Nachweise über die Zulassung und Eigenerklärungen zur Annahme (mit Angaben zur Abfallart und zu den relevanten Abfallmengen / Kapazitäten) sind für die in Anlage K entsprechend markierten Abfallströme dem Konzept beizufügen. Das Entsorgungskonzept muss ferner die ausdrückliche schriftliche Erklärung beinhalten, ob der Auftragnehmer an den angegebenen Entsorgungsanlagen unmittelbar oder mittelbar gesellschaftsrechtlich beteiligt ist. Sollte dies der Fall sein, hat er zu erläutern, wie er sicherstellt, dass es nicht zu wettbewerbswidrigen Preisen kommt. Ein Verstoß gegen diese Verpflichtung berechtigt die Auftraggeberin, den Vertrag außerordentlich zu kündigen und Schadensersatzansprüche geltend zu machen.</cbc:Description>
+							</efac:SelectionCriteria>
+							<efac:StrategicProcurement>
+								<efbc:ApplicableLegalBasis listName="cvd-scope">false</efbc:ApplicableLegalBasis>
+							</efac:StrategicProcurement>
+							<efac:StrategicProcurement>
+								<efbc:ApplicableLegalBasis listName="eed-scope">false</efbc:ApplicableLegalBasis>
+							</efac:StrategicProcurement>
+						</efext:EformsExtension>
+					</ext:ExtensionContent>
+				</ext:UBLExtension>
+			</ext:UBLExtensions>
+			<cbc:VariantConstraintCode listName="permission">not-allowed</cbc:VariantConstraintCode>
+			<cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+			<cbc:RequiredCurriculaCode listName="requirement-stage">par-requ</cbc:RequiredCurriculaCode>
+			<cbc:MultipleTendersCode listName="permission">not-allowed</cbc:MultipleTendersCode>
+			<cac:RequiredFinancialGuarantee>
+				<cbc:GuaranteeTypeCode listName="tender-guarantee-required">false</cbc:GuaranteeTypeCode>
+			</cac:RequiredFinancialGuarantee>
+			<cac:CallForTendersDocumentReference>
+				<ext:UBLExtensions>
+					<ext:UBLExtension>
+						<ext:ExtensionContent>
+							<efext:EformsExtension>
+								<efac:OfficialLanguages>
+									<cac:Language>
+										<cbc:ID>DEU</cbc:ID>
+									</cac:Language>
+								</efac:OfficialLanguages>
+							</efext:EformsExtension>
+						</ext:ExtensionContent>
+					</ext:UBLExtension>
+				</ext:UBLExtensions>
+				<cbc:ID>SomeTenderDocID1</cbc:ID>
+				<cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+				<cac:Attachment>
+					<cac:ExternalReference>
+						<cbc:URI>https://www.dtvp.de/Satellite/notice/CXP4Y995TWS/documents</cbc:URI>
+					</cac:ExternalReference>
+				</cac:Attachment>
+			</cac:CallForTendersDocumentReference>
+			<cac:TendererQualificationRequest>
+				<cbc:CompanyLegalFormCode listName="required">false</cbc:CompanyLegalFormCode>
+			</cac:TendererQualificationRequest>
+			<cac:TendererQualificationRequest>
+				<cac:SpecificTendererRequirement>
+					<cbc:TendererRequirementTypeCode listName="missing-info-submission">late-some</cbc:TendererRequirementTypeCode>
+					<cbc:Description languageID="DEU">-</cbc:Description>
+				</cac:SpecificTendererRequirement>
+			</cac:TendererQualificationRequest>
+			<cac:TendererQualificationRequest>
+				<cac:SpecificTendererRequirement>
+					<cbc:TendererRequirementTypeCode listName="reserved-procurement">none</cbc:TendererRequirementTypeCode>
+				</cac:SpecificTendererRequirement>
+			</cac:TendererQualificationRequest>
+			<cac:TendererQualificationRequest>
+				<cac:SpecificTendererRequirement>
+					<cbc:TendererRequirementTypeCode listName="selection-criteria-source">epo-notice</cbc:TendererRequirementTypeCode>
+				</cac:SpecificTendererRequirement>
+			</cac:TendererQualificationRequest>
+			<cac:ContractExecutionRequirement>
+				<cbc:ExecutionRequirementCode listName="reserved-execution">no</cbc:ExecutionRequirementCode>
+			</cac:ContractExecutionRequirement>
+			<cac:ContractExecutionRequirement>
+				<cbc:ExecutionRequirementCode listName="ecatalog-submission">not-allowed</cbc:ExecutionRequirementCode>
+			</cac:ContractExecutionRequirement>
+			<cac:ContractExecutionRequirement>
+				<cbc:ExecutionRequirementCode listName="einvoicing">allowed</cbc:ExecutionRequirementCode>
+			</cac:ContractExecutionRequirement>
+			<cac:ContractExecutionRequirement>
+				<cbc:ExecutionRequirementCode listName="fsr">false</cbc:ExecutionRequirementCode>
+			</cac:ContractExecutionRequirement>
+			<cac:AwardingTerms>
+				<cbc:NoFurtherNegotiationIndicator>false</cbc:NoFurtherNegotiationIndicator>
+				<cac:AwardingCriterion>
+					<cac:SubordinateAwardingCriterion>
+						<ext:UBLExtensions>
+							<ext:UBLExtension>
+								<ext:ExtensionContent>
+									<efext:EformsExtension>
+										<efac:AwardCriterionParameter>
+											<efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+											<efbc:ParameterNumeric>60.0</efbc:ParameterNumeric>
+										</efac:AwardCriterionParameter>
+									</efext:EformsExtension>
+								</ext:ExtensionContent>
+							</ext:UBLExtension>
+						</ext:UBLExtensions>
+						<cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+						<cbc:Name languageID="DEU">Angebotspreis</cbc:Name>
+						<cbc:Description languageID="DEU">Der Preis ist mit 60 % das ausschlaggebende Zuschlagskriterium. Auf Grund der Größe und der Komplexität des Projekts soll daneben dem Bearbeitungskonzept zur vorgesehenen Projektabwicklung eine besondere Gewichtung bei der Bewertung zukommen.   Die Auftraggeberin behält sich vor, bei unplausiblen Angeboten vom Bieter Auskünfte zu verlangen. Unplausibel können auch solche Angebote sein, bei denen die angebotenen Preise nicht zum Ablauf der Leistungserbringung passen oder aus sonstigen Gründen Zweifel an der ordnungsgemäßen Leistungserbringung aufkommen lassen. Die Auftraggeberin behält sich vor, für die Prüfung der Angemessenheit des Angebots die Vorlage der Urkalkulation zu verlangen.  Die Auftraggeberin behält sich vor, Angebote, die offensichtlich unplausibel sind und wenn bestehende Zweifel nicht ausgeräumt werden können, auszuschließen.  In dem Zuschlagskriterium "Preis" können maximal 180 Punkte erreicht werden.  Das günstigste, auskömmliche Angebot erhält die Maximalpunktzahl, alle weiteren Angebote erhalten im Verhältnis (Ermittlung mittels Dreisatz) zum günstigsten Angebot einen Anteil von 180 Punkten.  Beispiel: günstigstes Angebot, 0,85 Mio. EUR (netto) = 180 Punkte zweitgünstigstes Angebot, 1,0 Mio. EUR (netto) = 153,00 Punkte. Das Ergebnis wird auf 2 Dezimalstellen gerundet.</cbc:Description>
+					</cac:SubordinateAwardingCriterion>
+					<cac:SubordinateAwardingCriterion>
+						<ext:UBLExtensions>
+							<ext:UBLExtension>
+								<ext:ExtensionContent>
+									<efext:EformsExtension>
+										<efac:AwardCriterionParameter>
+											<efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+											<efbc:ParameterNumeric>40.0</efbc:ParameterNumeric>
+										</efac:AwardCriterionParameter>
+									</efext:EformsExtension>
+								</ext:ExtensionContent>
+							</ext:UBLExtension>
+						</ext:UBLExtensions>
+						<cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+						<cbc:Name languageID="DEU">Bearbeitungskonzept</cbc:Name>
+						<cbc:Description languageID="DEU">Mit dem Angebot ist ein Bearbeitungskonzept vorzulegen. Das Bearbeitungskonzept ist nicht deckungsgleich mit dem im Zuge des Teilnahmewettbewerbs einzureichenden Entsorgungskonzept. Das Bearbeitungskonzept ist ein selbstständig vom Bieter zu erstellendes und einzureichendes Dokument, welches die Grundlage der inhaltlich-organisatorischen Abwicklung des Vertrages bildet. Das Bearbeitungskonzept muss folgende inhaltliche Mindestanforderungen erfüllen:  a) Projektorganisation / Bauablauf  - fachliche und organisatorische Aufgabenzuordnung im Projektteam entsprechend Qualifikation und Erfahrung der Teammitglieder sowie Vertretungsregelung - Organisation des Bauablaufes (räumlich und zeitlich) zur Erreichung der Projektziele (insbesondere Einhaltung Terminplan) - Baustellenmanagement  - Kapazitätsplanung  - Koordination einbezogener Nachunternehmer  b) Arbeits- und Anwohnerschutz - Darstellung der konkret vorgesehenen Umsetzung der Maßnahmen zum Arbeits- und Anwohnerschutz - Havarie- und Notfallpläne   c) Verfahrensdurchführung - Umsetzungskonzept für die einzelnen Schwerpunktbereiche (Abbruch, Entsiegelung,  - Tiefenenttrümmerung, Bodenabtrag und -umlagerung) - Vorgehensweise diverse Schadstoffsanierungsarbeiten - Besonderheiten bei der Arbeit im Bereich der ehemaligen Gerbgruben   In dem Zuschlagskriterium "Bearbeitungskonzept" können maximal 120 Punkte erreicht werden.  Der Bieter hat mit dem Angebot ein Bearbeitungskonzept zur vorgesehenen Projektabwicklung einzureichen. Die Inhalte des Konzeptes gelten rechtlich als Zusicherungen des Bieters. Das Bearbeitungskonzept muss für die Erreichung der Maximalpunktzahl die zur Bewertung notwendigen Ausführungen in der für die Maximalbewertung je Unterkriterium erforderlichen Qualität enthalten.   Die Bewertung des Konzeptes erfolgt mittels folgender Unterkriterien:   - Projektorganisation / Bauablauf (Wichtung: 10 %)  - Arbeits- und Anwohnerschutz (Wichtung: 15 %)  - Verfahrensdurchführung (Wichtung: 15 %)   Detaillierte Ausführungen zur Bewertung der Unterkriterien sind in Anlage L enthalten.   Je Unterkriterium ist entsprechend der Bewertungsmatrix eine Maximalpunktzahl von 3 Punkten erreichbar. Die im jeweiligen Unterkriterium erreichten Punkte werden entsprechend der in Anlage L bekannt gegebenen prozentualen Wichtung im Kriterium Bearbeitungskonzept gewichtet (bspw. 2 erreichte Punkte im Unterkriterium mit 10 % Wichtung: 2 Punkte x 10= 20 gewichtete Punkte). Die in den drei Unterkriterien erreichten Punkte werden addiert.  Insgesamt ist die Erreichung von maximal 300 Punkten möglich. Die in den Kriterien erreichten Punkte werden addiert.  Der Bieter mit der höchsten Punktzahl erhält den Zuschlag. Insofern zwei Bieter dieselbe Gesamtpunktzahl erreichen, erhält der Bieter den Zuschlag, der die höhere Punktzahl im Zuschlagskriterium "Bearbeitungskonzept zur vorgesehenen Projektabwicklung" erreicht</cbc:Description>
+					</cac:SubordinateAwardingCriterion>
+				</cac:AwardingCriterion>
+			</cac:AwardingTerms>
+			<cac:AdditionalInformationParty>
+				<cac:PartyIdentification>
+					<cbc:ID>ORG-0001</cbc:ID>
+				</cac:PartyIdentification>
+			</cac:AdditionalInformationParty>
+			<cac:TenderRecipientParty>
+				<cbc:EndpointID>https://www.dtvp.de/Satellite/notice/CXP4Y995TWS</cbc:EndpointID>
+				<cac:PartyIdentification>
+					<cbc:ID>ORG-0001</cbc:ID>
+				</cac:PartyIdentification>
+			</cac:TenderRecipientParty>
+			<cac:AppealTerms>
+				<cac:PresentationPeriod>
+					<cbc:Description languageID="DEU">-</cbc:Description>
+				</cac:PresentationPeriod>
+				<cac:AppealReceiverParty>
+					<cac:PartyIdentification>
+						<cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+					</cac:PartyIdentification>
+				</cac:AppealReceiverParty>
+			</cac:AppealTerms>
+			<cac:Language>
+				<cbc:ID>DEU</cbc:ID>
+			</cac:Language>
+			<cac:PostAwardProcess>
+				<cbc:ElectronicOrderUsageIndicator>false</cbc:ElectronicOrderUsageIndicator>
+				<cbc:ElectronicPaymentUsageIndicator>false</cbc:ElectronicPaymentUsageIndicator>
+			</cac:PostAwardProcess>
+			<cac:SecurityClearanceTerm>
+				<cbc:Code listName="required">false</cbc:Code>
+			</cac:SecurityClearanceTerm>
+		</cac:TenderingTerms>
+		<cac:TenderingProcess>
+			<cbc:SubmissionMethodCode listName="esubmission">required</cbc:SubmissionMethodCode>
+			<cbc:CandidateReductionConstraintIndicator>false</cbc:CandidateReductionConstraintIndicator>
+			<cbc:GovernmentAgreementConstraintIndicator>false</cbc:GovernmentAgreementConstraintIndicator>
+			<cbc:AccessToolsURI>https://www.dtvp.de/Satellite/notice/CXP4Y995TWS</cbc:AccessToolsURI>
+			<cac:InvitationSubmissionPeriod>
+				<cbc:StartDate>2025-12-22+01:00</cbc:StartDate>
+			</cac:InvitationSubmissionPeriod>
+			<cac:ParticipationRequestReceptionPeriod>
+				<cbc:EndDate>2025-12-15+01:00</cbc:EndDate>
+				<cbc:EndTime>12:00:00+01:00</cbc:EndTime>
+			</cac:ParticipationRequestReceptionPeriod>
+			<cac:AdditionalInformationRequestPeriod>
+				<cbc:EndDate>2025-12-10+01:00</cbc:EndDate>
+				<cbc:EndTime>23:59:59+01:00</cbc:EndTime>
+			</cac:AdditionalInformationRequestPeriod>
+			<cac:EconomicOperatorShortList>
+				<cbc:LimitationDescription>false</cbc:LimitationDescription>
+				<cbc:MinimumQuantity>3</cbc:MinimumQuantity>
+			</cac:EconomicOperatorShortList>
+			<cac:AuctionTerms>
+				<cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+			</cac:AuctionTerms>
+			<cac:ContractingSystem>
+				<cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+			</cac:ContractingSystem>
+			<cac:ContractingSystem>
+				<cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+			</cac:ContractingSystem>
+		</cac:TenderingProcess>
+		<cac:ProcurementProject>
+			<cbc:ID schemeName="internalID">28102025</cbc:ID>
+			<cbc:Name languageID="DEU">GESA mbH - Baufeldfreimachung, Entsorgung und Sanierung Einsatztrainingszentrum (ETZ) und THW-Betriebsgelände 24534 Neumünster, Färberstraße 92, BImA-WE-Nr. 138460</cbc:Name>
+			<cbc:Description languageID="DEU">Es ist keine Aufteilung des Auftrags in Lose vorgesehen, da eine Aufteilung in Lose nicht vereinbar mit den inhaltlichen Anforderungen an die zu vergebende Leistung ist. Die Bau- und Dienstleistungen und die in diesem Zusammenhang erforderlichen Entsorgungsleistungen sind fachlich, räumlich und logistisch zusammenhängende Leistungen.   Die Erreichung der Zielstellung der Baufeldfreimachung ist nur möglich, wenn die Entsorgung der dabei anfallenden Abfälle sichergestellt ist. Eine Aufteilung in Lose würde der erfolgreichen und fristgerechten Ausführung der Baufeldfreimachung entgegenstehen.</cbc:Description>
+			<cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+			<cbc:SMESuitableIndicator>false</cbc:SMESuitableIndicator>
+			<cac:ProcurementAdditionalType>
+				<cbc:ProcurementTypeCode listName="strategic-procurement">none</cbc:ProcurementTypeCode>
+			</cac:ProcurementAdditionalType>
+			<cac:MainCommodityClassification>
+				<cbc:ItemClassificationCode listName="cpv">90522300</cbc:ItemClassificationCode>
+			</cac:MainCommodityClassification>
+			<cac:AdditionalCommodityClassification>
+				<cbc:ItemClassificationCode listName="cpv">90522400</cbc:ItemClassificationCode>
+			</cac:AdditionalCommodityClassification>
+			<cac:AdditionalCommodityClassification>
+				<cbc:ItemClassificationCode listName="cpv">90732300</cbc:ItemClassificationCode>
+			</cac:AdditionalCommodityClassification>
+			<cac:AdditionalCommodityClassification>
+				<cbc:ItemClassificationCode listName="cpv">90743200</cbc:ItemClassificationCode>
+			</cac:AdditionalCommodityClassification>
+			<cac:RealizedLocation>
+				<cac:Address>
+					<cbc:StreetName>Färberstraße 92</cbc:StreetName>
+					<cbc:CityName>Neumünster</cbc:CityName>
+					<cbc:PostalZone>24534</cbc:PostalZone>
+					<cbc:CountrySubentityCode listName="nuts">DEF04</cbc:CountrySubentityCode>
+					<cac:Country>
+						<cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+					</cac:Country>
+				</cac:Address>
+			</cac:RealizedLocation>
+			<cac:PlannedPeriod>
+				<cbc:StartDate>2026-05-04+02:00</cbc:StartDate>
+				<cbc:EndDate>2026-12-31+01:00</cbc:EndDate>
+			</cac:PlannedPeriod>
+		</cac:ProcurementProject>
+	</cac:ProcurementProjectLot>
+</ContractNotice>

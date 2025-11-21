@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractAwardNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractAwardNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema">
+    <ext:UBLExtensions xmlns="">
+        <ext:UBLExtension>
+            <ext:ExtensionContent>
+                <efext:EformsExtension>
+                    <efac:NoticeResult>
+                        <cbc:TotalAmount currencyID="EUR">83732</cbc:TotalAmount>
+                        <efac:LotResult>
+                            <cbc:ID schemeName="result">RES-0001</cbc:ID>
+                            <efac:LotTender>
+                                <cbc:ID>TEN-0001</cbc:ID>
+                            </efac:LotTender>
+                            <efac:SettledContract>
+                                <cbc:ID>CON-0001</cbc:ID>
+                            </efac:SettledContract>
+                            <efac:TenderLot>
+                                <cbc:ID>LOT-0001</cbc:ID>
+                            </efac:TenderLot>
+                        </efac:LotResult>
+                        <efac:LotTender>
+                            <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                            <efac:TenderingParty>
+                                <cbc:ID>TPA-0001</cbc:ID>
+                            </efac:TenderingParty>
+                            <efac:TenderLot>
+                                <cbc:ID>LOT-0001</cbc:ID>
+                            </efac:TenderLot>
+                            <efac:TenderReference>
+                                <cbc:ID>000100601</cbc:ID>
+                            </efac:TenderReference>
+                        </efac:LotTender>
+                        <efac:SettledContract>
+                            <cbc:ID schemeName="contract">CON-0001</cbc:ID>
+                            <cbc:AwardDate>2025-10-14+02:00</cbc:AwardDate>
+                            <efac:ContractReference>
+                                <cbc:ID>33202</cbc:ID>
+                            </efac:ContractReference>
+                            <efac:LotTender>
+                                <cbc:ID>TEN-0001</cbc:ID>
+                            </efac:LotTender>
+                            <efac:Funding>
+                                <efbc:FinancingIdentifier>02-0001-06-08-02</efbc:FinancingIdentifier>
+                                <cbc:FundingProgramCode listName="eu-programme">ERDF_2021</cbc:FundingProgramCode>
+                            </efac:Funding>
+                        </efac:SettledContract>
+                        <efac:TenderingParty>
+                            <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+                            <efac:Tenderer>
+                                <cbc:ID>ORG-0002</cbc:ID>
+                            </efac:Tenderer>
+                        </efac:TenderingParty>
+                    </efac:NoticeResult>
+                    <efac:NoticeSubType>
+                        <cbc:SubTypeCode listName="notice-subtype">25</cbc:SubTypeCode>
+                    </efac:NoticeSubType>
+                    <efac:Organizations>
+                        <efac:Organization>
+                            <efac:Company>
+                                <cac:PartyIdentification>
+                                    <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                                </cac:PartyIdentification>
+                                <cac:PartyName>
+                                    <cbc:Name languageID="LIT">Anykščių rajono savivaldybės administracija</cbc:Name>
+                                </cac:PartyName>
+                                <cac:PostalAddress>
+                                    <cbc:StreetName>J.Biliūno g. 23</cbc:StreetName>
+                                    <cbc:CityName>Anykščiai</cbc:CityName>
+                                    <cbc:PostalZone>29000</cbc:PostalZone>
+                                    <cbc:CountrySubentityCode listName="nuts">LT029</cbc:CountrySubentityCode>
+                                    <cac:Country>
+                                        <cbc:IdentificationCode listName="country">LTU</cbc:IdentificationCode>
+                                    </cac:Country>
+                                </cac:PostalAddress>
+                                <cac:PartyLegalEntity>
+                                    <cbc:CompanyID>188774637</cbc:CompanyID>
+                                </cac:PartyLegalEntity>
+                                <cac:Contact>
+                                    <cbc:Telephone>038158052</cbc:Telephone>
+                                    <cbc:ElectronicMail>zydre.zlatkuviene@anyksciai.lt</cbc:ElectronicMail>
+                                </cac:Contact>
+                            </efac:Company>
+                        </efac:Organization>
+                        <efac:Organization>
+                            <efac:Company>
+                                <cbc:WebsiteURI>https://www.urbanline.lt/</cbc:WebsiteURI>
+                                <cac:PartyIdentification>
+                                    <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                                </cac:PartyIdentification>
+                                <cac:PartyName>
+                                    <cbc:Name languageID="LIT">URBAN LINE</cbc:Name>
+                                </cac:PartyName>
+                                <cac:PostalAddress>
+                                    <cbc:StreetName>Liepkalnio g. 85</cbc:StreetName>
+                                    <cbc:CityName>Vilnius</cbc:CityName>
+                                    <cbc:PostalZone>02120</cbc:PostalZone>
+                                    <cbc:CountrySubentityCode listName="nuts">LT011</cbc:CountrySubentityCode>
+                                    <cac:Country>
+                                        <cbc:IdentificationCode listName="country">LTU</cbc:IdentificationCode>
+                                    </cac:Country>
+                                </cac:PostalAddress>
+                                <cac:PartyLegalEntity>
+                                    <cbc:CompanyID>300149157</cbc:CompanyID>
+                                </cac:PartyLegalEntity>
+                                <cac:Contact>
+                                    <cbc:Telephone>+37067939255</cbc:Telephone>
+                                    <cbc:ElectronicMail>monika.slamaite@urbanline.lt</cbc:ElectronicMail>
+                                </cac:Contact>
+                            </efac:Company>
+                        </efac:Organization>
+                        <efac:Organization>
+                            <efac:Company>
+                                <cac:PartyIdentification>
+                                    <cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+                                </cac:PartyIdentification>
+                                <cac:PartyName>
+                                    <cbc:Name languageID="LIT">Panevėžio apygardos teismas</cbc:Name>
+                                </cac:PartyName>
+                                <cac:PostalAddress>
+                                    <cbc:StreetName>Elektros g. 9</cbc:StreetName>
+                                    <cbc:CityName>Panevėžys</cbc:CityName>
+                                    <cbc:PostalZone>35175</cbc:PostalZone>
+                                    <cbc:CountrySubentityCode listName="nuts">LT025</cbc:CountrySubentityCode>
+                                    <cac:Country>
+                                        <cbc:IdentificationCode listName="country">LTU</cbc:IdentificationCode>
+                                    </cac:Country>
+                                </cac:PostalAddress>
+                                <cac:PartyLegalEntity>
+                                    <cbc:CompanyID>188607531</cbc:CompanyID>
+                                </cac:PartyLegalEntity>
+                                <cac:Contact>
+                                    <cbc:Telephone>+37045468765</cbc:Telephone>
+                                    <cbc:ElectronicMail>panevezio.apygardos@teismas.lt</cbc:ElectronicMail>
+                                </cac:Contact>
+                            </efac:Company>
+                        </efac:Organization>
+                        <efac:Organization>
+                            <efac:Company>
+                                <cac:PartyIdentification>
+                                    <cbc:ID schemeName="organization">ORG-0004</cbc:ID>
+                                </cac:PartyIdentification>
+                                <cac:PartyName>
+                                    <cbc:Name languageID="LIT">European Dynamics S.A.</cbc:Name>
+                                </cac:PartyName>
+                                <cac:PostalAddress>
+                                    <cbc:Department>European Dynamics S.A.</cbc:Department>
+                                    <cbc:CityName>Athens</cbc:CityName>
+                                    <cbc:PostalZone>15125</cbc:PostalZone>
+                                    <cbc:CountrySubentityCode listName="nuts">EL301</cbc:CountrySubentityCode>
+                                    <cac:Country>
+                                        <cbc:IdentificationCode listName="country">GRC</cbc:IdentificationCode>
+                                    </cac:Country>
+                                </cac:PostalAddress>
+                                <cac:PartyLegalEntity>
+                                    <cbc:CompanyID>002024901000</cbc:CompanyID>
+                                </cac:PartyLegalEntity>
+                                <cac:Contact>
+                                    <cbc:Telephone>+30 2108094500</cbc:Telephone>
+                                    <cbc:ElectronicMail>eproc-esender@eurodyn.com</cbc:ElectronicMail>
+                                </cac:Contact>
+                            </efac:Company>
+                        </efac:Organization>
+                    </efac:Organizations>
+                <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00761492-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+            </ext:ExtensionContent>
+        </ext:UBLExtension>
+    </ext:UBLExtensions>
+    <cbc:UBLVersionID xmlns="">2.3</cbc:UBLVersionID>
+    <cbc:CustomizationID xmlns="">eforms-sdk-1.13</cbc:CustomizationID>
+    <cbc:ID xmlns="" schemeName="notice-id">ba7554cc-54ef-457b-bb44-f207e949717f</cbc:ID>
+    <cbc:ContractFolderID xmlns="">cf3acdc9-1271-4f1a-b9e4-cce873ba0335</cbc:ContractFolderID>
+    <cbc:IssueDate xmlns="">2025-11-13+02:00</cbc:IssueDate>
+    <cbc:IssueTime xmlns="">16:34:16+02:00</cbc:IssueTime>
+    <cbc:VersionID xmlns="">01</cbc:VersionID>
+    <cbc:RegulatoryDomain xmlns="">32014L0024</cbc:RegulatoryDomain>
+    <cbc:NoticeTypeCode xmlns="" listName="dir-awa-pre">veat</cbc:NoticeTypeCode>
+    <cbc:NoticeLanguageCode xmlns="" listName="language">LIT</cbc:NoticeLanguageCode>
+    <cac:ContractingParty xmlns="">
+        <cbc:BuyerProfileURI>www.anyksciai.lt</cbc:BuyerProfileURI>
+        <cac:ContractingPartyType>
+            <cbc:PartyTypeCode listName="buyer-legal-type">ra</cbc:PartyTypeCode>
+        </cac:ContractingPartyType>
+        <cac:ContractingActivity>
+            <cbc:ActivityTypeCode listName="authority-activity">gen-pub</cbc:ActivityTypeCode>
+        </cac:ContractingActivity>
+        <cac:Party>
+            <cac:PartyIdentification>
+                <cbc:ID>ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:ServiceProviderParty>
+                <cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode>
+                <cac:Party>
+                    <cac:PartyIdentification>
+                        <cbc:ID>ORG-0004</cbc:ID>
+                    </cac:PartyIdentification>
+                </cac:Party>
+            </cac:ServiceProviderParty>
+        </cac:Party>
+    </cac:ContractingParty>
+    <cac:TenderingProcess xmlns="">
+        <cbc:ProcedureCode listName="procurement-procedure-type">neg-wo-call</cbc:ProcedureCode>
+        <cac:ProcessJustification>
+            <cbc:ProcessReasonCode listName="direct-award-justification">exclusive</cbc:ProcessReasonCode>
+            <cbc:ProcessReason languageID="LIT">Vadovaujantis Viešųjų pirkimų įstatymo 71 straipsnio 1 d. 2 p. c papunkčio nuostatomis</cbc:ProcessReason>
+        </cac:ProcessJustification>
+    </cac:TenderingProcess>
+    <cac:ProcurementProject xmlns="">
+        <cbc:Name languageID="LIT">Žaliosios infrastruktūros priemonių įgyvendinimas (neskelbiamos derybos)</cbc:Name>
+        <cbc:Description languageID="LIT">1. K. Donelaičio ir Panevėžio g. kapitalinio remonto, kitų inžinerinių statinių (poilsio aikštelės ties Šaltupio g.) rekonstravimo, akligatvio (nuo Šaltupio g.), kitų inžinerinių statinių (poilsio aikštelės ties Panevėžio g.) ir lietaus nuotekų tinklų statybos Anykščių mieste, Anykščių raj. sav., techninio projekto A laidos parengimas ir statinio projekto vykdymo priežiūra; 2. Pėsčiųjų-dviračių tako J. Biliūno g., Anykščių m., Anykščių raj. sav., kapitalinio remonto projekto A laidos parengimas ir statinio projekto vykdymo priežiūra ; 3. Kitų inžinerinių statinių, kiemo statinių, kapitalinio remonto žemės sklype, kad. Nr. 3403/0014:65, Anykščių m., Anykščių raj. sav. projekto A laidos parengimas ir statinio projekto vykdymo priežiūra.</cbc:Description>
+        <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+        <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">71320000</cbc:ItemClassificationCode>
+        </cac:MainCommodityClassification>
+        <cac:RealizedLocation>
+            <cac:Address>
+                <cbc:StreetName>J. Biliūno g. 23</cbc:StreetName>
+                <cbc:CityName>Anykščiai</cbc:CityName>
+                <cbc:PostalZone>2911</cbc:PostalZone>
+                <cbc:CountrySubentityCode listName="nuts">LT029</cbc:CountrySubentityCode>
+                <cac:Country>
+                    <cbc:IdentificationCode listName="country">LTU</cbc:IdentificationCode>
+                </cac:Country>
+            </cac:Address>
+        </cac:RealizedLocation>
+    </cac:ProcurementProject>
+    <cac:ProcurementProjectLot xmlns="">
+        <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+        <cac:TenderingTerms>
+            <cbc:FundingProgramCode listName="eu-funded">eu-funds</cbc:FundingProgramCode>
+            <cac:DocumentProviderParty>
+                <cac:PartyIdentification>
+                    <cbc:ID>ORG-0001</cbc:ID>
+                </cac:PartyIdentification>
+            </cac:DocumentProviderParty>
+            <cac:AppealTerms>
+                <cac:AppealReceiverParty>
+                    <cac:PartyIdentification>
+                        <cbc:ID>ORG-0003</cbc:ID>
+                    </cac:PartyIdentification>
+                </cac:AppealReceiverParty>
+            </cac:AppealTerms>
+        </cac:TenderingTerms>
+        <cac:TenderingProcess>
+            <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+            <cac:ContractingSystem>
+                <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+            </cac:ContractingSystem>
+            <cac:ContractingSystem>
+                <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+            </cac:ContractingSystem>
+        </cac:TenderingProcess>
+        <cac:ProcurementProject>
+            <cbc:ID>0</cbc:ID>
+            <cbc:Name languageID="LIT">Žaliosios infrastruktūros priemonių įgyvendinimas (neskelbiamos derybos)</cbc:Name>
+            <cbc:Description languageID="LIT">1. K. Donelaičio ir Panevėžio g. kapitalinio remonto, kitų inžinerinių statinių (poilsio aikštelės ties Šaltupio g.) rekonstravimo, akligatvio (nuo Šaltupio g.), kitų inžinerinių statinių (poilsio aikštelės ties Panevėžio g.) ir lietaus nuotekų tinklų statybos Anykščių mieste, Anykščių raj. sav., techninio projekto A laidos parengimas ir statinio projekto vykdymo priežiūra; 2. Pėsčiųjų-dviračių tako J. Biliūno g., Anykščių m., Anykščių raj. sav., kapitalinio remonto projekto A laidos parengimas ir statinio projekto vykdymo priežiūra ; 3. Kitų inžinerinių statinių, kiemo statinių, kapitalinio remonto žemės sklype, kad. Nr. 3403/0014:65, Anykščių m., Anykščių raj. sav. projekto A laidos parengimas ir statinio projekto vykdymo priežiūra.</cbc:Description>
+            <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+            <cac:ProcurementAdditionalType>
+                <cbc:ProcurementTypeCode listName="accessibility">inc</cbc:ProcurementTypeCode>
+            </cac:ProcurementAdditionalType>
+            <cac:ProcurementAdditionalType>
+                <cbc:ProcurementTypeCode listName="social-objective">acc-all</cbc:ProcurementTypeCode>
+            </cac:ProcurementAdditionalType>
+            <cac:ProcurementAdditionalType>
+                <cbc:ProcurementTypeCode listName="strategic-procurement">soc-obj</cbc:ProcurementTypeCode>
+                <cbc:ProcurementType languageID="LIT">Nacionaliniai žalieji reikalavimai</cbc:ProcurementType>
+            </cac:ProcurementAdditionalType>
+            <cac:MainCommodityClassification>
+                <cbc:ItemClassificationCode listName="cpv">71320000</cbc:ItemClassificationCode>
+            </cac:MainCommodityClassification>
+            <cac:RealizedLocation>
+                <cac:Address>
+                    <cbc:CountrySubentityCode listName="nuts">LT029</cbc:CountrySubentityCode>
+                    <cac:Country>
+                        <cbc:IdentificationCode listName="country">LTU</cbc:IdentificationCode>
+                    </cac:Country>
+                </cac:Address>
+            </cac:RealizedLocation>
+        </cac:ProcurementProject>
+    </cac:ProcurementProjectLot>
+    <cac:TenderResult xmlns="">
+        <cbc:AwardDate>2025-11-13+02:00</cbc:AwardDate>
+    </cac:TenderResult>
+</ContractAwardNotice>

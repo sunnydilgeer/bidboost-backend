@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractAwardNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractAwardNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+   <ext:UBLExtensions>
+      <ext:UBLExtension>
+         <ext:ExtensionContent>
+            <efext:EformsExtension>
+               <efac:NoticeResult>
+                  <cbc:TotalAmount currencyID="EUR">1460000.00</cbc:TotalAmount>
+                  <efac:LotResult>
+                     <cbc:ID schemeName="result">RES-0001</cbc:ID>
+                     <cbc:HigherTenderAmount currencyID="EUR">1460000.00</cbc:HigherTenderAmount>
+                     <cbc:LowerTenderAmount currencyID="EUR">1460000.00</cbc:LowerTenderAmount>
+                     <cbc:TenderResultCode listName="winner-selection-status">selec-w</cbc:TenderResultCode>
+                     <efac:LotTender>
+                        <cbc:ID>TEN-0001</cbc:ID>
+                     </efac:LotTender>
+                     <efac:ReceivedSubmissionsStatistics>
+                        <efbc:StatisticsCode listName="received-submission-type">tenders</efbc:StatisticsCode>
+                        <efbc:StatisticsNumeric>2</efbc:StatisticsNumeric>
+                     </efac:ReceivedSubmissionsStatistics>
+                     <efac:ReceivedSubmissionsStatistics>
+                        <efbc:StatisticsCode listName="received-submission-type">part-req</efbc:StatisticsCode>
+                        <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+                     </efac:ReceivedSubmissionsStatistics>
+                     <efac:ReceivedSubmissionsStatistics>
+                        <efbc:StatisticsCode listName="received-submission-type">t-esubm</efbc:StatisticsCode>
+                        <efbc:StatisticsNumeric>2</efbc:StatisticsNumeric>
+                     </efac:ReceivedSubmissionsStatistics>
+                     <efac:ReceivedSubmissionsStatistics>
+                        <efbc:StatisticsCode listName="received-submission-type">t-no-eea</efbc:StatisticsCode>
+                        <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+                     </efac:ReceivedSubmissionsStatistics>
+                     <efac:ReceivedSubmissionsStatistics>
+                        <efbc:StatisticsCode listName="received-submission-type">t-no-verif</efbc:StatisticsCode>
+                        <efbc:StatisticsNumeric>1</efbc:StatisticsNumeric>
+                     </efac:ReceivedSubmissionsStatistics>
+                     <efac:ReceivedSubmissionsStatistics>
+                        <efbc:StatisticsCode listName="received-submission-type">t-oth-eea</efbc:StatisticsCode>
+                        <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+                     </efac:ReceivedSubmissionsStatistics>
+                     <efac:ReceivedSubmissionsStatistics>
+                        <efbc:StatisticsCode listName="received-submission-type">t-sme</efbc:StatisticsCode>
+                        <efbc:StatisticsNumeric>2</efbc:StatisticsNumeric>
+                     </efac:ReceivedSubmissionsStatistics>
+                     <efac:ReceivedSubmissionsStatistics>
+                        <efbc:StatisticsCode listName="received-submission-type">t-verif-inad</efbc:StatisticsCode>
+                        <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+                     </efac:ReceivedSubmissionsStatistics>
+                     <efac:ReceivedSubmissionsStatistics>
+                        <efbc:StatisticsCode listName="received-submission-type">t-verif-inad-low</efbc:StatisticsCode>
+                        <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+                     </efac:ReceivedSubmissionsStatistics>
+                     <efac:SettledContract>
+                        <cbc:ID>CON-0001</cbc:ID>
+                     </efac:SettledContract>
+                     <efac:TenderLot>
+                        <cbc:ID>LOT-0001</cbc:ID>
+                     </efac:TenderLot>
+                  </efac:LotResult>
+                  <efac:LotTender>
+                     <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                     <cbc:RankCode>1</cbc:RankCode>
+                     <efbc:TenderRankedIndicator>true</efbc:TenderRankedIndicator>
+                     <efbc:TenderVariantIndicator>false</efbc:TenderVariantIndicator>
+                     <cac:LegalMonetaryTotal>
+                        <cbc:PayableAmount currencyID="EUR">1460000.00</cbc:PayableAmount>
+                     </cac:LegalMonetaryTotal>
+                     <efac:SubcontractingTerm>
+                        <efbc:TermCode listName="applicability">no</efbc:TermCode>
+                     </efac:SubcontractingTerm>
+                     <efac:TenderingParty>
+                        <cbc:ID>TPA-0001</cbc:ID>
+                     </efac:TenderingParty>
+                     <efac:TenderLot>
+                        <cbc:ID>LOT-0001</cbc:ID>
+                     </efac:TenderLot>
+                     <efac:TenderReference>
+                        <cbc:ID>ponuka č.2</cbc:ID>
+                     </efac:TenderReference>
+                  </efac:LotTender>
+                  <efac:SettledContract>
+                     <cbc:ID schemeName="contract">CON-0001</cbc:ID>
+                     <cbc:IssueDate>2025-11-04+01:00</cbc:IssueDate>
+                     <cbc:Title languageID="SLK"><![CDATA[Kúpna zmluva]]></cbc:Title>
+                     <cbc:URI>https://crz.gov.sk/zmluva/11541378/?csrt=18330678579025324261</cbc:URI>
+                     <cac:SignatoryParty>
+                        <cac:PartyIdentification>
+                           <cbc:ID>ORG-0002</cbc:ID>
+                        </cac:PartyIdentification>
+                     </cac:SignatoryParty>
+                     <efac:ContractReference>
+                        <cbc:ID>Kúpna zmluva č. 254/2025</cbc:ID>
+                     </efac:ContractReference>
+                     <efac:LotTender>
+                        <cbc:ID>TEN-0001</cbc:ID>
+                     </efac:LotTender>
+                  </efac:SettledContract>
+                  <efac:TenderingParty>
+                     <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+                     <efac:Tenderer>
+                        <cbc:ID>ORG-0003</cbc:ID>
+                     </efac:Tenderer>
+                  </efac:TenderingParty>
+               </efac:NoticeResult>
+               <efac:NoticeSubType>
+                  <cbc:SubTypeCode listName="notice-subtype">29</cbc:SubTypeCode>
+               </efac:NoticeSubType>
+               <efac:Organizations>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>www.uvo.gov.sk</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="SLK"><![CDATA[Úrad pre verejné obstarávanie]]></cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName><![CDATA[Ružová dolina]]></cbc:StreetName>
+                           <cbc:AdditionalStreetName><![CDATA[10]]></cbc:AdditionalStreetName>
+                           <cbc:CityName><![CDATA[Bratislava - mestská časť Ružinov]]></cbc:CityName>
+                           <cbc:PostalZone><![CDATA[82109]]></cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">SK010</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">SVK</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>31797903</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>2021511008</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+421250264111</cbc:Telephone>
+                           <cbc:ElectronicMail>info@uvo.gov.sk</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efbc:AcquiringCPBIndicator>false</efbc:AcquiringCPBIndicator>
+                     <efbc:AwardingCPBIndicator>false</efbc:AwardingCPBIndicator>
+                     <efac:Company>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="SLK"><![CDATA[Fakultná nemocnica s poliklinikou J. A. Reimana Prešov]]></cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName><![CDATA[Jána Hollého]]></cbc:StreetName>
+                           <cbc:AdditionalStreetName><![CDATA[14]]></cbc:AdditionalStreetName>
+                           <cbc:CityName><![CDATA[Prešov]]></cbc:CityName>
+                           <cbc:PostalZone><![CDATA[08181]]></cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">SK041</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">SVK</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>00610577</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>2021281559</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+421517011232</cbc:Telephone>
+                           <cbc:ElectronicMail>harcarova.katarina@fnsppresov.sk</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <efbc:CompanySizeCode listName="economic-operator-size">small</efbc:CompanySizeCode>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="SLK"><![CDATA[Surgitech s. r. o.]]></cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName><![CDATA[Zárubova]]></cbc:StreetName>
+                           <cbc:AdditionalStreetName><![CDATA[1]]></cbc:AdditionalStreetName>
+                           <cbc:CityName><![CDATA[Bratislava - mestská časť Záhorská Bystrica]]></cbc:CityName>
+                           <cbc:PostalZone><![CDATA[841 06]]></cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">SK010</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">SVK</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>50197975</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>2120238736</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                     </efac:Company>
+                  </efac:Organization>
+               </efac:Organizations>
+            <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00760568-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+         </ext:ExtensionContent>
+      </ext:UBLExtension>
+   </ext:UBLExtensions>
+   <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+   <cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+   <cbc:ID schemeName="notice-id">454444b2-6395-47d1-9fec-15d6202fa814</cbc:ID>
+   <cbc:ContractFolderID>22796a40-3de0-4135-981e-842a1ce1ff51</cbc:ContractFolderID>
+   <cbc:IssueDate>2025-11-14+01:00</cbc:IssueDate>
+   <cbc:IssueTime>11:56:21+01:00</cbc:IssueTime>
+   <cbc:VersionID>01</cbc:VersionID>
+   <cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+   <cbc:NoticeTypeCode listName="result">can-standard</cbc:NoticeTypeCode>
+   <cbc:NoticeLanguageCode listName="language">SLK</cbc:NoticeLanguageCode>
+   <cac:ContractingParty>
+      <cbc:BuyerProfileURI>https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-profilov/detail/1369</cbc:BuyerProfileURI>
+      <cac:ContractingPartyType>
+         <cbc:PartyTypeCode listName="buyer-legal-type">body-pl-cga</cbc:PartyTypeCode>
+      </cac:ContractingPartyType>
+      <cac:ContractingActivity>
+         <cbc:ActivityTypeCode listName="authority-activity">health</cbc:ActivityTypeCode>
+      </cac:ContractingActivity>
+      <cac:Party>
+         <cac:PartyIdentification>
+            <cbc:ID>ORG-0002</cbc:ID>
+         </cac:PartyIdentification>
+         <cac:ServiceProviderParty>
+            <cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode>
+            <cac:Party>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0001</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:Party>
+         </cac:ServiceProviderParty>
+      </cac:Party>
+   </cac:ContractingParty>
+   <cac:TenderingProcess>
+      <cbc:ProcedureCode listName="procurement-procedure-type">open</cbc:ProcedureCode>
+      <cac:ProcessJustification>
+         <cbc:ProcessReasonCode listName="accelerated-procedure">false</cbc:ProcessReasonCode>
+      </cac:ProcessJustification>
+   </cac:TenderingProcess>
+   <cac:ProcurementProject>
+      <cbc:ID>401/2025/VO</cbc:ID>
+      <cbc:Name languageID="SLK"><![CDATA[Mobilný intraoperačný CT zobrazovací robot s 3D navigáciou
+
+]]></cbc:Name>
+      <cbc:Description languageID="SLK"><![CDATA[Predmetom zákazky je dodanie 1 ks mobilného intraoperačného CT zobrazovacieho robota s 3D navigáciou  pre potreby oddelenia úrazovej chirurgie Fakultnej nemocnice s poliklinikou J. A. Reimana Prešov. Predmet zákazky musí byť nový, nepoužívaný a nerepasovaný, v bezchybnom stave a musí zodpovedať všetkým požiadavkám platných právnych predpisov Slovenskej republiky pre účely používania v zdravotníckom zariadení. Neoddeliteľnou súčasťou zákazky je doprava predmetu zákazky do dohodnutého miesta dodania, vyloženie v mieste dodania, odovzdanie písomných dokladov potrebných pre nadobudnutie vlastníckeho práva k predmetu zákazky, poskytnutie užívateľskej dokumentácie k predmetu zákazky, uvedenie predmetu zákazky do prevádzky (inštalácia) s vydaním potvrdenia o inštalácii, zaškolenie personálu verejného obstarávateľa o správnom užívaní predmetu zákazky s vydaním potvrdenia o zaškolení obsahujúceho menný zoznam zaškoleného personálu verejného obstarávateľa, ako aj poskytovanie alebo zabezpečovanie záručných opráv v prípade výskytu vád predmetu zákazky v priebehu záručnej doby. Všetky písomné doklady musia byť vyhotovené v slovenskom jazyku, resp. českom jazyku. Podrobné vymedzenie predmetu zákazky vrátane vypracovaných technických špecifikácií a požiadaviek verejného obstarávateľa na predmet zákazky tvorí časť B. Opis predmetu zákazky súťažných podkladov a časť C. Obchodné podmienky dodania predmetu zákazky súťažných podkladov.     
+]]></cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">supplies</cbc:ProcurementTypeCode>
+      <cbc:Note languageID="SLK"><![CDATA[Uchádzač musí spĺňať podmienky účasti týkajúce sa osobného postavenia podľa  ustanovenia § 32 ods. 1 zákona č. 343/2015 Z. z. o verejnom obstarávaní a o zmene a doplnení niektorých zákonov spôsobom podľa § 32 alebo § 152 zákona o verejnom obstarávaní. Uchádzač, ktorého tvorí  skupina dodávateľov, preukazuje splnenie podmienok účasti vo verejnom obstarávaní týkajúcich sa osobného postavenia za každého člena skupiny osobitne. Oprávnenie dodávať tovar, uskutočňovať stavebné práce alebo poskytovať službu preukazuje člen skupiny len vo vzťahu k tej časti predmetu zákazky, ktorú má zabezpečiť. Uchádzač môže v zmysle § 39 zákona o verejnom obstarávaní predbežne nahradiť doklady na preukázanie splnenia podmienok účasti určené verejným obstarávateľom prostredníctvom Jednotného európskeho dokumentu (JED). Vyžaduje sa predloženie/zaslanie skenov originálov alebo úradne overených kópií všetkých dokladov požadovaných v rámci tejto podmienky účasti. Ďalšie pokyny a podrobnosti k podmienkam účasti týkajúcich sa osobného postavenia sú uvedené v časti E. Podmienky účasti uchádzačov súťažných podkladov. UPOZORNENIE: Verejný obstarávateľ nemá oprávnenie získavať údaje podľa § 32 ods. 3 zákona o verejnom obstarávaní.  V súlade s   § 20 zákona o verejnom obstarávaní sa komunikácia medzi verejným obstarávateľom a záujemcami/ uchádzačmi uskutočňuje v tomto verejnom obstarávaní elektronickou formou, ktorá zabezpečí trvalé zachytenie ich obsahu, prostredníctvom systému ERANET dostupného na adrese: https://fnsppresov.eranet.sk (ďalej len ERANET), ktorý spĺňa všetky požiadavky stanovené v ustanoveniach § 20 zákona o verejnom obstarávaní. Pre potreby elektronickej komunikácie je každý záujemca/uchádzač povinný zaregistrovať sa v systéme ERANET na URL adrese: https://fnsppresov.eranet.sk. Súťažné podklady vrátane ich doplnení a vysvetlení sú záujemcom prístupné bezodplatne, neobmedzene, úplným a priamym prístupom na URL adrese https://fnsppresov.eranet.sk/#/tenderPublicDetails/787. O záujemcoch, ktorí si prevezmú súťažné
+podklady bez prihlásenia verejný obstarávateľ nemá evidenciu - o zverejnení doplňujúcich informácií a
+vysvetlení nebudú informovaní. Verejný obstarávateľ preto záujemcom odporúča, aby si súťažné podklady stiahli až po zaregistrovaní a prihlásení sa do systému. Komunikácia sa bude uskutočňovať výhradne v slovenskom jazyku prípadne v českom jazyku a to písomnou formou v elektronickej podobe prostredníctvom systému ERANET. Za moment doručenia elektronickej informácie sa považuje moment jej odoslania v systéme ERANET, t. j. moment uloženia elektronickej zásielky v elektronickej schránke jej adresáta v systéme ERANET. Uchádzač môže v zmysle § 39 zákona o verejnom obstarávaní predbežne nahradiť doklady na preukázanie splnenia podmienok účasti určené verejným obstarávateľom prostredníctvom Jednotného európskeho dokumentu (JED). Úrad pre verejné obstarávanie zverejnil manuál s vysvetlením k vypĺňaniu JEDu:
+https://www.uvo.gov.sk/jednotny-europsky-dokument-pre-verejne-obstaravanie-602.html. Postup
+vyplnenia JED prostredníctvom bezplatnej služby Európskej komisie poskytujúcej elektronickú verziu JED
+je popísaný v Príručke k elektronickej službe na vyplnenie a opätovné použitie Jednotného európskeho
+dokumentu, ktorá je dostupná na webovom sídle úradu na adrese:
+https://www.uvo.gov.sk/jednotny-europsky-dokument-pre-verejne-obstaravanie-602.html. Verejný
+obstarávateľ stanovuje, že uchádzač môže v časti IV. JED-u uviesť tzv. globálny údaj pre preukázanie splnenia podmienok účasti bez toho, aby musel vyplniť iné oddiely časti IV. Postačuje, keď uchádzač uvedie nasledovné: - "Spĺňa požadované podmienky účasti Áno".
+Podmienky a pravidlá používania systému ERANET sú uvedené na: https://fnsppresov.eranet.sk v časti
+PODMIENKY a MANUÁL. Minimálne technické požiadavky na používanie informačného systému ERANET:
+OS MS Win 7 a vyššie, Android, iOS7, Linux; Aktuálne verzie prehliadačov: IE 10 a vyššie, MS Edge, Firefox
+32.0 a vyššie, Chrome 40 a vyššie.
+Zákazka je zadávaná ako nadlimitná, postupom verejnej súťaže podľa § 66 zákona o verejnom obstarávaní, s uplatnením  § 66 ods. 7 písm. b) zákona o verejnom obstarávaní, t. j. vyhodnotenie ponúk z hľadiska splnenia požiadaviek na predmet zákazky a vyhodnotenie splnenia podmienok účasti sa uskutoční po vyhodnotení ponúk na základe kritérií na vyhodnotenie ponúk.]]></cbc:Note>
+      <cac:ProcurementAdditionalType>
+         <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+      </cac:ProcurementAdditionalType>
+      <cac:RequestedTenderTotal>
+         <cbc:EstimatedOverallContractAmount currencyID="EUR">1483000.00</cbc:EstimatedOverallContractAmount>
+      </cac:RequestedTenderTotal>
+      <cac:MainCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">33110000</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">50420000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">51410000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">80511000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">60000000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">33160000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:RealizedLocation>
+         <cbc:Description languageID="SLK"><![CDATA[Chirurgický monoblok, oddelenie operačných sál a centrálnej sterilizácie]]></cbc:Description>
+         <cac:Address>
+            <cbc:StreetName><![CDATA[Hollého ]]></cbc:StreetName>
+            <cbc:AdditionalStreetName><![CDATA[14]]></cbc:AdditionalStreetName>
+            <cbc:CityName><![CDATA[Prešov]]></cbc:CityName>
+            <cbc:PostalZone><![CDATA[08181]]></cbc:PostalZone>
+            <cbc:CountrySubentityCode listName="nuts">SK041</cbc:CountrySubentityCode>
+            <cac:Country>
+               <cbc:IdentificationCode listName="country">SVK</cbc:IdentificationCode>
+            </cac:Country>
+         </cac:Address>
+      </cac:RealizedLocation>
+   </cac:ProcurementProject>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+      <cac:TenderingTerms>
+         <ext:UBLExtensions>
+            <ext:UBLExtension>
+               <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                     <efac:StrategicProcurement>
+                        <efbc:ApplicableLegalBasis listName="eed-scope">false</efbc:ApplicableLegalBasis>
+                     </efac:StrategicProcurement>
+                  </efext:EformsExtension>
+               </ext:ExtensionContent>
+            </ext:UBLExtension>
+         </ext:UBLExtensions>
+         <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="fsr">false</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:AwardingTerms>
+            <cac:AwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>100</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="SLK"><![CDATA[Celková zmluvná cena v eur vrátane DPH]]></cbc:Name>
+                  <cbc:Description languageID="SLK"><![CDATA[Kritériom na vyhodnotenie ponúk je najnižšia celková zmluvná cena v eur vrátane DPH za predmet zákazky, v rozsahu podľa opisu predmetu zákazky.]]></cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+            </cac:AwardingCriterion>
+         </cac:AwardingTerms>
+         <cac:AppealTerms>
+            <cac:PresentationPeriod>
+               <cbc:Description languageID="SLK"><![CDATA[Lehoty na predloženie námietok upravuje platný a účinný zákon o verejnom obstarávaní.]]></cbc:Description>
+            </cac:PresentationPeriod>
+            <cac:AppealInformationParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0001</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealInformationParty>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0001</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+         </cac:AppealTerms>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+         <cac:AuctionTerms>
+            <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+         </cac:AuctionTerms>
+         <cac:FrameworkAgreement>
+            <cac:SubsequentProcessTenderRequirement>
+               <cbc:Name><![CDATA[buyer-categories]]></cbc:Name>
+            </cac:SubsequentProcessTenderRequirement>
+         </cac:FrameworkAgreement>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:Name languageID="SLK"><![CDATA[Mobilný intraoperačný CT zobrazovací robot s 3D navigáciou]]></cbc:Name>
+         <cbc:Description languageID="SLK"><![CDATA[Predmetom zákazky je dodanie 1 ks mobilného intraoperačného CT zobrazovacieho robota s 3D navigáciou  pre potreby oddelenia úrazovej chirurgie Fakultnej nemocnice s poliklinikou J. A. Reimana Prešov. Predmet zákazky musí byť nový, nepoužívaný a nerepasovaný, v bezchybnom stave a musí zodpovedať všetkým požiadavkám platných právnych predpisov Slovenskej republiky pre účely používania v zdravotníckom zariadení.
+Neoddeliteľnou súčasťou zákazky je doprava predmetu zákazky do dohodnutého miesta dodania, vyloženie v mieste dodania, odovzdanie písomných dokladov potrebných pre nadobudnutie vlastníckeho práva k predmetu zákazky, poskytnutie užívateľskej dokumentácie k predmetu zákazky, uvedenie predmetu zákazky do prevádzky (inštalácia) s vydaním potvrdenia o inštalácii, zaškolenie personálu verejného obstarávateľa o správnom užívaní predmetu zákazky s vydaním potvrdenia o zaškolení obsahujúceho menný zoznam zaškoleného personálu verejného obstarávateľa, ako aj poskytovanie alebo zabezpečovanie záručných opráv v prípade výskytu vád predmetu zákazky v priebehu záručnej doby. Všetky písomné doklady musia byť vyhotovené v slovenskom jazyku, resp. českom jazyku. Podrobné vymedzenie predmetu zákazky vrátane vypracovaných technických špecifikácií a požiadaviek verejného obstarávateľa na predmet zákazky tvorí časť B. Opis predmetu zákazky súťažných podkladov a časť C. Obchodné podmienky dodania predmetu zákazky súťažných podkladov.     ]]></cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">supplies</cbc:ProcurementTypeCode>
+         <cbc:EstimatedOverallContractQuantity unitCode="H87">1</cbc:EstimatedOverallContractQuantity>
+         <cac:ProcurementAdditionalType>
+            <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+         </cac:ProcurementAdditionalType>
+         <cac:ProcurementAdditionalType>
+            <cbc:ProcurementTypeCode listName="strategic-procurement">none</cbc:ProcurementTypeCode>
+         </cac:ProcurementAdditionalType>
+         <cac:RequestedTenderTotal>
+            <cbc:EstimatedOverallContractAmount currencyID="EUR">1483000.00</cbc:EstimatedOverallContractAmount>
+         </cac:RequestedTenderTotal>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">33110000</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">50420000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">51410000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">80511000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">60000000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">33160000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:RealizedLocation>
+            <cbc:Description languageID="SLK"><![CDATA[Chirurgický monoblok, oddelenie operačných sál a centrálnej sterilizácie]]></cbc:Description>
+            <cac:Address>
+               <cbc:StreetName><![CDATA[Hollého ]]></cbc:StreetName>
+               <cbc:AdditionalStreetName><![CDATA[14]]></cbc:AdditionalStreetName>
+               <cbc:CityName><![CDATA[Prešov]]></cbc:CityName>
+               <cbc:PostalZone><![CDATA[08181]]></cbc:PostalZone>
+               <cbc:CountrySubentityCode listName="nuts">SK041</cbc:CountrySubentityCode>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">SVK</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+         <cac:PlannedPeriod>
+            <cbc:DurationMeasure unitCode="DAY">60</cbc:DurationMeasure>
+         </cac:PlannedPeriod>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+   <cac:TenderResult>
+      <cbc:AwardDate>2000-01-01Z</cbc:AwardDate>
+   </cac:TenderResult>
+</ContractAwardNotice>

@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+    <ext:UBLExtensions>
+        <ext:UBLExtension>
+            <ext:ExtensionContent>
+                <efext:EformsExtension>
+                    <efac:NoticeSubType>
+                        <cbc:SubTypeCode listName="notice-subtype">17</cbc:SubTypeCode>
+                    </efac:NoticeSubType>
+                    <efac:Organizations>
+                        <efac:Organization>
+                            <efac:Company>
+                                <cbc:WebsiteURI>https://www.ratp.fr</cbc:WebsiteURI>
+                                <cbc:EndpointID>https://ratp.bravosolution.com/</cbc:EndpointID>
+                                <cac:PartyIdentification>
+                                    <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                                </cac:PartyIdentification>
+                                <cac:PartyName>
+                                    <cbc:Name languageID="FRA">RATP</cbc:Name>
+                                </cac:PartyName>
+                                <cac:PostalAddress>
+                                    <cbc:StreetName>54 quai de la Rapée</cbc:StreetName>
+                                    <cbc:AdditionalStreetName>Cedex Paris 12</cbc:AdditionalStreetName>
+                                    <cbc:CityName>Paris</cbc:CityName>
+                                    <cbc:PostalZone>75599</cbc:PostalZone>
+                                    <cbc:CountrySubentityCode listName="nuts">FR101</cbc:CountrySubentityCode>
+                                    <cac:Country>
+                                        <cbc:IdentificationCode listName="country">FRA</cbc:IdentificationCode>
+                                    </cac:Country>
+                                </cac:PostalAddress>
+                                <cac:PartyLegalEntity>
+                                    <cbc:CompanyID>77566343801906</cbc:CompanyID>
+                                </cac:PartyLegalEntity>
+                                <cac:Contact>
+                                    <cbc:Name>Mathyeu BASSO</cbc:Name>
+                                    <cbc:Telephone>+33 6 59 64 50 72</cbc:Telephone>
+                                    <cbc:ElectronicMail>mathyeu.basso@ratp.fr</cbc:ElectronicMail>
+                                </cac:Contact>
+                            </efac:Company>
+                        </efac:Organization>
+                        <efac:Organization>
+                            <efac:Company>
+                                <cbc:WebsiteURI>https://paris.tribunal-administratif.fr</cbc:WebsiteURI>
+                                <cac:PartyIdentification>
+                                    <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                                </cac:PartyIdentification>
+                                <cac:PartyName>
+                                    <cbc:Name languageID="FRA">Tribunal Administratif de Paris</cbc:Name>
+                                </cac:PartyName>
+                                <cac:PostalAddress>
+                                    <cbc:StreetName>7 rue de Jouy</cbc:StreetName>
+                                    <cbc:AdditionalStreetName>Paris Cedex 04</cbc:AdditionalStreetName>
+                                    <cbc:CityName>Paris</cbc:CityName>
+                                    <cbc:PostalZone>75181</cbc:PostalZone>
+                                    <cbc:CountrySubentityCode listName="nuts">FR101</cbc:CountrySubentityCode>
+                                    <cac:Country>
+                                        <cbc:IdentificationCode listName="country">FRA</cbc:IdentificationCode>
+                                    </cac:Country>
+                                </cac:PostalAddress>
+                                <cac:PartyLegalEntity>
+                                    <cbc:CompanyID>17750005500013</cbc:CompanyID>
+                                </cac:PartyLegalEntity>
+                                <cac:Contact>
+                                    <cbc:Telephone>0144594400</cbc:Telephone>
+                                    <cbc:ElectronicMail>greffe.ta-paris@juradm.fr</cbc:ElectronicMail>
+                                </cac:Contact>
+                            </efac:Company>
+                        </efac:Organization>
+                    </efac:Organizations>
+                <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00761714-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+            </ext:ExtensionContent>
+        </ext:UBLExtension>
+    </ext:UBLExtensions>
+    <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+    <cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+    <cbc:ID schemeName="notice-id">c53fd6a3-d97e-4d6c-877b-610e9845a283</cbc:ID>
+    <cbc:ContractFolderID>8a57c722-fc47-48d7-aae5-a05c303f030f</cbc:ContractFolderID>
+    <cbc:IssueDate>2025-11-13Z</cbc:IssueDate>
+    <cbc:IssueTime>18:32:25Z</cbc:IssueTime>
+    <cbc:VersionID>01</cbc:VersionID>
+    <cbc:RegulatoryDomain>32014L0025</cbc:RegulatoryDomain>
+    <cbc:NoticeTypeCode listName="competition">cn-standard</cbc:NoticeTypeCode>
+    <cbc:NoticeLanguageCode listName="language">FRA</cbc:NoticeLanguageCode>
+    <cac:ContractingParty>
+        <cbc:BuyerProfileURI>https://ratp.bravosolution.com/web/login.html</cbc:BuyerProfileURI>
+        <cac:ContractingPartyType>
+            <cbc:PartyTypeCode listName="buyer-legal-type">pub-undert</cbc:PartyTypeCode>
+        </cac:ContractingPartyType>
+        <cac:ContractingActivity>
+            <cbc:ActivityTypeCode listName="entity-activity">rail</cbc:ActivityTypeCode>
+        </cac:ContractingActivity>
+        <cac:Party>
+            <cac:PartyIdentification>
+                <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+        </cac:Party>
+    </cac:ContractingParty>
+    <cac:TenderingTerms>
+        <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+                <cbc:TendererRequirementTypeCode listName="exclusion-grounds-source">epo-notice</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+        </cac:TendererQualificationRequest>
+        <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+                <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-natl</cbc:TendererRequirementTypeCode>
+                <cbc:Description languageID="FRA">Tous les cas d’exclusion de la procédure sont prévus aux articles L. 2141-1 à L. 2141-5 et aux articles L. 2141-7 à L. 2141-10 du code de la commande publique, et sont attestés sur l'honneur par le candidat dans le formulaire DC1. A défaut de DC1 le candidat doit fournir une attestation sur l'honneur.</cbc:Description>
+            </cac:SpecificTendererRequirement>
+        </cac:TendererQualificationRequest>
+    </cac:TenderingTerms>
+    <cac:TenderingProcess>
+        <cbc:ProcedureCode listName="procurement-procedure-type">neg-w-call</cbc:ProcedureCode>
+        <cac:ProcessJustification>
+            <cbc:ProcessReasonCode listName="accelerated-procedure">false</cbc:ProcessReasonCode>
+        </cac:ProcessJustification>
+    </cac:TenderingProcess>
+    <cac:ProcurementProject>
+        <cbc:ID schemeName="InternalID">DHA_2025SFD21271</cbc:ID>
+        <cbc:Name languageID="FRA">Tierce Maintenance Applicative des Applications PEPITE et Sysdam2</cbc:Name>
+        <cbc:Description languageID="FRA">Le présent marché est un accord cadre à commandes d’une durée minimum de 24 mois et une durée maximum de 72 mois.
+Les prestations incluses dans le périmètre du marché sont décrites ci-dessous :
+
+Les prestations incluses dans le montant minimum sont les suivantes :
+
+•	Initialisation de la Maintenance opérationnelle des applications PEPITE et SYSDAM2
+•	Maintenance opérationnelle (corrective, préventive, perfective, adaptative, évolutive, Développements Connexes, Assistance) de l’Application PEPITE pour 24 mois
+•	Maintenance opérationnelle (corrective, préventive, perfective, adaptative, évolutive, Développements Connexes, Assistance) de l’Application SYSDAM2 pour 24 mois
+•	Traitement de l’obsolescence de l’application PEPITE
+
+Les prestations incluses dans le montant maximum sont les suivantes :
+
+•	Les prestations incluses dans le montant minimum
+•	Maintenance opérationnelle (corrective, préventive, perfective, adaptative, évolutive, Développements Connexes, Assistance) de l’Application PEPITE pour 48 mois 
+•	Maintenance opérationnelle (corrective, préventive, perfective, adaptative, évolutive, Développements Connexes, Assistance) de l’Application Sysdam2 pour 48 mois :
+•	Evolution PEPITE : IHM Visualisation des relèves en temps réel 
+•	Evolution PEPITE : Indicateurs de relève sur l’IHM Exploit Serveur 
+•	Evolution PEPITE : Détection du Quai PEPITE  
+•	Evolution Sysdam2 : Usage sur tablette 
+•	Réversibilité pour l’application PEPITE
+•	Réversibilité pour l’application SYSDAM2
+•	Prestations associées PEPITE et SYSDAM2 pour un volume de 40 jours maximum 
+•	La maintenance opérationnelle adaptative, évolutive et Développements Connexes, dite maintenance de type 2 de l’Application, pour un volume maximum de mille (1 700) jours/hommes, 
+•	Prestations Additionnelles (Nouveaux SI à ajouter en maintenance - Initialisation - TMA Type 1 - TMA Type 2 -Prestations associées - Réversibilité) pour un montant maximum de 800 000 €</cbc:Description>
+        <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+        <cbc:Note languageID="FRA">- CONDITIONS DE REMISE DES CANDIDATURES : le candidat répond sur : https://ratp.bravosolution.com/web/login.html En cas de difficulté technique/question, appeler la hotline depuis la France ou l'étranger au +33 1 46 09 56 72 ou via ratp@bravosolution.fr  Le candidat se référera aux pré-requis techniques disponibles sur la plateforme. Il sélectionne la consultation n°DHA_2025SFD21271 puis candidate en ligne, et clique sur le bouton "Publier réponse". L’inscription est gratuite et nécessaire pour répondre et être informé en cas de modification de la consultation. 
+
+Ce dépôt donne lieu à un AR mentionnant date et heure de réception sur la plateforme. La candidature qui ne serait pas complètement chargée et publiée en ligne avant la date et heure limites, sera rejetée. Le candidat peut ne pas fournir l'ensemble des documents et renseignements demandés, hormis le DC1 (ou équivalent) qui sera remis sur la plateforme, à la condition que ceux-ci soient disponibles au moins un mois, accessibles directement et gratuitement par l'acheteur par le biais : - d’un système électronique de mise à disposition d’informations administré par un organisme officiel - ou d’un espace de stockage numérique, sous réserve de la garantie de confidentialité dudit espace. Le cas échéant, le candidat précisera dans son dossier toutes les informations nécessaires à la consultation de son dossier : si les documents ont déjà été transmis dans une précédente consultation, les éléments doivent demeurer valables.
+
+ Le candidat indiquera la référence de la consultation pour laquelle les documents ont déjà été transmis.  Pour les candidatures retenues, le lien permettant de télécharger le DCE définitif sera précisé dans le mail d’invitation à présenter une offre. Le candidat veillera à utiliser son compte fournisseur principal sur la plateforme. A défaut il veillera à mettre à jour ses coordonnées pour recevoir le DCE définitif. Dans le cas contraire, la RATP ne pourra être tenue pour responsable de la non réception d’informations ou documents liés à la procédure en cours. 
+
+- INFORMATIONS IMPORTANTES : En cas de dépôts successifs, seule sera retenue la dernière réponse déposée avant la date et heure limites de réception des candidatures/offres. Le candidat peut adresser, dans les délais impartis, une Copie de Sauvegarde (C.S) de sa candidature/offre sur support physique électronique ou sur support papier, par lettre recommandée avec AR avec obligatoirement la mention Copie de sauvegarde à l'adresse suivante : RATP - Direction de la Performance économique et financière du Groupe - Centre d’expertise achats - Achats Digital &amp; Innovation - 6 avenue montaigne  - NM92 - 93160 Noisy-le-Grand ou remise à la RATP contre récépissé, du lundi au vendredi de 9heures à 16 heures à l'adresse suivante : RATP - Direction de la Performance économique et financière du Groupe - Centre d’expertise achats - Achats Digital &amp; Innovation -  6 avenue montaigne -NM92 - 93160 Noisy-le-Grand. 
+Les réponses dématérialisées dans lesquelles un virus serait détecté ne feront pas l’objet d’une tentative de restauration. Elles seront réputées n’avoir jamais été reçues : les C.S seront alors examinées.
+
+En cas de remise hors délai des C.S, celles-ci seront réputées n’avoir jamais été reçues. Dans le cas où la C.S comporterait un ou des support(s) électronique(s) dans le(s)quel(s) un virus serait détecté, la candidature/offre du candidat sera définitivement rejetée. 
+
+Les candidatures / offres par courriel ne sont pas admises. Les documents transmis au format .exe ne sont pas acceptés.
+
+Il sera fait recours à une procédure se déroulant en phases successives afin de réduire progressivement le nombre des offres à négocier.</cbc:Note>
+        <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">72267100</cbc:ItemClassificationCode>
+        </cac:MainCommodityClassification>
+        <cac:RealizedLocation>
+            <cbc:Description languageID="FRA">L'éxécution du marché est en Ile de France</cbc:Description>
+            <cac:Address>
+                <cbc:CountrySubentityCode listName="nuts">FR101</cbc:CountrySubentityCode>
+                <cac:Country>
+                    <cbc:IdentificationCode listName="country">FRA</cbc:IdentificationCode>
+                </cac:Country>
+            </cac:Address>
+        </cac:RealizedLocation>
+    </cac:ProcurementProject>
+    <cac:ProcurementProjectLot>
+        <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+        <cac:TenderingTerms>
+            <cbc:VariantConstraintCode listName="permission">not-allowed</cbc:VariantConstraintCode>
+            <cbc:RecurringProcurementIndicator>true</cbc:RecurringProcurementIndicator>
+            <cac:RequiredFinancialGuarantee>
+                <cbc:GuaranteeTypeCode listName="tender-guarantee-required">false</cbc:GuaranteeTypeCode>
+            </cac:RequiredFinancialGuarantee>
+            <cac:CallForTendersDocumentReference>
+                <ext:UBLExtensions>
+                    <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                            <efext:EformsExtension>
+                                <efac:OfficialLanguages>
+                                    <cac:Language>
+                                        <cbc:ID>FRA</cbc:ID>
+                                    </cac:Language>
+                                </efac:OfficialLanguages>
+                            </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                    </ext:UBLExtension>
+                </ext:UBLExtensions>
+                <cbc:ID>DHA_2025SFD21271</cbc:ID>
+                <cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+                <cac:Attachment>
+                    <cac:ExternalReference>
+                        <cbc:URI>https://ratp.bravosolution.com/web/login.html</cbc:URI>
+                    </cac:ExternalReference>
+                </cac:Attachment>
+            </cac:CallForTendersDocumentReference>
+            <cac:PaymentTerms>
+                <cbc:Note languageID="FRA">Le marché est financé sur ressources propres. Les prix sont révisables. Paiement à 60 jours à compter de de la réception de la demande de paiement.</cbc:Note>
+            </cac:PaymentTerms>
+            <cac:TendererQualificationRequest>
+                <cbc:CompanyLegalFormCode listName="required">true</cbc:CompanyLegalFormCode>
+                <cbc:CompanyLegalForm languageID="FRA">Les candidats ont la faculté de se présenter en groupement. Ils devront alors en préciser la forme (conjoint, conjoint avec mandataire solidaire ou solidaire) et désigner le mandataire. Un même opérateur économique ne peut pas être mandataire de plus d'un groupement. L'attention des candidats est attirée sur le fait que sauf défaillance de l'un des membres du groupement dûment justifiée auprès de la RATP, la composition de celui-ci, définie au moment de la candidature, ne pourra pas être modifiée. En outre, les candidats sont informés que l'acheteur se réserve la possibilité d'exiger la transformation du groupement en « groupement conjoint avec mandataire solidaire » s'il considère que cela est préférable pour la bonne exécution du marché.</cbc:CompanyLegalForm>
+            </cac:TendererQualificationRequest>
+            <cac:TendererQualificationRequest>
+                <cac:SpecificTendererRequirement>
+                    <cbc:TendererRequirementTypeCode listName="selection-criteria-source">epo-procurement-document</cbc:TendererRequirementTypeCode>
+                </cac:SpecificTendererRequirement>
+            </cac:TendererQualificationRequest>
+            <cac:TendererQualificationRequest>
+                <cac:SpecificTendererRequirement>
+                    <cbc:TendererRequirementTypeCode listName="reserved-procurement">none</cbc:TendererRequirementTypeCode>
+                </cac:SpecificTendererRequirement>
+            </cac:TendererQualificationRequest>
+            <cac:ContractExecutionRequirement>
+                <cbc:ExecutionRequirementCode listName="reserved-execution">no</cbc:ExecutionRequirementCode>
+            </cac:ContractExecutionRequirement>
+            <cac:ContractExecutionRequirement>
+                <cbc:ExecutionRequirementCode listName="conditions">performance</cbc:ExecutionRequirementCode>
+                <cbc:Description languageID="FRA">Les conditions d'exécution du marché sont indiquées dans les pièces contractuelles</cbc:Description>
+            </cac:ContractExecutionRequirement>
+            <cac:ContractExecutionRequirement>
+                <cbc:ExecutionRequirementCode listName="einvoicing">required</cbc:ExecutionRequirementCode>
+            </cac:ContractExecutionRequirement>
+            <cac:ContractExecutionRequirement>
+                <cbc:ExecutionRequirementCode listName="ecatalog-submission">allowed</cbc:ExecutionRequirementCode>
+            </cac:ContractExecutionRequirement>
+            <cac:ContractExecutionRequirement>
+                <cbc:ExecutionRequirementCode listName="esignature-submission">true</cbc:ExecutionRequirementCode>
+            </cac:ContractExecutionRequirement>
+            <cac:AwardingTerms>
+                <cac:AwardingCriterion>
+                    <cac:SubordinateAwardingCriterion>
+                        <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+                        <cbc:Description languageID="FRA">La qualité n'est pas le seul critère d'attribution et tous les critères sont énoncés uniquement dans les documents du marché</cbc:Description>
+                    </cac:SubordinateAwardingCriterion>
+                </cac:AwardingCriterion>
+            </cac:AwardingTerms>
+            <cac:AdditionalInformationParty>
+                <cac:PartyIdentification>
+                    <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                </cac:PartyIdentification>
+            </cac:AdditionalInformationParty>
+            <cac:DocumentProviderParty>
+                <cac:PartyIdentification>
+                    <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                </cac:PartyIdentification>
+            </cac:DocumentProviderParty>
+            <cac:TenderRecipientParty>
+                <cbc:EndpointID>https://ratp.bravosolution.com/web/login.html</cbc:EndpointID>
+                <cac:PartyIdentification>
+                    <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                </cac:PartyIdentification>
+            </cac:TenderRecipientParty>
+            <cac:TenderEvaluationParty>
+                <cac:PartyIdentification>
+                    <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                </cac:PartyIdentification>
+            </cac:TenderEvaluationParty>
+            <cac:AppealTerms>
+                <cac:PresentationPeriod>
+                    <cbc:Description languageID="FRA">Le référé précontractuel peut être introduit depuis le début de la procédure de passation jusqu’à la signature du marché. Le référé contractuel peut être introduit dans les conditions des articles L.551-13 et suivants du Code de justice administrative. Le recours en contestation de la validité du marché par un tiers peut être intenté dans un délai de deux mois à compter des mesures de publicité appropriées.
+ 
+Le contrat sera consultable sur demande écrite adressée par courrier à l'adresse postale indiquée dans le présent avis.
+La copie du contrat sera occultée des mentions couvertes par les secrets protégés par la loi, et sera envoyée à l'adresse indiquée dans la demande.</cbc:Description>
+                </cac:PresentationPeriod>
+                <cac:AppealInformationParty>
+                    <cac:PartyIdentification>
+                        <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                    </cac:PartyIdentification>
+                </cac:AppealInformationParty>
+                <cac:AppealReceiverParty>
+                    <cac:PartyIdentification>
+                        <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                    </cac:PartyIdentification>
+                </cac:AppealReceiverParty>
+                <cac:MediationParty>
+                    <cac:PartyIdentification>
+                        <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                    </cac:PartyIdentification>
+                </cac:MediationParty>
+            </cac:AppealTerms>
+            <cac:Language>
+                <cbc:ID>FRA</cbc:ID>
+            </cac:Language>
+        </cac:TenderingTerms>
+        <cac:TenderingProcess>
+            <ext:UBLExtensions>
+                <ext:UBLExtension>
+                    <ext:ExtensionContent>
+                        <efext:EformsExtension>
+                            <efbc:AccessToolName>https://ratp.bravosolution.com/web/login.html</efbc:AccessToolName>
+                        </efext:EformsExtension>
+                    </ext:ExtensionContent>
+                </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:SubmissionMethodCode listName="esubmission">required</cbc:SubmissionMethodCode>
+            <cbc:CandidateReductionConstraintIndicator>true</cbc:CandidateReductionConstraintIndicator>
+            <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+            <cbc:AccessToolsURI>https://ratp.bravosolution.com/web/login.html</cbc:AccessToolsURI>
+            <cac:ParticipationRequestReceptionPeriod>
+                <cbc:EndDate>2025-12-10+01:00</cbc:EndDate>
+                <cbc:EndTime>14:00:00+01:00</cbc:EndTime>
+            </cac:ParticipationRequestReceptionPeriod>
+            <cac:AuctionTerms>
+                <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+            </cac:AuctionTerms>
+            <cac:ContractingSystem>
+                <cbc:ContractingSystemTypeCode listName="framework-agreement">fa-w-rc</cbc:ContractingSystemTypeCode>
+            </cac:ContractingSystem>
+            <cac:ContractingSystem>
+                <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+            </cac:ContractingSystem>
+        </cac:TenderingProcess>
+        <cac:ProcurementProject>
+            <cbc:ID schemeName="InternalID">DHA_2025SFD21271</cbc:ID>
+            <cbc:Name languageID="FRA">Tierce Maintenance Applicative des Applications PEPITE et Sysdam2</cbc:Name>
+            <cbc:Description languageID="FRA">Le présent marché est un accord cadre à commandes d’une durée minimum de 24 mois et une durée maximum de 72 mois.
+
+Les prestations incluses dans le périmètre du marché sont décrites ci-dessous :
+
+Les prestations incluses dans le montant minimum sont les suivantes :
+
+•	Initialisation de la Maintenance opérationnelle des applications PEPITE et SYSDAM2
+•	Maintenance opérationnelle (corrective, préventive, perfective, adaptative, évolutive, Développements Connexes, Assistance) de l’Application PEPITE pour 24 mois
+•	Maintenance opérationnelle (corrective, préventive, perfective, adaptative, évolutive, Développements Connexes, Assistance) de l’Application SYSDAM2 pour 24 mois
+•	Traitement de l’obsolescence de l’application PEPITE
+
+Les prestations incluses dans le montant maximum sont les suivantes :
+
+•	Les prestations incluses dans le montant minimum
+•	Maintenance opérationnelle (corrective, préventive, perfective, adaptative, évolutive, Développements Connexes, Assistance) de l’Application PEPITE pour 48 mois 
+•	Maintenance opérationnelle (corrective, préventive, perfective, adaptative, évolutive, Développements Connexes, Assistance) de l’Application Sysdam2 pour 48 mois :
+•	Evolution PEPITE : IHM Visualisation des relèves en temps réel 
+•	Evolution PEPITE : Indicateurs de relève sur l’IHM Exploit Serveur 
+•	Evolution PEPITE : Détection du Quai PEPITE  
+•	Evolution Sysdam2 : Usage sur tablette 
+•	Réversibilité pour l’application PEPITE
+•	Réversibilité pour l’application SYSDAM2
+•	Prestations associées PEPITE et SYSDAM2 pour un volume de 40 jours maximum 
+•	La maintenance opérationnelle adaptative, évolutive et Développements Connexes, dite maintenance de type 2 de l’Application, pour un volume maximum de mille (1 700) jours/hommes, 
+•	Prestations Additionnelles (Nouveaux SI à ajouter en maintenance - Initialisation - TMA Type 1 - TMA Type 2 -Prestations associées - Réversibilité) pour un montant maximum de 800 000 €</cbc:Description>
+            <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+            <cbc:Note languageID="FRA">D34: Maintenance</cbc:Note>
+            <cac:ProcurementAdditionalType>
+                <cbc:ProcurementTypeCode listName="environmental-impact">other</cbc:ProcurementTypeCode>
+            </cac:ProcurementAdditionalType>
+            <cac:MainCommodityClassification>
+                <cbc:ItemClassificationCode listName="cpv">72267100</cbc:ItemClassificationCode>
+            </cac:MainCommodityClassification>
+            <cac:RealizedLocation>
+                <cbc:Description languageID="FRA">L'éxécution du marché est en Ile de France</cbc:Description>
+                <cac:Address>
+                    <cbc:CountrySubentityCode listName="nuts">FR101</cbc:CountrySubentityCode>
+                    <cac:Country>
+                        <cbc:IdentificationCode listName="country">FRA</cbc:IdentificationCode>
+                    </cac:Country>
+                </cac:Address>
+            </cac:RealizedLocation>
+            <cac:PlannedPeriod>
+                <cbc:StartDate>2026-04-20+01:00</cbc:StartDate>
+                <cbc:EndDate>2032-04-20+01:00</cbc:EndDate>
+            </cac:PlannedPeriod>
+            <cac:ContractExtension>
+                <cbc:OptionsDescription languageID="FRA">Des modifications pourront être apportées au marché, conformément aux articles R2194-1 à R2194-9 du Code de la Commande Publique."
+La RATP se réserve la possibilité de faire réaliser des prestations similaires par le Titulaire du marché dans les conditions énoncées à l’article R2122-7 du Code de la Commande publique.</cbc:OptionsDescription>
+                <cbc:MaximumNumberNumeric>4</cbc:MaximumNumberNumeric>
+            </cac:ContractExtension>
+        </cac:ProcurementProject>
+    </cac:ProcurementProjectLot>
+</ContractNotice>

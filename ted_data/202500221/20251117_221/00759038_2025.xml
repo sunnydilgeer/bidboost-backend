@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractAwardNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractAwardNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+	<ext:UBLExtensions>
+		<ext:UBLExtension>
+			<ext:ExtensionContent>
+				<efext:EformsExtension>
+						<efac:Changes>
+						<efbc:ChangedNoticeIdentifier>655280-2025</efbc:ChangedNoticeIdentifier>
+						<efac:Change>
+							<efbc:ChangeDescription languageID="ITA">Revoca Procedura</efbc:ChangeDescription>
+							<!--Procurement Documents Change Date (BT-719)-->
+							<efbc:ProcurementDocumentsChangeDate>2025-10-31Z</efbc:ProcurementDocumentsChangeDate>
+							<!--Procurement Documents Change Indicator (BT-718)-->
+							<efbc:ProcurementDocumentsChangeIndicator>true</efbc:ProcurementDocumentsChangeIndicator>
+							<efac:ChangedSection>
+								<efbc:ChangedSectionIdentifier>LOT-0001</efbc:ChangedSectionIdentifier>
+							</efac:ChangedSection>
+						</efac:Change>
+						<efac:ChangeReason>
+							<cbc:ReasonCode listName="change-corrig-justification">update-add</cbc:ReasonCode>
+							<efbc:ReasonDescription languageID="ITA">Adesione a gara centralizzata</efbc:ReasonDescription>
+						</efac:ChangeReason>
+					</efac:Changes>
+					<efac:NoticeResult>
+						<efac:LotResult>
+							<!-- OPT-322 - LotResult Technical Identifier - RES-NNNN -->
+							<cbc:ID>RES-0001</cbc:ID>
+							<!-- BT-142 - Winner Chosen - Stato di selezione dei vincitori - Stato Lotto -->
+							<cbc:TenderResultCode listName="winner-selection-status">clos-nw</cbc:TenderResultCode>
+							<efac:DecisionReason>
+								<!-- BT-144 -  Motivo per cui un vincitore non è stato scelto -->
+								<efbc:DecisionReasonCode listName="non-award-justification">chan-need</efbc:DecisionReasonCode>
+							</efac:DecisionReason>
+							<!-- ReceivedSubmissionsStatistics - 1...n -->
+							<efac:ReceivedSubmissionsStatistics>
+								<!-- BT-760-LotResult - StatisticsCode (t-esubm - Offerte presentate per via elettronica) -->
+								<efbc:StatisticsCode listName="received-submission-type">t-esubm</efbc:StatisticsCode>
+								<!-- BT-759-LotResult - StatisticsNumeric (Numero offerte ricevute lotto)-->
+								<efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+							</efac:ReceivedSubmissionsStatistics>
+							<efac:TenderLot>
+								<!-- BT-13713 - Result Lot Identifier - L'identificatore del lotto di risultato -->
+								<cbc:ID>LOT-0001</cbc:ID>
+							</efac:TenderLot>
+						</efac:LotResult>
+					</efac:NoticeResult>
+					<efac:NoticeSubType>
+						<!-- OPP-070 - Notice SubType -->
+						<cbc:SubTypeCode listName="notice-subtype">29</cbc:SubTypeCode>
+						<!-- costante -->
+					</efac:NoticeSubType>
+					<efac:Organizations>
+						<!-- 1..N -->
+						<efac:Organization>
+							<efac:Company>
+								<cac:PartyIdentification>
+									<!-- OPT-200 - ID Org-->
+									<cbc:ID>ORG-0001</cbc:ID>
+								</cac:PartyIdentification>
+								<cac:PartyName>
+									<!-- BT-500 - Nome ufficiale -->
+									<cbc:Name languageID="ITA">ASL 3 - PESCARA</cbc:Name>
+								</cac:PartyName>
+								<cac:PostalAddress>
+									<!-- BT-513 - Località -->
+									<cbc:CityName>Pescara</cbc:CityName>
+									<!-- BT-512 - Codice Postale -->
+									<cbc:PostalZone>65124</cbc:PostalZone>
+									<!-- BT-507 - NUTS -->
+									<cbc:CountrySubentityCode listName="nuts">ITF13</cbc:CountrySubentityCode>
+									<cac:Country>
+										<!-- BT-514 - Paese - default ITA-->
+										<cbc:IdentificationCode listName="country">ITA</cbc:IdentificationCode>
+									</cac:Country>
+								</cac:PostalAddress>
+								<!-- BT-501 - Numero di registrazione -->
+								<cac:PartyLegalEntity>
+									<cbc:CompanyID>01397530682</cbc:CompanyID>
+								</cac:PartyLegalEntity>
+								<cac:Contact>
+									<cbc:Name>Luigi Lauriola</cbc:Name>
+									<!-- BT-503 - Telefono -->
+									<cbc:Telephone>00390854251</cbc:Telephone>
+									<!-- BT-506 - E-mail -->
+									<cbc:ElectronicMail>protocollo.aslpe@pec.it</cbc:ElectronicMail>
+								</cac:Contact>
+							</efac:Company>
+						</efac:Organization>
+						<efac:Organization>
+							<efac:Company>
+								<cac:PartyIdentification>
+									<!-- OPT-200 - ID Org-->
+									<cbc:ID>ORG-0002</cbc:ID>
+								</cac:PartyIdentification>
+								<cac:PartyName>
+									<!-- BT-500 - Nome ufficiale -->
+									<cbc:Name languageID="ITA">TAR ABRUZZO SEZIONE PESCARA</cbc:Name>
+								</cac:PartyName>
+								<cac:PostalAddress>
+									<!-- BT-513 - Località -->
+									<cbc:CityName>PESCARA</cbc:CityName>
+									<!-- BT-512 - Codice Postale -->
+									<cbc:PostalZone>65129</cbc:PostalZone>
+									<!-- BT-507 - NUTS -->
+									<cbc:CountrySubentityCode listName="nuts">ITF13</cbc:CountrySubentityCode>
+									<cac:Country>
+										<!-- BT-514 - Paese - default ITA-->
+										<cbc:IdentificationCode listName="country">ITA</cbc:IdentificationCode>
+									</cac:Country>
+								</cac:PostalAddress>
+								<!-- BT-501 - Numero di registrazione -->
+								<cac:PartyLegalEntity>
+									<cbc:CompanyID>80007430681</cbc:CompanyID>
+								</cac:PartyLegalEntity>
+								<cac:Contact>
+									<cbc:Name>TAR ABRUZZO SEZIONE PESCARA</cbc:Name>
+									<!-- BT-503 - Telefono -->
+									<cbc:Telephone>085918661</cbc:Telephone>
+									<!-- BT-506 - E-mail -->
+									<cbc:ElectronicMail>l.celeste@giustizia-amministrativa.it </cbc:ElectronicMail>
+								</cac:Contact>
+							</efac:Company>
+						</efac:Organization>
+						<efac:Organization>
+							<efac:Company>
+								<cac:PartyIdentification>
+									<!-- OPT-200 - ID Org-->
+									<cbc:ID>ORG-0003</cbc:ID>
+								</cac:PartyIdentification>
+								<cac:PartyName>
+									<!-- BT-500 - Nome ufficiale -->
+									<cbc:Name languageID="ITA">ANAC AUTORITA NAZIONALE ANTICORRUZIONE</cbc:Name>
+								</cac:PartyName>
+								<cac:PostalAddress>
+									<!-- BT-513 - Località -->
+									<cbc:CityName>Roma</cbc:CityName>
+									<!-- BT-512 - Codice Postale -->
+									<cbc:PostalZone>00187</cbc:PostalZone>
+									<!-- BT-507 - NUTS -->
+									<cbc:CountrySubentityCode listName="nuts">ITI43</cbc:CountrySubentityCode>
+									<cac:Country>
+										<!-- BT-514 - Paese - default ITA-->
+										<cbc:IdentificationCode listName="country">ITA</cbc:IdentificationCode>
+									</cac:Country>
+								</cac:PostalAddress>
+								<!-- BT-501 - Numero di registrazione -->
+								<cac:PartyLegalEntity>
+									<cbc:CompanyID>97584460584</cbc:CompanyID>
+								</cac:PartyLegalEntity>
+								<cac:Contact>
+									<cbc:Name>ANAC AUTORITA NAZIONALE ANTICORRUZIONE</cbc:Name>
+									<!-- BT-503 - Telefono -->
+									<cbc:Telephone>06367231</cbc:Telephone>
+									<!-- BT-506 - E-mail -->
+									<cbc:ElectronicMail>protocollo@pec.anticorruzione.it</cbc:ElectronicMail>
+								</cac:Contact>
+							</efac:Company>
+						</efac:Organization>
+					</efac:Organizations>
+				<efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00759038-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+			</ext:ExtensionContent>
+		</ext:UBLExtension>
+	</ext:UBLExtensions>
+	<cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+	<!-- costante -->
+	<!-- Versione SDK -->
+	<cbc:CustomizationID>eforms-sdk-1.12</cbc:CustomizationID>
+	<cbc:ID schemeName="notice-id">f0046a50-a048-4edf-831b-d014fa633112</cbc:ID>
+	<!-- BT-04 - Procedure Identifier ( UID generato dalla piattaforma ) - Codice Appalto -->
+	<cbc:ContractFolderID>2d19a0e8-f483-4838-a26a-0e74777d9134</cbc:ContractFolderID>
+	<cbc:IssueDate>2025-11-14Z</cbc:IssueDate>
+	<!-- Notice Dispatch Date - generato a runtime -->
+	<cbc:IssueTime>10:50:23Z</cbc:IssueTime>
+	<!-- Notice Dispatch Date - generato a runtime -->
+	<cbc:VersionID>10</cbc:VersionID>
+	<!-- Progressivo Contract Award Notice -->
+	<!-- BT-738 - Notice Preferred Publication Date - generato a runtime -->
+	<cbc:RequestedPublicationDate>2025-11-14Z</cbc:RequestedPublicationDate>
+	<!-- BT-01-notice - Base giuridica della procedura -->
+	<cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+	<cbc:NoticeTypeCode listName="result">can-standard</cbc:NoticeTypeCode>
+	<cbc:NoticeLanguageCode listName="language">ITA</cbc:NoticeLanguageCode>
+	<!-- costante -->
+	<!-- Esprime il role Buyer -->
+	<cac:ContractingParty>
+		<cac:ContractingPartyType>
+			<!-- BT-11 - Buyer Legal Type - Forma giuridica del committente -->
+			<cbc:PartyTypeCode listName="buyer-legal-type">body-pl</cbc:PartyTypeCode>
+		</cac:ContractingPartyType>
+		<!-- BT-740 - Buyer Contracting Type -->
+		<cac:ContractingActivity>
+			<!-- BT-10 - Activity Authority - Attività dell'amministrazione aggiudicatrice -->
+			<cbc:ActivityTypeCode listName="authority-activity">gen-pub</cbc:ActivityTypeCode>
+		</cac:ContractingActivity>
+		<cac:Party>
+			<cac:PartyIdentification>
+				<!-- ID — Acquirente -->
+				<cbc:ID>ORG-0001</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:ServiceProviderParty>
+				<!-- OPT-030-Procedure-SProvider -->
+				<cbc:ServiceTypeCode listName="organisation-role">serv-prov</cbc:ServiceTypeCode>
+				<cac:Party>
+					<cac:PartyIdentification>
+						<!-- ID - ANAC -->
+						<cbc:ID>ORG-0003</cbc:ID>
+					</cac:PartyIdentification>
+				</cac:Party>
+			</cac:ServiceProviderParty>
+		</cac:Party>
+	</cac:ContractingParty>
+	<cac:TenderingProcess>
+		<!-- BT-105 - Tipo di procedura -->
+		<cbc:ProcedureCode listName="procurement-procedure-type">open</cbc:ProcedureCode>
+	</cac:TenderingProcess>
+	<cac:ProcurementProject>
+		<!-- BT-21 - Titolo procedura -->
+		<cbc:Name languageID="ITA">Procedura aperta, da aggiudicarsi con il criterio dell’offerta economicamente più vantaggiosa, per l’affidamento ad un unico operatore delle “Attività di sorveglianza attiva antincendio (squadra aggiu</cbc:Name>
+		<!-- BT-24 - Descrizione procedura -->
+		<cbc:Description languageID="ITA">Procedura aperta, da aggiudicarsi con il criterio dell’offerta economicamente più vantaggiosa, per l’affidamento ad un unico operatore delle “Attività di sorveglianza attiva antincendio (squadra aggiuntiva) presso il Presidio Ospedaliero -Santo Spirito- Pescara secondo quanto previsto dal D.M. del 10/03/1998 e dal D.M. 19/03/2015”.</cbc:Description>
+		<!-- BT-23 - Natura dell'appalto / Tipo di appalto -->
+		<cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+		<cac:MainCommodityClassification>
+			<!-- BT-26 + BT-262 - Tipo di Classificatore/ Classificazione principale -->
+			<cbc:ItemClassificationCode listName="cpv">75251110</cbc:ItemClassificationCode>
+		</cac:MainCommodityClassification>
+		<cac:RealizedLocation>
+			<!-- BT-728-Procedure - Description (LanguageID fisso a ITA, valore fisso "Informazioni Supplementari") -->
+			<cbc:Description languageID="ITA">Informazioni supplementari</cbc:Description>
+			<cac:Address>
+				<!-- BT-5071-Procedure - CountrySubentityCode (Codice NUTS Luogo ISTAT) -->
+				<cbc:CountrySubentityCode listName="nuts">ITF13</cbc:CountrySubentityCode>
+				<cac:Country>
+					<!-- BT-5141-Procedure - IdentificationCode (Fisso ITA) -->
+					<cbc:IdentificationCode listName="country">ITA</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:Address>
+		</cac:RealizedLocation>
+	</cac:ProcurementProject>
+	<!-- 1..N - Tutti i lotti della gara -->
+	<cac:ProcurementProjectLot>
+		<cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+		<cac:TenderingTerms>
+			<!-- (BT-60-Lot) - L'appalto è finanziato almeno in parte da fondi dell'Unione europea -->
+			<cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+			<cac:AwardingTerms>
+				<cac:AwardingCriterion>
+					<!-- BT-543 - Descrizione del metodo da utilizzare se la ponderazione non può essere espressa da criteri
+					"Punteggio Economico: XX - Punteggio Tecnico: YY" -->
+					<cbc:CalculationExpression languageID="ITA">Punteggio Economico: 30.00 - Punteggio Tecnico: 70.00</cbc:CalculationExpression>
+					<cac:SubordinateAwardingCriterion>
+						<cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+						<cbc:Description languageID="ITA">Offerta economicamente più vantaggiosa</cbc:Description>
+					</cac:SubordinateAwardingCriterion>
+				</cac:AwardingCriterion>
+			</cac:AwardingTerms>
+			<!-- (OPT-301) AdditionalInformationParty -->
+			<!-- Organismo di ricorso. -->
+			<cac:AppealTerms>
+				<!-- BT-99-Lot PresentationPeriod -->
+				<cac:PresentationPeriod>
+					<cbc:Description languageID="ITA">Vedi capitolato</cbc:Description>
+				</cac:PresentationPeriod>
+				<cac:AppealReceiverParty>
+					<cac:PartyIdentification>
+						<cbc:ID>ORG-0002</cbc:ID>
+					</cac:PartyIdentification>
+				</cac:AppealReceiverParty>
+			</cac:AppealTerms>
+		</cac:TenderingTerms>
+		<cac:TenderingProcess>
+			<!-- BT-115 - GPA Coverage - L'appalto è soggetto all'accordo sugli appalti pubblici - costante -->
+			<cbc:GovernmentAgreementConstraintIndicator>false</cbc:GovernmentAgreementConstraintIndicator>
+			<cac:AuctionTerms>
+				<!-- BT-767 - Viene utilizzata un’asta elettronica -->
+				<cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+			</cac:AuctionTerms>
+			<cac:ContractingSystem>
+				<!-- (BT-765-Lot) - è una procedura negoziata all'interno di un accordo quadro -->
+				<cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+			</cac:ContractingSystem>
+			<cac:ContractingSystem>
+				<!-- BT-766-Lot - è coinvolto un sistema dinamico di acquisizione -->
+				<cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+			</cac:ContractingSystem>
+		</cac:TenderingProcess>
+		<cac:ProcurementProject>
+			<!--(BT-22-Lot) - numero lotto -->
+			<cbc:ID>1</cbc:ID>
+			<!-- Descrizione (BT-24-Lot) - descrizione lotto -->
+			<cbc:Name languageID="ITA">SERVIZI DI PREVENZIONE INCENDI</cbc:Name>
+			<!-- Descrizione (BT-24-Lot) - descrizione lotto -->
+			<cbc:Description languageID="ITA">SERVIZI DI PREVENZIONE INCENDI</cbc:Description>
+			<!-- BT-23 - lo stesso usato per la gara -->
+			<cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+			<cac:RequestedTenderTotal>
+				<!-- BT-27 - Valore stimato lotto -->
+				<cbc:EstimatedOverallContractAmount currencyID="EUR">1127950.06</cbc:EstimatedOverallContractAmount>
+			</cac:RequestedTenderTotal>
+			<cac:MainCommodityClassification>
+				<!-- CPV del lotto in caso di alcuni modelli in cui è richiesto o verrà utilizzata la CPV di procedura -->
+				<cbc:ItemClassificationCode listName="cpv">75251110</cbc:ItemClassificationCode>
+			</cac:MainCommodityClassification>
+			<cac:RealizedLocation>
+				<cac:Address>
+					<!-- BT-5071 - Place Performance Country Subdivision -->
+					<cbc:CountrySubentityCode listName="nuts">ITF13</cbc:CountrySubentityCode>
+					<cac:Country>
+						<!-- BT-5141 - Place Performance Country Code -->
+						<cbc:IdentificationCode listName="country">ITA</cbc:IdentificationCode>
+					</cac:Country>
+				</cac:Address>
+			</cac:RealizedLocation>
+		</cac:ProcurementProject>
+	</cac:ProcurementProjectLot>
+	<cac:TenderResult>
+		<!-- BT-1451 - Data di selezione del vincitore -->
+		<cbc:AwardDate>2025-10-31Z</cbc:AwardDate>
+	</cac:TenderResult>
+</ContractAwardNotice>

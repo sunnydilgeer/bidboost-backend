@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ccts-cct="urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDataTypes-2" xmlns:udt="urn:oasis:names:specification:bdndr:schema:xsd:UnqualifiedDataTypes-1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<ext:UBLExtensions>
+		<ext:UBLExtension>
+			<ext:ExtensionContent>
+				<efext:EformsExtension>
+					<efac:NoticeSubType>
+						<cbc:SubTypeCode listName="notice-subtype">17</cbc:SubTypeCode>
+					</efac:NoticeSubType>
+					<efac:Organizations>
+						<efac:Organization>
+							<efac:Company>
+								<cac:PartyIdentification>
+									<cbc:ID>ORG-0001</cbc:ID>
+								</cac:PartyIdentification>
+								<cac:PartyName>
+									<cbc:Name languageID="DEU">Stadtwerke Frankfurt am Main Holding GmbH</cbc:Name>
+								</cac:PartyName>
+								<cac:PostalAddress>
+									<cbc:StreetName>Kurt-Schumacher-Str.8</cbc:StreetName>
+									<cbc:CityName>Frankfurt am Main</cbc:CityName>
+									<cbc:PostalZone>60311</cbc:PostalZone>
+									<cbc:CountrySubentityCode listName="nuts-lvl3">DE712</cbc:CountrySubentityCode>
+									<cac:Country>
+										<cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+									</cac:Country>
+								</cac:PostalAddress>
+								<cac:PartyLegalEntity>
+									<cbc:CompanyID>DE 174568123</cbc:CompanyID>
+								</cac:PartyLegalEntity>
+								<cac:Contact>
+									<cbc:Name>FPS Rechtsanwaltsgesellschaft mbH &amp; Co. KG</cbc:Name>
+									<cbc:Telephone>069-959573113</cbc:Telephone>
+									<cbc:ElectronicMail>a.schneider@fps-law.de</cbc:ElectronicMail>
+								</cac:Contact>
+							</efac:Company>
+						</efac:Organization>
+						<efac:Organization>
+							<efac:Company>
+								<cac:PartyIdentification>
+									<cbc:ID>ORG-0002</cbc:ID>
+								</cac:PartyIdentification>
+								<cac:PartyName>
+									<cbc:Name languageID="DEU">1. und 2. Vergabekammer bei dem Regierungspräsidium Darmstadt</cbc:Name>
+								</cac:PartyName>
+								<cac:PostalAddress>
+									<cbc:StreetName>Wilhelminenstraße 1 - 3 (Wilhelminenhaus)</cbc:StreetName>
+									<cbc:CityName>Darmstadt</cbc:CityName>
+									<cbc:PostalZone>64283</cbc:PostalZone>
+									<cbc:CountrySubentityCode listName="nuts-lvl3">DE711</cbc:CountrySubentityCode>
+									<cac:Country>
+										<cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+									</cac:Country>
+								</cac:PostalAddress>
+								<cac:PartyLegalEntity>
+									<cbc:CompanyID>t:06151126603</cbc:CompanyID>
+								</cac:PartyLegalEntity>
+								<cac:Contact>
+									<cbc:Telephone>+49 6151126-603</cbc:Telephone>
+									<cbc:Telefax>+49 6151125-816</cbc:Telefax>
+									<cbc:ElectronicMail>vergabekammer@rpda.hessen.de</cbc:ElectronicMail>
+								</cac:Contact>
+							</efac:Company>
+						</efac:Organization>
+					<efac:Organization><efac:Company><cac:PartyIdentification><cbc:ID schemeName="organization">ORG-0003</cbc:ID></cac:PartyIdentification><cac:PartyName><cbc:Name languageID="DEU">Datenservice Öffentlicher Einkauf (in Verantwortung des Beschaffungsamts des BMI)</cbc:Name></cac:PartyName><cac:PostalAddress><cbc:CityName>Bonn</cbc:CityName><cbc:PostalZone>53119</cbc:PostalZone><cbc:CountrySubentityCode listName="nuts">DEA22</cbc:CountrySubentityCode><cac:Country><cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode></cac:Country></cac:PostalAddress><cac:PartyLegalEntity><cbc:CompanyID schemeID="002">0204:994-DOEVD-83</cbc:CompanyID></cac:PartyLegalEntity><cac:Contact><cbc:Telephone>+49228996100</cbc:Telephone><cbc:ElectronicMail>noreply.esender_hub@bescha.bund.de</cbc:ElectronicMail></cac:Contact></efac:Company></efac:Organization></efac:Organizations>
+				<efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00761081-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+			</ext:ExtensionContent>
+		</ext:UBLExtension>
+	</ext:UBLExtensions>
+	<cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+	<cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+	<cbc:ProfileID>eforms-sdk-1.13</cbc:ProfileID>
+	<cbc:ID schemeName="notice-id">b47fb811-e919-4065-86d1-859036af6760</cbc:ID>
+	<cbc:ContractFolderID>110cf1f8-eb9c-49d9-a573-a72dc90e4cb7</cbc:ContractFolderID>
+	<cbc:IssueDate>2025-11-13+01:00</cbc:IssueDate>
+	<cbc:IssueTime>16:12:56+01:00</cbc:IssueTime>
+	<cbc:VersionID>01</cbc:VersionID>
+	<cbc:RequestedPublicationDate>2025-11-13+01:00</cbc:RequestedPublicationDate>
+	<cbc:RegulatoryDomain>32014L0025</cbc:RegulatoryDomain>
+	<cbc:NoticeTypeCode listName="competition">cn-standard</cbc:NoticeTypeCode>
+	<cbc:NoticeLanguageCode listID="eu-official-language">DEU</cbc:NoticeLanguageCode>
+	<cac:ContractingParty>
+		<cac:ContractingPartyType>
+			<cbc:PartyTypeCode listName="buyer-legal-type">pub-undert-ra</cbc:PartyTypeCode>
+		</cac:ContractingPartyType>
+		<cac:ContractingActivity>
+			<cbc:ActivityTypeCode listName="entity-activity">urttb</cbc:ActivityTypeCode>
+		</cac:ContractingActivity>
+		<cac:Party>
+			<cac:PartyIdentification>
+				<cbc:ID>ORG-0001</cbc:ID>
+			</cac:PartyIdentification>
+		<cac:ServiceProviderParty><cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode><cac:Party><cac:PartyIdentification><cbc:ID schemeName="organization">ORG-0003</cbc:ID></cac:PartyIdentification></cac:Party></cac:ServiceProviderParty></cac:Party>
+	</cac:ContractingParty>
+	<cac:TenderingTerms>
+		<ext:UBLExtensions>
+			<ext:UBLExtension>
+				<ext:ExtensionContent>
+					<efext:EformsExtension>
+						<efac:StrategicProcurement>
+							<efbc:ApplicableLegalBasis listName="cvd-scope">false</efbc:ApplicableLegalBasis>
+						</efac:StrategicProcurement>
+						<efac:StrategicProcurement>
+							<efbc:ApplicableLegalBasis listName="eed-scope">false</efbc:ApplicableLegalBasis>
+						</efac:StrategicProcurement>
+					</efext:EformsExtension>
+				</ext:ExtensionContent>
+			</ext:UBLExtension>
+		</ext:UBLExtensions>
+		<cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+		<cac:RequiredFinancialGuarantee>
+			<cbc:GuaranteeTypeCode listName="tender-guarantee-required">false</cbc:GuaranteeTypeCode>
+		</cac:RequiredFinancialGuarantee>
+		<cac:ProcurementLegislationDocumentReference>
+			<cbc:ID>sektvo</cbc:ID>
+		</cac:ProcurementLegislationDocumentReference>
+		<cac:CallForTendersDocumentReference>
+			<ext:UBLExtensions>
+				<ext:UBLExtension>
+					<ext:ExtensionContent>
+						<efext:EformsExtension>
+							<efac:OfficialLanguages>
+								<cac:Language>
+									<cbc:ID>DEU</cbc:ID>
+								</cac:Language>
+							</efac:OfficialLanguages>
+						</efext:EformsExtension>
+					</ext:ExtensionContent>
+				</ext:UBLExtension>
+			</ext:UBLExtensions>
+			<cbc:ID>SomeTenderDocID1</cbc:ID>
+			<cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+		</cac:CallForTendersDocumentReference>
+		<cac:TendererQualificationRequest>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-natl-bre-nat-law</cbc:TendererRequirementTypeCode>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-part</cbc:TendererRequirementTypeCode>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-terror</cbc:TendererRequirementTypeCode>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-laund</cbc:TendererRequirementTypeCode>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-fraud</cbc:TendererRequirementTypeCode>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-corrpt</cbc:TendererRequirementTypeCode>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-traffick</cbc:TendererRequirementTypeCode>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-pmt-bre-tax</cbc:TendererRequirementTypeCode>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-pmt-bre-ssc</cbc:TendererRequirementTypeCode>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-bre-env-law</cbc:TendererRequirementTypeCode>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-bre-soc-law</cbc:TendererRequirementTypeCode>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-bre-lab-law</cbc:TendererRequirementTypeCode>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-insolvency</cbc:TendererRequirementTypeCode>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-liq-admin</cbc:TendererRequirementTypeCode>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-as-susp</cbc:TendererRequirementTypeCode>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-other</cbc:TendererRequirementTypeCode>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-misconduct</cbc:TendererRequirementTypeCode>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-distortion</cbc:TendererRequirementTypeCode>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-partic-confl</cbc:TendererRequirementTypeCode>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-prep-confl</cbc:TendererRequirementTypeCode>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-sanction</cbc:TendererRequirementTypeCode>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-misrepresent</cbc:TendererRequirementTypeCode>
+			</cac:SpecificTendererRequirement>
+		</cac:TendererQualificationRequest>
+		<cac:TendererQualificationRequest>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-grounds-source">epo-notice</cbc:TendererRequirementTypeCode>
+			</cac:SpecificTendererRequirement>
+		</cac:TendererQualificationRequest>
+		<cac:TenderRecipientParty>
+			<cac:PartyIdentification>
+				<cbc:ID>ORG-0001</cbc:ID>
+			</cac:PartyIdentification>
+		</cac:TenderRecipientParty>
+		<cac:AppealTerms>
+			<cac:PresentationPeriod>
+				<cbc:Description languageID="DEU">Für die Einleitung eines Nachprüfungsverfahrens vor der Vergabekammer gelten u. a. die §§ 160 f. GWB. Diese haben folgenden Wortlaut: "§ 160 Einleitung, Antrag  (1) Die Vergabekammer leitet ein Nachprüfungsverfahren nur auf Antrag ein.  (2) Antragsbefugt ist jedes Unternehmen, das ein Interesse an dem öffentlichen Auftrag oder der Konzession hat und eine Verletzung in seinen Rechten nach § 97 Absatz 6 durch Nichtbeachtung von Vergabevorschriften geltend macht. Dabei ist dar-zulegen, dass dem Unternehmen durch die behauptete Verletzung der Vergabevorschriften ein Schaden entstanden ist oder zu entstehen droht.  (3) Der Antrag ist unzulässig, soweit 1. der Antragsteller den geltend gemachten Verstoß gegen Vergabevorschriften vor Einreichen des Nachprüfungsantrags erkannt und gegenüber dem Auftraggeber nicht innerhalb einer Frist von zehn Kalendertagen gerügt hat; der Ablauf der Frist nach § 134 Absatz 2 bleibt unberührt, 2. Verstöße gegen Vergabevorschriften, die aufgrund der Bekanntmachung erkennbar sind, nicht spätestens bis zum Ablauf der in der Bekanntmachung benannten Frist zur Bewerbung oder zur Angebotsabgabe gegenüber dem Auftraggeber gerügt werden, 3. Verstöße gegen Vergabevorschriften, die erst in den Vergabeunterlagen erkennbar sind, nicht spätestens bis zum Ablauf der Frist zur Bewerbung oder zur Angebotsabgabe gegenüber dem Auftraggeber gerügt werden, 4. mehr als 15 Kalendertage nach Eingang der Mitteilung des Auftraggebers, einer Rüge nicht abhelfen zu wollen, vergangen sind. Satz 1 gilt nicht bei einem Antrag auf Feststellung der Unwirksamkeit des Vertrags nach § 135 Absatz 1 Nummer 2. § 134 Absatz 1 Satz 2 bleibt unberührt.   § 161 Form, Inhalt  (1) Der Antrag ist schriftlich bei der Vergabekammer einzureichen und unverzüglich zu begründen. Er soll ein bestimmtes Begehren enthalten. Ein Antragsteller ohne Wohnsitz oder gewöhnlichen Aufenthalt, Sitz oder Geschäftsleitung im Geltungsbereich dieses Gesetzes hat einen Empfangsbevollmächtigten im Geltungsbereich dieses Gesetzes zu benennen.  (2) Die Begründung muss die Bezeichnung des Antragsgegners, eine Beschreibung der behaupteten Rechtsverletzung mit Sachverhaltsdarstellung und die Bezeichnung der verfügbaren Beweismittel enthalten sowie darlegen, dass die Rüge gegenüber dem Auftraggeber erfolgt ist; sie soll, soweit bekannt, die sonstigen Beteiligten benennen."   Ferner wird auf die Frist gemäß § 135 Abs. 2 GWB hingewiesen. Hiernach kann die Unwirksamkeit eines öffentlichen Auftrags wegen eines Verstoßes gegen § 134 GWB (Informations- und Wartepflicht) oder wegen einer Vergabe ohne vorheriger Veröffentlichung einer Bekanntmachung im Amtsblatt der EU nur in einem Nachprüfungsverfahren festgestellt werden, wenn sie im Nachprüfungsverfahren innerhalb von 30 Kalendertagen nach der Information der betroffenen Bieter und Bewerber durch den öffentlichen Auftraggeber über den Abschluss des Vertrags, jedoch nicht später als sechs Monate nach Vertragsschluss geltend gemacht worden ist. Hat der Auftraggeber die Auftragsvergabe im Amtsblatt der EU bekannt gemacht, endet die Frist zur Geltendmachung der Unwirksamkeit 30 Kalendertage nach Veröffentlichung der Bekanntmachung der Auftragsvergabe im Amtsblatt der EU.</cbc:Description>
+			</cac:PresentationPeriod>
+			<cac:AppealReceiverParty>
+				<cac:PartyIdentification>
+					<cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+				</cac:PartyIdentification>
+			</cac:AppealReceiverParty>
+		</cac:AppealTerms>
+		<cac:Language>
+			<cbc:ID>DEU</cbc:ID>
+		</cac:Language>
+	</cac:TenderingTerms>
+	<cac:TenderingProcess>
+		<cbc:ProcedureCode listName="procurement-procedure-type">neg-w-call</cbc:ProcedureCode>
+		<cbc:AccessToolsURI>https://www.dtvp.de/Satellite/notice/CXP4YNAMDKP</cbc:AccessToolsURI>
+		<cac:ProcessJustification>
+			<cbc:ProcessReasonCode listName="accelerated-procedure">false</cbc:ProcessReasonCode>
+		</cac:ProcessJustification>
+		<cac:AuctionTerms>
+			<cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+		</cac:AuctionTerms>
+	</cac:TenderingProcess>
+	<cac:ProcurementProject>
+		<cbc:ID schemeName="internalID">ICB 2025-01</cbc:ID>
+		<cbc:Name languageID="DEU">Generalplanungsleistung Busdepot Frankfurt am Main Ost</cbc:Name>
+		<cbc:Description languageID="DEU">Vergabe von Generalplanungsleistungen für die Erreichung des Busdepot Frankfurt Ost</cbc:Description>
+		<cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+		<cbc:Note languageID="DEU">#Bekanntmachungs-ID: CXP4YNAMDKP#
+
+
+Mit dem Teilnahmeantrag einzureichen sind: 1. Folgende Eigenerklärung:  - Eigenerklärung, dass Ausschlussgründe nach §§ 123, 124 GWB nicht vorliegen. Für die geforderten Erklärungen ist der den Vergabeunterlagen beigefügte Teilnahmeantrag zu verwenden, soweit mit dem Angebot keine Einheitliche Europäische Eigenerklärung vorgelegt wird. Sofern eine allgemeine Präqualifikation (PQ) die geforderten Eignungsnachweise inhaltlich abdeckt, kann die entsprechende Angabe durch Verweis auf die PQ ersetzt werden. Weitere Angaben, die nicht von der PQ erfasst sind, müssen gesondert unter Verwendung des Formblattes Eigenerklärung Eignung getätigt werden. - Eigenerklärung zum LKSG - Eigenerklärung Mindestlohn - Eigenerklärung Verordnung zur Einführung einer Ersatzbaustoffverordnung, zur Neufassung der Bundes-Bodenschutz- und Altlastenverordnung und zur Änderung der Deponieverordnung und der Gewerbeabfallverordnung 2. Verpflichtungserklärung zu Tariftreue und Mindestlohn bei öffentlichen Aufträgen unter Berücksichtigung der Vorgaben des Hessischen Vergabe- und Tariftreuegesetz (HVTG) vom 12. Juli 2021 3. Eigenerklärung zu Artikel 5k Absatz 1 der Verordnung (EU) Nr. 833/2014 in der Fassung der zum Zeitpunkt der Bekanntmachung aktuellen Fassung 4. Bietergemeinschaften Bietergemeinschaften sind zugelassen und werden wie Einzelbieter behandelt, § 50 Abs. 2 SektVO. Einer Bietergemeinschaft können maximal drei Wirtschaftsteilnehmer angehören. Sofern Bietergemeinschaften in den Vergabeunterlagen nicht ausdrücklich genannt werden, sind unter dem Begriff Bieter auch Bietergemeinschaften zu verstehen. Die nachträgliche Bildung von Bietergemeinschaften aus zur Angebotsabgabe aufgeforderten Bietern/Bietergemeinschaften führt in jedem Fall zwingend zum Angebotsausschluss. 5. Nachforderung fehlender/fehlerhafter Erklärungen/Nachweise: Die Auftraggeberin behält es sich vor - sofern vergaberechtlich zulässig- fehlende oder unvollständige Unterlagen nachzufordern. Ein Anspruch hierauf besteht nicht. 6. Eignungsleihe: Für den Fall, dass Bieter zum Nachweis der eigenen Eignung auf die Ressourcen/Mittel von dritten Unternehmen verweisen, ist das Formblatt "Verzeichnis der Leistungen / Kapazitäten anderer Unternehmen" und/oder "Verpflichtungserklärung anderer Unternehmen" zu verwenden. 7. Die Auftraggeberin behält sich vor, bereits auf Grundlage der eingereichten ersten verbindlichen Angebote unter Verwendung der in der Angebotsaufforderung genannten Kriterien und deren Gewichtung den Kreis der Bieter, mit denen weiterführende Verhandlungsgespräche durchgeführt werden, festzulegen. Bieter, die auf Grund dieser Zwischenwertung keinen erfolgversprechenden Rang einnehmen, werden nicht mehr zu den Verhandlungsgesprächen eingeladen und erhalten hierüber eine schriftliche Mitteilung. 8. Die elektronische Einreichung des Teilnahmeantrages samt Anlagen muss bis zum 16.12.2025 um 12 Uhr über das Bietertool des DTVP erfolgen. Bewerberfragen dürfen bis zum 05.12.2025 über das Kommunikationstool des DTVP gestellt werden. Die Auftraggeberin behält sich vor, später eingehende Nachrichten nicht zu beantworten. Die Auftraggeberin empfiehlt dringend, die Angebote mit angemessenem zeitlichen Vorlauf hochzuladen und eventuelle Restriktionen durch die bietereigene IT-Infrastruktur (Kapazität des zur Verwendung vorgesehenen Internetanschlusses, Firewalls, etc.) vorab zu prüfen.</cbc:Note>
+		<cac:MainCommodityClassification>
+			<cbc:ItemClassificationCode listName="cpv">71000000</cbc:ItemClassificationCode>
+		</cac:MainCommodityClassification>
+		<cac:RealizedLocation>
+			<cac:Address>
+				<cbc:CityName>Frankfurt am Main</cbc:CityName>
+				<cbc:PostalZone>60388</cbc:PostalZone>
+				<cbc:CountrySubentityCode listName="nuts">DE712</cbc:CountrySubentityCode>
+				<cac:Country>
+					<cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:Address>
+		</cac:RealizedLocation>
+	</cac:ProcurementProject>
+	<cac:ProcurementProjectLot>
+		<cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+		<cac:TenderingTerms>
+			<ext:UBLExtensions>
+				<ext:UBLExtension>
+					<ext:ExtensionContent>
+						<efext:EformsExtension>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-ins</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Eigenerklärung des Bewerbers/jedes Mitglieds der Bewerbergemeinschaft dass einer Berufshaftpflichtversicherung,  mit den folgenden Mindestdeckungssummen:   - Personenschäden,: 5 Mio. EUR - Sachschäden, Vermögensschäden, sonstige Schäden: 3 Mio. EUR  (pro Versicherungsjahr mindestens 2-fach zur Verfügung stehend)   entweder schon besteht oder im Falle einer Beauftragung abgeschlossen wird</cbc:Description>
+								<efbc:SecondStageIndicator>false</efbc:SecondStageIndicator>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-to-avg</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Eigenerklärung, aus der der Gesamtumsatz der letzten drei abgeschlossenen Geschäftsjahre ersichtlich ist.   Mindestanforderung:  Der Bewerber muss einen durchschnittlichen Jahresumsatz der letzten drei abgeschlossenen Geschäftsjahre von 1.000.000 EUR netto nachweisen.</cbc:Description>
+								<efbc:SecondStageIndicator>false</efbc:SecondStageIndicator>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-ref-services</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Mindestanforderung an die technische Leistungsfähigkeit und damit die Wertbarkeit des Teilnahmeantrages ist, dass   - mindestens eine Referenz (Referenzkategorie 1.1) eingereicht wird, die die Anforderungen MK 1.1.1 - 1.1.5. erfüllt - mindestens eine Referenz (Referenzkategorie 1.3) eingereicht wird, die die Anforderungen MK 1.3.1. - 1.3.3. erfüllt.   Ist dies nicht erfüllt, wird der Teilnahmeantrag vom weiteren Verfahren ausgeschlossen.   Sollten mehr als die Höchstzahl der für die Angebotsaufforderung vorgesehenen Bewerber die Mindestanforderungen erfüllen, werden diese Referenzen und eine weitere Zusatzreferenz anhand der Wertungskriterien (WK) bepunktet. Nur Referenzen, die die Mindestkriterien der jeweiligen Kategorie erfüllen, können anhand der Wertungskriterien Punkte erhalten. Sollte mehr als die vorgegebene Anzahl an Referenzen eingereicht werden, wird der Auftraggeber diese bewerten und die Referenzen, die die höchste Punktzahl erhalten, in der Auswahlentscheidung berücksichtigen.   Die Bewerber können max. 45 Punkte erreichen. Es werden max. 4 Bewerber zur Abgabe eines Angebotes aufgefordert. Die Auswahl erfolgt anhand der oben dargestellten Wertungskriterien. Liegen auf dem letzten Rang punktgleich mehrere Bewerber, entscheidet das Los über die weitere Teilnahme am Verfahren.  _________________________________________________________________________________________________________________________________________________________________ Referenzkategorie 1.1 - Generalplanungsleistungen (Mindestreferenz) MK 1.1. - Mindestkriterien MK 1.1.1 Referenz ist die Erbringung von Generalplanungsleistungen (Objektplanung Gebäude und Innenräume, Tragwerksplanung, Technische Gebäudeausrüstung,  Verkehrsanlagenplanung, Wärmeschutz und Energiebilanzierung, Brandschutz).  MK 1.1.2 Für jedes Planungsgewerk müssen alle Leistungsphasen bis einschl. LPH. 8 (bzw. entsprechend der jeweiligen HOAI Grundleistung) erbracht worden sein. MK 1.1.3 Referenz verfügt über Baukosten nach DIN 276 (KG 200-500), netto, größer 2,5 Millionen   MK 1.1.4 Nachweis, dass die Referenz zum Zeitpunkt des Ablaufs der Frist für die Einreichung der Teilnahmeanträge abgeschlossen ist. Der letzte Leistungstag darf nicht vor dem 01.01.2020 liegen. Maßgeblich ist hier das Datum der Abnahme.  MK 1.1.5 Angabe des Auftraggebers und der Kontaktdaten eines Ansprechpartners des Auftraggebers (Name, Adresse, Telefonnummer, ggf. E-Mail). Eine anonymisierte Nennung ist möglich. Die Kontaktdaten sind jedoch auf gesondertes Verlangen der Vergabestelle einzureichen.  WK 1.1. - Wertungskriterien WK 1.1.1 Die Planung in der vorgelegten Referenzen hat den Bau eines Busdepots/Busbetriebshofes mit Verwaltungs-/Dispositionsgebäude und einer Kapazität für mindestens 25 Busse zum Gegenstand (Ja = 5P / Nein = 0P) WK 1.1.2 Positive Leistungsbestätigung vom Auftraggeber der Referenz liegt zum Projekt vor (Ja = 5P / Nein = 0P) WK 1.1.3 Die Leistungen in der vorgelegten Referenz wurden für einen öffentlichen Auftraggeber gem. § 99 GWB, einen Sektorenauftraggeber gem. § 100 GWB oder eine sonst. Rechtsperson erbracht, die durch einen Fördermittelbescheid zur Anwendung des Vergaberechts verpflichtet ist (Ja = 5P / Nein = 0P)</cbc:Description>
+								<efbc:SecondStageIndicator>true</efbc:SecondStageIndicator>
+								<efac:CriterionParameter>
+									<efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+									<efbc:ParameterNumeric>15.0</efbc:ParameterNumeric>
+								</efac:CriterionParameter>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-ref-services</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Mindestanforderung an die technische Leistungsfähigkeit und damit die Wertbarkeit des Teilnahmeantrages ist, dass   - mindestens eine Referenz (Referenzkategorie 1.1) eingereicht wird, die die Anforderungen MK 1.1.1 - 1.1.5. erfüllt - mindestens eine Referenz (Referenzkategorie 1.3) eingereicht wird, die die Anforderungen MK 1.3.1. - 1.3.3. erfüllt.   Ist dies nicht erfüllt, wird der Teilnahmeantrag vom weiteren Verfahren ausgeschlossen.   Sollten mehr als die Höchstzahl der für die Angebotsaufforderung vorgesehenen Bewerber die Mindestanforderungen erfüllen, werden diese Referenzen und eine weitere Zusatzreferenz anhand der Wertungskriterien (WK) bepunktet. Nur Referenzen, die die Mindestkriterien der jeweiligen Kategorie erfüllen, können anhand der Wertungskriterien Punkte erhalten. Sollte mehr als die vorgegebene Anzahl an Referenzen eingereicht werden, wird der Auftraggeber diese bewerten und die Referenzen, die die höchste Punktzahl erhalten, in der Auswahlentscheidung berücksichtigen.   Die Bewerber können max. 45 Punkte erreichen. Es werden max. 4 Bewerber zur Abgabe eines Angebotes aufgefordert. Die Auswahl erfolgt anhand der oben dargestellten Wertungskriterien. Liegen auf dem letzten Rang punktgleich mehrere Bewerber, entscheidet das Los über die weitere Teilnahme am Verfahren.  _________________________________________________________________________________________________________________________________________________________________ Referenzkategorie 1.2. - Generalplanungsleistung (Zusatzreferenz)  MK 1.2. - Mindestkriterien MK 1.2.1 Referenz ist die Erbringung von Generalplanungsleistungen (Objektplanung Gebäude und Innenräume, Tragwerksplanung, Technische Gebäudeausrüstung, Verkehrsanlagenplanung, Wärmeschutz und Energiebilanzierung, Brandschutz)  MK 1.2.2 Für jedes Planungsgewerk muss mind. die LPH 1 - 3 der HOAI erbracht worden sein. MK 1.2.3 Planung zum Bau eines Busdepots/Busbetriebshofes für Batterie-Elektrobusse mit einer Kapazität (Abstell- und Lademöglichkeit) für mindestens 10 Batterie-Elektrobusse. MK 1.2.4 Referenz verfügt über Baukosten nach DIN 276 (KG 200-500), netto, größer 2,5 Millionen   MK 1.2.5 Nachweis, dass die Referenz zum Zeitpunkt des Ablaufs der Frist für die Einreichung der Teilnahmeanträge abgeschlossen ist. Der letzte Leistungstag darf nicht vor dem 01.01.2020 liegen. Maßgeblich ist hier das Datum der Abnahme.  MK 1.2.6 Angabe des Auftraggebers und der Kontaktdaten eines Ansprechpartners des Auftraggebers (Name, Adresse, Telefonnummer, ggf. E-Mail). Eine anonymisierte Nennung ist möglich. Die Kontaktdaten sind jedoch auf gesondertes Verlangen der Vergabestelle einzureichen.  Werden alle Mindestkriterien der Zusatzreferenz 1.2 erfüllt, erhält der Bewerber 5 Punkte.   WK 1.2. - Wertungskriterien WK 1.2.1 Positive Leistungsbestätigung vom Auftraggeber der Referenz liegt zum Projekt vor (Ja = 5P / Nein = 0P) WK 1.2.3 Die Leistungen in der vorgelegten Referenz wurden für einen öffentlichen Auftraggeber gem. § 99 GWB, einen Sektorenauftraggeber gem. § 100 GWB oder eine sonst. Rechtsperson erbracht, die durch einen Fördermittelbescheid zur Anwendung des Vergaberechts verpflichtet ist (Ja = 5P / Nein = 0P)</cbc:Description>
+								<efbc:SecondStageIndicator>true</efbc:SecondStageIndicator>
+								<efac:CriterionParameter>
+									<efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+									<efbc:ParameterNumeric>15.0</efbc:ParameterNumeric>
+								</efac:CriterionParameter>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-ref-services</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Mindestanforderung an die technische Leistungsfähigkeit und damit die Wertbarkeit des Teilnahmeantrages ist, dass   - mindestens eine Referenz (Referenzkategorie 1.1) eingereicht wird, die die Anforderungen MK 1.1.1 - 1.1.5. erfüllt - mindestens eine Referenz (Referenzkategorie 1.3) eingereicht wird, die die Anforderungen MK 1.3.1. - 1.3.3. erfüllt.   Ist dies nicht erfüllt, wird der Teilnahmeantrag vom weiteren Verfahren ausgeschlossen.   Sollten mehr als die Höchstzahl der für die Angebotsaufforderung vorgesehenen Bewerber die Mindestanforderungen erfüllen, werden diese Referenzen und eine weitere Zusatzreferenz anhand der Wertungskriterien (WK) bepunktet. Nur Referenzen, die die Mindestkriterien der jeweiligen Kategorie erfüllen, können anhand der Wertungskriterien Punkte erhalten. Sollte mehr als die vorgegebene Anzahl an Referenzen eingereicht werden, wird der Auftraggeber diese bewerten und die Referenzen, die die höchste Punktzahl erhalten, in der Auswahlentscheidung berücksichtigen.   Die Bewerber können max. 45 Punkte erreichen. Es werden max. 4 Bewerber zur Abgabe eines Angebotes aufgefordert. Die Auswahl erfolgt anhand der oben dargestellten Wertungskriterien. Liegen auf dem letzten Rang punktgleich mehrere Bewerber, entscheidet das Los über die weitere Teilnahme am Verfahren.  _________________________________________________________________________________________________________________________________________________________________ Referenzkategorie 1.3. - Rückbaureferenz (Mindestreferenz) MK 1.3. MK 1.3.1 Die Leistung des AN umfasste die Objektplanung und Planungsleistungen zum Rückbau in Entsprechung der LPH. 1-8 HOAI:  - Grundlagenermittlung,  - Erstellen der ausführungsreifen Rückbauplanung,  - Genehmigungsplanung,  - Ausschreibung und Vergabe der Bauleistungen,   - Objektüberwachung  -  Bauleitung nach der jeweils einschlägigen LBO MK 1.3.2 Das Referenzprojekt beinhaltet Maßnahmen zur Baufeldfreimachung gewerblich genutzter Liegenschaften (wenigstens 2.500 qm Grundstücksfläche) einschl. des Rückbaus der Bestandsgebäude (Bruttogrundfläche von wenigstens 2.500 m2) und der Oberflächen. MK 1.3.3 Nachweis, dass die Referenz zum Zeitpunkt des Ablaufs der Frist für die Einreichung der Teilnahmeanträge abgeschlossen ist. Der letzte Leistungstag darf nicht vor dem 01.01.2015 liegen. Maßgeblich ist hier das Datum der Abnahme.  WK 1.3. WK 1.3.1 Referenz betrifft eine als Altlast eingestufte Fläche und beinhaltet eine Bodensanierung im Sinne der Bundes-Bodenschutzgesetzes (BBodSchG) zur Beseitigung schädlicher Bodenverunreinigungen (Ja = 5 P / Nein = 0P) WK 1.3.2 Positive Leistungsbestätigung (mit Kontaktdaten des AG zur Überprüfung) vom AG liegt zum Projekt vor (Ja = 5P / Nein = 0P) WK 1.3.3 Die Leistungen in der vorgelegten Referenz wurden für einen öffentlichen Auftraggeber gem. § 99 GWB, einen Sektorenauftraggeber gem. § 100 GWB oder eine sonst. Rechtsperson erbracht, die durch einen Fördermittelbescheid zur Anwendung des Vergaberechts verpflichtet ist (Ja = 5P / Nein = 0P)</cbc:Description>
+								<efbc:SecondStageIndicator>false</efbc:SecondStageIndicator>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-staff-yrly-avg-mp</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Es ist die Gesamtzahl der Beschäftigten anzugeben und davon festangestellte Mitarbeiter mit spezifischer Berufserfahrung vertragsgegenständlicher Fachdisziplin  Mindestanforderung:  Der Bieter muss über mind. 15 Mitarbeiter mit der Berufsqualifikation des Ingenieurs bzw. eine seiner Fachrichtungen (Bauingenieurwesen, Architektur oder gleichwertig) verfügen. Hiervon müssen mind. 5 Mitarbeiter mit der Berufsqualifikation des Ingenieurs bzw. eine seiner Fachrichtungen (Bauingenieurwesen, Architektur oder gleichwertig) über eine Berufserfahrung von mehr als 5 Jahren verfügen.</cbc:Description>
+								<efbc:SecondStageIndicator>false</efbc:SecondStageIndicator>
+							</efac:SelectionCriteria>
+							<efac:StrategicProcurement>
+								<efbc:ApplicableLegalBasis listName="cvd-scope">false</efbc:ApplicableLegalBasis>
+							</efac:StrategicProcurement>
+							<efac:StrategicProcurement>
+								<efbc:ApplicableLegalBasis listName="eed-scope">false</efbc:ApplicableLegalBasis>
+							</efac:StrategicProcurement>
+						</efext:EformsExtension>
+					</ext:ExtensionContent>
+				</ext:UBLExtension>
+			</ext:UBLExtensions>
+			<cbc:VariantConstraintCode listName="permission">not-allowed</cbc:VariantConstraintCode>
+			<cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+			<cbc:RequiredCurriculaCode listName="requirement-stage">t-requ</cbc:RequiredCurriculaCode>
+			<cbc:MultipleTendersCode listName="permission">not-allowed</cbc:MultipleTendersCode>
+			<cac:RequiredFinancialGuarantee>
+				<cbc:GuaranteeTypeCode listName="tender-guarantee-required">false</cbc:GuaranteeTypeCode>
+			</cac:RequiredFinancialGuarantee>
+			<cac:CallForTendersDocumentReference>
+				<ext:UBLExtensions>
+					<ext:UBLExtension>
+						<ext:ExtensionContent>
+							<efext:EformsExtension>
+								<efac:OfficialLanguages>
+									<cac:Language>
+										<cbc:ID>DEU</cbc:ID>
+									</cac:Language>
+								</efac:OfficialLanguages>
+							</efext:EformsExtension>
+						</ext:ExtensionContent>
+					</ext:UBLExtension>
+				</ext:UBLExtensions>
+				<cbc:ID>SomeTenderDocID1</cbc:ID>
+				<cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+				<cac:Attachment>
+					<cac:ExternalReference>
+						<cbc:URI>https://www.dtvp.de/Satellite/notice/CXP4YNAMDKP/documents</cbc:URI>
+					</cac:ExternalReference>
+				</cac:Attachment>
+			</cac:CallForTendersDocumentReference>
+			<cac:PaymentTerms>
+				<cbc:Note languageID="DEU">Siehe Vertrag.</cbc:Note>
+			</cac:PaymentTerms>
+			<cac:TendererQualificationRequest>
+				<cbc:CompanyLegalFormCode listName="required">false</cbc:CompanyLegalFormCode>
+			</cac:TendererQualificationRequest>
+			<cac:TendererQualificationRequest>
+				<cac:SpecificTendererRequirement>
+					<cbc:TendererRequirementTypeCode listName="missing-info-submission">late-all</cbc:TendererRequirementTypeCode>
+					<cbc:Description languageID="DEU">Die Vergabestelle behält sich gemäß § 51 Abs. 2 SektVO vor, den Bietern unter Einhaltung der Grundsätze der Transparenz und der Gleichbehandlung kurzfristig aufzufordern, fehlende, unvollständige oder fehlerhafte unternehmensbezogene Unterlagen, insbesondere Eigenerklärungen, Angaben, Bescheinigungen oder sonstige Nachweise, nachzureichen, zu vervollständigen oder zu korrigieren, oder fehlende oder unvollständige leistungsbezogene Unterlagen nachzureichen oder zu vervollständigen.</cbc:Description>
+				</cac:SpecificTendererRequirement>
+			</cac:TendererQualificationRequest>
+			<cac:TendererQualificationRequest>
+				<cac:SpecificTendererRequirement>
+					<cbc:TendererRequirementTypeCode listName="reserved-procurement">none</cbc:TendererRequirementTypeCode>
+				</cac:SpecificTendererRequirement>
+			</cac:TendererQualificationRequest>
+			<cac:TendererQualificationRequest>
+				<cac:SpecificTendererRequirement>
+					<cbc:TendererRequirementTypeCode listName="selection-criteria-source">epo-notice</cbc:TendererRequirementTypeCode>
+				</cac:SpecificTendererRequirement>
+			</cac:TendererQualificationRequest>
+			<cac:ContractExecutionRequirement>
+				<cbc:ExecutionRequirementCode listName="reserved-execution">no</cbc:ExecutionRequirementCode>
+			</cac:ContractExecutionRequirement>
+			<cac:ContractExecutionRequirement>
+				<cbc:ExecutionRequirementCode listName="ecatalog-submission">not-allowed</cbc:ExecutionRequirementCode>
+			</cac:ContractExecutionRequirement>
+			<cac:ContractExecutionRequirement>
+				<cbc:ExecutionRequirementCode listName="conditions">performance</cbc:ExecutionRequirementCode>
+				<cbc:Description languageID="DEU">a) Nichtvorliegen von zwingenden Ausschlussgründen nach § 123 Abs. 1, 4 GWB, liegt ein zwingender Ausschlussgrund vor, so sind aussagefähige Unterlagen zur Selbstreinigung gemäß § 125 GWB vorzulegen; b) Nichtvorliegen von fakultativen Ausschlussgründen nach § 124 Abs. 1 GWB liegt ein fakultativer Ausschlussgrund vor, so sind aussagefähige Unterlagen zur Selbstreinigung gemäß § 125 GWB vorzulegen; c) Eintragung im Berufs- oder Handelsregister oder gleichwertige Bescheinigung einer Behörde des Ursprungs- oder Herkunftslandes des Bieters, soweit eintragungspflichtig (Eigenerklärung im Formblatt "Teilnahmeantrag - Eigenerklärung zur Eignung" erforderlich und zusätzlich Nachweis über Eintragung, nicht älter als 6 Monate). d)Verpflichtungserklärung Tariftreue  d) Eigenerklärung, dass ein geeigneter Nachweis des Bieters über die Berufsqualifikation des Architekten, Bauingenieurs oder einer seiner Fachrichtungen (Bauingenieurwesen, Architektur oder gleichwertig) haben und nach den Gesetzen der</cbc:Description>
+			</cac:ContractExecutionRequirement>
+			<cac:ContractExecutionRequirement>
+				<cbc:ExecutionRequirementCode listName="fsr">false</cbc:ExecutionRequirementCode>
+			</cac:ContractExecutionRequirement>
+			<cac:AwardingTerms>
+				<cac:AwardingCriterion>
+					<cac:SubordinateAwardingCriterion>
+						<ext:UBLExtensions>
+							<ext:UBLExtension>
+								<ext:ExtensionContent>
+									<efext:EformsExtension>
+										<efac:AwardCriterionParameter>
+											<efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+											<efbc:ParameterNumeric>60.0</efbc:ParameterNumeric>
+										</efac:AwardCriterionParameter>
+									</efext:EformsExtension>
+								</ext:ExtensionContent>
+							</ext:UBLExtension>
+						</ext:UBLExtensions>
+						<cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+						<cbc:Name languageID="DEU">Preis</cbc:Name>
+						<cbc:Description languageID="DEU">Wir verweisen auf 6.2. der Aufforderung zur Angebotsabgabe</cbc:Description>
+					</cac:SubordinateAwardingCriterion>
+					<cac:SubordinateAwardingCriterion>
+						<ext:UBLExtensions>
+							<ext:UBLExtension>
+								<ext:ExtensionContent>
+									<efext:EformsExtension>
+										<efac:AwardCriterionParameter>
+											<efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+											<efbc:ParameterNumeric>40.0</efbc:ParameterNumeric>
+										</efac:AwardCriterionParameter>
+									</efext:EformsExtension>
+								</ext:ExtensionContent>
+							</ext:UBLExtension>
+						</ext:UBLExtensions>
+						<cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+						<cbc:Name languageID="DEU">Projektteam</cbc:Name>
+						<cbc:Description languageID="DEU">Wir verweisen auf 6.1. der Aufforderung zur Angebotsabgabe</cbc:Description>
+					</cac:SubordinateAwardingCriterion>
+				</cac:AwardingCriterion>
+			</cac:AwardingTerms>
+			<cac:AdditionalInformationParty>
+				<cac:PartyIdentification>
+					<cbc:ID>ORG-0001</cbc:ID>
+				</cac:PartyIdentification>
+			</cac:AdditionalInformationParty>
+			<cac:TenderRecipientParty>
+				<cbc:EndpointID>https://www.dtvp.de/Satellite/notice/CXP4YNAMDKP</cbc:EndpointID>
+				<cac:PartyIdentification>
+					<cbc:ID>ORG-0001</cbc:ID>
+				</cac:PartyIdentification>
+			</cac:TenderRecipientParty>
+			<cac:AppealTerms>
+				<cac:PresentationPeriod>
+					<cbc:Description languageID="DEU">Für die Einleitung eines Nachprüfungsverfahrens vor der Vergabekammer gelten u. a. die §§ 160 f. GWB. Diese haben folgenden Wortlaut: "§ 160 Einleitung, Antrag  (1) Die Vergabekammer leitet ein Nachprüfungsverfahren nur auf Antrag ein.  (2) Antragsbefugt ist jedes Unternehmen, das ein Interesse an dem öffentlichen Auftrag oder der Konzession hat und eine Verletzung in seinen Rechten nach § 97 Absatz 6 durch Nichtbeachtung von Vergabevorschriften geltend macht. Dabei ist dar-zulegen, dass dem Unternehmen durch die behauptete Verletzung der Vergabevorschriften ein Schaden entstanden ist oder zu entstehen droht.  (3) Der Antrag ist unzulässig, soweit 1. der Antragsteller den geltend gemachten Verstoß gegen Vergabevorschriften vor Einreichen des Nachprüfungsantrags erkannt und gegenüber dem Auftraggeber nicht innerhalb einer Frist von zehn Kalendertagen gerügt hat; der Ablauf der Frist nach § 134 Absatz 2 bleibt unberührt, 2. Verstöße gegen Vergabevorschriften, die aufgrund der Bekanntmachung erkennbar sind, nicht spätestens bis zum Ablauf der in der Bekanntmachung benannten Frist zur Bewerbung oder zur Angebotsabgabe gegenüber dem Auftraggeber gerügt werden, 3. Verstöße gegen Vergabevorschriften, die erst in den Vergabeunterlagen erkennbar sind, nicht spätestens bis zum Ablauf der Frist zur Bewerbung oder zur Angebotsabgabe gegenüber dem Auftraggeber gerügt werden, 4. mehr als 15 Kalendertage nach Eingang der Mitteilung des Auftraggebers, einer Rüge nicht abhelfen zu wollen, vergangen sind. Satz 1 gilt nicht bei einem Antrag auf Feststellung der Unwirksamkeit des Vertrags nach § 135 Absatz 1 Nummer 2. § 134 Absatz 1 Satz 2 bleibt unberührt.   § 161 Form, Inhalt  (1) Der Antrag ist schriftlich bei der Vergabekammer einzureichen und unverzüglich zu begründen. Er soll ein bestimmtes Begehren enthalten. Ein Antragsteller ohne Wohnsitz oder gewöhnlichen Aufenthalt, Sitz oder Geschäftsleitung im Geltungsbereich dieses Gesetzes hat einen Empfangsbevollmächtigten im Geltungsbereich dieses Gesetzes zu benennen.  (2) Die Begründung muss die Bezeichnung des Antragsgegners, eine Beschreibung der behaupteten Rechtsverletzung mit Sachverhaltsdarstellung und die Bezeichnung der verfügbaren Beweismittel enthalten sowie darlegen, dass die Rüge gegenüber dem Auftraggeber erfolgt ist; sie soll, soweit bekannt, die sonstigen Beteiligten benennen."   Ferner wird auf die Frist gemäß § 135 Abs. 2 GWB hingewiesen. Hiernach kann die Unwirksamkeit eines öffentlichen Auftrags wegen eines Verstoßes gegen § 134 GWB (Informations- und Wartepflicht) oder wegen einer Vergabe ohne vorheriger Veröffentlichung einer Bekanntmachung im Amtsblatt der EU nur in einem Nachprüfungsverfahren festgestellt werden, wenn sie im Nachprüfungsverfahren innerhalb von 30 Kalendertagen nach der Information der betroffenen Bieter und Bewerber durch den öffentlichen Auftraggeber über den Abschluss des Vertrags, jedoch nicht später als sechs Monate nach Vertragsschluss geltend gemacht worden ist. Hat der Auftraggeber die Auftragsvergabe im Amtsblatt der EU bekannt gemacht, endet die Frist zur Geltendmachung der Unwirksamkeit 30 Kalendertage nach Veröffentlichung der Bekanntmachung der Auftragsvergabe im Amtsblatt der EU.</cbc:Description>
+				</cac:PresentationPeriod>
+				<cac:AppealReceiverParty>
+					<cac:PartyIdentification>
+						<cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+					</cac:PartyIdentification>
+				</cac:AppealReceiverParty>
+			</cac:AppealTerms>
+			<cac:Language>
+				<cbc:ID>DEU</cbc:ID>
+			</cac:Language>
+			<cac:PostAwardProcess>
+				<cbc:ElectronicOrderUsageIndicator>false</cbc:ElectronicOrderUsageIndicator>
+				<cbc:ElectronicPaymentUsageIndicator>true</cbc:ElectronicPaymentUsageIndicator>
+			</cac:PostAwardProcess>
+			<cac:SecurityClearanceTerm>
+				<cbc:Code listName="required">false</cbc:Code>
+			</cac:SecurityClearanceTerm>
+		</cac:TenderingTerms>
+		<cac:TenderingProcess>
+			<cbc:SubmissionMethodCode listName="esubmission">required</cbc:SubmissionMethodCode>
+			<cbc:CandidateReductionConstraintIndicator>true</cbc:CandidateReductionConstraintIndicator>
+			<cbc:GovernmentAgreementConstraintIndicator>false</cbc:GovernmentAgreementConstraintIndicator>
+			<cbc:AccessToolsURI>https://www.dtvp.de/Satellite/notice/CXP4YNAMDKP</cbc:AccessToolsURI>
+			<cac:ParticipationRequestReceptionPeriod>
+				<cbc:EndDate>2025-12-16+01:00</cbc:EndDate>
+				<cbc:EndTime>12:00:00+01:00</cbc:EndTime>
+			</cac:ParticipationRequestReceptionPeriod>
+			<cac:AdditionalInformationRequestPeriod>
+				<cbc:EndDate>2025-12-05+01:00</cbc:EndDate>
+				<cbc:EndTime>23:59:59+01:00</cbc:EndTime>
+			</cac:AdditionalInformationRequestPeriod>
+			<cac:EconomicOperatorShortList>
+				<cbc:LimitationDescription>true</cbc:LimitationDescription>
+				<cbc:MaximumQuantity>4</cbc:MaximumQuantity>
+				<cbc:MinimumQuantity>4</cbc:MinimumQuantity>
+			</cac:EconomicOperatorShortList>
+			<cac:AuctionTerms>
+				<cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+			</cac:AuctionTerms>
+			<cac:ContractingSystem>
+				<cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+			</cac:ContractingSystem>
+			<cac:ContractingSystem>
+				<cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+			</cac:ContractingSystem>
+		</cac:TenderingProcess>
+		<cac:ProcurementProject>
+			<cbc:ID schemeName="internalID">ICB 2025-01</cbc:ID>
+			<cbc:Name languageID="DEU">Generalplanungsleistung Busdepot Frankfurt am Main Ost</cbc:Name>
+			<cbc:Description languageID="DEU">Die Stadtwerke Frankfurt Holding (SWFH) wird im Stadtteil Frankfurt-Seckbach ein Busdepot für bis zu 39 Elektrobusse errichten. Neben dem Carport zum Abstellen und Laden der Elektrobusse wird eine Durchlaufwartungshalle für einfache Wartungs- und Reinigungsarbeiten sowie ein 2-geschossiges Dispositionsgebäude mit Aufenthaltsräumen und Büroflächen errichtet. Das Grundstück im Gewerbegebiet hat eine Größe von ca. 6.300 qm. Die Fertigstellung und Inbetriebnahme des neuen Busdepots soll 02/2028 erfolgen.   Das Grundstück ist derzeit noch mit Produktions- und Verwaltungsgebäuden bebaut. Die Bebauung ist abzubrechen. Das Grundstück ist als Altlast eingestuft. Umwelttechnische Voruntersuchungen zum Grundstück weisen lokale Bodenverunreinigungen aus.  Gegenstand des hier zu vergebenden Auftrags sind die Generalplanungsleistungen zur Baufeldfreimachung (einschl. Altlastenbehandlung) und zur Errichtung des Busdepots. Die Generalplanungsleistungen umfassen:  - Objektplanung Gebäude und Innenräume  - Tragwerksplanung  - Technische Ausrüstung  - Brandschutz  - Bauphysik - Wärmeschutz und Energiebilanzierung  - Bauphysik - Schallschutz   - Verkehrsanlagen  - Freianlagen  - Vermessung  - Geotechnik  - SiGeKo  - Planungsbereich Altlasten und Bodenverunreinigungen Die Planungsleistungen umfassen die LPH. 1 (Grundlagenermittlung) bis LPH. 8 (Objektüberwachung). Die Leistungen enthalten Grund- sowie Besondere Leistungen.   Die Beauftragung erfolgt stufenweise. Leistungsstufe 1 (Baufeldfreimachung) sowie Leistungsstufe 2 (Planung Neubau) werden gemeinsam beauftragt, die Leistungsstufen 3 (Ausführungsvorbereitung Neubau) und 4 (Ausführung Neubau) können von der AG abgerufen werden.</cbc:Description>
+			<cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+			<cbc:SMESuitableIndicator>false</cbc:SMESuitableIndicator>
+			<cac:ProcurementAdditionalType>
+				<cbc:ProcurementTypeCode listName="strategic-procurement">none</cbc:ProcurementTypeCode>
+			</cac:ProcurementAdditionalType>
+			<cac:MainCommodityClassification>
+				<cbc:ItemClassificationCode listName="cpv">71000000</cbc:ItemClassificationCode>
+			</cac:MainCommodityClassification>
+			<cac:RealizedLocation>
+				<cac:Address>
+					<cbc:CityName>Frankfurt am Main</cbc:CityName>
+					<cbc:PostalZone>60388</cbc:PostalZone>
+					<cbc:CountrySubentityCode listName="nuts">DE712</cbc:CountrySubentityCode>
+					<cac:Country>
+						<cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+					</cac:Country>
+				</cac:Address>
+			</cac:RealizedLocation>
+			<cac:PlannedPeriod>
+				<cbc:DurationMeasure unitCode="MONTH">25</cbc:DurationMeasure>
+			</cac:PlannedPeriod>
+			<cac:ContractExtension>
+				<cbc:OptionsDescription languageID="DEU">- Technische Unterstützung des AG bei der Durchsetzung von Ansprüchen des AG gegen die weiteren am Projekt Beteiligten (außergerichtlich oder gerichtlich) nach Schlussabnahme der Leistungen des AN.    - Technische Unterstützung des AG bei der Abwehr unberechtigter Forderungen der weiteren am Projekt Beteiligten (außergerichtlich oder gerichtlich) über den vertraglich geschuldeten Umfang hinaus.   Siehe hierzu auch § 6 des Vertrages.</cbc:OptionsDescription>
+				<cbc:MaximumNumberNumeric>0</cbc:MaximumNumberNumeric>
+			</cac:ContractExtension>
+		</cac:ProcurementProject>
+	</cac:ProcurementProjectLot>
+</ContractNotice>

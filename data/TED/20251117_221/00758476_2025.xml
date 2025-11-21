@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractAwardNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractAwardNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+   <ext:UBLExtensions>
+      <ext:UBLExtension>
+         <ext:ExtensionContent>
+            <efext:EformsExtension>
+               <efac:NoticeResult>
+                  <efac:LotResult>
+                     <cbc:ID schemeName="result">RES-0001</cbc:ID>
+                     <efac:LotTender>
+                        <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                     </efac:LotTender>
+                     <efac:SettledContract>
+                        <cbc:ID schemeName="contract">CON-0001</cbc:ID>
+                     </efac:SettledContract>
+                     <efac:TenderLot>
+                        <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+                     </efac:TenderLot>
+                  </efac:LotResult>
+                  <efac:LotTender>
+                     <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                     <efac:SubcontractingTerm>
+                        <efbc:TermCode listName="applicability">no</efbc:TermCode>
+                     </efac:SubcontractingTerm>
+                     <efac:TenderingParty>
+                        <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+                     </efac:TenderingParty>
+                     <efac:TenderLot>
+                        <cbc:ID>LOT-0001</cbc:ID>
+                     </efac:TenderLot>
+                     <efac:TenderReference>
+                        <cbc:ID>Wykonawca: Comarch Polska S.A.</cbc:ID>
+                     </efac:TenderReference>
+                  </efac:LotTender>
+                  <efac:SettledContract>
+                     <cbc:ID schemeName="contract">CON-0001</cbc:ID>
+                     <efac:ContractReference>
+                        <cbc:ID>Umowa: Comarch Polska S.A.</cbc:ID>
+                     </efac:ContractReference>
+                     <efac:LotTender>
+                        <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                     </efac:LotTender>
+                  </efac:SettledContract>
+                  <efac:TenderingParty>
+                     <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+                     <cbc:Name>Comarch Polska S.A.</cbc:Name>
+                     <efac:Tenderer>
+                        <cbc:ID schemeName="organization">ORG-0004</cbc:ID>
+                     </efac:Tenderer>
+                  </efac:TenderingParty>
+               </efac:NoticeResult>
+               <efac:NoticeSubType>
+                  <cbc:SubTypeCode listName="notice-subtype">25</cbc:SubTypeCode>
+               </efac:NoticeSubType>
+               <efac:Organizations>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://www.bydgoszcz.pl/</cbc:WebsiteURI>
+                        <cbc:EndpointID>https://platformazakupowa.pl/pn/bydgoszcz</cbc:EndpointID>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Miasto Bydgoszcz</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>ul. Jezuicka 1</cbc:StreetName>
+                           <cbc:CityName>Bydgoszcz</cbc:CityName>
+                           <cbc:PostalZone>85-102</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL613</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>000596375</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Name>Wydział Zamówień Publicznych</cbc:Name>
+                           <cbc:Telephone>+48 52 5858124</cbc:Telephone>
+                           <cbc:Telefax>+48 52 5858273</cbc:Telefax>
+                           <cbc:ElectronicMail>przetargi@um.bydgoszcz.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://www.gov.pl/web/uzp</cbc:WebsiteURI>
+                        <cbc:EndpointID>https://epuap.gov.pl/wps/portal/strefa-klienta/katalog-spraw/opis-uslugi/skargi-wnioski-zapytania-do-urzedu/UZP</cbc:EndpointID>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Urząd Zamówień Publicznych</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>ul. Postępu 17A</cbc:StreetName>
+                           <cbc:CityName>Warszawa</cbc:CityName>
+                           <cbc:PostalZone>02-676</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL911</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>5262239325</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+48 22 4587701</cbc:Telephone>
+                           <cbc:ElectronicMail>uzp@uzp.gov.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://www.gov.pl/web/uzp/krajowa-izba-odwolawcza</cbc:WebsiteURI>
+                        <cbc:EndpointID>https://epuap.gov.pl/wps/portal/strefa-klienta/katalog-spraw/opis-uslugi/korespondencja-do-krajowej-izby-odwolawczej-dotyczaca-spraw-odwolawczych/UZP</cbc:EndpointID>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Krajowa Izba Odwoławcza</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>ul. Postępu 17A</cbc:StreetName>
+                           <cbc:CityName>Warszawa</cbc:CityName>
+                           <cbc:PostalZone>02-676</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL911</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>010828091</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Name>Sekretariat Biura Odwołań</cbc:Name>
+                           <cbc:Telephone>(22) 458 78 01</cbc:Telephone>
+                           <cbc:ElectronicMail>odwolania@uzp.gov.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0004</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Comarch Polska S.A.</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>Al. Jana Pawła II 39a</cbc:StreetName>
+                           <cbc:CityName>Kraków</cbc:CityName>
+                           <cbc:PostalZone>31-864</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL213</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>6751387586</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+48 12 646 1000</cbc:Telephone>
+                           <cbc:Telefax>+48 12 646 1010</cbc:Telefax>
+                           <cbc:ElectronicMail>info@comarch.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efbc:NaturalPersonIndicator>false</efbc:NaturalPersonIndicator>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://op.europa.eu</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0000</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Publications Office of the European Union</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:CityName>Luxembourg</cbc:CityName>
+                           <cbc:PostalZone>2417</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">LU000</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">LUX</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>PUBL</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+352 29291</cbc:Telephone>
+                           <cbc:ElectronicMail>ted@publications.europa.eu</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+               </efac:Organizations>
+            <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00758476-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+         </ext:ExtensionContent>
+      </ext:UBLExtension>
+   </ext:UBLExtensions>
+   <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+   <cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+   <cbc:ID schemeName="notice-id">46dac4c9-ea8e-4e61-ba58-e0dea8c62d4f</cbc:ID>
+   <cbc:ContractFolderID>1032b21a-2678-44c5-bf7e-03fde896177e</cbc:ContractFolderID>
+   <cbc:IssueDate>2025-11-14Z</cbc:IssueDate>
+   <cbc:IssueTime>09:10:53Z</cbc:IssueTime>
+   <cbc:VersionID>01</cbc:VersionID>
+   <cbc:RequestedPublicationDate>2025-11-17Z</cbc:RequestedPublicationDate>
+   <cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+   <cbc:NoticeTypeCode listName="dir-awa-pre">veat</cbc:NoticeTypeCode>
+   <cbc:NoticeLanguageCode listName="language">POL</cbc:NoticeLanguageCode>
+   <cac:ContractingParty>
+      <cbc:BuyerProfileURI>https://platformazakupowa.pl/pn/bydgoszcz</cbc:BuyerProfileURI>
+      <cac:ContractingPartyType>
+         <cbc:PartyTypeCode listName="buyer-legal-type">la</cbc:PartyTypeCode>
+      </cac:ContractingPartyType>
+      <cac:ContractingActivity>
+         <cbc:ActivityTypeCode listName="authority-activity">gen-pub</cbc:ActivityTypeCode>
+      </cac:ContractingActivity>
+      <cac:Party>
+         <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+         </cac:PartyIdentification>
+         <cac:ServiceProviderParty>
+            <cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode>
+            <cac:Party>
+               <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0000</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:Party>
+         </cac:ServiceProviderParty>
+      </cac:Party>
+   </cac:ContractingParty>
+   <cac:TenderingTerms>
+      <cac:ProcurementLegislationDocumentReference>
+         <cbc:ID>art. 213 ust. 1 w związku z art. 214 ust. 1 pkt 1 uPzp</cbc:ID>
+         <cbc:DocumentDescription languageID="POL">ustawy z dnia 11.09.2019r. Prawo zamówień publicznych (Dz. U. z 2024 r., poz. 1320 ze zm.)</cbc:DocumentDescription>
+      </cac:ProcurementLegislationDocumentReference>
+   </cac:TenderingTerms>
+   <cac:TenderingProcess>
+      <cbc:ProcedureCode listName="procurement-procedure-type">neg-wo-call</cbc:ProcedureCode>
+      <cac:ProcessJustification>
+         <cbc:ProcessReasonCode listName="direct-award-justification">exclusive</cbc:ProcessReasonCode>
+         <cbc:ProcessReason languageID="POL">Zamawiający w celu realizacji zadań polegających na zarządzaniu systemem informacji przestrzennej korzysta z zintegrowanego systemu informatycznego PZGiK Comarch ERGO.
+System teleinformatyczny PZGiK Comarch ERGO jest obecnie jednym z 3 najbardziej złożonych 
+i najważniejszych systemów wykorzystywanych w Urzędzie Miasta Bydgoszczy. Nabyte oprogramowanie jest oprogramowaniem specjalistycznym - wytworzonym przez producenta dla określonej grupy odbiorców i dostosowanym do potrzeb Zamawiającego.
+Jest on integralną częścią systemu Comarch ERGO, wdrożonego w ramach projektu Infostrada Kujaw i Pomorza 1.0 na terenie całego województwa kujawsko-pomorskiego w 2015r. 
+Dokumentacja PZGiK Comarch ERGO w zakresie opisu struktur, powiązań, procedur i funkcji działania algorytmów jest przedmiotem ochrony, jako informacja stanowiąca tajemnicę przedsiębiorstwa Comarch S.A. Majątkowe prawa autorskie do oprogramowania PZGiK Comarch ERGO oraz do dokonywania modyfikacji tego oprogramowania przysługują wyłącznie wykonawcy Comarch S.A.
+W związku z powyższym przedmiotem niniejszego postępowania jest kontynuacja świadczonych dotychczas usług utrzymania i rozwoju PZGiK Comarch ERGO w okresie od 01.01.2026r. do 31.12.2028 r. w celu bieżącego zapewnienia realizacji kluczowych zadań przez Urząd Miasta Bydgoszczy. W ramach tych usług realizowane są świadczenia umożliwiające bieżącą eksploatację sytemu (w tym usuwanie awarii i usterek systemu), wsparcie dla użytkowników w rozwiązywaniu bieżących problemów związanych z obsługą (w tym wsparcia technicznego), dostosowywanie systemu do zmieniających się uwarunkowań, w szczególności udostępniania nowych wersji systemu wynikających z dostosowywania do zmian przepisów prawnych, ulepszeń wynikających z pracy własnej Wykonawcy, wykonywanie zmian funkcjonalnych. W ramach świadczonych usług, konieczne jest dokonywanie modyfikacji oprogramowania, co wymaga nie tylko specjalistycznej wiedzy, lecz także znajomości systemu i doświadczenia w jego utrzymaniu, ponieważ działania wykonawcy muszą być wykonywane w określonym czasie, zgodnie z ustalonym poziomem usługi.
+W zaistniałym stanie faktycznym i prawnym, zachodzą przesłanki do udzielenia zamówienia w trybie zamówienia z wolnej ręki, ponieważ istnieją obiektywne przyczyny techniczne, dla których udzielenie zamówienia jest możliwe wyłącznie na rzecz wykonawcy Comarch S.A. (Art. 214 ust. 1 pkt. 1 ustawy z dnia 11 września 2019 r. Prawo zamówień publicznych).
+Głównymi użytkownikami są Wydział Mienia i Geodezji i Miejska Pracownia Geodezyjna, pełni on również bardzo istotną rolę dla pozostałych wydziałów oraz jednostek podległych Miastu. Wymiana systemu na inny o podobnej funkcjonalności nie jest możliwa w krótkim czasie, a jej koszty, w tym koszty pracownicze, wielokrotnie przekroczyłyby koszty utrzymania bieżącego systemu.
+Przedmiot zamówienia – usługi opieki technicznej systemu Comarch ERGO -  może być zrealizowany wyłącznie przez Comarch Polska S.A. gdyż zamawiane usługi dotyczą przedmiotu (systemu ERGO) objętego ochroną praw wyłącznych, wynikających z odrębnych przepisów tj. z ustawy o prawie autorskim i prawach pokrewnych.
+Comarch S.A. jest wyłącznym właścicielem majątkowych praw autorskich do systemu informatycznego Comarch ERGO i przysługuje mu wyłączne prawo do udzielania licencji na korzystanie z oprogramowania tego systemu, w tym do upoważnienia podmiotów osób trzecich do udzielenia dalszych licencji (sublicencji) oraz wyłączne prawo do modyfikacji i jakichkolwiek ingerencji w kod źródłowy oprogramowania systemu Comarch ERGO, w tym w celu jego modyfikacji oraz integracji z innym oprogramowaniem. Comarch S.A. posiada też wyłączne prawo do udzielania zezwolenia innym podmiotom na wykonywanie tych modyfikacji i ingerencji. 
+Na mocy powyższych uprawnień -  w zakresie usług opieki technicznej systemu Comarch ERGO, w tym zainstalowanego i uruchomianego w Urzędzie Miasta Bydgoszczy – Comarch S.A. upoważnił spółkę z GK Comarch – tj. Comarch Polska S.A. do realizacji wszystkich w/w czynności w ramach usług opieki technicznej w/w systemu. W wyniku powyższego upoważnienia Comarch Polska S.A. jest jedynym podmiotem na rynku mogącym świadczyć usługi opieki technicznej w stosunku do oprogramowania Systemu Comarch ERGO.
+Powyższa sytuacja faktyczna i prawna jest stała, niezmieniana i ma charakter trwały. Nie istnieje na rynku żadna możliwość, by bez naruszenia praw autorskich do Systemu Comarch  ERGO przynależnych do Comarch S.A. – możliwe było zlecenia świadczenia usług opieki technicznej względem tego systemu innemu podmiotowi. W rezultacie nie istnieje też inne rozsądne alternatywne rozwiązanie zlecenia usług opieki technicznej innemu podmiotowi niż Comarch Polska S.A. względem systemu ERGO. W szczególności za takie nie można uznać zamówienie dostawy i wdrożenia innego systemu. Byłoby to inne zamówienie (dostawa, wdrożenie, udzielenie licencji, migracja danych, integracja itd.), niż zamówienie wobec systemu Comarch ERGO. Wymiana systemu na inny oznaczałaby również konieczność odinstalowania i porzucenia systemu aktualnego, na którego wdrożenie wydatkowano środki publiczne. Takie działanie naruszałoby zasadę celowości i oszczędności gospodarowania środkami publicznymi.</cbc:ProcessReason>
+      </cac:ProcessJustification>
+      <cac:ProcessJustification>
+         <cbc:ProcessReasonCode listName="direct-award-justification">technical</cbc:ProcessReasonCode>
+         <cbc:ProcessReason languageID="POL">uzasadnienie powyżej</cbc:ProcessReason>
+      </cac:ProcessJustification>
+   </cac:TenderingProcess>
+   <cac:ProcurementProject>
+      <cbc:ID schemeName="InternalID">WZP.271.31.2025.E</cbc:ID>
+      <cbc:Name languageID="POL">Wsparcie producenta dla systemu PZGiK ERGO </cbc:Name>
+      <cbc:Description languageID="POL">Wsparcie producenta dla systemu PZGiK ERGO </cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+      <cac:MainCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">72000000</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:RealizedLocation>
+         <cac:Address>
+            <cbc:CountrySubentityCode listName="nuts">PL613</cbc:CountrySubentityCode>
+            <cac:Country>
+               <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+            </cac:Country>
+         </cac:Address>
+      </cac:RealizedLocation>
+   </cac:ProcurementProject>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+      <cac:TenderingTerms>
+         <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+         <cac:AdditionalInformationParty>
+            <cac:PartyIdentification>
+               <cbc:ID>ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:AdditionalInformationParty>
+         <cac:DocumentProviderParty>
+            <cac:PartyIdentification>
+               <cbc:ID>ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:DocumentProviderParty>
+         <cac:AppealTerms>
+            <cac:PresentationPeriod>
+               <cbc:Description languageID="POL">Dział IX Środki ochrony prawnej - ustawy z dnia 11.09.2019r. Prawo zamówień publicznych (tekst jedn. Dz. U. z 2024 r., poz. 1320 ze zm.)</cbc:Description>
+            </cac:PresentationPeriod>
+            <cac:AppealInformationParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealInformationParty>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0003</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+         </cac:AppealTerms>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <cbc:GovernmentAgreementConstraintIndicator>false</cbc:GovernmentAgreementConstraintIndicator>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:ID schemeName="InternalID">WZP.271.31.2025.E</cbc:ID>
+         <cbc:Name languageID="POL">Wsparcie producenta dla systemu PZGiK ERGO </cbc:Name>
+         <cbc:Description languageID="POL">Wsparcie producenta dla systemu PZGiK ERGO </cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">72000000</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:RealizedLocation>
+            <cac:Address>
+               <cbc:CountrySubentityCode listName="nuts">PL613</cbc:CountrySubentityCode>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+         <cac:PlannedPeriod>
+            <cbc:DurationMeasure unitCode="MONTH">36</cbc:DurationMeasure>
+         </cac:PlannedPeriod>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+   <cac:TenderResult>
+      <cbc:AwardDate>2000-01-01Z</cbc:AwardDate>
+   </cac:TenderResult>
+</ContractAwardNotice>

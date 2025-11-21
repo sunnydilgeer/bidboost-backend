@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+   <ext:UBLExtensions>
+      <ext:UBLExtension>
+         <ext:ExtensionContent>
+            <efext:EformsExtension>
+               <efac:NoticeSubType>
+                  <cbc:SubTypeCode listName="notice-subtype">16</cbc:SubTypeCode>
+               </efac:NoticeSubType>
+               <efac:Organizations>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://gminanml.pl/</cbc:WebsiteURI>
+                        <cbc:EndpointID>https://gminanml.pl/</cbc:EndpointID>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Gmina Nowe Miasto Lubawskie</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>Podleśna 1</cbc:StreetName>
+                           <cbc:CityName>Mszanowo</cbc:CityName>
+                           <cbc:PostalZone>13-300</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL621</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>8771468461</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>56 474 63 00</cbc:Telephone>
+                           <cbc:ElectronicMail>urzad@gminanml.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Krajowa Izba Odwoławcza</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>ul. Postępu 17A</cbc:StreetName>
+                           <cbc:CityName>Warszawa</cbc:CityName>
+                           <cbc:PostalZone>02-676</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL911</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>5262239325</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>22 458 77 01</cbc:Telephone>
+                           <cbc:ElectronicMail>uzp@uzp.gov.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://op.europa.eu</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0000</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Publications Office of the European Union</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:CityName>Luxembourg</cbc:CityName>
+                           <cbc:PostalZone>2417</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">LU000</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">LUX</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>PUBL</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+352 29291</cbc:Telephone>
+                           <cbc:ElectronicMail>ted@publications.europa.eu</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+               </efac:Organizations>
+            <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00760752-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+         </ext:ExtensionContent>
+      </ext:UBLExtension>
+   </ext:UBLExtensions>
+   <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+   <cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+   <cbc:ID schemeName="notice-id">49033809-6bf2-446c-ab6d-28db8292c65c</cbc:ID>
+   <cbc:ContractFolderID>07a78d24-a97a-47fa-821c-b4f2ffd65d5d</cbc:ContractFolderID>
+   <cbc:IssueDate>2025-11-13Z</cbc:IssueDate>
+   <cbc:IssueTime>20:35:24Z</cbc:IssueTime>
+   <cbc:VersionID>01</cbc:VersionID>
+   <cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+   <cbc:NoticeTypeCode listName="competition">cn-standard</cbc:NoticeTypeCode>
+   <cbc:NoticeLanguageCode listName="language">POL</cbc:NoticeLanguageCode>
+   <cac:ContractingParty>
+      <cbc:BuyerProfileURI>https://gminanml.pl/</cbc:BuyerProfileURI>
+      <cac:ContractingPartyType>
+         <cbc:PartyTypeCode listName="buyer-legal-type">la</cbc:PartyTypeCode>
+      </cac:ContractingPartyType>
+      <cac:ContractingActivity>
+         <cbc:ActivityTypeCode listName="authority-activity">gen-pub</cbc:ActivityTypeCode>
+      </cac:ContractingActivity>
+      <cac:Party>
+         <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+         </cac:PartyIdentification>
+         <cac:ServiceProviderParty>
+            <cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode>
+            <cac:Party>
+               <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0000</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:Party>
+         </cac:ServiceProviderParty>
+      </cac:Party>
+   </cac:ContractingParty>
+   <cac:TenderingTerms>
+      <cac:ProcurementLegislationDocumentReference>
+         <cbc:ID>LocalLegalBasis</cbc:ID>
+         <cbc:DocumentDescription languageID="POL">Prawo zamówień Publicznych DZ.U. z 2024 poz 1320r.</cbc:DocumentDescription>
+      </cac:ProcurementLegislationDocumentReference>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-grounds-source">epo-procurement-document</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+   </cac:TenderingTerms>
+   <cac:TenderingProcess>
+      <ext:UBLExtensions>
+         <ext:UBLExtension>
+            <ext:ExtensionContent>
+               <efext:EformsExtension>
+                  <efbc:ProcedureRelaunchIndicator>false</efbc:ProcedureRelaunchIndicator>
+               </efext:EformsExtension>
+            </ext:ExtensionContent>
+         </ext:UBLExtension>
+      </ext:UBLExtensions>
+      <cbc:ProcedureCode listName="procurement-procedure-type">open</cbc:ProcedureCode>
+      <cac:ProcessJustification>
+         <cbc:ProcessReasonCode listName="accelerated-procedure">false</cbc:ProcessReasonCode>
+      </cac:ProcessJustification>
+   </cac:TenderingProcess>
+   <cac:ProcurementProject>
+      <cbc:ID schemeName="InternalID">RD.271.1.22.2025</cbc:ID>
+      <cbc:Name languageID="POL">Dostawa ciężkiego samochodu ratowniczo-gaśniczego dla Ochotniczej Straży Pożarnej w Bratianie
+</cbc:Name>
+      <cbc:Description languageID="POL">Przedmiotem zamówienia jest dostawa ciężkiego samochodu ratowniczo-gaśniczego dla Ochotniczej Straży Pożarnej w Bratianie
+Szczegółowy opis przedmiotu zamówienia znajduje się w załączniku nr 1a do SWZ a także w projektowanych postanowieniach umowy(załącznik nr 9).
+</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">supplies</cbc:ProcurementTypeCode>
+      <cbc:Note languageID="POL">14.3.	Wraz z ofertą Wykonawca jest zobowiązany złożyć:
+a)	Formularz asortymentowo-cenowy stanowiący załącznik nr 1a do niniejszej specyfikacji
+b)	oświadczenie, o który m mowa w pkt 8.1. SWZ formularz jednolitego europejskiego dokumentu zamówienia (JEDZ) oraz oświadczenie o którym mowa w pkt 8.3 SWZ
+c)	pełnomocnictwo (jeżeli dotyczy), w przypadku:
+− gdy umocowanie z których wynika prawo do podpisania oferty nie wynika z dokumentów rejestrowych,
+− o którym mowa w pkt 10.1 SWZ (dotyczy Wykonawców wspólnie ubiegających się o udzielenie zamówienia,
+d)	zobowiązanie innego podmiotu, o którym mowa w pkt. 9.3 SWZ oraz oświadczenia wskazanie w pkt 9.7 ppkt a SWZ (jeżeli dotyczy);
+e)	Oświadczenie Wykonawcy składane na podstawie art. 117 ust. 4 o którym mowa w pkt
+10.3 SWZ (jeżeli dotyczy)
+f) dowód wniesienia wadium jeśli zostało wniesione w innej formie niż pieniądzu
+w formie elektronicznej (opatrzonej kwalifikowanym podpisem elektronicznym)
+21.1.	Zamawiający wymaga wniesienia wadium dla prowadzonego postępowania.
+1) Zamawiający wymaga od Wykonawców wniesienia wadium w wysokości:
+10 000,00 zł (słownie: dziesięć tysięcy złotych 00/100).
+</cbc:Note>
+      <cac:MainCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">34144210</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:RealizedLocation>
+         <cac:Address>
+            <cbc:StreetName>ul. Podleśna 1</cbc:StreetName>
+            <cbc:CityName>Mszanowo</cbc:CityName>
+            <cbc:PostalZone>13-300</cbc:PostalZone>
+            <cbc:CountrySubentityCode listName="nuts">PL621</cbc:CountrySubentityCode>
+            <cac:Country>
+               <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+            </cac:Country>
+         </cac:Address>
+      </cac:RealizedLocation>
+   </cac:ProcurementProject>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+      <cac:TenderingTerms>
+         <ext:UBLExtensions>
+            <ext:UBLExtension>
+               <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                     <efac:Funding>
+                        <efbc:FinancingIdentifier>w ramach projektu : Priorytet 02 Środowisko. Działania 02.07 Adaptacja do zmian klimatu SCHEMAT A(typ projektu 3) programu regionalnego Fundusze Europejskie dla Warmii i Mazur 2021-2027 współfinansowanego ze środków Europejskiego Funduszu Rozwoju Regionalnego</efbc:FinancingIdentifier>
+                     </efac:Funding>
+                  </efext:EformsExtension>
+               </ext:ExtensionContent>
+            </ext:UBLExtension>
+         </ext:UBLExtensions>
+         <cbc:FundingProgramCode listName="eu-funded">eu-funds</cbc:FundingProgramCode>
+         <cac:RequiredFinancialGuarantee>
+            <cbc:GuaranteeTypeCode listName="tender-guarantee-required">true</cbc:GuaranteeTypeCode>
+            <cbc:Description languageID="POL">21.1.	Zamawiający wymaga wniesienia wadium dla prowadzonego postępowania.
+1) Zamawiający wymaga od Wykonawców wniesienia wadium w wysokości:
+10 000,00 zł (słownie: dziesięć tysięcy złotych 00/100).
+2) Wadium może być wniesione w jednej lub kilku następujących formach:
+- pieniądzu,
+- gwarancjach bankowych,
+- gwarancjach ubezpieczeniowych,
+- poręczeniach udzielanych przez podmioty, o których mowa w art. 6b ust. 5 pkt 2 ustawy z
+dnia 9 listopada 2000 r. o utworzeniu Polskiej Agencji Rozwoju Przedsiębiorczości (Dz.U.
+z 2024 r. poz. 419).
+3) Wykonawca zobowiązany jest wnieść wadium przed upływem terminu składania ofert.
+4) Wadium wnoszone w pieniądzu należy wnieść przelewem na następujący rachunek bankowy Zamawiającego: 95 9484 1121 2001 0121 6053 0005
+5) W przypadku wadium wnoszonego w pieniądzu, jako termin wniesienia wadium przyjęty
+zostaje termin uznania kwoty na rachunku Zamawiającego, tj. faktyczny wpływ środków na
+konto Zamawiającego, a nie termin zlecenia (dokonania) przelewu przez Wykonawcę. Nie
+dopuszcza się wpłaty wadium w kasie Urzędu Gminy.
+6) Wadium wniesione w pieniądzu Zamawiający przechowuje na rachunku bankowym.
+7) Wadium wnoszone w formie poręczeń lub gwarancji musi być złożone jako oryginał
+gwarancji lub poręczenia w postaci elektronicznej i spełniać co najmniej poniższe
+wymagania:
+a) musi obejmować odpowiedzialność za wszystkie przypadki powodujące utratę wadium przez Wykonawcę określone w ustawie PZP;
+b) wskazanie sumy gwarancyjnej;
+c) z jej treści powinno jednoznacznej wynikać zobowiązanie gwaranta do zapłaty całej kwoty wadium;
+d) powinno być nieodwołalne i bezwarunkowe oraz płatne na pierwsze żądanie;
+e) termin obowiązywania poręczenia lub gwarancji nie może być krótszy niż termin związania ofertą (z zastrzeżeniem iż pierwszym dniem związania ofertą jest dzień składania ofert);
+f) w treści poręczenia lub gwarancji powinna znaleźć się nazwa oraz numer przedmiotowego postępowania;
+g) beneficjentem poręczenia lub gwarancji jest: Gmina Nowe Miasto Lubawskie;
+h) wskazanie Wykonawcy, czyli zleceniodawcy gwarancji/ubezpieczyciela;
+8) w przypadku Wykonawców wspólnie ubiegających się o udzielenie zamówienia (art. 58
+ustawy PZP), Zamawiający wymaga aby poręczenie lub gwarancja obejmowała swą treścią
+(tj. zobowiązanych z tytułu poręczenia lub gwarancji) wszystkich Wykonawców wspólnie
+ubiegających się o udzielenie zamówienia lub aby z jej treści wynikało, że zabezpiecza ofertę
+Wykonawców wspólnie ubiegających się o udzielenie zamówienia (konsorcjum).
+9) Oferta wykonawcy, który nie wniesie wadium, wniesie wadium w sposób nieprawidłowy
+lub nie utrzyma wadium nieprzerwanie do upływu terminu związania ofertą lub złoży
+wniosek o zwrot wadium w przypadku, o którym mowa w art. 98 ust. 2 pkt 3 ustawy PZP,
+zostanie odrzucona.
+10) Zasady zwrotu oraz okoliczności zatrzymania wadium określa art. 98 ustawy PZP.
+</cbc:Description>
+         </cac:RequiredFinancialGuarantee>
+         <cac:CallForTendersDocumentReference>
+            <ext:UBLExtensions>
+               <ext:UBLExtension>
+                  <ext:ExtensionContent>
+                     <efext:EformsExtension>
+                        <efac:OfficialLanguages>
+                           <cac:Language>
+                              <cbc:ID>POL</cbc:ID>
+                           </cac:Language>
+                        </efac:OfficialLanguages>
+                     </efext:EformsExtension>
+                  </ext:ExtensionContent>
+               </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:ID>ocds-148610-1648c14e-62f2-4737-8d6d-eb9e9688839c</cbc:ID>
+            <cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+            <cac:Attachment>
+               <cac:ExternalReference>
+                  <cbc:URI>https://ezamowienia.gov.pl/mp-client/search/list/ocds-148610-1648c14e-62f2-4737-8d6d-eb9e9688839c</cbc:URI>
+               </cac:ExternalReference>
+            </cac:Attachment>
+         </cac:CallForTendersDocumentReference>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="selection-criteria-source">epo-procurement-document</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="reserved-procurement">none</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="reserved-execution">no</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="einvoicing">allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="ecatalog-submission">not-allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="esignature-submission">true</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:TenderRecipientParty>
+            <cbc:EndpointID>https://ezamowienia.gov.pl/mp-client/search/list/ocds-148610-1648c14e-62f2-4737-8d6d-eb9e9688839c</cbc:EndpointID>
+            <cac:PartyIdentification>
+               <cbc:ID>ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:TenderRecipientParty>
+         <cac:TenderEvaluationParty>
+            <cac:PartyIdentification>
+               <cbc:ID>ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:TenderEvaluationParty>
+         <cac:TenderValidityPeriod>
+            <cbc:DurationMeasure unitCode="DAY">90</cbc:DurationMeasure>
+         </cac:TenderValidityPeriod>
+         <cac:AppealTerms>
+            <cac:PresentationPeriod>
+               <cbc:Description languageID="POL">20.1.	Środki ochrony prawnej określone w dziale IX ustawy Pzp przysługują Wykonawcy oraz innemu podmiotowi, jeżeli ma lub miał interes w uzyskaniu zamówienia oraz poniósł lub może ponieść szkodę w wyniku naruszenia przez Zamawiającego przepisów ustawy Pzp
+20.2.	Środki ochrony prawnej wobec ogłoszenia wszczynającego postępowanie o udzielenie zamówienia oraz dokumentów zamówienia przysługują również organizacjom wpisanym na listę, o której mowa w art. 469 pkt 15 ustawy Pzp oraz Rzecznikowi Małych i Średnich Przedsiębiorców.
+20.3.	Odwołanie przysługuje na:
+a)	niezgodną z przepisami ustawy czynność Zamawiającego, podjętą w postępowaniu o
+udzielenie zamówienia, w tym na projektowane postanowienie umowy,
+b)	zaniechanie czynności w postępowaniu o udzielenie zamówienia do której Zamawiający był obowiązany na podstawie ustawy.
+20.4.	Odwołanie wnosi się do Prezesa Izby. Odwołujący przekazuje kopię odwołania Zamawiającemu przed upływem terminu do wniesienia odwołania w taki sposób, aby mógł on zapoznać się z jego treścią przed upływem tego terminu.
+20.5.	Odwołanie wobec treści ogłoszenia lub treści SWZ wnosi się w terminie 10 dni od dnia zamieszczenia ogłoszenia w Dzienniku Urzędowym Unii Europejskiej lub treści SWZ na stronie internetowej.
+20.6.	Odwołanie wnosi się w terminie:
+a)	10 dni od dnia przekazania informacji o czynności zamawiającego stanowiącej podstawę jego wniesienia, jeżeli informacja została przekazana przy użyciu środków komunikacji elektronicznej,
+b)	15 dni od dnia przekazania informacji o czynności zamawiającego stanowiącej podstawę jego wniesienia, jeżeli informacja została przekazana w sposób inny niż określony w pkt a)
+20.7.	Odwołanie w przypadkach innych niż określone w pkt 20.5 i 20.6 wnosi się w terminie 10 dni od dnia, w którym powzięto lub przy zachowaniu należytej staranności można było powziąć wiadomość o okolicznościach stanowiących podstawę jego wniesienia.
+20.8.	Na orzeczenie Izby oraz postanowienie Prezesa Izby, o którym mowa w art. 519 ust. 1 ustawy Pzp, stronom oraz uczestnikom postępowania odwoławczego przysługuje skarga do sądu.
+20.9.	W postępowaniu toczącym się wskutek wniesienia skargi stosuje się odpowiednio przepisy ustawy z dnia 17 listopada 1964 r. Kodeks postępowania cywilnego o apelacji, jeżeli przepisy działu IX rozdziału 3 ustawy Pzp nie stanowią inaczej.
+20.10.	Skargę wnosi się do Sądu Okręgowego w Warszawie sądu zamówień publicznych, zwanego dalej "sądem zamówień publicznych".
+20.11.	Skargę wnosi się za pośrednictwem Prezesa Izby, w terminie 14 dni od dnia doręczenia orzeczenia Izby lub postanowienia Prezesa Izby, o którym mowa w art. 519 ust. 1 ustawy Pzp , przesyłając jednocześnie jej odpis przeciwnikowi skargi. Złożenie skargi w placówce pocztowej operatora wyznaczonego w rozumieniu ustawy z dnia 23 listopada 2012 r. Prawo pocztowe jest równoznaczne z jej wniesieniem.
+20.12.	Prezes Izby przekazuje skargę wraz z aktami postępowania odwoławczego do sądu zamówień publicznych w terminie 7 dni od dnia jej otrzymania.</cbc:Description>
+            </cac:PresentationPeriod>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+         </cac:AppealTerms>
+         <cac:Language>
+            <cbc:ID>POL</cbc:ID>
+         </cac:Language>
+         <cac:PostAwardProcess>
+            <cbc:ElectronicOrderUsageIndicator>true</cbc:ElectronicOrderUsageIndicator>
+            <cbc:ElectronicPaymentUsageIndicator>true</cbc:ElectronicPaymentUsageIndicator>
+         </cac:PostAwardProcess>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <cbc:SubmissionMethodCode listName="esubmission">required</cbc:SubmissionMethodCode>
+         <cbc:GovernmentAgreementConstraintIndicator>false</cbc:GovernmentAgreementConstraintIndicator>
+         <cac:TenderSubmissionDeadlinePeriod>
+            <cbc:EndDate>2025-12-19+01:00</cbc:EndDate>
+            <cbc:EndTime>10:00:00+01:00</cbc:EndTime>
+         </cac:TenderSubmissionDeadlinePeriod>
+         <cac:OpenTenderEvent>
+            <cbc:OccurrenceDate>2025-12-19+01:00</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>10:30:00+01:00</cbc:OccurrenceTime>
+            <cac:OccurenceLocation>
+               <cbc:Description languageID="POL">https://ezamowienia.gov.pl/mp-client/search/list/ocds-148610-1648c14e-62f2-4737-8d6d-eb9e9688839c </cbc:Description>
+            </cac:OccurenceLocation>
+         </cac:OpenTenderEvent>
+         <cac:AuctionTerms>
+            <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+         </cac:AuctionTerms>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:Name languageID="POL">Przedmiotem zamówienia jest dostawa ciężkiego samochodu ratowniczo-gaśniczego dla Ochotniczej Straży Pożarnej w Bratianie
+</cbc:Name>
+         <cbc:Description languageID="POL">
+Szczegółowy opis przedmiotu zamówienia znajduje się w załączniku nr 1a
+ do SWZ a także w projektowanych postanowieniach umowy(załącznik nr 9).</cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">supplies</cbc:ProcurementTypeCode>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">34144210</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:RealizedLocation>
+            <cac:Address>
+               <cbc:CityName>Bratian</cbc:CityName>
+               <cbc:CountrySubentityCode listName="nuts">PL621</cbc:CountrySubentityCode>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+         <cac:PlannedPeriod>
+            <cbc:DurationMeasure unitCode="DAY">165</cbc:DurationMeasure>
+         </cac:PlannedPeriod>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+</ContractNotice>

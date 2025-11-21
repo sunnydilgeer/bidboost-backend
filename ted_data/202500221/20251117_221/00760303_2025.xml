@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractAwardNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractAwardNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+  <!--BT-02-notice-->
+  <ext:UBLExtensions>
+    <ext:UBLExtension>
+      <ext:ExtensionContent>
+        <efext:EformsExtension>
+          <efac:NoticeResult>
+            <!--BT-161-NoticeResult-->
+            <cbc:TotalAmount currencyID="EUR">2039604.86</cbc:TotalAmount>
+            <efac:LotResult>
+              <!--OPT-322-LotResult-->
+              <cbc:ID schemeName="result">RES-0001</cbc:ID>
+              <cbc:TenderResultCode listName="winner-selection-status">selec-w</cbc:TenderResultCode>
+              <efac:AppealRequestsStatistics>
+                <!--BT-635-LotResult-->
+                <efbc:StatisticsNumeric>1</efbc:StatisticsNumeric>
+              </efac:AppealRequestsStatistics>
+              <efac:AppealRequestsStatistics>
+                <!--BT-712(a)-LotResult-->
+                <efbc:StatisticsCode listName="review-type">complainants</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>1</efbc:StatisticsNumeric>
+              </efac:AppealRequestsStatistics>
+              <efac:LotTender>
+                <!--OPT-320-LotResult-->
+                <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+              </efac:LotTender>
+              <efac:ReceivedSubmissionsStatistics>
+                <!--BT-760-LotResult-->
+                <efbc:StatisticsCode listName="received-submission-type">tenders</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>4</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:SettledContract>
+                <!--OPT-315-LotResult-->
+                <cbc:ID schemeName="contract">CON-0001</cbc:ID>
+              </efac:SettledContract>
+              <efac:TenderLot>
+                <!--BT-13713-LotResult-->
+                <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+              </efac:TenderLot>
+            </efac:LotResult>
+            <efac:LotTender>
+              <!--OPT-321-Tender-->
+              <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+              <efbc:TenderRankedIndicator>true</efbc:TenderRankedIndicator>
+              <cac:LegalMonetaryTotal>
+                <!--BT-720-Tender-->
+                <cbc:PayableAmount currencyID="EUR">2039604.86</cbc:PayableAmount>
+              </cac:LegalMonetaryTotal>
+              <efac:SubcontractingTerm>
+                <!--BT-773-Tender-->
+                <efbc:TermCode listName="applicability">no</efbc:TermCode>
+              </efac:SubcontractingTerm>
+              <efac:TenderingParty>
+                <!--OPT-310-Tender-->
+                <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+              </efac:TenderingParty>
+              <efac:TenderLot>
+                <!--BT-13714-Tender-->
+                <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+              </efac:TenderLot>
+              <efac:TenderReference>
+                <!--BT-3201-Tender-->
+                <cbc:ID>2</cbc:ID>
+              </efac:TenderReference>
+            </efac:LotTender>
+            <efac:SettledContract>
+              <!--OPT-316-Contract-->
+              <cbc:ID schemeName="contract">CON-0001</cbc:ID>
+              <cbc:AwardDate>2024-09-28+02:00</cbc:AwardDate>
+              <cbc:IssueDate>2025-04-03+02:00</cbc:IssueDate>
+              <cac:SignatoryParty>
+                <cac:PartyIdentification>
+                  <!--OPT-300-Contract-Signatory-->
+                  <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                </cac:PartyIdentification>
+              </cac:SignatoryParty>
+              <efac:ContractReference>
+                <!--BT-150-Contract-->
+                <cbc:ID>4067212</cbc:ID>
+              </efac:ContractReference>
+              <efac:LotTender>
+                <!--BT-3202-Contract-->
+                <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+              </efac:LotTender>
+            </efac:SettledContract>
+            <efac:TenderingParty>
+              <!--OPT-210-Tenderer-->
+              <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+              <cbc:Name languageID="ITA">Macramè</cbc:Name>
+              <efac:Tenderer>
+                <!--OPT-300-Tenderer-->
+                <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+              </efac:Tenderer>
+            </efac:TenderingParty>
+          </efac:NoticeResult>
+          <efac:NoticeSubType>
+            <!--OPP-070-notice-->
+            <cbc:SubTypeCode listName="notice-subtype_can-standard.gc">29</cbc:SubTypeCode>
+          </efac:NoticeSubType>
+          <efac:Organizations>
+            <efac:Organization>
+              <efac:Company>
+                <!--BT-505-Organization-Company-->
+                <cbc:WebsiteURI>https://www.reggiocal.it/</cbc:WebsiteURI>
+                <cac:PartyIdentification>
+                  <!--OPT-200-Organization-Company-->
+                  <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <!--BT-500-Organization-Company-->
+                  <cbc:Name languageID="ITA">COMUNE DI REGGIO CALABRIA</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <!--BT-510(a)-Organization-Company-->
+                  <cbc:StreetName>Palazzo San Giorgio Piazza Italia, 1</cbc:StreetName>
+                  <cbc:CityName>Reggio Calabria</cbc:CityName>
+                  <cbc:PostalZone>89125</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts-lvl3">ITF65</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <!--BT-514-Organization-Company-->
+                    <cbc:IdentificationCode listName="country">ITA</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <!--BT-501-Organization-Company-->
+                  <cbc:CompanyID>00136380805</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <!--BT-506-Organization-Company-->
+                  <cbc:Telephone>0965 3622111</cbc:Telephone>
+                  <cbc:ElectronicMail>protocollo@pec.reggiocal.it</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+            <efac:Organization>
+              <efac:Company>
+                <cac:PartyIdentification>
+                  <!--OPT-200-Organization-Company-->
+                  <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <!--BT-500-Organization-Company-->
+                  <cbc:Name languageID="ITA">MACRAMÈ TRAME SOLIDALI NELLE TERRE DEL SOLE - CONSORZIO COOPERATIVE SOCIALI DI SOLIDARIETA' - S.C.S</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <!--BT-513-Organization-Company-->
+                  <cbc:CityName>Reggio Calabria</cbc:CityName>
+                  <cbc:PostalZone>89100</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts-lvl3">ITF65</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <!--BT-514-Organization-Company-->
+                    <cbc:IdentificationCode listName="country">ITA</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <!--BT-501-Organization-Company-->
+                  <cbc:CompanyID>02372250809</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <!--BT-506-Organization-Company-->
+                  <cbc:ElectronicMail>consorzio.macrame@pec.it</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+          </efac:Organizations>
+        <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00760303-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+      </ext:ExtensionContent>
+    </ext:UBLExtension>
+  </ext:UBLExtensions>
+  <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+  <cbc:CustomizationID>eforms-sdk-1.12</cbc:CustomizationID>
+  <cbc:ID schemeName="notice-id">784d2a23-02ea-4aed-9497-cbfc93a870ca</cbc:ID>
+  <cbc:ContractFolderID>784d2a23-02ea-4aed-9497-cbfc93a870ca</cbc:ContractFolderID>
+  <cbc:IssueDate>2025-11-13+02:00</cbc:IssueDate>
+  <cbc:IssueTime>18:04:30+02:00</cbc:IssueTime>
+  <cbc:VersionID>01</cbc:VersionID>
+  <cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+  <cbc:NoticeTypeCode listName="result">can-standard</cbc:NoticeTypeCode>
+  <cbc:NoticeLanguageCode>ITA</cbc:NoticeLanguageCode>
+  <cac:ContractingParty>
+    <cac:ContractingPartyType>
+      <!--BT-11-Procedure-Buyer-->
+      <cbc:PartyTypeCode listName="buyer-legal-type">la</cbc:PartyTypeCode>
+    </cac:ContractingPartyType>
+    <cac:ContractingActivity>
+      <!--BT-10-Procedure-Buyer-->
+      <cbc:ActivityTypeCode listName="authority-activity">gen-pub</cbc:ActivityTypeCode>
+    </cac:ContractingActivity>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <!--OPT-300-Procedure-Buyer-->
+        <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:ServiceProviderParty>
+        <!--OPT-030-Procedure-SProvider-->
+        <cbc:ServiceTypeCode listName="organisation-role-service">serv-prov</cbc:ServiceTypeCode>
+        <cac:Party>
+          <cac:PartyIdentification>
+            <!--OPT-300-Procedure-SProvider-->
+            <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+          </cac:PartyIdentification>
+        </cac:Party>
+      </cac:ServiceProviderParty>
+    </cac:Party>
+  </cac:ContractingParty>
+  <cac:TenderingTerms>
+    <cac:ProcurementLegislationDocumentReference>
+      <!--BT-09(b)-Procedure-->
+      <cbc:ID>CrossBorderLaw</cbc:ID>
+      <cbc:DocumentDescription languageID="ITA">no</cbc:DocumentDescription>
+    </cac:ProcurementLegislationDocumentReference>
+  </cac:TenderingTerms>
+  <cac:TenderingProcess>
+    <!--BT-105-Procedure-->
+    <cbc:ProcedureCode listName="procurement-procedure-type">open</cbc:ProcedureCode>
+  </cac:TenderingProcess>
+  <cac:ProcurementProject>
+    <!--BT-22-Procedure-->
+    <cbc:ID>ae42c03e-edee-4aa8-9863-73576455f43f@1569-G-12</cbc:ID>
+    <cbc:Name languageID="ITA">Rafforzamento degli interventi di inclusione - QSFP</cbc:Name>
+    <cbc:Description languageID="ITA">Rafforzamento degli interventi di inclusione - QSFP</cbc:Description>
+    <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+    <cac:RequestedTenderTotal>
+      <!--BT-27-Procedure-->
+      <cbc:EstimatedOverallContractAmount currencyID="EUR">2039604.86</cbc:EstimatedOverallContractAmount>
+    </cac:RequestedTenderTotal>
+    <cac:MainCommodityClassification>
+      <!--BT-262-Procedure-->
+      <cbc:ItemClassificationCode listName="cpv">85320000</cbc:ItemClassificationCode>
+    </cac:MainCommodityClassification>
+    <cac:RealizedLocation>
+      <cac:Address>
+        <!--BT-5071-Procedure-->
+        <cbc:CountrySubentityCode listName="nuts-lvl3">ITF65</cbc:CountrySubentityCode>
+        <cac:Country>
+          <!--BT-5141-Procedure-->
+          <cbc:IdentificationCode listName="country">ITA</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:RealizedLocation>
+  </cac:ProcurementProject>
+  <cac:ProcurementProjectLot>
+    <!--BT-137-Lot-->
+    <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+    <cac:TenderingTerms>
+      <!--BT-60-Lot-->
+      <cbc:FundingProgramCode listName="eu-funded">eu-funds</cbc:FundingProgramCode>
+      <cac:AwardingTerms>
+        <cac:AwardingCriterion>
+          <cac:SubordinateAwardingCriterion>
+            <!--BT-539-Lot-->
+            <ext:UBLExtensions>
+              <ext:UBLExtension>
+                <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                    <efac:AwardCriterionParameter>
+                      <!--BT-5421-Lot-->
+                      <efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+                      <efbc:ParameterNumeric>100</efbc:ParameterNumeric>
+                    </efac:AwardCriterionParameter>
+                  </efext:EformsExtension>
+                </ext:ExtensionContent>
+              </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+            <cbc:Description languageID="ITA">criterio dell’offerta economicamente più vantaggiosa individuata sulla base dei criteri qualitativi, ai sensi del comma 5 dell’art. 108 del D.Lgs. n. 36/2023</cbc:Description>
+          </cac:SubordinateAwardingCriterion>
+        </cac:AwardingCriterion>
+      </cac:AwardingTerms>
+      <cac:AdditionalInformationParty>
+        <cac:PartyIdentification>
+          <!--OPT-301-Lot-AddInfo-->
+          <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+        </cac:PartyIdentification>
+      </cac:AdditionalInformationParty>
+      <cac:AppealTerms>
+        <cac:PresentationPeriod>
+          <!--BT-99-Lot-->
+          <cbc:Description languageID="ITA">30 giorni</cbc:Description>
+        </cac:PresentationPeriod>
+        <cac:AppealReceiverParty>
+          <cac:PartyIdentification>
+            <!--OPT-301-Lot-ReviewOrg-->
+            <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+          </cac:PartyIdentification>
+        </cac:AppealReceiverParty>
+      </cac:AppealTerms>
+    </cac:TenderingTerms>
+    <cac:TenderingProcess>
+      <!--BT-115-Lot-->
+      <cbc:GovernmentAgreementConstraintIndicator>false</cbc:GovernmentAgreementConstraintIndicator>
+      <cac:AuctionTerms>
+        <!--BT-767-Lot-->
+        <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+      </cac:AuctionTerms>
+      <cac:ContractingSystem>
+        <!--BT-765-Lot-->
+        <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+      </cac:ContractingSystem>
+      <cac:ContractingSystem>
+        <!--BT-766-Lot-->
+        <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+      </cac:ContractingSystem>
+    </cac:TenderingProcess>
+    <cac:ProcurementProject>
+      <!--BT-22-Lot-->
+      <cbc:ID>ae42c03e-edee-4aa8-9863-73576455f43f@1569-G-12/LOT-0001</cbc:ID>
+      <cbc:Name languageID="ITA">RAFFORZAMENTO DEGLI INTERVENTI DI INCLUSIONE</cbc:Name>
+      <cbc:Description languageID="ITA">RAFFORZAMENTO DEGLI INTERVENTI DI INCLUSIONE a valere sulla QSFP</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+      <cac:ProcurementAdditionalType>
+        <!--BT-06-Lot-->
+        <cbc:ProcurementTypeCode listName="strategic-procurement">none</cbc:ProcurementTypeCode>
+      </cac:ProcurementAdditionalType>
+      <cac:RequestedTenderTotal>
+        <!--BT-27-Lot-->
+        <cbc:EstimatedOverallContractAmount currencyID="EUR">2039604.86</cbc:EstimatedOverallContractAmount>
+      </cac:RequestedTenderTotal>
+      <cac:MainCommodityClassification>
+        <!--BT-262-Lot-->
+        <cbc:ItemClassificationCode listName="cpv">85320000</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:RealizedLocation>
+        <cac:Address>
+          <!--BT-5071-Lot-->
+          <cbc:CountrySubentityCode listName="nuts-lvl3">ITF65</cbc:CountrySubentityCode>
+          <cac:Country>
+            <!--BT-5141-Lot-->
+            <cbc:IdentificationCode listName="country">ITA</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:RealizedLocation>
+    </cac:ProcurementProject>
+  </cac:ProcurementProjectLot>
+  <cac:TenderResult>
+    <!--OPT-999-->
+    <cbc:AwardDate>2025-11-13+02:00</cbc:AwardDate>
+  </cac:TenderResult>
+</ContractAwardNotice>

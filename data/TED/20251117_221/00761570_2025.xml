@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractAwardNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractAwardNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+    <ext:UBLExtensions>
+        <ext:UBLExtension>
+            <ext:ExtensionContent>
+                <efext:EformsExtension>
+                    <efac:ContractModification>
+                        <efbc:ChangedNoticeIdentifier schemeName="notice-id-ref">1fd44822-17ee-4474-9ecc-a964ab68bcd8-01</efbc:ChangedNoticeIdentifier>
+                        <efbc:ModifiedContractIdentifier schemeName="contract">CON-0001</efbc:ModifiedContractIdentifier>
+                        <efac:Change>
+                            <efbc:ChangeDescription languageID="SPA">Se adjunta informe técnico donde se recogen los motivos de la necesidad de ampliación del contrato.</efbc:ChangeDescription>
+                            <efac:ChangedSection>
+<efbc:ChangedSectionIdentifier>RESULT</efbc:ChangedSectionIdentifier>
+                            </efac:ChangedSection>
+                        </efac:Change>
+                        <efac:ChangeReason>
+                            <cbc:ReasonCode listName="modification-justification">add-wss</cbc:ReasonCode>
+                            <efbc:ReasonDescription languageID="SPA">Por los motivos expuestos en el informe técnico que se adjunta.</efbc:ReasonDescription>
+                        </efac:ChangeReason>
+                    </efac:ContractModification>
+                    <efac:NoticeResult>
+                        <efac:LotResult>
+                            <cbc:ID schemeName="result">RES-0001</cbc:ID>
+                            <efac:LotTender>
+<cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                            </efac:LotTender>
+                            <efac:SettledContract>
+<cbc:ID schemeName="contract">CON-0001</cbc:ID>
+                            </efac:SettledContract>
+                            <efac:TenderLot>
+<cbc:ID schemeName="Lot">LOT-0000</cbc:ID>
+                            </efac:TenderLot>
+                        </efac:LotResult>
+                        <efac:LotTender>
+                            <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                            <cac:LegalMonetaryTotal>
+<cbc:PayableAmount currencyID="EUR">193566.5</cbc:PayableAmount>
+                            </cac:LegalMonetaryTotal>
+                            <efac:SubcontractingTerm>
+<efbc:TermCode listName="applicability">no</efbc:TermCode>
+                            </efac:SubcontractingTerm>
+                            <efac:TenderingParty>
+<cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+                            </efac:TenderingParty>
+                            <efac:TenderLot>
+<cbc:ID>LOT-0000</cbc:ID>
+                            </efac:TenderLot>
+                            <efac:TenderReference>
+<cbc:ID>REF TEN-0001/LOT-0000</cbc:ID>
+                            </efac:TenderReference>
+                        </efac:LotTender>
+                        <efac:SettledContract>
+                            <cbc:ID schemeName="contract">CON-0001</cbc:ID>
+                            <cbc:AwardDate>2024-02-26+01:00</cbc:AwardDate>
+                            <cbc:IssueDate>2024-03-26+01:00</cbc:IssueDate>
+                            <efac:ContractReference>
+<cbc:ID>1685/2023</cbc:ID>
+                            </efac:ContractReference>
+                            <efac:LotTender>
+<cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                            </efac:LotTender>
+                        </efac:SettledContract>
+                        <efac:TenderingParty>
+                            <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+                            <efac:Tenderer>
+<cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                            </efac:Tenderer>
+                        </efac:TenderingParty>
+                    </efac:NoticeResult>
+                    <efac:NoticeSubType>
+                        <cbc:SubTypeCode listName="notice-subtype">38</cbc:SubTypeCode>
+                    </efac:NoticeSubType>
+                    <efac:Organizations>
+                        <efac:Organization>
+                            <efac:Company>
+<cbc:WebsiteURI>http://www.giahsa.com</cbc:WebsiteURI>
+<cac:PartyIdentification>
+    <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+</cac:PartyIdentification>
+<cac:PartyName>
+    <cbc:Name languageID="SPA">Comisión Ejecutiva de Gestión Integral del Agua de Huelva</cbc:Name>
+</cac:PartyName>
+<cac:PostalAddress>
+    <cbc:AddressFormatCode>1</cbc:AddressFormatCode>
+    <cbc:CityName>Aljaraque</cbc:CityName>
+    <cbc:PostalZone>21110</cbc:PostalZone>
+    <cbc:CountrySubentity>Huelva</cbc:CountrySubentity>
+    <cbc:CountrySubentityCode listName="nuts">ES615</cbc:CountrySubentityCode>
+    <cac:Country>
+        <cbc:IdentificationCode listName="country">ESP</cbc:IdentificationCode>
+        <cbc:Name>España</cbc:Name>
+    </cac:Country>
+</cac:PostalAddress>
+<cac:PartyLegalEntity>
+    <cbc:CompanyID schemeName="ID_PLATAFORMA">51310400174800</cbc:CompanyID>
+</cac:PartyLegalEntity>
+<cac:PartyLegalEntity>
+    <cbc:CompanyID schemeName="NIF">A21143656</cbc:CompanyID>
+</cac:PartyLegalEntity>
+<cac:Contact>
+    <cbc:Name>Comisión Ejecutiva de Gestión Integral del Agua de Huelva</cbc:Name>
+    <cbc:Telephone>+34 959310310</cbc:Telephone>
+    <cbc:ElectronicMail>notificacionesdoue@giahsa.com</cbc:ElectronicMail>
+</cac:Contact>
+                            </efac:Company>
+                            <efac:TouchPoint>
+<cac:PartyIdentification>
+    <cbc:ID>TPO-0001</cbc:ID>
+</cac:PartyIdentification>
+<cac:PartyName>
+    <cbc:Name languageID="SPA">Juzgado de lo Contencioso Administrativo de Huelva</cbc:Name>
+</cac:PartyName>
+<cac:PostalAddress>
+    <cbc:AddressFormatCode>1</cbc:AddressFormatCode>
+    <cbc:CityName>Huelva</cbc:CityName>
+    <cbc:PostalZone>21002</cbc:PostalZone>
+    <cbc:CountrySubentityCode listName="nuts">ES300</cbc:CountrySubentityCode>
+    <cac:Country>
+        <cbc:IdentificationCode listName="country">ESP</cbc:IdentificationCode>
+        <cbc:Name>España</cbc:Name>
+    </cac:Country>
+</cac:PostalAddress>
+                            </efac:TouchPoint>
+                        </efac:Organization>
+                        <efac:Organization>
+                            <efac:Company>
+<cac:PartyIdentification>
+    <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+</cac:PartyIdentification>
+<cac:PartyName>
+    <cbc:Name languageID="SPA">jcoplastic iberica 2000 s.l</cbc:Name>
+</cac:PartyName>
+<cac:PostalAddress>
+    <cbc:CityName>Fuentes de Ebro</cbc:CityName>
+    <cbc:PostalZone>50740</cbc:PostalZone>
+    <cbc:CountrySubentityCode listName="nuts">ES243</cbc:CountrySubentityCode>
+    <cac:Country>
+        <cbc:IdentificationCode listName="country">ESP</cbc:IdentificationCode>
+        <cbc:Name>España</cbc:Name>
+    </cac:Country>
+</cac:PostalAddress>
+<cac:PartyLegalEntity>
+    <cbc:CompanyID schemeName="NIF">****3408*</cbc:CompanyID>
+</cac:PartyLegalEntity>
+<cac:Contact>
+    <cbc:Telephone>+34 976169035</cbc:Telephone>
+    <cbc:ElectronicMail>ventas@jcoplastic.es</cbc:ElectronicMail>
+</cac:Contact>
+                            </efac:Company>
+                        </efac:Organization>
+                    </efac:Organizations>
+                <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00761570-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+            </ext:ExtensionContent>
+        </ext:UBLExtension>
+    </ext:UBLExtensions>
+    <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+    <cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+    <cbc:ID schemeName="notice-id">bbf69a9d-ea2a-4c3b-9afd-0b65271159f1</cbc:ID>
+    <cbc:ContractFolderID>d9a1933e-89f8-4661-94bd-51cff0d6223d</cbc:ContractFolderID>
+    <cbc:IssueDate>2025-11-14+01:00</cbc:IssueDate>
+    <cbc:IssueTime>11:56:11+01:00</cbc:IssueTime>
+    <cbc:VersionID>01</cbc:VersionID>
+    <cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+    <cbc:NoticeTypeCode listName="cont-modif">can-modif</cbc:NoticeTypeCode>
+    <cbc:NoticeLanguageCode>SPA</cbc:NoticeLanguageCode>
+    <cac:ContractingParty>
+        <cac:Party>
+            <cac:PartyIdentification>
+                <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+        </cac:Party>
+    </cac:ContractingParty>
+    <cac:ProcurementProject>
+        <cbc:ID>1685/2023</cbc:ID>
+        <cbc:Name languageID="SPA">1685/2023 Suministro de contenedores tipo carga trasera de residuos sólidos urbanos para GIAHSA.</cbc:Name>
+        <cbc:Description languageID="SPA">Según se detalla en el Informe de necesidad redactado por el responsable del contrato, [SIC] "Teniendo en cuenta el parque de contenedores tipo carga trasera de GIAHSA necesario para atender todos los servicios en materia de gestión de RSU en su ámbito de actuación (contenedores en vía pública de servicio ordinario al usuario doméstico, contenedores específicos para atender necesidades especiales trasladadas bien por grandes productores o bien por servicio de inspección propio, contenedores destinados a eventos municipales y contenedores de acceso a playa en época no invernal), se necesita la contratación del suministro de contenedores de tal tipología con objeto de poder seguir cubriendo la tasa de reposición.&#13;
+Para atender dicha necesidad, se precisa la contratación del suministro de 1010 contenedores para el año obligatorio de contrato (con 2 posibles prórrogas anuales adicionales).</cbc:Description>
+        <cbc:ProcurementTypeCode listName="contract-nature">supplies</cbc:ProcurementTypeCode>
+        <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">34928480</cbc:ItemClassificationCode>
+        </cac:MainCommodityClassification>
+        <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">44613700</cbc:ItemClassificationCode>
+        </cac:AdditionalCommodityClassification>
+        <cac:PlannedPeriod>
+            <cbc:DurationMeasure unitCode="YEAR">1</cbc:DurationMeasure>
+        </cac:PlannedPeriod>
+    </cac:ProcurementProject>
+    <cac:ProcurementProjectLot>
+        <cbc:ID schemeName="Lot">LOT-0000</cbc:ID>
+        <cac:TenderingTerms>
+            <cac:AppealTerms>
+                <cac:AppealReceiverParty>
+                    <cac:PartyIdentification>
+                        <cbc:ID schemeName="touchpoint">TPO-0001</cbc:ID>
+                    </cac:PartyIdentification>
+                </cac:AppealReceiverParty>
+            </cac:AppealTerms>
+        </cac:TenderingTerms>
+        <cac:ProcurementProject>
+            <cbc:ID schemeName="ID_LOTE">1685/2023</cbc:ID>
+            <cbc:Name languageID="SPA">1685/2023 Suministro de contenedores tipo carga trasera de residuos sólidos urbanos para GIAHSA.</cbc:Name>
+            <cbc:Description languageID="SPA">Según se detalla en el Informe de necesidad redactado por el responsable del contrato, [SIC] "Teniendo en cuenta el parque de contenedores tipo carga trasera de GIAHSA necesario para atender todos los servicios en materia de gestión de RSU en su ámbito de actuación (contenedores en vía pública de servicio ordinario al usuario doméstico, contenedores específicos para atender necesidades especiales trasladadas bien por grandes productores o bien por servicio de inspección propio, contenedores destinados a eventos municipales y contenedores de acceso a playa en época no invernal), se necesita la contratación del suministro de contenedores de tal tipología con objeto de poder seguir cubriendo la tasa de reposición.&#13;
+Para atender dicha necesidad, se precisa la contratación del suministro de 1010 contenedores para el año obligatorio de contrato (con 2 posibles prórrogas anuales adicionales).</cbc:Description>
+            <cbc:ProcurementTypeCode listName="contract-nature">supplies</cbc:ProcurementTypeCode>
+            <cac:MainCommodityClassification>
+                <cbc:ItemClassificationCode listName="cpv">34928480</cbc:ItemClassificationCode>
+            </cac:MainCommodityClassification>
+            <cac:AdditionalCommodityClassification>
+                <cbc:ItemClassificationCode listName="cpv">44613700</cbc:ItemClassificationCode>
+            </cac:AdditionalCommodityClassification>
+            <cac:RealizedLocation>
+                <cac:Address>
+                    <cbc:CountrySubentityCode listName="nuts">ES615</cbc:CountrySubentityCode>
+                    <cac:Country>
+                        <cbc:IdentificationCode listName="country">ESP</cbc:IdentificationCode>
+                    </cac:Country>
+                </cac:Address>
+            </cac:RealizedLocation>
+        </cac:ProcurementProject>
+    </cac:ProcurementProjectLot>
+    <cac:TenderResult>
+        <cbc:AwardDate>2024-02-26+01:00</cbc:AwardDate>
+    </cac:TenderResult>
+</ContractAwardNotice>

@@ -6,6 +6,7 @@ from slowapi.util import get_remote_address
 from slowapi.errors import RateLimitExceeded
 from app.core.config import settings
 from app.api.routes import router
+from app.api import sam_search
 from app.api.debug_routes import debug_router
 from app.auth.register import router as register_router
 from app.auth.login import router as login_router
@@ -137,6 +138,7 @@ app.include_router(register_router, prefix="/api/auth")
 app.include_router(login_router, prefix="/api/auth")
 app.include_router(company.router)
 app.include_router(debug_router)
+app.include_router(sam_search.router, prefix="/api")
 
 logger.info("✓ All routes registered")
 

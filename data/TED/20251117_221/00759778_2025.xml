@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+   <ext:UBLExtensions>
+      <ext:UBLExtension>
+         <ext:ExtensionContent>
+            <efext:EformsExtension>
+               <efac:NoticeSubType>
+                  <cbc:SubTypeCode listName="notice-subtype">16</cbc:SubTypeCode>
+               </efac:NoticeSubType>
+               <efac:Organizations>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://www.kreis-germersheim.de</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="DEU">Kreisverwaltung Germersheim</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>Luitpoldplatz 1</cbc:StreetName>
+                           <cbc:CityName>Germersheim</cbc:CityName>
+                           <cbc:PostalZone>76726</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">DEB3E</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>Berichtseinheit-ID 00002630</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Name>Zentrale Vergabestelle</cbc:Name>
+                           <cbc:Telephone>07274 53217</cbc:Telephone>
+                           <cbc:ElectronicMail>vergabe@kreis-germersheim.de</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="DEU">Ministerium für Wirtschaft, Verkehr, Landwirtschaft und Weinbau Rheinland-Pfalz</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>Stiftsstraße 9</cbc:StreetName>
+                           <cbc:Department>Vergabekammer Rheinland-Pfalz</cbc:Department>
+                           <cbc:CityName>Mainz</cbc:CityName>
+                           <cbc:PostalZone>55116</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">DEB35</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>USt-ID DE355604198</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Name>Vergabekammer</cbc:Name>
+                           <cbc:Telephone>06131 162234</cbc:Telephone>
+                           <cbc:ElectronicMail>vergabekammer.rlp@mwvlw.rlp.de</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+               <efac:Organization><efac:Company><cac:PartyIdentification><cbc:ID schemeName="organization">ORG-0003</cbc:ID></cac:PartyIdentification><cac:PartyName><cbc:Name languageID="DEU">Datenservice Öffentlicher Einkauf (in Verantwortung des Beschaffungsamts des BMI)</cbc:Name></cac:PartyName><cac:PostalAddress><cbc:CityName>Bonn</cbc:CityName><cbc:PostalZone>53119</cbc:PostalZone><cbc:CountrySubentityCode listName="nuts">DEA22</cbc:CountrySubentityCode><cac:Country><cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode></cac:Country></cac:PostalAddress><cac:PartyLegalEntity><cbc:CompanyID schemeID="002">0204:994-DOEVD-83</cbc:CompanyID></cac:PartyLegalEntity><cac:Contact><cbc:Telephone>+49228996100</cbc:Telephone><cbc:ElectronicMail>noreply.esender_hub@bescha.bund.de</cbc:ElectronicMail></cac:Contact></efac:Company></efac:Organization></efac:Organizations>
+            <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00759778-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+         </ext:ExtensionContent>
+      </ext:UBLExtension>
+   </ext:UBLExtensions>
+   <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+   <cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+   <cbc:ProfileID>eforms-sdk-1.13</cbc:ProfileID>
+   <cbc:ID schemeName="notice-id">19c49237-0e32-49ea-960f-8ec9c33ef4d9</cbc:ID>
+   <cbc:ContractFolderID>0947a3b4-c2fb-43a6-b9ec-2879d2394f29</cbc:ContractFolderID>
+   <cbc:IssueDate>2025-11-13+01:00</cbc:IssueDate>
+   <cbc:IssueTime>15:19:44+01:00</cbc:IssueTime>
+   <cbc:VersionID>01</cbc:VersionID>
+   <cbc:RequestedPublicationDate>2025-11-15+01:00</cbc:RequestedPublicationDate>
+   <cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+   <cbc:NoticeTypeCode listName="competition">cn-standard</cbc:NoticeTypeCode>
+   <cbc:NoticeLanguageCode>DEU</cbc:NoticeLanguageCode>
+   <cac:ContractingParty>
+      <cac:ContractingPartyType>
+         <cbc:PartyTypeCode listName="buyer-legal-type">la</cbc:PartyTypeCode>
+      </cac:ContractingPartyType>
+      <cac:ContractingActivity>
+         <cbc:ActivityTypeCode listName="authority-activity">gen-pub</cbc:ActivityTypeCode>
+      </cac:ContractingActivity>
+      <cac:Party>
+         <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+         </cac:PartyIdentification>
+      <cac:ServiceProviderParty><cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode><cac:Party><cac:PartyIdentification><cbc:ID schemeName="organization">ORG-0003</cbc:ID></cac:PartyIdentification></cac:Party></cac:ServiceProviderParty></cac:Party>
+   </cac:ContractingParty>
+   <cac:TenderingTerms>
+      <cac:ProcurementLegislationDocumentReference>
+         <cbc:ID>vob-a-eu</cbc:ID>
+      </cac:ProcurementLegislationDocumentReference>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-misconduct</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">[Hinweis: Mangels Wählbarkeit einer entsprechenden 
+Kategorie in dem vom Auftraggeber genutzten Vergabeportal wurden die 
+nachstehend geforderten Erklärungen und Nachweise dem Kriterium 
+"Schwere Verfehlung" zugeordnet.] 
+Art: Nichtvorliegen von Ausschlussgründen; 
+Kriterium: Gesetzestreue; 
+Nachweis: Eigenerklärung, dass nachweislich keine schwere Verfehlung 
+begangen wurde, die die Zuverlässigkeit des Bieters in Frage stellt (FB 124, 
+Nr. 1) und Eigenerklärung, dass kein wirksames Berufsverbot, kein wirksames 
+vorläufiges Berufsverbot und keine wirksame Gewerbeuntersagung vorliegt 
+(FB 124, Nr. 2)</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-insolvency</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">[Hinweis: Mangels Wählbarkeit einer entsprechenden 
+Kategorie in dem vom Auftraggeber genutzten Vergabeportal wurden die 
+nachstehend geforderten Erklärungen und Nachweise dem Kriterium 
+"Zahlungsunfähigkeit" zugeordnet.] 
+Art: Nichtvorliegen von Ausschlussgründen; 
+Kriterium: Zahlungsfähigkeit; 
+Nachweis: Eigenerklärung, dass über das Vermögen des Bieters kein 
+Insolvenzverfahren oder ein vergleichbares gesetzliches Verfahren eröffnet 
+oder die Eröffnung beantragt oder dieser Antrag mangels Masse abgelehnt 
+worden ist und dass sich der Bieter nicht in Liquidation befindet (FB 124, 
+Nr. 3) sowie auf Verlangen rechtskräftig bestätigter Insolvenzplan, sofern 
+eine Erklärung über das Vorliegen eines solchen abgegeben wurde</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-pmt-bre-tax</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">[Hinweis: Mangels Wählbarkeit einer entsprechenden Kategorie in dem vom 
+Auftraggeber genutzten Vergabeportal wurden die nachstehend geforderten 
+Erklärungen und Nachweise dem Kriterium "Verstöße gegen Verpflichtungen 
+zur Zahlung von Steuern oder Abgaben" zugeordnet.] 
+Art: Nichtvorliegen von Ausschlussgründen; 
+Kriterium: Zahlung von Steuern und Abgaben; 
+Nachweis: Eigenerklärung über die Erfüllung der Verpflichtung zur Zahlung 
+von Steuern und Abgaben (FB 124, Nr. 4) sowie auf Verlangen aktuelle 
+(nicht älter als 12 Monate) Unbedenklichkeitsbescheinigung des zuständigen 
+Finanzamts bzw. Bescheinigung in Steuersachen, sofern das Finanzamt 
+derartige Dokumente ausstellt</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-pmt-bre-ssc</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">[Hinweis: Mangels Wählbarkeit einer entsprechenden Kategorie in dem vom 
+Auftraggeber genutzten Vergabeportal wurden die nachstehend geforderten 
+Erklärungen und Nachweise dem Kriterium "Verstöße gegen Verpflichtungen 
+zur Zahlung von Sozialversicherungsbeiträgen" zugeordnet.] 
+Art: Nichtvorliegen von Ausschlussgründen; 
+Kriterium: Zahlung von Sozialversicherungsbeiträgen; 
+Nachweis: Eigenerklärung über die Erfüllung der Verpflichtung zur Zahlung 
+von Sozialversicherungsbeiträgen (FB 124, Nr. 5) sowie auf Verlangen aktuelle 
+(nicht älter als 12 Monate) Unbedenklichkeitsbescheinigung der gesetzlichen 
+Krankenkasse, bei der die meisten Beschäftigten versichert sind, aktuelle (nicht 
+älter als 12 Monate) Unbedenklichkeitsbescheinigung der tariflichen Sozialkasse, 
+sofern der Betrieb beitragspflichtig ist und aktuelle (nicht älter als 12 
+Monate) Unbedenklichkeitsbescheinigung der zuständigen Berufsgenossenschaft, 
+soweit der Betrieb zur Mitgliedschaft verpflichtet ist</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-natl-bre-nat-law</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">Es greifen die Ausschlussgründe gemäß § 6e EU VOB/A und § 16 EU VOB/A.</cbc:Description>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-grounds-source">epo-notice</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+   </cac:TenderingTerms>
+   <cac:TenderingProcess>
+      <cbc:ProcedureCode listName="procurement-procedure-type">open</cbc:ProcedureCode>
+      <cac:ProcessJustification>
+         <cbc:ProcessReasonCode listName="accelerated-procedure">false</cbc:ProcessReasonCode>
+      </cac:ProcessJustification>
+   </cac:TenderingProcess>
+   <cac:ProcurementProject>
+      <cbc:ID schemeName="InternalID">J25-F35-088</cbc:ID>
+      <cbc:Name languageID="DEU">Sanierung der Berufsbildenden Schule in Wörth am Rhein</cbc:Name>
+      <cbc:Description languageID="DEU">Sonnenschutzarbeiten</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">works</cbc:ProcurementTypeCode>
+      <cbc:Note languageID="DEU">Das Verfahren wird als offenes Verfahren 
+durchgeführt. Es folgt den einschlägigen vergaberechtlichen Bestimmungen, 
+insbesondere den Regelungen des GWB und der VOB/A (EU).</cbc:Note>
+      <cac:MainCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">45212190</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">44115900</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:RealizedLocation>
+         <cbc:Description languageID="DEU">Berufsbildende Schule Germersheim, 
+hier: Außenstelle Wörth</cbc:Description>
+         <cac:Address>
+            <cbc:StreetName>Hanns-Martin-Schleyer-Straße 3</cbc:StreetName>
+            <cbc:CityName>Wörth am Rhein</cbc:CityName>
+            <cbc:PostalZone>76744</cbc:PostalZone>
+            <cbc:CountrySubentityCode listName="nuts">DEB3E</cbc:CountrySubentityCode>
+            <cac:Country>
+               <cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+            </cac:Country>
+         </cac:Address>
+      </cac:RealizedLocation>
+   </cac:ProcurementProject>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+      <cac:TenderingTerms>
+         <ext:UBLExtensions>
+            <ext:UBLExtension>
+               <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-suit-reg-trade</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">[Hinweis: Mangels Wählbarkeit einer entsprechenden 
+Kategorie in dem vom Auftraggeber genutzten Vergabeportal wurden 
+die nachstehend geforderten Erklärungen und Nachweise dem Kriterium 
+„Eintragung in das Handelsregister“ zugeordnet.] 
+Art: Befähigung und Erlaubnis zur Berufsausübung; 
+Kriterium: Erlaubnis zur Berufsausübung; 
+Nachweis: Eigenerklärung über die Erlaubnis zur Berufsausübung 
+(FB 124, Nr. 6) sowie auf Verlangen aktueller (nicht älter als 12 
+Monate) Auszug aus dem Berufsregister, dem Handelsregister oder 
+Nachweis auf andere Weise über die Erlaubnis zur Berufsausübung</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-to-avg</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">[Hinweis: Mangels Wählbarkeit einer entsprechenden 
+Kategorie in dem vom Auftraggeber genutzten Vergabeportal wurden 
+die nachstehend geforderten Erklärungen und Nachweise dem Kriterium 
+„Durchschnittlicher Jahresumsatz“ zugeordnet.] 
+Art: wirtschaftliche und finanzielle Leistungsfähigkeit; 
+Kriterium: Geschäftstätigkeit; 
+Nachweis: Eigenerklärung über den Umsatz in den letzten drei 
+abgeschlossenen Geschäftsjahren, soweit er Leistungen betrifft, die mit der 
+zu vergebenden Leistung vergleichbar sind (FB 124, Nr. 7)</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-ref-work</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">[Hinweis: Mangels Wählbarkeit einer entsprechenden 
+Kategorie in dem vom Auftraggeber genutzten Vergabeportal wurden 
+die nachstehend geforderten Erklärungen und Nachweise dem Kriterium 
+„Referenzen zu bestimmten Arbeiten“ zugeordnet.] 
+Art: technische und berufliche Leistungsfähigkeit; 
+Kriterium: Erfahrung mit vergleichbaren Leistungen; 
+Nachweis: Eigenerklärung, dass der Bieter in der Vergangenheit mit 
+vergleichbaren Leistungen betraut war und Benennung von drei 
+vergleichbaren Referenzen aus den letzten fünf Kalenderjahren mit mind. 
+folgenden Angaben: Auftraggeber, Maßnahme, Leistung, Ausführungsort, 
+Ausführungszeitraum, vertragliche Bindung, stichwortartige Benennung 
+des im eigenen Betrieb erbrachten maßgeblichen Leistungsumfanges unter 
+Angabe der ausgeführten Mengen, Zahl der durchschnittlich eingesetzten 
+Arbeits- und Leitungskräfte, Auftragswert, stichwortartige Beschreibung 
+der besonderen technischen / gerätespezifischen / zeitlichen / sonstigen 
+Anforderungen, Ansprechpartner (FB 124, Nr. 8) sowie auf Verlangen 
+schriftliche Bestätigung der Auftraggeber über die auftragsgemäße 
+Erbringung der Leistungen</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-staff-yrly-avg-mp</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">[Hinweis: Mangels Wählbarkeit einer entsprechenden 
+Kategorie in dem vom Auftraggeber genutzten Vergabeportal wurden 
+die nachstehend geforderten Erklärungen und Nachweise dem Kriterium 
+„Durchschnittliche jährliche Belegschaft“ zugeordnet.] 
+Art: technische und berufliche Leistungsfähigkeit; 
+Kriterium: Personalverfügbarkeit; 
+Nachweis: Eigenerklärung, dass dem Bieter die für die Ausführung der 
+Leistung erforderlichen Beschäftigten zur Verfügung stehen sowie Angabe 
+der jahresdurchschnittlichen Zahl der Arbeits- und Führungskräfte in den 
+letzten drei Jahren (FB 124, Nr. 9)</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-subc</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">[Hinweis: Mangels Wählbarkeit einer entsprechenden 
+Kategorie in dem vom Auftraggeber genutzten Vergabeportal wurden 
+die nachstehend geforderten Erklärungen und Nachweise dem Kriterium 
+„Anteil der Unterauftragsvergabe“ zugeordnet.] 
+Art: technische und berufliche Leistungsfähigkeit; 
+Kriterium: Zusammenarbeit mit Dritten; 
+Nachweis: Eigenerklärungen über die beabsichtigte Zusammenarbeit mit 
+anderen Unternehmen (FB 213, Nr. 10 und 11) sowie bei Bedarf Erklärung 
+zur Bietergemeinschaft (FB 234), sofern die Leistungen im Rahmen einer 
+solchen erbracht wird und Verzeichnis der Leistungen / Kapazitäten 
+anderer Unternehmen (FB 235), sofern die Leistungen an 
+Nachunternehmen oder im Rahmen der Eignungsleihe weitergegeben 
+wird, sowie auf Verlangen Verpflichtungserklärung anderer Unternehmen 
+(FB 236)</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-other</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">[Hinweis: Mangels Wählbarkeit einer entsprechenden 
+Kategorie in dem vom Auftraggeber genutzten Vergabeportal wurden 
+die nachstehend geforderten Erklärungen und Nachweise dem Kriterium 
+„Andere wirtschaftliche oder finanzielle Anforderungen“ zugeordnet.] 
+Art: Sonstiges; 
+Kriterium: Maßnahmen gegen Russland; 
+Nachweis: Eigenerklärung zu Art. 5 k) Abs. 1 VO (EU) 2022/576 
+(FB 124, Nr. 10)</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-other</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">[Hinweis: Mangels Wählbarkeit einer entsprechenden 
+Kategorie in dem vom Auftraggeber genutzten Vergabeportal wurden 
+die nachstehend geforderten Erklärungen und Nachweise dem Kriterium 
+„Andere wirtschaftliche oder finanzielle Anforderungen“ zugeordnet.] 
+Art: Sonstiges; 
+Kriterium: Tariftreue und Mindestentgelt; 
+Nachweis: Eigenerklärung zur Tariftreue und / oder zum Mindestentgelt 
+(FB 124, Nr. 11)</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:StrategicProcurement>
+                        <efbc:ApplicableLegalBasis listName="cvd-scope">false</efbc:ApplicableLegalBasis>
+                     </efac:StrategicProcurement>
+                  </efext:EformsExtension>
+               </ext:ExtensionContent>
+            </ext:UBLExtension>
+         </ext:UBLExtensions>
+         <cbc:VariantConstraintCode listName="permission">not-allowed</cbc:VariantConstraintCode>
+         <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+         <cbc:MultipleTendersCode listName="permission">allowed</cbc:MultipleTendersCode>
+         <cac:RequiredFinancialGuarantee>
+            <cbc:GuaranteeTypeCode listName="tender-guarantee-required">true</cbc:GuaranteeTypeCode>
+            <cbc:Description languageID="DEU">Sicherheit für die 
+Vertragserfüllung (§ 17 VOB/B) ist in Höhe von 5 Prozent der 
+Auftragssumme (inkl. Umsatzsteuer, ohne Nachträge) zu leisten, sofern 
+die Auftragssumme mindestens 250.000 Euro ohne Umsatzsteuer beträgt. 
+Die Sicherheit kann wahlweise durch Hinterlegung von Geld oder durch 
+Bürgschaft geleistet werden. | Sicherheit für die Mängelansprüche 
+(§ 17 VOB/B) ist in Höhe von 3 Prozent der Summe der 
+Abschlagszahlungen zum Zeitpunkt der Abnahme (vorläufige 
+Abrechnungssumme) zu leisten. Die Sicherheit kann wahlweise durch 
+Hinterlegung von Geld oder durch Bürgschaft geleistet werden.</cbc:Description>
+         </cac:RequiredFinancialGuarantee>
+         <cac:CallForTendersDocumentReference>
+            <ext:UBLExtensions>
+               <ext:UBLExtension>
+                  <ext:ExtensionContent>
+                     <efext:EformsExtension>
+                        <efac:OfficialLanguages>
+                           <cac:Language>
+                              <cbc:ID>DEU</cbc:ID>
+                           </cac:Language>
+                        </efac:OfficialLanguages>
+                     </efext:EformsExtension>
+                  </ext:ExtensionContent>
+               </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:ID>E45695563</cbc:ID>
+            <cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+            <cac:Attachment>
+               <cac:ExternalReference>
+                  <cbc:URI>https://www.subreport.de/E45695563</cbc:URI>
+               </cac:ExternalReference>
+            </cac:Attachment>
+         </cac:CallForTendersDocumentReference>
+         <cac:TendererQualificationRequest>
+            <cbc:CompanyLegalFormCode listName="required">true</cbc:CompanyLegalFormCode>
+            <cbc:CompanyLegalForm languageID="DEU">Die Bietergemeinschaft hat mit ihrem Angebot eine 
+Erklärung aller Mitglieder in Textform abzugeben, in der die Bildung einer 
+Arbeitsgemeinschaft im Auftragsfall erklärt ist, in der alle Mitglieder 
+aufgeführt sind und der für die Durchführung des Vertrags 
+bevollmächtigte Vertreter bezeichnet ist, in der erklärt ist, dass der 
+bevollmächtigte Vertreter die Mitglieder gegenüber dem Auftraggeber 
+rechtsverbindlich vertritt, und in der erklärt ist, dass alle Mitglieder als 
+Gesamtschuldner haften.</cbc:CompanyLegalForm>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="selection-criteria-source">epo-notice</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="reserved-procurement">none</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="missing-info-submission">late-all</cbc:TendererRequirementTypeCode>
+               <cbc:Description languageID="DEU">Zum Zeitpunkt des Submissionstermins 
+fehlende, unvollständige oder fehlerhafte Unterlagen werden gemäß 
+§ 16a VOB/A EU vom Auftraggeber nachgefordert, sofern dies nicht 
+an anderer Stelle der Vergabeunterlagen ausgeschlossen ist. Fehlende, 
+unvollständige oder fehlerhafte Erklärungen und Nachweise werden 
+solchen gleichgestellt, die nicht die geforderte Aktualität aufweisen.</cbc:Description>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="ecatalog-submission">not-allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="einvoicing">required</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="reserved-execution">no</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:AwardingTerms>
+            <cac:AwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="DEU">Angebotspreis</cbc:Name>
+                  <cbc:Description languageID="DEU">Der Preis ist vorliegend als alleiniges Zuschlagskriterium 
+festgelegt. Zur Beurteilung dieses Kriteriums hat der Bieter den 
+Angebotspreis im Angebotsschreiben (FB 213) zu vermerken sowie 
+sämtliche Positionen des Leistungsverzeichnisses (FB 254) mit Preisen zu 
+versehen.</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+            </cac:AwardingCriterion>
+         </cac:AwardingTerms>
+         <cac:AdditionalInformationParty>
+            <cac:PartyIdentification>
+               <cbc:ID>ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:AdditionalInformationParty>
+         <cac:DocumentProviderParty>
+            <cac:PartyIdentification>
+               <cbc:ID>ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:DocumentProviderParty>
+         <cac:TenderRecipientParty>
+            <cbc:EndpointID>https://www.subreport.de/E45695563</cbc:EndpointID>
+            <cac:PartyIdentification>
+               <cbc:ID>ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:TenderRecipientParty>
+         <cac:TenderEvaluationParty>
+            <cac:PartyIdentification>
+               <cbc:ID>ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:TenderEvaluationParty>
+         <cac:TenderValidityPeriod>
+            <cbc:DurationMeasure unitCode="DAY">60</cbc:DurationMeasure>
+         </cac:TenderValidityPeriod>
+         <cac:AppealTerms>
+            <cac:PresentationPeriod>
+               <cbc:Description languageID="DEU">Es wird ausdrücklich auf die 
+Rügeobliegenheiten der Bieter sowie auf die Präklusionsregelungen aus 
+§ 160 GWB hinsichtlich der Behauptung von Verstößen gegen 
+Vergabevorschriften hingewiesen. § 160 GWB lautet dabei wie folgt: 
+„(1) Die Vergabekammer leitet ein Nachprüfungsverfahren nur auf Antrag ein. 
+(2) Antragsbefugt ist jedes Unternehmen, das ein Interesse an dem öffentlichen 
+Auftrag oder der Konzession hat und eine Verletzung in seinen Rechten nach 
+§ 97 Abs. 6 durch Nichtbeachtung von Vergabevorschriften geltend macht. Dabei 
+ist darzulegen, dass dem Unternehmen durch die behauptete Verletzung der 
+Vergabevorschriften ein Schaden entstanden ist oder zu entstehen droht. 
+(3) Der Antrag ist unzulässig, soweit 
+1. der Antragsteller den geltend gemachten Verstoß gegen Vergabevorschriften 
+vor Einreichen des Nachprüfungsantrags erkannt und gegenüber dem 
+Auftraggeber nicht innerhalb einer Frist von zehn Kalendertagen gerügt hat; der 
+Ablauf der Frist nach § 134 Abs. 2 bleibt unberührt, 
+2. Verstöße gegen Vergabevorschriften, die aufgrund der Bekanntmachung 
+erkennbar sind, nicht spätestens bis zum Ablauf der in der Bekanntmachung 
+benannten Frist Bewerbung oder zur Angebotsabgabe gegenüber dem 
+Auftraggeber gerügt werden, 
+3. Verstöße gegen Vergabevorschriften, die erst in den Vergabeunterlagen 
+erkennbar sind, nicht spätestens bis zum Ablauf der Frist zur Bewerbung oder 
+zur Angebotsabgabe gegenüber dem Auftraggeber gerügt werden, 
+4. mehr als 15 Kalendertage nach Eingang der Mitteilung des Auftraggebers, 
+einer Rüge nicht abhelfen zu wollen, vergangen sind. 
+Satz 1 gilt nicht bei einem Antrag auf Feststellung der Unwirksamkeit des 
+Vertrags nach § 135 Abs. 1 Nr. 2. § 134 Abs. 1 S. 2 bleibt unberührt.“ 
+Der Auftraggeber wird die Bieter, deren Angebote nicht berücksichtigt werden 
+sollen, gemäß § 134 Abs. 1 GWB über den beabsichtigten Zuschlag informieren. 
+Der Zuschlag darf erst 15 Kalendertage bzw. bei Versendung der Information 
+per Fax oder auf elektronischem Weg 10 Kalendertage nach Absendung der 
+Information geschlossen werden (§ 134 Abs. 2 S. 1 und S. 2 GWB). Die Frist 
+beginnt am Tag nach der Absendung der Information, auf den Tag des Zugangs 
+beim betroffenen Bieter kommt es nicht an (§ 134 Abs. 2 S. 3 GWB).</cbc:Description>
+            </cac:PresentationPeriod>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+         </cac:AppealTerms>
+         <cac:Language>
+            <cbc:ID>DEU</cbc:ID>
+         </cac:Language>
+         <cac:PostAwardProcess>
+            <cbc:ElectronicOrderUsageIndicator>true</cbc:ElectronicOrderUsageIndicator>
+            <cbc:ElectronicPaymentUsageIndicator>true</cbc:ElectronicPaymentUsageIndicator>
+         </cac:PostAwardProcess>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <cbc:SubmissionMethodCode listName="esubmission">required</cbc:SubmissionMethodCode>
+         <cbc:GovernmentAgreementConstraintIndicator>false</cbc:GovernmentAgreementConstraintIndicator>
+         <cac:TenderSubmissionDeadlinePeriod>
+            <cbc:EndDate>2025-12-15+01:00</cbc:EndDate>
+            <cbc:EndTime>09:00:00+01:00</cbc:EndTime>
+         </cac:TenderSubmissionDeadlinePeriod>
+         <cac:AdditionalInformationRequestPeriod>
+            <cbc:EndDate>2025-12-04+01:00</cbc:EndDate>
+         </cac:AdditionalInformationRequestPeriod>
+         <cac:OpenTenderEvent>
+            <cbc:OccurrenceDate>2025-12-15+01:00</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>09:00:00+01:00</cbc:OccurrenceTime>
+            <cbc:Description languageID="DEU">Das Öffnungsverfahren richtet sich 
+nach § 14 VOB/A EU. Die Angebotsöffnung findet dementsprechend 
+unverzüglich nach Ablauf der Angebotsfrist unter Ausschluss der Bieter 
+statt.</cbc:Description>
+         </cac:OpenTenderEvent>
+         <cac:AuctionTerms>
+            <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+         </cac:AuctionTerms>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:ID schemeName="InternalID">J25-F35-088</cbc:ID>
+         <cbc:Name languageID="DEU">Gegenstand dieser Ausschreibung ist die Erbringung von Sonnenschutzarbeiten 
+an der Berufsbildenden Schule in Wörth am Rhein 
+zu den in den Vergabeunterlagen aufgeführten Konditionen.</cbc:Name>
+         <cbc:Description languageID="DEU">Die ausgeschriebene Leistung umfasst insbesondere folgende Arbeiten: 
+- Außenraffstore-Anlage mit Motor, ca. 5,6/2,4 m, 1 Stück; 
+- Außenraffstore-Anlage mit Motor, ca. 4,0/2,4 m, 1 Stück; 
+- Außenraffstore-Anlage mit Motor, ca. 2,8/2,4 m, 1 Stück; 
+- Außenraffstore-Anlage mit Motor, ca. 1,7/2,4 m, 1 Stück; 
+- Außenraffstore-Anlage mit Motor, ca. 1,0/2,4 m, 1 Stück; 
+- Außenraffstore-Anlage mit Motor, ca. 2,3/3,1 m, 1 Stück; 
+- Außenraffstore-Anlage mit Motor, ca. 3,6/3,1 m, 1 Stück; 
+- Außenraffstore-Anlage mit Motor, ca. 2,4/3,1 m, 1 Stück</cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">works</cbc:ProcurementTypeCode>
+         <cbc:Note languageID="DEU">Die vom Bieter abgegeben personenbezogenen 
+Angaben werden im Rahmen des Vergabeverfahrens verarbeitet und gespeichert. 
+Im Rahmen der vergaberechtlichen Informations- und Bekanntmachungspflichten 
+(§ 134 GWB etc.) werden personenbezogene Angaben veröffentlicht. | 
+Bieterfragen / Mitteilungen müssen in deutscher Sprache über die 
+Vergabeplattform subreport ELViS getätigt werden. Nachrichten auf anderen 
+Kommunikationswegen – wie telefonisch, per Post, per E-Mail – werden nicht 
+beantwortet. | Sämtliche zusätzliche Informationen zum Verfahren, mögliche 
+Ergänzungen zu den Vergabeunterlagen sowie die Antworten zu den Bieterfragen 
+werden den Bieter ausschließlich auf elektronischem Wege über die 
+Vergabeplattform subreport ELViS zugeschickt. | Jeder Bieter ist verpflichtet, 
+sich über die Vergabeplattform subreport ELViS regelmäßig und selbstständig 
+über zur Verfügung gestellte, geänderte oder zusätzliche Dokumente und 
+Beantwortungen von Bieterfragen zu informieren, unabhängig davon, ob er als 
+registrierter Bieter zusätzlich automatisch generierte Benachrichtigungsmails an 
+seine hinterlegte Mail-Adresse erhält oder nicht. Nachrichten gelten bei nicht 
+registrierten Bietern mit Einstellung auf der Plattform, bei registrierten 
+Bietern spätestens mit Einstellung auf der Plattform und Erhalt der automatisch 
+generierten Benachrichtigungsmail an die vom Bieter hinterlegte Mail-Adresse 
+als zugegangen. | Für die Erstellung eines Angebots muss stets die aktuellste 
+Version der auf der Vergabeplattform subreport ELViS eingestellten und vom 
+Bieter abrufbaren Vergabeunterlagen verwendet werden. Die Bieter müssen 
+daher sicherstellen, dass sie regelmäßig und insbesondere unmittelbar vor 
+Abgabe ihres Angebots prüfen, ob zusätzliche Informationen oder Unterlagen 
+zur Verfügung gestellt oder Fragen beantwortet wurden, welche für die Abgabe 
+des Angebots zu beachten sind. | Bei der Angebotsabgabe ist zu berücksichtigen, 
+dass aufgrund einer gegebenenfalls großen Datenmenge eine vollständige 
+Übertragung des Angebotes längere Zeit in Anspruch nimmt. Es ist daher vom 
+Bieter ausreichend Zeit für das Hochladen des Angebots auf der 
+Vergabeplattform subreport ELViS einzukalkulieren. Es wird zudem empfohlen, 
+rechtzeitig vor Ablauf der Angebotsfrist die Übermittlung des Angebotes zu 
+testen. Bei technischen Problemen und Fragen in diesem Zusammenhang sind 
+auf der Plattform weitergehende Informationen und Kontaktmöglichkeiten zum 
+Support benannt.</cbc:Note>
+         <cbc:SMESuitableIndicator>false</cbc:SMESuitableIndicator>
+         <cac:ProcurementAdditionalType>
+            <cbc:ProcurementTypeCode listName="strategic-procurement">none</cbc:ProcurementTypeCode>
+         </cac:ProcurementAdditionalType>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">45212190</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">44115900</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:RealizedLocation>
+            <cbc:Description languageID="DEU">Berufsbildende Schule Germersheim, 
+hier: Außenstelle Wörth</cbc:Description>
+            <cac:Address>
+               <cbc:StreetName>Hanns-Martin-Schleyer-Straße 3</cbc:StreetName>
+               <cbc:CityName>Wörth am Rhein</cbc:CityName>
+               <cbc:PostalZone>76744</cbc:PostalZone>
+               <cbc:CountrySubentityCode listName="nuts">DEB3E</cbc:CountrySubentityCode>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+         <cac:PlannedPeriod>
+            <cbc:DurationMeasure unitCode="WEEK">5</cbc:DurationMeasure>
+         </cac:PlannedPeriod>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+</ContractNotice>

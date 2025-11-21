@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractAwardNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractAwardNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+    <ext:UBLExtensions>
+        <ext:UBLExtension>
+            <ext:ExtensionContent>
+                <efext:EformsExtension>
+                    <efac:NoticeResult>
+                        <cbc:TotalAmount currencyID="EUR">1.0</cbc:TotalAmount>
+                        <efac:LotResult>
+                            <cbc:ID schemeName="result">RES-0000</cbc:ID>
+                            <cbc:TenderResultCode listName="winner-selection-status">selec-w</cbc:TenderResultCode>
+                            <efac:LotTender>
+                                <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                            </efac:LotTender>
+                            <efac:ReceivedSubmissionsStatistics>
+                                <efbc:StatisticsCode listName="received-submission-type">t-sme</efbc:StatisticsCode>
+                                <efbc:StatisticsNumeric>1</efbc:StatisticsNumeric>
+                            </efac:ReceivedSubmissionsStatistics>
+                            <efac:ReceivedSubmissionsStatistics>
+                                <efbc:StatisticsCode listName="received-submission-type">tenders</efbc:StatisticsCode>
+                                <efbc:StatisticsNumeric>1</efbc:StatisticsNumeric>
+                            </efac:ReceivedSubmissionsStatistics>
+                            <efac:SettledContract>
+                                <cbc:ID schemeName="contract">CON-0001</cbc:ID>
+                            </efac:SettledContract>
+                            <efac:TenderLot>
+                                <cbc:ID schemeName="Lot">LOT-0000</cbc:ID>
+                            </efac:TenderLot>
+                        </efac:LotResult>
+                        <efac:LotTender>
+                            <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                            <efbc:TenderRankedIndicator>false</efbc:TenderRankedIndicator>
+                            <efbc:TenderVariantIndicator>false</efbc:TenderVariantIndicator>
+                            <cac:LegalMonetaryTotal>
+                                <cbc:PayableAmount currencyID="EUR">1.0</cbc:PayableAmount>
+                            </cac:LegalMonetaryTotal>
+                            <efac:SubcontractingTerm>
+                                <efbc:TermCode listName="applicability">no</efbc:TermCode>
+                            </efac:SubcontractingTerm>
+                            <efac:TenderingParty>
+                                <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+                            </efac:TenderingParty>
+                            <efac:TenderLot>
+                                <cbc:ID>LOT-0000</cbc:ID>
+                            </efac:TenderLot>
+                            <efac:TenderReference>
+                                <cbc:ID>1</cbc:ID>
+                            </efac:TenderReference>
+                        </efac:LotTender>
+                        <efac:SettledContract>
+                            <cbc:ID schemeName="contract">CON-0001</cbc:ID>
+                            <cbc:IssueDate>2012-04-01+02:00</cbc:IssueDate>
+                            <cbc:Title languageID="NLD">P1 Beheer Energiefonds Overijssel</cbc:Title>
+                            <cac:SignatoryParty>
+                                <cac:PartyIdentification>
+                                    <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                                </cac:PartyIdentification>
+                            </cac:SignatoryParty>
+                            <efac:ContractReference>
+                                <cbc:ID>CON-0001</cbc:ID>
+                            </efac:ContractReference>
+                            <efac:LotTender>
+                                <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                            </efac:LotTender>
+                        </efac:SettledContract>
+                        <efac:TenderingParty>
+                            <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+                            <efac:Tenderer>
+                                <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                            </efac:Tenderer>
+                        </efac:TenderingParty>
+                    </efac:NoticeResult>
+                    <efac:NoticeSubType>
+                        <cbc:SubTypeCode listName="notice-subtype">29</cbc:SubTypeCode>
+                    </efac:NoticeSubType>
+                    <efac:Organizations>
+                        <efac:Organization>
+                            <efac:Company>
+                                <cbc:WebsiteURI>http://www.ssc-ons.nl</cbc:WebsiteURI>
+                                <cac:PartyIdentification>
+                                    <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                                </cac:PartyIdentification>
+                                <cac:PartyName>
+                                    <cbc:Name languageID="NLD">Provincie Overijssel</cbc:Name>
+                                </cac:PartyName>
+                                <cac:PostalAddress>
+                                    <cbc:StreetName>Luttenbergstraat 2</cbc:StreetName>
+                                    <cbc:CityName>ZWOLLE</cbc:CityName>
+                                    <cbc:PostalZone>8012EE</cbc:PostalZone>
+                                    <cbc:CountrySubentityCode listName="nuts">NL211</cbc:CountrySubentityCode>
+                                    <cac:Country>
+                                        <cbc:IdentificationCode listName="country">NLD</cbc:IdentificationCode>
+                                    </cac:Country>
+                                </cac:PostalAddress>
+                                <cac:PartyLegalEntity>
+                                    <cbc:CompanyID>221853294</cbc:CompanyID>
+                                </cac:PartyLegalEntity>
+                                <cac:Contact>
+                                    <cbc:Name>Ronald Koers</cbc:Name>
+                                    <cbc:Telephone>+31 0881027100</cbc:Telephone>
+                                    <cbc:ElectronicMail>inkoop@ssc-ons.nl</cbc:ElectronicMail>
+                                </cac:Contact>
+                            </efac:Company>
+                            <efac:TouchPoint>
+                                <cbc:WebsiteURI>http://www.rechtspraak.nl</cbc:WebsiteURI>
+                                <cac:PartyIdentification>
+                                    <cbc:ID schemeName="touchpoint">TPO-0001</cbc:ID>
+                                </cac:PartyIdentification>
+                                <cac:PartyName>
+                                    <cbc:Name languageID="NLD">Arrondissement Overijssel</cbc:Name>
+                                </cac:PartyName>
+                                <cac:PostalAddress>
+                                    <cbc:StreetName>Egbert Gorterstraat 5</cbc:StreetName>
+                                    <cbc:CityName>Almelo</cbc:CityName>
+                                    <cbc:PostalZone>7607 GB</cbc:PostalZone>
+                                    <cbc:CountrySubentityCode listName="nuts">NL213</cbc:CountrySubentityCode>
+                                    <cac:Country>
+                                        <cbc:IdentificationCode listName="country">NLD</cbc:IdentificationCode>
+                                    </cac:Country>
+                                </cac:PostalAddress>
+                                <cac:Contact>
+                                    <cbc:Name>Rechtbank Arrondissement Overijssel</cbc:Name>
+                                    <cbc:ElectronicMail>info@rechtspraak.nl</cbc:ElectronicMail>
+                                </cac:Contact>
+                            </efac:TouchPoint>
+                        </efac:Organization>
+                        <efac:Organization>
+                            <efac:Company>
+                                <efbc:CompanySizeCode listName="economic-operator-size">sme</efbc:CompanySizeCode>
+                                <cac:PartyIdentification>
+                                    <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                                </cac:PartyIdentification>
+                                <cac:PartyName>
+                                    <cbc:Name languageID="NLD">CL Venture Partners B.V.</cbc:Name>
+                                </cac:PartyName>
+                                <cac:PostalAddress>
+                                    <cbc:StreetName>Mauritskade 63</cbc:StreetName>
+                                    <cbc:CityName>Amsterdam</cbc:CityName>
+                                    <cbc:PostalZone>1092AD</cbc:PostalZone>
+                                    <cbc:CountrySubentityCode listName="nuts">NL32B</cbc:CountrySubentityCode>
+                                    <cac:Country>
+                                        <cbc:IdentificationCode listName="country">NLD</cbc:IdentificationCode>
+                                    </cac:Country>
+                                </cac:PostalAddress>
+                                <cac:PartyLegalEntity>
+                                    <cbc:CompanyID>32125292</cbc:CompanyID>
+                                </cac:PartyLegalEntity>
+                            </efac:Company>
+                        </efac:Organization>
+                    </efac:Organizations>
+                <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00760556-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+            </ext:ExtensionContent>
+        </ext:UBLExtension>
+    </ext:UBLExtensions>
+    <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+    <cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+    <cbc:ID schemeName="notice-id">9bceab86-1b95-4d34-bbc4-a0670aa176ed</cbc:ID>
+    <cbc:ContractFolderID>886fc038-0da6-4e0c-ae84-3f10d23de9ec</cbc:ContractFolderID>
+    <cbc:IssueDate>2025-11-13+01:00</cbc:IssueDate>
+    <cbc:IssueTime>17:36:47.984249117+01:00</cbc:IssueTime>
+    <cbc:VersionID>01</cbc:VersionID>
+    <cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+    <cbc:NoticeTypeCode listName="result">can-standard</cbc:NoticeTypeCode>
+    <cbc:NoticeLanguageCode listName="language">NLD</cbc:NoticeLanguageCode>
+    <cac:ContractingParty>
+        <cac:ContractingPartyType>
+            <cbc:PartyTypeCode listName="buyer-legal-type">ra</cbc:PartyTypeCode>
+        </cac:ContractingPartyType>
+        <cac:ContractingActivity>
+            <cbc:ActivityTypeCode listName="authority-activity">gen-pub</cbc:ActivityTypeCode>
+        </cac:ContractingActivity>
+        <cac:Party>
+            <cac:PartyIdentification>
+                <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+        </cac:Party>
+    </cac:ContractingParty>
+    <cac:TenderingProcess>
+        <cbc:ProcedureCode languageID="NLD" listName="procurement-procedure-type">neg-wo-call</cbc:ProcedureCode>
+        <cac:ProcessJustification>
+            <cbc:ProcessReasonCode listName="direct-award-justification">technical</cbc:ProcessReasonCode>
+            <cbc:ProcessReason languageID="NLD">Beschrijving, motivatie en omvang van de voorgenomen wijziging:
+
+De energietransitie vraagt deels om andere investeringen dan vooraf was voorzien. Financiering van de energietransitie met publieke middelen is van belang om de markt aan te jagen. Om klimaatdoelen te kunnen halen is het nodig de energietransitie te versnellen. Recente geopolitieke ontwikkelingen zoals wisselende energieprijzen en netcongestie maken deze intensivering nog noodzakelijker. Het Energiefonds Overijssel breidt om deze redenen de financieringsmogelijkheden uit om ook kleinere leningen te kunnen verstrekken. Om dit vermogen te kunnen investeren is het noodzakelijk dat er aanvullend fondsbeheer plaatsvindt . Deze aanvullende diensten waren niet expliciet in de oorspronkelijke aanbestedingsstukken opgenomen. De provincie benadrukt dat deze wijziging in de beheervergoeding ten opzichte van de oorspronkelijke opdracht noodzakelijk is om het Energiefonds Overijssel (optimaal) te kunnen laten functioneren in de periode tot aan de nieuwe beheerfase (vanaf 2028). In de periode tot aan 2028 zal de provincie de stappen zetten voor de nieuwe beheerperiode. Gezien de nog beperkte looptijd van de huidige beheerperiode (tot en met 2027) is verandering van opdrachtnemer om economische en technische redenen niet mogelijk. Dit zou leiden tot aanzienlijk ongemak en kostenstijgingen voor de aanbestedende dienst.
+
+Energiefonds Overijssel B.V. ('EFO') heeft een subsidieaanvraag ingediend bij het Ministerie van Binnenlandse Zaken en Koninkrijksrelaties. De beoogde subsidiegelden zijn bedoeld om te bewerkstelligen dat EFO ook laagdrempelige financiering kan aanbieden aan maatschappelijke organisaties die daarmee kunnen en willen verduurzamen. Het gaat om zogenoemd kleine leningen voor maatschappelijk vastgoed. Het verstrekken van deze kleine leningen zal aanvullend zijn op de huidige faciliteiten die EFO verstrekt. Het gaat om leningen tot € 200.000. In het geval aan de subsidievoorwaarden wordt voldaan en daarmee de gesubsidieerde activiteit doorgang vindt, zou EFO de bijbehorende beheerstaken en werkzaamheden willen laten uitvoeren door StartGreen Capital (CL Venture Partners B.V.). StartGreen Capital is al de fondsbeheerder van EFO.
+
+Rechtvaardiging gekozen procedure:
+Artikel 2.163d Aw door de provincie Overijssel: het gaat om diensten die 1) noodzakelijk zijn geworden, namelijk zodra de subsidie wordt verkregen en de kleine leningen moeten worden verstrekt, 2) die niet als zodanig in de oorspronkelijke aanbestedingsstukken waren opgenomen, terwijl 3) het inschakelen van een andere opdrachtnemer om economische redenen niet mogelijk is en tot aanzienlijk ongemak of aanzienlijke kostenstijgingen voor EFO zullen leiden.
+
+Een voorwaarde is dat de prijsverhoging en aldus de beloning voor de aanvullende diensten niet meer bedraagt dan 50% van de waarde van de oorspronkelijke opdracht. In dit geval bedraagt het maximum van de wijziging wordt gesteld op bedraagt € 293.487 aan loonkosten (excl. evt. te maken externe kosten) voor de periode 2026 en 2027. Daarmee wordt de oorspronkelijke waarde van de opdracht niet met meer dan 50% overschreden.
+
+Gezien de bovenstaande beschrijving en motivatie van de wijziging is op 16 oktober jl. aanvullend op de managementovereenkomst een addendum getekend, waarin bepalingen zijn opgenomen dat deze aanvulling van de opdracht uitsluitend doorgaat als de subsidie vanuit het ministerie verstrekt wordt. In dit geval wordt de toename in de te verwachte beheerkosten door EFO vergoed. 
+
+Informatie over opdrachtnemer: de provincie Overijssel heeft voor het beheer van Energiefonds Overijssel (EFO) na een niet openbare Europese aanbesteding in 2012 een Managementovereenkomst gesloten met ASN Beleggingsinstellingen Beheer B.V. Deze is in 2018 overgenomen door CL Venture Partners B.V. als gevolg van contract overname als bedoeld in artikel 6:159 BW.</cbc:ProcessReason>
+        </cac:ProcessJustification>
+    </cac:TenderingProcess>
+    <cac:ProcurementProject>
+        <cbc:Name languageID="NLD">Beheer Energiefonds Overijssel</cbc:Name>
+        <cbc:Description languageID="NLD">De energietransitie vraagt deels om andere investeringen dan vooraf was voorzien. Financiering van de energietransitie met publieke middelen is van belang om de markt aan te jagen. Het Energiefonds Overijssel breidt om deze redenen de financieringsmogelijkheden uit om ook kleinere leningen te kunnen verstrekken. Om dit vermogen te kunnen investeren is het noodzakelijk dat er aanvullend fondsbeheer plaatsvindt . Deze aanvullende diensten waren niet expliciet in de aanbestedingsstukken opgenomen.
+
+Deze publicatie betreft het voornemen tot een wijziging van de bestaande opdracht waarbij een beroep wordt gedaan op artikel 2.163d van de Aanbestedingswet. 
+
+Dit betreft een aanvullende wijziging van de onderhavige opdracht. Een eerdere wijziging van de opdracht is gecommuniceerd in TenderNed: TN kenmerk 515147. Zie voor motivatie en omvang onder 6. 'rechtvaardiging voor onderhandse gunning'</cbc:Description>
+        <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+        <cbc:Note languageID="NLD">. De wijziging geldt voor de nog resterende contractperiode.</cbc:Note>
+        <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">66000000</cbc:ItemClassificationCode>
+        </cac:MainCommodityClassification>
+        <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">66122000</cbc:ItemClassificationCode>
+        </cac:AdditionalCommodityClassification>
+        <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">75110000</cbc:ItemClassificationCode>
+        </cac:AdditionalCommodityClassification>
+        <cac:RealizedLocation>
+            <cac:Address>
+                <cbc:CountrySubentityCode listName="nuts">NL211</cbc:CountrySubentityCode>
+                <cac:Country>
+                    <cbc:IdentificationCode listName="country">NLD</cbc:IdentificationCode>
+                </cac:Country>
+            </cac:Address>
+        </cac:RealizedLocation>
+        <cac:RealizedLocation>
+            <cac:Address>
+                <cbc:CountrySubentityCode listName="nuts">NL212</cbc:CountrySubentityCode>
+                <cac:Country>
+                    <cbc:IdentificationCode listName="country">NLD</cbc:IdentificationCode>
+                </cac:Country>
+            </cac:Address>
+        </cac:RealizedLocation>
+        <cac:RealizedLocation>
+            <cac:Address>
+                <cbc:CountrySubentityCode listName="nuts">NL213</cbc:CountrySubentityCode>
+                <cac:Country>
+                    <cbc:IdentificationCode listName="country">NLD</cbc:IdentificationCode>
+                </cac:Country>
+            </cac:Address>
+        </cac:RealizedLocation>
+    </cac:ProcurementProject>
+    <cac:ProcurementProjectLot>
+        <cbc:ID schemeName="Lot">LOT-0000</cbc:ID>
+        <cac:TenderingTerms>
+            <cbc:FundingProgramCode languageID="NLD" listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+            <cac:ContractExecutionRequirement>
+                <cbc:ExecutionRequirementCode listName="fsr">false</cbc:ExecutionRequirementCode>
+            </cac:ContractExecutionRequirement>
+            <cac:AwardingTerms>
+                <cac:AwardingCriterion>
+                    <cac:SubordinateAwardingCriterion>
+                        <ext:UBLExtensions>
+                            <ext:UBLExtension>
+                                <ext:ExtensionContent>
+                                    <efext:EformsExtension>
+                                        <efac:AwardCriterionParameter>
+                                            <efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+                                            <efbc:ParameterNumeric>1</efbc:ParameterNumeric>
+                                        </efac:AwardCriterionParameter>
+                                    </efext:EformsExtension>
+                                </ext:ExtensionContent>
+                            </ext:UBLExtension>
+                        </ext:UBLExtensions>
+                        <cbc:AwardingCriterionTypeCode languageID="NLD" listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                        <cbc:Name languageID="NLD">Prijs</cbc:Name>
+                        <cbc:Description languageID="NLD">Prijs</cbc:Description>
+                    </cac:SubordinateAwardingCriterion>
+                    <cac:SubordinateAwardingCriterion>
+                        <ext:UBLExtensions>
+                            <ext:UBLExtension>
+                                <ext:ExtensionContent>
+                                    <efext:EformsExtension>
+                                        <efac:AwardCriterionParameter>
+                                            <efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+                                            <efbc:ParameterNumeric>1</efbc:ParameterNumeric>
+                                        </efac:AwardCriterionParameter>
+                                    </efext:EformsExtension>
+                                </ext:ExtensionContent>
+                            </ext:UBLExtension>
+                        </ext:UBLExtensions>
+                        <cbc:AwardingCriterionTypeCode languageID="NLD" listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+                        <cbc:Name languageID="NLD">Kwaliteit</cbc:Name>
+                        <cbc:Description languageID="NLD">1</cbc:Description>
+                    </cac:SubordinateAwardingCriterion>
+                </cac:AwardingCriterion>
+            </cac:AwardingTerms>
+            <cac:AdditionalInformationParty>
+                <cac:PartyIdentification>
+                    <cbc:ID>ORG-0001</cbc:ID>
+                </cac:PartyIdentification>
+            </cac:AdditionalInformationParty>
+            <cac:AppealTerms>
+                <cac:AppealInformationParty>
+                    <cac:PartyIdentification>
+                        <cbc:ID>ORG-0001</cbc:ID>
+                    </cac:PartyIdentification>
+                </cac:AppealInformationParty>
+                <cac:AppealReceiverParty>
+                    <cac:PartyIdentification>
+                        <cbc:ID>TPO-0001</cbc:ID>
+                    </cac:PartyIdentification>
+                </cac:AppealReceiverParty>
+            </cac:AppealTerms>
+        </cac:TenderingTerms>
+        <cac:TenderingProcess>
+            <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+            <cac:AuctionTerms>
+                <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+            </cac:AuctionTerms>
+            <cac:ContractingSystem>
+                <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+            </cac:ContractingSystem>
+            <cac:ContractingSystem>
+                <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+            </cac:ContractingSystem>
+        </cac:TenderingProcess>
+        <cac:ProcurementProject>
+            <cbc:ID schemeName="InternalID">1</cbc:ID>
+            <cbc:Name languageID="NLD">Beheer Energiefonds Overijssel</cbc:Name>
+            <cbc:Description languageID="NLD">Het beheer van het Energiefonds Overijssel. Het gaat zowel om het verstrekken van financieringen (eigen en vreemd vermogen en garanties) als het beheren van de lopende portefeuille. Hiervoor zijn twee vennootschappen opgericht: Energiefonds Overijssel I B.V. (EFO I) en Energiefonds Overijsel II B.V. (EFO II). 
+
+De energietransitie vraagt deels om andere investeringen dan vooraf was voorzien. Financiering van de energietransitie met publieke middelen is van belang om de markt aan te jagen. Het Energiefonds Overijssel breidt om deze redenen de financieringsmogelijkheden uit om ook kleinere leningen te kunnen verstrekken. Om dit vermogen te kunnen investeren is het noodzakelijk dat er aanvullend fondsbeheer plaatsvindt . Deze aanvullende diensten waren niet expliciet in de aanbestedingsstukken opgenomen.
+
+Deze publicatie betreft het voornemen tot een wijziging van de bestaande opdracht waarbij een beroep wordt gedaan op artikel 2.163d van de Aanbestedingswet. 
+
+Dit betreft een aanvullende wijziging van de onderhavige opdracht. Zie voor motivatie en omvang onder 6. 'rechtvaardiging voor onderhandse gunning'</cbc:Description>
+            <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+            <cac:ProcurementAdditionalType>
+                <cbc:ProcurementTypeCode listName="strategic-procurement">none</cbc:ProcurementTypeCode>
+            </cac:ProcurementAdditionalType>
+            <cac:MainCommodityClassification>
+                <cbc:ItemClassificationCode listName="cpv">66000000</cbc:ItemClassificationCode>
+            </cac:MainCommodityClassification>
+            <cac:AdditionalCommodityClassification>
+                <cbc:ItemClassificationCode listName="cpv">66122000</cbc:ItemClassificationCode>
+            </cac:AdditionalCommodityClassification>
+            <cac:AdditionalCommodityClassification>
+                <cbc:ItemClassificationCode listName="cpv">75110000</cbc:ItemClassificationCode>
+            </cac:AdditionalCommodityClassification>
+            <cac:RealizedLocation>
+                <cac:Address>
+                    <cbc:CountrySubentityCode listName="nuts">NL211</cbc:CountrySubentityCode>
+                    <cac:Country>
+                        <cbc:IdentificationCode listName="country">NLD</cbc:IdentificationCode>
+                    </cac:Country>
+                </cac:Address>
+            </cac:RealizedLocation>
+            <cac:RealizedLocation>
+                <cac:Address>
+                    <cbc:CountrySubentityCode listName="nuts">NL212</cbc:CountrySubentityCode>
+                    <cac:Country>
+                        <cbc:IdentificationCode listName="country">NLD</cbc:IdentificationCode>
+                    </cac:Country>
+                </cac:Address>
+            </cac:RealizedLocation>
+            <cac:RealizedLocation>
+                <cac:Address>
+                    <cbc:CountrySubentityCode listName="nuts">NL213</cbc:CountrySubentityCode>
+                    <cac:Country>
+                        <cbc:IdentificationCode listName="country">NLD</cbc:IdentificationCode>
+                    </cac:Country>
+                </cac:Address>
+            </cac:RealizedLocation>
+            <cac:PlannedPeriod>
+                <cbc:DurationMeasure unitCode="MONTH">26</cbc:DurationMeasure>
+            </cac:PlannedPeriod>
+        </cac:ProcurementProject>
+    </cac:ProcurementProjectLot>
+    <cac:TenderResult>
+        <cbc:AwardDate>2000-01-01+01:00</cbc:AwardDate>
+    </cac:TenderResult>
+</ContractAwardNotice>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><PriorInformationNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:PriorInformationNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+   <ext:UBLExtensions>
+      <ext:UBLExtension>
+         <ext:ExtensionContent>
+            <efext:EformsExtension>
+               <efac:NoticeSubType>
+                  <cbc:SubTypeCode listName="notice-subtype">T01</cbc:SubTypeCode>
+               </efac:NoticeSubType>
+               <efac:Organizations>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>http://www.bip.powiatpolkowicki.pl/</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Powiat Polkowicki</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>św. Sebastiana 1</cbc:StreetName>
+                           <cbc:CityName>Polkowice </cbc:CityName>
+                           <cbc:PostalZone>59-100</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL516</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>6922274708</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Name>http://www.bip.powiatpolkowicki.pl/</cbc:Name>
+                           <cbc:Telephone>+48 76 7461500</cbc:Telephone>
+                           <cbc:ElectronicMail>sekretariat@powiatpolkowicki.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://op.europa.eu</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0000</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Publications Office of the European Union</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:CityName>Luxembourg</cbc:CityName>
+                           <cbc:PostalZone>2417</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">LU000</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">LUX</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>PUBL</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+352 29291</cbc:Telephone>
+                           <cbc:ElectronicMail>ted@publications.europa.eu</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+               </efac:Organizations>
+            <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00758844-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+         </ext:ExtensionContent>
+      </ext:UBLExtension>
+   </ext:UBLExtensions>
+   <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+   <cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+   <cbc:ID schemeName="notice-id">5a9bec43-bce6-4f88-844e-aa46a9f4faff</cbc:ID>
+   <cbc:IssueDate>2025-11-14Z</cbc:IssueDate>
+   <cbc:IssueTime>12:21:02Z</cbc:IssueTime>
+   <cbc:VersionID>01</cbc:VersionID>
+   <cbc:RegulatoryDomain>32007R1370</cbc:RegulatoryDomain>
+   <cbc:NoticeTypeCode listName="planning">pin-tran</cbc:NoticeTypeCode>
+   <cbc:NoticeLanguageCode listName="language">POL</cbc:NoticeLanguageCode>
+   <cac:ContractingParty>
+      <cbc:BuyerProfileURI>http://www.bip.powiatpolkowicki.pl/</cbc:BuyerProfileURI>
+      <cac:ContractingPartyType>
+         <cbc:PartyTypeCode listName="buyer-legal-type">la</cbc:PartyTypeCode>
+      </cac:ContractingPartyType>
+      <cac:ContractingPartyType>
+         <cbc:PartyTypeCode listName="buyer-contracting-type">cont-ent</cbc:PartyTypeCode>
+      </cac:ContractingPartyType>
+      <cac:ContractingActivity>
+         <cbc:ActivityTypeCode listName="authority-activity">gen-pub</cbc:ActivityTypeCode>
+      </cac:ContractingActivity>
+      <cac:Party>
+         <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+         </cac:PartyIdentification>
+         <cac:ServiceProviderParty>
+            <cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode>
+            <cac:Party>
+               <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0000</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:Party>
+         </cac:ServiceProviderParty>
+      </cac:Party>
+   </cac:ContractingParty>
+   <cac:TenderingTerms>
+      <cac:ProcurementLegislationDocumentReference>
+         <cbc:ID>Wybór operatora planowany jest na podstawie art. 19 ust. 1 pkt 3, art. 22 ust. 1 pkt 1 ustawy z dnia 16.12.2010 r. o publicznym transporcie zbiorowym – tryb bezpośredniego zawarcia umowy o świadczenie usług w zakresie publicznego transportu zbiorowego.</cbc:ID>
+         <cbc:DocumentDescription languageID="POL">Tryb bezpośredniego zawarcia umowy</cbc:DocumentDescription>
+      </cac:ProcurementLegislationDocumentReference>
+   </cac:TenderingTerms>
+   <cac:TenderingProcess>
+      <cbc:ProcedureCode listName="procurement-procedure-type">neg-wo-call</cbc:ProcedureCode>
+      <cac:ProcessJustification>
+         <cbc:ProcessReasonCode listName="direct-award-justification">below-thres-sme</cbc:ProcessReasonCode>
+      </cac:ProcessJustification>
+   </cac:TenderingProcess>
+   <cac:ProcurementProject>
+      <cbc:Name languageID="POL">Wybór operatora planowany jest w trybie bezpośredniego zawarcia umowy o świadczenie usług w zakresie publicznego transportu zbiorowego, na podstawie art. 19 ust. 1 pkt 3, art. 22 ust. 1 pkt 1 ustawy z dnia 16.12.2010 r. o publicznym transporcie zbiorowym, art. 5 ust. 4 ROZPORZĄDZENIA (WE) NR 1370/2007 z dnia 23.10.2007 r.</cbc:Name>
+      <cbc:Description languageID="POL">Świadczenie w 2027 roku usług publicznego transportu zbiorowego w zakresie powiatowych przewozów pasażerskich w transporcie drogowym obejmujących obszar powiatu polkowickiego na linii lub liniach komunikacyjnych Chocianów-Polkowice, Polkowice-Chocianów.</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+      <cbc:Note languageID="POL">1. Nazwa organizatora: Powiat Polkowicki, z siedzibą ul. św. Sebastiana 1, 59-100 Polkowice, POLSKA. 2. Określenie przewidywanego trybu udzielenia zamówienia: wybór operatora planowany jest na podstawie art. 19 ust. 1 pkt 3, art. 22 ust. 1 pkt 1 ustawy z dnia 16.12.2010 r. o publicznym transporcie zbiorowym – tryb bezpośredniego zawarcia umowy o świadczenie usług w zakresie publicznego transportu zbiorowego. 3. Określenie rodzaju transportu oraz linii komunikacyjnych, na których planowane jest wykonywanie przewozów: publiczny transport zbiorowy o charakterze użyteczności publicznej w zakresie powiatowych przewozów pasażerskich w transporcie drogowym obejmujący obszar powiatu polkowickiego na linii lub liniach komunikacyjnych: Chocianów-Polkowice, Polkowice-Chocianów. 4. Przewidywana data zawarcia umowy: 22.12.2026 r. z planowanym terminem rozpoczęcia przewozów od dnia 04.01.2027 r. 5. Przewidywany czas trwania umowy o świadczenie usług w zakresie publicznego transportu zbiorowego: 12 miesięcy.</cbc:Note>
+      <cac:ProcurementAdditionalType>
+         <cbc:ProcurementTypeCode listName="transport-service">bus-s</cbc:ProcurementTypeCode>
+      </cac:ProcurementAdditionalType>
+      <cac:MainCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">60112000</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+   </cac:ProcurementProject>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+      <cac:TenderingTerms>
+         <cac:AdditionalInformationParty>
+            <cac:PartyIdentification>
+               <cbc:ID>ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:AdditionalInformationParty>
+      </cac:TenderingTerms>
+      <cac:ProcurementProject>
+         <cbc:Name languageID="POL">Świadczenie w 2027 roku usług publicznego transportu zbiorowego w zakresie powiatowych przewozów pasażerskich w transporcie drogowym obejmujących obszar powiatu polkowickiego na linii lub liniach komunikacyjnych Chocianów-Polkowice, Polkowice-Chocianów.</cbc:Name>
+         <cbc:Description languageID="POL">1. Nazwa organizatora: Powiat Polkowicki, z siedzibą ul. św. Sebastiana 1, 59-100 Polkowice, POLSKA. 2. Określenie przewidywanego trybu udzielenia zamówienia: wybór operatora planowany jest na podstawie art. 19 ust. 1 pkt 3, art. 22 ust. 1 pkt 1 ustawy z dnia 16.12.2010 r. o publicznym transporcie zbiorowym – tryb bezpośredniego zawarcia umowy o świadczenie usług w zakresie publicznego transportu zbiorowego. 3. Określenie rodzaju transportu oraz linii komunikacyjnych, na których planowane jest wykonywanie przewozów: publiczny transport zbiorowy o charakterze użyteczności publicznej w zakresie powiatowych przewozów pasażerskich w transporcie drogowym obejmujący obszar powiatu polkowickiego na linii lub liniach komunikacyjnych: Chocianów-Polkowice, Polkowice-Chocianów. 4. Przewidywana data zawarcia umowy: 22.12.2026 r. z planowanym terminem rozpoczęcia przewozów od dnia 04.01.2027 r. 5. Przewidywany czas trwania umowy o świadczenie usług w zakresie publicznego transportu zbiorowego: 12 miesięcy.</cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">60112000</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:RealizedLocation>
+            <cac:Address>
+               <cbc:CityName>Polkowice-Chocianów-Polkowice</cbc:CityName>
+               <cbc:CountrySubentityCode listName="nuts">PL516</cbc:CountrySubentityCode>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+</PriorInformationNotice>

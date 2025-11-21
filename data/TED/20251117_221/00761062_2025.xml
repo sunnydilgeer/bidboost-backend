@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractAwardNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractAwardNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+   <ext:UBLExtensions>
+      <ext:UBLExtension>
+         <ext:ExtensionContent>
+            <efext:EformsExtension>
+               <efac:NoticeResult>
+                  <cbc:TotalAmount currencyID="PLN">1253412.36</cbc:TotalAmount>
+                  <efac:LotResult>
+                     <cbc:ID schemeName="result">RES-0001</cbc:ID>
+                     <cbc:TenderResultCode listName="winner-selection-status">selec-w</cbc:TenderResultCode>
+                     <efac:LotTender>
+                        <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                     </efac:LotTender>
+                     <efac:ReceivedSubmissionsStatistics>
+                        <efbc:StatisticsCode listName="received-submission-type">t-esubm</efbc:StatisticsCode>
+                        <efbc:StatisticsNumeric>6</efbc:StatisticsNumeric>
+                     </efac:ReceivedSubmissionsStatistics>
+                     <efac:SettledContract>
+                        <cbc:ID schemeName="contract">CON-0001</cbc:ID>
+                     </efac:SettledContract>
+                     <efac:TenderLot>
+                        <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+                     </efac:TenderLot>
+                  </efac:LotResult>
+                  <efac:LotTender>
+                     <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                     <cac:LegalMonetaryTotal>
+                        <cbc:PayableAmount currencyID="PLN">1253412.36</cbc:PayableAmount>
+                     </cac:LegalMonetaryTotal>
+                     <efac:SubcontractingTerm>
+                        <efbc:TermCode listName="applicability">no</efbc:TermCode>
+                     </efac:SubcontractingTerm>
+                     <efac:TenderingParty>
+                        <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+                     </efac:TenderingParty>
+                     <efac:TenderLot>
+                        <cbc:ID>LOT-0001</cbc:ID>
+                     </efac:TenderLot>
+                     <efac:TenderReference>
+                        <cbc:ID>Oferta 3</cbc:ID>
+                     </efac:TenderReference>
+                  </efac:LotTender>
+                  <efac:SettledContract>
+                     <cbc:ID schemeName="contract">CON-0001</cbc:ID>
+                     <cbc:IssueDate>2025-11-14+01:00</cbc:IssueDate>
+                     <efac:ContractReference>
+                        <cbc:ID>CZO 36/2025</cbc:ID>
+                     </efac:ContractReference>
+                     <efac:LotTender>
+                        <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                     </efac:LotTender>
+                  </efac:SettledContract>
+                  <efac:TenderingParty>
+                     <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+                     <efac:Tenderer>
+                        <cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+                     </efac:Tenderer>
+                  </efac:TenderingParty>
+               </efac:NoticeResult>
+               <efac:NoticeSubType>
+                  <cbc:SubTypeCode listName="notice-subtype">29</cbc:SubTypeCode>
+               </efac:NoticeSubType>
+               <efac:Organizations>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://selekt.czempin.pl/</cbc:WebsiteURI>
+                        <cbc:EndpointID>https://platformazakupowa.pl/</cbc:EndpointID>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Związek Międzygminny Centrum Zagospodarowania Odpadów - SELEKT </cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>ul. Kościańskie Przedmieście 2B</cbc:StreetName>
+                           <cbc:CityName>Czempiń</cbc:CityName>
+                           <cbc:PostalZone>64-020</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL418</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>698 171 62 72</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>411 565 209</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Name>Sekretariat</cbc:Name>
+                           <cbc:Telephone>+48 612826303</cbc:Telephone>
+                           <cbc:Telefax>+48 612823358</cbc:Telefax>
+                           <cbc:ElectronicMail>czo.selekt@czempin.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>http://www.uzp.gov.pl</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Krajowa Izba Odwoławcza</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>ul. Postępu 17a</cbc:StreetName>
+                           <cbc:Department>Prezes Krajowej Izby Odwoławczej</cbc:Department>
+                           <cbc:CityName>Warszawa</cbc:CityName>
+                           <cbc:PostalZone>02-676</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL911</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>5262239325</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <efbc:CompanySizeCode listName="economic-operator-size">medium</efbc:CompanySizeCode>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Przedsiębiorstwo Wielobranżowe LS-PLUS SP. Z O.O.</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>ul. Sporna 1</cbc:StreetName>
+                           <cbc:CityName>Poznań</cbc:CityName>
+                           <cbc:PostalZone>61-709</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL418</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>7881841392</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Name>Ewelina Łysiak</cbc:Name>
+                           <cbc:Telephone>614 478 127</cbc:Telephone>
+                           <cbc:ElectronicMail>biuro@lsplus.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efbc:NaturalPersonIndicator>false</efbc:NaturalPersonIndicator>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://op.europa.eu</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0000</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Publications Office of the European Union</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:CityName>Luxembourg</cbc:CityName>
+                           <cbc:PostalZone>2417</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">LU000</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">LUX</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>PUBL</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+352 29291</cbc:Telephone>
+                           <cbc:ElectronicMail>ted@publications.europa.eu</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+               </efac:Organizations>
+            <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00761062-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+         </ext:ExtensionContent>
+      </ext:UBLExtension>
+   </ext:UBLExtensions>
+   <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+   <cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+   <cbc:ID schemeName="notice-id">671c1344-3c16-4e3e-b341-4377d2d8ff9c</cbc:ID>
+   <cbc:ContractFolderID>e39c730f-4ff8-4b78-a83b-4cfe5e89a080</cbc:ContractFolderID>
+   <cbc:IssueDate>2025-11-14Z</cbc:IssueDate>
+   <cbc:IssueTime>11:37:08Z</cbc:IssueTime>
+   <cbc:VersionID>01</cbc:VersionID>
+   <cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+   <cbc:NoticeTypeCode listName="result">can-standard</cbc:NoticeTypeCode>
+   <cbc:NoticeLanguageCode listName="language">POL</cbc:NoticeLanguageCode>
+   <cac:ContractingParty>
+      <cbc:BuyerProfileURI>https://platformazakupowa.pl/</cbc:BuyerProfileURI>
+      <cac:ContractingPartyType>
+         <cbc:PartyTypeCode listName="buyer-legal-type">body-pl</cbc:PartyTypeCode>
+      </cac:ContractingPartyType>
+      <cac:ContractingActivity>
+         <cbc:ActivityTypeCode listName="authority-activity">env-pro</cbc:ActivityTypeCode>
+      </cac:ContractingActivity>
+      <cac:Party>
+         <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+         </cac:PartyIdentification>
+         <cac:ServiceProviderParty>
+            <cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode>
+            <cac:Party>
+               <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0000</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:Party>
+         </cac:ServiceProviderParty>
+      </cac:Party>
+   </cac:ContractingParty>
+   <cac:TenderingProcess>
+      <cbc:Description languageID="POL">1. Przedmiotem zamówienia jest odbiór odpadów komunalnych z terenu następujących gmin, stanowiących wyodrębnione sektory:
+1) Sektor (bez numeru) – obszar gminy Duszniki.
+2. Odpady odbierane będą:
+1) od właścicieli nieruchomości, na których zamieszkują mieszkańcy ,
+2) z domków letniskowych lub innych nieruchomości wykorzystywanych na cele rekreacyjno-wypoczynkowe (jeżeli powstaną),
+3) z Punktu Selektywnego Zbierania Odpadów Komunalnych (PSZOK) zlokalizowanego:
+a) Podrzewie, ul. Sportowa 17, 
+4) z aptek zlokalizowanych na terenie: 
+a) gminy Duszniki – Sektor bez numeru (odbiór przeterminowanych leków),
+5) z elektropunktów znajdujących się na terenie gminy Duszniki (Sektor bez numeru) – (jeżeli powstaną).
+3. Przedmiot zamówienia obejmuje również dostarczenie odebranych odpadów i ich rozładunek w Instalacji Komunalnej - PreZero Recycling Zachód Sp. z o.o. w Piotrowie Pierwszym 26/27, 64-020 Czempiń.
+Niniejszy przetarg nie obejmuje odbioru odpadów z terenów nieruchomości niezamieszkałych.
+W myśl art. 6d ust. 4 pkt 7 ustawy o utrzymaniu czystości i porządku w gminach Wykonawca zobowiązany jest przekazywać do Instalacji Komunalnej - PreZero Recycling Zachód Sp. z o.o. w Piotrowie Pierwszym 26/27, 64-020 Czempiń odpady komunalne umożliwiające ich zagospodarowanie zgodnie z hierarchią sposobów postępowania z odpadami.
+4. W ramach zamówienia Wykonawca zobowiązany jest odebrać następujące rodzaje odpadów komunalnych:
+1) niesegregowane (zmieszane) odpady komunalne 
+[dotyczy właścicieli nieruchomości zamieszkałych (zabudowa mieszkalna  jednorodzinna i zabudowa wielolokalowa) oraz właścicieli nieruchomości, na których znajdują się domki letniskowe  lub innych nieruchomości wykorzystywanych na cele rekreacyjno-wypoczynkowe];
+2) selektywnie zbierane odpady komunalne:
+a)  papier, w tym tektura, odpady opakowaniowe z papieru i odpady opakowaniowe z tektury - pojemnik lub transparentny worek niebieski, z napisem „Papier”,
+b) tworzywa sztuczne, w tym odpady opakowaniowe z tworzyw sztucznych, metale, w tym odpady opakowaniowe z metali, opakowania wielomateriałowe – pojemnik lub transparentny worek żółty, z napisem „Metale i tworzywa sztuczne”,
+c) szkło (bezbarwne i kolorowe), w tym odpady opakowaniowe ze szkła – pojemnik lub transparentny worek zielony, z napisem „Szkło”,
+d) bioodpady, tj. odpady kuchenne pochodzenia roślinnego (resztki owoców i warzyw, w tym m.in. obierki, ogryzki, skorupki jaj, fusy po kawie i herbacie) oraz odpady zielone (pozostałości roślinne – trawa, liście, drobne gałązki, kwiaty cięte, zwiędłe, doniczkowe, także system korzeniowy bez ziemi, łupiny orzechów, igliwie, szyszki – pojemnik brązowy, z napisem „Bio”,
+e) odpady wielkogabarytowe ,
+f) zużyty sprzęt elektryczny i elektroniczny, 
+g) zużyte opony w ilości 4 sztuk rocznie od mieszkańca
+[dotyczy właścicieli nieruchomości zamieszkałych (zabudowa mieszkalna jednorodzinna i zabudowa wielolokalowa) w zakresie lit. a-g oraz właścicieli nieruchomości, na których znajdują się domki letniskowe lub innych nieruchomości wykorzystywanych na cele rekreacyjno-wypoczynkowe w zakresie lit. a-d];
+3) odpady zebrane w Punkcie Selektywnego Zbierania Odpadów Komunalnych (PSZOK) tj.: 
+a) w ilości nieograniczonej:
+- papier, w tym tektura, odpady opakowaniowe z papieru i odpady opakowaniowe z tektury,
+- metal, w tym opakowania (puszki, nakrętki, kapsle, itp.),
+- tworzywa sztuczne, w tym odpady opakowaniowe z tworzyw sztucznych, metale, w tym odpady opakowaniowe z metali, opakowania wielomateriałowe,
+- szkło, w tym odpady opakowaniowe ze szkła,
+- opakowania wielomateriałowe,
+- bioodpady, w tym odpady zielone i kuchenne,
+- zużyty sprzęt elektryczny i elektroniczny,
+- przeterminowane leki,
+- chemikalia, w tym opakowania zawierające pozostałości substancji niebezpiecznych, opakowania po farbach i lakierach,
+- świetlówki, żarówki termometry rtęciowe,
+- przeterminowane leki, odpady niekwalifikujące się do odpadów medycznych w wyniku przyjmowania produktów leczniczych w formie iniekcji i prowadzenia monitoringu poziomu substancji we krwi, w szczególności igły i strzykawki,
+- zużyte baterie i akumulatory,
+- lampy fluorescencyjne, żarówki, świetlówki,
+- meble i inne odpady wielkogabarytowe,
+- styropian opakowaniowy,
+- odzież,
+- tekstylia,
+b) w ilości ograniczonej:
+- odpady budowlane i rozbiórkowe, 
+- zużyte opony.
+4) przeterminowane leki zebrane w aptekach;
+5) odpady zebrane w elektropunktach (jeżeli powstaną).
+Szczegółowy opis przedmiotu zamówienia zawiera Załącznik Nr 8 do SWZ.</cbc:Description>
+      <cbc:ProcedureCode listName="procurement-procedure-type">open</cbc:ProcedureCode>
+      <cac:NoticeDocumentReference>
+         <cbc:ID schemeName="ojs-notice-id">277045-2025</cbc:ID>
+      </cac:NoticeDocumentReference>
+      <cac:ProcessJustification>
+         <cbc:ProcessReasonCode listName="accelerated-procedure">false</cbc:ProcessReasonCode>
+      </cac:ProcessJustification>
+   </cac:TenderingProcess>
+   <cac:ProcurementProject>
+      <cbc:Name languageID="POL">Odbiór odpadów komunalnych od właścicieli nieruchomości z terenu gminy Duszniki - Sektor bez numeru.</cbc:Name>
+      <cbc:Description languageID="POL">1. Przedmiotem zamówienia jest odbiór odpadów komunalnych z terenu następujących gmin, stanowiących wyodrębnione sektory:
+1) Sektor (bez numeru) – obszar gminy Duszniki.
+2. Odpady odbierane będą:
+1) od właścicieli nieruchomości, na których zamieszkują mieszkańcy ,
+2) z domków letniskowych lub innych nieruchomości wykorzystywanych na cele rekreacyjno-wypoczynkowe (jeżeli powstaną),
+3) z Punktu Selektywnego Zbierania Odpadów Komunalnych (PSZOK) zlokalizowanego:
+a) Podrzewie, ul. Sportowa 17,
+4) z aptek zlokalizowanych na terenie: 
+a) gminy Duszniki – Sektor bez numeru (odbiór przeterminowanych leków),
+5) z elektropunktów znajdujących się na terenie gminy Duszniki (Sektor bez numeru) – (jeżeli powstaną).
+3. Przedmiot zamówienia obejmuje również dostarczenie odebranych odpadów i ich rozładunek w Instalacji Komunalnej - PreZero Recycling Zachód Sp. z o.o. w Piotrowie Pierwszym 26/27, 64-020 Czempiń.</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+      <cbc:Note languageID="POL">Kryteria oceny ofert (Rozdział XX SWZ). Przy wyborze oferty Zamawiający będzie kierował się następującym kryterium: - cena - 60%, - termin płatności - 40%, Podstawy wykluczenia z postępowania wskazane zostały w Rozdziale IX SWZ. Dokumenty niezbędne do wykazania braku podstaw wykluczenia z postępowania wskazane zostały w Rozdziale IX ust. 4 SWZ i Rozdziale X ust. 1 i ust. 4 pkt 1 -6 SWZ. Zamawiający nie wymaga wniesienia wadium (Rozdział XVI SWZ). Zgodnie z art. 257 pkt 1 ustawy PZP Zamawiający przewiduje możliwość unieważnienia przedmiotowego postępowania, jeżeli środki, które Zamawiający zamierzał przeznaczyć na sfinansowanie całości lub części zamówienia, nie zostały mu przyznane. Wykonawca będzie związany ofertą przez okres 90 dni, tj. do końca dnia 01.09.2025 r. Bieg terminu związania ofertą 
+rozpoczyna się wraz z upływem terminu składania ofert (Rozdział XVII ust. 1 SWZ).</cbc:Note>
+      <cac:MainCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">90500000</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">90512000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">90513100</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:RealizedLocation>
+         <cac:Address>
+            <cbc:StreetName>ul. Kościańskie Przedmieście 2B</cbc:StreetName>
+            <cbc:CityName>Czempiń</cbc:CityName>
+            <cbc:PostalZone>64-020</cbc:PostalZone>
+            <cbc:CountrySubentityCode listName="nuts">PL418</cbc:CountrySubentityCode>
+            <cac:Country>
+               <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+            </cac:Country>
+         </cac:Address>
+      </cac:RealizedLocation>
+   </cac:ProcurementProject>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+      <cac:TenderingTerms>
+         <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+         <cac:AwardingTerms>
+            <cac:AwardingCriterion>
+               <cbc:CalculationExpression languageID="POL">.</cbc:CalculationExpression>
+               <cac:SubordinateAwardingCriterion>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="POL">Cena</cbc:Name>
+                  <cbc:Description languageID="POL">Ranking ofert przy uwzględnieniu ww. kryterium ceny ustalony będzie wg wzoru, w skali do 60 punktów, w następujący sposób:
+C = (Cncb/Cbob) x 60 pkt, gdzie:
+C - ilość punktów za cenę,
+Cncb - najniższa cena brutto,
+Cbob - cena brutto oferty badanej.</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="POL">Termin płatności</cbc:Name>
+                  <cbc:Description languageID="POL">Ranking ofert przy uwzględnieniu ww. kryterium terminu płatności ustalony będzie w skali do 40 punktów w następujący sposób:
+Tp = ( Tpb/Tpn) x 40 pkt, gdzie:
+Tp – ilość punktów za termin płatności
+Tpb – termin płatności oferty badanej
+Tpn – najdłuższy zaoferowany termin płatności
+Przy ocenie terminu płatności punktowany będzie termin płatności nie krótszy niż 14 dni i nie dłuższy niż 30 dni. Oferta bez wskazania terminu płatności, oferta proponująca termin płatności krótszy niż 14 dni i dłuższy niż 30 dni zostanie odrzucona. Liczba punktów dla pozostałych ofert będzie wyliczona według ww. wzoru matematycznego. Oceniany będzie termin płatności w tym kryterium wyrażony w dniach.</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+            </cac:AwardingCriterion>
+         </cac:AwardingTerms>
+         <cac:AppealTerms>
+            <cac:PresentationPeriod>
+               <cbc:Description languageID="POL">Pouczenie o środkach ochrony prawnej przysługujących Wykonawcy.
+1. Środki ochrony prawnej określone w niniejszym dziale przysługują wykonawcy, uczestnikowi konkursu oraz innemu podmiotowi, jeżeli ma lub miał interes w uzyskaniu zamówienia lub nagrody w konkursie oraz poniósł lub może ponieść szkodę w wyniku naruszenia przez Zamawiającego przepisów ustawy PZP. 
+2. Środki ochrony prawnej wobec ogłoszenia wszczynającego postępowanie o udzielenie zamówienia lub ogłoszenia o konkursie oraz dokumentów zamówienia przysługują również organizacjom wpisanym na listę, o której mowa w art. 469 pkt 15 ustawy PZP oraz Rzecznikowi Małych i Średnich Przedsiębiorców.
+3. Odwołanie przysługuje na:
+1) niezgodną z przepisami ustawy czynność Zamawiającego, podjętą w postępowaniu o udzielenie zamówienia, w tym na projektowane postanowienie umowy;
+2) zaniechanie czynności w postępowaniu o udzielenie zamówienia do której Zamawiający był obowiązany na podstawie ustawy.
+4. Odwołanie wnosi się do Prezesa Izby. Odwołujący przekazuje zamawiającemu odwołanie wniesione w formie elektronicznej albo postaci elektronicznej albo kopię tego odwołania, jeżeli zostało ono wniesione w formie pisemnej, przed upływem terminu do wniesienia odwołania w taki sposób, aby mógł on zapoznać się z jego treścią przed upływem tego terminu.
+5. Odwołanie wobec treści ogłoszenia wszczynającego postępowanie o udzielenie zamówienia lub treści dokumentów zamówienia wnosi się w terminie 10 dni od dnia publikacji ogłoszenia w Dzienniku Urzędowym Unii Europejskiej lub zamieszczenia dokumentów zamówienia na stronie internetowej.
+6. Odwołanie wnosi się w terminie:
+1) 10 dni od dnia przekazania informacji o czynności Zamawiającego stanowiącej podstawę jego wniesienia, jeżeli informacja została przekazana przy użyciu środków komunikacji elektronicznej,
+2) 15 dni od dnia przekazania informacji o czynności Zamawiającego stanowiącej podstawę jego wniesienia, jeżeli informacja została przekazana w sposób inny niż określony w pkt 1.
+7. Odwołanie w przypadkach innych niż określone w ust. 5 i 6 wnosi się w terminie 10 dni od dnia, w którym powzięto lub przy zachowaniu należytej staranności można było powziąć wiadomość o okolicznościach stanowiących podstawę jego wniesienia.
+8. Na orzeczenie Izby oraz postanowienie Prezesa Izby, o którym mowa w art. 519 ust. 1 ustawy PZP, stronom oraz uczestnikom postępowania odwoławczego przysługuje skarga do sądu.
+9. W postępowaniu toczącym się wskutek wniesienia skargi stosuje się odpowiednio przepisy ustawy z dnia 17 listopada 1964 r. - Kodeks postępowania cywilnego o apelacji, jeżeli przepisy niniejszego rozdziału nie stanowią inaczej.
+10. Skargę wnosi się do Sądu Okręgowego w Warszawie - sądu zamówień publicznych, zwanego dalej "sądem zamówień publicznych".
+11. Skargę wnosi się za pośrednictwem Prezesa Izby, w terminie 14 dni od dnia doręczenia orzeczenia Izby lub postanowienia Prezesa Izby, o którym mowa w art. 519 ust. 1 ustawy PZP, przesyłając jednocześnie jej odpis przeciwnikowi skargi. Złożenie skargi w placówce pocztowej operatora wyznaczonego w rozumieniu ustawy z dnia 23 listopada 2012 r. - Prawo pocztowe jest równoznaczne z jej wniesieniem.
+12. Prezes Izby przekazuje skargę wraz z aktami postępowania odwoławczego do sądu zamówień publicznych w terminie 7 dni od dnia jej otrzymania.</cbc:Description>
+            </cac:PresentationPeriod>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+         </cac:AppealTerms>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <cbc:GovernmentAgreementConstraintIndicator>false</cbc:GovernmentAgreementConstraintIndicator>
+         <cac:AuctionTerms>
+            <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+         </cac:AuctionTerms>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:Name languageID="POL">Odbiór odpadów komunalnych od właścicieli nieruchomości z terenu gminy Duszniki - Sektor bez numeru.</cbc:Name>
+         <cbc:Description languageID="POL">1. Przedmiotem zamówienia jest odbiór odpadów komunalnych z terenu następujących gmin, stanowiących wyodrębnione sektory
+1) Sektor (bez numeru) – obszar gminy Duszniki.
+2. Odpady odbierane będą:
+1) od właścicieli nieruchomości, na których zamieszkują mieszkańcy ,
+2) z domków letniskowych lub innych nieruchomości wykorzystywanych na cele rekreacyjno-wypoczynkowe (jeżeli powstaną),
+3) z Punktu Selektywnego Zbierania Odpadów Komunalnych (PSZOK) zlokalizowanego:
+a) Podrzewie, ul. Sportowa 17,
+4) z aptek zlokalizowanych na terenie: 
+a) gminy Duszniki – Sektor bez numeru (odbiór przeterminowanych leków),
+5) z elektropunktów znajdujących się na terenie gminy Duszniki (Sektor bez numeru) – (jeżeli powstaną).
+3. Przedmiot zamówienia obejmuje również dostarczenie odebranych odpadów i ich rozładunek w Instalacji Komunalnej - PreZero Recycling Zachód Sp. z o.o. w Piotrowie Pierwszym 26/27, 64-020 Czempiń.
+Niniejszy przetarg nie obejmuje odbioru odpadów z terenów nieruchomości niezamieszkałych.
+W myśl art. 6d ust. 4 pkt 7 ustawy o utrzymaniu czystości i porządku w gminach Wykonawca zobowiązany jest przekazywać do Instalacji Komunalnej - PreZero Recycling Zachód Sp. z o.o. w Piotrowie Pierwszym 26/27, 64-020 Czempiń odpady komunalne umożliwiające ich zagospodarowanie zgodnie z hierarchią sposobów postępowania z odpadami.
+4. W ramach zamówienia Wykonawca zobowiązany jest odebrać następujące rodzaje odpadów komunalnych:
+1) niesegregowane (zmieszane) odpady komunalne 
+[dotyczy właścicieli nieruchomości zamieszkałych (zabudowa mieszkalna  jednorodzinna i zabudowa wielolokalowa) oraz właścicieli nieruchomości, na których znajdują się domki letniskowe  lub innych nieruchomości wykorzystywanych na cele rekreacyjno-wypoczynkowe];
+2) selektywnie zbierane odpady komunalne:
+a)  papier, w tym tektura, odpady opakowaniowe z papieru i odpady opakowaniowe z tektury - pojemnik lub transparentny worek niebieski, z napisem „Papier”,
+b) tworzywa sztuczne, w tym odpady opakowaniowe z tworzyw sztucznych, metale, w tym odpady opakowaniowe z metali, opakowania wielomateriałowe – pojemnik lub transparentny worek żółty, z napisem „Metale i tworzywa sztuczne”,
+c) szkło (bezbarwne i kolorowe), w tym odpady opakowaniowe ze szkła – pojemnik lub transparentny worek zielony, z napisem „Szkło”,
+d) bioodpady, tj. odpady kuchenne pochodzenia roślinnego (resztki owoców i warzyw, w tym m.in. obierki, ogryzki, skorupki jaj, fusy po kawie i herbacie) oraz odpady zielone (pozostałości roślinne – trawa, liście, drobne gałązki, kwiaty cięte, zwiędłe, doniczkowe, także system korzeniowy bez ziemi, łupiny orzechów, igliwie, szyszki – pojemnik brązowy, z napisem „Bio”,
+e) odpady wielkogabarytowe ,
+f) zużyty sprzęt elektryczny i elektroniczny, 
+g) zużyte opony w ilości 4 sztuk rocznie od mieszkańca
+[dotyczy właścicieli nieruchomości zamieszkałych (zabudowa mieszkalna jednorodzinna i zabudowa wielolokalowa) w zakresie lit. a-g oraz właścicieli nieruchomości, na których znajdują się domki letniskowe lub innych nieruchomości wykorzystywanych na cele rekreacyjno-wypoczynkowe w zakresie lit. a-d];
+3) odpady zebrane w Punkcie Selektywnego Zbierania Odpadów Komunalnych (PSZOK) tj.: 
+a) w ilości nieograniczonej:
+- papier, w tym tektura, odpady opakowaniowe z papieru i odpady opakowaniowe z tektury,
+- metal, w tym opakowania (puszki, nakrętki, kapsle, itp.),
+- tworzywa sztuczne, w tym odpady opakowaniowe z tworzyw sztucznych, metale, w tym odpady opakowaniowe z metali, opakowania wielomateriałowe,
+- szkło, w tym odpady opakowaniowe ze szkła,
+- opakowania wielomateriałowe,
+- bioodpady, w tym odpady zielone i kuchenne,
+- zużyty sprzęt elektryczny i elektroniczny,
+- przeterminowane leki,
+- chemikalia, w tym opakowania zawierające pozostałości substancji niebezpiecznych, opakowania po farbach i lakierach,
+- świetlówki, żarówki termometry rtęciowe,
+- przeterminowane leki, odpady niekwalifikujące się do odpadów medycznych w wyniku przyjmowania produktów leczniczych w formie iniekcji i prowadzenia monitoringu poziomu substancji we krwi, w szczególności igły i strzykawki,
+- zużyte baterie i akumulatory,
+- lampy fluorescencyjne, żarówki, świetlówki,
+- meble i inne odpady wielkogabarytowe,
+- styropian opakowaniowy,
+- odzież,
+- tekstylia,
+b) w ilości ograniczonej:
+- odpady budowlane i rozbiórkowe, 
+- zużyte opony.
+4) przeterminowane leki zebrane w aptekach;
+5) odpady zebrane w elektropunktach (jeżeli powstaną).
+Szczegółowy opis przedmiotu zamówienia zawiera Załącznik Nr 8 do SWZ.</cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+         <cbc:EstimatedOverallContractQuantity unitCode="TNE">4224.43</cbc:EstimatedOverallContractQuantity>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">90500000</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">90512000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">90513100</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:RealizedLocation>
+            <cbc:Description languageID="POL">Teren gminy Duszniki.</cbc:Description>
+            <cac:Address>
+               <cbc:CountrySubentityCode listName="nuts">PL418</cbc:CountrySubentityCode>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+         <cac:PlannedPeriod>
+            <cbc:DurationMeasure unitCode="MONTH">16</cbc:DurationMeasure>
+         </cac:PlannedPeriod>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+   <cac:TenderResult>
+      <cbc:AwardDate>2000-01-01Z</cbc:AwardDate>
+   </cac:TenderResult>
+</ContractAwardNotice>

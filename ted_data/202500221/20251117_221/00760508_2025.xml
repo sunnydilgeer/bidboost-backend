@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ccts-cct="urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDataTypes-2" xmlns:udt="urn:oasis:names:specification:bdndr:schema:xsd:UnqualifiedDataTypes-1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<ext:UBLExtensions>
+		<ext:UBLExtension>
+			<ext:ExtensionContent>
+				<efext:EformsExtension>
+					<efac:NoticeSubType>
+						<cbc:SubTypeCode listName="notice-subtype">16</cbc:SubTypeCode>
+					</efac:NoticeSubType>
+					<efac:Organizations>
+						<efac:Organization>
+							<efac:Company>
+								<cbc:WebsiteURI>http://www.hwk-muenster.de</cbc:WebsiteURI>
+								<cac:PartyIdentification>
+									<cbc:ID>ORG-0001</cbc:ID>
+								</cac:PartyIdentification>
+								<cac:PartyName>
+									<cbc:Name languageID="DEU">Handwerkskammer Münster</cbc:Name>
+								</cac:PartyName>
+								<cac:PostalAddress>
+									<cbc:StreetName>Bismarckallee 1</cbc:StreetName>
+									<cbc:CityName>Münster</cbc:CityName>
+									<cbc:PostalZone>48151</cbc:PostalZone>
+									<cbc:CountrySubentityCode listName="nuts-lvl3">DEA33</cbc:CountrySubentityCode>
+									<cac:Country>
+										<cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+									</cac:Country>
+								</cac:PostalAddress>
+								<cac:PartyLegalEntity>
+									<cbc:CompanyID>DE811756941</cbc:CompanyID>
+								</cac:PartyLegalEntity>
+								<cac:Contact>
+									<cbc:Name>Vergabestelle</cbc:Name>
+									<cbc:Telephone>+49 2515203-300</cbc:Telephone>
+									<cbc:ElectronicMail>ausschreibungen@hwk-muenster.de</cbc:ElectronicMail>
+								</cac:Contact>
+							</efac:Company>
+						</efac:Organization>
+						<efac:Organization>
+							<efac:Company>
+								<cac:PartyIdentification>
+									<cbc:ID>ORG-0002</cbc:ID>
+								</cac:PartyIdentification>
+								<cac:PartyName>
+									<cbc:Name languageID="DEU">Vergabekammer Bund</cbc:Name>
+								</cac:PartyName>
+								<cac:PostalAddress>
+									<cbc:CityName>Bonn</cbc:CityName>
+									<cbc:PostalZone>53113</cbc:PostalZone>
+									<cbc:CountrySubentityCode listName="nuts-lvl3">DEA22</cbc:CountrySubentityCode>
+									<cac:Country>
+										<cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+									</cac:Country>
+								</cac:PostalAddress>
+								<cac:PartyLegalEntity>
+									<cbc:CompanyID>t:022894990</cbc:CompanyID>
+								</cac:PartyLegalEntity>
+								<cac:Contact>
+									<cbc:Telephone>+49 228-94990</cbc:Telephone>
+									<cbc:ElectronicMail>vk@bundeskartellamt.bund.de</cbc:ElectronicMail>
+								</cac:Contact>
+							</efac:Company>
+						</efac:Organization>
+					<efac:Organization><efac:Company><cac:PartyIdentification><cbc:ID schemeName="organization">ORG-0003</cbc:ID></cac:PartyIdentification><cac:PartyName><cbc:Name languageID="DEU">Datenservice Öffentlicher Einkauf (in Verantwortung des Beschaffungsamts des BMI)</cbc:Name></cac:PartyName><cac:PostalAddress><cbc:CityName>Bonn</cbc:CityName><cbc:PostalZone>53119</cbc:PostalZone><cbc:CountrySubentityCode listName="nuts">DEA22</cbc:CountrySubentityCode><cac:Country><cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode></cac:Country></cac:PostalAddress><cac:PartyLegalEntity><cbc:CompanyID schemeID="002">0204:994-DOEVD-83</cbc:CompanyID></cac:PartyLegalEntity><cac:Contact><cbc:Telephone>+49228996100</cbc:Telephone><cbc:ElectronicMail>noreply.esender_hub@bescha.bund.de</cbc:ElectronicMail></cac:Contact></efac:Company></efac:Organization></efac:Organizations>
+				<efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00760508-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+			</ext:ExtensionContent>
+		</ext:UBLExtension>
+	</ext:UBLExtensions>
+	<cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+	<cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+	<cbc:ProfileID>eforms-sdk-1.13</cbc:ProfileID>
+	<cbc:ID schemeName="notice-id">87300a19-6779-42b2-b3bd-998b6fe48312</cbc:ID>
+	<cbc:ContractFolderID>d2195190-2567-4bc6-9321-c02c92c6ae1e</cbc:ContractFolderID>
+	<cbc:IssueDate>2025-11-14+01:00</cbc:IssueDate>
+	<cbc:IssueTime>10:49:01+01:00</cbc:IssueTime>
+	<cbc:VersionID>01</cbc:VersionID>
+	<cbc:RequestedPublicationDate>2025-11-14+01:00</cbc:RequestedPublicationDate>
+	<cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+	<cbc:NoticeTypeCode listName="competition">cn-standard</cbc:NoticeTypeCode>
+	<cbc:NoticeLanguageCode listID="eu-official-language">DEU</cbc:NoticeLanguageCode>
+	<cac:ContractingParty>
+		<cac:ContractingPartyType>
+			<cbc:PartyTypeCode listName="buyer-legal-type">body-pl-ra</cbc:PartyTypeCode>
+		</cac:ContractingPartyType>
+		<cac:ContractingActivity>
+			<cbc:ActivityTypeCode listName="authority-activity">education</cbc:ActivityTypeCode>
+		</cac:ContractingActivity>
+		<cac:Party>
+			<cac:PartyIdentification>
+				<cbc:ID>ORG-0001</cbc:ID>
+			</cac:PartyIdentification>
+		<cac:ServiceProviderParty><cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode><cac:Party><cac:PartyIdentification><cbc:ID schemeName="organization">ORG-0003</cbc:ID></cac:PartyIdentification></cac:Party></cac:ServiceProviderParty></cac:Party>
+	</cac:ContractingParty>
+	<cac:TenderingTerms>
+		<ext:UBLExtensions>
+			<ext:UBLExtension>
+				<ext:ExtensionContent>
+					<efext:EformsExtension>
+						<efac:StrategicProcurement>
+							<efbc:ApplicableLegalBasis listName="cvd-scope">false</efbc:ApplicableLegalBasis>
+						</efac:StrategicProcurement>
+					</efext:EformsExtension>
+				</ext:ExtensionContent>
+			</ext:UBLExtension>
+		</ext:UBLExtensions>
+		<cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+		<cac:RequiredFinancialGuarantee>
+			<cbc:GuaranteeTypeCode listName="tender-guarantee-required">true</cbc:GuaranteeTypeCode>
+			<cbc:Description languageID="DEU">- Vertragserfüllungssicherheit iHv. 5% der bei Vertragsschluss vereinbarten Nettoauftragssumme, - Mängelgewährleistungssicherheit iHv. 5% der Nettoschlussrechnungssumme.</cbc:Description>
+		</cac:RequiredFinancialGuarantee>
+		<cac:ProcurementLegislationDocumentReference>
+			<cbc:ID>vgv</cbc:ID>
+		</cac:ProcurementLegislationDocumentReference>
+		<cac:CallForTendersDocumentReference>
+			<ext:UBLExtensions>
+				<ext:UBLExtension>
+					<ext:ExtensionContent>
+						<efext:EformsExtension>
+							<efac:OfficialLanguages>
+								<cac:Language>
+									<cbc:ID>DEU</cbc:ID>
+								</cac:Language>
+							</efac:OfficialLanguages>
+						</efext:EformsExtension>
+					</ext:ExtensionContent>
+				</ext:UBLExtension>
+			</ext:UBLExtensions>
+			<cbc:ID>SomeTenderDocID1</cbc:ID>
+			<cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+		</cac:CallForTendersDocumentReference>
+		<cac:TendererQualificationRequest>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-natl-bre-nat-law</cbc:TendererRequirementTypeCode>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-part</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Es liegt kein Ausschlussgrund gem. § 123 GWB vor.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-terror</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Es liegt kein Ausschlussgrund gem. § 123 GWB vor.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-laund</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Es liegt kein Ausschlussgrund gem. § 123 GWB vor.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-fraud</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Es liegt kein Ausschlussgrund gem. § 123 GWB vor.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-corrpt</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Es liegt kein Ausschlussgrund gem. § 123 GWB vor.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-traffick</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Es liegt kein Ausschlussgrund gem. § 123 GWB vor.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-pmt-bre-tax</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Es liegt kein Ausschlussgrund gem. § 123 GWB vor.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-pmt-bre-ssc</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Es liegt kein Ausschlussgrund gem. § 123 GWB vor.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-bre-env-law</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Es liegt kein Ausschlussgrund gem. § 124 GWB vor.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-bre-soc-law</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Es liegt kein Ausschlussgrund gem. § 124 GWB vor.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-bre-lab-law</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Es liegt kein Ausschlussgrund gem. § 124 GWB vor.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-insolvency</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Es liegt kein Ausschlussgrund gem. § 124 GWB vor.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-liq-admin</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Es liegt kein Ausschlussgrund gem. § 124 GWB vor.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-as-susp</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Es liegt kein Ausschlussgrund gem. § 124 GWB vor.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-other</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Es liegt kein Ausschlussgrund gem. § 124 GWB vor.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-misconduct</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Es liegt kein Ausschlussgrund gem. § 124 GWB vor.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-distortion</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Es liegt kein Ausschlussgrund gem. § 124 GWB vor.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-partic-confl</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Es liegt kein Ausschlussgrund gem. § 124 GWB vor.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-prep-confl</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Es liegt kein Ausschlussgrund gem. § 124 GWB vor.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-sanction</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Es liegt kein Ausschlussgrund gem. § 124 GWB vor.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-misrepresent</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Es liegt kein Ausschlussgrund gem. § 124 GWB vor.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+		</cac:TendererQualificationRequest>
+		<cac:TendererQualificationRequest>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-grounds-source">epo-notice</cbc:TendererRequirementTypeCode>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-grounds-source">epo-procurement-document</cbc:TendererRequirementTypeCode>
+			</cac:SpecificTendererRequirement>
+		</cac:TendererQualificationRequest>
+		<cac:TenderRecipientParty>
+			<cac:PartyIdentification>
+				<cbc:ID>ORG-0001</cbc:ID>
+			</cac:PartyIdentification>
+		</cac:TenderRecipientParty>
+		<cac:AppealTerms>
+			<cac:PresentationPeriod>
+				<cbc:Description languageID="DEU">Informationen über die Überprüfungsfristen: Die Handwerkskammer Münster plant für diese  Beschaffung Fördergelder des Bundes und des Landes NRW zu verwenden, sodass sich ihre  Eigenschaft als öffentlicher Auftraggeber allein nach § 99 Nr. 4 GWB richtet. Ausgehend von der derzeit in Aussicht gestellten Förderquote wird daher vorsorglich eu-weit ausgeschrieben.  Für die Einlegung von Rechtsbehelfen gilt bei eu-weiten Ausschreibungen § 160 GWB: (1) Die Vergabekammer leitet ein Nachprüfungsverfahren nur auf Antrag ein. (2) Antragsbefugt ist jedes Unternehmen, das ein Interesse an dem öffentlichen Auftrag oder der Konzession hat und eine Verletzung in seinen Rechten nach § 97 Absatz 6 durch Nichtbeachtung von Vergabevorschriften geltend macht. Dabei ist darzulegen, dass dem Unternehmen durch die behauptete Verletzung der Vergabevorschriften ein Schaden entstanden ist oder zu entstehen droht. (3) Der Antrag ist unzulässig, soweit 1. der Antragsteller den geltend gemachten Verstoß gegen Vergabevorschriften vor Einreichen des Nachprüfungsantrags erkannt und gegenüber dem Auftraggeber nicht innerhalb einer Frist von zehn Kalendertagen gerügt hat; der Ablauf der Frist nach § 134 Absatz 2 bleibt unberührt, 2. Verstöße gegen Vergabevorschriften, die aufgrund der Bekanntmachung erkennbar sind, nicht spätestens bis zum Ablauf der in der Bekanntmachung benannten Frist zur Bewerbung oder zur Angebotsabgabe gegenüber dem Auftraggeber gerügt werden, 3. Verstöße gegen Vergabevorschriften, die erst in den Vergabeunterlagen erkennbar sind, nicht spätestens bis zum Ablauf der Frist zur Bewerbung oder zur Angebotsabgabe gegenüber dem Auftraggeber gerügt werden, 4. mehr als 15 Kalendertage nach Eingang der Mitteilung des Auftraggebers, einer Rüge nicht abhelfen zu wollen, vergangen sind. Satz 1 gilt nicht bei einem Antrag auf Feststellung der Unwirksamkeit des Vertrags nach § 135 Absatz 1 Nummer 2. § 134 Absatz 1 Satz 2 bleibt unberührt.</cbc:Description>
+			</cac:PresentationPeriod>
+			<cac:AppealReceiverParty>
+				<cac:PartyIdentification>
+					<cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+				</cac:PartyIdentification>
+			</cac:AppealReceiverParty>
+		</cac:AppealTerms>
+		<cac:Language>
+			<cbc:ID>DEU</cbc:ID>
+		</cac:Language>
+	</cac:TenderingTerms>
+	<cac:TenderingProcess>
+		<cbc:ProcedureCode listName="procurement-procedure-type">open</cbc:ProcedureCode>
+		<cbc:AccessToolsURI>https://www.vergabe-westfalen.de/VMPSatellite/notice/CXPWYD5LLQQ</cbc:AccessToolsURI>
+		<cac:ProcessJustification>
+			<cbc:ProcessReasonCode listName="accelerated-procedure">false</cbc:ProcessReasonCode>
+		</cac:ProcessJustification>
+		<cac:AuctionTerms>
+			<cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+		</cac:AuctionTerms>
+	</cac:TenderingProcess>
+	<cac:ProcurementProject>
+		<cbc:ID schemeName="internalID">HWK 55/2025</cbc:ID>
+		<cbc:Name languageID="DEU">Modernisierung und Umstrukturierung HBZ Münster: Sicherheits- und Gesundheitskoordination</cbc:Name>
+		<cbc:Description languageID="DEU">Leistungen der Sicherheits- und Gesundheitskoordination gemäß RAB 30. Das Bildungszentrum der Handwerkskammer Münster (HBZ) gehört mit derzeit rund 55.000 qm Nutzfläche zu  den größten handwerklichen Bildungszentren deutschlandweit. Im HBZ besuchen jährlich rund 10.000  Teilnehmerinnen und Teilnehmer die überbetriebliche Lehrlingsunterweisung, Meisterschulen oder  Aufstiegsfortbildungen. Hier finden Ausbildung, Weiterbildung und Fortbildung in fast 30 Gewerken statt. In  insgesamt 56 Werkstätten auf hohem technologischem Niveau sowie neun EDV- bzw. Multimediaräumen und  über 30 Unterrichtssälen bereiten unsere Dozenten das nötige praktische und theoretische Fachwissen nach  neuesten didaktischen Lehrmethoden auf. Zudem unterhält das HBZ eine Mensa und ein Internat. Das Bildungszentrum ist derzeit auf acht verschiedene Gebäude an mehreren Standorten aufgeteilt. Die  Liegenschaften sind zum Teil deutlich in die Jahre gekommen und weisen überwiegend einen hohen  Modernisierungsbedarf auf. Die Handwerkskammer Münster möchte deshalb bis 2030 umfassende  Modernisierungen eines Bestandsgebäudes durchführen und einen Neubau an einem angrenzenden Grundstück  realisieren. Dabei sollen Werkstatt- und Verwaltungsflächen aus Liegenschaften in einem Neubau vereint und  an bestehende Liegenschaften angebunden werden.  Das Bauvorhaben befindet sich an der Ossenkampstiege in Münster. Das zu modernisierende Gebäude D verfügt über eine BGF von circa 21.000 qm bei einer NRF von 7.289 qm und  einer NUF 1-6 von 8.052 qm. Die Baugenehmigung wurde im Jahr 1991 ausgestellt.  Die Fläche des Grundstückes für den Neubau des Gebäudes O, das in unmittelbarer Nähe zu Gebäude D liegt, beläuft sich auf circa 15.000 qm, welches in der Vergangenheit landwirtschaftlich genutzt wurde.  Derzeit wird von Kosten der KG200-500 von circa 80 Mio. EUR brutto für beide Maßnahmen zusammen  ausgegangen. Im Zuge der Planungs- und Bauphase beider Teilmaßnahmen (Neubau Gebäude O und Modernisierung  Gebäude D) sind Leistungen der Sicherheits- und Gesundheitskoordination nach RAB 30 erforderlich. Die geforderten  Leistungen sind im Weiteren differenziert aufgegliedert. Die Beauftragung erfolgt stufenweise.</cbc:Description>
+		<cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+		<cbc:Note languageID="DEU">#Bekanntmachungs-ID: CXPWYD5LLQQ#</cbc:Note>
+		<cac:MainCommodityClassification>
+			<cbc:ItemClassificationCode listName="cpv">71317200</cbc:ItemClassificationCode>
+		</cac:MainCommodityClassification>
+		<cac:AdditionalCommodityClassification>
+			<cbc:ItemClassificationCode listName="cpv">71317210</cbc:ItemClassificationCode>
+		</cac:AdditionalCommodityClassification>
+		<cac:AdditionalCommodityClassification>
+			<cbc:ItemClassificationCode listName="cpv">71000000</cbc:ItemClassificationCode>
+		</cac:AdditionalCommodityClassification>
+		<cac:RealizedLocation>
+			<cac:Address>
+				<cbc:CityName>Münster</cbc:CityName>
+				<cbc:PostalZone>48163</cbc:PostalZone>
+				<cbc:CountrySubentityCode listName="nuts">DEA33</cbc:CountrySubentityCode>
+				<cac:Country>
+					<cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:Address>
+		</cac:RealizedLocation>
+	</cac:ProcurementProject>
+	<cac:ProcurementProjectLot>
+		<cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+		<cac:TenderingTerms>
+			<ext:UBLExtensions>
+				<ext:UBLExtension>
+					<ext:ExtensionContent>
+						<efext:EformsExtension>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-suit-reg-trade</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Eintragung in das zuständige Handelsregister Nachweis: Handelsregisterauszug, der zum Fristablauf für die Angebotsabgabe nicht älter als 6 Monate ist</cbc:Description>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-suit-reg-prof</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Eintragung in das zuständige Berufsregister Zugelassen ist, wer nach den Architekten bzw. Ingenieurgesetzen der Länder berechtigt ist die Berufsbezeichnung Architekt bzw. Ingenieur zu tragen oder nach den EG-Richtlinien, insbesondere Richtlinien für die gegenseitige Anerkennung der Diplome, berechtigt ist, in der Bundesrepublik Deutschland als Architekt oder Ingenieur tätig zu werden oder über die Berufsqualifikation Meister oder staatlich geprüfter Techniker verfügt. Nachweis: Bescheinigung der Berufszulassung</cbc:Description>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-to-spec-avg</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Durchschnittlicher Gesamtumsatz der letzten 3 Jahre mit gesonderter Ausweisung für Leistungen, die mit den ausgeschriebenen Leistungen vergleichbar sind, Nachweis:  Eigenerklärung Formblatt Umsatzzahlen,</cbc:Description>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-ins</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Berufs- oder Betriebshaftpflichtversicherung iHv. 3 Mio. EUR für Personenschäden und 500.000 EUR für sonstige Schäden, wobei die Deckungssummen jeweils zweifach maximiert im Jahr sein müssen. Sofern eine Berufshaftpflichtversicherung in der geforderten Höhe noch nicht vorhanden ist Eigenerklärung über die Anpassung im Auftragsfall,  Nachweis: Eigenerklärung Formblatt Versicherung, Auf Verlangen ist eine entsprechende Versicherungsbescheinigung einzureichen.</cbc:Description>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-ref-services</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">In den letzten fünf Jahren sind vergleichbare Leistungen der Sicherheits- und Gesundheitskoordination nach RAB 30 ausgeführt worden,  Nachweis: Eigenerklärung Formblatt Büroreferenz mit Angabe Art der ausgeführten Leistung; Auftragssumme; Ausführungszeitraum, Art des Auftraggebers, d.h. öffentlicher oder privater Auftraggeber, Werkstattfläche, Nutzungsart, Sanierung bzw. Modernisierung, im laufenden Betrieb wobei folgende Mindestanforderungen gelten: - eine Referenz aus der hervorgeht, dass in den vergangenen fünf Jahren eine vergleichbare Leistung bei einem Bauvorhaben mit einer Werkstattfläche von über 1.000 m² BGF sowie mindestens einer weiteren Nutzungsart erbracht wurde. - eine Referenz die belegt, dass der Bieter in den letzten fünf Jahren vergleichbare Leistungen im Rahmen einer Sanierung bzw. Modernisierung mit mindestens 2.000 m² BGF im laufenden Betrieb erfolgreich umgesetzt hat.</cbc:Description>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-staff-qual</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Qualifikation der eingesetzten Fachkraft/Mitarbeiter als Sicherheits- und Gesundheitskoordinator nach RAB 30 Nr. 4 und 5, d.h.: die Fachkraft/Mitarbeiter verfügt über baufachliche Kenntnisse, Berufliche Erfahrung in Form von mindestens 5 Jahre Berufserfahrung bei der Erbringung von SIGEKO-Leistungen nach RAB 30, arbeitsschutzrechtliche Kenntnisse nach Anlage B der RAB 30 iVm. Anhang II BaustellV und Koordinatorenkenntnisse nach Anlage C der RAB 30. - Nachweis für die baufachlichen Kenntnisse: Bescheinigung der Berufszulassung als Architekt, Ingenieur, Meister oder staatlich geprüfter Techniker, - Nachweis für die berufliche Erfahrung: Eigenerklärung bzgl. der Anzahl an Jahren für die Berufserfahrung als SIGEKO und  Referenzen der letzten 5 Jahre mit Angabe Art der ausgeführten Leistung; Auftragssumme; Ausführungszeitraum sowie Art des Auftraggebers, d.h. öffentlicher oder privater Auftraggeber über das Formblatt Berufserfahrung als SIGEKO und Mitarbeiterreferenz. Bei Einzelbewerbern reicht zum Nachweis der persönlichen Referenzen die Referenzen aus dem Formblatt "Büroreferenzen". Die Eigenerklärung, dass 5 Jahre Berufserfahrung als SIGEKO bestehen, muss jedoch trotzdem abgegeben werden. - Nachweis für die arbeitsschutzrechtlichen Kenntnisse: Zertifikat eines Lehrgangsträgers über arbeitsschutzfachliche Kenntnisse nach Anlage B zur RAB 30, ausgestellt durch einen nach Anlage D zur RAB 30 zertifizierten Träger, - Nachweis für die Koordinatorenkenntnisse: Zertifikat eines Lehrgangsträgers über arbeitsschutzfachliche Kenntnisse nach Anlage C zur RAB 30, ausgestellt durch einen nach Anlage D zur RAB 30 zertifizierten Träger.</cbc:Description>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-staff-yrly-avg-mp</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Durchschnittliche jährliche Beschäftigtenzahl des Unternehmens und die Zahl seiner Führungskräfte in den letzten drei Jahren, Nachweis: Eigenerklärung Formblatt Beschäftigtenzahl.</cbc:Description>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-subc</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Angabe, welche Teile des Auftrags das Unternehmen unter Umständen als Unteraufträge zu vergeben beabsichtigt, Nachweis: Eigenerklärung Formblatt 533a, 533b.</cbc:Description>
+							</efac:SelectionCriteria>
+							<efac:StrategicProcurement>
+								<efbc:ApplicableLegalBasis listName="cvd-scope">false</efbc:ApplicableLegalBasis>
+							</efac:StrategicProcurement>
+							<efac:StrategicProcurement>
+								<efbc:ApplicableLegalBasis listName="eed-scope">false</efbc:ApplicableLegalBasis>
+							</efac:StrategicProcurement>
+						</efext:EformsExtension>
+					</ext:ExtensionContent>
+				</ext:UBLExtension>
+			</ext:UBLExtensions>
+			<cbc:VariantConstraintCode listName="permission">not-allowed</cbc:VariantConstraintCode>
+			<cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+			<cbc:RequiredCurriculaCode listName="requirement-stage">t-requ</cbc:RequiredCurriculaCode>
+			<cbc:MultipleTendersCode listName="permission">not-allowed</cbc:MultipleTendersCode>
+			<cac:RequiredFinancialGuarantee>
+				<cbc:GuaranteeTypeCode listName="tender-guarantee-required">true</cbc:GuaranteeTypeCode>
+				<cbc:Description languageID="DEU">- Vertragserfüllungssicherheit iHv. 5% der bei Vertragsschluss vereinbarten Nettoauftragssumme, - Mängelgewährleistungssicherheit iHv. 5% der Nettoschlussrechnungssumme.</cbc:Description>
+			</cac:RequiredFinancialGuarantee>
+			<cac:CallForTendersDocumentReference>
+				<ext:UBLExtensions>
+					<ext:UBLExtension>
+						<ext:ExtensionContent>
+							<efext:EformsExtension>
+								<efac:OfficialLanguages>
+									<cac:Language>
+										<cbc:ID>DEU</cbc:ID>
+									</cac:Language>
+								</efac:OfficialLanguages>
+							</efext:EformsExtension>
+						</ext:ExtensionContent>
+					</ext:UBLExtension>
+				</ext:UBLExtensions>
+				<cbc:ID>SomeTenderDocID1</cbc:ID>
+				<cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+				<cac:Attachment>
+					<cac:ExternalReference>
+						<cbc:URI>https://www.vergabe-westfalen.de/VMPSatellite/notice/CXPWYD5LLQQ/documents</cbc:URI>
+					</cac:ExternalReference>
+				</cac:Attachment>
+			</cac:CallForTendersDocumentReference>
+			<cac:TendererQualificationRequest>
+				<cbc:CompanyLegalFormCode listName="required">true</cbc:CompanyLegalFormCode>
+				<cbc:CompanyLegalForm languageID="DEU">Gesamtschuldnerische Haftung mit Bezeichnung eines Bietergemeinschaftsmitglieds als bevollmächtigten Vertreter.</cbc:CompanyLegalForm>
+			</cac:TendererQualificationRequest>
+			<cac:TendererQualificationRequest>
+				<cac:SpecificTendererRequirement>
+					<cbc:TendererRequirementTypeCode listName="missing-info-submission">late-all</cbc:TendererRequirementTypeCode>
+					<cbc:Description languageID="DEU">§ 56 Abs. 2 bis 4 VgV:(2) Der öffentliche Auftraggeber kann den Bewerber oder Bieter unter Einhaltung der Grundsätze der Transparenz und der Gleichbehandlung auffordern, fehlende, unvollständige oder fehlerhafte unternehmensbezogene Unterlagen, insbesondere Eigenerklärungen, Angaben, Bescheinigungen oder sonstige Nachweise, nachzureichen, zu vervollständigen oder zu korrigieren, oder fehlende oder unvollständige leistungsbezogene Unterlagen nachzureichen oder zu vervollständigen.  (3) Die Nachforderung von leistungsbezogenen Unterlagen, die die Wirtschaftlichkeitsbewertung der Angebote anhand der Zuschlagskriterien betreffen, ist ausgeschlossen. Dies gilt nicht für Preisangaben, wenn es sich um unwesentliche Einzelpositionen handelt, deren Einzelpreise den Gesamtpreis nicht verändern oder die Wertungsreihenfolge und den Wettbewerb nicht beeinträchtigen. (4) Die Unterlagen sind vom Bewerber oder Bieter nach Aufforderung durch den öffentlichen Auftraggeber innerhalb einer von diesem festzulegenden angemessenen, nach dem Kalender bestimmten Frist vorzulegen.</cbc:Description>
+				</cac:SpecificTendererRequirement>
+			</cac:TendererQualificationRequest>
+			<cac:TendererQualificationRequest>
+				<cac:SpecificTendererRequirement>
+					<cbc:TendererRequirementTypeCode listName="reserved-procurement">none</cbc:TendererRequirementTypeCode>
+				</cac:SpecificTendererRequirement>
+			</cac:TendererQualificationRequest>
+			<cac:TendererQualificationRequest>
+				<cac:SpecificTendererRequirement>
+					<cbc:TendererRequirementTypeCode listName="selection-criteria-source">epo-notice</cbc:TendererRequirementTypeCode>
+				</cac:SpecificTendererRequirement>
+			</cac:TendererQualificationRequest>
+			<cac:ContractExecutionRequirement>
+				<cbc:ExecutionRequirementCode listName="reserved-execution">no</cbc:ExecutionRequirementCode>
+			</cac:ContractExecutionRequirement>
+			<cac:ContractExecutionRequirement>
+				<cbc:ExecutionRequirementCode listName="ecatalog-submission">not-allowed</cbc:ExecutionRequirementCode>
+			</cac:ContractExecutionRequirement>
+			<cac:ContractExecutionRequirement>
+				<cbc:ExecutionRequirementCode listName="einvoicing">required</cbc:ExecutionRequirementCode>
+			</cac:ContractExecutionRequirement>
+			<cac:ContractExecutionRequirement>
+				<cbc:ExecutionRequirementCode listName="conditions">performance</cbc:ExecutionRequirementCode>
+				<cbc:Description languageID="DEU">- es liegt kein Verstoß gegen das EU-Russland-Sanktionspaket vor Nachweis: Eigenerklärung EU-Russland-Sanktionen, Formblatt 523 EU</cbc:Description>
+			</cac:ContractExecutionRequirement>
+			<cac:ContractExecutionRequirement>
+				<cbc:ExecutionRequirementCode listName="fsr">false</cbc:ExecutionRequirementCode>
+			</cac:ContractExecutionRequirement>
+			<cac:AwardingTerms>
+				<cac:AwardingCriterion>
+					<cac:SubordinateAwardingCriterion>
+						<ext:UBLExtensions>
+							<ext:UBLExtension>
+								<ext:ExtensionContent>
+									<efext:EformsExtension>
+										<efac:AwardCriterionParameter>
+											<efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+											<efbc:ParameterNumeric>100.0</efbc:ParameterNumeric>
+										</efac:AwardCriterionParameter>
+									</efext:EformsExtension>
+								</ext:ExtensionContent>
+							</ext:UBLExtension>
+						</ext:UBLExtensions>
+						<cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+						<cbc:Name languageID="DEU">niedrigster Angebotspreis</cbc:Name>
+						<cbc:Description languageID="DEU">Niedrigster Angebotspreis</cbc:Description>
+					</cac:SubordinateAwardingCriterion>
+				</cac:AwardingCriterion>
+			</cac:AwardingTerms>
+			<cac:AdditionalInformationParty>
+				<cac:PartyIdentification>
+					<cbc:ID>ORG-0001</cbc:ID>
+				</cac:PartyIdentification>
+			</cac:AdditionalInformationParty>
+			<cac:TenderRecipientParty>
+				<cbc:EndpointID>https://www.vergabe-westfalen.de/VMPSatellite/notice/CXPWYD5LLQQ</cbc:EndpointID>
+				<cac:PartyIdentification>
+					<cbc:ID>ORG-0001</cbc:ID>
+				</cac:PartyIdentification>
+			</cac:TenderRecipientParty>
+			<cac:TenderValidityPeriod>
+				<cbc:DurationMeasure unitCode="DAY">47</cbc:DurationMeasure>
+			</cac:TenderValidityPeriod>
+			<cac:AppealTerms>
+				<cac:PresentationPeriod>
+					<cbc:Description languageID="DEU">Informationen über die Überprüfungsfristen: Die Handwerkskammer Münster plant für diese  Beschaffung Fördergelder des Bundes und des Landes NRW zu verwenden, sodass sich ihre  Eigenschaft als öffentlicher Auftraggeber allein nach § 99 Nr. 4 GWB richtet. Ausgehend von der derzeit in Aussicht gestellten Förderquote wird daher vorsorglich eu-weit ausgeschrieben.  Für die Einlegung von Rechtsbehelfen gilt bei eu-weiten Ausschreibungen § 160 GWB: (1) Die Vergabekammer leitet ein Nachprüfungsverfahren nur auf Antrag ein. (2) Antragsbefugt ist jedes Unternehmen, das ein Interesse an dem öffentlichen Auftrag oder der Konzession hat und eine Verletzung in seinen Rechten nach § 97 Absatz 6 durch Nichtbeachtung von Vergabevorschriften geltend macht. Dabei ist darzulegen, dass dem Unternehmen durch die behauptete Verletzung der Vergabevorschriften ein Schaden entstanden ist oder zu entstehen droht. (3) Der Antrag ist unzulässig, soweit 1. der Antragsteller den geltend gemachten Verstoß gegen Vergabevorschriften vor Einreichen des Nachprüfungsantrags erkannt und gegenüber dem Auftraggeber nicht innerhalb einer Frist von zehn Kalendertagen gerügt hat; der Ablauf der Frist nach § 134 Absatz 2 bleibt unberührt, 2. Verstöße gegen Vergabevorschriften, die aufgrund der Bekanntmachung erkennbar sind, nicht spätestens bis zum Ablauf der in der Bekanntmachung benannten Frist zur Bewerbung oder zur Angebotsabgabe gegenüber dem Auftraggeber gerügt werden, 3. Verstöße gegen Vergabevorschriften, die erst in den Vergabeunterlagen erkennbar sind, nicht spätestens bis zum Ablauf der Frist zur Bewerbung oder zur Angebotsabgabe gegenüber dem Auftraggeber gerügt werden, 4. mehr als 15 Kalendertage nach Eingang der Mitteilung des Auftraggebers, einer Rüge nicht abhelfen zu wollen, vergangen sind. Satz 1 gilt nicht bei einem Antrag auf Feststellung der Unwirksamkeit des Vertrags nach § 135 Absatz 1 Nummer 2. § 134 Absatz 1 Satz 2 bleibt unberührt.</cbc:Description>
+				</cac:PresentationPeriod>
+				<cac:AppealReceiverParty>
+					<cac:PartyIdentification>
+						<cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+					</cac:PartyIdentification>
+				</cac:AppealReceiverParty>
+			</cac:AppealTerms>
+			<cac:Language>
+				<cbc:ID>DEU</cbc:ID>
+			</cac:Language>
+			<cac:PostAwardProcess>
+				<cbc:ElectronicOrderUsageIndicator>false</cbc:ElectronicOrderUsageIndicator>
+				<cbc:ElectronicPaymentUsageIndicator>true</cbc:ElectronicPaymentUsageIndicator>
+			</cac:PostAwardProcess>
+			<cac:SecurityClearanceTerm>
+				<cbc:Code listName="required">false</cbc:Code>
+			</cac:SecurityClearanceTerm>
+		</cac:TenderingTerms>
+		<cac:TenderingProcess>
+			<cbc:SubmissionMethodCode listName="esubmission">required</cbc:SubmissionMethodCode>
+			<cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+			<cbc:AccessToolsURI>https://www.vergabe-westfalen.de/VMPSatellite/notice/CXPWYD5LLQQ</cbc:AccessToolsURI>
+			<cac:TenderSubmissionDeadlinePeriod>
+				<cbc:EndDate>2025-12-16+01:00</cbc:EndDate>
+				<cbc:EndTime>10:00:00+01:00</cbc:EndTime>
+			</cac:TenderSubmissionDeadlinePeriod>
+			<cac:AuctionTerms>
+				<cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+			</cac:AuctionTerms>
+			<cac:ContractingSystem>
+				<cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+			</cac:ContractingSystem>
+			<cac:ContractingSystem>
+				<cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+			</cac:ContractingSystem>
+		</cac:TenderingProcess>
+		<cac:ProcurementProject>
+			<cbc:ID schemeName="internalID">HWK 55/2025</cbc:ID>
+			<cbc:Name languageID="DEU">Modernisierung und Umstrukturierung HBZ Münster: Sicherheits- und Gesundheitskoordination</cbc:Name>
+			<cbc:Description languageID="DEU">Die Beauftragung erfolgt stufenweise. Mit Abschluss des Vergabeverfahrens wird zunächst nur die 1. Stufe beauftragt. Die geforderten Leistungen sind wie folgt differenziert: 1. Stufe: Leistungen in der Planungsphase der Bauvorhaben, hierbei handelt es sich um Leistungen gemäß  RAB 30 Nummer 3.1 (Aufgaben des Koordinators während der Planung der Ausführung) - Koordinierung der Maßnahmen aus den allgemeinen  Grundsätzen nach § 4 Arbeitsschutzgesetz bei der  Planung der Ausführung -  Feststellen sicherheits- und gesundheitsschutzrelevanter  Wechselwirkungen zwischen den Arbeiten der einzelnen  Gewerke auf der Baustelle und anderen betrieblichen  Tätigkeiten oder Einflüssen auf oder in der Nähe der  Baustelle - Aufzeigen von Möglichkeiten zur Vermeidung von  Sicherheits- und Gesundheitsrisiken - Ausarbeiten eines Sicherheits- und  Gesundheitsschutzplanes und Anpassen an den  Planungsprozess - Beraten bei der Planung der Baustelleneinrichtung - Erstellen einer Baustellenordnung - Beraten bei der Planung bleibender  sicherheitstechnischer Einrichtungen für mögliche  spätere Arbeiten an der baulichen Anlage und  Zusammenstellen der Unterlage mit den erforderlichen  Angaben für die sichere und gesundheitsgerechte  Durchführung dieser Arbeiten - Hinwirken auf das Berücksichtigen von Leistungen zu  Sicherheit und Gesundheitsschutz in Ausschreibungen,  Vergabe- und Bauvertragsunterlagen; Mitwirken bei der  Prüfung der Angebote und der Vergabe - Beraten bei der Terminplanung, insbesondere bei der  Abstimmung von Bauausführungszeiten, um Gefahren,  die durch ein zeitliches Nebeneinander hervorgerufen  werden können, zu vermeiden - Mitwirken beim Erstellen der Vorankündigung und deren  Übermittlung an die nach Landesrecht zuständige  Behörde (z. B. Gewerbeaufsichtsamt oder Amt für  Arbeitsschutz) 2. Stufe: Leistungen in der Ausführungsphase der Bauvorhaben, hierbei handelt es sich um Leistungen  gemäß RAB 30 Nummer 3.2 (Aufgaben des Koordinators während der Ausführung) Kalkulationsansatz: Bauzeit gesamt: 43 Monate Sicherheitsbegehungen: durchschnittlich 1x pro Woche - Aushängen und Anpassen der Vorankündigung - Bekannt machen, Anpassen und Fortschreiben des  Sicherheits- und Gesundheitsschutzplanes sowie  Hinwirken auf seine Einhaltung und auf die Umsetzung  der erforderlichen Arbeitsschutzmaßnahmen durch die  beteiligten Unternehmen - Information und eingehende Erläuterung der  Maßnahmen für Sicherheit und Gesundheitsschutz  gegenüber allen Auftragnehmern (einschließlich der  Nachunternehmer und der Unternehmer ohne  Beschäftigte) - Organisieren des Zusammenwirkens der  bauausführenden Unternehmen hinsichtlich Sicherheit  und Gesundheitsschutz durch Sicherheitsbesprechungen  und -begehungen mit Dokumentation und Auswerten  der Ergebnisse - Koordinieren der Überwachung der ordnungsgemäßen  Anwendung der Arbeitsverfahren durch die Arbeitgeber  durch Einfordern von Nachweisen - Hinwirken auf die Einhaltung einer Baustellenordnung  und eines Baustelleneinrichtungsplanes hinsichtlich der  Vermeidung gegenseitiger Gefährdungen - Berücksichtigung sicherheits- und  gesundheitsschutzrelevanter Wechselwirkungen  zwischen Arbeiten auf der Baustelle und anderen  betrieblichen Tätigkeiten oder Einflüssen auf oder in der  Nähe der Baustelle - Koordinieren der Anwendung der allgemeinen  Grundsätze nach § 4 Arbeitsschutzgesetz.</cbc:Description>
+			<cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+			<cbc:Note languageID="DEU">#Besonders auch geeignet für:freelance#, #Besonders auch geeignet für:selbst#, #Besonders auch geeignet für:other-sme#</cbc:Note>
+			<cbc:SMESuitableIndicator>true</cbc:SMESuitableIndicator>
+			<cac:ProcurementAdditionalType>
+				<cbc:ProcurementTypeCode listName="strategic-procurement">none</cbc:ProcurementTypeCode>
+			</cac:ProcurementAdditionalType>
+			<cac:MainCommodityClassification>
+				<cbc:ItemClassificationCode listName="cpv">71317200</cbc:ItemClassificationCode>
+			</cac:MainCommodityClassification>
+			<cac:AdditionalCommodityClassification>
+				<cbc:ItemClassificationCode listName="cpv">71317210</cbc:ItemClassificationCode>
+			</cac:AdditionalCommodityClassification>
+			<cac:AdditionalCommodityClassification>
+				<cbc:ItemClassificationCode listName="cpv">71000000</cbc:ItemClassificationCode>
+			</cac:AdditionalCommodityClassification>
+			<cac:RealizedLocation>
+				<cac:Address>
+					<cbc:CityName>Münster</cbc:CityName>
+					<cbc:PostalZone>48163</cbc:PostalZone>
+					<cbc:CountrySubentityCode listName="nuts">DEA33</cbc:CountrySubentityCode>
+					<cac:Country>
+						<cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+					</cac:Country>
+				</cac:Address>
+			</cac:RealizedLocation>
+			<cac:PlannedPeriod>
+				<cbc:StartDate>2026-02-01+01:00</cbc:StartDate>
+				<cbc:EndDate>2030-12-31+01:00</cbc:EndDate>
+			</cac:PlannedPeriod>
+			<cac:ContractExtension>
+				<cbc:OptionsDescription languageID="DEU">Zusätzliche Sicherheitsbegehung im Rahmen der  Ausführungsphase auf Basis der Positionen in Stufe 2 in Absprache mit dem Auftraggeber.</cbc:OptionsDescription>
+			</cac:ContractExtension>
+		</cac:ProcurementProject>
+	</cac:ProcurementProjectLot>
+</ContractNotice>

@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractAwardNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractAwardNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+   <ext:UBLExtensions>
+      <ext:UBLExtension>
+         <ext:ExtensionContent>
+            <efext:EformsExtension>
+               <efac:NoticeResult>
+                  <cbc:TotalAmount currencyID="PLN">19234010.88</cbc:TotalAmount>
+                  <efac:LotResult>
+                     <cbc:ID schemeName="result">RES-0001</cbc:ID>
+                     <cbc:TenderResultCode listName="winner-selection-status">selec-w</cbc:TenderResultCode>
+                     <efac:LotTender>
+                        <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                     </efac:LotTender>
+                     <efac:ReceivedSubmissionsStatistics>
+                        <efbc:StatisticsCode listName="received-submission-type">t-esubm</efbc:StatisticsCode>
+                        <efbc:StatisticsNumeric>1</efbc:StatisticsNumeric>
+                     </efac:ReceivedSubmissionsStatistics>
+                     <efac:SettledContract>
+                        <cbc:ID schemeName="contract">CON-0001</cbc:ID>
+                     </efac:SettledContract>
+                     <efac:TenderLot>
+                        <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+                     </efac:TenderLot>
+                  </efac:LotResult>
+                  <efac:LotTender>
+                     <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                     <cbc:RankCode>1</cbc:RankCode>
+                     <efbc:TenderRankedIndicator>true</efbc:TenderRankedIndicator>
+                     <cac:LegalMonetaryTotal>
+                        <cbc:PayableAmount currencyID="PLN">19234010.88</cbc:PayableAmount>
+                     </cac:LegalMonetaryTotal>
+                     <efac:SubcontractingTerm>
+                        <efbc:TermCode listName="applicability">no</efbc:TermCode>
+                     </efac:SubcontractingTerm>
+                     <efac:TenderingParty>
+                        <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+                     </efac:TenderingParty>
+                     <efac:TenderLot>
+                        <cbc:ID>LOT-0001</cbc:ID>
+                     </efac:TenderLot>
+                     <efac:TenderReference>
+                        <cbc:ID>HOLLYWOOD TEXTILE SERVICE SP. Z O. O.</cbc:ID>
+                     </efac:TenderReference>
+                  </efac:LotTender>
+                  <efac:SettledContract>
+                     <cbc:ID schemeName="contract">CON-0001</cbc:ID>
+                     <cbc:IssueDate>2025-11-13+01:00</cbc:IssueDate>
+                     <efac:ContractReference>
+                        <cbc:ID>248/D-ZP/PN-A-ZT/2025</cbc:ID>
+                     </efac:ContractReference>
+                     <efac:LotTender>
+                        <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                     </efac:LotTender>
+                  </efac:SettledContract>
+                  <efac:TenderingParty>
+                     <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+                     <cbc:Name>HOLLYWOOD TEXTILE SERVICE SP. Z O.O.</cbc:Name>
+                     <efac:Tenderer>
+                        <cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+                     </efac:Tenderer>
+                  </efac:TenderingParty>
+               </efac:NoticeResult>
+               <efac:NoticeSubType>
+                  <cbc:SubTypeCode listName="notice-subtype">29</cbc:SubTypeCode>
+               </efac:NoticeSubType>
+               <efac:Organizations>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>www.uck.pl</cbc:WebsiteURI>
+                        <cbc:EndpointID>https://uck-gdansk.ezamawiajacy.pl/pn/UCK-GDANSK/demand/notice/publicpzp/current/list?USER_MENU_HOVER=publicpzpCurrentNoticePublicList</cbc:EndpointID>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Uniwersyteckie Centrum Kliniczne</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>ul. Dębinki 7</cbc:StreetName>
+                           <cbc:Department>Dział Zamówień Publicznych</cbc:Department>
+                           <cbc:CityName>Gdańsk</cbc:CityName>
+                           <cbc:PostalZone>80-952</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL633</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>NIP 9570730409</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Name>Dział Zamówień Publicznych</cbc:Name>
+                           <cbc:Telephone>585844899</cbc:Telephone>
+                           <cbc:ElectronicMail>dzp@uck.gda.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Krajowa Izba Odwoławcza</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>ul. Postępu 17A</cbc:StreetName>
+                           <cbc:CityName>Warszawa</cbc:CityName>
+                           <cbc:PostalZone>02-676</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL911</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>NIP 5262239325</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>(22) 458 78 01</cbc:Telephone>
+                           <cbc:ElectronicMail>odwolania@uzp.gov.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <efbc:CompanySizeCode listName="economic-operator-size">large</efbc:CompanySizeCode>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Hollywood Textile Service Sp. z o. o.</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>ul. Bojanowska 2A</cbc:StreetName>
+                           <cbc:CityName>Sierpc</cbc:CityName>
+                           <cbc:PostalZone>09-200</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL923</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>NIP 7761627087</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:ElectronicMail>przetargi@hollywoodsa.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efbc:NaturalPersonIndicator>false</efbc:NaturalPersonIndicator>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://op.europa.eu</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0000</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Publications Office of the European Union</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:CityName>Luxembourg</cbc:CityName>
+                           <cbc:PostalZone>2417</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">LU000</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">LUX</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>PUBL</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+352 29291</cbc:Telephone>
+                           <cbc:ElectronicMail>ted@publications.europa.eu</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+               </efac:Organizations>
+            <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00759435-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+         </ext:ExtensionContent>
+      </ext:UBLExtension>
+   </ext:UBLExtensions>
+   <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+   <cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+   <cbc:ID schemeName="notice-id">cdfe326a-8f2e-42fc-8b83-5fe92673b45e</cbc:ID>
+   <cbc:ContractFolderID>c3c9766d-2750-4aa4-9fb0-afd7a24761c4</cbc:ContractFolderID>
+   <cbc:IssueDate>2025-11-14Z</cbc:IssueDate>
+   <cbc:IssueTime>12:43:58Z</cbc:IssueTime>
+   <cbc:VersionID>02</cbc:VersionID>
+   <cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+   <cbc:NoticeTypeCode listName="result">can-standard</cbc:NoticeTypeCode>
+   <cbc:NoticeLanguageCode listName="language">POL</cbc:NoticeLanguageCode>
+   <cac:ContractingParty>
+      <cbc:BuyerProfileURI>https://uck-gdansk.ezamawiajacy.pl/pn/UCK-GDANSK/demand/notice/publicpzp/current/list?USER_MENU_HOVER=publicpzpCurrentNoticePublicList</cbc:BuyerProfileURI>
+      <cac:ContractingPartyType>
+         <cbc:PartyTypeCode listName="buyer-legal-type">body-pl</cbc:PartyTypeCode>
+      </cac:ContractingPartyType>
+      <cac:ContractingActivity>
+         <cbc:ActivityTypeCode listName="authority-activity">health</cbc:ActivityTypeCode>
+      </cac:ContractingActivity>
+      <cac:Party>
+         <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+         </cac:PartyIdentification>
+         <cac:ServiceProviderParty>
+            <cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode>
+            <cac:Party>
+               <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0000</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:Party>
+         </cac:ServiceProviderParty>
+      </cac:Party>
+   </cac:ContractingParty>
+   <cac:TenderingProcess>
+      <cbc:ProcedureCode listName="procurement-procedure-type">open</cbc:ProcedureCode>
+      <cac:NoticeDocumentReference>
+         <cbc:ID schemeName="ojs-notice-id">653796-2025</cbc:ID>
+      </cac:NoticeDocumentReference>
+      <cac:ProcessJustification>
+         <cbc:ProcessReasonCode listName="accelerated-procedure">false</cbc:ProcessReasonCode>
+      </cac:ProcessJustification>
+   </cac:TenderingProcess>
+   <cac:ProcurementProject>
+      <cbc:ID schemeName="InternalID">248/PN/2025</cbc:ID>
+      <cbc:Name languageID="POL">248/PN/2025- Świadczenie kompleksowej usługi prania i dezynfekcji bielizny szpitalnej, operacyjnej, fasonowej i niemowlęcej, rental pościeli i odzieży operacyjnej
+wraz z dzierżawą urządzeń vendingowych dla UCK.</cbc:Name>
+      <cbc:Description languageID="POL">1. Przedmiotem zamówienia jest:
+1) świadczenie usługi prania bielizny ogólnoszpitalnej będącej własnością Zamawiającego oraz bielizny dzierżawionej od Wykonawcy;
+2) dzierżawa bielizny pościelowej, odzieży operacyjnej, koszul chirurgicznych, fartuchów barierowych chirurgicznych, poduszek, kołder, koców i worków z materiału do transportu;
+3) świadczenie usługi transportu bielizny;
+4) dzierżawa automatycznych dystrybutorów do wydawania i odbierania odzieży operacyjnej;
+5) zapewnienie dyżuru dziennego pracownika pralni na terenie szpitala od poniedziałku do piątku w godzinach 7-15.
+2. Szczegółowy opis przedmiotu zamówienia określony został w załącznikach nr 1, nr 14, nr 15, nr 16 oraz nr 17 do SWZ.
+3. W przypadku użycia w dokumentacji dotyczącej przedmiotowego postępowania określeń wskazujących na typ, normę, znaki towarowe lub pochodzenie przedmiotu zamówienia należy odczytywać je wraz z wyrazami „lub równoważne”. Nazwy własne są przykładowe, określają klasę produktu i służą ustaleniu standardu - nie wskazują na konkretny wyrób lub konkretnego producenta. Wykonawca oferując przedmiot równoważny do opisanego w specyfikacji jest zobowiązany zachować równoważność w zakresie parametrów technicznych, funkcjonalnych, gabarytowych i jakościowych, które muszą być na poziomie nie niższym od parametrów wskazanych przez Zamawiającego. Ciężar udowodnienia, że oferowane artykuły są równoważne w stosunku do wymagań określonych przez Zamawiającego spoczywa na składającym ofertę.
+4. W przypadku, gdy Zamawiający użył w opisie przedmiotu zamówienia oznaczeń norm, ocen technicznych, specyfikacji technicznych i systemów referencji technicznych, o których mowa w art. 101 ust. 1 pkt. 2) oraz ust. 3 ustawy Pzp, dopuszcza się rozwiązania równoważne opisane  w SWZ. Każdorazowo, gdy wskazana jest w niniejszej SWZ lub załącznikach do SWZ norma, należy przyjąć, że w odniesieniu do niej użyto sformułowania „lub równoważna”. W przypadku gdy opis przedmiotu zamówienia odnosi się do norm, ocen technicznych, specyfikacji technicznych i systemów referencji technicznych, o których mowa w ust. 1 pkt 2) oraz ust. 3, Zamawiający nie może odrzucić oferty tylko dlatego, że oferowane usługi nie są zgodne z normami, ocenami technicznymi, specyfikacjami technicznymi i systemami referencji technicznych, do których opis przedmiotu zamówienia się odnosi, pod warunkiem że Wykonawca udowodni w ofercie, w szczególności za pomocą przedmiotowych środków dowodowych, o których mowa w art. 104-107, że proponowane rozwiązania w równoważnym stopniu spełniają wymagania określone w opisie przedmiotu zamówienia.
+</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+      <cbc:Note languageID="POL">1. Szczegółowy opis kryteriów oceny ofert oraz warunków udziału w postępowaniu został określony w dokumentacji postępowania.
+2. Zamawiający nie dopuszcza składania ofert wariantowych.
+3. Zamawiający wymaga złożenia ofert w postaci elektronicznej. Szczegółowy opis (instrukcja) składania ofert w postaci elektronicznej zawarty został w rozdz. XIV SWZ.
+4. Zamawiający informuje, iż w przedmiotowym postępowaniu o udzielenie zamówienia publicznego zastosowana zostanie tzw. „odwrócona kolejność oceny ofert”, o której mowa w art. 139 ustawy PZP. Zamawiający stosując powyższą procedurę, w pierwszej kolejności dokona badania i oceny ofert, a następnie dokona kwalifikacji podmiotowej Wykonawcy, którego oferta została najwyżej oceniona w zakresie braku podstaw do wykluczenia oraz spełniania warunków udziału w postępowaniu.
+5. Zamawiający wykluczy Wykonawcę z postępowania o udzielenie zamówienia w przypadku zaistnienia którejkolwiek z przesłanek o których mowa w art. 108 ust. 1 oraz art. 109 ust. 1 pkt 4) ustawy Pzp. Brak podstaw do wykluczenia o którym mowa w art. 108 ust. 1 oraz art. 109 ust. 1 pkt 4) ustawy PZP zostanie wstępnie zweryfikowany na podstawie przedłożonego wraz z ofertą wypełnionego Jednolitego Europejskiego Dokumentu Zamówienia.
+6. W postępowaniu mają zastosowanie przesłanki wykluczenia na podstawie art. 7 ust. 1 ustawy z dnia 13 kwietnia 2022 r., o szczególnych rozwiązaniach w zakresie przeciwdziałania wspieraniu agresji na Ukrainę oraz służących ochronie bezpieczeństwa narodowego (t.j. Dz. U. z 2024r. poz. 507).
+7. W postępowaniu mają zastosowanie przesłanki wykluczenia na podstawie art. 5k dodanego do rozporządzenia Rady (UE) nr 833/2014 z dnia 31lipca 2014 r. dotyczącego środków ograniczających w związku z działaniami Rosji destabilizującymi sytuację na Ukrainie (Dz. Urz. UE nr L 229 z 31.7.2014 ) na mocy art. 1 pkt 23 rozporządzenia 2022/576.
+8. Wykaz podmiotowych środków dowodowych zawiera rozdział IX SWZ.
+9. Wykaz przedmiotowych środków dowodowych zawiera rozdział V SWZ.
+10. Dokumenty i oświadczenia składane wraz z ofertą zostały wskazane w Rozdziale XIV SWZ.
+11. Warunkiem udziału w postępowaniu o udzielenie zamówienia jest wniesienie wadium w prawidłowej wysokości. Wadium może być wniesione w:
+1) pieniądzu,
+2) gwarancjach bankowych,
+3) gwarancjach ubezpieczeniowych,
+4) poręczeniach udzielanych przez podmioty, o których mowa w art. 6b ust. 5 pkt 2 ustawy z dnia 9 listopada 2000 roku o utworzeniu Polskiej Agencji Rozwoju Przedsiębiorczości. 
+Szczegółowe informacje zawarte zostały w rozdz. XXII SWZ.
+12. Informacje o środkach komunikacji elektronicznej, przy użyciu których zamawiający będzie komunikował się z wykonawcami, oraz informacje o wymaganiach technicznych i organizacyjnych sporządzania, wysyłania i odbierania korespondencji elektronicznej zostały wskazane w rozdz. X SWZ.
+13. Wykonawcy mogą wspólnie ubiegać się o udzielenie zamówienia. Szczegóły opis dotyczący składania oferty przez Wykonawców wspólnie ubiegających się o udzielenie zamówienia (konsorcjum) został wskazany w rozdz. XIV SWZ.
+14. W celu pokrycia roszczeń z tytułu niewykonania lub nienależytego wykonania umowy Zamawiający będzie żądał wniesienia przez Wykonawcę, z którym zawrze umowę w sprawie zamówienia publicznego, zabezpieczenia należytego wykonania umowy w wysokości 2% całkowitej ceny oferty. Szczegółowe informacje zawarte zostały w rozdz. XXIII SWZ.
+15. Klauzula informacyjna dotycząca Rozporządzenia o Ochronie Danych Osobowych (RODO) - szczegółowy opis w rozdz. XXVII SWZ.
+16. Wszelkie nieuregulowane w niniejszym SWZ czynności, uprawnienia, obowiązki Wykonawców i Zamawiającego, których ustawa nie nakazała zawierać Zamawiającemu w SWZ, a które mogą przyczynić się do właściwego przebiegu postępowania, reguluje ustawa PZP.
+17. Zamawiający dopuszcza zmianę umowy, na warunkach określonych w projekcie umowy stanowiącym załącznik nr 13 do SWZ. Zamawiający przewiduje dokonanie zmian umowy w toku jej realizacji w przypadku zaistnienia okoliczności, o których mowa w art. 455 ustawy PZP.</cbc:Note>
+      <cac:MainCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">98310000</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">35113400</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">18100000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">18411000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">18230000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">98311000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">42716000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">42968000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">50830000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">18318000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">18400000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">34927000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">18110000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">60000000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">33199000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">39713200</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">33631600</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">51500000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:RealizedLocation>
+         <cac:Address>
+            <cbc:StreetName>ul. Dębinki 7</cbc:StreetName>
+            <cbc:CityName>Gdańsk</cbc:CityName>
+            <cbc:PostalZone>80-952</cbc:PostalZone>
+            <cbc:CountrySubentityCode listName="nuts">PL633</cbc:CountrySubentityCode>
+            <cac:Country>
+               <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+            </cac:Country>
+         </cac:Address>
+      </cac:RealizedLocation>
+   </cac:ProcurementProject>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+      <cac:TenderingTerms>
+         <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+         <cac:AwardingTerms>
+            <cac:AwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>60</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="POL">Cena za świadczenie kompleksowych usług pralniczych oraz dzierżawę bielizny ogólnoszpitalnej i odzieży </cbc:Name>
+                  <cbc:Description languageID="POL">waga 60%; oferta z najniższą ceną za świadczenie kompleksowych usług pralniczych oraz dzierżawę bielizny ogólnoszpitalnej i odzieży uzyska maksymalną ilość punktów tj. 60; szczegółowy opis zawarty został w rozdz. XVIII SWZ;</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>20</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="POL">Cena za dzierżawę dystrybutorów do wydawania i odbierania odzieży operacyjnej</cbc:Name>
+                  <cbc:Description languageID="POL">waga 20%; oferta z najniższą ceną za dzierżawę dystrybutorów do wydawania i odbierania odzieży operacyjnej uzyska maksymalną ilość punktów tj. 20; szczegółowy opis zawarty został w rozdz. XVIII SWZ;</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>20</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="POL">Termin realizacji reklamacji </cbc:Name>
+                  <cbc:Description languageID="POL">waga 20%; ocena ofert polegać będzie na przyznaniu punktów za zaoferowany termin realizacji reklamacji od chwili otrzymania zgłoszenia; szczegółowy opis zawarty został w rozdz. XVIII SWZ;</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+            </cac:AwardingCriterion>
+         </cac:AwardingTerms>
+         <cac:AppealTerms>
+            <cac:PresentationPeriod>
+               <cbc:Description languageID="POL">Zasady wnoszenia środków ochrony prawnej w niniejszym postępowaniu regulują przepisy Działu IX ustawy z dnia 11 września 2019 roku Prawo zamówień Publicznych.</cbc:Description>
+            </cac:PresentationPeriod>
+            <cac:AppealInformationParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealInformationParty>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+         </cac:AppealTerms>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <cbc:GovernmentAgreementConstraintIndicator>false</cbc:GovernmentAgreementConstraintIndicator>
+         <cac:AuctionTerms>
+            <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+         </cac:AuctionTerms>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:ID schemeName="InternalID">248/PN/2025</cbc:ID>
+         <cbc:Name languageID="POL">Świadczenie kompleksowej usługi prania i dezynfekcji bielizny szpitalnej, operacyjnej, fasonowej i niemowlęcej, rental pościeli i odzieży operacyjnej wraz z dzierżawą urządzeń vendingowych dla UCK.</cbc:Name>
+         <cbc:Description languageID="POL">1. Przedmiotem zamówienia jest:
+1) świadczenie usługi prania bielizny ogólnoszpitalnej będącej własnością Zamawiającego oraz bielizny dzierżawionej od Wykonawcy;
+2) dzierżawa bielizny pościelowej, odzieży operacyjnej, koszul chirurgicznych, fartuchów barierowych chirurgicznych, poduszek, kołder, koców i worków z materiału do transportu;
+3) świadczenie usługi transportu bielizny;
+4) dzierżawa automatycznych dystrybutorów do wydawania i odbierania odzieży operacyjnej;
+5) zapewnienie dyżuru dziennego pracownika pralni na terenie szpitala od poniedziałku do piątku w godzinach 7-15.
+2. Szczegółowy opis przedmiotu zamówienia określony został w załącznikach nr 1, nr 14, nr 15, nr 16 oraz nr 17 do SWZ.</cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+         <cbc:Note languageID="POL">Zamawiający ustala następujący termin wykonania zamówienia: 48 miesięcy od dnia podpisania umowy. Dostawa i instalacja dzierżawionych urządzeń nastąpi najpóźniej w terminie 30 dni od daty podpisania umowy.</cbc:Note>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">98310000</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">42716000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">98311000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">33631600</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">50830000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">34927000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">51500000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">18230000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">18110000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">33199000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">18100000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">18318000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">18411000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">35113400</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">18400000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">42968000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">39713200</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">60000000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:RealizedLocation>
+            <cac:Address>
+               <cbc:StreetName>Uniwersyteckie Centrum Kliniczne w Gdańsku      </cbc:StreetName>
+               <cbc:AdditionalStreetName>ul. Dębinki 7</cbc:AdditionalStreetName>
+               <cbc:CityName>Gdańsk</cbc:CityName>
+               <cbc:PostalZone>80-952</cbc:PostalZone>
+               <cbc:CountrySubentityCode listName="nuts">PL633</cbc:CountrySubentityCode>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+         <cac:PlannedPeriod>
+            <cbc:DurationMeasure unitCode="MONTH">48</cbc:DurationMeasure>
+         </cac:PlannedPeriod>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+   <cac:TenderResult>
+      <cbc:AwardDate>2000-01-01Z</cbc:AwardDate>
+   </cac:TenderResult>
+</ContractAwardNotice>

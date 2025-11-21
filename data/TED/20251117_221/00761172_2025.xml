@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractAwardNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractAwardNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ccts-cct="urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDataTypes-2" xmlns:udt="urn:oasis:names:specification:bdndr:schema:xsd:UnqualifiedDataTypes-1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<ext:UBLExtensions>
+		<ext:UBLExtension>
+			<ext:ExtensionContent>
+				<efext:EformsExtension>
+					<efac:NoticeResult>
+						<efac:LotResult>
+							<cbc:ID>RES-0001</cbc:ID>
+							<cbc:TenderResultCode listName="winner-selection-status">clos-nw</cbc:TenderResultCode>
+							<efac:DecisionReason>
+								<efbc:DecisionReasonCode listName="non-award-justification">all-rej</efbc:DecisionReasonCode>
+							</efac:DecisionReason>
+							<efac:ReceivedSubmissionsStatistics>
+								<efbc:StatisticsCode listName="review-decision-type">tenders</efbc:StatisticsCode>
+								<efbc:StatisticsNumeric>1</efbc:StatisticsNumeric>
+							</efac:ReceivedSubmissionsStatistics>
+							<efac:TenderLot>
+								<cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+							</efac:TenderLot>
+						</efac:LotResult>
+					</efac:NoticeResult>
+					<efac:NoticeSubType>
+						<cbc:SubTypeCode listName="notice-subtype">29</cbc:SubTypeCode>
+					</efac:NoticeSubType>
+					<efac:Organizations>
+						<efac:Organization>
+							<efac:Company>
+								<cbc:WebsiteURI>http://www.schaumburg.de</cbc:WebsiteURI>
+								<cac:PartyIdentification>
+									<cbc:ID>ORG-0001</cbc:ID>
+								</cac:PartyIdentification>
+								<cac:PartyName>
+									<cbc:Name languageID="DEU">Landkreis Schaumburg - Vergabestelle</cbc:Name>
+								</cac:PartyName>
+								<cac:PostalAddress>
+									<cbc:StreetName>Jahnstraße 20</cbc:StreetName>
+									<cbc:CityName>Stadthagen</cbc:CityName>
+									<cbc:PostalZone>31655</cbc:PostalZone>
+									<cbc:CountrySubentityCode listName="nuts-lvl3">DE928</cbc:CountrySubentityCode>
+									<cac:Country>
+										<cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+									</cac:Country>
+								</cac:PostalAddress>
+								<cac:PartyLegalEntity>
+									<cbc:CompanyID>DE116536965</cbc:CompanyID>
+								</cac:PartyLegalEntity>
+								<cac:Contact>
+									<cbc:Telephone>+49 57217030</cbc:Telephone>
+									<cbc:ElectronicMail>vergabestelle@schaumburg.de</cbc:ElectronicMail>
+								</cac:Contact>
+							</efac:Company>
+						</efac:Organization>
+						<efac:Organization>
+							<efac:Company>
+								<cbc:WebsiteURI>http://www.mw.niedersachsen.de</cbc:WebsiteURI>
+								<cac:PartyIdentification>
+									<cbc:ID>ORG-0002</cbc:ID>
+								</cac:PartyIdentification>
+								<cac:PartyName>
+									<cbc:Name languageID="DEU">Vergabekammer Niedersachsen beim Nds. Ministerium für Wirtschaft, Arbeit, Verkehr und Digitalisierung</cbc:Name>
+								</cac:PartyName>
+								<cac:PostalAddress>
+									<cbc:StreetName>Auf der Hude 2</cbc:StreetName>
+									<cbc:CityName>Lüneburg</cbc:CityName>
+									<cbc:PostalZone>21339</cbc:PostalZone>
+									<cbc:CountrySubentityCode listName="nuts-lvl3">DE935</cbc:CountrySubentityCode>
+									<cac:Country>
+										<cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+									</cac:Country>
+								</cac:PostalAddress>
+								<cac:PartyLegalEntity>
+									<cbc:CompanyID>t:04131153308</cbc:CompanyID>
+								</cac:PartyLegalEntity>
+								<cac:Contact>
+									<cbc:Telephone>+49 413115-2943</cbc:Telephone>
+									<cbc:ElectronicMail>vergabekammer@mw.niedersachsen.de</cbc:ElectronicMail>
+								</cac:Contact>
+							</efac:Company>
+						</efac:Organization>
+					<efac:Organization><efac:Company><cac:PartyIdentification><cbc:ID schemeName="organization">ORG-0003</cbc:ID></cac:PartyIdentification><cac:PartyName><cbc:Name languageID="DEU">Datenservice Öffentlicher Einkauf (in Verantwortung des Beschaffungsamts des BMI)</cbc:Name></cac:PartyName><cac:PostalAddress><cbc:CityName>Bonn</cbc:CityName><cbc:PostalZone>53119</cbc:PostalZone><cbc:CountrySubentityCode listName="nuts">DEA22</cbc:CountrySubentityCode><cac:Country><cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode></cac:Country></cac:PostalAddress><cac:PartyLegalEntity><cbc:CompanyID schemeID="002">0204:994-DOEVD-83</cbc:CompanyID></cac:PartyLegalEntity><cac:Contact><cbc:Telephone>+49228996100</cbc:Telephone><cbc:ElectronicMail>noreply.esender_hub@bescha.bund.de</cbc:ElectronicMail></cac:Contact></efac:Company></efac:Organization></efac:Organizations>
+				<efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00761172-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+			</ext:ExtensionContent>
+		</ext:UBLExtension>
+	</ext:UBLExtensions>
+	<cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+	<cbc:CustomizationID>eforms-sdk-1.12</cbc:CustomizationID>
+	<cbc:ProfileID>eforms-sdk-1.12</cbc:ProfileID>
+	<cbc:ID schemeName="notice-id">9af61821-4710-47c7-975f-d43b72ac2bdb</cbc:ID>
+	<cbc:ContractFolderID>6a9d603b-6cc7-44b0-a520-a632b24abcc6</cbc:ContractFolderID>
+	<cbc:IssueDate>2025-11-14+01:00</cbc:IssueDate>
+	<cbc:IssueTime>09:27:58+01:00</cbc:IssueTime>
+	<cbc:VersionID>01</cbc:VersionID>
+	<cbc:RequestedPublicationDate>2025-11-14+01:00</cbc:RequestedPublicationDate>
+	<cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+	<cbc:NoticeTypeCode listName="result">can-standard</cbc:NoticeTypeCode>
+	<cbc:NoticeLanguageCode listID="eu-official-language">DEU</cbc:NoticeLanguageCode>
+	<cac:ContractingParty>
+		<cac:ContractingPartyType>
+			<cbc:PartyTypeCode listName="buyer-legal-type">body-pl-la</cbc:PartyTypeCode>
+		</cac:ContractingPartyType>
+		<cac:ContractingActivity>
+			<cbc:ActivityTypeCode listName="authority-activity">gen-pub</cbc:ActivityTypeCode>
+		</cac:ContractingActivity>
+		<cac:Party>
+			<cac:PartyIdentification>
+				<cbc:ID>ORG-0001</cbc:ID>
+			</cac:PartyIdentification>
+		<cac:ServiceProviderParty><cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode><cac:Party><cac:PartyIdentification><cbc:ID schemeName="organization">ORG-0003</cbc:ID></cac:PartyIdentification></cac:Party></cac:ServiceProviderParty></cac:Party>
+	</cac:ContractingParty>
+	<cac:TenderingTerms>
+		<ext:UBLExtensions>
+			<ext:UBLExtension>
+				<ext:ExtensionContent>
+					<efext:EformsExtension>
+						<efac:StrategicProcurement>
+							<efbc:ApplicableLegalBasis listName="cvd-scope">false</efbc:ApplicableLegalBasis>
+						</efac:StrategicProcurement>
+					</efext:EformsExtension>
+				</ext:ExtensionContent>
+			</ext:UBLExtension>
+		</ext:UBLExtensions>
+		<cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+		<cac:ProcurementLegislationDocumentReference>
+			<cbc:ID>vob-a-eu</cbc:ID>
+		</cac:ProcurementLegislationDocumentReference>
+		<cac:AppealTerms>
+			<cac:PresentationPeriod>
+				<cbc:Description languageID="DEU">Erkennt ein Unternehmen einen Verstoß gegen Vergabevorschriften im vorliegenden Verga-beverfahren, ist dies innerhalb ab 10 Tagen nach Kenntnis gegenüber dem Auftraggeber zu rügen. Unabhängig hiervon müssen Verstöße gegen Vergabevorschriften, die bereits aufgrund der Bekanntmachung erkennbar sind, spätestens bis zum Ablauf der in der Bekanntmachung genannten Frist zur Abgabe von Teilnahmeanträgen bzw. Angeboten gegenüber dem Auftraggeber gerügt werden. Verstöße gegen Vergabevorschriften, die erst in den Vergabeunterlagen erkennbar sind, müssen ebenfalls innerhalb dieser Frist gegenüber dem Auftraggeber gerügt werden. Werden diese Obliegenheiten nicht beachtet, ist ein Antrag auf Nachprüfung gemäß § 160 Abs. 3 Satz 1 Nr. 1 bis 3 GWB unzulässig. Teilt der Auftraggeber auf eine Rüge eines Unternehmens mit, der Rüge nicht abhelfen zu wollen, kann hiergegen ein Antrag auf Nachprüfung bei der zuständigen Vergabekammer gestellt werden. Der Antrag ist unzulässig, wenn mehr als 15 Kalendertage nach dem Eingang der Mitteilung des Auftraggebers, einer Rüge nicht abhelfen zu wollen, vergangen sind (§ 160 Abs. 3 Satz 1 Nr. 4 GWB).</cbc:Description>
+			</cac:PresentationPeriod>
+			<cac:AppealReceiverParty>
+				<cac:PartyIdentification>
+					<cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+				</cac:PartyIdentification>
+			</cac:AppealReceiverParty>
+		</cac:AppealTerms>
+	</cac:TenderingTerms>
+	<cac:TenderingProcess>
+		<cbc:ProcedureCode listName="procurement-procedure-type">open</cbc:ProcedureCode>
+		<cac:ProcessJustification>
+			<cbc:ProcessReasonCode listName="accelerated-procedure">false</cbc:ProcessReasonCode>
+		</cac:ProcessJustification>
+		<cac:AuctionTerms>
+			<cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+		</cac:AuctionTerms>
+	</cac:TenderingProcess>
+	<cac:ProcurementProject>
+		<cbc:ID schemeName="internalID">BBG_2025/08#272</cbc:ID>
+		<cbc:Name languageID="DEU">Grundschule und Kita Meinsen - Kompakttrafostation</cbc:Name>
+		<cbc:Description languageID="DEU">Die Stadt Bückeburg plant eine umfangreiche Umbau-, Sanierungs- und Erweiterungsmaßnahme für das bestehende Gebäude der Grundschule und Kita in Meinsen. Es wird eine eigene Kompakttrafostation ausgeschrieben, um eine stabile und effiziente Energieversorgung sicherzustellen. Diese Anlage dient der Umwandlung und Verteilung elektrischer Energie und wird in das bestehende Mittelspannungsnetz eingebunden.</cbc:Description>
+		<cbc:ProcurementTypeCode listName="contract-nature">works</cbc:ProcurementTypeCode>
+		<cbc:Note languageID="DEU">#Bekanntmachungs-ID: CXS0Y6VYTZCXBZBN#
+
+
+Der Auftraggeber wickelt das gesamte Vergabeverfahren in elektronischer Form über die Vergabeplattform DTVP ab. Insbesondere erfolgen die Kommunikation zwischen Auftraggeber und Bewerbern/Bietern sowie die Einreichung von Teilnahmeanträgen bzw. Angeboten ausschließlich in elektronischer Form über den Projektraum des Verfahrens. 
+
+Die von Unternehmen gegebenenfalls im Verlauf des Verfahrens erbetenen personenbezogenen Daten werden nach den Vorschriften des Datenschutzrechts im Rahmen des Vergabeverfahrens verarbeitet und gespeichert. Mit der Teilnahme am Verfahren erklären sich Unternehmen hiermit einverstanden. Soweit Unternehmen im Rahmen des Verfahrens dem Auftraggeber personenbezogene Daten von Dritten (Mitarbeiter, Nachunternehmer, Mitglieder einer Bietergemeinschaft, Referenzgeber) übermitteln, sind sie für das Vorliegen der jeweils erforderlichen datenschutzrechtlichen Einwilligung der Dritten selbst verantwortlich.
+
+Die Angebotsabgabe erfolgt elektronisch in Textform. Die erforderliche Signatur gem. § 126b BGB wird in diesem Zusammenhang als "Containersignatur" automatisch über das "cosinex Bietertool" abgegeben. Die "Willenserklärung" erfolgt dadurch je Angebot, sodass sich jeder Bieter automatisch an seine hogeladenen Dokumente bindet. Eine gesonderte Dokumentensignatur ist nicht erforderlich. Sollten Signaturmöglichkeiten in Dokumenten vorgesehen seien, handelt es sich um Standarddokumente, Die Signatur ist nicht zwingend erforderlich. 
+
+Sämtliche Vertragsbedingungen eines möglichen Auftragnehmers werden abgelehnt, sofern diesen nicht ausdrücklich zugestimmt wird.
+
+Das Vergabeverfahren wird im Namen und im Auftrag der Stadt Bückeburg durchgeführt. Die Vergabestelle des Landkreises Schaumburg ist hierbei nur beratend und als ausführende Stelle tätig.</cbc:Note>
+		<cac:MainCommodityClassification>
+			<cbc:ItemClassificationCode listName="cpv">45317200</cbc:ItemClassificationCode>
+		</cac:MainCommodityClassification>
+		<cac:AdditionalCommodityClassification>
+			<cbc:ItemClassificationCode listName="cpv">31170000</cbc:ItemClassificationCode>
+		</cac:AdditionalCommodityClassification>
+		<cac:RealizedLocation>
+			<cac:Address>
+				<cbc:StreetName>Am Weidenhof 5</cbc:StreetName>
+				<cbc:CityName>Bückeburg</cbc:CityName>
+				<cbc:PostalZone>31675</cbc:PostalZone>
+				<cbc:CountrySubentityCode listName="nuts">DE928</cbc:CountrySubentityCode>
+				<cac:Country>
+					<cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:Address>
+		</cac:RealizedLocation>
+	</cac:ProcurementProject>
+	<cac:ProcurementProjectLot>
+		<cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+		<cac:TenderingTerms>
+			<ext:UBLExtensions>
+				<ext:UBLExtension>
+					<ext:ExtensionContent>
+						<efext:EformsExtension>
+							<efac:StrategicProcurement>
+								<efbc:ApplicableLegalBasis listName="cvd-scope">false</efbc:ApplicableLegalBasis>
+							</efac:StrategicProcurement>
+						</efext:EformsExtension>
+					</ext:ExtensionContent>
+				</ext:UBLExtension>
+			</ext:UBLExtensions>
+			<cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+			<cac:ContractExecutionRequirement>
+				<cbc:ExecutionRequirementCode listName="fsr">false</cbc:ExecutionRequirementCode>
+			</cac:ContractExecutionRequirement>
+			<cac:AwardingTerms>
+				<cac:AwardingCriterion>
+					<cac:SubordinateAwardingCriterion>
+						<ext:UBLExtensions>
+							<ext:UBLExtension>
+								<ext:ExtensionContent>
+									<efext:EformsExtension>
+										<efac:AwardCriterionParameter>
+											<efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+											<efbc:ParameterNumeric>100.00000000</efbc:ParameterNumeric>
+										</efac:AwardCriterionParameter>
+									</efext:EformsExtension>
+								</ext:ExtensionContent>
+							</ext:UBLExtension>
+						</ext:UBLExtensions>
+						<cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+						<cbc:Name languageID="DEU">Preis</cbc:Name>
+						<cbc:Description languageID="DEU">Preis</cbc:Description>
+					</cac:SubordinateAwardingCriterion>
+				</cac:AwardingCriterion>
+			</cac:AwardingTerms>
+			<cac:AdditionalInformationParty>
+				<cac:PartyIdentification>
+					<cbc:ID>ORG-0001</cbc:ID>
+				</cac:PartyIdentification>
+			</cac:AdditionalInformationParty>
+			<cac:AppealTerms>
+				<cac:PresentationPeriod>
+					<cbc:Description languageID="DEU">Erkennt ein Unternehmen einen Verstoß gegen Vergabevorschriften im vorliegenden Verga-beverfahren, ist dies innerhalb ab 10 Tagen nach Kenntnis gegenüber dem Auftraggeber zu rügen. Unabhängig hiervon müssen Verstöße gegen Vergabevorschriften, die bereits aufgrund der Bekanntmachung erkennbar sind, spätestens bis zum Ablauf der in der Bekanntmachung genannten Frist zur Abgabe von Teilnahmeanträgen bzw. Angeboten gegenüber dem Auftraggeber gerügt werden. Verstöße gegen Vergabevorschriften, die erst in den Vergabeunterlagen erkennbar sind, müssen ebenfalls innerhalb dieser Frist gegenüber dem Auftraggeber gerügt werden. Werden diese Obliegenheiten nicht beachtet, ist ein Antrag auf Nachprüfung gemäß § 160 Abs. 3 Satz 1 Nr. 1 bis 3 GWB unzulässig. Teilt der Auftraggeber auf eine Rüge eines Unternehmens mit, der Rüge nicht abhelfen zu wollen, kann hiergegen ein Antrag auf Nachprüfung bei der zuständigen Vergabekammer gestellt werden. Der Antrag ist unzulässig, wenn mehr als 15 Kalendertage nach dem Eingang der Mitteilung des Auftraggebers, einer Rüge nicht abhelfen zu wollen, vergangen sind (§ 160 Abs. 3 Satz 1 Nr. 4 GWB).</cbc:Description>
+				</cac:PresentationPeriod>
+				<cac:AppealReceiverParty>
+					<cac:PartyIdentification>
+						<cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+					</cac:PartyIdentification>
+				</cac:AppealReceiverParty>
+			</cac:AppealTerms>
+		</cac:TenderingTerms>
+		<cac:TenderingProcess>
+			<cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+			<cac:AuctionTerms>
+				<cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+			</cac:AuctionTerms>
+			<cac:ContractingSystem>
+				<cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+			</cac:ContractingSystem>
+			<cac:ContractingSystem>
+				<cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+			</cac:ContractingSystem>
+		</cac:TenderingProcess>
+		<cac:ProcurementProject>
+			<cbc:ID schemeName="internalID">BBG_2025/08#272</cbc:ID>
+			<cbc:Name languageID="DEU">Grundschule und Kita Meinsen - Kompakttrafostation</cbc:Name>
+			<cbc:Description languageID="DEU">Informationen zum Umfang der Arbeiten können dem Leistungsverzeichnis entnommen werden.</cbc:Description>
+			<cbc:ProcurementTypeCode listName="contract-nature">works</cbc:ProcurementTypeCode>
+			<cbc:Note languageID="DEU">Ausführungsbeginn: 46. KW 2025
+Ausführungsende: 10. KW 2026</cbc:Note>
+			<cac:ProcurementAdditionalType>
+				<cbc:ProcurementTypeCode listName="strategic-procurement">none</cbc:ProcurementTypeCode>
+			</cac:ProcurementAdditionalType>
+			<cac:MainCommodityClassification>
+				<cbc:ItemClassificationCode listName="cpv">45317200</cbc:ItemClassificationCode>
+			</cac:MainCommodityClassification>
+			<cac:AdditionalCommodityClassification>
+				<cbc:ItemClassificationCode listName="cpv">31170000</cbc:ItemClassificationCode>
+			</cac:AdditionalCommodityClassification>
+			<cac:RealizedLocation>
+				<cac:Address>
+					<cbc:StreetName>Am Weidenhof 5</cbc:StreetName>
+					<cbc:CityName>Bückeburg</cbc:CityName>
+					<cbc:PostalZone>31675</cbc:PostalZone>
+					<cbc:CountrySubentityCode listName="nuts">DE928</cbc:CountrySubentityCode>
+					<cac:Country>
+						<cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+					</cac:Country>
+				</cac:Address>
+			</cac:RealizedLocation>
+			<cac:PlannedPeriod>
+				<cbc:StartDate>2025-11-10+01:00</cbc:StartDate>
+				<cbc:EndDate>2026-03-06+01:00</cbc:EndDate>
+			</cac:PlannedPeriod>
+		</cac:ProcurementProject>
+	</cac:ProcurementProjectLot>
+	<cac:TenderResult>
+		<cbc:AwardDate>2000-01-01Z</cbc:AwardDate>
+	</cac:TenderResult>
+</ContractAwardNotice>

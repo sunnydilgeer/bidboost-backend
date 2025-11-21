@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractAwardNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractAwardNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+   <ext:UBLExtensions>
+      <ext:UBLExtension>
+         <ext:ExtensionContent>
+            <efext:EformsExtension>
+               <efac:NoticeResult>
+                  <cbc:TotalAmount currencyID="PLN">1231000</cbc:TotalAmount>
+                  <efac:LotResult>
+                     <cbc:ID schemeName="result">RES-0001</cbc:ID>
+                     <cbc:HigherTenderAmount currencyID="PLN">1504680</cbc:HigherTenderAmount>
+                     <cbc:LowerTenderAmount currencyID="PLN">1504680</cbc:LowerTenderAmount>
+                     <cbc:TenderResultCode listName="winner-selection-status">selec-w</cbc:TenderResultCode>
+                     <efac:LotTender>
+                        <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                     </efac:LotTender>
+                     <efac:ReceivedSubmissionsStatistics>
+                        <efbc:StatisticsCode listName="received-submission-type">t-esubm</efbc:StatisticsCode>
+                        <efbc:StatisticsNumeric>1</efbc:StatisticsNumeric>
+                     </efac:ReceivedSubmissionsStatistics>
+                     <efac:ReceivedSubmissionsStatistics>
+                        <efbc:StatisticsCode listName="received-submission-type">t-sme</efbc:StatisticsCode>
+                        <efbc:StatisticsNumeric>1</efbc:StatisticsNumeric>
+                     </efac:ReceivedSubmissionsStatistics>
+                     <efac:ReceivedSubmissionsStatistics>
+                        <efbc:StatisticsCode listName="received-submission-type">t-oth-eea</efbc:StatisticsCode>
+                        <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+                     </efac:ReceivedSubmissionsStatistics>
+                     <efac:ReceivedSubmissionsStatistics>
+                        <efbc:StatisticsCode listName="received-submission-type">t-no-eea</efbc:StatisticsCode>
+                        <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+                     </efac:ReceivedSubmissionsStatistics>
+                     <efac:SettledContract>
+                        <cbc:ID schemeName="contract">CON-0001</cbc:ID>
+                     </efac:SettledContract>
+                     <efac:TenderLot>
+                        <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+                     </efac:TenderLot>
+                  </efac:LotResult>
+                  <efac:LotTender>
+                     <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                     <cac:LegalMonetaryTotal>
+                        <cbc:PayableAmount currencyID="PLN">1504680</cbc:PayableAmount>
+                     </cac:LegalMonetaryTotal>
+                     <efac:SubcontractingTerm>
+                        <efbc:TermCode listName="applicability">no</efbc:TermCode>
+                     </efac:SubcontractingTerm>
+                     <efac:TenderingParty>
+                        <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+                     </efac:TenderingParty>
+                     <efac:TenderLot>
+                        <cbc:ID>LOT-0001</cbc:ID>
+                     </efac:TenderLot>
+                     <efac:TenderReference>
+                        <cbc:ID>AIDMED SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ</cbc:ID>
+                     </efac:TenderReference>
+                  </efac:LotTender>
+                  <efac:SettledContract>
+                     <cbc:ID schemeName="contract">CON-0001</cbc:ID>
+                     <cbc:AwardDate>2025-10-06+02:00</cbc:AwardDate>
+                     <cbc:IssueDate>2025-11-04+01:00</cbc:IssueDate>
+                     <efac:ContractReference>
+                        <cbc:ID>AZP.260.72.2025.PN</cbc:ID>
+                     </efac:ContractReference>
+                     <efac:LotTender>
+                        <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                     </efac:LotTender>
+                  </efac:SettledContract>
+                  <efac:TenderingParty>
+                     <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+                     <cbc:Name>AIDMED SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ</cbc:Name>
+                     <efac:Tenderer>
+                        <cbc:ID schemeName="organization">ORG-0004</cbc:ID>
+                     </efac:Tenderer>
+                  </efac:TenderingParty>
+               </efac:NoticeResult>
+               <efac:NoticeSubType>
+                  <cbc:SubTypeCode listName="notice-subtype">29</cbc:SubTypeCode>
+               </efac:NoticeSubType>
+               <efac:Organizations>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://umw.edu.pl</cbc:WebsiteURI>
+                        <cbc:EndpointID>https://umed-wroc.logintrade.net/zapytania_email,204476,d20852bdfeef65f8863e8896895e12e4.html</cbc:EndpointID>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Uniwersytet Medyczny im. Piastów Śląskich we Wrocławiu</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>Wybrzeże L. Pasteura 1</cbc:StreetName>
+                           <cbc:AdditionalStreetName>50-367</cbc:AdditionalStreetName>
+                           <cbc:Department>Dział Zamówień Publicznych</cbc:Department>
+                           <cbc:CityName>Wrocław</cbc:CityName>
+                           <cbc:PostalZone>50-367</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL514</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>89600005779</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Name>Dział Zamówień Publicznych</cbc:Name>
+                           <cbc:Telephone>+48717841788</cbc:Telephone>
+                           <cbc:ElectronicMail>edyta.szyjkowska@umw.edu.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Krajowa Izba Odwoławcza</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>ul. Postępu 17A</cbc:StreetName>
+                           <cbc:AdditionalStreetName>02-676</cbc:AdditionalStreetName>
+                           <cbc:CityName>Warszawa</cbc:CityName>
+                           <cbc:PostalZone>02-676</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL911</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>5262239325</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Name>Sekretariat Krajowej Izby Odwoławczej</cbc:Name>
+                           <cbc:Telephone>+48224587801</cbc:Telephone>
+                           <cbc:ElectronicMail>odwolania@uzp.gov.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <efbc:CompanySizeCode listName="economic-operator-size">micro</efbc:CompanySizeCode>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0004</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">AIDMED SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>ul. Oliwska 85</cbc:StreetName>
+                           <cbc:AdditionalStreetName>80-542 </cbc:AdditionalStreetName>
+                           <cbc:CityName>Gdańsk</cbc:CityName>
+                           <cbc:PostalZone>80-542</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL634</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>5833290208</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efbc:NaturalPersonIndicator>false</efbc:NaturalPersonIndicator>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://op.europa.eu</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0000</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Publications Office of the European Union</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:CityName>Luxembourg</cbc:CityName>
+                           <cbc:PostalZone>2417</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">LU000</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">LUX</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>PUBL</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+352 29291</cbc:Telephone>
+                           <cbc:ElectronicMail>ted@publications.europa.eu</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+               </efac:Organizations>
+            <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00761577-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+         </ext:ExtensionContent>
+      </ext:UBLExtension>
+   </ext:UBLExtensions>
+   <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+   <cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+   <cbc:ID schemeName="notice-id">c887e06c-383d-4ee0-8201-3e627adfa33d</cbc:ID>
+   <cbc:ContractFolderID>e68e68ac-1635-44df-b543-fba600c5ef59</cbc:ContractFolderID>
+   <cbc:IssueDate>2025-11-14Z</cbc:IssueDate>
+   <cbc:IssueTime>10:33:57Z</cbc:IssueTime>
+   <cbc:VersionID>01</cbc:VersionID>
+   <cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+   <cbc:NoticeTypeCode listName="result">can-standard</cbc:NoticeTypeCode>
+   <cbc:NoticeLanguageCode listName="language">POL</cbc:NoticeLanguageCode>
+   <cac:ContractingParty>
+      <cbc:BuyerProfileURI>https://www.umw.edu.pl</cbc:BuyerProfileURI>
+      <cac:ContractingPartyType>
+         <cbc:PartyTypeCode listName="buyer-legal-type">body-pl</cbc:PartyTypeCode>
+      </cac:ContractingPartyType>
+      <cac:ContractingActivity>
+         <cbc:ActivityTypeCode listName="authority-activity">education</cbc:ActivityTypeCode>
+      </cac:ContractingActivity>
+      <cac:Party>
+         <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+         </cac:PartyIdentification>
+         <cac:ServiceProviderParty>
+            <cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode>
+            <cac:Party>
+               <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0000</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:Party>
+         </cac:ServiceProviderParty>
+      </cac:Party>
+   </cac:ContractingParty>
+   <cac:TenderingTerms>
+      <cac:ProcurementLegislationDocumentReference>
+         <cbc:ID>LocalLegalBasis</cbc:ID>
+         <cbc:DocumentDescription languageID="POL">Postępowanie prowadzone jest w trybie przetargu nieograniczonego, podst. prawna: art. 129 ust. 2 i 132-139 Ustawy z dnia 11 września 2019 roku – Prawo zamówień publicznych (tekst jedn. – Dz. U. z 2024 r., poz. 1320 , z późn. zm.)</cbc:DocumentDescription>
+      </cac:ProcurementLegislationDocumentReference>
+   </cac:TenderingTerms>
+   <cac:TenderingProcess>
+      <cbc:ProcedureCode listName="procurement-procedure-type">open</cbc:ProcedureCode>
+      <cac:NoticeDocumentReference>
+         <cbc:ID schemeName="ojs-notice-id">558320-2025</cbc:ID>
+      </cac:NoticeDocumentReference>
+      <cac:ProcessJustification>
+         <cbc:ProcessReasonCode listName="accelerated-procedure">true</cbc:ProcessReasonCode>
+         <cbc:ProcessReason languageID="POL">Zamawiający wyznaczył termin składania ofert o 5 dni krótszy niż określony w art. 138 ust. 1 Prawa zamówień publicznych, ponieważ składanie ofert odbywa się w całości przy użyciu środków komunikacji elektronicznej.</cbc:ProcessReason>
+      </cac:ProcessJustification>
+   </cac:TenderingProcess>
+   <cac:ProcurementProject>
+      <cbc:ID schemeName="InternalID">AZP.260.72.2025.PN</cbc:ID>
+      <cbc:Name languageID="POL">72.2025 Dostawa oprogramowania serwerowego oraz aplikacji mobilnej wraz ze szkoleniem z systemu teleinformatycznego oraz dostawą sprzętu do monitorowania rehabilitacji w domu – projekt pn. "Ocena wpływu telerehabilitacji krążeniowo-oddechowej na sprawność ogólną i jakość życia pacjentów z tętniczym nadciśnieniem płucnym"</cbc:Name>
+      <cbc:Description languageID="POL">1.	Przedmiotem zamówienia jest: Dostawa oprogramowania serwerowego oraz aplikacji mobilnej wraz ze szkoleniem z systemu teleinformatycznego oraz dostawą sprzętu do monitorowania rehabilitacji w domu – projekt pn. "Ocena wpływu telerehabilitacji krążeniowo-oddechowej na sprawność ogólną i jakość życia pacjentów z tętniczym nadciśnieniem płucnym" (umowa nr  2024/ABM/01/00069).
+2.	Krótki opis przedmiotu zamówienia: Przedmiotowe zamówienie podzielone jest na etapy:
+1)	Etap I - Dostawa, wdrożenie systemu do ewidencjonowania pacjentów z możliwością zdalnego zlecania zadań rehabilitacyjnych,  zdalnego nadzoru nad aktywnością pacjenta oraz agregującego dane z urządzeń medycznych, składającego się z oprogramowania serwerowego oraz aplikacji mobilnej na iOS oraz Android.
+2)	Etap II – Dostawa  sprzętu medycznego, w tym infrastruktury badawczej – dostawa sukcesywna.
+3)	Etap III – Szkolenie u Zamawiającego na terenie miasta Wrocławia oraz w maksymalnie 7 innych ośrodkach na terenie Polski w terminie i miejscu przez niego wyznaczonym. 
+4)	Etap IV - Utrzymanie systemu do ewidencjonowania pacjentów z możliwością zdalnego zlecania zadań rehabilitacyjnych, zdalnego nadzoru nad aktywnością pacjenta oraz agregującego dane z urządzeń medycznych, składającego się z oprogramowania serwerowego oraz aplikacji mobilnej na iOS oraz Android. Wsparcie konsultanta online - w maksymalnie 8 ośrodkach na terenie Polski. Wsparcie informatyczne w przypadku potrzeby dostosowania struktury danych do potrzeb zamawiającego.
+3.	Przedmiot zamówienia został szczegółowo opisany w Opisie przedmiotu zamówienia (załącznik nr 1 do SWZ), Formularzu ofertowym (załącznik nr 2 do SWZ), Formularzu asortymentowo-cenowym (załącznik nr 3 do SWZ). Zamawiający wymaga, by oferowany sprzęt (dostarczany w ramach Etapu II realizacji zadania) spełniał wymogi zawarte w Formularzu asortymentowo-cenowym.  Szczegółowe warunki i zasady realizacji umowy określa Wzór umowy (załącznik nr 5 do SWZ).
+4.	Zamawiający podaje kwotę, jaką zamierza przeznaczyć na sfinansowanie zamówienia, która wynosi brutto: 1 507 000, 00 zł
+5.	Miejsce dostawy: maksymalnie 8 ośrodków na terenie Polski 
+</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">supplies</cbc:ProcurementTypeCode>
+      <cac:RequestedTenderTotal>
+         <cbc:EstimatedOverallContractAmount currencyID="PLN">1544390.16</cbc:EstimatedOverallContractAmount>
+      </cac:RequestedTenderTotal>
+      <cac:MainCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">48000000</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">33155000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:RealizedLocation>
+         <cbc:Description languageID="POL">ZAMÓWIENIA UZUPEŁNIAJĄCE
+Zamawiający przewiduje możliwość udzielania zamówień uzupełniających, o których mowa w art. 214 ust. 1 pkt 8 Pzp. Wartość zamówień uzupełniających nie przekroczy 20 % wartości zamówienia podstawowego. Zakres zamówienia uzupełniającego może dotyczyć wszystkich elementów wchodzących w skład zamówienia podstawowego, w zależności od zapotrzebowania Zamawiającego. Zamówienie uzupełniające będzie udzielone w cenach jednostkowych wynikających z zamówienia podstawowego, proporcjonalnie do zamówienia uzupełniającego.
+Wartość zamówienia podstawowego: 1 286 991,80 zł
+Wartość zamówienia uzupełniającego do 20% wartości zamówienia podstawowego tj.: 257 398,36 zł
+Razem wartość netto zamówienia: 1 544 390,16 zł
+</cbc:Description>
+         <cac:Address>
+            <cbc:StreetName>Uniwersytet Medyczny im. Piastów Śląskich we Wrocławiu</cbc:StreetName>
+            <cbc:AdditionalStreetName>Wybrzeże Ludwika Pasteura 1</cbc:AdditionalStreetName>
+            <cbc:CityName>Wrocław</cbc:CityName>
+            <cbc:PostalZone>50-367</cbc:PostalZone>
+            <cbc:CountrySubentityCode listName="nuts">PL514</cbc:CountrySubentityCode>
+            <cac:Country>
+               <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+            </cac:Country>
+         </cac:Address>
+      </cac:RealizedLocation>
+   </cac:ProcurementProject>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+      <cac:TenderingTerms>
+         <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+         <cac:AwardingTerms>
+            <cac:AwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>60</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="POL">Cena realizacji przedmiotu zamówienia</cbc:Name>
+                  <cbc:Description languageID="POL">Cena brutto realizacji przedmiotu zamówienia  – 60 % 
+Sposób oceny: Najniższa cena oferty / Cena oferty badanej  x 60
+</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>40</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="POL">Prezentacja funkcjonalności oferowanego systemu</cbc:Name>
+                  <cbc:Description languageID="POL">Prezentacja funkcjonalności oferowanego systemu poprzez demonstrację systemu informatycznego on-line oraz na podstawie złożonego do oferty scenariusza, przygotowanego w formie pliku (w formatach: PDF lub doc) 
+W ramach tego kryterium Zamawiający przyzna punkty za prezentację oferowanego systemu informatycznego, która ma na celu zweryfikowanie zgodności funkcjonalności systemu z wymaganiami określonymi w SWZ. 
+Ocenie podlegać będzie działanie oferowanego systemu w zakresie następujących funkcjonalności:
+1)	funkcjonalności urządzeń zintegrowanych z systemem według wymagań podanych w rozdziale I pkt. 1 i 2 w Opisie przedmiotu zamówienia (zał. nr 1 do SWZ)  - maks. 10 pkt.
+2)	system serwerowy dający możliwość zdalnego zlecania zadań rehabilitacyjnych oraz zdalnego nadzoru nad aktywnością pacjenta na smartfonach - maks. 10 pkt.
+3)	możliwość pomiarów podczas kwalifikacji pacjenta, zapisu wizyt kontrolnych oraz ankiet - maks. 10 pkt.
+4)	intuicyjność interfejsu i ergonomia rozwiązania - maks. 10 pkt.
+Sposób oceny: dla każdego z powyższych elementów członkowie Komisji Przetargowej (za wyjątkiem Przewodniczącego i sekretarza Komisji przetargowej)  ocenią, czy zaprezentowane funkcjonalności spełniają wymagania SWZ w skali:
+0 pkt. –   funkcjonalność nie została zaprezentowana lub nie spełnia wymagań SWZ,
+5 pkt. –   funkcjonalność częściowo zgodna 
+z wymaganiami SWZ,
+10 pkt. – funkcjonalność w pełni zgodna z wymaganiami SWZ.
+Ocena zostanie udokumentowana na Kartach oceny prezentacji oraz protokole, w którym członkowie Komisji Przetargowej wpiszą swoje uwagi i przyznane punkty.
+W przypadku braku scenariusza przygotowanego w formie pliku (w formatach: PDF lub doc) oferta zostanie odrzucona, ponieważ jej treść będzie niezgodna z warunkami zamówienia
+</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+            </cac:AwardingCriterion>
+         </cac:AwardingTerms>
+         <cac:AdditionalInformationParty>
+            <cac:PartyIdentification>
+               <cbc:ID>ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:AdditionalInformationParty>
+         <cac:AppealTerms>
+            <cac:PresentationPeriod>
+               <cbc:Description languageID="POL">1.	Środki ochrony prawnej przysługują Wykonawcy oraz innemu podmiotowi, jeżeli ma lub miał interes w uzyskaniu zamówienia oraz poniósł lub może ponieść szkodę w wyniku naruszenia przez Zamawiającego przepisów Pzp.
+2.	Środki ochrony prawnej wobec ogłoszenia wszczynającego postępowanie o udzielenie zamówienia oraz dokumentów zamówienia, przysługują również organizacjom wpisanym na listę organizacji uprawnionych do wnoszenia środków ochrony prawnej, prowadzoną przez Prezesa Urzędu Zamówień Publicznych oraz Rzecznikowi Małych i Średnich Przedsiębiorców
+3.	Terminy wnoszenia odwołania: 
+1)	Odwołanie wnosi się w terminie 10 dni od dnia przekazania informacji o czynności Zamawiającego stanowiącej podstawę jego wniesienia, jeżeli informacja została przekazana przy użyciu środków komunikacji elektronicznej lub 15 dni od dnia przekazania informacji o czynności Zamawiającego stanowiącej podstawę jego wniesienia, jeżeli informacja została przekazana w inny sposób; 
+2)	Odwołanie wobec treści ogłoszenia wszczynającego postępowanie o udzielenie zamówienia lub wobec treści dokumentów zamówienia, wnosi się w terminie 10 dni od dnia publikacji ogłoszenia w Dzienniku Urzędowym Unii Europejskiej lub zamieszczenia dokumentów zamówienia na stronie internetowej; 
+3)	Odwołanie w przypadkach innych niż określone w ppkt. 1 i 2 wnosi się w terminie 10 dni od dnia, w którym powzięto lub przy zachowaniu należytej staranności można było powziąć wiadomość o okolicznościach stanowiących podstawę jego wniesienia. 
+4)	Jeżeli Zamawiający mimo takiego obowiązku nie przesłał Wykonawcy zawiadomienia 
+o wyborze najkorzystniejszej oferty, odwołanie wnosi się w terminie:
+	30 dni od dnia publikacji w Dzienniku Urzędowym Unii Europejskiej ogłoszenia o udzieleniu zamówienia,
+	6 miesięcy od dnia zawarcia umowy, jeżeli Zamawiający nie opublikował 
+w Dzienniku Urzędowym Unii Europejskiej ogłoszenia o udzieleniu zamówienia.  
+4.	Terminy oblicza się według przepisów prawa cywilnego. Jeżeli koniec terminu do wykonania czynności przypada na dzień uznany ustawowo za wolny od pracy lub na sobotę, termin upływa następnego dnia, który nie jest dniem wolnym od pracy ani sobotą. 
+5.	Odwołanie przysługuje na: 
+1)	niezgodną z przepisami ustawy czynność Zamawiającego, podjętą w postępowaniu 
+o udzielenie zamówienia, w tym na projektowane postanowienie umowy; 
+2)	zaniechanie czynności w postępowaniu o udzielenie zamówienia, do której Zamawiający był obowiązany na podstawie ustawy; 
+3)	zaniechanie przeprowadzenia postępowania o udzielenie zamówienia na podstawie ustawy, mimo że Zamawiający był do tego obowiązany. 
+6.	Odwołanie wnosi się do Prezesa Krajowej Izby Odwoławczej. 
+7.	Odwołujący przekazuje Zamawiającemu odwołanie wniesione w formie elektronicznej albo postaci elektronicznej albo kopię tego odwołania, jeżeli zostało ono wniesione w formie pisemnej, przed upływem terminu do wniesienia odwołania w taki sposób, aby mógł on zapoznać się z jego treścią przed upływem tego terminu. 
+8.	Pisma w postępowaniu odwoławczym wnosi się w formie pisemnej albo w formie elektronicznej albo w postaci elektronicznej, z tym, że odwołanie i przystąpienie do postępowania odwoławczego, wniesione w postaci elektronicznej, wymagają opatrzenia podpisem zaufanym.
+9.	Pisma w formie pisemnej wnosi się za pośrednictwem operatora pocztowego, w rozumieniu ustawy z dnia 23 listopada 2012 r. - Prawo pocztowe, osobiście, za pośrednictwem posłańca, a pisma w postaci elektronicznej wnosi się przy użyciu środków komunikacji elektronicznej, w tym na adres do doręczeń elektronicznych, o którym mowa w art. 2 pkt 1 Ustawy z dnia 18. 11. 2020 r. o doręczeniach elektronicznych (tekst jedn. - Dz. U. z 2024 r., poz. 1045 
+z późn.zm.).  
+10.	Na orzeczenie Krajowej Izby Odwoławczej oraz postanowienie Prezesa Krajowej Izby Odwoławczej, o którym mowa w art. 519 ust. 1 Pzp, stronom oraz uczestnikom postępowania odwoławczego przysługuje skarga do sądu. W postępowaniu toczącym się wskutek wniesienia skargi stosuje się odpowiednio przepisy ustawy z dnia 17 listopada 1964 r. - Kodeks postępowania cywilnego o apelacji, jeżeli przepisy Pzp nie stanowią inaczej. 
+11.	Skargę wnosi się do Sądu Okręgowego w Warszawie - sądu zamówień publicznych, 
+za pośrednictwem Prezesa Krajowej Izby Odwoławczej, w terminie 14 dni od dnia doręczenia orzeczenia Krajowej Izby Odwoławczej lub postanowienia Prezesa Krajowej Izby Odwoławczej, o którym mowa w art. 519 ust. 1 Pzp, przesyłając jednocześnie jej odpis przeciwnikowi skargi. Złożenie skargi w placówce pocztowej operatora wyznaczonego w rozumieniu Ustawy z dnia 23 listopada 2012 r. - Prawo pocztowe albo wysłanie na adres do doręczeń elektronicznych, 
+o którym mowa w art. 2 pkt 1 Ustawy z dnia 18. 11. 2020 r.  o doręczeniach elektronicznych, jest równoznaczne z jej wniesieniem. Prezes Krajowej Izby Odwoławczej przekazuje skargę wraz z aktami postępowania odwoławczego do sądu zamówień publicznych w terminie 7 dni od dnia jej otrzymania. 
+12.	Szczegółowe informacje dotyczące środków ochrony prawnej określone są w Dziale IX „Środki ochrony prawnej” Pzp.
+</cbc:Description>
+            </cac:PresentationPeriod>
+            <cac:AppealInformationParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0003</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealInformationParty>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0003</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+         </cac:AppealTerms>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+         <cac:AuctionTerms>
+            <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+         </cac:AuctionTerms>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:ID schemeName="InternalID">AZP.260.72.2025.PN</cbc:ID>
+         <cbc:Name languageID="POL">72.2025 Dostawa oprogramowania serwerowego oraz aplikacji mobilnej wraz ze szkoleniem z systemu teleinformatycznego oraz dostawą sprzętu do monitorowania rehabilitacji w domu – projekt pn. "Ocena wpływu telerehabilitacji krążeniowo-oddechowej na sprawność ogólną i jakość życia pacjentów z tętniczym nadciśnieniem płucnym"</cbc:Name>
+         <cbc:Description languageID="POL">1.	Przedmiotem zamówienia jest: Dostawa oprogramowania serwerowego oraz aplikacji mobilnej wraz ze szkoleniem z systemu teleinformatycznego oraz dostawą sprzętu do monitorowania rehabilitacji w domu – projekt pn. "Ocena wpływu telerehabilitacji krążeniowo-oddechowej na sprawność ogólną i jakość życia pacjentów z tętniczym nadciśnieniem płucnym" (umowa nr  2024/ABM/01/00069).
+2.	Krótki opis przedmiotu zamówienia: Przedmiotowe zamówienie podzielone jest na etapy:
+1)	Etap I - Dostawa, wdrożenie systemu do ewidencjonowania pacjentów z możliwością zdalnego zlecania zadań rehabilitacyjnych,  zdalnego nadzoru nad aktywnością pacjenta oraz agregującego dane z urządzeń medycznych, składającego się z oprogramowania serwerowego oraz aplikacji mobilnej na iOS oraz Android.
+2)	Etap II – Dostawa  sprzętu medycznego, w tym infrastruktury badawczej – dostawa sukcesywna.
+3)	Etap III – Szkolenie u Zamawiającego na terenie miasta Wrocławia oraz w maksymalnie 7 innych ośrodkach na terenie Polski w terminie i miejscu przez niego wyznaczonym.
+4)	Etap IV - Utrzymanie systemu do ewidencjonowania pacjentów z możliwością zdalnego zlecania zadań rehabilitacyjnych, zdalnego nadzoru nad aktywnością pacjenta oraz agregującego dane z urządzeń medycznych, składającego się z oprogramowania serwerowego oraz aplikacji mobilnej na iOS oraz Android. Wsparcie konsultanta online - w maksymalnie 8 ośrodkach na terenie Polski. Wsparcie informatyczne w przypadku potrzeby dostosowania struktury danych do potrzeb zamawiającego.
+3.	Przedmiot zamówienia został szczegółowo opisany w Opisie przedmiotu zamówienia (załącznik nr 1 do SWZ), Formularzu ofertowym (załącznik nr 2 do SWZ), Formularzu asortymentowo-cenowym (załącznik nr 3 do SWZ). Zamawiający wymaga, by oferowany sprzęt (dostarczany w ramach Etapu II realizacji zadania) spełniał wymogi zawarte w Formularzu asortymentowo-cenowym.  Szczegółowe warunki i zasady realizacji umowy określa Wzór umowy (załącznik nr 5 do SWZ).
+4.	Zamawiający podaje kwotę, jaką zamierza przeznaczyć na sfinansowanie zamówienia, która wynosi brutto: 1 507 000, 00 zł
+5.	Miejsce dostawy: maksymalnie 8 ośrodków na terenie Polski 
+</cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">supplies</cbc:ProcurementTypeCode>
+         <cac:RequestedTenderTotal>
+            <cbc:EstimatedOverallContractAmount currencyID="PLN">1544390.16</cbc:EstimatedOverallContractAmount>
+         </cac:RequestedTenderTotal>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">48000000</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">33155000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:RealizedLocation>
+            <cac:Address>
+               <cbc:StreetName>Uniwersytet Medyczny im. Piastów Śląskich we Wrocławiu </cbc:StreetName>
+               <cbc:AdditionalStreetName>Wybrzeże Ludwika Pasteura 1</cbc:AdditionalStreetName>
+               <cbc:CityName>Wrocław</cbc:CityName>
+               <cbc:PostalZone>50-367</cbc:PostalZone>
+               <cbc:CountrySubentityCode listName="nuts">PL514</cbc:CountrySubentityCode>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+         <cac:PlannedPeriod>
+            <cbc:EndDate>2028-08-31+02:00</cbc:EndDate>
+         </cac:PlannedPeriod>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+   <cac:TenderResult>
+      <cbc:AwardDate>2000-01-01Z</cbc:AwardDate>
+   </cac:TenderResult>
+</ContractAwardNotice>

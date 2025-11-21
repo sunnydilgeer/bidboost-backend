@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractAwardNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractAwardNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+   <ext:UBLExtensions>
+      <ext:UBLExtension>
+         <ext:ExtensionContent>
+            <efext:EformsExtension>
+               <efac:NoticeResult>
+                  <cbc:TotalAmount currencyID="PLN">6747.97</cbc:TotalAmount>
+                  <efac:LotResult>
+                     <cbc:ID schemeName="result">RES-0001</cbc:ID>
+                     <cbc:TenderResultCode listName="winner-selection-status">selec-w</cbc:TenderResultCode>
+                     <efac:LotTender>
+                        <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                     </efac:LotTender>
+                     <efac:SettledContract>
+                        <cbc:ID schemeName="contract">CON-0001</cbc:ID>
+                     </efac:SettledContract>
+                     <efac:TenderLot>
+                        <cbc:ID schemeName="Lot">LOT-0015</cbc:ID>
+                     </efac:TenderLot>
+                  </efac:LotResult>
+                  <efac:LotTender>
+                     <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                     <cac:LegalMonetaryTotal>
+                        <cbc:PayableAmount currencyID="PLN">6747.97</cbc:PayableAmount>
+                     </cac:LegalMonetaryTotal>
+                     <efac:TenderingParty>
+                        <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+                     </efac:TenderingParty>
+                     <efac:TenderLot>
+                        <cbc:ID>LOT-0015</cbc:ID>
+                     </efac:TenderLot>
+                     <efac:TenderReference>
+                        <cbc:ID>Techmiar</cbc:ID>
+                     </efac:TenderReference>
+                  </efac:LotTender>
+                  <efac:SettledContract>
+                     <cbc:ID schemeName="contract">CON-0001</cbc:ID>
+                     <cbc:IssueDate>2025-11-13+01:00</cbc:IssueDate>
+                     <efac:ContractReference>
+                        <cbc:ID>Techmiar p.15</cbc:ID>
+                     </efac:ContractReference>
+                     <efac:LotTender>
+                        <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                     </efac:LotTender>
+                  </efac:SettledContract>
+                  <efac:TenderingParty>
+                     <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+                     <cbc:Name>Techmiar</cbc:Name>
+                     <efac:Tenderer>
+                        <cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+                     </efac:Tenderer>
+                  </efac:TenderingParty>
+               </efac:NoticeResult>
+               <efac:NoticeSubType>
+                  <cbc:SubTypeCode listName="notice-subtype">E4</cbc:SubTypeCode>
+               </efac:NoticeSubType>
+               <efac:Organizations>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://www.gov.pl/web/kowr</cbc:WebsiteURI>
+                        <cbc:EndpointID>https://kowr.eb2b.com.pl/</cbc:EndpointID>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Krajowy Ośrodek Wsparcia Rolnictwa Oddział Terenowy we Wrocławiu</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>ul. Mińska 60</cbc:StreetName>
+                           <cbc:CityName>Wrocław</cbc:CityName>
+                           <cbc:PostalZone>54-610</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL514</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>REGON 367849538</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Name>Krajowy Ośrodek Wsparcia Rolnictwa Oddział Terenowy we Wrocławiu</cbc:Name>
+                           <cbc:Telephone>(+48) 71 35 63 919</cbc:Telephone>
+                           <cbc:ElectronicMail>zamowienia.publiczne.wroclaw@kowr.gov.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://www.gov.pl/web/uzp/krajowa-izba-odwolawcza</cbc:WebsiteURI>
+                        <cbc:EndpointID>https://epuap.gov.pl/wps/portal/strefa-klienta/katalog-spraw/opis-uslugi/odwolanie-do-krajowej-izby-odwolawczej/UZP</cbc:EndpointID>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Krajowa Izba Odwoławcza</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>ul. Postępu 17A</cbc:StreetName>
+                           <cbc:Department>Biuro Odwołań</cbc:Department>
+                           <cbc:CityName>Warszawa</cbc:CityName>
+                           <cbc:PostalZone>02-676</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL911</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>010828091</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>(+48) 22 458 78 01</cbc:Telephone>
+                           <cbc:ElectronicMail>odwolania@uzp.gov.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">„Techmiar” s.c. Usługi Geodezyjne</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>al. Rzeczypospolitej nr 25</cbc:StreetName>
+                           <cbc:CityName>Legnica</cbc:CityName>
+                           <cbc:PostalZone>59-220</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL516</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>6910203200</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efbc:NaturalPersonIndicator>false</efbc:NaturalPersonIndicator>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://op.europa.eu</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0000</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Publications Office of the European Union</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:CityName>Luxembourg</cbc:CityName>
+                           <cbc:PostalZone>2417</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">LU000</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">LUX</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>PUBL</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+352 29291</cbc:Telephone>
+                           <cbc:ElectronicMail>ted@publications.europa.eu</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+               </efac:Organizations>
+            <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00761665-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+         </ext:ExtensionContent>
+      </ext:UBLExtension>
+   </ext:UBLExtensions>
+   <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+   <cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+   <cbc:ID schemeName="notice-id">70766060-7213-4eed-ba7e-4e9166adbdba</cbc:ID>
+   <cbc:ContractFolderID>36a1e5e9-a2c0-4e80-8f16-8b9a66c55b68</cbc:ContractFolderID>
+   <cbc:IssueDate>2025-11-14Z</cbc:IssueDate>
+   <cbc:IssueTime>10:55:49Z</cbc:IssueTime>
+   <cbc:VersionID>01</cbc:VersionID>
+   <cbc:RegulatoryDomain>other</cbc:RegulatoryDomain>
+   <cbc:NoticeTypeCode listName="result">can-standard</cbc:NoticeTypeCode>
+   <cbc:NoticeLanguageCode listName="language">POL</cbc:NoticeLanguageCode>
+   <cac:ContractingParty>
+      <cbc:BuyerProfileURI>https://www.gov.pl/web/kowr</cbc:BuyerProfileURI>
+      <cac:ContractingPartyType>
+         <cbc:PartyTypeCode listName="buyer-legal-type">cga</cbc:PartyTypeCode>
+      </cac:ContractingPartyType>
+      <cac:ContractingActivity>
+         <cbc:ActivityTypeCode listName="authority-activity">econ-aff</cbc:ActivityTypeCode>
+      </cac:ContractingActivity>
+      <cac:Party>
+         <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+         </cac:PartyIdentification>
+         <cac:ServiceProviderParty>
+            <cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode>
+            <cac:Party>
+               <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0000</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:Party>
+         </cac:ServiceProviderParty>
+      </cac:Party>
+   </cac:ContractingParty>
+   <cac:TenderingTerms>
+      <cac:ProcurementLegislationDocumentReference>
+         <cbc:ID>dyrektywa 2014/24/UE</cbc:ID>
+      </cac:ProcurementLegislationDocumentReference>
+   </cac:TenderingTerms>
+   <cac:TenderingProcess>
+      <ext:UBLExtensions>
+         <ext:UBLExtension>
+            <ext:ExtensionContent>
+               <efext:EformsExtension>
+                  <efbc:ProcedureRelaunchIndicator>false</efbc:ProcedureRelaunchIndicator>
+               </efext:EformsExtension>
+            </ext:ExtensionContent>
+         </ext:UBLExtension>
+      </ext:UBLExtensions>
+      <cbc:ProcedureCode listName="procurement-procedure-type">open</cbc:ProcedureCode>
+      <cac:NoticeDocumentReference>
+         <cbc:ID schemeName="ojs-notice-id">409218-2025</cbc:ID>
+      </cac:NoticeDocumentReference>
+      <cac:ProcessJustification>
+         <cbc:ProcessReasonCode listName="accelerated-procedure">false</cbc:ProcessReasonCode>
+      </cac:ProcessJustification>
+   </cac:TenderingProcess>
+   <cac:ProcurementProject>
+      <cbc:ID schemeName="InternalID">WRO.WO.260.12.2025</cbc:ID>
+      <cbc:Name languageID="POL">Usługi geodezyjne w zakresie sporządzenia dokumentacji geodezyjno-kartograficznej dla nieruchomości Zasobu WRSP będących we władaniu
+KOWR OT we Wrocławiu” postępowanie znak WRO.WO.260.17.2025</cbc:Name>
+      <cbc:Description languageID="POL">Przedmiotem zamówienia są usługi geodezyjne w zakresie sporządzenia dokumentacji geodezyjno-kartograficznej na nieruchomościach Zasobu WRSP będących we władaniu KOWR OT we Wrocławiu, polegające m.in. na: podziale nieruchomości, ustaleniu linii brzegu wody płynącej i wznowieniu/ustaleniu znaków granicznych. 
+Zamówienie podzielono na 74 odrębne przedmioty zamówienia. Szczegółowy opis usług do wykonania zgodnie z założeniami technicznymi przedstawiono w załączniku nr 10 do SWZ „Wykaz nieruchomości do podziału’’ oraz dokumentacji stanowiącej załącznik nr 11 do SWZ. Pozostałe warunki realizacji zamówienia zawarte są w projektowanych postanowieniach umowy, które zostaną wprowadzone do treści umowy stanowiących załączniki nr 9a i 9b do SWZ. Z
+Wymagane dokumenty do dostarczenia przez Wykonawcę w ramach realizacji zamówienia - niezbędne do odbioru usług:
+1)	     projekt podziału nieruchomości rolnej poświadczony przez Starostę za zgodność z doku-mentem przyjętym do państwowego zasobu geodezyjnego i kartograficznego - dla po-działu w trybie rolnym;
+2)	    6 egzemplarzy mapy z projektem podziału nieruchomości wraz z wykazem zmian grunto-wych oraz kopią protokołu przyjęcia granic nieruchomości podlegającej podziałowi – po-świadczony przez Starostę za zgodność z dokumentem przyjętym do państwowego zaso-bu geodezyjnego i kartograficznego – dla podziału w trybie decyzyjnym; 
+3)	    projekt rozgraniczenia gruntów pokrytych wodą płynącą od gruntów przyległych, poświad-czony przez Starostę za zgodność z dokumentem przyjętym do państwowego zasobu geodezyjnego i kartograficznego - dla ustalenia linii brzegu;
+4)	    kopię wykazu zmian danych ewidencyjnych dla zmiany powierzchni, rodzaju i powierzchni użytków wydanego przez właściwy ośrodek dokumentacji geodezyjnej poświadczonego przez Starostę za zgodność z dokumentami przyjętymi do państwowego zasobu geode-zyjnego i kartograficznego lub zawiadomienia o zmianach w danych ewidencyjnych – w przypadku aktualizacji tych danych; 
+5)	     kopię protokołu wznowienia lub wyznaczenia znaków granicznych / ustalenia przebiegu granic - wydanego przez właściwy ośrodek dokumentacji geodezyjnej poświadczonego przez Starostę za zgodność z dokumentami przyjętymi do państwowego zasobu geode-zyjnego i kartograficznego – w przypadku przeprowadzenia tych czynności;    
+6)	    potwierdzenie złożenia wniosku o wprowadzenie zmian danych ewidencji gruntów i budyn-ków – dla podziału w trybie rolnym.
+Przedmioty zamówienia nie mogą być dzielone przez Wykonawców, oferty nie zawierające pełnego zakresu przedmiotu zamówienia określonego w zadaniu częściowym zostaną odrzucone.
+Maksymalny termin realizacji zamówienia wynosi:
+•	dla przedmiotu 40 – 220 dni kalendarzowych od dnia zawarcia umowy 
+•	dla przedmiotu 3, 19, 53-54, 56-57 – 140 dni kalendarzowych od dnia zawarcia umowy 
+•	dla przedmiotu 4, 9, 13-14, 29, 39, 41-42, 48, 50-52 – 130 dni kalendarzowych od dnia zawarcia umowy (dotyczy również każdego zlecenia składającego się na przedmiot)
+•	dla przedmiotu 6-8, 10-12, 21-23, 25-28, 30-38, 43-47, 49 – 120 dni kalendarzowych od dnia zawarcia umowy (dotyczy również każdego zlecenia składającego się na przedmiot)
+•	dla przedmiotu 1-2, 5, 15-17, 20, 55, 58-74 – 110 dni kalendarzowych od dnia zawarcia umowy (dotyczy również każdego zlecenia składającego się na przedmiot)
+•	dla przedmiotu  18: 140 dni kalendarzowych od dnia zawarcia umowy dla 3 zlecenia 
+  130 dni kalendarzowych od dnia zawarcia umowy dla 1 i 2 zlecenia
+•	dla przedmiotu 24: 140 dni kalendarzowych od dnia zawarcia umowy dla 1 i 3  zlecenia 
+ 110 dni kalendarzowych od dnia zawarcia umowy dla 2 zlecenia
+Termin wykonania zamówienia stanowi jedno z kryteriów wyboru oferty, w którym Wykonawca może uzyskać maksymalnie 20 pkt za skrócenie terminu maksymalnego
+Do terminów wykonania zamówienia nie wlicza się terminów od złożenia kompletnego wniosku do organu w celu wydania postanowienia/decyzji do dnia, w którym postanowienie/decyzja staną się ostateczne. Wykonawca będzie zobowiązany do udowodnienia Zamawiającemu terminu złożenia do właściwego organu kompletnego wniosku o wydanie postanowienia, decyzji. Brak dowodów będzie działał na niekorzyść Wykonawcy w sprawie ustalenia okresu  zawieszenia biegu terminu    wykonania zamówienia.
+</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+      <cbc:Note languageID="POL">O udzielenie zamówienia mogą ubiegać się Wykonawcy, którzy nie podlegają wykluczeniu: z art. 108 ust. 1 ustawy PZP; z art. 109 ust.1 pkt 4, 8 i 10 ustawy PZP, z art. 7 ust. 1 ustawy z dnia 13 kwietnia 2022 roku o szczególnych rozwiązaniach w zakresie przeciwdziałania wspieraniu agresji na Ukrainę oraz służących ochronie bezpieczeństwa narodowego; z art. 5k rozporządzenia Rady (UE) nr 833/2014 z dnia 31 lipca 2014 r. dotyczącego środków ograniczających w związku z działaniami Rosji destabilizującymi sytuację na Ukrainie (dalej: rozporządzenie 833/2014) w brzmieniu nadanym rozporządzeniem Rady (UE) 2022/576 z dnia 8 kwietnia 2022 r. w sprawie zmiany rozporządzenia 833/2014. Wykonawca składa ofertę sporządzoną przy wykorzystaniu wzoru formularza ofertowego stanowiącego załącznik nr 1 do SWZ. Oferta musi być sporządzona w języku polskim, w formie elektronicznej i opatrzona kwalifikowanym podpisem elektronicznym. Sposób i termin złożenia oferty opisano w ust. 10 SWZ. Do oferty, każdy wykonawca musi dołączyć następujące oświadczenia:
+1) oświadczenie w zakresie potwierdzenia braku podstaw do wykluczenia z postępowania o udzielenie zamówienia publicznego oraz spełniania warunków udziału w postępowaniu na dzień składania ofert, o którym mowa w art. 125 ust. 1 ustawy PZP na formularzu jednolitego europejskiego dokumentu zamówienia (JEDZ), sporządzonym zgodnie ze wzorem standardowego formularza określonego w rozporządzeniu wykonawczym Komisji (UE) 2016/7 z dnia 5 stycznia 2016 r. ustanawiającym standardowy formularz jednolitego europejskiego dokumentu zamówienia - Załącznik nr 2 do SWZ. W przypadku oferty wspólnej każdy wykonawca składa JEDZ
+a)	JEDZ sporządza się w postaci elektronicznej i podpisuje kwalifikowanym podpisem elektronicznym.
+b)	W przypadku wspólnego ubiegania się o zamówienie przez wykonawców, oświadczenie (JEDZ) składa każdy z wykonawców
+c)	Oświadczenia (JEDZ) stanowią dowód potwierdzający brak podstaw wykluczenia oraz spełnianie warunków na dzień składania ofert, tymczasowo zastępujący wymagane podmiotowe środki dowodowe.
+d)	Zamawiający informuje, że Wykonawca przy wypełnianiu oświadczenia  (JEDZ) może wykorzystać narzędzie dostępne na stronie internetowej https://espd.uzp.gov.pl/filter?lang=pl lub inne dostępne narzędzia lub oprogramowania, które umożliwiają wypełnienie jednolitego dokumentu i utworzeniu dokumentu elektronicznego.
+e)	W celu wypełnienia jednolitego dokumentu, korzystając z serwisu ESPD należy wykonać kolejno następujące czynności: 
+•	pobrać na dysk lokalny plik jednolitego dokumentu w formacie XML stanowiący Załącznik nr 2 do SWZ; 
+•	w pytaniu „Kim jesteś?” zaznaczyć opcję „Jestem wykonawcą”; 
+•	w pytaniu „Co chcesz zrobić?” zaznaczyć opcję „zaimportować ESPD”; 
+•	załadować z dysku lokalnego pobrany plik jednolitego dokumentu; 
+•	w pytaniu „Gdzie znajduje się siedziba Państwa przedsiębiorstwa?” wybrać państwo Wyko-nawcy i przejść dalej, do wypełniania jednolitego dokumentu. 
+f)	Instrukcja wypełnienia JEDZ/ESPD, forma, zawartość i inne informacje dostępne są na stronie internetowej Urzędu Zamówień Publicznych,
+g)	W części II - sekcja B „Informacje na temat przedstawicieli wykonawcy” nie ma obowiązku wypełniania informacji dotyczącej daty i miejsca urodzenia,
+h)	W części III – Wykonawca wypełnia wszystkie sekcje,
+i)	W części IV - Wykonawca może ograniczyć się do wypełnienia w części IV sekcji  i  nie  musi wypełniać żadnej z pozostałych sekcji w części IV.
+2) oświadczenie dotyczące przesłanek wykluczenia z postępowania o udzielenie zamówienia publicznego na podstawie art. 5k rozporządzenia 833/2014 w brzmieniu nadanym rozporządzeniem 2022/576 - zgodne co do treści z załącznikiem nr 3 do SWZ.
+W przypadku wspólnego ubiegania się o zamówienie przez wykonawców, oświadczenie (załącznik nr 3 do SWZ) składa każdy z wykonawców.
+12.3 Oferta powinna składać się z:
+1)  Formularza ofertowego wraz z ceną oferty - Załącznik nr 1 do SWZ,
+2) oświadczenia w zakresie potwierdzenia braku podstaw do wykluczenia oraz spełniania warunków udziału w postępowaniu na dzień składania ofert (JEDZ) – załącznik nr 2 do SWZ –patrz ust. 12.2 pkt 1 SWZ 
+3) oświadczenia wykonawcy dotyczącego przesłanek wykluczenia z postępowania o udzielenie zamówienia publicznego na podstawie art. 5k rozporządzenia 833/2014 w brzmieniu nadanym rozporządzeniem 2022/576 - załączniki nr 3 do SWZ – patrz ust. 12.2 pkt 2 SWZ
+4) Oświadczenia, o którym mowa w art. 117 ust. 4 ustawy Pzp z którego wynika, które usługi wykonają wykonawcy wspólnie ubiegający się o zamówienie (w tym w formie spółki cywilnej) – załącznik nr 4 do SWZ
+5) Pełnomocnictwa (jeżeli umocowanie osoby, podpisującej ofertę lub dokumenty/oświadczenia składanie z ofertą, nie wynika z dokumentów rejestrowych),
+6) Zobowiązania podmiotu trzeciego udostępniającego zasoby do oddania mu do dyspozycji niezbędnych zasobów na potrzeby realizacji danego zamówienia lub innego podmiotowego środka dowodowego potwierdzającego, że wykonawca realizując zamówienie, będzie dysponował niezbędnymi zasobami tych podmiotów (jeżeli dotyczy),
+W przypadku wspólnego ubiegania się o zamówienie (w tym prowadzący działalność w formie spółki cywilnej) każdy z wykonawców wspólnie ubiegających się musi dołączyć do oferty, oświadczenie o spełnianiu warunków udziału w postępowaniu oraz o niepodleganiu wykluczeniu - Załącznik nr 2 i 3 do SWZ. Wykonawcy wspólnie ubiegający się o zamówienie (w tym prowadzący działalność w formie spółki cywilnej) zobowiązani są do dołączenia do oferty oświadczenia, z którego wynika, które części usługi wykonają – zgodnie co do treści z Załącznikiem nr 4 do SWZ.  
+Zgodnie z dyspozycją art. 139 ust. 1 ustawy PZP Zamawiający najpierw dokona badania i oceny ofert, a następnie dokona kwalifikacji podmiotowej wykonawcy, którego oferta została najwyżej oceniona, w zakresie braku podstaw wykluczenia i spełniania warunków udziału.
+Zamawiający przed wyborem najkorzystniejszej oferty wzywa Wykonawcę, którego oferta została najwyżej oceniona, do złożenia w wyznaczonym terminie, nie krótszym niż 10 dni, aktualnych na dzień złożenia podmiotowych środków dowodowych na potwierdzenie braku podstaw do wykluczenia tj. 
+3)	informacji z Krajowego Rejestru Karnego w zakresie:
+a) art. 108 ust. 1 pkt 1 (osoba fizyczna) i 2 (podmiot zbiorowy) ustawy z dnia 11 września 2019 r. – Prawo zamówień publicznych,
+b) art. 108 ust. 1 pkt 4 (podmiot zbiorowy) ustawy, dotyczącej orzeczenia zakazu ubiegania się o zamówienie publiczne tytułem środka karnego,
+– sporządzonej nie wcześniej niż 6 miesięcy przed jej złożeniem;
+W przypadku oferty wspólnej informację składa każdy z Wykonawców.
+4)	oświadczenia Wykonawcy, w zakresie art. 108 ust. 1 pkt 5 ustawy, o braku przynależności do tej samej grupy kapitałowej w rozumieniu ustawy z dnia 16 lutego 2007 r. o ochronie konkurencji i konsumentów (Dz. U. z 2020 r. poz. 1076 z późn. zm.), z innym Wykonawcą, który złożył odrębną ofertę, albo oświadczenia o przynależności do tej samej grupy kapita-łowej wraz z dokumentami lub informacjami potwierdzającymi przygotowanie oferty nieza-leżnie od innego Wykonawcy należącego do tej samej grupy kapitałowej – zgodnego co do treści z załącznikiem nr 7 do SWZ.
+5)	odpisu lub informacji z Krajowego Rejestru Sądowego lub z Centralnej Ewidencji i Infor-macji o Działalności Gospodarczej, w zakresie art. 109 ust. 1 pkt 4 ustawy, sporządzonych nie wcześniej niż 3 miesiące przed jej złożeniem, jeżeli odrębne przepisy wymagają wpisu do rejestru lub ewidencji; 
+W przypadku oferty wspólnej odpis lub informację składa każdy z Wykonawców.
+6)	oświadczenia Wykonawcy o aktualności informacji zawartych w oświadczeniu JEDZ, o któ-rym mowa w art. 125 ust. 1 ustawy PZP, w zakresie podstaw wykluczenia z postępowania wskazanych przez zamawiającego, o których mowa w: 
+a) art. 108 ust. 1 pkt 3 ustawy, 
+b) art. 108 ust. 1 pkt 4 ustawy, dotyczących orzeczenia zakazu ubiegania się o zamówienie publiczne tytułem środka zapobiegawczego, 
+c) art. 108 ust. 1 pkt 5 ustawy, dotyczących zawarcia z innymi wykonawcami porozumienia mającego na celu zakłócenie konkurencji, 
+d) art. 108 ust. 1 pkt 6 ustawy, 
+e) art. 109 ust. 1 pkt 7-8 i 10 ustawy,
+f) art. 7 ust. 1 ustawy z dnia 13 kwietnia 2022 roku o szczególnych rozwiązaniach w zakresie przeciwdziałania wspieraniu agresji na Ukrainę oraz służących ochronie bezpieczeństwa narodowego:
+– zgodnego co do treści z załącznikiem nr 8 do SWZ.
+Podmiotowe środki dowodowe na spełnianie warunków udziału w skazano przy poszczególnych częściach zamówienia</cbc:Note>
+      <cac:RequestedTenderTotal>
+         <cbc:EstimatedOverallContractAmount currencyID="PLN">572600</cbc:EstimatedOverallContractAmount>
+      </cac:RequestedTenderTotal>
+      <cac:MainCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">71332000</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:RealizedLocation>
+         <cac:Address>
+            <cbc:CountrySubentityCode listName="nuts">PL518</cbc:CountrySubentityCode>
+            <cac:Country>
+               <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+            </cac:Country>
+         </cac:Address>
+      </cac:RealizedLocation>
+   </cac:ProcurementProject>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0015</cbc:ID>
+      <cac:TenderingTerms>
+         <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+         <cac:AwardingTerms>
+            <cac:AwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>80</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="POL">Cena brutto za przedmiot zamówienia</cbc:Name>
+                  <cbc:Description languageID="POL">Kryterium „Cena brutto za przedmiot zamówienia” (Kc) – waga 80 % 
+Ocena: Łączna cena brutto za wykonanie przedmiotu zamówienia
+Wartość punktowa  wyliczana jest wg wzoru:
+           Cn
+Kc = --------   x  R
+           Cb
+Gdzie: 
+Kc        -  liczba punktów ocenianej oferty dla kryterium ceny brutto za przedmiot zamówienia,
+Cn        -  cena oferty z najniższą ceną za przedmiot zamówienia,
+Cb        -  cena oferty za przedmiot zamówienia z badanej oferty,
+R          -  ranga kryterium ceny za usługi stanowiące przedmiot zamówienia (0,80).
+</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>20</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="POL">Termin wykonania przedmiotu zamówienia</cbc:Name>
+                  <cbc:Description languageID="POL">Kryterium „Termin wykonania przedmiotu zamówienia” (Kt) – waga 20 % 
+19.3.1 Zamawiający przyzna Wykonawcy punkty za skrócenie terminu wykonania przedmiotu zamówienia.
+19.3.2 Za skrócenie terminu o każdy dzień kalendarzowy od podanego wymaganego terminu maksymalnego (ust. 6 SWZ) przydzielone zostanie po 1 pkt. – maksymalnie można uzyskać 20 punktów za skrócenie terminu o 20 dni kalendarzowe.
+19.3.3 Zamawiający oceni oferty w niniejszym kryterium na podstawie informacji wskazanej przez Wykonawcę w ofercie.
+19.3.4 W przypadku, gdy Wykonawca nie wskaże w ofercie terminu wykonania poszczególnego przedmiotu zamówienia Zamawiający uzna, iż Wykonawca zrealizuje je w wymaganym maksy-malnym terminie.
+19.3.5 Oferty, w których Wykonawca zaproponuje termin wykonania przedmiotu zamówienia dłuższy niż maksymalny wymagany będą podlegały odrzuceniu na podstawie art. 226 ust. 1 pkt 5 ustawy Prawo zamówień publicznych, gdyż treść oferty jest niezgodna z warunkami zamó-wienia.
+</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+            </cac:AwardingCriterion>
+         </cac:AwardingTerms>
+         <cac:AdditionalInformationParty>
+            <cac:PartyIdentification>
+               <cbc:ID>ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:AdditionalInformationParty>
+         <cac:AppealTerms>
+            <cac:PresentationPeriod>
+               <cbc:Description languageID="POL">23.1 Środki ochrony prawnej określone w dziale IX ustawy PZP przysługują wykonawcy, innemu podmiotowi, jeżeli ma lub miał interes w uzyskaniu zamówienia oraz poniósł lub może ponieść szkodę w wyniku naruszenia przez zamawiającego przepisów ustawy PZP.
+23.2 	Postępowanie odwoławcze jest prowadzone w języku polskim.
+23.3 	Pisma składane w toku postępowania odwoławczego przez strony oraz uczestników postępowania odwoławczego wnosi się z odpisami dla stron oraz uczestników postępowania odwoławczego, jeżeli pisma te składane są w formie pisemnej.
+23.4 	Pisma w postępowaniu odwoławczym wnosi się w formie pisemnej albo w formie elektronicznej albo w postaci elektronicznej, z tym że odwołanie i przystąpienie do postępowania odwoławczego, wniesione w postaci elektronicznej, wymagają opatrzenia podpisem zaufanym. Pisma w formie pisemnej wnosi się za pośrednictwem operatora pocztowego, w rozumieniu ustawy z dnia 23 listopada 2012 r. – Prawo pocztowe, osobiście, za pośrednictwem posłańca, a pisma w postaci elektronicznej wnosi się przy użyciu środków komunikacji elektronicznej.
+23.5 	Odwołanie przysługuje na: 
+1) 	niezgodną z przepisami ustawy czynność zamawiającego, podjętą w postępowaniu o udzielenie zamówienia, w tym na projektowane postanowienie umowy; 
+2) 	zaniechanie czynności w postępowaniu o udzielenie zamówienia, do której zamawiający był obowiązany na podstawie ustawy; 
+23.6 	Odwołanie wnosi się do Prezesa Krajowej Izby Odwoławczej.
+23.7 	Odwołujący przekazuje zamawiającemu odwołanie wniesione w formie elektronicznej albo postaci elektronicznej albo kopię tego odwołania, jeżeli zostało ono wniesione w formie pisemnej, przed upływem terminu do wniesienia odwołania w taki sposób, aby mógł on zapoznać się z jego treścią przed upływem tego terminu.
+23.8 	Odwołanie wnosi się w terminie:
+1)	10 dni od dnia przekazania informacji o czynności zamawiającego stanowiącej podstawę jego wniesienia, jeżeli informacja została przekazana przy użyciu środków komunikacji elektronicznej,
+2)	15 dni od dnia przekazania informacji o czynności zamawiającego stanowiącej podstawę jego wniesienia, jeżeli informacja została przekazana w sposób inny niż określony w pkt 1;
+23.9 	Odwołanie wobec treści ogłoszenia wszczynającego postępowanie o udzielenie zamówienia lub wobec treści dokumentów zamówienia wnosi się w terminie 10 dni od dnia publikacji ogłoszenia w Dzienniku Urzędowym Unii Europejskiej lub zamieszczenia dokumentów zamówienia na stronie internetowej.
+23.10 Odwołanie w przypadkach innych niż określone w ust. 23.10 i 23.11 SWZ wnosi się w terminie 10 dni od dnia, w którym powzięto lub przy zachowaniu należytej staranności można było powziąć wiadomość o okolicznościach stanowiących podstawę jego wniesienia.
+23.11 Jeżeli koniec terminu do wykonania czynności przypada na sobotę lub dzień ustawowo wolny od pracy, termin upływa dnia następnego po dniu lub dniach wolnych od pracy.
+23.12 Na orzeczenie Krajowej Izby Odwoławczej oraz postanowienie Prezesa KIO, o którym mowa w art. 519 ust. 1 ustawy PZP stronom oraz uczestnikom postępowania odwoławczego przysługuje skarga do sądu. Skargę wnosi się do sądu okręgowego właściwego dla siedziby zamawiającego.
+23.13 Skargę wnosi się za pośrednictwem Prezesa Krajowej Izby Odwoławczej w terminie 14 dni od dnia doręczenia orzeczenia Krajowej Izby Odwoławczej lub postanowienia Prezesa KIO, o którym mowa w art. 519 ust. 1 ustawy PZP, przesyłając jednocześnie jej odpis przeciwnikowi skargi. Złożenie skargi w placówce pocztowej operatora wyznaczonego w rozumieniu ustawy  z dnia 23 listopada 2012 roku – Prawo Pocztowe jest równoznaczne z jej wniesieniem.
+23.14 Szczegółowe informacje dotyczące środków ochrony prawnej określone są w dziale IX ustawy PZP.
+</cbc:Description>
+            </cac:PresentationPeriod>
+            <cac:AppealInformationParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealInformationParty>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+         </cac:AppealTerms>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <ext:UBLExtensions>
+            <ext:UBLExtension>
+               <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                     <efbc:ProcedureRelaunchIndicator>false</efbc:ProcedureRelaunchIndicator>
+                  </efext:EformsExtension>
+               </ext:ExtensionContent>
+            </ext:UBLExtension>
+         </ext:UBLExtensions>
+         <cac:AuctionTerms>
+            <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+         </cac:AuctionTerms>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:ID schemeName="InternalID">Przedmiot 15</cbc:ID>
+         <cbc:Name languageID="POL">Przedmiot 15 podział na działki o średniej  pow. ok.  18 ha, (max pow.  27,24 ha), z uwzględneiniem naturalnych granic, przeszkód  i dojazdu, - projekt do uzgodnienia</cbc:Name>
+         <cbc:Description languageID="POL">Szczegółowy opis usług do wykonania zgodnie z założeniami technicznymi przedstawiono w załączniku nr 10 do SWZ „Wykaz nieruchomości do podziału’’ oraz dokumentacji stanowiącej załącznik nr 11 do SWZ. Pozostałe warunki realizacji zamówienia zawarte są w projektowanych postanowieniach umowy, stanowiących załączniki nr 9a i 9b do SWZ. 
+Wymagane dokumenty  niezbędne do odbioru usług:
+1)	     projekt podziału nieruchomości rolnej poświadczony przez Starostę za zgodność z dokumentem przyjętym do państwowego zasobu geodezyjnego i kartograficznego - dla po-działu w trybie rolnym;
+2)	    6 egzemplarzy mapy z projektem podziału nieruchomości wraz z wykazem zmian gruntowych oraz kopią protokołu przyjęcia granic nieruchomości podlegającej podziałowi – po-świadczony przez Starostę za zgodność z dokumentem przyjętym do państwowego zasobu geodezyjnego i kartograficznego – dla podziału w trybie decyzyjnym; 
+3)	    kopię wykazu zmian danych ewidencyjnych dla zmiany powierzchni, rodzaju i powierzchni użytków wydanego przez właściwy ośrodek dokumentacji geodezyjnej poświadczonego przez Starostę za zgodność z dokumentami przyjętymi do państwowego zasobu geodezyjnego i kartograficznego lub zawiadomienia o zmianach w danych ewidencyjnych – w przypadku aktualizacji tych danych; 
+4)	     kopię protokołu wznowienia lub wyznaczenia znaków granicznych / ustalenia przebiegu granic - wydanego przez właściwy ośrodek dokumentacji geodezyjnej poświadczonego przez Starostę za zgodność z dokumentami przyjętymi do państwowego zasobu geodezyjnego i kartograficznego – w przypadku przeprowadzenia tych czynności;    
+5)	    potwierdzenie złożenia wniosku o wprowadzenie zmian danych ewidencji gruntów i budynków – dla podziału w trybie rolnym.
+Założenia techniczne - Podział geodezyjny nieruchomości rolnych („w trybie rolnym”)
+1)	    badanie stanu prawnego nieruchomości, w tym badanie zapisów miejscowego planu zago-spodarowania przestrzennego, a w przypadku jego braku zapisów studium uwarunkowań i kierunków zagospodarowania przestrzennego lub decyzji o warunkach zabudowy.
+2)	    wykonanie projektu podziału nieruchomości i przedstawienie go Zamawiającemu do akcep-tacji. 
+3)	    wznowienie punktów granicznych lub  ustalenie granic nieruchomości objętej podziałem.
+4)	    sporządzenie protokołu z czynności wznowienia lub ustalenia granic oraz utrwalenia punktów granicznych. 
+5)	    sporządzenie zgłoszenia zmian danych ewidencji gruntów i przedstawienie go Zamawiają-cemu do podpisu.
+6)	     aktualizacja ewidencji gruntów i budynków oraz mapy zasadniczej o niezbędne do podziału elementy zagospodarowania terenu w zakresie nieruchomości podlegającej podziałowi jeśli mapa zasadnicza jest prowadzona.
+7)	     sporządzenie operatu technicznego z podziału i złożenie go do kontroli w ośrodku doku-mentacji geodezyjnej i kartograficznej.
+8)	     przekazanie Zamawiającemu dokumentów wymienionych w wykazie usług geodezyjnych i innych dokumentów wymaganych umową.
+a) podział nieruchomości zgodnie z miejscowym planem zagospodarowania przestrzennego lub decyzją o warunkach zabudowy, decyzją o lokalizacji inwestycji celu publicznego lub przepisów szczególnych w tym zakresie: 
+1)	    badanie stanu prawnego nieruchomości, w tym w szczególności zapisów miejscowego planu zagospodarowania   przestrzennego gminy.
+2)	    sporządzenie wstępnego projektu podziału nieruchomości i przekazanie go Zamawiające-mu do akceptacji wraz z mapą ewidencyjną, wypisem z rejestru gruntów oraz odpisem z księgi wieczystej. Po zaakceptowaniu wstępnego projektu podziału Zamawiający wystąpi do wójta, burmistrza lub prezydenta miasta z wnioskiem o podział nieruchomości. 
+3)	     w przypadku negatywnej opinii o zgodności wstępnego projektu z ustaleniami miejsco-wego planu zagospodarowania przestrzennego gminy ponowne sporządzenie zaakcepto-wanego  wstępnego projektu podziału w celu uzyskania pozytywnej opinii gminy. 
+4)	    przyjęcie granic nieruchomości objętej podziałem. 
+5)	    sporządzenie zgłoszenia zmian danych ewidencji gruntów i przedstawienie go Zamawiają-cemu do podpisu, jeśli zachodzi taka konieczność. 
+6)	    aktualizacja ewidencji gruntów i budynków oraz mapy zasadniczej w zakresie wymaganym przez rozporządzenie Rady Ministrów w sprawie sposobu i trybu dokonywania podziałów nieruchomości jeśli jest prowadzona dla nieruchomości podlegającej podziałowi.
+7)	    sporządzenie protokołu z czynności przejęcia granic.
+8)	    wykonanie mapy z projektem podziału nieruchomości. 
+9)	    sporządzenie operatu technicznego z podziału (I etap) i złożenie go do kontroli w ośrodku.
+10)	przekazanie do gminy lub miasta projektów podziałów oraz kopii protokołu przyjęcia granic nieruchomości z klauzulą przyjęcia do zasobu lub przekazanie w/w dokumentów Zamawia-jącemu celem przesłania ich z pismem przewodnim do gminy lub miasta.
+11)	przekazanie Zamawiającemu dokumentów wymienionych w wykazie usług geodezyjnych  i innych dokumentów wymaganych umową.
+</cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+         <cbc:Note languageID="POL">Wykonawca jest związany ofertą nie dłużej do 22.10.2025 roku. </cbc:Note>
+         <cac:RequestedTenderTotal>
+            <cbc:EstimatedOverallContractAmount currencyID="PLN">5700</cbc:EstimatedOverallContractAmount>
+         </cac:RequestedTenderTotal>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">71332000</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:RealizedLocation>
+            <cac:Address>
+               <cbc:CountrySubentityCode listName="nuts">PL516</cbc:CountrySubentityCode>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+         <cac:PlannedPeriod>
+            <cbc:DurationMeasure unitCode="DAY">110</cbc:DurationMeasure>
+         </cac:PlannedPeriod>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+   <cac:TenderResult>
+      <cbc:AwardDate>2000-01-01Z</cbc:AwardDate>
+   </cac:TenderResult>
+</ContractAwardNotice>

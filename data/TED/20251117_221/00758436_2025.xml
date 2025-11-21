@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractAwardNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractAwardNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:xsi="http://www.w3.org/2001/XMLSchema">
+  <ext:UBLExtensions>
+    <ext:UBLExtension>
+      <ext:ExtensionContent>
+        <efext:EformsExtension>
+          <efbc:TransmissionDate>2025-11-12+01:00</efbc:TransmissionDate>
+          <efbc:TransmissionTime>15:08:09+01:00</efbc:TransmissionTime>
+          <efac:NoticeResult>
+            <cbc:TotalAmount currencyID="HUF">711800000.00</cbc:TotalAmount>
+            <efac:LotResult>
+              <cbc:ID schemeName="result">RES-0001</cbc:ID>
+              <cbc:TenderResultCode listName="winner-selection-status">selec-w</cbc:TenderResultCode>
+              <efac:AppealRequestsStatistics>
+                <efbc:StatisticsCode listName="review-type">complainants</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:AppealRequestsStatistics>
+              <efac:AppealRequestsStatistics>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:AppealRequestsStatistics>
+              <efac:LotTender>
+                <cbc:ID schemeName="tender">TEN-0643</cbc:ID>
+              </efac:LotTender>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">part-req</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">tenders</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>1</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-esubm</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>1</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-micro</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-small</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>1</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-med</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-sme</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>1</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-oth-eea</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-no-eea</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-verif-inad</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-verif-inad-low</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-no-verif</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:SettledContract>
+                <cbc:ID schemeName="contract">CON-0001</cbc:ID>
+              </efac:SettledContract>
+              <efac:TenderLot>
+                <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+              </efac:TenderLot>
+            </efac:LotResult>
+            <efac:LotTender>
+              <cbc:ID schemeName="tender">TEN-0643</cbc:ID>
+              <cbc:RankCode>1</cbc:RankCode>
+              <efbc:TenderRankedIndicator>true</efbc:TenderRankedIndicator>
+              <efbc:TenderVariantIndicator>false</efbc:TenderVariantIndicator>
+              <cac:LegalMonetaryTotal>
+                <cbc:PayableAmount currencyID="HUF">711800000.00</cbc:PayableAmount>
+              </cac:LegalMonetaryTotal>
+              <efac:SubcontractingTerm>
+                <efbc:TermCode listName="applicability">no</efbc:TermCode>
+              </efac:SubcontractingTerm>
+              <efac:TenderingParty>
+                <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+              </efac:TenderingParty>
+              <efac:TenderLot>
+                <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+              </efac:TenderLot>
+              <efac:TenderReference>
+                <cbc:ID>EKR001138102025/0643</cbc:ID>
+              </efac:TenderReference>
+            </efac:LotTender>
+            <efac:SettledContract>
+              <cbc:ID schemeName="contract">CON-0001</cbc:ID>
+              <cbc:AwardDate>2025-09-12+01:00</cbc:AwardDate>
+              <cbc:IssueDate>2025-10-27+01:00</cbc:IssueDate>
+              <cbc:URI>https://ekr.gov.hu/ekr-szerzodestar/hu/szerzodesLista?eljarasAzon=EKR001138102025</cbc:URI>
+              <efac:ContractReference>
+                <cbc:ID>1</cbc:ID>
+              </efac:ContractReference>
+              <efac:LotTender>
+                <cbc:ID schemeName="tender">TEN-0643</cbc:ID>
+              </efac:LotTender>
+            </efac:SettledContract>
+            <efac:TenderingParty>
+              <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+              <efac:Tenderer>
+                <cbc:ID schemeName="organization">ORG-0007</cbc:ID>
+              </efac:Tenderer>
+            </efac:TenderingParty>
+          </efac:NoticeResult>
+          <efac:NoticeSubType>
+            <cbc:SubTypeCode listName="notice-subtype">30</cbc:SubTypeCode>
+          </efac:NoticeSubType>
+          <efac:Organizations>
+            <efac:Organization>
+              <efbc:AcquiringCPBIndicator>false</efbc:AcquiringCPBIndicator>
+              <efbc:AwardingCPBIndicator>false</efbc:AwardingCPBIndicator>
+              <efac:Company>
+                <cbc:WebsiteURI>https://www.mavcsoport.hu</cbc:WebsiteURI>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <cbc:Name languageID="HUN">MÁV Személyszállítási Zártkörűen Működő Részvénytársaság</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>Üllői Út 131.</cbc:StreetName>
+                  <cbc:CityName>Budapest</cbc:CityName>
+                  <cbc:PostalZone>1091</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">HU110</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">HUN</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID>13834492244</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Name>Kovács Máté András</cbc:Name>
+                  <cbc:Telephone>+36 30155 6352</cbc:Telephone>
+                  <cbc:Telefax>+36 15114542</cbc:Telefax>
+                  <cbc:ElectronicMail>kovacs.mate.andras@mavcsoport.hu</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+            <efac:Organization>
+              <efac:Company>
+                <cbc:WebsiteURI>https://dkuzrt.hu/</cbc:WebsiteURI>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <cbc:Name languageID="HUN">Digitális Kormányzati Ügynökség Zártkörűen Működő Részvénytársaság</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>Váci Út 35.</cbc:StreetName>
+                  <cbc:CityName>Budapest</cbc:CityName>
+                  <cbc:PostalZone>1134</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">HU110</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">HUN</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID>26698180241</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Name>Dr. Bűrös András</cbc:Name>
+                  <cbc:Telephone>+36 706859091</cbc:Telephone>
+                  <cbc:ElectronicMail>buros.andras@dkuzrt.hu</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+            <efac:Organization>
+              <efac:Company>
+                <cbc:WebsiteURI>https://ipps.hu/</cbc:WebsiteURI>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <cbc:Name languageID="HUN">IPPS Innovative Public Procurement Solutions Zártkörűen Működő Részvénytársaság</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>Szabadság Utca 43.</cbc:StreetName>
+                  <cbc:CityName>Nyúl</cbc:CityName>
+                  <cbc:PostalZone>9082</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">HU221</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">HUN</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID>26143790208</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Name>Dr. Morison Márk</cbc:Name>
+                  <cbc:Telephone>+36 306514561</cbc:Telephone>
+                  <cbc:Telefax>+36 17002293</cbc:Telefax>
+                  <cbc:ElectronicMail>morison.mark@ipps.hu</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+            <efac:Organization>
+              <efbc:ListedOnRegulatedMarketIndicator>false</efbc:ListedOnRegulatedMarketIndicator>
+              <efac:UltimateBeneficialOwner>
+                <cbc:ID schemeName="ubo">UBO-0007</cbc:ID>
+              </efac:UltimateBeneficialOwner>
+              <efac:Company>
+                <cbc:WebsiteURI>https://www.pega.hu</cbc:WebsiteURI>
+                <efbc:CompanySizeCode listName="economic-operator-size">small</efbc:CompanySizeCode>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0007</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <cbc:Name languageID="HUN">PEGACONSULT Tanácsadó Korlátolt Felelősségű Társaság</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>Mérleg Utca 7.</cbc:StreetName>
+                  <cbc:CityName>Balatonfüred</cbc:CityName>
+                  <cbc:PostalZone>8230</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">HU213</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">HUN</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID>12903412219</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Telephone>+36 17881022</cbc:Telephone>
+                  <cbc:Telefax>+36 17822166</cbc:Telefax>
+                  <cbc:ElectronicMail>hr@pega.hu</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+            <efac:Organization>
+              <efac:Company>
+                <cbc:WebsiteURI>https://kozbeszerzes.hu</cbc:WebsiteURI>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0005</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <cbc:Name languageID="HUN">Közbeszerzési Hatóság Közbeszerzési Döntőbizottság</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>Riadó u. 5</cbc:StreetName>
+                  <cbc:CityName>Budapest</cbc:CityName>
+                  <cbc:PostalZone>1026</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">HU110</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">HUN</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID>EKRSZ_40664534_2</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Telephone>+36 18828592</cbc:Telephone>
+                  <cbc:Telefax>+36 18828593</cbc:Telefax>
+                  <cbc:ElectronicMail>dontobizottsag@kt.hu</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+            <efac:Organization>
+              <efac:Company>
+                <cbc:WebsiteURI>https://kozbeszerzes.hu</cbc:WebsiteURI>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0006</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <cbc:Name languageID="HUN">Közbeszerzési Hatóság</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>Riadó utca 5.</cbc:StreetName>
+                  <cbc:CityName>Budapest</cbc:CityName>
+                  <cbc:PostalZone>1026</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">HU110</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">HUN</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID>EKRSZ_40664534</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Telephone>+36 18828635</cbc:Telephone>
+                  <cbc:ElectronicMail>hirdetmeny@kt.hu</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+            <efac:UltimateBeneficialOwner>
+              <cbc:ID schemeName="ubo">UBO-0007</cbc:ID>
+              <efac:Nationality>
+                <cbc:NationalityID>HUN</cbc:NationalityID>
+              </efac:Nationality>
+            </efac:UltimateBeneficialOwner>
+          </efac:Organizations>
+        <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00758436-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+      </ext:ExtensionContent>
+    </ext:UBLExtension>
+  </ext:UBLExtensions>
+  <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+  <cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+  <cbc:ID schemeName="notice-id">40641055-6ce4-4b34-b4e7-75f2c3d438de</cbc:ID>
+  <cbc:ContractFolderID>7d3dbcd3-bcd0-4fa5-a0a4-77b89e70807c</cbc:ContractFolderID>
+  <cbc:IssueDate>2025-11-14+01:00</cbc:IssueDate>
+  <cbc:IssueTime>09:40:57+01:00</cbc:IssueTime>
+  <cbc:VersionID>02</cbc:VersionID>
+  <cbc:RegulatoryDomain>32014L0025</cbc:RegulatoryDomain>
+  <cbc:NoticeTypeCode listName="result">can-standard</cbc:NoticeTypeCode>
+  <cbc:NoticeLanguageCode>HUN</cbc:NoticeLanguageCode>
+  <cac:ContractingParty>
+    <cac:ContractingPartyType>
+      <cbc:PartyTypeCode listName="buyer-legal-type">body-pl</cbc:PartyTypeCode>
+    </cac:ContractingPartyType>
+    <cac:ContractingActivity>
+      <cbc:ActivityTypeCode listName="authority-activity">gen-pub</cbc:ActivityTypeCode>
+    </cac:ContractingActivity>
+    <cac:ContractingActivity>
+      <cbc:ActivityTypeCode listName="entity-activity">rail</cbc:ActivityTypeCode>
+    </cac:ContractingActivity>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:ServiceProviderParty>
+        <cbc:ServiceTypeCode listName="organisation-role">serv-prov</cbc:ServiceTypeCode>
+        <cac:Party>
+          <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+          </cac:PartyIdentification>
+        </cac:Party>
+      </cac:ServiceProviderParty>
+      <cac:ServiceProviderParty>
+        <cbc:ServiceTypeCode listName="organisation-role">serv-prov</cbc:ServiceTypeCode>
+        <cac:Party>
+          <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+          </cac:PartyIdentification>
+        </cac:Party>
+      </cac:ServiceProviderParty>
+      <cac:ServiceProviderParty>
+        <cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode>
+        <cac:Party>
+          <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0006</cbc:ID>
+          </cac:PartyIdentification>
+        </cac:Party>
+      </cac:ServiceProviderParty>
+    </cac:Party>
+  </cac:ContractingParty>
+  <cac:TenderingProcess>
+    <cbc:Description languageID="HUN">Ajánlatkérő a közbeszerzési eljárást a Kbt. 81. §-a szerinti uniós nyílt közbeszerzési eljárás szabályai szerint folytatja le.</cbc:Description>
+    <cbc:ProcedureCode listName="procurement-procedure-type">open</cbc:ProcedureCode>
+    <cac:NoticeDocumentReference>
+      <cbc:ID schemeName="ojs-notice-id">501189-2025</cbc:ID>
+    </cac:NoticeDocumentReference>
+    <cac:ProcessJustification>
+      <cbc:ProcessReasonCode listName="accelerated-procedure">false</cbc:ProcessReasonCode>
+    </cac:ProcessJustification>
+  </cac:TenderingProcess>
+  <cac:ProcurementProject>
+    <cbc:ID schemeName="InternalID">EKR001138102025</cbc:ID>
+    <cbc:Name languageID="HUN">VONTAT rendszer üzemeltetés, karbantartás</cbc:Name>
+    <cbc:Description languageID="HUN">A VONTAT rendszer komplex üzemeltetése, support végzése, valamint a VONTAT rendszer részét képező rendszerek komplex bővítése, a Megrendelő által igényelt fejlesztések útján tárgyában. Az üzemeltetési feladatokat Nyertes Ajánlattevő havi üzemeltetési díj ellenében végzi a szerződés hatálya alatt, mely feladat vonatkozásában Ajánlatkérő 100%-os lehívási kötelezettséget vállal. A Rendszerfejlesztési feladatok megrendelésére az Ajánlatkérő Eseti Megrendelés leadása útján, a szerződéstervezet 4.2. pontjában meghatározott 450 mérnöknap erejéig jogosult.</cbc:Description>
+    <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+    <cac:MainCommodityClassification>
+      <cbc:ItemClassificationCode listName="cpv">72267000</cbc:ItemClassificationCode>
+    </cac:MainCommodityClassification>
+    <cac:RealizedLocation>
+      <cac:Address>
+        <cbc:StreetName>Üllői</cbc:StreetName>
+        <cbc:AdditionalStreetName>út</cbc:AdditionalStreetName>
+        <cbc:CityName>Budapest</cbc:CityName>
+        <cbc:PostalZone>1091</cbc:PostalZone>
+        <cbc:CountrySubentityCode listName="nuts">HU110</cbc:CountrySubentityCode>
+        <cac:AddressLine>
+          <cbc:Line>131.</cbc:Line>
+        </cac:AddressLine>
+        <cac:Country>
+          <cbc:IdentificationCode listName="country">HUN</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:RealizedLocation>
+  </cac:ProcurementProject>
+  <cac:ProcurementProjectLot>
+    <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+    <cac:TenderingTerms>
+      <ext:UBLExtensions>
+        <ext:UBLExtension>
+          <ext:ExtensionContent>
+            <efext:EformsExtension>
+              <efac:StrategicProcurement>
+                <efbc:ApplicableLegalBasis listName="ipi-scope">false</efbc:ApplicableLegalBasis>
+              </efac:StrategicProcurement>
+              <efac:StrategicProcurement>
+                <efbc:ApplicableLegalBasis listName="cvd-scope">false</efbc:ApplicableLegalBasis>
+              </efac:StrategicProcurement>
+            </efext:EformsExtension>
+          </ext:ExtensionContent>
+        </ext:UBLExtension>
+      </ext:UBLExtensions>
+      <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+      <cac:AwardingTerms>
+        <cac:AwardingCriterion>
+          <cbc:Description languageID="HUN">Az értékelés szempontja a Kbt. 76. § (2) bek. c) pontja alapján a legjobb ár-érték arány. Az ajánlatok értékelési szempont szerinti tartalmi elemeinek értékelésekor az adható pontszám alsó/felső határa: 0-100 pont. Az értékelés módszere az 1.a-b értékelési szempontok (ár) esetében fordított arányosítás, a 2.-5. minőségi értékelési szempontok esetében arányosítás.</cbc:Description>
+          <cac:SubordinateAwardingCriterion>
+            <ext:UBLExtensions>
+              <ext:UBLExtension>
+                <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                    <efac:AwardCriterionParameter>
+                      <efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+                      <efbc:ParameterNumeric>5</efbc:ParameterNumeric>
+                    </efac:AwardCriterionParameter>
+                  </efext:EformsExtension>
+                </ext:ExtensionContent>
+              </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+            <cbc:Description languageID="HUN">2. A felhívás III.4.1.) BT-750 M/2. a) pontjában bemutatott szakember alkalmassági követelményben előírt 24 hónap feletti szakmai többlettapasztalata (minimum 0 hónap – maximum 36 hónap)</cbc:Description>
+          </cac:SubordinateAwardingCriterion>
+          <cac:SubordinateAwardingCriterion>
+            <ext:UBLExtensions>
+              <ext:UBLExtension>
+                <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                    <efac:AwardCriterionParameter>
+                      <efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+                      <efbc:ParameterNumeric>5</efbc:ParameterNumeric>
+                    </efac:AwardCriterionParameter>
+                  </efext:EformsExtension>
+                </ext:ExtensionContent>
+              </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+            <cbc:Description languageID="HUN">3. A felhívás III.4.1.) BT-750 M/2. b) pontjában bemutatott szakember alkalmassági követelményben előírt 24 hónap feletti szakmai többlettapasztalata (minimum 0 hónap – maximum 36 hónap)</cbc:Description>
+          </cac:SubordinateAwardingCriterion>
+          <cac:SubordinateAwardingCriterion>
+            <ext:UBLExtensions>
+              <ext:UBLExtension>
+                <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                    <efac:AwardCriterionParameter>
+                      <efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+                      <efbc:ParameterNumeric>5</efbc:ParameterNumeric>
+                    </efac:AwardCriterionParameter>
+                  </efext:EformsExtension>
+                </ext:ExtensionContent>
+              </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+            <cbc:Description languageID="HUN">4. A felhívás III.4.1.) BT-750 M/2. c) pontjában bemutatott szakember alkalmassági követelményben előírt 24 hónap feletti szakmai többlettapasztalata (minimum 0 hónap – maximum 36 hónap)</cbc:Description>
+          </cac:SubordinateAwardingCriterion>
+          <cac:SubordinateAwardingCriterion>
+            <ext:UBLExtensions>
+              <ext:UBLExtension>
+                <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                    <efac:AwardCriterionParameter>
+                      <efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+                      <efbc:ParameterNumeric>5</efbc:ParameterNumeric>
+                    </efac:AwardCriterionParameter>
+                  </efext:EformsExtension>
+                </ext:ExtensionContent>
+              </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+            <cbc:Description languageID="HUN">5. A felhívás III.4.1.) BT-750 M/2. d) pontjában bemutatott szakember alkalmassági követelményben előírt 24 hónap feletti szakmai többlettapasztalata (minimum 0 hónap – maximum 36 hónap)</cbc:Description>
+          </cac:SubordinateAwardingCriterion>
+          <cac:SubordinateAwardingCriterion>
+            <ext:UBLExtensions>
+              <ext:UBLExtension>
+                <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                    <efac:AwardCriterionParameter>
+                      <efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+                      <efbc:ParameterNumeric>20</efbc:ParameterNumeric>
+                    </efac:AwardCriterionParameter>
+                  </efext:EformsExtension>
+                </ext:ExtensionContent>
+              </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+            <cbc:Description languageID="HUN">1/a. Rendszerfejlesztési feladatokra vonatkozó ajánlati ár (nettó Ft/embernap)</cbc:Description>
+          </cac:SubordinateAwardingCriterion>
+          <cac:SubordinateAwardingCriterion>
+            <ext:UBLExtensions>
+              <ext:UBLExtension>
+                <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                    <efac:AwardCriterionParameter>
+                      <efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+                      <efbc:ParameterNumeric>60</efbc:ParameterNumeric>
+                    </efac:AwardCriterionParameter>
+                  </efext:EformsExtension>
+                </ext:ExtensionContent>
+              </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+            <cbc:Description languageID="HUN">1/b. Üzemeltetési díj (nettó Ft/hó)</cbc:Description>
+          </cac:SubordinateAwardingCriterion>
+        </cac:AwardingCriterion>
+      </cac:AwardingTerms>
+      <cac:AdditionalInformationParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+        </cac:PartyIdentification>
+      </cac:AdditionalInformationParty>
+      <cac:AppealTerms>
+        <cac:PresentationPeriod>
+          <cbc:Description languageID="HUN">Kbt. 148 § -ában meghatározottak szerint.</cbc:Description>
+        </cac:PresentationPeriod>
+        <cac:AppealInformationParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0005</cbc:ID>
+          </cac:PartyIdentification>
+        </cac:AppealInformationParty>
+        <cac:AppealReceiverParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0005</cbc:ID>
+          </cac:PartyIdentification>
+        </cac:AppealReceiverParty>
+      </cac:AppealTerms>
+    </cac:TenderingTerms>
+    <cac:TenderingProcess>
+      <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+      <cac:AuctionTerms>
+        <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+      </cac:AuctionTerms>
+      <cac:ContractingSystem>
+        <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+      </cac:ContractingSystem>
+      <cac:ContractingSystem>
+        <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+      </cac:ContractingSystem>
+    </cac:TenderingProcess>
+    <cac:ProcurementProject>
+      <cbc:ID schemeName="InternalID">EKR001138102025/1</cbc:ID>
+      <cbc:Name languageID="HUN">VONTAT rendszer üzemeltetés, karbantartás</cbc:Name>
+      <cbc:Description languageID="HUN">Nyertes Ajánlattevő feladata a Megrendelőnél meglévő 5500 felhasználóból egyidejűleg 500 fő felhasználó hozzáférését biztosító, és legalább napi 150000 fő utast szállító, kötöttpályás közlekedés folyamatait támogató informatikai rendszereinek (VONTAT rendszer) komplex üzemeltetése, support végzése, valamint a VONTAT rendszer részét képező rendszerek komplex bővítése, a Megrendelő által igényelt fejlesztések útján. A VONTAT rendszerhez tartozó rendszerek listáját a műszaki leírás tartalmazza. A VONTAT rendszer Oracle adatbáziskezelőt használ. Az alkalmazás nyelve PHP, HTML5 és egyes elemeiben Android. A beszerzendő szolgáltatás célja, hogy biztosítsa a VONTAT rendszer megfelelő üzembiztonsági szintjét. A szolgáltatás keretében elvárás, hogy kiemelten kerüljön kezelésre a MÁV Személyszállítási Zrt. üzletmenete szempontjából kritikus eszköz működésbiztosítása. A Megrendelő elvárása, hogy a támogatás segítségével az informatikai szolgáltatások rendelkezésre állását veszélyeztető kockázatok mértéke csökkenjen. A feladat ellátása keretében alapvetően három típusú szolgáltatáselemet kell a Vállalkozónak teljesítenie: Üzemeltetés, Rendszerfejlesztés, A felsorolt szolgáltatáselemek az alábbi VONTAT rendszer elemekre és a társrendszerekhez kapcsolódó interfészekre vonatkoznak: VONTAT2 / MEGRENDELÉSEK Megrendelés-kezelő rendszer, a MÁV Személyszállítási Zrt.. vontatás szolgáltatás megrendeléseit fogadó és elbíráló rendszere. VONTAT2 / KONTROLING Vonatkésések. VONTAT3 Keretrendszer a VONTAT alkalmazások egységes működtetésére. VONTAT3 / TRES Rendkívüli események kezelése. Vasútbiztonsági kockázatkezelés eseményrögzítő és riportoló alkalmazása. VONTAT3 / VOFI Vonatfigyelő alkalmazás és vasúti közlekedés adat integrátor rendszer VONTAT3 / JIR Vasúti jármű követő, elektronikus vonatterhelési kimutatás készítő, járművek műszaki állapot rögzítő alkalmazása, személyszállítási utazószemélyzet tényadat kezelés (járműkövetés, személyzetirányítás) VONTAT3 / JIR eVTK mobilalkalmazás Utazószemélyzet és kocsivizsgálói személyzet napi tevékenységét rögzítő Androidos mobilalkalmazás. VONTAT3 / EMA2 Menetvonal megrendelő rendszer a KAPELLA2-höz. VONTAT3 / MENTA2 Menetrendtervező alkalmazás a KAPELLA2-höz. (menetrendtervezés) VONTAT3 / MTN2 Menetvonal naturália riport. VONTAT3 / VMK2 Vágányzári és Módosító Kiadmányok VONTAT3 / TAG3 Tényadat-kezelő rendszer. Az MFB/EMIG rendszerből vonatközlekedési tény adatokat vesz át, összeveti a megrendelés és menetrendi adatokkal, továbbítja a VONTAT rendszereknek. VONTAT3 / JIR GYSEV A MÁV Személyszállítási Zrt.. JIR rendszerének kiterjesztése a GYSEV-re VONTAT3 / INKA2 ETR IF-ek Törzsadatok, menetrendi adatok, vontatási és egyéb szolgáltatás megrendelések, szolgálattervek, vonatra tervezett járművek kezelése VONTAT3 / INKA2 SAP PM IF-ek Jármű törzsadatok, karbantartás terv adatok kezelése VONTAT3 / INKA2 EMIG IF-ek Vonat tényadatok, személyzet tényadatok kezelése VONTAT3 / SZET Szerelvény forduló tervező VONTAT A fel nem sorolt kapcsolódó interfészek (folyamatosan változó lista) Az üzemeltetési feladatokat Nyertes Ajánlattevő havi üzemeltetési díj ellenében végzi a szerződés hatálya alatt, mely feladat vonatkozásában Ajánlatkérő 100%-os lehívási kötelezettséget vállal. A Rendszerfejlesztési feladatok megrendelésére az Ajánlatkérő Eseti Megrendelés leadása útján, a szerződéstervezet 4.2. pontjában meghatározott 450 mérnöknap erejéig jogosult. A 321/2015. (X. 30.) Korm. rendelet (továbbiakban: R.) 46. § (3) bekezdésében foglaltakra tekintettel ajánlatkérő felhívja a figyelmet, hogy, amennyiben a közbeszerzés tárgyának egyértelmű és közérthető meghatározása szükségessé tette meghatározott gyártmányú, eredetű, típusú dologra, eljárásra, tevékenységre, személyre, szabadalomra vagy védjegyre való hivatkozást, a megnevezés csak a tárgyjellegének egyértelmű meghatározása érdekében történt, és megnevezés mellett a „vagy azzal egyenértékű” minden esetben értendő. Ajánlatkérő felhívja a figyelmet, hogy egyenértékű eszköz megajánlása esetén az egyenértékűséget az ajánlattevőnek az ajánlatában igazolnia kell. A részletes előírásokat a közbeszerzési dokumentumok, a műszaki leírás és a szerződéstervezet tartalmazza.</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+      <cbc:Note languageID="HUN">A BT-36 és OPA-36 mezők tekintetében Ajánlatkérő összhangban a szerződés 11. pontjával rögzíti, hogy a szerződés legkorábban 2025. szeptember 1. napján 00:00 órakor lép hatályba.</cbc:Note>
+      <cac:ProcurementAdditionalType>
+        <cbc:ProcurementTypeCode listName="strategic-procurement">none</cbc:ProcurementTypeCode>
+      </cac:ProcurementAdditionalType>
+      <cac:ProcurementAdditionalType>
+        <cbc:ProcurementTypeCode listName="environmental-impact">other</cbc:ProcurementTypeCode>
+      </cac:ProcurementAdditionalType>
+      <cac:ProcurementAdditionalType>
+        <cbc:ProcurementTypeCode listName="gpp-criteria">none</cbc:ProcurementTypeCode>
+      </cac:ProcurementAdditionalType>
+      <cac:MainCommodityClassification>
+        <cbc:ItemClassificationCode listName="cpv">72250000</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:RealizedLocation>
+        <cac:Address>
+          <cbc:StreetName>Üllői</cbc:StreetName>
+          <cbc:AdditionalStreetName>út</cbc:AdditionalStreetName>
+          <cbc:CityName>Budapest</cbc:CityName>
+          <cbc:PostalZone>1091</cbc:PostalZone>
+          <cbc:CountrySubentityCode listName="nuts">HU110</cbc:CountrySubentityCode>
+          <cac:AddressLine>
+            <cbc:Line>131.</cbc:Line>
+          </cac:AddressLine>
+          <cac:Country>
+            <cbc:IdentificationCode listName="country">HUN</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:RealizedLocation>
+      <cac:PlannedPeriod>
+        <cbc:DurationMeasure unitCode="MONTH">24</cbc:DurationMeasure>
+      </cac:PlannedPeriod>
+      <cac:ContractExtension>
+        <cbc:OptionsDescription languageID="HUN">A Mérnöknap-mennyiség 24 hónapos teljesítési időtartam lejárta előtti kimerülése esetén, Ajánlatkérőnek egyoldalú nyilatkozatával további 450 embernap Opciós Mérnöknap-mennyiség megrendelésére van lehetősége. Az Opciós Mérnöknap-mennyiség, vagy annak az alap, 24 hónapos teljesítési határidő alatt igénybe vett mértékével csökkentett része a teljesítési határidő 8 hónappal meghosszabbított időtartama alatt is bármikor felhasználható. Az opcióra vonatkozó további rendelkezéseket a szerződéstervezet tartalmazza.</cbc:OptionsDescription>
+        <cbc:MaximumNumberNumeric>1</cbc:MaximumNumberNumeric>
+        <cac:Renewal>
+          <cac:Period>
+            <cbc:Description languageID="HUN">A Szerződés a Felek között határozott, 24 (huszonnégy) hónapos időtartamra jön létre, azzal, hogy Ajánlatkérő egyoldalú döntése alapján jogosult a Szerződés időtartamát további 8 (nyolc) hónappal meghosszabbítani. Ajánlatkérő ezen döntését legkésőbb a Szerződés hatályba lépését követő 24 (huszonnégy) hónap lejáratát megelőző 30 (harminc) nappal korábban köteles Nyertes Ajánlattevőként szerződő féllel írásban közölni. A szerződés jelen rendelkezés alapján történő meghosszabbítása a Kbt. 141. § (4) bekezdés a) pontja szerinti jogalapra tekintettel történő módosulás, amely szerződésmódosítási kötelezettséget nem jelent. Ajánlatkérő kiköti, hogy a meghosszabbítás időtartama alatt Nyertes Ajánlattevőként szerződő fél az eredeti ajánlata szerinti díjakon köteles a teljesítésre. A díjak bárminemű módosítása esetén a Kbt. 141. § (4) bekezdés a) pontja nem alkalmazható.</cbc:Description>
+          </cac:Period>
+        </cac:Renewal>
+      </cac:ContractExtension>
+    </cac:ProcurementProject>
+  </cac:ProcurementProjectLot>
+  <cac:TenderResult>
+    <cbc:AwardDate>2000-01-01Z</cbc:AwardDate>
+  </cac:TenderResult>
+</ContractAwardNotice>

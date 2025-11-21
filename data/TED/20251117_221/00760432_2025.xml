@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractAwardNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractAwardNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+   <ext:UBLExtensions>
+      <ext:UBLExtension>
+         <ext:ExtensionContent>
+            <efext:EformsExtension>
+               <efac:NoticeResult>
+                  <cbc:TotalAmount currencyID="PLN">6899900</cbc:TotalAmount>
+                  <efac:LotResult>
+                     <cbc:ID schemeName="result">RES-0001</cbc:ID>
+                     <cbc:TenderResultCode listName="winner-selection-status">selec-w</cbc:TenderResultCode>
+                     <efac:LotTender>
+                        <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                     </efac:LotTender>
+                     <efac:ReceivedSubmissionsStatistics>
+                        <efbc:StatisticsCode listName="received-submission-type">t-esubm</efbc:StatisticsCode>
+                        <efbc:StatisticsNumeric>1</efbc:StatisticsNumeric>
+                     </efac:ReceivedSubmissionsStatistics>
+                     <efac:SettledContract>
+                        <cbc:ID schemeName="contract">CON-0001</cbc:ID>
+                     </efac:SettledContract>
+                     <efac:TenderLot>
+                        <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+                     </efac:TenderLot>
+                  </efac:LotResult>
+                  <efac:LotTender>
+                     <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                     <cbc:RankCode>1</cbc:RankCode>
+                     <efbc:TenderRankedIndicator>true</efbc:TenderRankedIndicator>
+                     <efbc:TenderVariantIndicator>false</efbc:TenderVariantIndicator>
+                     <cac:LegalMonetaryTotal>
+                        <cbc:PayableAmount currencyID="PLN">6899900</cbc:PayableAmount>
+                     </cac:LegalMonetaryTotal>
+                     <efac:SubcontractingTerm>
+                        <efbc:TermCode listName="applicability">no</efbc:TermCode>
+                     </efac:SubcontractingTerm>
+                     <efac:TenderingParty>
+                        <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+                     </efac:TenderingParty>
+                     <efac:TenderLot>
+                        <cbc:ID>LOT-0001</cbc:ID>
+                     </efac:TenderLot>
+                     <efac:TenderReference>
+                        <cbc:ID>MARKFLOR Sp. z o.o.</cbc:ID>
+                     </efac:TenderReference>
+                  </efac:LotTender>
+                  <efac:SettledContract>
+                     <cbc:ID schemeName="contract">CON-0001</cbc:ID>
+                     <cbc:AwardDate>2025-10-14+02:00</cbc:AwardDate>
+                     <cbc:IssueDate>2025-10-27+01:00</cbc:IssueDate>
+                     <cac:SignatoryParty>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                        </cac:PartyIdentification>
+                     </cac:SignatoryParty>
+                     <efac:ContractReference>
+                        <cbc:ID>263.79/DSU/2025</cbc:ID>
+                     </efac:ContractReference>
+                     <efac:LotTender>
+                        <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                     </efac:LotTender>
+                  </efac:SettledContract>
+                  <efac:TenderingParty>
+                     <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+                     <cbc:Name>MARKFLOR Sp. z o.o.</cbc:Name>
+                     <efac:Tenderer>
+                        <cbc:ID schemeName="organization">ORG-0004</cbc:ID>
+                     </efac:Tenderer>
+                  </efac:TenderingParty>
+               </efac:NoticeResult>
+               <efac:NoticeSubType>
+                  <cbc:SubTypeCode listName="notice-subtype">29</cbc:SubTypeCode>
+               </efac:NoticeSubType>
+               <efac:Organizations>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://www.uml.lodz.pl</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Miasto Łódź - Urząd Miasta Łodzi</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>Piotrkowska 104</cbc:StreetName>
+                           <cbc:Department>Wydział Zamówień Publicznych</cbc:Department>
+                           <cbc:CityName>Łódź</cbc:CityName>
+                           <cbc:PostalZone>90-926</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL711</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>NIP: 7250028902</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Name>Wydział Zamówień Publicznych</cbc:Name>
+                           <cbc:Telephone>+48 42 638 4888</cbc:Telephone>
+                           <cbc:ElectronicMail>zamowienia@uml.lodz.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://zim.lodz.bip-e.pl/zim/kontakt/6418,Kontakt.html</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Zarząd Inwestycji Miejskich</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>Piotrkowska 175</cbc:StreetName>
+                           <cbc:CityName>Łódź</cbc:CityName>
+                           <cbc:PostalZone>90-447</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL711</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>NIP UMŁ 7250028902</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+48 42 272 62 94</cbc:Telephone>
+                           <cbc:ElectronicMail>zim@zim.uml.lodz.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://www.uzp.gov.pl/kio</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Krajowa Izba Odwoławcza</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>ul. Postępu 17A</cbc:StreetName>
+                           <cbc:CityName>Warszawa</cbc:CityName>
+                           <cbc:PostalZone>02-676</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL711</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>5262239325</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Name>Departament odwołań</cbc:Name>
+                           <cbc:Telephone>+48 22 458 78 40</cbc:Telephone>
+                           <cbc:ElectronicMail>odwolania@uzp.gov.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://www.markflor.pl/</cbc:WebsiteURI>
+                        <efbc:CompanySizeCode listName="economic-operator-size">small</efbc:CompanySizeCode>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0004</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">MARKFLOR Sp. z o.o.</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>Cechowa 127A</cbc:StreetName>
+                           <cbc:CityName>Kraków</cbc:CityName>
+                           <cbc:PostalZone>30-685</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL213</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>6791038610</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Name>Maria Frąszczak</cbc:Name>
+                           <cbc:Telephone>696-392-541</cbc:Telephone>
+                           <cbc:ElectronicMail>szkolka@markflor.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efbc:NaturalPersonIndicator>false</efbc:NaturalPersonIndicator>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://op.europa.eu</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0000</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Publications Office of the European Union</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:CityName>Luxembourg</cbc:CityName>
+                           <cbc:PostalZone>2417</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">LU000</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">LUX</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>PUBL</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+352 29291</cbc:Telephone>
+                           <cbc:ElectronicMail>ted@publications.europa.eu</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+               </efac:Organizations>
+            <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00760432-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+         </ext:ExtensionContent>
+      </ext:UBLExtension>
+   </ext:UBLExtensions>
+   <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+   <cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+   <cbc:ID schemeName="notice-id">2a8c9e79-4001-461f-9dec-94e6924097a9</cbc:ID>
+   <cbc:ContractFolderID>9bcbd51e-79b6-4d8e-a35b-6f7dd4c23bf0</cbc:ContractFolderID>
+   <cbc:IssueDate>2025-11-14Z</cbc:IssueDate>
+   <cbc:IssueTime>14:00:42Z</cbc:IssueTime>
+   <cbc:VersionID>01</cbc:VersionID>
+   <cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+   <cbc:NoticeTypeCode listName="result">can-standard</cbc:NoticeTypeCode>
+   <cbc:NoticeLanguageCode listName="language">POL</cbc:NoticeLanguageCode>
+   <cac:ContractingParty>
+      <cac:ContractingPartyType>
+         <cbc:PartyTypeCode listName="buyer-legal-type">la</cbc:PartyTypeCode>
+      </cac:ContractingPartyType>
+      <cac:ContractingActivity>
+         <cbc:ActivityTypeCode listName="authority-activity">gen-pub</cbc:ActivityTypeCode>
+      </cac:ContractingActivity>
+      <cac:Party>
+         <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+         </cac:PartyIdentification>
+         <cac:ServiceProviderParty>
+            <cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode>
+            <cac:Party>
+               <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0000</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:Party>
+         </cac:ServiceProviderParty>
+         <cac:ServiceProviderParty>
+            <cbc:ServiceTypeCode listName="organisation-role">serv-prov</cbc:ServiceTypeCode>
+            <cac:Party>
+               <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:Party>
+         </cac:ServiceProviderParty>
+      </cac:Party>
+   </cac:ContractingParty>
+   <cac:TenderingProcess>
+      <cbc:ProcedureCode listName="procurement-procedure-type">open</cbc:ProcedureCode>
+      <cac:NoticeDocumentReference>
+         <cbc:ID schemeName="ojs-notice-id">611082-2025</cbc:ID>
+      </cac:NoticeDocumentReference>
+      <cac:ProcessJustification>
+         <cbc:ProcessReasonCode listName="accelerated-procedure">true</cbc:ProcessReasonCode>
+         <cbc:ProcessReason languageID="POL">Zgodnie z art. 138 ust. 2 pkt. 2 ustawy Pzp, Zamawiający może wyznaczyć termin składania ofert krótszy niż termin określony 138 ust. 2, nie krótszy jednak niż 15 dni
+m.in., jeżeli zachodzi pilna potrzeba udzielenia zamówienia i skrócenie terminu składania ofert jest uzasadnione. Powyższy przepis jest wynikiem implementacji przepisów dyrektywy 2014/24/UE. W motywie 46 dyrektywy zostało wskazane: Instytucje zamawiające powinny mieć możliwość
+skrócenia niektórych terminów mających zastosowanie w procedurze otwartej i ograniczonej
+oraz w procedurach konkurencyjnych z negocjacjami, w przypadkach, gdy dane terminy byłyby
+niewykonalne ze względu na pilną konieczność, która powinna zostać należycie uzasadniona
+przez instytucję zamawiającą. Należy doprecyzować, że nie musi to być wyjątkowo pilna
+konieczność spowodowana okolicznościami, których instytucja zamawiająca nie może przewidzieć
+i których nie można jej przypisać. Tym samym oznacza to więc, że stan pilnej konieczności może
+być również zawiniony przez instytucję zamawiającą i nie pozbawia jej to prawa zastosowania
+skrócenia terminu. Do stanu pilnej konieczności będzie więc zaliczana sytuacja, w której zamawiający
+powinien podjąć pilnie działania zmierzające do wykonania zamówienia publicznego. Stan pilnej
+konieczności nie oznacza wymogu natychmiastowej reakcji np. w celu usunięcia awarii lub katastrofy.
+Skrócenie minimalnego terminu składania ofert będzie możliwe w przypadku, gdy zamawiający
+ma obowiązek ochrony jakiegoś interesu, który może doznać uszczerbku w przypadku zbyt długiego
+oczekiwania na zakończenie przetargu. Skrócenie terminu składania ofert w przedmiotowym zamówieniu podyktowane jest koniecznością
+zapewnienia prawidłowej i terminowej realizacji zamówienia. Środki finansowe na realizację zadania
+zostały przyznane Zamawiającemu w lipcu br., co uniemożliwiło wcześniejsze wszczęcie
+postępowania. Dodatkowo etap przygotowawczy, obejmujący m. in. wizje lokalną, weryfikację
+działek ewidencyjnych, opracowanie koncepcji nasadzeń obejmującej około 1 700 sztuk drzew oraz
+rozeznanie rynku w celu oszacowania wartości zamówienia, był procesem czasochłonnym i wymagał
+szczegółowych analiz. Mając na uwadze specyfikę przedmiotu zamówienia, istotne jest, aby prace
+związane z wykonaniem nasadzeń zostały zrealizowane w okresie jesiennym, który z perspektywy
+agrotechnicznej stanowi najbardziej odpowiedni i zalecany termin do przeprowadzenia tego rodzaju
+działań. Wynika to z faktu, iż w okresie zimowym gleba jest zmarznięta lub przemrożona, co
+uniemożliwia efektywne przyjmowanie wody przez korzenie. Nasadzenia realizowane w okresie
+jesiennym nie wymagają stosowania specjalistycznych rozwiązań technologicznych
+charakterystycznych dla nasadzeń zimowych, takich jak podsypka z uprzednio podgrzanej ziemi czy
+warstwa izolacyjna na dnie dołu nasadzeniowego, gdyż warunki temperaturowe oraz wilgotnościowe
+panujące jesienią sprzyjają naturalnemu ukorzenieniu się drzew i prawidłowemu przebiegowi
+procesu nasadzeń. Skrócenie terminu składania ofert pozwoli na dochowanie harmonogramu
+realizacji i efektywne wykorzystanie przyznanych środków.
+Standardowy czas trwania procedury przetargowej w przypadku zamówień powyżej progów, bez
+zastosowania skrócenia terminu składania ofert, wynosi od 83 do 178 dni. Wynika to z konieczności
+zachowania minimalnych terminów proceduralnych, obejmujących m.in.: około 11 dni na
+przygotowanie i publikację ogłoszenia o zamówieniu, co najmniej 35 dni na publiczne ogłoszenie
+przetargu, 20 dni przewidziane na składanie i analizę ofert wraz z ewentualnym wezwaniem
+wykonawców do złożenia wyjaśnień lub uzupełnienia dokumentów, 10 dni na wybór
+najkorzystniejszej oferty oraz 7 dni na przeprowadzenie procedury zawarcia umowy. Mając na
+uwadze powyższe, brak możliwości skrócenia terminu składania ofert skutkowałby znacznym
+wydłużeniem całego postępowania, co mogłoby uniemożliwić realizację zamówienia w wymaganym
+terminie jesiennym oraz jego rozliczenie w bieżącym roku budżetowym.
+</cbc:ProcessReason>
+      </cac:ProcessJustification>
+   </cac:TenderingProcess>
+   <cac:ProcurementProject>
+      <cbc:ID schemeName="InternalID">Nasadzenia drzew na terenie miasta Łodzi DOM-WZP-IV.271.114.2025</cbc:ID>
+      <cbc:Name languageID="POL">Nasadzenia drzew na terenie miasta Łodzi
+</cbc:Name>
+      <cbc:Description languageID="POL">[numeracja zgodna z SWZ]
+4.1	Przedmiotem niniejszego postępowania jest:
+a)	Zakup, dostarczenie i wykonanie nasadzeń na terenie miasta Łodzi, w tym: 1 300 szt. nasadzeń na trasie W-Z oraz al. Jana Pawła II, 1 szt. nasadzeń na ulicy Krzemienieckiej, 78 szt. nasadzeń na ul. Kusocińskiego, 203 szt. nasadzeń na ul. Dąbrowskiego, 31 szt. nasadzeń na ul. Przybyszewskiego, 12 szt. nasadzeń ul. Tatrzańskiej, 85 szt. nasadzeń na ul. Rojnej, 2 szt. nasadzeń na ul. Jaracza oraz   w ramach prawa opcji zakup, dostarczenie i wykonanie 200 szt. nasadzeń na al. Włókniarzy oraz wyżej wskazanych lokalizacjach.
+b)	Przygotowanie terenu pod nasadzenia,
+c)	Założenie/odtworzenie trawników/zieleńcy, w miejscach uszkodzonych pracami,
+d)	Wykonanie dokumentacji powykonawczej (w postaci projektu zieleni na mapie zasadniczej z domierzeniem geodezyjnym nasadzeń i opisem prac pielęgnacyjnych).
+4.2	 Szczegółowy opis przedmiotu zamówienia znajduje się w Załączniku nr 1 oraz we wzorze umowy (Załącznik nr 6).
+</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+      <cbc:Note languageID="POL">[numeracja zgodna z SWZ] 9.3	NA PODSTAWIE ART. 139 UST. 1 I UST. 2 USTAWY PZP NA WEZWANIE ZAMAWIAJĄCEGO WYKONAWCA, którego oferta została najwyżej oceniona, zobowiązany jest do złożenia w wyznaczonym terminie: (nie krótszym niż 10 dni), 
+z zastrzeżeniem pkt 31 podmiotowe środki dowodowe i Jednolity Europejski Dokument Zamówienia (zwany dalej: JEDZ) aktualne na dzień złożenia tj.
+9.3.1 W celu potwierdzenia spełniania przez Wykonawcę warunków udziału 
+w postępowaniu oraz braku podstaw do wykluczenia z postępowania 
+o udzielenie zamówienia Wykonawcy, Zamawiający żąda następujących dokumentów:
+9.3.1.1 aktualne oświadczenie dotyczące braku podstaw do wykluczenia 
+z postępowania oraz spełniania warunków udziału w postępowaniu na dzień złożenia ofert w formie Jednolitego Europejskiego Dokumentu Zamówienia (JEDZ/ESPD) – Załącznik nr 3 do SWZ (plik w formacie XML).
+9.3.1.2  Instrukcja wypełniania jednolitego dokumentu (JEDZ) stanowi Załącznik 
+nr 3a do SWZ (dodatkowo jest dostępna do pobrania pod adresem internetowym:
+https://www.gov.pl/web/uzp/jednolity-europejski-dokument-zamowienia  
+9.3.1.2.1  Europejski Dokument Zamówienia w postaci pliku XML przygotowany w Serwisie Urzędu Zamówień Publicznych dostępny jest pod adresem: https://espd.uzp.gov.pl/
+9.3.1.2.2 Ww. Serwis umożliwia Wykonawcom utworzenie, wypełnienie i ponowne wykorzystanie standardowego formularza Jednolitego Europejskiego Dokumentu Zamówienia w wersji elektronicznej (eESPD). Więcej informacji można uzyskać pod adresem:
+https://www.gov.pl/web/uzp/jednolity-europejski-dokument-zamowienia  
+9.3.1.2.3 Wymagane jest wypełnienie następujących części JEDZ – I, II, III, IV, VI.
+9.3.1.2.4 Wykonawca wypełnia część I JEDZ, jeżeli nie korzysta z pliku xml udostępnionego przez Zamawiającego.
+9.3.1.2.5 W części II Wykonawca wypełnia sekcje A-D stosownie do zaistniałych okoliczności.
+9.3.1.2.6 Wykonawca wypełnia część III JEDZ dotyczącą podstaw wykluczenia.
+9.3.1.2.7 Wykonawca w części IV JEDZ wypełnia jedynie sekcję α - ogólne oświadczenie o spełnianiu warunków udziału w postępowaniu,
+9.3.1.2.8 Wykonawca nie musi wypełniać żadnej z pozostałych sekcji części IV JEDZ dotyczącej kryteriów kwalifikacji.
+9.3.1.2.9 Właściwej weryfikacji braku podstaw do wykluczenia i spełniania warunków udziału w postępowaniu, Zamawiający dokona w oparciu o stosowne dokumenty, o których mowa w pkt 9 SWZ, składane przez Wykonawcę, którego oferta zostanie oceniona najwyżej.
+9.3.1.2.10 Udostępniony plik XML zawiera tylko pola przeznaczone do wypełnienia przez Wykonawcę. [Zamawiający udostępnia również plik „JEDZ-plik-pogladowy.pdf” tożsamy zakresowo z plikiem xml, a służący do zapoznania się z wymaganym zakresem wypełnienia JEDZ. Pliku pdf nie należy wypełniać!]. 
+9.3.1.2.11 Ramowa instrukcja postępowania:
+9.3.1.2.11.1 Pobrany ze strony internetowej Zamawiającego skompresowany folder „Załącznik nr 3 do SWZ – JEDZ.zip” (Załącznik nr 3 do SWZ) należy zapisać na urządzeniu Wykonawcy oraz rozpakować (np. programem 7-zip lub innym obsługującym pliki formatu .zip) 
+9.3.1.2.11.2 Następnie otrzymany plik „espd-request.xml” Wykonawca wczytuje 
+do Serwisu UZP dostępnego pod adresem https://espd.uzp.gov.pl/. Podgląd i edycja pliku nie są możliwe bez zaimportowania go do Serwisu. [W folderze tym Zamawiający udostępnia również plik poglądowy „.pdf” tożsamy zakresowo z przygotowanym plikiem xml. Wykonawca może zapoznać się z zakresem przygotowanego pliku JEDZ bez konieczności wczytywania go do Serwisu UZP. Nie należy wypełniać tego pliku!]
+9.3.1.2.11.3 Wypełnia wymagane dane i zapisuje plik na własnym urządzeniu w formacie .pdf [System umożliwia również zapisanie pliku XML, w celu jego dalszej edycji bądź wykorzystania zawartych danych w innych postępowaniach. Serwis UZP nie przechowuje takich plików, dlatego niezbędne jest zapisanie go na nośniku danych Wykonawcy.]
+9.3.1.2.11.4 JEDZ sporządza się, pod rygorem nieważności, w postaci elektronicznej 
+i opatruje się kwalifikowanym podpisem elektronicznym - zapisany plik JEDZ 
+w formacie .pdf Wykonawca podpisuje kwalifikowanym podpisem elektronicznym. [Oświadczenia podmiotów składających ofertę wspólnie oraz podmiotów udostępniających potencjał składane na formularzu JEDZ, również powinny mieć formę dokumentu elektronicznego, podpisanego kwalifikowanym podpisem elektronicznym odpowiednio przez każdego z nich.] 
+9.3.1.2.11.5 Podpis należy złożyć zgodnie z instrukcją dostarczoną przez dostawcę kwalifikowanego podpisu elektronicznego.
+9.3.1.3 Wykonawca wypełnia JEDZ, tworząc dokument elektroniczny. Może korzystać z narzędzia ESPD lub innych dostępnych narzędzi lub oprogramowania, które umożliwiają wypełnienie JEDZ i utworzenie dokumentu elektronicznego. 
+9.3.1.4 Zamawiający nie wymaga, aby Wykonawca, który zamierza powierzyć wykonanie części zamówienia podwykonawcom, w celu wykazania braku istnienia wobec nich podstaw wykluczenia z udziału w postępowaniu złożył JEDZ dotyczący podwykonawców.
+9.3.1.5 W przypadku wykonawców wspólnie ubiegających się o zamówienie - JEDZ składa każdy z tych Wykonawców (dotyczy również wspólników spółki cywilnej). 
+9.3.1.6 Jeżeli Wykonawca powołuje się na zasoby innych podmiotów, w celu wykazania braku istnienia wobec nich podstaw wykluczenia oraz spełnienia, 
+w zakresie, w jakim powołuje się na ich zasoby, warunków udziału 
+w postępowaniu, w myśl art. 125 ust. 5 ustawy Pzp, ma obowiązek przedstawić dla każdego z podmiotów, których to dotyczy – odrębny jednolity dokument JEDZ
+9.3.2	     W celu potwierdzenia spełniania przez Wykonawcę warunków udziału w postępowaniu dotyczących zdolności technicznej lub zawodowej, Zamawiający żąda następujących dokumentów
+9.3.2.1	Wykaz usług (wg wzoru – Załącznik nr 4a do SWZ) wykonanych w okresie ostatnich trzech lat przed upływem terminu składania ofert, a jeżeli okres prowadzenia działalności jest krótszy - w tym okresie, wraz z podaniem ich wartości, przedmiotu, dat wykonania i podmiotów, na rzecz, których usługi zostały wykonane lub są wykonywane oraz załączeniem dowodów określających czy te usługi zostały wykonane lub są wykonywane należycie, przy czym dowodami, o których mowa, są:
+	referencje; 
+	bądź inne dokumenty sporządzone przez podmiot, na rzecz, którego usługi zostały wykonane;
+	a jeżeli Wykonawca z przyczyn niezależnych od niego nie jest w stanie uzyskać tych dokumentów –  oświadczenie Wykonawcy.
+Uwaga
+1.	Okres wyrażony w latach, o którym mowa w pkt. 9.3.2.1 liczy się wstecz od dnia, 
+w którym upływa termin składania ofert.
+2.	Jeżeli Wykonawca powołuje się na doświadczenie w realizacji usług, wykonywanych wspólnie z innymi Wykonawcami, wykaz o którym mowa powyżej, dotyczy usług, 
+w których wykonaniu Wykonawca ten bezpośrednio uczestniczył, a w przypadku świadczeń powtarzających się lub ciągłych uczestniczył lub uczestniczy.
+9.3.3	W celu wykazania braku podstaw do wykluczenia z postępowania o udzielenie zamówienia Wykonawcy, Zamawiający żąda następujących dokumentów:
+9.3.3.1	 Oświadczenie wykonawcy w zakresie art. 108 ust. 1 pkt 5 ustawy Pzp
+o braku przynależności do tej samej grupy kapitałowej w rozumieniu ustawy z dnia 16 lutego 2007 r. o ochronie konkurencji I konsumentów (Dz. U. z 2024 r. poz. 594) z innym wykonawcą, który złożył odrębną ofertę, albo oświadczenia 
+o przynależności do tej samej grupy kapitałowej wraz z dokumentami lub informacjami potwierdzającymi przygotowanie oferty niezależnie od innego wykonawcy należącego do tej samej grupy kapitałowej – wzór oświadczenia stanowi Załącznik nr 9 do SWZ
+9.3.3.2	Oświadczenia Wykonawcy o aktualności informacji zawartych w oświadczeniu, o którym mowa: 
+	z art. 5k rozporządzenia 833/2014 w brzmieniu nadanym rozporządzeniem 2022/576 oraz art. 7 ust. 1 ustawy o szczególnych rozwiązaniach w zakresie przeciwdziałania wspieraniu agresji na Ukrainę oraz służących ochronie bezpieczeństwa narodowego.
+Wzór oświadczenia stanowi Załącznik nr 5a do SWZ. W przypadku wykonawców wspólnie ubiegających się o zamówienie oświadczenie Wykonawcy o aktualności informacji zawartych w JEDZ składa każdy z tych Wykonawców (dotyczy również wspólników spółki cywilnej).
+W przypadku powoływania się przez Wykonawcę na zasoby innych podmiotów, oświadczenie o aktualności informacji zawartych w oświadczeniu, o których mowa w:
+- art. 5k rozporządzenia 833/2014 w brzmieniu nadanym rozporządzeniem 2022/576 oraz art. 7 ust. 1 ustawy o szczególnych rozwiązaniach w zakresie przeciwdziałania wspieraniu agresji na Ukrainę oraz służących ochronie bezpieczeństwa narodowego
+składa również każdy z tych podmiotów - wzór Załącznik nr 5b do SWZ 
+9.3.3.3	Informację z Krajowego Rejestru Karnego w zakresie dotyczącym podstaw wykluczenia określonych w art. 108 ust. 1 pkt 1, 2, 4 ustawy Pzp, sporządzoną nie wcześniej niż 6 miesięcy przed jej złożeniem.
+9.4	Jeżeli Wykonawca ma siedzibę lub miejsce zamieszkania poza granicami Rzeczypospolitej Polskiej, zamiast:
+9.4.1. informacji z Krajowego Rejestru Karnego, o której mowa w pkt 9.3.3.3 SWZ – składa informację z odpowiedniego rejestru, takiego jak rejestr sądowy, albo, informacji 
+z Krajowego Rejestru Karnego, o której mowa w pkt 9.3.3.3 SWZ – składa informację 
+z odpowiedniego rejestru, takiego jak rejestr sądowy, albo, w przypadku braku takiego rejestru, inny równoważny dokument wydany przez właściwy organ sądowy lub administracyjny kraju, w którym Wykonawca ma siedzibę lub miejsce zamieszkania lub miejsce zamieszkania ma osoba, której dotyczy informacja albo dokument, w zakresie, o którym mowa w pkt 9.3.3.3 SWZ. Dokument powinien być wystawiony nie wcześniej niż 6 miesięcy przed jego złożeniem.
+(reszta zapisów znajduje się w SWZ)</cbc:Note>
+      <cac:MainCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">77310000</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">77300000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">45112710</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:RealizedLocation>
+         <cbc:Description languageID="POL">Termin wykonania zamówienia:  od dnia zawarcia umowy  do 15 grudnia 2025r.</cbc:Description>
+         <cac:Address>
+            <cbc:CountrySubentityCode listName="nuts">PL711</cbc:CountrySubentityCode>
+            <cac:Country>
+               <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+            </cac:Country>
+         </cac:Address>
+      </cac:RealizedLocation>
+   </cac:ProcurementProject>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+      <cac:TenderingTerms>
+         <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+         <cac:AwardingTerms>
+            <cac:AwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-fixed">fix-tot</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>50</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                  <cbc:Description languageID="POL">Cena oferty brutto w PLN (C)	50 % - 50 punktów
+W przypadku kryterium – Cena oferty brutto w PLN (C) - oferta otrzyma zaokrągloną do dwóch miejsc po przecinku ilość punktów wynikającą z działania:
+                                            Pi(C) = (Cmin / Ci)  x  50
+gdzie:
+Pi(C)	Ilość punktów jakie otrzyma oferta badana za kryterium – cena oferty brutto w PLN
+Cmin Najniższa cena spośród wszystkich ofert niepodlegających odrzuceniu
+Ci	Cena oferty badanej
+</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>10</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-fixed">fix-tot</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>40</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="POL">Okres udzielonej gwarancji na nasadzenia drzew (G)</cbc:Name>
+                  <cbc:Description languageID="POL">Okres udzielonej gwarancji i rękojmi na nasadzenia drzew (G)
+Wymagany przez Zamawiającego okres gwarancji i rękojmi na nasadzone drzewa wynosi 12 miesięcy od daty protokolarnego odbioru prac.
+Wykonawca otrzyma 40 punktów – w przypadku wydłużenia okresu gwarancji i rękojmi na nasadzone drzewa o dodatkowe 4 miesiące (łącznie 36 miesięcy od daty protokolarnego odbioru prac)
+Wykonawca otrzyma 20 punktów – w przypadku wydłużenia okresu gwarancji i rękojmi na nasadzone drzewa o dodatkowe 2 miesięcy (łącznie 34 miesiące od daty protokolarnego odbioru prac)
+Wykonawca otrzyma 0 punktów – w przypadku zapewnienia 32 miesięcy okresu gwarancji i rękojmi drzew od daty protokolarnego odbioru prac
+</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-fixed">fix-tot</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>50</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-threshold">max-pass</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>40</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                  <cbc:Description languageID="POL">Cena oferty brutto zamówienia opcjonalnego (O) 10 % - 10 punktów – Cena oferty brutto w PLN (O) zamówienia realizowanego w ramach prawa opcji –  oferta otrzyma zaokrągloną do dwóch miejsc po przecinku ilość punktów wynikającą z działania:
+                                            Pi(CO) =  x  10
+gdzie:
+Pi(CO)	I  Ilość punktów jakie otrzyma oferta badana za kryterium – cena oferty brutto w PLN zamówienia realizowanego w ramach prawa opcji
+Cmin	   Najniższa cena spośród wszystkich ofert niepodlegających odrzuceniu  
+Ci	   Cena oferty badanej
+</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+            </cac:AwardingCriterion>
+         </cac:AwardingTerms>
+         <cac:AppealTerms>
+            <cac:PresentationPeriod>
+               <cbc:Description languageID="POL">[numeracja zgodna z SWZ]
+38.1	Środki ochrony prawnej przysługują Wykonawcy, jeżeli ma lub miał interes w uzyskaniu zamówienia oraz poniósł lub może ponieść szkodę w wyniku naruszenia przez Zamawiającego przepisów ustawy Pzp. 
+38.2	Środki ochrony prawnej wobec ogłoszenia wszczynającego postępowanie o udzielenie zamówienia oraz dokumentów zamówienia przysługują również organizacjom wpisanym na listę, o której mowa w art. 469 pkt 15 ustawy Pzp, oraz Rzecznikowi Małych i Średnich Przedsiębiorców. 
+38.3	W postępowaniu odwołanie przysługuje na: 
+38.3.1 niezgodną z przepisami ustawy Pzp czynność Zamawiającego, podjętą w postępowaniu o udzielenie zamówienia, w tym na projektowane postanowienie umowy; 
+38.3.2 zaniechanie czynności w postępowaniu o udzielenie zamówienia, do której Zamawiający był obowiązany na podstawie ustawy Pzp; 
+38.4	Odwołanie wnosi się do Prezesa Krajowej Izby Odwoławczej. 
+38.5	Odwołujący przekazuje Zamawiającemu odwołanie wniesione w formie elektronicznej albo postaci elektronicznej albo kopię tego odwołania, jeżeli zostało ono wniesione w formie pisemnej, przed upływem terminu do wniesienia odwołania w taki sposób, aby mógł on zapoznać́ się̨ z jego treścią̨ przed upływem tego terminu. 
+38.6	Domniemywa się̨, że Zamawiający mógł zapoznać́ się̨ z treścią̨ odwołania przed upływem terminu do jego wniesienia, jeżeli przekazanie odpowiednio odwołania albo jego kopii nastąpiło przed upływem terminu do jego wniesienia przy użyciu środków komunikacji elektronicznej. 
+38.7	Odwołanie wnosi się w przypadku zamówień, których wartość jest równa albo przekracza progi unijne:
+38.7.1. 10 dni od dnia przekazania informacji o czynności Zamawiającego stanowiącej podstawę jego wniesienia, jeżeli informacja została przekazana przy użyciu środków komunikacji elektronicznej; 
+38.7.2. 15 dni od dnia przekazania informacji o czynności Zamawiającego stanowiącej podstawę jego wniesienia, jeżeli informacja została przekazana w sposób inny niż określony w pkt. 38.7.1 SWZ. 
+38.8	Odwołanie wobec treści ogłoszenia wszczynającego postępowanie o udzielenie zamówienia lub wobec treści dokumentów zamówienia wnosi się w terminie 10 dni od dnia publikacji ogłoszenia w Dzienniku Urzędowym Unii Europejskiej lub zamieszczenia dokumentów zamówienia na stronie internetowej, w przypadku zamówień, których wartość jest równa albo przekracza progi unijne. 
+38.9	Odwołanie w przypadkach innych niż określone w pkt. 38.7 i 38.8 SWZ wnosi się w terminie 10 dni od dnia, w którym powzięto lub przy zachowaniu należytej staranności można było powziąć wiadomość o okolicznościach stanowiących podstawę jego wniesienia, w przypadku zamówień, których wartość jest równa albo przekracza progi unijne. 
+38.10 Jeżeli Zamawiający mimo takiego obowiązku nie przesłał Wykonawcy zawiadomienia o wyborze najkorzystniejszej oferty, odwołanie wnosi się nie później niż w terminie: 
+38.10.1. 30 dni od dnia publikacji w Dzienniku Urzędowym Unii Europejskiej ogłoszenia o udzieleniu zamówienia; 
+38.10.2. 6 miesięcy od dnia zawarcia umowy, jeżeli Zamawiający nie opublikował w Dzienniku Urzędowym Unii Europejskiej ogłoszenia o udzieleniu zamówienia. 
+38.11 Pisma w postępowaniu odwoławczym wnosi się w formie pisemnej albo w formie elektronicznej albo w postaci elektronicznej, z tym, że odwołanie i przystąpienie do postępowania odwoławczego, wniesione w postaci elektronicznej, wymagają opatrzenia podpisem zaufanym. 
+38.12 Pisma w formie pisemnej wnosi się za pośrednictwem operatora pocztowego, w rozumieniu ustawy z dnia 23 listopada 2012 r. - Prawo pocztowe, osobiście, za pośrednictwem posłańca, a pisma w postaci elektronicznej wnosi się przy użyciu środków komunikacji elektronicznej. 
+27. INFORMACJA O PRZEWIDYWANYCH ZAMÓWIENIACH, O KTÓRYCH MOWA W ART. 214 UST. 1 PKT 7 I 8 USTAWY PZP, JEŻELI ZAMAWIAJĄCY PRZEWIDUJE UDZIELENIE TAKICH ZAMÓWIEŃ
+Zamawiający  przewiduje udzielenia zamówienia polegającego na powtórzeniu podobnych usług na podstawie art. 214 ust. 1 pkt 7 ustawy Pzp  do wartości 4 478 970,67 PLN netto plus należny podatek VAT 
+30	INFORMACJA O UPRZEDNIEJ OCENIE OFERT, ZGODNIE Z ART. 139 USTAWY PZP, JEŻELI ZAMAWIAJĄCY PRZEWIDUJE ODWRÓCONĄ KOLEJNOŚĆ OCENY
+W niniejszym postępowaniu zostanie zastosowana procedura, o której mowa w art. 139 ustawy Pzp. Zamawiający na podstawie art. 139 ust. 1 ustawy Pzp, najpierw dokona badania i oceny ofert, a następnie dokona kwalifikacji podmiotowej Wykonawcy, którego oferta została najwyżej oceniona, w zakresie braku podstaw wykluczenia oraz spełniania warunków udziału w postępowaniu
+33	WYMAGANIA W ZAKRESIE ZATRUDNIENIA NA PODSTAWIE STOSUNKU PRACY, W OKOLICZNOŚCIACH, O KTÓRYCH MOWA W ART. 95 USTAWY PZP, JEŻELI ZAMAWIAJĄCY PRZEWIDUJE TAKIE WYMAGANIA
+Na podstawie art. 95 ustawy Pzp Zamawiający wymaga, aby wszystkie czynności polegające na faktycznym wykonywaniu prac ogrodniczych składających się na przedmiot zamówienia, o ile nie są (będą) wykonywane przez daną osobę w ramach prowadzonej przez nią działalności gospodarczej, były wykonane przez osoby zatrudnione przez Wykonawcę w sposób określony w art. 22 § 1 Kodeksu pracy tj. osób wykonujących w trakcie realizacji zamówienia prace w zakresie: nasadzeń drzew, składających się na przedmiot zamówienia, zgodnych z zapisami 
+w Załączniku nr 1 do SWZ „Opis Przedmiotu Zamówienia”. 
+Sposób weryfikacji zatrudnienia tych osób i uprawnienia Zamawiającego w zakresie kontroli spełniania przez Wykonawcę wymagań związanych z zatrudnieniem tych osób oraz sankcji z tytułu ich niespełnienia zostały określone w Opisie przedmiotu zamówienia stanowiącym Załącznik nr 1 do SWZ oraz we wzorze umowy stanowiącym Załącznik nr 6 do SWZ.
+</cbc:Description>
+            </cac:PresentationPeriod>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0003</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+         </cac:AppealTerms>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+         <cac:AuctionTerms>
+            <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+         </cac:AuctionTerms>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:ID schemeName="InternalID">Nasadzenia drzew na terenie miasta ŁodziDOM-WZP-IV.271.114.2025</cbc:ID>
+         <cbc:Name languageID="POL">Nasadzenia drzew na terenie miasta Łodzi</cbc:Name>
+         <cbc:Description languageID="POL">[numeracja zgodna z SWZ]
+4.1	Przedmiotem niniejszego postępowania jest:
+a)	Zakup, dostarczenie i wykonanie nasadzeń na terenie miasta Łodzi, w tym: 1 300 szt. nasadzeń na trasie W-Z oraz al. Jana Pawła II, 1 szt. nasadzeń na ulicy Krzemienieckiej, 78 szt. nasadzeń na ul. Kusocińskiego, 203 szt. nasadzeń na ul. Dąbrowskiego, 31 szt. nasadzeń na ul. Przybyszewskiego, 12 szt. nasadzeń ul. Tatrzańskiej, 85 szt. nasadzeń na ul. Rojnej, 2 szt. nasadzeń na ul. Jaracza oraz   w ramach prawa opcji zakup, dostarczenie i wykonanie 200 szt. nasadzeń na al. Włókniarzy oraz wyżej wskazanych lokalizacjach.
+b)	Przygotowanie terenu pod nasadzenia,
+c)	Założenie/odtworzenie trawników/zieleńcy, w miejscach uszkodzonych pracami,
+d)	Wykonanie dokumentacji powykonawczej (w postaci projektu zieleni na mapie zasadniczej z domierzeniem geodezyjnym nasadzeń i opisem prac pielęgnacyjnych).
+4.2 Szczegółowy opis przedmiotu zamówienia znajduje się w Załączniku nr 1 oraz we wzorze umowy (Załącznik nr 6).
+</cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+         <cbc:Note languageID="POL">[numeracja zgodna z SWZ]
+39.1	Zgodnie z art. 13 ust. 1 i 2 ogólnego rozporządzenia o ochronie danych osobowych z dnia 27 kwietnia 2016 r. (rozporządzenie Parlamentu Europejskiego i Rady UE 2016/679 w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE) uprzejmie informujemy, że: 
+39.1.1. Administratorem danych osobowych jest Prezydent Miasta Łodzi z siedzibą w Łodzi przy ul. Piotrkowskiej 104, 90-926 Łódź, tel.: +48 (42) 638-44-44, fax: +48 (42) 272-60-01, e-mail: lckm@uml.lodz.pl 
+39.1.2. Administrator wyznaczył inspektora oraz zastępcę inspektora ochrony danych osobowych, z którymi może się Pani/Pan skontaktować poprzez e-mail iod@uml.lodz.pl  Z inspektorem ochrony danych i jego zastępcą można się kontaktować we wszystkich sprawach dotyczących przetwarzania danych osobowych przez Urząd Miasta Łodzi oraz korzystania z praw związanych z przetwarzaniem danych.
+39.1.3. Podanie danych osobowych jest warunkiem koniecznym do realizacji sprawy w Urzędzie Miasta Łodzi.
+Ogólną podstawę do przetwarzania danych stanowi art. 6 ust. 1 lit. b i c oraz art. 10 ogólnego rozporządzenia.
+Szczegółowe cele przetwarzania danych zostały wskazane w następujących przepisach.
+a) ustawie z dnia 11 września 2019 r. – Prawo zamówień publicznych;
+b) ustawie z dnia 23 kwietnia 1964 r. – Kodeks cywilny;
+c) ustawie z dnia 27 sierpnia 2009 r. o finansach publicznych;
+d) ustawie z dnia 29 września 1994 r. o rachunkowości
+Pani/Pana dane będą przetwarzane w celu:
+-przeprowadzenia postępowania o udzielenie zamówienia publicznego i wyłonienie wykonawcy;
+-zawarcia umowy;
+-rozliczenia finansowo- księgowego
+39.1.4. Dane osobowe mogą być udostępniane innym podmiotom, uprawnionym do ich otrzymania na podstawie obowiązujących przepisów prawa, tj. na podstawie art. 18 i art. 74 Prawa zamówień publicznych a ponadto odbiorcom danych w rozumieniu przepisów o ochronie danych osobowych, tj. podmiotom świadczącym usługi pocztowe, kurierskie, usługi informatyczne, bankowe, ubezpieczeniowe, osobom i podmiotom zainteresowanym prowadzonym postępowaniem o udzielenie zamówienia publicznego, a także podmiotom korzystającym z Biuletynu Informacji Publicznej, Biuletynu Zamówień Publicznych, Bazy konkurencyjności oraz internetowej platformy zakupowej – eKatalogi, będącej w gestii Urzędu Zamówień Publicznych. Dane osobowe nie będą  przekazywane do państw trzecich, na podstawie szczególnych regulacji prawnych, w tym umów międzynarodowych.
+39.1.5. Dane osobowe będą przetwarzane, w tym przechowywane przez okres 4 lat, licząc od pierwszego stycznia roku następującego po roku, w którym sprawa została zakończona, a następnie, zgodnie z przepisami ustawy z dnia 14 lipca 1983 r. o narodowym zasobie archiwalnym i archiwach, przez okres 5 lat, zgodnie kategorią B5, w przypadku dokumentacji  postępowania oraz 10 lat w związku z zawartą umową, zgodnie z kategorią archiwalną B10, a w przypadku zmiany kategorii archiwalnej dokumentacji przez okres zgodny ze zmienioną kategorią archiwalną dokumentacji. W przypadku zamówień finansowanych ze środków funduszy europejskich lub innych środków niż pochodzące z budżetu Unii Europejskiej na podstawie odrębnych przepisów w tym zakresie do 25 lat.
+39.1.6. W związku z przetwarzaniem danych osobowych, na podstawie przepisów prawa, posiada Pani/Pan prawo do:
+a) dostępu do treści swoich danych, na podstawie art. 15 ogólnego rozporządzenia;
+b) sprostowania danych, na podstawie art. 16 ogólnego rozporządzenia;
+c) ograniczenia przetwarzania, na podstawie art. 18 ogólnego rozporządzenia
+39.1.7. Ma Pani/Pan prawo wniesienia skargi do organu nadzorczego – Prezesa Urzędu Ochrony Danych Osobowych, gdy uzna Pani/Pan, iż przetwarzanie danych osobowych narusza przepisy o ochronie danych osobowych.
+39.1.8. Gdy podanie danych osobowych wynika z przepisów prawa, jest Pani/Pan zobowiązana(y) do ich podania. Konsekwencją niepodania danych osobowych będzie brak możliwości zawarcia umowy o udzielenie zamówienia publicznego.
+39.1.9. Dane nie będą przetwarzane w sposób zautomatyzowany, w tym również w formie profilowania.
+39.2	Wykonawca, wypełniając obowiązki informacyjne wynikający z art. 13 lub art. 14 RODO względem osób fizycznych, od których dane osobowe bezpośrednio lub pośrednio pozyskał w celu ubiegania się o udzielenie zamówienia publicznego w tym postępowaniu składa stosowne oświadczenie zawarte w Formularzu ofertowym (Załącznik nr 2 do SWZ). 
+6.	TERMIN WYKONANIA ZAMÓWIENIA
+Termin wykonania zamówienia:  od dnia zawarcia umowy  do 15 grudnia 2025r.
+13.1 Wykonawca pozostaje związany ofertą przez okres 90 dni tj. do dnia
+ 31.12.2025 r.
+24.1	Wykonawca, którego oferta została wybrana zobowiązany jest do wniesienia zabezpieczenia należytego wykonania umowy w wysokości 5% ceny całkowitej brutto podanej w ofercie.
+[Numeracja zgodna z SWZ]
+8.1.4 zdolności technicznej lub zawodowej:
+8.1.4.1. Warunek zdolności technicznej zostanie uznany za spełniony, jeżeli Wykonawca wykaże, że należycie wykonał w okresie ostatnich 3 lat przed upływem terminu składania ofert, a jeżeli okres prowadzenia działalności jest krótszy – w tym okresie, w ramach 1 lub 2 umów, usługę nasadzeń i pielęgnacji drzew o łącznej wartości nie mniejszej niż 300.000,00 zł brutto
+Uwagi:
+1)	W przypadku gdy Wykonawca wykonywał w ramach jednego kontraktu/umowy większy zakres prac, dla potrzeb zamówienia powinien wyodrębnić i podać zakres każdego zamówienia, o którym mowa powyżej.
+2)	Dla potrzeb oceny spełniania warunku określonego powyżej, jeśli wartość lub wartości zostaną podane w walutach innych niż PLN, Zamawiający przyjmie średni kurs danej waluty publikowany przez Narodowy Bank Polski w dniu publikacji ogłoszenia 
+o zamówieniu w Dzienniku Urzędowym Unii Europejskiej. Jeżeli w dniu publikacji ogłoszenia o zamówieniu w Dzienniku Urzędowym Unii Europejskiej, Narodowy Bank Polski nie publikuje średniego kursu danej waluty, za podstawę przeliczenia przyjmuje się średni kurs waluty publikowany pierwszego dnia, po dniu publikacji ogłoszenia 
+o zamówieniu w Dzienniku Urzędowym Unii Europejskiej, w którym zostanie on opublikowany.
+3)	Jeżeli Wykonawca powołuje się na doświadczenie w realizacji usług, wykonywanych wspólnie z innymi Wykonawcami, wykaz usług dotyczy usług, w których wykonaniu Wykonawca ten bezpośrednio uczestniczył.
+4)	Zamawiający zastrzega weryfikację potwierdzenia należytego wykonania prac bezpośrednio u podmiotu, na rzecz którego były wykonane.
+</cbc:Note>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">77310000</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">77300000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">45112710</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:RealizedLocation>
+            <cac:Address>
+               <cbc:StreetName>Piotrkowska 104</cbc:StreetName>
+               <cbc:CityName>Łódź</cbc:CityName>
+               <cbc:PostalZone>90-447</cbc:PostalZone>
+               <cbc:CountrySubentityCode listName="nuts">PL711</cbc:CountrySubentityCode>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+         <cac:PlannedPeriod>
+            <cbc:EndDate>2025-12-15+01:00</cbc:EndDate>
+         </cac:PlannedPeriod>
+         <cac:ContractExtension>
+            <cbc:OptionsDescription languageID="POL">Zamawiający przewiduje możliwości skorzystania z prawa opcji na podstawie art.441 ustawy Pzp. W ramach prawa opcji Zamawiający przewiduje nasadzenie 200 szt. drzew, w tym przykładowo 100 szt. lipa np. drobnolistna oraz 100 szt. klon np. zwyczajny na terenie miasta Łodzi. Warunki udzielenia zamówienia opcjonalnego opisane są we wzorze umowy – Załącznik nr. 6 do umowy. 
+Zamawiający przewiduje udzielenia zamówienia polegającego na powtórzeniu podobnych usług na podstawie art. 214 ust.1 pkt. 7 ustawy Pzp
+Łączna wartość zamówień udzielanych na podstawie art.214 ust. 1 pkt 7  ustawy Pzp nie może przekroczyć  kwoty: 4 478 970,67 PLN netto plus należny podatek VAT .
+  W ramach powtórzenia zamówienia Zamawiający przewiduje nasadzenie drzew na terenie miasta Łodzi w postaci drzew wykorzystanych w zamówieniu podstawowym oraz z gatunków: Glediczja (Gleditsia), Robinia (Robinia), Brzoza (Betula), Grab (Carpinus), Olcha (Alnus), Buk (Fagus), Dąb (Quercus), Kasztanowiec (Aesculus), Klon (Acer), Leszczyna (Corylus), Lipa (Tilia), Magnolia (Magnolia), Tulipanowiec (Liriodendron),  Miłorząb (Ginkgo),  Jesion (Fraxinus), Platan (Platanus), Czeremcha (Prunus),  Głóg (Crateagus), Grusza (Pyrus), Jabłoń (Malus),  Jarząb (Sorbus),  Śliwa (Prunus),  Świdośliwa (Amelanchier), Wiśnia (Prunus, Cerasus), Jodła (Abies), Modrzew (Larix), Sosna (Pinus), Świerk (Picea), Wiąz (Ulmus), Topola (Populus), Wierzba (Salix), Drzewa w formie piennej.
+Ostateczne warunki, na jakich zostanie udzielone zamówienie w szczególności: termin realizacji, zakres i wielkość przedmiotu zamówienia, zostaną sprecyzowane w  treści umowy, której treść zostanie ustalona w wyniku negocjacji między Zamawiającym
+ i Wykonawcą.
+</cbc:OptionsDescription>
+         </cac:ContractExtension>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+   <cac:TenderResult>
+      <cbc:AwardDate>2000-01-01Z</cbc:AwardDate>
+   </cac:TenderResult>
+</ContractAwardNotice>

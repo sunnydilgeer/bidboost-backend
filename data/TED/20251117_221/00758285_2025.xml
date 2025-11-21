@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+   <ext:UBLExtensions>
+      <ext:UBLExtension>
+         <ext:ExtensionContent>
+            <efext:EformsExtension>
+               <efac:NoticeSubType>
+                  <cbc:SubTypeCode listName="notice-subtype">16</cbc:SubTypeCode>
+               </efac:NoticeSubType>
+               <efac:Organizations>
+                  <efac:Organization>
+                     <efbc:AcquiringCPBIndicator>false</efbc:AcquiringCPBIndicator>
+                     <efbc:AwardingCPBIndicator>false</efbc:AwardingCPBIndicator>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://www.gotha.de</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="DEU">Stadtverwaltung Gotha</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>Ekhofplatz 24</cbc:StreetName>
+                           <cbc:CityName>Gotha</cbc:CityName>
+                           <cbc:PostalZone>99867</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">DEG0C</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>Leitweg-ID 16067029-0001-17</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>0 36 21-22 21 35</cbc:Telephone>
+                           <cbc:ElectronicMail>vergabe@gotha.de</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="DEU">Vergabekammer des Freistaates Thüringen</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:CityName>Weimar</cbc:CityName>
+                           <cbc:PostalZone>99423</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">DEG05</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>16900334-0001-29</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>0361 57332 1254</cbc:Telephone>
+                           <cbc:ElectronicMail>vergabekammer@tlvwa.thueringen.de</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+               <efac:Organization><efac:Company><cac:PartyIdentification><cbc:ID schemeName="organization">ORG-0003</cbc:ID></cac:PartyIdentification><cac:PartyName><cbc:Name languageID="DEU">Datenservice Öffentlicher Einkauf (in Verantwortung des Beschaffungsamts des BMI)</cbc:Name></cac:PartyName><cac:PostalAddress><cbc:CityName>Bonn</cbc:CityName><cbc:PostalZone>53119</cbc:PostalZone><cbc:CountrySubentityCode listName="nuts">DEA22</cbc:CountrySubentityCode><cac:Country><cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode></cac:Country></cac:PostalAddress><cac:PartyLegalEntity><cbc:CompanyID schemeID="002">0204:994-DOEVD-83</cbc:CompanyID></cac:PartyLegalEntity><cac:Contact><cbc:Telephone>+49228996100</cbc:Telephone><cbc:ElectronicMail>noreply.esender_hub@bescha.bund.de</cbc:ElectronicMail></cac:Contact></efac:Company></efac:Organization></efac:Organizations>
+            <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00758285-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+         </ext:ExtensionContent>
+      </ext:UBLExtension>
+   </ext:UBLExtensions>
+   <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+   <cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+   <cbc:ProfileID>eforms-sdk-1.13</cbc:ProfileID>
+   <cbc:ID schemeName="notice-id">401a1d61-cf5d-4a91-9523-15e016445688</cbc:ID>
+   <cbc:ContractFolderID>948c5442-f976-4f5a-9570-b87e4cd62413</cbc:ContractFolderID>
+   <cbc:IssueDate>2025-11-13+01:00</cbc:IssueDate>
+   <cbc:IssueTime>11:06:40+01:00</cbc:IssueTime>
+   <cbc:VersionID>01</cbc:VersionID>
+   <cbc:RequestedPublicationDate>2025-11-15+01:00</cbc:RequestedPublicationDate>
+   <cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+   <cbc:NoticeTypeCode listName="competition">cn-standard</cbc:NoticeTypeCode>
+   <cbc:NoticeLanguageCode>DEU</cbc:NoticeLanguageCode>
+   <cac:ContractingParty>
+      <cac:ContractingPartyType>
+         <cbc:PartyTypeCode listName="buyer-legal-type">la</cbc:PartyTypeCode>
+      </cac:ContractingPartyType>
+      <cac:ContractingActivity>
+         <cbc:ActivityTypeCode listName="authority-activity">gen-pub</cbc:ActivityTypeCode>
+      </cac:ContractingActivity>
+      <cac:Party>
+         <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+         </cac:PartyIdentification>
+      <cac:ServiceProviderParty><cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode><cac:Party><cac:PartyIdentification><cbc:ID schemeName="organization">ORG-0003</cbc:ID></cac:PartyIdentification></cac:Party></cac:ServiceProviderParty></cac:Party>
+   </cac:ContractingParty>
+   <cac:TenderingTerms>
+      <cac:ProcurementLegislationDocumentReference>
+         <cbc:ID>vgv</cbc:ID>
+      </cac:ProcurementLegislationDocumentReference>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-natl-bre-nat-law</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">Es gelten die gesetzlichen Ausschlussvoraussetzungen nach §§ 123 bis 126 GWB. Der Bewerber hat anzugeben, ob Ausschlussgründe nach §§ 123, 124 GWB vorliegen und ob er selbst bzw. ein nach Satzung oder Gesetz für den Bewerber Vertretungsberechtigter in den letzten zwei Jahren 
+• gem. § 21 Abs. 1 Satz 1 oder 2Schwarzarbeitsbekämpfungsgesetz oder 
+• gem. § 21 Abs. 1 Arbeitnehmerentsendegesetz oder 
+• gem. § 19 Abs. 1 Mindestlohngesetz
+mit einer Freiheitsstrafe von mehr als drei Monaten oder einer Geldstrafe von mehr als 90 Tagessätzen oder einer Geldbuße von mehr als 2.500 Euro belegt worden ist.
+Nicht fristgerecht eingereichte Teilnahmeanträge bzw. schriftliche (in Papierform eingereichte) oder formlose Anträge werden im weiteren Verfahren nicht berücksichtigt.</cbc:Description>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-grounds-source">epo-notice</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+   </cac:TenderingTerms>
+   <cac:TenderingProcess>
+      <ext:UBLExtensions>
+         <ext:UBLExtension>
+            <ext:ExtensionContent>
+               <efext:EformsExtension>
+                  <efbc:ProcedureRelaunchIndicator>false</efbc:ProcedureRelaunchIndicator>
+               </efext:EformsExtension>
+            </ext:ExtensionContent>
+         </ext:UBLExtension>
+      </ext:UBLExtensions>
+      <cbc:ProcedureCode listName="procurement-procedure-type">open</cbc:ProcedureCode>
+      <cac:ProcessJustification>
+         <cbc:ProcessReasonCode listName="accelerated-procedure">false</cbc:ProcessReasonCode>
+      </cac:ProcessJustification>
+   </cac:TenderingProcess>
+   <cac:ProcurementProject>
+      <cbc:ID schemeName="InternalID">VgV-OV-51/26/002</cbc:ID>
+      <cbc:Name languageID="DEU">Unterhaltsreinigung und Serviceleistung Tagesfrau und Küche</cbc:Name>
+      <cbc:Description languageID="DEU">Los 2  - Kindergarten "Bummi":
+- Unterhaltsreinigung täglich ab 15.30 Uhr
+- Serviceleistung Tagesfrau und Küche monatlich 152 Stunden im geteilten Dienst entsprechend Dienstplan</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+      <cac:MainCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">90911200</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:RealizedLocation>
+         <cac:Address>
+            <cbc:CityName>Gotha</cbc:CityName>
+            <cbc:PostalZone>99867</cbc:PostalZone>
+            <cbc:CountrySubentityCode listName="nuts">DEG0C</cbc:CountrySubentityCode>
+            <cac:Country>
+               <cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+            </cac:Country>
+         </cac:Address>
+      </cac:RealizedLocation>
+   </cac:ProcurementProject>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+      <cac:TenderingTerms>
+         <ext:UBLExtensions>
+            <ext:UBLExtension>
+               <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-mgmt-qual</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">Nachweise zur Beurteilung der Befähigung und Erlaubnis zur Berufsausübung
+- Eigenerklärung zur Eignung 124 oder Nachweis der Präqualifizierung
+- Einzelnachweise entsprechend der "Eigenerklärung zur Eignung" im FBL. 124 (auf gesondertes Verlangen)
+- Einzelnachweise gemäß §§ 45, 46 VgV (auf gesondertes Verlangen)
+- FBL. 1400 - Auskünfte zur Beantragung eines Wettbewerbsregisterauszuges (wird im Auftragsfall vom AG beantragt)
+- FBL. 1402 – Eigenerklärung des Auftragnehmers zu §§ 123, 124 GWB
+- Erklärung Bieter-/ Arbeitsgemeinschaft 234
+- Eigenerklärung zur VO (EU) 2022/576 (Bezug zu Russland)
+- Eigenerklärung zum Thüringer Vergabegesetz gemäß § 8 Abs. 1 S. 1
+
+Nachweise zur Beurteilung der wirtschaftlichen und finanziellen Leistungsfähigkeit
+- Nachweis Haftpflichtversicherung (auf gesondertes Verlangen)
+- Unbedenklichkeitsbescheinigung Berufsgenossenschaft
+- Unbedenklichkeitsbescheinigung Finanzamt
+- Unbedenklichkeitsbescheinigung Krankenkasse
+
+Nachweise zur Beurteilung der technischen und beruflichen Leistungsfähigkeit
+- Verzeichnis der Leistungen anderer Unternehmer 235
+- Verpflichtungserklärung anderer Unternehmer 236
+- FBL. 1403 - Eigenerklärungen jedes Nachunternehmers zu §§ 123, 124 GWB
+- Leistungsverzeichnis in allen Teilen ausgefüllt
+- Nachweis Qualitätssicherungskonzept
+- Nachweis Qualitätsmanagementkonzept
+- Nachweise Qualifikationen gemäß Anlage zum Leistungsverzeichnis</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:StrategicProcurement>
+                        <efbc:ApplicableLegalBasis listName="cvd-scope">false</efbc:ApplicableLegalBasis>
+                     </efac:StrategicProcurement>
+                  </efext:EformsExtension>
+               </ext:ExtensionContent>
+            </ext:UBLExtension>
+         </ext:UBLExtensions>
+         <cbc:VariantConstraintCode listName="permission">not-allowed</cbc:VariantConstraintCode>
+         <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+         <cbc:RequiredCurriculaCode listName="requirement-stage">t-requ</cbc:RequiredCurriculaCode>
+         <cbc:MultipleTendersCode listName="permission">not-allowed</cbc:MultipleTendersCode>
+         <cac:CallForTendersDocumentReference>
+            <ext:UBLExtensions>
+               <ext:UBLExtension>
+                  <ext:ExtensionContent>
+                     <efext:EformsExtension>
+                        <efac:OfficialLanguages>
+                           <cac:Language>
+                              <cbc:ID>DEU</cbc:ID>
+                           </cac:Language>
+                        </efac:OfficialLanguages>
+                     </efext:EformsExtension>
+                  </ext:ExtensionContent>
+               </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:ID>E38784422</cbc:ID>
+            <cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+            <cac:Attachment>
+               <cac:ExternalReference>
+                  <cbc:URI>https://www.subreport.de/E38784422</cbc:URI>
+               </cac:ExternalReference>
+            </cac:Attachment>
+         </cac:CallForTendersDocumentReference>
+         <cac:TendererQualificationRequest>
+            <cbc:CompanyLegalFormCode listName="required">false</cbc:CompanyLegalFormCode>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="selection-criteria-source">epo-notice</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="reserved-procurement">none</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="missing-info-submission">late-all</cbc:TendererRequirementTypeCode>
+               <cbc:Description languageID="DEU">Nachweise siehe Fbl. 1616, welches den Vergabeunterlagen beigefügt ist. Die geforderten Nachweise und Bescheinigungen müssen zum Zeitpunkt der Submission gültig sein.
+Unbedenklichkeitsbescheinigungen haben eine Gültigkeit von 3 Monaten ab Ausstellungsdatum. Nach § 56 Abs. 3 Satz 1 VgV ist die Nachforderung
+von leistungsbezogenen Unterlagen, die die Wirtschaftlichkeitsbewertung der Angebote anhand der Zuschlagskriterien betreffen, ausgeschlossen.
+Alle Unterlagen, die nicht unter den o.g. Wortlaut fallen, werden von der Zentralen Vergabestelle nachgefordert und sind innerhalb von 6
+Kalendertagen vorzulegen. Diese Nachweise werden im Auftragsfall ebenfalls zum Vertragsbestandteil.
+Werden Leistungen an Nachauftragnehmer vergeben, sind die mit der Abgabe des Angebotes geforderten Nachweise auf Verlangen auch von diesen zu erbringen.
+Erfolgt die Vorlage innerhalb der gesetzten Fristen nicht, wird das Angebot von der weiteren Wertung ausgeschlossen.</cbc:Description>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="ecatalog-submission">not-allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="einvoicing">allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="reserved-execution">no</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:AwardingTerms>
+            <cac:AwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                  <cbc:Description languageID="DEU">Wichtung: 30 %, max. Punktzahl: 240
+Der Bewertungsfaktor Preis setzt sich zusammen aus den Angebotspreisen für
+Unterhaltsreinigung 210 Punkte
+Grundreinigung 20 Punkte
+Glasreinigung 10 Punkte
+
+Aus allen gültigen Angeboten wird der niedrigste Angebotspreis für jeweils für die Unterhaltsreinigung, die Grundreinigung und die Glasreinigung ermittelt und als Referenzwert angenommen. Dafür erhält der Bieter jeweils die maximal zu erreichende Punktzahl.
+Bei allen anderen Angebotspreisen erfolgt die Punkteermittlung im Verhältnis zum jeweiligen Referenzwert. Die Punktzahlen werden auf eine Stelle nach dem Komma gerundet.
+Beispiel: Angebotspreis / günstigster Angebotspreis x max. Punktzahl</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+                  <cbc:Description languageID="DEU">Leistung
+Wichtung: 40%, maximale Punktzahl: 320
+Der Bewertungsfaktor Leistung setzt sich zusammen aus:
+Bewertung der kalkulierten Leistungsmaße (m²/h) 45 Punkte und
+den sich daraus ergebenden Jahresreinigungsstunden 275 Punkte
+
+Für die Bewertung der angebotenen Leistungsmaße (m²/h) dient die folgende Leistungswerttabelle als Grundlage:
+Gruppen-/Betreuungs-/Schlafräume 100 bis 200 m²/h
+Büro 160 bis 230 m²/h
+Nebenräume (Lager etc.) 250 bis 400 m²/h
+Turnräume, Flure und Eingangshallen 150 bis 300 m²/h
+Aufenthalts- und Speiseräume 110 bis 190 m²/h
+Garderoben, Umkleiden 150 bis 300 m²/h
+Küchen/Teeküchen; Toiletten, Waschräume 60 bis 120 m²/h
+Treppenhäuser 130 bis 200 m²/h
+Aufzüge 90 bis 150 m²/h
+
+Angebotene Leistungsmaße außerhalb der Richtleistungswerte erhalten 0 Punkte. Alle anderen angebotenen Leistungsmaße, welche sich innerhalb der Richtleistungswerte befinden, erhalten pro Raumgruppe 5 Punkte. Die Punkte aller Raumgruppen werden addiert.
+Zur Bewertung der Jahresreinigungsstunden wird anhand der Kalkulationsbögen aus allen gültigen Angeboten der Mittelwert der Jahresreinigungsstunden ermittelt und als Grundwert angenommen. Das Angebot, welches die geringste Differenz zum Grundwert aufweist, wird
+als Referenzwert angenommen und erhält die volle Punktzahl. Angebote, welche eine Abweichung von mehr als 100 % zu dem Referenzwert aufweisen, erhalten 0 Punkte. Bei allen anderen Angeboten wird innerhalb der Spanne von +/- 100 % die prozentuale Abweichung
+errechnet. Im selben Verhältnis wird auch der Punktabzug vorgenommen. Die Punktzahlen werden auf eine Stelle nach dem Komma gerundet.
+
+Fachkunde/Qualität/Service
+Wichtung: 30 %, maximale Punktzahl: 240
+Der Bewertungsfaktor Fachkunde/Qualität/Service setzt sich zusammen aus den Kriterien:
+Fachkunde 70 Punkte
+Qualität 90 Punkte (30 Punkte für QM-Konzept; je 20 Punkte für Kontrollhäufigkeit; Dokumentation; Auswertung)
+Service 80 Punkte (je für Reaktionszeiten Mängelbeseitigung und Sondereinsätze)
+
+Anhand des als Anlage 1 beigefügten Fragebogens sind die genannten Bewertungsfaktoren von den Anbietern zu bewerten und entsprechende Nachweise beizufügen. Weitere Angaben können als Anlage auf separatem Blatt näher erläutert werden. Alle auftragsbezogenen
+Qualitätskriterien sollen durch ein geeignetes Qualitätssicherungskonzept ausreichend definiert sein. Das Konzept ist dem Angebot im Zuge der Angebotswertung beizulegen und wird mit der Zuschlagserteilung zum Vertragsbestandteil.
+Die Punktzahlen werden auf eine Stelle nach dem Komma gerundet.</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                  <cbc:Description languageID="DEU">Tagesfrau und Küche
+Punktzahl: 900
+Die Dienstleistung Tagesfrau und Küche wird zu 100% mit dem Faktor Preis bewertet.
+Aus allen gültigen Angeboten wird der niedrigste Angebotspreis ermittelt und als Referenzwert angenommen. Dafür erhält der Bieter die maximal zu erreichende Punktzahl.
+Bei allen anderen Angebotspreisen erfolgt die Punkteermittlung im Verhältnis zum jeweiligen Referenzwert. Die Punktzahlen werden auf eine Stelle nach dem Komma gerundet.</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                  <cbc:Description languageID="DEU">Mattenservice
+Punktzahl: 10
+Die Dienstleistung Mattenservice wird zu 100% mit dem Faktor Preis bewertet.
+Aus allen gültigen Angeboten wird der niedrigste Angebotspreis ermittelt und als Referenzwert angenommen. Dafür erhält der Bieter die maximal zu erreichende Punktzahl. 
+Bei allen anderen Angebotspreisen erfolgt die Punkteermittlung im Verhältnis zum jeweiligen Referenzwert. Die Punktzahlen werden auf eine Stelle nach dem Komma gerundet.</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+            </cac:AwardingCriterion>
+         </cac:AwardingTerms>
+         <cac:AdditionalInformationParty>
+            <cac:PartyIdentification>
+               <cbc:ID>ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:AdditionalInformationParty>
+         <cac:DocumentProviderParty>
+            <cac:PartyIdentification>
+               <cbc:ID>ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:DocumentProviderParty>
+         <cac:TenderRecipientParty>
+            <cbc:EndpointID>https://www.subreport.de/E38784422</cbc:EndpointID>
+            <cac:PartyIdentification>
+               <cbc:ID>ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:TenderRecipientParty>
+         <cac:TenderEvaluationParty>
+            <cac:PartyIdentification>
+               <cbc:ID>ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:TenderEvaluationParty>
+         <cac:TenderValidityPeriod>
+            <cbc:DurationMeasure unitCode="DAY">64</cbc:DurationMeasure>
+         </cac:TenderValidityPeriod>
+         <cac:AppealTerms>
+            <cac:PresentationPeriod>
+               <cbc:Description languageID="DEU">gemäß § 155ff GWB</cbc:Description>
+            </cac:PresentationPeriod>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+         </cac:AppealTerms>
+         <cac:Language>
+            <cbc:ID>DEU</cbc:ID>
+         </cac:Language>
+         <cac:PostAwardProcess>
+            <cbc:ElectronicOrderUsageIndicator>true</cbc:ElectronicOrderUsageIndicator>
+            <cbc:ElectronicPaymentUsageIndicator>true</cbc:ElectronicPaymentUsageIndicator>
+         </cac:PostAwardProcess>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <cbc:SubmissionMethodCode listName="esubmission">required</cbc:SubmissionMethodCode>
+         <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+         <cac:TenderSubmissionDeadlinePeriod>
+            <cbc:EndDate>2025-12-18+01:00</cbc:EndDate>
+            <cbc:EndTime>10:15:00+01:00</cbc:EndTime>
+         </cac:TenderSubmissionDeadlinePeriod>
+         <cac:OpenTenderEvent>
+            <cbc:OccurrenceDate>2025-12-18+01:00</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>10:15:00+01:00</cbc:OccurrenceTime>
+         </cac:OpenTenderEvent>
+         <cac:AuctionTerms>
+            <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+         </cac:AuctionTerms>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:ID schemeName="InternalID">LOT-0001 VgV-OV-51/26/002</cbc:ID>
+         <cbc:Name languageID="DEU">Los 2  - Kindergarten "Bummi"</cbc:Name>
+         <cbc:Description languageID="DEU">- Unterhaltsreinigung täglich ab 15.30 Uhr
+- Serviceleistung Tagesfrau und Küche monatlich 152 Stunden im geteilten Dienst entsprechend Dienstplan</cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+         <cbc:Note languageID="DEU">#Besonders auch geeignet für:freelance#, #Besonders auch geeignet für:startup#, #Besonders auch geeignet für:other-sme#, #Besonders auch geeignet für:selbst#</cbc:Note>
+         <cbc:SMESuitableIndicator>true</cbc:SMESuitableIndicator>
+         <cac:ProcurementAdditionalType>
+            <cbc:ProcurementTypeCode listName="strategic-procurement">none</cbc:ProcurementTypeCode>
+         </cac:ProcurementAdditionalType>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">90911200</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:RealizedLocation>
+            <cac:Address>
+               <cbc:CityName>Gotha</cbc:CityName>
+               <cbc:PostalZone>99867</cbc:PostalZone>
+               <cbc:CountrySubentityCode listName="nuts">DEG0C</cbc:CountrySubentityCode>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+         <cac:PlannedPeriod>
+            <cbc:StartDate>2026-04-01+02:00</cbc:StartDate>
+            <cbc:EndDate>2028-12-31+01:00</cbc:EndDate>
+         </cac:PlannedPeriod>
+         <cac:ContractExtension>
+            <cbc:OptionsDescription languageID="DEU">Verlängerung um jeweils 2 Jahre, maximal bis 31.12.2032</cbc:OptionsDescription>
+         </cac:ContractExtension>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+</ContractNotice>

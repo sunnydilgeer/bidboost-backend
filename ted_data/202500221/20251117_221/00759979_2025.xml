@@ -1,0 +1,650 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+   <ext:UBLExtensions>
+      <ext:UBLExtension>
+         <ext:ExtensionContent>
+            <efext:EformsExtension>
+               <efac:NoticeSubType>
+                  <cbc:SubTypeCode listName="notice-subtype">16</cbc:SubTypeCode>
+               </efac:NoticeSubType>
+               <efac:Organizations>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>www.uvo.gov.sk</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="SLK"><![CDATA[Úrad pre verejné obstarávanie]]></cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName><![CDATA[Ružová dolina]]></cbc:StreetName>
+                           <cbc:AdditionalStreetName><![CDATA[10]]></cbc:AdditionalStreetName>
+                           <cbc:CityName><![CDATA[Bratislava - mestská časť Ružinov]]></cbc:CityName>
+                           <cbc:PostalZone><![CDATA[82109]]></cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">SK010</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">SVK</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>31797903</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>2021511008</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+421250264111</cbc:Telephone>
+                           <cbc:ElectronicMail>info@uvo.gov.sk</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efbc:AcquiringCPBIndicator>false</efbc:AcquiringCPBIndicator>
+                     <efbc:AwardingCPBIndicator>false</efbc:AwardingCPBIndicator>
+                     <efac:Company>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="SLK"><![CDATA[Centrum účelových zariadení]]></cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName><![CDATA[Rekreačná]]></cbc:StreetName>
+                           <cbc:AdditionalStreetName><![CDATA[13]]></cbc:AdditionalStreetName>
+                           <cbc:CityName><![CDATA[Piešťany]]></cbc:CityName>
+                           <cbc:PostalZone><![CDATA[92101]]></cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">SK021</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">SVK</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>42137004</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>2022739697</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>0908048626</cbc:Telephone>
+                           <cbc:ElectronicMail>peter.kontur@cuz.sk</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+               </efac:Organizations>
+            <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00759979-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+         </ext:ExtensionContent>
+      </ext:UBLExtension>
+   </ext:UBLExtensions>
+   <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+   <cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+   <cbc:ID schemeName="notice-id">352d2706-b72f-434d-978e-5b14091f6d68</cbc:ID>
+   <cbc:ContractFolderID>1b66d911-9189-4e5f-8ede-5e2c64798b36</cbc:ContractFolderID>
+   <cbc:IssueDate>2025-11-14+01:00</cbc:IssueDate>
+   <cbc:IssueTime>10:05:41+01:00</cbc:IssueTime>
+   <cbc:VersionID>01</cbc:VersionID>
+   <cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+   <cbc:NoticeTypeCode listName="competition">cn-standard</cbc:NoticeTypeCode>
+   <cbc:NoticeLanguageCode listName="language">SLK</cbc:NoticeLanguageCode>
+   <cac:ContractingParty>
+      <cbc:BuyerProfileURI>https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-profilov/detail/14849</cbc:BuyerProfileURI>
+      <cac:ContractingPartyType>
+         <cbc:PartyTypeCode listName="buyer-legal-type">body-pl-cga</cbc:PartyTypeCode>
+      </cac:ContractingPartyType>
+      <cac:ContractingActivity>
+         <cbc:ActivityTypeCode listName="authority-activity">rcr</cbc:ActivityTypeCode>
+      </cac:ContractingActivity>
+      <cac:Party>
+         <cac:PartyIdentification>
+            <cbc:ID>ORG-0002</cbc:ID>
+         </cac:PartyIdentification>
+         <cac:ServiceProviderParty>
+            <cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode>
+            <cac:Party>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0001</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:Party>
+         </cac:ServiceProviderParty>
+      </cac:Party>
+   </cac:ContractingParty>
+   <cac:TenderingTerms>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-grounds-source">epo-notice</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="SLK"><![CDATA[Uchádzač alebo záujemca preukazuje splnenie podmienky účasti podľa § 32 ods. 1 písm. a) zákona o verejnom obstarávaní č. 343/2015 Z.z., že nebol on, ani jeho štatutárny orgán, ani člen štatutárneho orgánu, ani člen dozorného orgánu, ani prokurista právoplatne odsúdený za trestný čin korupcie, trestný čin poškodzovania finančných záujmov Európskych spoločenstiev, trestný čin legalizácie príjmu z trestnej činnosti, trestný čin založenia, zosnovania a podporovania zločineckej skupiny, trestný čin založenia, zosnovania alebo podporovania teroristickej skupiny, trestný čin terorizmu a niektorých foriem účasti na terorizme, trestný čin obchodovania s ľuďmi, trestný čin, ktorého skutková podstata súvisí s podnikaním alebo trestný čin machinácie pri verejnom obstarávaní a verejnej dražbe jedným z nasledovných spôsobov: 
+
+1. doloženým výpisom z registra trestov nie starším ako tri mesiace, 
+2. zápisom do Zoznamu hospodárskych subjektov,
+3. predbežne vyplneným jednotným európskym dokumentom (JED) podľa § 39 ods. (1) ZVO.
+
+Ak uchádzač alebo záujemca má sídlo, miesto podnikania alebo obvyklý pobyt mimo územia Slovenskej republiky a štát jeho sídla, miesta podnikania alebo obvyklého pobytu nevydáva požadovaný doklad alebo nevydáva ani rovnocenný doklad, možno ho nahradiť čestným vyhlásením podľa predpisov platných v štáte jeho sídla, miesta podnikania alebo obvyklého pobytu.
+]]></cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-pmt</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="SLK"><![CDATA[Uchádzač alebo záujemca preukazuje splnenie podmienky účasti podľa § 32 ods. 1 písm. b) a c) zákona o verejnom obstarávaní č. 343/2015 Z.z., t. j. že: 
+ - nemá evidované nedoplatky na poistnom na sociálne poistenie a zdravotná poisťovňa neeviduje voči nemu pohľadávky po splatnosti podľa osobitných predpisov,
+ - nemá evidované daňové nedoplatky voči daňovému úradu a colnému úradu podľa osobitných predpisov v Slovenskej republike a v štáte sídla, miesta podnikania alebo obvyklého pobytu, jedným z nasledovných spôsobov:
+
+1. doloženým potvrdením zdravotnej poisťovne , Sociálnej poisťovne, a doloženým potvrdením miestneho príslušného daňového úradu a colného úradu nie starším ako tri mesiace,
+2. zápisom do Zoznamu hospodárskych subjektov,
+3. predbežne vyplneným jednotným európskym dokumentom (JED) podľa § 39 ods. 1 ZVO.
+
+Ak uchádzač alebo záujemca má sídlo, miesto podnikania alebo obvyklý pobyt mimo územia Slovenskej republiky a štát jeho sídla, miesta podnikania alebo obvyklého pobytu nevydáva požadovaný doklad alebo rovnocenný doklad, možno ho nahradiť čestným vyhlásením podľa predpisov platných v danom štáte.
+]]></cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="SLK"><![CDATA[Uchádzač alebo záujemca preukazuje splnenie podmienky účasti podľa § 32 ods. 1 písm. d) zákona o verejnom obstarávaní č. 343/2015 Z.z., t. j. že nebol na jeho majetok vyhlásený konkurz, nie je v reštrukturalizácii, nie je v likvidácii, ani nebolo proti nemu zastavené konkurzné konanie pre nedostatok majetku alebo zrušený konkurz pre nedostatok majetku, jedným z nasledovných spôsobov:
+
+1. doloženým potvrdením príslušného súdu nie starším ako tri mesiace,
+2. zápisom do Zoznamu hospodárskych subjektov,
+3. predbežne vyplneným jednotným európskym dokumentom (JED) podľa § 39 ods. 1 ZVO.
+
+Ak uchádzač alebo záujemca má sídlo, miesto podnikania alebo obvyklý pobyt mimo územia Slovenskej republiky a štát jeho sídla, miesta podnikania alebo obvyklého pobytu nevydáva požadovaný doklad alebo rovnocenný doklad, možno ho nahradiť čestným vyhlásením podľa predpisov platných v danom štáte.]]></cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-natl</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="SLK"><![CDATA[Uchádzač alebo záujemca preukazuje splnenie podmienky účasti, že je oprávnený dodávať tovar, uskutočňovať stavebné práce alebo poskytovať službu podľa § 32 ods. 1 písm. e)  zákona o verejnom obstarávaní č. 343/2015 Z. z. doloženým dokladom o oprávnení dodávať tovar, uskutočňovať stavebné práce alebo poskytovať službu, ktorý zodpovedá predmetu zákazky.
+
+Uchádzač alebo záujemca preukazuje splnenie podmienky účasti, že nemá uložený zákaz účasti vo verejnom obstarávaní potvrdený konečným rozhodnutím v Slovenskej republike a v štáte sídla, miesta podnikania alebo obvyklého pobytu podľa  §32 ods. 1 písm. f) zákona o verejnom obstarávaní č. 343/2015 Z.z. doloženým čestným vyhlásením.]]></cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="SLK"><![CDATA[Verejný obstarávateľ a obstarávateľ môžu kedykoľvek počas verejného obstarávania vylúčiť uchádzača alebo záujemcu, ak existujú dôvody týkajúce sa podstatného porušenia zmluvných povinností, závažného porušenia profesijných povinností, narušením hospodárskej súťaže, porušením povinností v oblasti profesijnej etiky, pracovného, sociálneho alebo environmentálneho práva. Verejný obstarávateľ a obstarávateľ vylúčia kedykoľvek počas verejného obstarávania uchádzača alebo záujemcu, ak poskytol nepravdivé informácie, pokúsil sa neoprávnene ovplyvniť postup verejného obstarávania, prípadne sa zapojil do jeho prípravy spôsobom, ktorý znemožňuje zabezpečiť hospodársku súťaž, konflikt záujmov nemnožno odstrániť inými účinnými opatreniami.]]></cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-corrpt</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="SLK"><![CDATA[Uchádzač alebo záujemca preukazuje splnenie podmienky účasti podľa § 32 ods. 1 písm. a) zákona o verejnom obstarávaní č. 343/2015 Z.z. jedným z nasledovných spôsobov: 
+1. doloženým výpisom z registra trestov nie starším ako tri mesiace, 
+2. zápisom do Zoznamu hospodárskych subjektov,
+3. predbežne vyplneným jednotným európskym dokumentom (JED) podľa § 39 ods. (1) ZVO.
+
+Ak uchádzač alebo záujemca má sídlo, miesto podnikania alebo obvyklý pobyt mimo územia Slovenskej republiky a štát jeho sídla, miesta podnikania alebo obvyklého pobytu nevydáva požadovaný doklad alebo nevydáva ani rovnocenný doklad, možno ho nahradiť čestným vyhlásením podľa predpisov platných v štáte jeho sídla, miesta podnikania alebo obvyklého pobytu.]]></cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-fraud</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="SLK"><![CDATA[Uchádzač alebo záujemca preukazuje splnenie podmienky účasti podľa § 32 ods. 1 písm. a) zákona o verejnom obstarávaní č. 343/2015 Z.z. jedným z nasledovných spôsobov: 
+1. doloženým výpisom z registra trestov nie starším ako tri mesiace, 
+2. zápisom do Zoznamu hospodárskych subjektov,
+3. predbežne vyplneným jednotným európskym dokumentom (JED) podľa § 39 ods. (1) ZVO.
+
+Ak uchádzač alebo záujemca má sídlo, miesto podnikania alebo obvyklý pobyt mimo územia Slovenskej republiky a štát jeho sídla, miesta podnikania alebo obvyklého pobytu nevydáva požadovaný doklad alebo nevydáva ani rovnocenný doklad, možno ho nahradiť čestným vyhlásením podľa predpisov platných v štáte jeho sídla, miesta podnikania alebo obvyklého pobytu.]]></cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-laund</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="SLK"><![CDATA[Uchádzač alebo záujemca preukazuje splnenie podmienky účasti podľa § 32 ods. 1 písm. a) zákona o verejnom obstarávaní č. 343/2015 Z.z. jedným z nasledovných spôsobov: 
+1. doloženým výpisom z registra trestov nie starším ako tri mesiace, 
+2. zápisom do Zoznamu hospodárskych subjektov,
+3. predbežne vyplneným jednotným európskym dokumentom (JED) podľa § 39 ods. (1) ZVO.
+
+Ak uchádzač alebo záujemca má sídlo, miesto podnikania alebo obvyklý pobyt mimo územia Slovenskej republiky a štát jeho sídla, miesta podnikania alebo obvyklého pobytu nevydáva požadovaný doklad alebo nevydáva ani rovnocenný doklad, možno ho nahradiť čestným vyhlásením podľa predpisov platných v štáte jeho sídla, miesta podnikania alebo obvyklého pobytu.]]></cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-part</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="SLK"><![CDATA[Uchádzač alebo záujemca preukazuje splnenie podmienky účasti podľa § 32 ods. 1 písm. a) zákona o verejnom obstarávaní č. 343/2015 Z.z. jedným z nasledovných spôsobov: 
+1. doloženým výpisom z registra trestov nie starším ako tri mesiace, 
+2. zápisom do Zoznamu hospodárskych subjektov,
+3. predbežne vyplneným jednotným európskym dokumentom (JED) podľa § 39 ods. (1) ZVO.
+
+Ak uchádzač alebo záujemca má sídlo, miesto podnikania alebo obvyklý pobyt mimo územia Slovenskej republiky a štát jeho sídla, miesta podnikania alebo obvyklého pobytu nevydáva požadovaný doklad alebo nevydáva ani rovnocenný doklad, možno ho nahradiť čestným vyhlásením podľa predpisov platných v štáte jeho sídla, miesta podnikania alebo obvyklého pobytu.]]></cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-terror</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="SLK"><![CDATA[Uchádzač alebo záujemca preukazuje splnenie podmienky účasti podľa § 32 ods. 1 písm. a) zákona o verejnom obstarávaní č. 343/2015 Z.z. jedným z nasledovných spôsobov: 
+1. doloženým výpisom z registra trestov nie starším ako tri mesiace, 
+2. zápisom do Zoznamu hospodárskych subjektov,
+3. predbežne vyplneným jednotným európskym dokumentom (JED) podľa § 39 ods. (1) ZVO.
+
+Ak uchádzač alebo záujemca má sídlo, miesto podnikania alebo obvyklý pobyt mimo územia Slovenskej republiky a štát jeho sídla, miesta podnikania alebo obvyklého pobytu nevydáva požadovaný doklad alebo nevydáva ani rovnocenný doklad, možno ho nahradiť čestným vyhlásením podľa predpisov platných v štáte jeho sídla, miesta podnikania alebo obvyklého pobytu.]]></cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-traffick</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="SLK"><![CDATA[Uchádzač alebo záujemca preukazuje splnenie podmienky účasti podľa § 32 ods. 1 písm. a) zákona o verejnom obstarávaní č. 343/2015 Z.z. jedným z nasledovných spôsobov: 
+1. doloženým výpisom z registra trestov nie starším ako tri mesiace, 
+2. zápisom do Zoznamu hospodárskych subjektov,
+3. predbežne vyplneným jednotným európskym dokumentom (JED) podľa § 39 ods. (1) ZVO.
+
+Ak uchádzač alebo záujemca má sídlo, miesto podnikania alebo obvyklý pobyt mimo územia Slovenskej republiky a štát jeho sídla, miesta podnikania alebo obvyklého pobytu nevydáva požadovaný doklad alebo nevydáva ani rovnocenný doklad, možno ho nahradiť čestným vyhlásením podľa predpisov platných v štáte jeho sídla, miesta podnikania alebo obvyklého pobytu.
+]]></cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-pmt-bre-ssc</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="SLK"><![CDATA[Uchádzač alebo záujemca preukazuje splnenie podmienky účasti  §32 ods. 1 písm. b) zákona o verejnom obstarávaní č. 343/2015 Z.z. 
+1. doloženým potvrdením zdravotnej poisťovne a Sociálnej poisťovne nie starším ako tri mesiace, 
+2. zápisom do Zoznamu hospodárskych subjektov,
+3. predbežne vyplneným jednotným európskym dokumentom (JED) podľa § 39 ods. (1) ZVO.
+
+Ak uchádzač alebo záujemca má sídlo, miesto podnikania alebo obvyklý pobyt mimo územia Slovenskej republiky a štát jeho sídla, miesta podnikania alebo obvyklého pobytu nevydáva požadovaný doklad alebo nevydáva ani rovnocenný doklad, možno ho nahradiť čestným vyhlásením podľa predpisov platných v štáte jeho sídla, miesta podnikania alebo obvyklého pobytu.]]></cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-pmt-bre-tax</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="SLK"><![CDATA[Uchádzač alebo záujemca preukazuje splnenie podmienky účasti  §32 ods. 1 písm. c) zákona o verejnom obstarávaní č. 343/2015 Z.z. 
+1. doloženým potvrdením miestne príslušného daňového úradu a miestne príslušného colného úradu nie starším ako tri mesiace, 
+2. zápisom do Zoznamu hospodárskych subjektov,
+3. predbežne vyplneným jednotným európskym dokumentom (JED) podľa § 39 ods. (1) ZVO.
+
+Ak uchádzač alebo záujemca má sídlo, miesto podnikania alebo obvyklý pobyt mimo územia Slovenskej republiky a štát jeho sídla, miesta podnikania alebo obvyklého pobytu nevydáva požadovaný doklad alebo nevydáva ani rovnocenný doklad, možno ho nahradiť čestným vyhlásením podľa predpisov platných v štáte jeho sídla, miesta podnikania alebo obvyklého pobytu.]]></cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-as-susp</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="SLK"><![CDATA[Uchádzač alebo záujemca preukazuje splnenie podmienky účasti  §32 ods. 1 písm. d) zákona o verejnom obstarávaní č. 343/2015 Z.z. 
+1. doloženým potvrdením príslušného súdu nie starším ako tri mesiace, 
+2. zápisom do Zoznamu hospodárskych subjektov,
+3. predbežne vyplneným jednotným európskym dokumentom (JED) podľa § 39 ods. (1) ZVO.
+
+Ak uchádzač alebo záujemca má sídlo, miesto podnikania alebo obvyklý pobyt mimo územia Slovenskej republiky a štát jeho sídla, miesta podnikania alebo obvyklého pobytu nevydáva požadovaný doklad alebo nevydáva ani rovnocenný doklad, možno ho nahradiť čestným vyhlásením podľa predpisov platných v štáte jeho sídla, miesta podnikania alebo obvyklého pobytu.]]></cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-bankr</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="SLK"><![CDATA[Uchádzač alebo záujemca preukazuje splnenie podmienky účasti  §32 ods. 1 písm. d) zákona o verejnom obstarávaní č. 343/2015 Z.z. 
+1. doloženým potvrdením príslušného súdu nie starším ako tri mesiace, 
+2. zápisom do Zoznamu hospodárskych subjektov,
+3. predbežne vyplneným jednotným európskym dokumentom (JED) podľa § 39 ods. (1) ZVO.
+
+Ak uchádzač alebo záujemca má sídlo, miesto podnikania alebo obvyklý pobyt mimo územia Slovenskej republiky a štát jeho sídla, miesta podnikania alebo obvyklého pobytu nevydáva požadovaný doklad alebo nevydáva ani rovnocenný doklad, možno ho nahradiť čestným vyhlásením podľa predpisov platných v štáte jeho sídla, miesta podnikania alebo obvyklého pobytu.]]></cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-cred-arran</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="SLK"><![CDATA[Uchádzač alebo záujemca preukazuje splnenie podmienky účasti  §32 ods. 1 písm. d) zákona o verejnom obstarávaní č. 343/2015 Z.z. 
+1. doloženým potvrdením príslušného súdu nie starším ako tri mesiace, 
+2. zápisom do Zoznamu hospodárskych subjektov,
+3. predbežne vyplneným jednotným európskym dokumentom (JED) podľa § 39 ods. (1) ZVO.
+
+Ak uchádzač alebo záujemca má sídlo, miesto podnikania alebo obvyklý pobyt mimo územia Slovenskej republiky a štát jeho sídla, miesta podnikania alebo obvyklého pobytu nevydáva požadovaný doklad alebo nevydáva ani rovnocenný doklad, možno ho nahradiť čestným vyhlásením podľa predpisov platných v štáte jeho sídla, miesta podnikania alebo obvyklého pobytu.]]></cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-insolvency</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="SLK"><![CDATA[Uchádzač alebo záujemca preukazuje splnenie podmienky účasti  §32 ods. 1 písm. d) zákona o verejnom obstarávaní č. 343/2015 Z.z. 
+1. doloženým potvrdením príslušného súdu nie starším ako tri mesiace, 
+2. zápisom do Zoznamu hospodárskych subjektov,
+3. predbežne vyplneným jednotným európskym dokumentom (JED) podľa § 39 ods. (1) ZVO.
+
+Ak uchádzač alebo záujemca má sídlo, miesto podnikania alebo obvyklý pobyt mimo územia Slovenskej republiky a štát jeho sídla, miesta podnikania alebo obvyklého pobytu nevydáva požadovaný doklad alebo nevydáva ani rovnocenný doklad, možno ho nahradiť čestným vyhlásením podľa predpisov platných v štáte jeho sídla, miesta podnikania alebo obvyklého pobytu.]]></cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-liq-admin</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="SLK"><![CDATA[Uchádzač alebo záujemca preukazuje splnenie podmienky účasti  §32 ods. 1 písm. d) zákona o verejnom obstarávaní č. 343/2015 Z.z. 
+1. doloženým potvrdením príslušného súdu nie starším ako tri mesiace, 
+2. zápisom do Zoznamu hospodárskych subjektov,
+3. predbežne vyplneným jednotným európskym dokumentom (JED) podľa § 39 ods. (1) ZVO.
+
+Ak uchádzač alebo záujemca má sídlo, miesto podnikania alebo obvyklý pobyt mimo územia Slovenskej republiky a štát jeho sídla, miesta podnikania alebo obvyklého pobytu nevydáva požadovaný doklad alebo nevydáva ani rovnocenný doklad, možno ho nahradiť čestným vyhlásením podľa predpisov platných v štáte jeho sídla, miesta podnikania alebo obvyklého pobytu.]]></cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-other</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="SLK"><![CDATA[Uchádzač alebo záujemca preukazuje splnenie podmienky účasti  §32 ods. 1 písm. d) zákona o verejnom obstarávaní č. 343/2015 Z.z. 
+1. doloženým potvrdením príslušného súdu nie starším ako tri mesiace, 
+2. zápisom do Zoznamu hospodárskych subjektov,
+3. predbežne vyplneným jednotným európskym dokumentom (JED) podľa § 39 ods. (1) ZVO.
+
+Ak uchádzač alebo záujemca má sídlo, miesto podnikania alebo obvyklý pobyt mimo územia Slovenskej republiky a štát jeho sídla, miesta podnikania alebo obvyklého pobytu nevydáva požadovaný doklad alebo nevydáva ani rovnocenný doklad, možno ho nahradiť čestným vyhlásením podľa predpisov platných v štáte jeho sídla, miesta podnikania alebo obvyklého pobytu.]]></cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-bre-env-law</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="SLK"><![CDATA[Verejný obstarávateľ a obstarávateľ môžu vylúčiť kedykoľvek počas verejného obstarávania uchádzača alebo záujemcu, ak sa v predchádzajúcich troch rokoch od vyhlásenia alebo preukázateľného začatia verejného obstarávania dopustil závažného porušenia povinností v oblasti ochrany životného prostredia, za ktoré mu bola právoplatne uložená sankcia, ktoré dokáže verejný obstarávateľ a obstarávateľ preukázať.]]></cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-bre-lab-law</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="SLK"><![CDATA[Verejný obstarávateľ a obstarávateľ môžu vylúčiť kedykoľvek počas verejného obstarávania uchádzača alebo záujemcu, ak sa v predchádzajúcich troch rokoch od vyhlásenia alebo preukázateľného začatia verejného obstarávania dopustil závažného porušenia povinností v oblasti pracovného práva, za ktoré mu bola právoplatne uložená sankcia, ktoré dokáže verejný obstarávateľ a obstarávateľ preukázať.]]></cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-bre-soc-law</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="SLK"><![CDATA[Verejný obstarávateľ a obstarávateľ môžu vylúčiť kedykoľvek počas verejného obstarávania uchádzača alebo záujemcu, ak sa v predchádzajúcich troch rokoch od vyhlásenia alebo preukázateľného začatia verejného obstarávania dopustil závažného porušenia povinností v oblasti sociálneho práva, za ktoré mu bola právoplatne uložená sankcia, ktoré dokáže verejný obstarávateľ a obstarávateľ preukázať.]]></cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-distortion</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="SLK"><![CDATA[Verejný obstarávateľ a obstarávateľ môžu vylúčiť kedykoľvek počas verejného obstarávania uchádzača alebo záujemcu, ak sa v predchádzajúcich troch rokoch od vyhlásenia alebo preukázateľného začatia verejného obstarávania dopustil závažného porušenia profesijných povinností, ktoré dokáže verejný obstarávateľ a obstarávateľ preukázať.]]></cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-misconduct</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="SLK"><![CDATA[Verejný obstarávateľ a obstarávateľ môžu vylúčiť kedykoľvek počas verejného obstarávania uchádzača alebo záujemcu, ak sa v predchádzajúcich troch rokoch od vyhlásenia alebo preukázateľného začatia verejného obstarávania dopustil závažného porušenia profesijných povinností, ktoré dokáže verejný obstarávateľ a obstarávateľ preukázať.]]></cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-misrepresent</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="SLK"><![CDATA[Verejný obstarávateľ a obstarávateľ vylúčia kedykoľvek počas verejného obstarávania uchádzača alebo záujemcu, ak :
+- poskytol informácie alebo doklady, ktoré sú nepravdivé alebo pozmenené tak, že nezodpovedajú skutočnosti a majú vplyv na vyhodnotenie splnenia podmienok účasti alebo výber záujemcov,
+- pokúsil sa neoprávnene ovplyvniť postup verejného obstarávania, alebo
+- pokúsil sa získať dôverné informácie, ktoré by mu poskytli neoprávnenú výhodu.]]></cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-partic-confl</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="SLK"><![CDATA[Verejný obstarávateľ a obstarávateľ vylúčia uchádzača alebo záujemcu kedykoľvek počas verejného obstarávania, ak konflikt záujmov podľa § 23 nemožno odstrániť inými účinnými opatreniami.
+Konflikt záujmov podľa § 23 zákona č. 343/2015 Z. z. v znení neskorších predpisov vzniká najmä vtedy, ak sú osoby zapojené do postupu verejného obstarávania alebo osoby, ktoré môžu ovplyvniť jeho výsledok, v osobnom, majetkovom alebo inom vzťahu k hospodárskemu subjektu, ktorý sa zúčastňuje na verejnom obstarávaní, čím môže byť ohrozená ich nestrannosť a objektivita.]]></cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-prep-confl</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="SLK"><![CDATA[Verejný obstarávateľ a obstarávateľ vylúčia z verejného obstarávania aj uchádzača alebo záujemcu, ak narušenie hospodárskej súťaže, ktoré vyplynulo z prípravných trhových konzultácií alebo jeho predbežného zapojenia podľa § 25 zákona o verejnom obstarávaní š. 343/2025 z.z. v znení neskorších predpisov, nemožno odstrániť inými účinnými opatreniami ani po vyjadrení uchádzača alebo záujemcu; verejný obstarávateľ a obstarávateľ pred takýmto vylúčením poskytnú záujemcovi alebo uchádzačovi možnosť v lehote piatich pracovných dní od doručenia žiadosti preukázať, že jeho účasťou na prípravných trhových konzultáciách alebo predbežnom zapojení nedošlo k narušeniu hospodárskej súťaže.]]></cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-sanction</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="SLK"><![CDATA[Verejný obstarávateľ a obstarávateľ môžu vylúčiť kedykoľvek počas verejného obstarávania uchádzača alebo záujemcu, ak sa v predchádzajúcich troch rokoch od vyhlásenia alebo preukázateľného začatia verejného obstarávania dopustil pri plnení zákazky alebo koncesie podstatného porušenia zmluvných povinností, v dôsledku čoho verejný obstarávateľ alebo obstarávateľ odstúpil od zmluvy alebo mu bola spôsobená závažná škoda alebo iná závažná ujma.]]></cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-unrel-sec</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="SLK"><![CDATA[Ak ide o zákazku v oblasti obrany a bezpečnosti alebo koncesiu v oblasti obrany a bezpečnosti, verejný obstarávateľ alebo obstarávateľ vylúči uchádzača alebo záujemcu, o ktorom má preukázateľné informácie alebo údaje vrátane informácií alebo údajov pochádzajúcich z chránených zdrojov, že nie je natoľko spoľahlivý, aby sa vylúčili riziká spojené s ochranou bezpečnostných záujmov Slovenskej republiky.]]></cbc:Description>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+   </cac:TenderingTerms>
+   <cac:TenderingProcess>
+      <cbc:ProcedureCode listName="procurement-procedure-type">open</cbc:ProcedureCode>
+      <cac:ProcessJustification>
+         <cbc:ProcessReasonCode listName="accelerated-procedure">false</cbc:ProcessReasonCode>
+      </cac:ProcessJustification>
+   </cac:TenderingProcess>
+   <cac:ProcurementProject>
+      <cbc:ID>40/2025</cbc:ID>
+      <cbc:Name languageID="SLK"><![CDATA[Drevotriesková doska laminovaná a doplnkový materiál]]></cbc:Name>
+      <cbc:Description languageID="SLK"><![CDATA[Predmetom zákazky je priebežná dodávka tovarov do výrobnej prevádzky stredisko Krompachy.
+Požadovaný tovar: 
+Položka č. 1 DTDL biela 2800/2070/18
+Položka č. 2 DTDL biela 2800/2070/25
+Položka č. 3 DTDL buk  2800/2070/18
+Položka č. 4 DTDL buk  2800/2070/25
+Položka č. 5 DTDL čerešňa 2800/2070/18
+Položka č. 6 DTDL čerešňa 2800/2070/25
+Položka č. 7 DTDL orech 2800/2070/18
+Položka č. 8 DTDL orech 2800/2070/25
+Položka č. 9 DTDL sivá  2800/2072/18
+Položka č. 10 DTDL sivá  2800/2072/25
+Položka č. 11 DTDL javor 2800/2070/18
+Položka č. 12 DTDL javor 2800/2070/25
+Položka č. 13 DTDL biela 2800/2070/16
+Položka č. 14 DTDL DUB corbridge 2800/2070/18
+Položka č. 15 HDF lak biela PE 2800/2070/3
+Položka č. 16 HDF surová 2800/2070/3
+Položka č. 17 Pracovná doska 4100/600/38
+Položka č. 18 OSB 3 dosky 2500/1250/22
+Položka č. 19 OSB 3 dosky 2500/1250/15
+Položka č. 20 OSB 3 dosky 2500/1250/10
+Položka č. 21 Vodovzdorná preglejka 2500/125/21
+Položka č. 22 Vodovzdorná preglejka 2500/125/15
+Položka č. 23 Vodovzdorná preglejka 2500/125/9
+Položka č. 24 ABSB 23x0,45 -biela, buk, čerešňa, orech, sivá, javor
+Položka č. 25 ABSB 23x2 -biela, buk, čerešňa, orech, sivá, javor
+Položka č. 26 ABSB 28x0,8 -biela, buk, čerešňa, orech, sivá, javor
+Položka č. 27 ABSB 28x2 -biela, buk, čerešňa, orech, sivá, javor
+Podrobná špecifikácia a množstvo tovarov sú uvedené v prílohách súťažných podkladov (SP).]]></cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">supplies</cbc:ProcurementTypeCode>
+      <cbc:Note languageID="SLK"><![CDATA[1. Podmienky účasti podľa § 32 ods. 1 písm. a) zákona musí v súlade s § 32 ods. 7
+zákona spĺňať aj iná osoba ako osoba podľa odseku 1 písm. a) zákona, ak táto osoba má právo za ňu
+konať, práva spojené s rozhodovaním alebo kontrolou v hospodárskom subjekte, ktorý sa chce zúčastniť
+verejného obstarávania. Takáto osoba je definovaná v § 32 ods. 8 zákona. Splnenie podmienky účasti
+podľa prvej vety preukazuje uchádzač predložením čestného vyhlásenia podľa vzoru uvedeného v prílohe
+č. 7 SP alebo vyhlásenia urobeného pred súdom, správnym orgánom, notárom, inou odbornou inštitúciou
+alebo obchodnou inštitúciou podľa predpisov platných v štáte sídla, miesta podnikania alebo obvyklého
+pobytu uchádzača alebo záujemcu, ak právo štátu uchádzača alebo záujemcu so sídlom, miestom
+podnikania alebo obvyklým pobytom mimo územia Slovenskej republiky neupravuje inštitút čestného
+vyhlásenia. V čestnom vyhlásení alebo vyhlásení uchádzač uvedie zoznam osôb podľa prvej a druhej vety.
+Predmetné čestné vyhlásenie alebo vyhlásenie uchádzač predloží v ponuke (príloha č. 7 SP).
+2. Preukazovanie podmienok účasti je voči verejnému obstarávateľovi účinné aj spôsobom podľa § 152 
+ods. 4 zákona. Verejný obstarávateľ uzná rovnocenný zápis, ako je zápis do zoznamu hospodárskych
+subjektov podľa zákona, alebo potvrdenie o zápise vydané príslušným orgánom iného členského štátu,
+ktorým uchádzač preukazuje splnenie podmienok účasti vo verejnom obstarávaní. Verejný obstarávateľ
+príjme aj iný rovnocenný doklad predložený uchádzačom.
+3. Uchádzač môže predbežne nahradiť doklady na preukázanie splnenia podmienok účasti aj jednotným
+európskym dokumentom (JED) podľa § 39 zákona, spĺňajúcim náležitosti podľa § 39 ods. 2 zákona. Bližšie
+informácie o JED, vrátane usmernení, ako správne JED vyplniť, sú uvedené v dokumente zverejnenom na
+webovom sídle Úradu pre verejné obstarávanie
+https://www.uvo.gov.sk/jednotny-europsky-dokument-pre-verejne-obstaravanie: JED - príručka k službe
+ESPD.
+Verejný obstarávateľ požaduje, aby uchádzač (v prípade využitia JEDu) v JEDe uviedol informácie a údaje,
+na základe ktorých bude možné vyhodnotiť splnenie podmienok účasti (nepostačuje uvedenie
+globálneho údaju - odpoveď Áno/Nie - týkajúce sa časti IV: Podmienky účasti oddiel A až D).]]></cbc:Note>
+      <cac:RequestedTenderTotal>
+         <ext:UBLExtensions>
+            <ext:UBLExtension>
+               <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                     <efbc:FrameworkMaximumAmount currencyID="EUR">1675801</efbc:FrameworkMaximumAmount>
+                  </efext:EformsExtension>
+               </ext:ExtensionContent>
+            </ext:UBLExtension>
+         </ext:UBLExtensions>
+      </cac:RequestedTenderTotal>
+      <cac:MainCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">44191300</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">44191100</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:RealizedLocation>
+         <cbc:Description languageID="SLK"><![CDATA[Krompachy]]></cbc:Description>
+         <cac:Address>
+            <cbc:CountrySubentityCode listName="nuts">SK042</cbc:CountrySubentityCode>
+            <cac:Country>
+               <cbc:IdentificationCode listName="country">SVK</cbc:IdentificationCode>
+            </cac:Country>
+         </cac:Address>
+      </cac:RealizedLocation>
+   </cac:ProcurementProject>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+      <cac:TenderingTerms>
+         <ext:UBLExtensions>
+            <ext:UBLExtension>
+               <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-qual-inst</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="SLK"><![CDATA[Preukazuje sa predložením dokladov: certifikáty alebo potvrdenia o zhode (scan napr. v „pdf“).]]></cbc:Description>
+                     </efac:SelectionCriteria>
+                  </efext:EformsExtension>
+               </ext:ExtensionContent>
+            </ext:UBLExtension>
+         </ext:UBLExtensions>
+         <cbc:VariantConstraintCode listName="permission">not-allowed</cbc:VariantConstraintCode>
+         <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+         <cbc:RecurringProcurementIndicator>false</cbc:RecurringProcurementIndicator>
+         <cac:CallForTendersDocumentReference>
+            <ext:UBLExtensions>
+               <ext:UBLExtension>
+                  <ext:ExtensionContent>
+                     <efext:EformsExtension>
+                        <efac:OfficialLanguages>
+                           <cac:Language>
+                              <cbc:ID>SLK</cbc:ID>
+                           </cac:Language>
+                        </efac:OfficialLanguages>
+                     </efext:EformsExtension>
+                  </ext:ExtensionContent>
+               </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:ID>Súťažné podklady</cbc:ID>
+            <cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+            <cac:Attachment>
+               <cac:ExternalReference>
+                  <cbc:URI>https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/dokumenty/547186</cbc:URI>
+               </cac:ExternalReference>
+            </cac:Attachment>
+         </cac:CallForTendersDocumentReference>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="selection-criteria-source">epo-notice</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="selection-criteria-source">epo-procurement-document</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cbc:CompanyLegalFormCode listName="required">false</cbc:CompanyLegalFormCode>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="reserved-procurement">none</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="reserved-execution">no</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="einvoicing">required</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="fsr">false</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="ecatalog-submission">not-allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="esignature-submission">false</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:AwardingTerms>
+            <cac:AwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>100</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="SLK"><![CDATA[Najnižšia celková cena bez DPH]]></cbc:Name>
+                  <cbc:Description languageID="SLK"><![CDATA[Úspešným uchádzačom sa stane uchádzač, ktorý ponúkne za celý predmet zákazky najnižšiu cenu bez DPH.]]></cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+            </cac:AwardingCriterion>
+         </cac:AwardingTerms>
+         <cac:TenderRecipientParty>
+            <cbc:EndpointID>https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/547186</cbc:EndpointID>
+         </cac:TenderRecipientParty>
+         <cac:TenderValidityPeriod>
+            <cbc:DurationMeasure unitCode="MONTH">6</cbc:DurationMeasure>
+         </cac:TenderValidityPeriod>
+         <cac:AppealTerms>
+            <cac:PresentationPeriod>
+               <cbc:Description languageID="SLK"><![CDATA[Lehoty na predloženie námietok upravuje platný a účinný zákon o verejnom obstarávaní.]]></cbc:Description>
+            </cac:PresentationPeriod>
+            <cac:AppealInformationParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0001</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealInformationParty>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0001</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+         </cac:AppealTerms>
+         <cac:Language>
+            <cbc:ID>SLK</cbc:ID>
+         </cac:Language>
+         <cac:Language>
+            <cbc:ID>CES</cbc:ID>
+         </cac:Language>
+         <cac:PostAwardProcess>
+            <cbc:ElectronicOrderUsageIndicator>true</cbc:ElectronicOrderUsageIndicator>
+            <cbc:ElectronicPaymentUsageIndicator>true</cbc:ElectronicPaymentUsageIndicator>
+         </cac:PostAwardProcess>
+         <cac:SecurityClearanceTerm>
+            <cbc:Code listName="required">false</cbc:Code>
+         </cac:SecurityClearanceTerm>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <ext:UBLExtensions>
+            <ext:UBLExtension>
+               <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                     <efbc:AccessToolName><![CDATA[IS EPVO]]></efbc:AccessToolName>
+                  </efext:EformsExtension>
+               </ext:ExtensionContent>
+            </ext:UBLExtension>
+         </ext:UBLExtensions>
+         <cbc:SubmissionMethodCode listName="esubmission">required</cbc:SubmissionMethodCode>
+         <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+         <cac:TenderSubmissionDeadlinePeriod>
+            <cbc:EndDate>2025-12-15+01:00</cbc:EndDate>
+            <cbc:EndTime>10:00:00+01:00</cbc:EndTime>
+         </cac:TenderSubmissionDeadlinePeriod>
+         <cac:OpenTenderEvent>
+            <cbc:OccurrenceDate>2025-12-15+01:00</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>10:10:00+01:00</cbc:OccurrenceTime>
+            <cac:OccurenceLocation>
+               <cbc:Description languageID="SLK"><![CDATA[https://evo.isepvo.sk/evo/Pages/Privates/ZakazkaISZU.aspx?ZakazkaId=547186&Zona=O]]></cbc:Description>
+            </cac:OccurenceLocation>
+         </cac:OpenTenderEvent>
+         <cac:AuctionTerms>
+            <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+         </cac:AuctionTerms>
+         <cac:FrameworkAgreement>
+            <cbc:MaximumOperatorQuantity>1</cbc:MaximumOperatorQuantity>
+            <cac:SubsequentProcessTenderRequirement>
+               <cbc:Name><![CDATA[buyer-categories]]></cbc:Name>
+            </cac:SubsequentProcessTenderRequirement>
+         </cac:FrameworkAgreement>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="framework-agreement">fa-wo-rc</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:ID>40/2025</cbc:ID>
+         <cbc:Name languageID="SLK"><![CDATA[Drevotriesková doska laminovaná a doplnkový materiál]]></cbc:Name>
+         <cbc:Description languageID="SLK"><![CDATA[Predmetom zákazky je priebežná dodávka tovarov do výrobnej prevádzky stredisko Krompachy.
+Požadovaný tovar: 
+Položka č. 1 DTDL biela 2800/2070/18
+Položka č. 2 DTDL biela 2800/2070/25
+Položka č. 3 DTDL buk  2800/2070/18
+Položka č. 4 DTDL buk  2800/2070/25
+Položka č. 5 DTDL čerešňa 2800/2070/18
+Položka č. 6 DTDL čerešňa 2800/2070/25
+Položka č. 7 DTDL orech 2800/2070/18
+Položka č. 8 DTDL orech 2800/2070/25
+Položka č. 9 DTDL sivá  2800/2072/18
+Položka č. 10 DTDL sivá  2800/2072/25
+Položka č. 11 DTDL javor 2800/2070/18
+Položka č. 12 DTDL javor 2800/2070/25
+Položka č. 13 DTDL biela 2800/2070/16
+Položka č. 14 DTDL DUB corbridge 2800/2070/18
+Položka č. 15 HDF lak biela PE 2800/2070/3
+Položka č. 16 HDF surová 2800/2070/3
+Položka č. 17 Pracovná doska 4100/600/38
+Položka č. 18 OSB 3 dosky 2500/1250/22
+Položka č. 19 OSB 3 dosky 2500/1250/15
+Položka č. 20 OSB 3 dosky 2500/1250/10
+Položka č. 21 Vodovzdorná preglejka 2500/125/21
+Položka č. 22 Vodovzdorná preglejka 2500/125/15
+Položka č. 23 Vodovzdorná preglejka 2500/125/9
+Položka č. 24 ABSB 23x0,45 -biela, buk, čerešňa, orech, sivá, javor
+Položka č. 25 ABSB 23x2 -biela, buk, čerešňa, orech, sivá, javor
+Položka č. 26 ABSB 28x0,8 -biela, buk, čerešňa, orech, sivá, javor
+Položka č. 27 ABSB 28x2 -biela, buk, čerešňa, orech, sivá, javor
+Podrobná špecifikácia a množstvo tovarov sú uvedené v prílohách súťažných podkladov (SP).]]></cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">supplies</cbc:ProcurementTypeCode>
+         <cbc:SMESuitableIndicator>true</cbc:SMESuitableIndicator>
+         <cac:ProcurementAdditionalType>
+            <cbc:ProcurementTypeCode listName="strategic-procurement">none</cbc:ProcurementTypeCode>
+         </cac:ProcurementAdditionalType>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">44191300</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">44191100</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:RealizedLocation>
+            <cbc:Description languageID="SLK"><![CDATA[Krompachy]]></cbc:Description>
+            <cac:Address>
+               <cbc:CountrySubentityCode listName="nuts">SK042</cbc:CountrySubentityCode>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">SVK</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+         <cac:PlannedPeriod>
+            <cbc:DurationMeasure unitCode="MONTH">48</cbc:DurationMeasure>
+         </cac:PlannedPeriod>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+</ContractNotice>

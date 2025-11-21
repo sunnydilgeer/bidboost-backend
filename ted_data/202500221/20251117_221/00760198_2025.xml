@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ccts-cct="urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDataTypes-2" xmlns:udt="urn:oasis:names:specification:bdndr:schema:xsd:UnqualifiedDataTypes-1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<ext:UBLExtensions>
+		<ext:UBLExtension>
+			<ext:ExtensionContent>
+				<efext:EformsExtension>
+					<efac:NoticeSubType>
+						<cbc:SubTypeCode listName="notice-subtype">16</cbc:SubTypeCode>
+					</efac:NoticeSubType>
+					<efac:Organizations>
+						<efac:Organization>
+							<efac:Company>
+								<cbc:WebsiteURI>https://www.die-bremer-stadtreinigung.de</cbc:WebsiteURI>
+								<cac:PartyIdentification>
+									<cbc:ID>ORG-0001</cbc:ID>
+								</cac:PartyIdentification>
+								<cac:PartyName>
+									<cbc:Name languageID="DEU">Die Bremer Stadtreinigung - Anstalt öffentlichen Rechts</cbc:Name>
+								</cac:PartyName>
+								<cac:PostalAddress>
+									<cbc:StreetName>An der Reeperbahn 4</cbc:StreetName>
+									<cbc:CityName>Bremen</cbc:CityName>
+									<cbc:PostalZone>28217</cbc:PostalZone>
+									<cbc:CountrySubentityCode listName="nuts-lvl3">DE501</cbc:CountrySubentityCode>
+									<cac:Country>
+										<cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+									</cac:Country>
+								</cac:PostalAddress>
+								<cac:PartyLegalEntity>
+									<cbc:CompanyID>04011000-698-03</cbc:CompanyID>
+								</cac:PartyLegalEntity>
+								<cac:Contact>
+									<cbc:Telephone>+49 421361-3611</cbc:Telephone>
+									<cbc:ElectronicMail>info@dbs.bremen.de</cbc:ElectronicMail>
+								</cac:Contact>
+							</efac:Company>
+						</efac:Organization>
+						<efac:Organization>
+							<efac:Company>
+								<cbc:WebsiteURI>https://bau.bremen.de/ressort/vergabekammer-3529</cbc:WebsiteURI>
+								<cac:PartyIdentification>
+									<cbc:ID>ORG-0002</cbc:ID>
+								</cac:PartyIdentification>
+								<cac:PartyName>
+									<cbc:Name languageID="DEU">Vergabekammer Bremen Senatorin für Bau, Mobilität und Stadtentwicklung</cbc:Name>
+								</cac:PartyName>
+								<cac:PostalAddress>
+									<cbc:StreetName>Contrescarpe 72</cbc:StreetName>
+									<cbc:CityName>Bremen</cbc:CityName>
+									<cbc:PostalZone>28195</cbc:PostalZone>
+									<cbc:CountrySubentityCode listName="nuts-lvl3">DE501</cbc:CountrySubentityCode>
+									<cac:Country>
+										<cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+									</cac:Country>
+								</cac:PostalAddress>
+								<cac:PartyLegalEntity>
+									<cbc:CompanyID>*</cbc:CompanyID>
+								</cac:PartyLegalEntity>
+								<cac:Contact>
+									<cbc:Telephone>+49 421361-59796</cbc:Telephone>
+									<cbc:ElectronicMail>vergabekammer@bau.bremen.de</cbc:ElectronicMail>
+								</cac:Contact>
+							</efac:Company>
+						</efac:Organization>
+					<efac:Organization><efac:Company><cac:PartyIdentification><cbc:ID schemeName="organization">ORG-0003</cbc:ID></cac:PartyIdentification><cac:PartyName><cbc:Name languageID="DEU">Datenservice Öffentlicher Einkauf (in Verantwortung des Beschaffungsamts des BMI)</cbc:Name></cac:PartyName><cac:PostalAddress><cbc:CityName>Bonn</cbc:CityName><cbc:PostalZone>53119</cbc:PostalZone><cbc:CountrySubentityCode listName="nuts">DEA22</cbc:CountrySubentityCode><cac:Country><cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode></cac:Country></cac:PostalAddress><cac:PartyLegalEntity><cbc:CompanyID schemeID="002">0204:994-DOEVD-83</cbc:CompanyID></cac:PartyLegalEntity><cac:Contact><cbc:Telephone>+49228996100</cbc:Telephone><cbc:ElectronicMail>noreply.esender_hub@bescha.bund.de</cbc:ElectronicMail></cac:Contact></efac:Company></efac:Organization></efac:Organizations>
+				<efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00760198-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+			</ext:ExtensionContent>
+		</ext:UBLExtension>
+	</ext:UBLExtensions>
+	<cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+	<cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+	<cbc:ProfileID>eforms-sdk-1.13</cbc:ProfileID>
+	<cbc:ID schemeName="notice-id">4d774887-1b4c-4f14-b7c3-bd10b2ca5836</cbc:ID>
+	<cbc:ContractFolderID>9d8490fb-6946-4e2b-9695-61d7996bc1e9</cbc:ContractFolderID>
+	<cbc:IssueDate>2025-11-13+01:00</cbc:IssueDate>
+	<cbc:IssueTime>17:11:45+01:00</cbc:IssueTime>
+	<cbc:VersionID>01</cbc:VersionID>
+	<cbc:RequestedPublicationDate>2025-11-13+01:00</cbc:RequestedPublicationDate>
+	<cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+	<cbc:NoticeTypeCode listName="competition">cn-standard</cbc:NoticeTypeCode>
+	<cbc:NoticeLanguageCode listID="eu-official-language">DEU</cbc:NoticeLanguageCode>
+	<cac:ContractingParty>
+		<cac:ContractingPartyType>
+			<cbc:PartyTypeCode listName="buyer-legal-type">body-pl-la</cbc:PartyTypeCode>
+		</cac:ContractingPartyType>
+		<cac:ContractingActivity>
+			<cbc:ActivityTypeCode listName="authority-activity">gen-pub</cbc:ActivityTypeCode>
+		</cac:ContractingActivity>
+		<cac:Party>
+			<cac:PartyIdentification>
+				<cbc:ID>ORG-0001</cbc:ID>
+			</cac:PartyIdentification>
+		<cac:ServiceProviderParty><cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode><cac:Party><cac:PartyIdentification><cbc:ID schemeName="organization">ORG-0003</cbc:ID></cac:PartyIdentification></cac:Party></cac:ServiceProviderParty></cac:Party>
+	</cac:ContractingParty>
+	<cac:TenderingTerms>
+		<ext:UBLExtensions>
+			<ext:UBLExtension>
+				<ext:ExtensionContent>
+					<efext:EformsExtension>
+						<efac:StrategicProcurement>
+							<efbc:ApplicableLegalBasis listName="cvd-scope">true</efbc:ApplicableLegalBasis>
+							<efac:StrategicProcurementInformation>
+								<efbc:ProcurementCategoryCode listName="cvd-contract-type">oth-serv-contr</efbc:ProcurementCategoryCode>
+							</efac:StrategicProcurementInformation>
+						</efac:StrategicProcurement>
+						<efac:StrategicProcurement>
+							<efbc:ApplicableLegalBasis listName="eed-scope">false</efbc:ApplicableLegalBasis>
+						</efac:StrategicProcurement>
+					</efext:EformsExtension>
+				</ext:ExtensionContent>
+			</ext:UBLExtension>
+		</ext:UBLExtensions>
+		<cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+		<cac:RequiredFinancialGuarantee>
+			<cbc:GuaranteeTypeCode listName="tender-guarantee-required">false</cbc:GuaranteeTypeCode>
+		</cac:RequiredFinancialGuarantee>
+		<cac:ProcurementLegislationDocumentReference>
+			<cbc:ID>vgv</cbc:ID>
+		</cac:ProcurementLegislationDocumentReference>
+		<cac:CallForTendersDocumentReference>
+			<ext:UBLExtensions>
+				<ext:UBLExtension>
+					<ext:ExtensionContent>
+						<efext:EformsExtension>
+							<efac:OfficialLanguages>
+								<cac:Language>
+									<cbc:ID>DEU</cbc:ID>
+								</cac:Language>
+							</efac:OfficialLanguages>
+						</efext:EformsExtension>
+					</ext:ExtensionContent>
+				</ext:UBLExtension>
+			</ext:UBLExtensions>
+			<cbc:ID>SomeTenderDocID1</cbc:ID>
+			<cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+		</cac:CallForTendersDocumentReference>
+		<cac:TendererQualificationRequest>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-grounds-source">epo-procurement-document</cbc:TendererRequirementTypeCode>
+			</cac:SpecificTendererRequirement>
+		</cac:TendererQualificationRequest>
+		<cac:TenderRecipientParty>
+			<cac:PartyIdentification>
+				<cbc:ID>ORG-0001</cbc:ID>
+			</cac:PartyIdentification>
+		</cac:TenderRecipientParty>
+		<cac:AppealTerms>
+			<cac:PresentationPeriod>
+				<cbc:Description languageID="DEU">Gemäß § 160 Abs. 3 Satz 1 Nr. 4 GWB ist ein Nachprüfungsantrag unzulässig, soweit mehr als 15 Kalendertage nach Eingang der Mitteilung des Auftraggebers, einer Rüge nicht abhelfen zu wollen, vergangen sind. Mithin muss zur Wahrung der Rechte binnen dieser Frist ein Nachprüfungsantrag eingereicht werden. Anderenfalls kann dieser nicht mehr auf den gerügten Verstoß gestützt werden. Darüber hinaus gilt Folgendes: Ein angeblicher Verstoß gegen Vergabevorschriften, den der Betreffende vor Einreichen eines Nachprüfungsantrags erkannt hat, muss gegenüber dem Auftraggeber innerhalb einer Frist von 10 Kalendertagen gerügt werden (§ 160 Abs. 3 Satz 1 Nr. 1 GWB; der Ablauf der Frist nach § 134 Abs. 2 GWB bleibt unberührt). Zudem müssen Verstöße gegen Vergabevorschriften, die aufgrund der Bekanntmachung erkennbar sind, spätestens bis zum Ablauf der in der Bekanntmachung benannten Frist zur Angebotsabgabe gegenüber dem Auftraggeber gerügt werden (§ 160 Abs. 3 Satz 1 Nr. 2 GWB). Außerdem müssen Verstöße gegen Vergabevorschriften, die erst in den Vergabeunterlagen erkennbar sind, spätestens bis zum Ablauf der in der Bekanntmachung benannten Frist zur Angebotsabgabe gegenüber dem Auftraggeber gerügt werden (§ 160 Abs. 3 Satz 1 Nr. 3 GWB). Werden diese Vorgaben gemäß § 160 Abs. 3 Satz 1 GWB nicht eingehalten, kann ein Nachprüfungsantrag wegen Unzulässigkeit des Antrags nicht mit Erfolg auf den betreffenden Verstoß gegen Vergabevorschriften gestützt werden, es sei denn, es handelt sich um einen Antrag auf Feststellung der Unwirksamkeit des Vertrages nach § 135 Abs. 1 Nr. 2 GWB; auch bleibt § 134 Abs. 1 Satz 2 GWB unberührt (siehe § 160 Abs. 3 Satz 2 GWB). Des Weiteren gilt: Die Frist für die Geltendmachung der Unwirksamkeit des Vertrags nach § 135 Abs. 1 GWB endet 30 Kalendertage nach Veröffentlichung der Bekanntmachung der Auftragsvergabe im Amtsblatt der Europäischen Union (vgl. § 135 Abs. 2 Satz 2 GWB). Unter den Voraussetzungen des § 135 Abs. 3 GWB tritt die Unwirksamkeit nach § 135 Abs. 1 Nr. 2 GWB nicht ein.</cbc:Description>
+			</cac:PresentationPeriod>
+			<cac:AppealInformationParty>
+				<cac:PartyIdentification>
+					<cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+				</cac:PartyIdentification>
+			</cac:AppealInformationParty>
+			<cac:AppealReceiverParty>
+				<cac:PartyIdentification>
+					<cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+				</cac:PartyIdentification>
+			</cac:AppealReceiverParty>
+		</cac:AppealTerms>
+		<cac:Language>
+			<cbc:ID>DEU</cbc:ID>
+		</cac:Language>
+	</cac:TenderingTerms>
+	<cac:TenderingProcess>
+		<cbc:ProcedureCode listName="procurement-procedure-type">open</cbc:ProcedureCode>
+		<cbc:AccessToolsURI>https://www.dtvp.de/Satellite/notice/CXP4DBFMY6N</cbc:AccessToolsURI>
+		<cac:ProcessJustification>
+			<cbc:ProcessReasonCode listName="accelerated-procedure">false</cbc:ProcessReasonCode>
+		</cac:ProcessJustification>
+		<cac:AuctionTerms>
+			<cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+		</cac:AuctionTerms>
+	</cac:TenderingProcess>
+	<cac:ProcurementProject>
+		<cbc:ID schemeName="internalID">001</cbc:ID>
+		<cbc:Name languageID="DEU">Übernahme, Transport und Verwertung von Gartenabfall aus der Stadtgemeinde Bremen sowie zeitweise Containergestellung</cbc:Name>
+		<cbc:Description languageID="DEU">Die Bremer Stadtreinigung schreibt für die Stadtgemeinde Bremen die Übernahme sowie die Verwertung von Gartenabfällen und Weihnachtsbäumen aus. Ferner sind der Betrieb einer Übernahmestelle zur Übernahme der Gartenabfällen und Weihnachtsbäume sowie gegebenenfalls der Umschlagtransport Gegenstand der Ausschreibung. Darüber hinaus ist bis zum 30.06.2028 die Gestellung von Containern für die Recycling- und Grün-Stationen zur Erfassung von Gartenabfällen aus der Stadtgemeinde Bremen, die Übernahme befüllter Container sowie der Transport und die Anlieferung an einer Übernahmestelle zu erbringen.</cbc:Description>
+		<cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+		<cbc:Note languageID="DEU">#Bekanntmachungs-ID: CXP4DBFMY6N#
+
+
+Etwaige Hinweise zu den Vergabeunterlagen sind unverzüglich und spätestens 10 Kalendertage vor Ablauf der Angebotsfrist über das Deutsche Vergabeportal mitzuteilen.</cbc:Note>
+		<cac:MainCommodityClassification>
+			<cbc:ItemClassificationCode listName="cpv">90500000</cbc:ItemClassificationCode>
+		</cac:MainCommodityClassification>
+		<cac:RealizedLocation>
+			<cac:Address>
+				<cbc:CityName>Bremen</cbc:CityName>
+				<cbc:CountrySubentityCode listName="nuts">DE501</cbc:CountrySubentityCode>
+				<cac:Country>
+					<cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:Address>
+		</cac:RealizedLocation>
+	</cac:ProcurementProject>
+	<cac:ProcurementProjectLot>
+		<cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+		<cac:TenderingTerms>
+			<ext:UBLExtensions>
+				<ext:UBLExtension>
+					<ext:ExtensionContent>
+						<efext:EformsExtension>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-suit-reg-prof</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Zum Beleg der Befähigung und Erlaubnis zur Berufsausübung ist von dem Bieter Folgendes einzureichen:  - Auszug aus dem Handels- oder Berufsregister - bei Bietern aus nicht-deutsch-sprachigen EU-Mitgliedstaaten mit amtlich anerkannter Übersetzung</cbc:Description>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-ins</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Zum Beleg der wirtschaftlichen und finanziellen Leistungsfähigkeit ist von dem Bieter Folgendes einzureichen: Eigenerklärung zum Abschluss einer Betriebshaftpflichtversicherung einschließlich Umwelthaftpflichtversicherung mit einer Deckungssumme von mindestens 5 Mio. EUR je Schadensfall für Personen-, Sach- und Vermögensschäden, jährlich zweifach maximiert, vor Leistungsbeginn (siehe dazu Teil III der Vergabeunterlagen, Formblatt III.3.7).</cbc:Description>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-to-gen</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Zum Beleg der wirtschaftlichen und finanziellen Leistungsfähigkeit ist von dem Bieter Folgendes einzureichen: Eigenerklärung über den Gesamtumsatz des Unternehmens, bezogen auf die letzten drei Geschäftsjahre (siehe dazu Teil III der Vergabeunterlagen, Formblatt III.3.2)</cbc:Description>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-to-spec</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Zum Beleg der wirtschaftlichen und finanziellen Leistungsfähigkeit ist von dem Bieter Folgendes einzureichen: Eigenerklärung über den Umsatz des Unternehmens hinsichtlich der der ausgeschriebenen Leistungen Betrieb einer Übernahmestelle und Verwertung von Gartenabfall sowie Transport von Abfällen, bezogen auf die letzten drei Geschäftsjahre (siehe dazu Teil III der Vergabeunterlagen, Formblatt III. 3.3)</cbc:Description>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-ref-services</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Zum Beleg der technischen und beruflichen Leistungsfähigkeit ist von dem Bieter Folgendes einzureichen: Eigenerklärung über die in den letzten drei Jahren erbrachten wesentlichen Leistungen mindestens erstens für das Betreiben einer Übernahmestelle für Gartenabfall bezogen auf eine Menge von mindestens 18.000 Mg/a an Gartenabfall; zweitens die Verwertung von Gartenabfall bezogen auf eine Menge von mindestens 18.000 Mg/a an Gartenabfall sowie drittens die Übernahme mit Containergestellung und Transport von mindestens 18.000 Mg/a an Abfällen, mit Angabe der übernommenen und transportierten sowie verwerteten Abfallmenge pro Jahr (in Mg/a)), der Leistungszeit sowie des öffentlichen oder privaten Leistungsempfängers (siehe dazu Teil III der Vergabeunterlagen, Formblatt III.3.4)  Jede Referenz muss einen Zeitraum von mindestens einem Jahr umfassen. Auf Verlangen des AG und nach gesonderter Aufforderung durch diesen sind vom AN zu jeder Referenz innerhalb von einer Woche Ansprechpartner nebst Kontaktdaten zu benennen. Hinweis des AG: Die geforderten unterschiedlichen Leistungen müssen nicht innerhalb einer Referenz erbracht werden, sondern können sich auf verschiedene Referenzen verteilen.</cbc:Description>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-qual-inst</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Zum Beleg der technischen und beruflichen Leistungsfähigkeit ist von dem Bieter Folgendes einzureichen: Entsorgungsfachbetriebezertifikat im Sinne des § 56 Abs. 2 KrWG für die vertragsgegenständlichen Leistungen hinsichtlich der vertragsgegenständlichen Abfallschlüsselnummern.</cbc:Description>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-other</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">- Angaben zum Bieter bzw. zu den Mitgliedern der Bietergemeinschaft (siehe dazu Teil III der Vergabeunterlagen, Formblatt III.3.1), - Eigenerklärungen bzgl. Ausschlussgründen nach §§ 123, 124 GWB und LkSG sowie AEntG, Schwarzarbeitsbekämpfungsgesetz, MiLoG und Aufenthaltsgesetz (sind Teil des Angebotsschreibens des Teils III der Vergabeunterlagen), - Im Falle von Bietergemeinschaften "Erklärung der Bietergemeinschaft" (siehe dazu Teil III der Vergabeunterlagen, Formblatt III.3.6), - Mindest- und Tariflohnerklärung des AN (siehe dazu Formblatt 231HB-EU der Vergabeunterlagen), - Eigenerklärung des Bieters zum BMWK- Rundschreiben vom 14.04.2022 (siehe dazu Teil III der Vergabeunterlagen, Formblatt III.3.8), - Verbindliche Angaben zu einer oder mehrerer Übernahmestelle(n), die für die Leistungserbringung genutzt werden soll(en), einschl. Eigenerklärung zur tatsächlichen Eignung und rechtlichen Zulässigkeit der angegebenen Übernahmestelle(n) für die Leistungen und Aufgaben, die nach den Vergabeunterlagen zu erbringen bzw. zu erfüllen sind, sowie Eigenerklärung zur Verfügbarkeit der Übernahmestelle(n) (siehe dazu Teil III.3 der Vergabeunterlagen, Formblatt III.3.9), - Angaben zu einer oder mehreren Verwertungsanlage(n) für die ausschreibungsgegenständlichen Abfälle, einschl. Eigenerklärung zur tatsächlichen Eignung und rechtlichen Zulässigkeit der angegebenen Anlage für die Leistungen und Aufgaben, die nach den Vergabeunterlagen zu erbringen bzw. zu erfüllen sind, sowie Eigenerklärung zur Anlagenverfügbarkeit (siehe dazu Teil III.3 der Vergabeunterlagen, Formblatt III.3.10) sowie - Transportroute aus Google Maps als Ausdruck inkl. Dokumentation der Fahrtstrecke von den Recycling- und Grün-Stationen zur Übernahmestelle nach näherer Maßgabe der Leistungsbeschreibung, - Sofern eine Eignungsleihe beabsichtigt ist: Auflistung über Unternehmen sowie Art und Umfang der Leistungen, für die beabsichtigt ist die Kapazitäten anderer Unternehmen in Anspruch zu nehmen (Eignungsleihe) (siehe dazu Teil III der Vergabeunterlagen, Formblatt III. 3.11), - im Fall der Eignungsleihe Nachweis der Verfügbarkeit der Mittel des Drittunternehmens i. S. d. § 47 VgV (z. B. durch Verpflichtungserklärung, siehe dazu Teil III.3 der Vergabeunterlagen, Formblatt III.3.12) sowie hinsichtlich der wirtschaftlichen und finanziellen Leistungsfähigkeit Formblätter III.3.2, III.3.3 und III.3.7, hinsichtlich der technischen und beruflichen Leistungsfähigkeit Formblatt III.3.4; - Übernahme- und Verwertungskonzept (dem Angebot vom Bieter gesondert beizufügen), gemäß der Gliederung des Teil I der Vergabeunterlagen und mindestens mit den dort geforderten Angaben und Erläuterungen, - Urkalkulation; - Sollte für eine oder mehrere Teilleistung(en) beabsichtigt sein, einen oder mehrere Nachunternehmer einzusetzen, sind zusätzlich folgende Unterlagen einzureichen: - Nachunternehmerliste; Nachunternehmer, die Übernahmestellen und Verwertungsanlagen betreiben, sowie eignungsverleihende Nachunternehmer sind bereits mit dem Angebot zu benennen; sonstige Nachunternehmer auf Verlangen (siehe dazu Teil III der Vergabeunterlagen, Formblatt III.3.5); - Folgende Unterlagen sind von in die engere Wahl gelangten Bietern auf Verlangen hinsichtlich des Nachunternehmers einzureichen (Eignungsnachweise für Kriterien, für die der Bieter sich die Eignung des Nachunternehmers leiht, sind bereits mit dem Angebot vorzulegen): - Angaben zum jeweiligen Nachunternehmer (siehe dazu Teil III der Vergabeunterlagen, Formblatt III.4.1) - Eigenerklärung des jeweiligen Nachunternehmers bzgl. Ausschlussgründen nach §§ 123, 124 GWB und LkSG sowie AEntG, Schwarzarbeitsbekämpfungsgesetz, MiLoG und Aufenthaltsgesetz (siehe dazu Teil III der Vergabeunterlagen, Formblatt III.4.2); - Vereinbarung zur Zahlung von Mindest- und Tariflöhnen durch Nachunternehmer (siehe dazu Formblatt 232HB-EU der Vergabeunterlagen); - Entsorgungsfachbetriebszertifikat des jeweiligen Nachunternehmers im Sinne des § 56 Abs. 2 KrWG hinsichtlich der vom jeweiligen Nachunternehmereinsatz konkret betroffenen Teilleistung(en) sowie der betroffenen Abfallschlüsselnummern; - Als vorläufigen Beleg der Eignung und des Nichtvorliegens von Ausschlussgründen akzeptiert der AG die Vorlage einer Einheitlichen Europäischen Eigenerklärung nach § 50 VgV.</cbc:Description>
+							</efac:SelectionCriteria>
+							<efac:StrategicProcurement>
+								<efbc:ApplicableLegalBasis listName="cvd-scope">true</efbc:ApplicableLegalBasis>
+								<efac:StrategicProcurementInformation>
+									<efbc:ProcurementCategoryCode listName="cvd-contract-type">oth-serv-contr</efbc:ProcurementCategoryCode>
+								</efac:StrategicProcurementInformation>
+							</efac:StrategicProcurement>
+							<efac:StrategicProcurement>
+								<efbc:ApplicableLegalBasis listName="eed-scope">false</efbc:ApplicableLegalBasis>
+							</efac:StrategicProcurement>
+						</efext:EformsExtension>
+					</ext:ExtensionContent>
+				</ext:UBLExtension>
+			</ext:UBLExtensions>
+			<cbc:VariantConstraintCode listName="permission">not-allowed</cbc:VariantConstraintCode>
+			<cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+			<cbc:MultipleTendersCode listName="permission">not-allowed</cbc:MultipleTendersCode>
+			<cac:RequiredFinancialGuarantee>
+				<cbc:GuaranteeTypeCode listName="tender-guarantee-required">false</cbc:GuaranteeTypeCode>
+			</cac:RequiredFinancialGuarantee>
+			<cac:CallForTendersDocumentReference>
+				<ext:UBLExtensions>
+					<ext:UBLExtension>
+						<ext:ExtensionContent>
+							<efext:EformsExtension>
+								<efac:OfficialLanguages>
+									<cac:Language>
+										<cbc:ID>DEU</cbc:ID>
+									</cac:Language>
+								</efac:OfficialLanguages>
+							</efext:EformsExtension>
+						</ext:ExtensionContent>
+					</ext:UBLExtension>
+				</ext:UBLExtensions>
+				<cbc:ID>SomeTenderDocID1</cbc:ID>
+				<cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+				<cac:Attachment>
+					<cac:ExternalReference>
+						<cbc:URI>https://www.dtvp.de/Satellite/notice/CXP4DBFMY6N/documents</cbc:URI>
+					</cac:ExternalReference>
+				</cac:Attachment>
+			</cac:CallForTendersDocumentReference>
+			<cac:TendererQualificationRequest>
+				<cbc:CompanyLegalFormCode listName="required">false</cbc:CompanyLegalFormCode>
+			</cac:TendererQualificationRequest>
+			<cac:TendererQualificationRequest>
+				<cac:SpecificTendererRequirement>
+					<cbc:TendererRequirementTypeCode listName="missing-info-submission">late-some</cbc:TendererRequirementTypeCode>
+					<cbc:Description languageID="DEU">Der öffentliche Auftraggeber kann den Bewerber oder Bieter unter Einhaltung der Grundsätze der Transparenz und der Gleichbehandlung auffordern, fehlende, unvollständige oder fehlerhafte unternehmensbezogene Unterlagen, insbesondere Eigenerklärungen, Angaben, Bescheinigungen oder sonstige Nachweise, nachzureichen, zu vervollständigen oder zu korrigieren, oder fehlende oder unvollständige leistungsbezogene Unterlagen nachzureichen oder zu vervollständigen. Die Nachforderung von leistungsbezogenen Unterlagen, die die Wirtschaftlichkeitsbewertung der Angebote anhand der Zuschlagskriterien betreffen, ist ausgeschlossen. Dies gilt nicht für Preisangaben, wenn es sich um unwesentliche Einzelpositionen handelt, deren Einzelpreise den Gesamtpreis nicht verändern oder die Wertungsreihenfolge und den Wettbewerb nicht beeinträchtigen.</cbc:Description>
+				</cac:SpecificTendererRequirement>
+			</cac:TendererQualificationRequest>
+			<cac:TendererQualificationRequest>
+				<cac:SpecificTendererRequirement>
+					<cbc:TendererRequirementTypeCode listName="reserved-procurement">none</cbc:TendererRequirementTypeCode>
+				</cac:SpecificTendererRequirement>
+			</cac:TendererQualificationRequest>
+			<cac:TendererQualificationRequest>
+				<cac:SpecificTendererRequirement>
+					<cbc:TendererRequirementTypeCode listName="selection-criteria-source">epo-notice</cbc:TendererRequirementTypeCode>
+				</cac:SpecificTendererRequirement>
+			</cac:TendererQualificationRequest>
+			<cac:ContractExecutionRequirement>
+				<cbc:ExecutionRequirementCode listName="reserved-execution">no</cbc:ExecutionRequirementCode>
+			</cac:ContractExecutionRequirement>
+			<cac:ContractExecutionRequirement>
+				<cbc:ExecutionRequirementCode listName="ecatalog-submission">not-allowed</cbc:ExecutionRequirementCode>
+			</cac:ContractExecutionRequirement>
+			<cac:ContractExecutionRequirement>
+				<cbc:ExecutionRequirementCode listName="einvoicing">required</cbc:ExecutionRequirementCode>
+			</cac:ContractExecutionRequirement>
+			<cac:ContractExecutionRequirement>
+				<cbc:ExecutionRequirementCode listName="conditions">performance</cbc:ExecutionRequirementCode>
+				<cbc:Description languageID="DEU">Die Bedingungen für die Ausführung des Auftrages sind den Vergabeunterlagen zu entnehmen.</cbc:Description>
+			</cac:ContractExecutionRequirement>
+			<cac:ContractExecutionRequirement>
+				<cbc:ExecutionRequirementCode listName="fsr">false</cbc:ExecutionRequirementCode>
+			</cac:ContractExecutionRequirement>
+			<cac:AdditionalInformationParty>
+				<cac:PartyIdentification>
+					<cbc:ID>ORG-0001</cbc:ID>
+				</cac:PartyIdentification>
+			</cac:AdditionalInformationParty>
+			<cac:TenderRecipientParty>
+				<cbc:EndpointID>https://www.dtvp.de/Satellite/notice/CXP4DBFMY6N</cbc:EndpointID>
+				<cac:PartyIdentification>
+					<cbc:ID>ORG-0001</cbc:ID>
+				</cac:PartyIdentification>
+			</cac:TenderRecipientParty>
+			<cac:TenderValidityPeriod>
+				<cbc:DurationMeasure unitCode="DAY">62</cbc:DurationMeasure>
+			</cac:TenderValidityPeriod>
+			<cac:AppealTerms>
+				<cac:PresentationPeriod>
+					<cbc:Description languageID="DEU">Gemäß § 160 Abs. 3 Satz 1 Nr. 4 GWB ist ein Nachprüfungsantrag unzulässig, soweit mehr als 15 Kalendertage nach Eingang der Mitteilung des Auftraggebers, einer Rüge nicht abhelfen zu wollen, vergangen sind. Mithin muss zur Wahrung der Rechte binnen dieser Frist ein Nachprüfungsantrag eingereicht werden. Anderenfalls kann dieser nicht mehr auf den gerügten Verstoß gestützt werden. Darüber hinaus gilt Folgendes: Ein angeblicher Verstoß gegen Vergabevorschriften, den der Betreffende vor Einreichen eines Nachprüfungsantrags erkannt hat, muss gegenüber dem Auftraggeber innerhalb einer Frist von 10 Kalendertagen gerügt werden (§ 160 Abs. 3 Satz 1 Nr. 1 GWB; der Ablauf der Frist nach § 134 Abs. 2 GWB bleibt unberührt). Zudem müssen Verstöße gegen Vergabevorschriften, die aufgrund der Bekanntmachung erkennbar sind, spätestens bis zum Ablauf der in der Bekanntmachung benannten Frist zur Angebotsabgabe gegenüber dem Auftraggeber gerügt werden (§ 160 Abs. 3 Satz 1 Nr. 2 GWB). Außerdem müssen Verstöße gegen Vergabevorschriften, die erst in den Vergabeunterlagen erkennbar sind, spätestens bis zum Ablauf der in der Bekanntmachung benannten Frist zur Angebotsabgabe gegenüber dem Auftraggeber gerügt werden (§ 160 Abs. 3 Satz 1 Nr. 3 GWB). Werden diese Vorgaben gemäß § 160 Abs. 3 Satz 1 GWB nicht eingehalten, kann ein Nachprüfungsantrag wegen Unzulässigkeit des Antrags nicht mit Erfolg auf den betreffenden Verstoß gegen Vergabevorschriften gestützt werden, es sei denn, es handelt sich um einen Antrag auf Feststellung der Unwirksamkeit des Vertrages nach § 135 Abs. 1 Nr. 2 GWB; auch bleibt § 134 Abs. 1 Satz 2 GWB unberührt (siehe § 160 Abs. 3 Satz 2 GWB). Des Weiteren gilt: Die Frist für die Geltendmachung der Unwirksamkeit des Vertrags nach § 135 Abs. 1 GWB endet 30 Kalendertage nach Veröffentlichung der Bekanntmachung der Auftragsvergabe im Amtsblatt der Europäischen Union (vgl. § 135 Abs. 2 Satz 2 GWB). Unter den Voraussetzungen des § 135 Abs. 3 GWB tritt die Unwirksamkeit nach § 135 Abs. 1 Nr. 2 GWB nicht ein.</cbc:Description>
+				</cac:PresentationPeriod>
+				<cac:AppealInformationParty>
+					<cac:PartyIdentification>
+						<cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+					</cac:PartyIdentification>
+				</cac:AppealInformationParty>
+				<cac:AppealReceiverParty>
+					<cac:PartyIdentification>
+						<cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+					</cac:PartyIdentification>
+				</cac:AppealReceiverParty>
+			</cac:AppealTerms>
+			<cac:Language>
+				<cbc:ID>DEU</cbc:ID>
+			</cac:Language>
+			<cac:PostAwardProcess>
+				<cbc:ElectronicOrderUsageIndicator>false</cbc:ElectronicOrderUsageIndicator>
+				<cbc:ElectronicPaymentUsageIndicator>true</cbc:ElectronicPaymentUsageIndicator>
+			</cac:PostAwardProcess>
+			<cac:SecurityClearanceTerm>
+				<cbc:Code listName="required">false</cbc:Code>
+			</cac:SecurityClearanceTerm>
+		</cac:TenderingTerms>
+		<cac:TenderingProcess>
+			<cbc:SubmissionMethodCode listName="esubmission">required</cbc:SubmissionMethodCode>
+			<cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+			<cbc:AccessToolsURI>https://www.dtvp.de/Satellite/notice/CXP4DBFMY6N</cbc:AccessToolsURI>
+			<cac:TenderSubmissionDeadlinePeriod>
+				<cbc:EndDate>2025-12-15+01:00</cbc:EndDate>
+				<cbc:EndTime>10:00:00+01:00</cbc:EndTime>
+			</cac:TenderSubmissionDeadlinePeriod>
+			<cac:OpenTenderEvent>
+				<cbc:OccurrenceDate>2025-12-15+01:00</cbc:OccurrenceDate>
+				<cbc:OccurrenceTime>10:01:00+01:00</cbc:OccurrenceTime>
+			</cac:OpenTenderEvent>
+			<cac:AuctionTerms>
+				<cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+			</cac:AuctionTerms>
+			<cac:ContractingSystem>
+				<cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+			</cac:ContractingSystem>
+			<cac:ContractingSystem>
+				<cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+			</cac:ContractingSystem>
+		</cac:TenderingProcess>
+		<cac:ProcurementProject>
+			<cbc:ID schemeName="internalID">1</cbc:ID>
+			<cbc:Name languageID="DEU">Übernahme, Transport und Verwertung von Gartenabfall aus der Stadtgemeinde Bremen</cbc:Name>
+			<cbc:Description languageID="DEU">Die Bremer Stadtreinigung schreibt für die Stadtgemeinde Bremen die Übernahme sowie die Verwertung von Gartenabfällen und Weihnachtsbäumen aus. Ferner sind der Betrieb einer Übernahmestelle zur Übernahme der Gartenabfällen und Weihnachtsbäume sowie gegebenenfalls der Umschlagtransport Gegenstand der Ausschreibung. Darüber hinaus ist bis zum 30.06.2028 die Gestellung von Containern für die Recycling- und Grün-Stationen zur Erfassung von Gartenabfällen aus der Stadtgemeinde Bremen, die Übernahme befüllter Container sowie der Transport und die Anlieferung an einer Übernahmestelle zu erbringen.</cbc:Description>
+			<cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+			<cbc:SMESuitableIndicator>false</cbc:SMESuitableIndicator>
+			<cac:ProcurementAdditionalType>
+				<cbc:ProcurementTypeCode listName="strategic-procurement">none</cbc:ProcurementTypeCode>
+			</cac:ProcurementAdditionalType>
+			<cac:MainCommodityClassification>
+				<cbc:ItemClassificationCode listName="cpv">90500000</cbc:ItemClassificationCode>
+			</cac:MainCommodityClassification>
+			<cac:RealizedLocation>
+				<cac:Address>
+					<cbc:CityName>Bremen</cbc:CityName>
+					<cbc:CountrySubentityCode listName="nuts">DE501</cbc:CountrySubentityCode>
+					<cac:Country>
+						<cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+					</cac:Country>
+				</cac:Address>
+			</cac:RealizedLocation>
+			<cac:PlannedPeriod>
+				<cbc:StartDate>2026-07-01+02:00</cbc:StartDate>
+				<cbc:EndDate>2031-12-31+01:00</cbc:EndDate>
+			</cac:PlannedPeriod>
+			<cac:ContractExtension>
+				<cbc:MaximumNumberNumeric>1</cbc:MaximumNumberNumeric>
+				<cac:Renewal>
+					<cac:Period>
+						<cbc:Description languageID="DEU">Der Vertrag kann nach näherer Maßgabe des Entsorgungsvertrages einmal um zwei Jahre verlängert werden (Verlängerungsoption).</cbc:Description>
+					</cac:Period>
+				</cac:Renewal>
+			</cac:ContractExtension>
+		</cac:ProcurementProject>
+	</cac:ProcurementProjectLot>
+</ContractNotice>

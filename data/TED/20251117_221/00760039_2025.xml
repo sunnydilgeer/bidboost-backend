@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+  <ext:UBLExtensions>
+    <ext:UBLExtension>
+      <ext:ExtensionContent>
+        <efext:EformsExtension>
+          <efac:NoticeSubType>
+            <cbc:SubTypeCode listName="notice-subtype">16</cbc:SubTypeCode>
+          </efac:NoticeSubType>
+          <efac:Organizations>
+            <efac:Organization>
+              <efac:Company>
+                <cbc:WebsiteURI>https://www.gov.pl/web/uzp/krajowa-izba-odwolawcza</cbc:WebsiteURI>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <cbc:Name languageID="POL">Krajowa Izba Odwoławcza</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>ul. Postępu 17a</cbc:StreetName>
+                  <cbc:CityName>Warszawa</cbc:CityName>
+                  <cbc:PostalZone>02-676</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">PL911</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID>5262239325</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Telephone>224587840</cbc:Telephone>
+                  <cbc:ElectronicMail>odwolania@uzp.gov.pl</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+            <efac:Organization>
+              <efac:Company>
+                <cbc:WebsiteURI>https://www.ujd.edu.pl</cbc:WebsiteURI>
+                <cbc:EndpointID>https://platformazakupowa.pl/pn/ajd_czest</cbc:EndpointID>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <cbc:Name languageID="POL">UNIWERSYTET  JANA DŁUGOSZA W CZĘSTOCHOWIE</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>ul. Jerzego Waszyngtona 4/8</cbc:StreetName>
+                  <cbc:CityName>Częstochowa</cbc:CityName>
+                  <cbc:PostalZone>42-217</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">PL224</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID>5730116775</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Telephone>34 3784211</cbc:Telephone>
+                  <cbc:ElectronicMail>h.maruszczyk@ujd.edu.pl</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+          </efac:Organizations>
+        <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00760039-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+      </ext:ExtensionContent>
+    </ext:UBLExtension>
+  </ext:UBLExtensions>
+  <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+  <cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+  <cbc:ID schemeName="notice-id">e0ff0660-95b8-4ce1-bc03-50854ad2c363</cbc:ID>
+  <cbc:ContractFolderID>20f5daeb-da7e-482b-92ea-20a38ad706b4</cbc:ContractFolderID>
+  <cbc:IssueDate>2025-11-14Z</cbc:IssueDate>
+  <cbc:IssueTime>11:21:13Z</cbc:IssueTime>
+  <cbc:VersionID>01</cbc:VersionID>
+  <cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+  <cbc:NoticeTypeCode listName="competition">cn-standard</cbc:NoticeTypeCode>
+  <cbc:NoticeLanguageCode listName="language">POL</cbc:NoticeLanguageCode>
+  <cac:ContractingParty>
+    <cbc:BuyerProfileURI>https://platformazakupowa.pl/pn/ajd_czest</cbc:BuyerProfileURI>
+    <cac:ContractingPartyType>
+      <cbc:PartyTypeCode listName="buyer-legal-type">body-pl</cbc:PartyTypeCode>
+    </cac:ContractingPartyType>
+    <cac:ContractingActivity>
+      <cbc:ActivityTypeCode listName="authority-activity">education</cbc:ActivityTypeCode>
+    </cac:ContractingActivity>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+      </cac:PartyIdentification>
+    </cac:Party>
+  </cac:ContractingParty>
+  <cac:TenderingTerms>
+    <cac:TendererQualificationRequest>
+      <cac:SpecificTendererRequirement>
+        <cbc:TendererRequirementTypeCode listName="exclusion-grounds-source">epo-procurement-document</cbc:TendererRequirementTypeCode>
+      </cac:SpecificTendererRequirement>
+    </cac:TendererQualificationRequest>
+    <cac:LotDistribution>
+      <cbc:MaximumLotsAwardedNumeric>2</cbc:MaximumLotsAwardedNumeric>
+      <cbc:MaximumLotsSubmittedNumeric>2</cbc:MaximumLotsSubmittedNumeric>
+    </cac:LotDistribution>
+  </cac:TenderingTerms>
+  <cac:TenderingProcess>
+    <cbc:ProcedureCode listName="procurement-procedure-type">open</cbc:ProcedureCode>
+    <cac:ProcessJustification>
+      <cbc:ProcessReasonCode listName="accelerated-procedure">false</cbc:ProcessReasonCode>
+    </cac:ProcessJustification>
+  </cac:TenderingProcess>
+  <cac:ProcurementProject>
+    <cbc:Name languageID="POL">ZP.26.1.52.2025 Dostawa aparatury laboratoryjnej dla Uniwersytetu Jana Długosza w Częstochowie</cbc:Name>
+    <cbc:Description languageID="POL">1. Przedmiotem zamówienia jest dostawa aparatury laboratoryjnej Uniwersytetu Jana Długosza w Częstochowie.
+2. Zamówienie zostało podzielone na części/ zadania:
+Zadanie numer 1. Spektrometr desorpcji/ jonizacji laserowej wspomaganej matrycą z tandemowym analizatorem czasu przelotu (MALDI TOF-TOF)
+Zadanie numer 2. Chromatograf cieczowy z detektorem masowym typu potrójny kwadrupol i jonizacją przez elektrorozpylanie oraz uniwersalnym detektorem rozproszenia światła.
+3. Zamawiający dopuszcza składanie ofert częściowych. 
+4. Zamawiający nie dopuszcza składania ofert wariantowych.
+5. Zakres przedmiotowy, ilościowy i szczegółowe parametry/wymagania przedmiotu zamówienia zostały określone w Specyfikacji technicznej stanowiącej załącznik nr 2 do SWZ. 
+6. Określone w załączniku nr 2 do SWZ wymagania należy traktować jako określenie wymaganego minimalnego poziomu wymagań, parametrów technicznych, cech, funkcji.
+7. Wykonawca zobowiązany jest dostarczyć przedmiot zamówienia wraz z częściami składowymi i wyposażeniem muszą być fabrycznie nowe, nieużywane, niepoekspozycyjne, wolne od wad prawnych i fizycznych, bez wcześniejszej eksploatacji.
+8. Wymagany okres gwarancji: 
+dla zadania numer 1: 24 miesiące licząc od dnia podpisania protokołu odbioru,
+dla zadania numer 2: 24 miesiące licząc od dnia podpisania protokołu odbioru.
+9.Maksymalny czas na usunięcie niesprawności liczony od dnia jej zgłoszenia:  14 dni roboczych.
+10. W zakres obowiązków Wykonawcy wchodzi dostarczenie, wniesienie, montaż wraz z instalacją, zapewniające pełną funkcjonalność bez konieczności dodatkowych inwestycji ze strony Zamawiającego oraz przeprowadzenie instruktażu stanowiskowego dla całości zamówienia objętego postępowaniem. Miejsce realizacji przedmiotu zamówienia: Uniwersytet Jana Długosza w Częstochowie, teren Częstochowy  (pomieszczenia wskazane przez Zamawiającego). Ryzyko przypadkowej utraty, uszkodzenia rzeczy przejdzie na Zamawiającego po odbiorze przedmiotu zamówienia przez Zamawiającego.
+11. Pozostałe warunki zgodnie z SWZ wraz z załącznikami.</cbc:Description>
+    <cbc:ProcurementTypeCode listName="contract-nature">supplies</cbc:ProcurementTypeCode>
+    <cbc:Note languageID="POL">1. Z postępowania o udzielenie zamówienia wykluczony zostanie Wykonawca, w stosunku do którego zachodzi którakolwiek z okoliczności, o których mowa w art. 108 ust. 1 ustawy Prawo zamówień publicznych, tj. wykonawcę: 
+ 1) będącego osobą fizyczną, którego prawomocnie skazano za przestępstwo: 
+	 a) udziału w zorganizowanej grupie przestępczej albo związku mającym na celu popełnienie przestępstwa lub przestępstwa skarbowego, o którym mowa w art. 258 Kodeksu karnego, 
+	 b) handlu ludźmi, o którym mowa w art. 189a Kodeksu karnego, 
+	 c) o którym mowa w art. 228–230a, art. 250a Kodeksu karnego, w art. 46–48 ustawy z dnia 25 czerwca 2010 r. o sporcie (Dz. U. z 2020 r.poz. 1133 oraz z 2021 r. poz. 2054) lub w art. 54 ust. 1–4 ustawy z dnia 12 maja 2011 r. o refundacji leków, środków spożywczych specjalnego przeznaczenia żywieniowego oraz wyrobów medycznych (Dz. U. z 2021 r. poz. 523, 1292, 1559 i 2054), 
+	 d) finansowania przestępstwa o charakterze terrorystycznym, o którym mowa w art. 165a Kodeksu karnego, lub przestępstwo udaremniania lub utrudniania stwierdzenia przestępnego pochodzenia pieniędzy lub ukrywania ich pochodzenia, o którym mowa w art. 299 Kodeksu karnego, 
+	 e) o charakterze terrorystycznym, o którym mowa w art. 115 § 20 Kodeksu karnego, lub mające na celu popełnienie tego przestępstwa, 
+	 f) powierzenia wykonywania pracy małoletniemu cudzoziemcowi, o którym mowa w art. 9 ust. 2 ustawy z dnia 15 czerwca 2012 r. o skutkach powierzania wykonywania pracy cudzoziemcom przebywającym wbrew przepisom na terytorium Rzeczypospolitej Polskiej (Dz. U. poz. 769 oraz z 2020 r. poz. 2023), 
+	 g) przeciwko obrotowi gospodarczemu, o których mowa w art. 296–307 Kodeksu karnego, przestępstwo oszustwa, o którym mowa w art. 286 Kodeksu karnego, przestępstwo przeciwko wiarygodności dokumentów, o których mowa w art. 270–277d Kodeksu karnego, lub przestępstwo skarbowe, 
+	 h) o którym mowa w art. 9 ust. 1 i 3 lub art. 10 ustawy z dnia 15 czerwca 2012 r. o skutkach powierzania wykonywania pracy cudzoziemcom przebywającym wbrew przepisom na terytorium Rzeczypospolitej Polskiej – lub za odpowiedni czyn zabroniony określony w przepisach prawa obcego; 2) jeżeli urzędującego członka jego organu zarządzającego lub nadzorczego, wspólnika spółki w spółce jawnej lub partnerskiej albo komplementariusza w spółce komandytowej lub komandytowo-akcyjnej lub prokurenta prawomocnie skazano za przestępstwo, o którym mowa w pkt 1; 
+ 3) wobec którego wydano prawomocny wyrok sądu lub ostateczną decyzję administracyjną o zaleganiu z uiszczeniem podatków, opłat lub składek na ubezpieczenie społeczne lub zdrowotne, chyba że wykonawca odpowiednio przed upływem terminu do składania wniosków o dopuszczenie do udziału w postępowaniu albo przed upływem terminu składania ofert dokonał płatności należnych podatków, opłat lub składek na ubezpieczenie społeczne lub zdrowotne wraz z odsetkami lub grzywnami lub zawarł wiążące porozumienie w sprawie spłaty tych należności; 
+ 4) wobec którego prawomocnie orzeczono zakaz ubiegania się o zamówienia publiczne; 
+ 5) jeżeli zamawiający może stwierdzić, na podstawie wiarygodnych przesłanek, że wykonawca zawarł z innymi wykonawcami porozumienie mające na celu zakłócenie konkurencji, w szczególności jeżeli należąc do tej samej grupy kapitałowej w rozumieniu ustawy z dnia 16 lutego 2007 r. o ochronie konkurencji i konsumentów, złożyli odrębne oferty, oferty częściowe lub wnioski o dopuszczenie do udziału w postępowaniu, chyba że wykażą, że przygotowali te oferty lub wnioski niezależnie od siebie; 
+ 6) jeżeli, w przypadkach, o których mowa w art. 85 ust. 1, doszło do zakłócenia konkurencji wynikającego z wcześniejszego zaangażowania tego wykonawcy lub podmiotu, który należy z wykonawcą do tej samej grupy kapitałowej w rozumieniu ustawy z dnia 16 lutego 2007 r. o ochronie konkurencji i konsumentów, chyba że spowodowane tym zakłócenie konkurencji może być wyeliminowane w inny sposób niż przez wykluczenie wykonawcy z udziału w postępowaniu o udzielenie zamówienia. 
+ 7) Ponadto o udzielenie przedmiotowego zamówienia nie mogą ubiegać się wykonawcy, którzy podlegają wykluczeniu na podstawie na podstawie art. 5k rozporządzenia Rady (UE) nr 833/2014 z dnia 31 lipca 2014 r. dotyczącego środków ograniczających w związku z działaniami Rosji destabilizującymi sytuację na Ukrainie (Dz. Urz. UE nr L 229 z 31.7.2014, str. 1), dalej: rozporządzenie 833/2014, w brzmieniu nadanym rozporządzeniem Rady (UE) 2022/576 w sprawie zmiany rozporządzenia (UE) nr 833/2014 dotyczącego środków ograniczających w związku z działaniami Rosji destabilizującymi sytuację na Ukrainie (Dz. Urz. UE nr L 111 z 8.4.2022, str. 1), dalej: rozporządzenie 2022/5762 oraz na podstawie art. 7 ust. 1 ustawy z dnia 13 kwietnia 2022 r. o szczególnych rozwiązaniach w zakresie przeciwdziałania wspieraniu agresji na Ukrainę oraz służących ochronie bezpieczeństwa narodowego (Dz. U. poz. 835).Powyższe wykluczenie następować będzie na okres trwania ww. okoliczności. 
+2. Zamawiający przewiduje fakultatywne przesłanki wykluczenia z udziału w postępowaniu na podstawie artykułu 109 ustęp 1 punkt 4 ustawy Pzp : Z postępowania o udzielenie zamówienia zamawiający może wykluczyć wykonawcę w stosunku do którego otwarto likwidację, ogłoszono upadłość, którego aktywami zarządza likwidator lub sąd, zawarł układ z wierzycielami, którego działalność gospodarcza jest zawieszona albo znajduje się on w innej tego rodzaju sytuacji wynikającej z podobnej procedury przewidzianej w przepisach miejsca wszczęcia tej procedury.
+3. Wraz z ofertą należy złożyć wymagane w SWZ dokumenty (w postaci elektronicznej podpisane kwalifikowanym podpisem elektronicznym), tj:
+1) Oświadczenie z art. 125 ust. 1 ustawy Pzp, tj. JEDZ wraz z oświadczeniem w zakresie braku podstaw wykluczenia z artykułu 5k Rozporządzenia Rady (UE) nr 833/2014 z dnia 31 lipca 2014 r. dotyczącego środków ograniczających w związku z działaniami Rosji destabilizującymi sytuację na Ukrainie w brzmieniu nadanym rozporządzeniem Rady (UE) 2022/576 z dnia 8 kwietnia 2022 roku zgodnie z rozdziałem VI SWZ;
+2) Przedmiotowe środki dowodowe, zgodnie z rozdziałem VII SWZ;
+3) Pełnomocnictwo – jeśli dotyczy, zgodnie rozdziałem VIII SWZ;
+4) Uzasadnienie, że zastrzeżone informacje stanowią tajemnicę przedsiębiorstwa w rozumieniu art. 11 ust. 4 ustawy o zwalczaniu nieuczciwej konkurencji (Dz.U. z 2022 r. poz. 1233) – jeśli dotyczy.
+4.Zamawiający przed udzieleniem zamówienia wezwie Wykonawcę, którego oferta została najwyżej oceniona, do złożenia w wyznaczonym, nie krótszym niż 10 dni, terminie aktualnych na dzień złożenia oświadczeń lub dokumentów (podmiotowych środków dowodowych), potwierdzających brak podstaw wykluczenia Wykonawcy z udziału w postępowaniu.
+5. Na wezwanie Zamawiającego, zgodnie z punktem poprzedzającym, Wykonawca zobowiązany jest złożyć następujące podmiotowe środki dowodowe:
+5.1.	Informację z Krajowego Rejestru Karnego w zakresie:
+a) prawomocnego skazania za przestępstwo z artykułu 108 ustęp 1 punkt 1 i 2 ustawy Pzp,
+b) artykułu 108 ustęp 1 punkt 4 ustawy Pzp, dotyczącą orzeczenia zakazu ubiegania się o zamówienie publiczne tytułem środka karnego,
+- sporządzoną nie wcześniej niż 6 miesięcy przed jej złożeniem;
+5.2. Oświadczenie Wykonawcy, w zakresie artykułu 108 ustęp 1 punkt 5 ustawy pzp, o braku przynależności do tej samej grupy kapitałowej w rozumieniu ustawy z dnia 16 lutego 2007 r. o ochronie konkurencji i konsumentów (Dziennik Ustaw z 2024 r. pozycja 1616 ze zmianami), z innym wykonawcą, który złożył odrębną ofertę lub ofertę częściową albo oświadczenia o przynależności do tej samej grupy kapitałowej wraz z dokumentami lub informacjami potwierdzającymi przygotowanie oferty, oferty częściowej lub wniosku o dopuszczenie do udziału w postępowaniu niezależnie od innego wykonawcy należącego do tej samej grupy kapitałowej;
+5.3.Oświadczenie Wykonawcy o aktualności informacji zawartych w oświadczeniu, o którym mowa w ustępie 1, w zakresie podstaw wykluczenia z postępowania wskazanych przez Zamawiającego, o których mowa w:
+a)artykule 108 ustęp 1 punkt 3 ustawy pzp,
+b)artykule 108 ustęp 1 punkt 4 ustawy pzp, dotyczących orzeczenia zakazu ubiegania się o zamówienie publiczne tytułem środka zapobiegawczego,
+c)artykule 108 ustęp 1 punkt 5 ustawy pzp, dotyczących zawarcia z innymi wykonawcami porozumienia mającego na celu zakłócenie konkurencji,
+d)artykule 108 ustęp 1 punkt 6 ustawy pzp,
+e)artykule 7 ustęp 1 ustawy z dnia 13 kwietnia 2022 roku o szczególnych rozwiązaniach w zakresie przeciwdziałania wspieraniu agresji na Ukrainę oraz służących ochronie bezpieczeństwa narodowego oraz w zakresie artykułu 5k Rozporządzenia Rady (UE) nr 833/2014 z dnia 31 lipca 2014 r. dotyczącego środków ograniczających w związku z działaniami Rosji destabilizującymi sytuację na Ukrainie w brzmieniu nadanym rozporządzeniem Rady (UE) 2022/576 z dnia 8 kwietnia 2022 r. 
+5.4.Odpis lub informację z Krajowego Rejestru Sądowego lub z Centralnej Ewidencji i Informacji o Działalności Gospodarczej, w zakresie artykułu 109 ustęp 1 punkt 4 ustawy pzp, sporządzone nie wcześniej niż 3 miesiące przed jej złożeniem, jeżeli odrębne przepisy wymagają wpisu do rejestru lub ewidencji. 
+Szczegółowe zapisy zgodnie z SWZ wraz z załącznikami.</cbc:Note>
+    <cac:MainCommodityClassification>
+      <cbc:ItemClassificationCode listName="cpv">38000000</cbc:ItemClassificationCode>
+    </cac:MainCommodityClassification>
+    <cac:AdditionalCommodityClassification>
+      <cbc:ItemClassificationCode listName="cpv">38432200</cbc:ItemClassificationCode>
+    </cac:AdditionalCommodityClassification>
+    <cac:AdditionalCommodityClassification>
+      <cbc:ItemClassificationCode listName="cpv">38433000</cbc:ItemClassificationCode>
+    </cac:AdditionalCommodityClassification>
+    <cac:RealizedLocation>
+      <cac:Address>
+        <cbc:CountrySubentityCode listName="nuts">PL224</cbc:CountrySubentityCode>
+        <cac:Country>
+          <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:RealizedLocation>
+  </cac:ProcurementProject>
+  <cac:ProcurementProjectLot>
+    <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+    <cac:TenderingTerms>
+      <ext:UBLExtensions>
+        <ext:UBLExtension>
+          <ext:ExtensionContent>
+            <efext:EformsExtension>
+              <efac:Funding>
+                <efbc:FinancingIdentifier>Zamówienie jest finansowane ze środków projektu „Budowa Laboratorium zastosowań sztucznej inteligencji w diagnostyce obrazowej ” nr FESL.01.01-IZ.01-0736/23 w ramach Programu Fundusze Europejskie dla Śląskiego 2021-2027, Priorytet 1 „Fundusze Europejskie na inteligentny rozwój” Działanie 1.1 „B+R - organizacje badawcze”</efbc:FinancingIdentifier>
+              </efac:Funding>
+            </efext:EformsExtension>
+          </ext:ExtensionContent>
+        </ext:UBLExtension>
+      </ext:UBLExtensions>
+      <cbc:FundingProgramCode listName="eu-funded">eu-funds</cbc:FundingProgramCode>
+      <cac:RequiredFinancialGuarantee>
+        <cbc:GuaranteeTypeCode listName="tender-guarantee-required">false</cbc:GuaranteeTypeCode>
+      </cac:RequiredFinancialGuarantee>
+      <cac:CallForTendersDocumentReference>
+        <ext:UBLExtensions>
+          <ext:UBLExtension>
+            <ext:ExtensionContent>
+              <efext:EformsExtension>
+                <efac:OfficialLanguages>
+                  <cac:Language>
+                    <cbc:ID>POL</cbc:ID>
+                  </cac:Language>
+                </efac:OfficialLanguages>
+              </efext:EformsExtension>
+            </ext:ExtensionContent>
+          </ext:UBLExtension>
+        </ext:UBLExtensions>
+        <cbc:ID>ZP.26.1.52.2025</cbc:ID>
+        <cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+        <cac:Attachment>
+          <cac:ExternalReference>
+            <cbc:URI>https://platformazakupowa.pl/transakcja/1213714</cbc:URI>
+          </cac:ExternalReference>
+        </cac:Attachment>
+      </cac:CallForTendersDocumentReference>
+      <cac:TendererQualificationRequest>
+        <cac:SpecificTendererRequirement>
+          <cbc:TendererRequirementTypeCode listName="selection-criteria-source">epo-procurement-document</cbc:TendererRequirementTypeCode>
+        </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:TendererQualificationRequest>
+        <cac:SpecificTendererRequirement>
+          <cbc:TendererRequirementTypeCode listName="reserved-procurement">none</cbc:TendererRequirementTypeCode>
+        </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:ContractExecutionRequirement>
+        <cbc:ExecutionRequirementCode listName="reserved-execution">no</cbc:ExecutionRequirementCode>
+      </cac:ContractExecutionRequirement>
+      <cac:ContractExecutionRequirement>
+        <cbc:ExecutionRequirementCode listName="einvoicing">allowed</cbc:ExecutionRequirementCode>
+      </cac:ContractExecutionRequirement>
+      <cac:ContractExecutionRequirement>
+        <cbc:ExecutionRequirementCode listName="ecatalog-submission">not-allowed</cbc:ExecutionRequirementCode>
+      </cac:ContractExecutionRequirement>
+      <cac:AwardingTerms>
+        <cac:AwardingCriterion>
+          <cac:SubordinateAwardingCriterion>
+            <ext:UBLExtensions>
+              <ext:UBLExtension>
+                <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                    <efac:AwardCriterionParameter>
+                      <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                      <efbc:ParameterNumeric>100</efbc:ParameterNumeric>
+                    </efac:AwardCriterionParameter>
+                  </efext:EformsExtension>
+                </ext:ExtensionContent>
+              </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+            <cbc:Name languageID="POL">Cena</cbc:Name>
+            <cbc:Description languageID="POL">1. Zamawiający dokona oceny ofert, które nie zostały odrzucone, na podstawie następujących kryteriów oceny ofert:
+Dokonując wyboru oferty dla zadania numer 1 oraz dla zadania numer 2 - Zamawiający będzie stosował kryterium ceny (oferowana cena brutto realizacji zamówienia).
+2. Zamawiający wybierze ofertę najkorzystniejszą. Za ofertę najkorzystniejszą zostanie uznana oferta nie podlegająca odrzuceniu z najniższą ceną (brutto) realizacji całości zamówienia.
+3. W przypadku, gdy niemożliwy będzie wybór oferty najkorzystniejszej, z uwagi na to, iż zostały złożone oferty o takiej samej cenie, Zamawiający wzywa Wykonawców, którzy złożyli te oferty, do złożenia w terminie określonym przez Zamawiającego ofert dodatkowych zawierających nową cenę.</cbc:Description>
+          </cac:SubordinateAwardingCriterion>
+        </cac:AwardingCriterion>
+      </cac:AwardingTerms>
+      <cac:AdditionalInformationParty>
+        <cac:PartyIdentification>
+          <cbc:ID>ORG-0002</cbc:ID>
+        </cac:PartyIdentification>
+      </cac:AdditionalInformationParty>
+      <cac:DocumentProviderParty>
+        <cac:PartyIdentification>
+          <cbc:ID>ORG-0002</cbc:ID>
+        </cac:PartyIdentification>
+      </cac:DocumentProviderParty>
+      <cac:TenderRecipientParty>
+        <cbc:EndpointID>https://platformazakupowa.pl/transakcja/1213714</cbc:EndpointID>
+        <cac:PartyIdentification>
+          <cbc:ID>ORG-0002</cbc:ID>
+        </cac:PartyIdentification>
+      </cac:TenderRecipientParty>
+      <cac:TenderEvaluationParty>
+        <cac:PartyIdentification>
+          <cbc:ID>ORG-0002</cbc:ID>
+        </cac:PartyIdentification>
+      </cac:TenderEvaluationParty>
+      <cac:TenderValidityPeriod>
+        <cbc:DurationMeasure unitCode="DAY">90</cbc:DurationMeasure>
+      </cac:TenderValidityPeriod>
+      <cac:AppealTerms>
+        <cac:PresentationPeriod>
+          <cbc:Description languageID="POL">1. Odwołanie wnosi się w terminie 10 dni od dnia przekazania informacji o czynności zamawiającego stanowiącej podstawę jego wniesienia, jeżeli informacja została przekazana przy użyciu środków komunikacji elektronicznej 2. Odwołanie wobec treści ogłoszenia wszczynającego postępowanie o udzielenie zamówienia lub wobec treści dokumentów zamówienia, wnosi się w terminie 10 dni od dnia publikacji ogłoszenia w Dzienniku Urzędowym Unii Europejskiej lub zamieszczenia dokumentów zamówienia na stronie internetowej. 3. Odwołanie w przypadkach innych niż określone w pkt. 6 i 7 wnosi się w terminie 10 dni od dnia, w którym powzięto lub przy zachowaniu należytej staranności można było powziąć wiadomość o okolicznościach stanowiących podstawę jego wniesienia, 4. Szczegółowe informacje dotyczące środków ochrony prawnej określone są w Dziale IX „Środki ochrony prawnej” ustawy Pzp.</cbc:Description>
+        </cac:PresentationPeriod>
+        <cac:AppealInformationParty>
+          <cac:PartyIdentification>
+            <cbc:ID>ORG-0001</cbc:ID>
+          </cac:PartyIdentification>
+        </cac:AppealInformationParty>
+        <cac:AppealReceiverParty>
+          <cac:PartyIdentification>
+            <cbc:ID>ORG-0001</cbc:ID>
+          </cac:PartyIdentification>
+        </cac:AppealReceiverParty>
+      </cac:AppealTerms>
+      <cac:Language>
+        <cbc:ID>POL</cbc:ID>
+      </cac:Language>
+      <cac:PostAwardProcess>
+        <cbc:ElectronicOrderUsageIndicator>false</cbc:ElectronicOrderUsageIndicator>
+        <cbc:ElectronicPaymentUsageIndicator>true</cbc:ElectronicPaymentUsageIndicator>
+      </cac:PostAwardProcess>
+    </cac:TenderingTerms>
+    <cac:TenderingProcess>
+      <cbc:SubmissionMethodCode listName="esubmission">required</cbc:SubmissionMethodCode>
+      <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+      <cac:TenderSubmissionDeadlinePeriod>
+        <cbc:EndDate>2025-12-16+01:00</cbc:EndDate>
+        <cbc:EndTime>08:00:00+01:00</cbc:EndTime>
+      </cac:TenderSubmissionDeadlinePeriod>
+      <cac:OpenTenderEvent>
+        <cbc:OccurrenceDate>2025-12-16+01:00</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>08:30:00+01:00</cbc:OccurrenceTime>
+        <cbc:Description languageID="POL">Termin związania ofertą określony datą: 2026-03-15</cbc:Description>
+      </cac:OpenTenderEvent>
+      <cac:AuctionTerms>
+        <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+      </cac:AuctionTerms>
+      <cac:ContractingSystem>
+        <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+      </cac:ContractingSystem>
+      <cac:ContractingSystem>
+        <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+      </cac:ContractingSystem>
+    </cac:TenderingProcess>
+    <cac:ProcurementProject>
+      <cbc:Name languageID="POL">Spektrometr desorpcji/ jonizacji laserowej wspomaganej matrycą z tandemowym analizatorem czasu przelotu (MALDI TOF-TOF)</cbc:Name>
+      <cbc:Description languageID="POL">1. Zakres przedmiotowy, ilościowy i szczegółowe parametry/wymagania dotyczące przedmiotu zamówienia zostały określone w Specyfikacji technicznej stanowiącej załącznik nr 2 do SWZ. 
+2. Określone w załączniku nr 2 do SWZ wymagania należy traktować jako określenie wymaganego minimalnego poziomu wymagań, parametrów technicznych, cech, funkcji.
+3. Wykonawca zobowiązany jest dostarczyć przedmiot zamówienia wraz z częściami składowymi i wyposażeniem fabrycznie nowy, nieużywany, niepoekspozycyjny, wolny od wad prawnych i fizycznych, bez wcześniejszej eksploatacji.
+4. Wymagany okres gwarancji: 24 miesiące licząc od dnia podpisania protokołu odbioru.
+5. W zakres obowiązków Wykonawcy wchodzi dostarczenie, wniesienie, montaż wraz z instalacją, zapewniające pełną funkcjonalność bez konieczności dodatkowych inwestycji ze strony Zamawiającego oraz przeprowadzenie instruktażu stanowiskowego dla całości zamówienia objętego postępowaniem. Potwierdzeniem wykonania przedmiotu zamówienia będzie, podpisany przez strony bez zastrzeżeń, protokół odbioru. 
+6. Miejsce realizacji przedmiotu zamówienia: Uniwersytet Jana Długosza w Częstochowie, teren Częstochowy  (pomieszczenia wskazane przez Zamawiającego). Ryzyko przypadkowej utraty, uszkodzenia rzeczy przejdzie na Zamawiającego po odbiorze przedmiotu zamówienia przez Zamawiającego.
+7. Pozostałe warunki zgodnie z załącznikami do SWZ.</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">supplies</cbc:ProcurementTypeCode>
+      <cbc:Note languageID="POL">1. W przedmiotowym postępowaniu Zamawiający nie określił warunków udziału w postępowaniu.
+2. W celu potwierdzenia zgodności oferowanych dostaw z wymaganiami określonymi przez Zamawiającego, wykonawca zobowiązany jest złożyć wraz z ofertą następujące przedmiotowe środki dowodowe:
+1) Specyfikację techniczną oferowanego sprzętu, sporządzoną zgodnie z treścią załącznika numer 2 do SWZ, dla zadań numer 1, 2. 
+Specyfikacja winna być sporządzona zgodnie z treścią załącznika numer 2 do SWZ i winna potwierdzać spełnianie wszystkich parametrów, funkcjonalności, wymagań określonych przez Zamawiającego oraz zawierać oznaczenia typu producent, model, inne oznaczenie jednoznacznie identyfikujące produkt oraz opis oferowanych parametrów technicznych lub funkcjonalności, gdy Zamawiający takiego opisu wymaga (zgodnie z treścią załącznika numer 2 do SWZ). Zamawiający przewiduje możliwość uzupełnienia przedmiotowych środków dowodowych. 
+3.Ofertę składa się wyłącznie poprzez Platformę zakupową. Ofertę należy umieścić na platformie zakupowej pod adresem: https://platformazakupowa.pl/pn /ajd_czest/proceedings, w wierszu oznaczonym tytułem oraz znakiem sprawy niniejszego postępowania. 
+4. Przekazywanie wszelkich wniosków, oświadczeń, informacji, zawiadomień, zapytań innych niż oferta następuje na Platformie przy użyciu formularza „Wyślij wiadomość do zamawiającego”. Po kliknięciu przycisku „Wyślij wiadomość do zamawiającego” pojawi się komunikat, że wiadomość została wysłana do zamawiającego. Maksymalny rozmiar jednego pliku przesyłanego za pośrednictwem dedykowanych formularzy do: złożenia, zmiany,
+wycofania oferty wynosi 150 MB natomiast przy komunikacji wielkość pliku to maksymalnie 500 MB. Zamawiający rekomenduje wykorzystanie formatów: .pdf .doc .xls .jpg (.jpeg) ze szczególnym wskazaniem na .pdf 
+5. W celu ewentualnej kompresji danych Zamawiający rekomenduje wykorzystanie jednego z formatów: a) .zip b) .7Z 
+6. Ofertę składa się pod rygorem nieważności w formie elektronicznej, tj. w postaci elektronicznej opatrzonej kwalifikowanym podpisem elektronicznym. 
+7. Wykonawca, za pośrednictwem platformazakupowa.pl może przed upływem terminu do składania ofert zmienić lub wycofać
+ofertę.
+8. Zamawiający dopuszcza stosowanie ofert równoważnych, w przypadkach określonych w Specyfikacji technicznej – załącznik numer 1 do SWZ. Wykonawca oferując rozwiązanie równoważne, zobowiązany jest wyraźnie określić je w ofercie. Wykonawca zobowiązany jest udowodnić w ofercie, że proponowane rozwiązania w równoważnym stopniu spełniają wymagania określone w opisie przedmiotu zamówienia, przez dołączenie do oferty w szczególności stosownych przedmiotowych środków dowodowych, o których mowa w art. 104-107 ustawy Pzp</cbc:Note>
+      <cac:MainCommodityClassification>
+        <cbc:ItemClassificationCode listName="cpv">38433000</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:RealizedLocation>
+        <cac:Address>
+          <cbc:CountrySubentityCode listName="nuts">PL224</cbc:CountrySubentityCode>
+          <cac:Country>
+            <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:RealizedLocation>
+      <cac:PlannedPeriod>
+        <cbc:DurationMeasure unitCode="WEEK">20</cbc:DurationMeasure>
+      </cac:PlannedPeriod>
+      <cac:ContractExtension>
+        <cbc:OptionsDescription languageID="POL">Zamawiający nie przewiduje.</cbc:OptionsDescription>
+        <cbc:MaximumNumberNumeric>0</cbc:MaximumNumberNumeric>
+      </cac:ContractExtension>
+    </cac:ProcurementProject>
+  </cac:ProcurementProjectLot>
+  <cac:ProcurementProjectLot>
+    <cbc:ID schemeName="Lot">LOT-0002</cbc:ID>
+    <cac:TenderingTerms>
+      <ext:UBLExtensions>
+        <ext:UBLExtension>
+          <ext:ExtensionContent>
+            <efext:EformsExtension>
+              <efac:Funding>
+                <efbc:FinancingIdentifier>Zamówienie jest finansowane ze środków projektu „Budowa Laboratorium zastosowań sztucznej inteligencji w diagnostyce obrazowej ” nr FESL.01.01-IZ.01-0736/23 w ramach Programu Fundusze Europejskie dla Śląskiego 2021-2027, Priorytet 1 „Fundusze Europejskie na inteligentny rozwój” Działanie 1.1 „B+R - organizacje badawcze”</efbc:FinancingIdentifier>
+              </efac:Funding>
+            </efext:EformsExtension>
+          </ext:ExtensionContent>
+        </ext:UBLExtension>
+      </ext:UBLExtensions>
+      <cbc:FundingProgramCode listName="eu-funded">eu-funds</cbc:FundingProgramCode>
+      <cac:RequiredFinancialGuarantee>
+        <cbc:GuaranteeTypeCode listName="tender-guarantee-required">false</cbc:GuaranteeTypeCode>
+      </cac:RequiredFinancialGuarantee>
+      <cac:CallForTendersDocumentReference>
+        <ext:UBLExtensions>
+          <ext:UBLExtension>
+            <ext:ExtensionContent>
+              <efext:EformsExtension>
+                <efac:OfficialLanguages>
+                  <cac:Language>
+                    <cbc:ID>POL</cbc:ID>
+                  </cac:Language>
+                </efac:OfficialLanguages>
+              </efext:EformsExtension>
+            </ext:ExtensionContent>
+          </ext:UBLExtension>
+        </ext:UBLExtensions>
+        <cbc:ID>ZP.26.1.52.2025</cbc:ID>
+        <cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+        <cac:Attachment>
+          <cac:ExternalReference>
+            <cbc:URI>https://platformazakupowa.pl/transakcja/1213714</cbc:URI>
+          </cac:ExternalReference>
+        </cac:Attachment>
+      </cac:CallForTendersDocumentReference>
+      <cac:TendererQualificationRequest>
+        <cac:SpecificTendererRequirement>
+          <cbc:TendererRequirementTypeCode listName="selection-criteria-source">epo-procurement-document</cbc:TendererRequirementTypeCode>
+        </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:TendererQualificationRequest>
+        <cac:SpecificTendererRequirement>
+          <cbc:TendererRequirementTypeCode listName="reserved-procurement">none</cbc:TendererRequirementTypeCode>
+        </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:ContractExecutionRequirement>
+        <cbc:ExecutionRequirementCode listName="reserved-execution">no</cbc:ExecutionRequirementCode>
+      </cac:ContractExecutionRequirement>
+      <cac:ContractExecutionRequirement>
+        <cbc:ExecutionRequirementCode listName="einvoicing">allowed</cbc:ExecutionRequirementCode>
+      </cac:ContractExecutionRequirement>
+      <cac:ContractExecutionRequirement>
+        <cbc:ExecutionRequirementCode listName="ecatalog-submission">not-allowed</cbc:ExecutionRequirementCode>
+      </cac:ContractExecutionRequirement>
+      <cac:AwardingTerms>
+        <cac:AwardingCriterion>
+          <cac:SubordinateAwardingCriterion>
+            <ext:UBLExtensions>
+              <ext:UBLExtension>
+                <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                    <efac:AwardCriterionParameter>
+                      <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                      <efbc:ParameterNumeric>100</efbc:ParameterNumeric>
+                    </efac:AwardCriterionParameter>
+                  </efext:EformsExtension>
+                </ext:ExtensionContent>
+              </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+            <cbc:Name languageID="POL">Cena</cbc:Name>
+            <cbc:Description languageID="POL">1. Zamawiający dokona oceny ofert, które nie zostały odrzucone, na podstawie następujących kryteriów oceny ofert:
+Dokonując wyboru oferty dla zadania numer 1 oraz dla zadania numer 2 - Zamawiający będzie stosował kryterium ceny (oferowana cena brutto realizacji zamówienia).
+2. Zamawiający wybierze ofertę najkorzystniejszą. Za ofertę najkorzystniejszą zostanie uznana oferta nie podlegająca odrzuceniu z najniższą ceną (brutto) realizacji całości zamówienia.
+3. W przypadku, gdy niemożliwy będzie wybór oferty najkorzystniejszej, z uwagi na to, iż zostały złożone oferty o takiej samej cenie, Zamawiający wzywa Wykonawców, którzy złożyli te oferty, do złożenia w terminie określonym przez Zamawiającego ofert dodatkowych zawierających nową cenę.</cbc:Description>
+          </cac:SubordinateAwardingCriterion>
+        </cac:AwardingCriterion>
+      </cac:AwardingTerms>
+      <cac:AdditionalInformationParty>
+        <cac:PartyIdentification>
+          <cbc:ID>ORG-0002</cbc:ID>
+        </cac:PartyIdentification>
+      </cac:AdditionalInformationParty>
+      <cac:DocumentProviderParty>
+        <cac:PartyIdentification>
+          <cbc:ID>ORG-0002</cbc:ID>
+        </cac:PartyIdentification>
+      </cac:DocumentProviderParty>
+      <cac:TenderRecipientParty>
+        <cbc:EndpointID>https://platformazakupowa.pl/transakcja/1213714</cbc:EndpointID>
+        <cac:PartyIdentification>
+          <cbc:ID>ORG-0002</cbc:ID>
+        </cac:PartyIdentification>
+      </cac:TenderRecipientParty>
+      <cac:TenderEvaluationParty>
+        <cac:PartyIdentification>
+          <cbc:ID>ORG-0002</cbc:ID>
+        </cac:PartyIdentification>
+      </cac:TenderEvaluationParty>
+      <cac:TenderValidityPeriod>
+        <cbc:DurationMeasure unitCode="DAY">90</cbc:DurationMeasure>
+      </cac:TenderValidityPeriod>
+      <cac:AppealTerms>
+        <cac:PresentationPeriod>
+          <cbc:Description languageID="POL">1. Odwołanie wnosi się w terminie 10 dni od dnia przekazania informacji o czynności zamawiającego stanowiącej podstawę jego wniesienia, jeżeli informacja została przekazana przy użyciu środków komunikacji elektronicznej 2. Odwołanie wobec treści ogłoszenia wszczynającego postępowanie o udzielenie zamówienia lub wobec treści dokumentów zamówienia, wnosi się w terminie 10 dni od dnia publikacji ogłoszenia w Dzienniku Urzędowym Unii Europejskiej lub zamieszczenia dokumentów zamówienia na stronie internetowej. 3. Odwołanie w przypadkach innych niż określone w pkt. 6 i 7 wnosi się w terminie 10 dni od dnia, w którym powzięto lub przy zachowaniu należytej staranności można było powziąć wiadomość o okolicznościach stanowiących podstawę jego wniesienia, 4. Szczegółowe informacje dotyczące środków ochrony prawnej określone są w Dziale IX „Środki ochrony prawnej” ustawy Pzp.</cbc:Description>
+        </cac:PresentationPeriod>
+        <cac:AppealInformationParty>
+          <cac:PartyIdentification>
+            <cbc:ID>ORG-0001</cbc:ID>
+          </cac:PartyIdentification>
+        </cac:AppealInformationParty>
+        <cac:AppealReceiverParty>
+          <cac:PartyIdentification>
+            <cbc:ID>ORG-0001</cbc:ID>
+          </cac:PartyIdentification>
+        </cac:AppealReceiverParty>
+      </cac:AppealTerms>
+      <cac:Language>
+        <cbc:ID>POL</cbc:ID>
+      </cac:Language>
+      <cac:PostAwardProcess>
+        <cbc:ElectronicOrderUsageIndicator>false</cbc:ElectronicOrderUsageIndicator>
+        <cbc:ElectronicPaymentUsageIndicator>true</cbc:ElectronicPaymentUsageIndicator>
+      </cac:PostAwardProcess>
+    </cac:TenderingTerms>
+    <cac:TenderingProcess>
+      <cbc:SubmissionMethodCode listName="esubmission">required</cbc:SubmissionMethodCode>
+      <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+      <cac:TenderSubmissionDeadlinePeriod>
+        <cbc:EndDate>2025-12-16+01:00</cbc:EndDate>
+        <cbc:EndTime>08:00:00+01:00</cbc:EndTime>
+      </cac:TenderSubmissionDeadlinePeriod>
+      <cac:OpenTenderEvent>
+        <cbc:OccurrenceDate>2025-12-16+01:00</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>08:30:00+01:00</cbc:OccurrenceTime>
+        <cbc:Description languageID="POL">Termin związania ofertą określony datą: 2026-03-15</cbc:Description>
+      </cac:OpenTenderEvent>
+      <cac:AuctionTerms>
+        <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+      </cac:AuctionTerms>
+      <cac:ContractingSystem>
+        <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+      </cac:ContractingSystem>
+      <cac:ContractingSystem>
+        <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+      </cac:ContractingSystem>
+    </cac:TenderingProcess>
+    <cac:ProcurementProject>
+      <cbc:Name languageID="POL">Chromatograf cieczowy z detektorem masowym typu potrójny kwadrupol i jonizacją przez elektrorozpylanie oraz uniwersalnym detektorem rozproszenia światła.</cbc:Name>
+      <cbc:Description languageID="POL">1. Zakres przedmiotowy, ilościowy i szczegółowe parametry/wymagania dotyczące przedmiotu zamówienia zostały określone w Specyfikacji technicznej stanowiącej załącznik nr 2 do SWZ. 
+2. Określone w załączniku nr 2 do SWZ wymagania należy traktować jako określenie wymaganego minimalnego poziomu wymagań, parametrów technicznych, cech, funkcji.
+3. Wykonawca zobowiązany jest dostarczyć przedmiot zamówienia wraz z częściami składowymi i wyposażeniem fabrycznie nowy, nieużywany, niepoekspozycyjny, wolny od wad prawnych i fizycznych, bez wcześniejszej eksploatacji.
+4. Wymagany okres gwarancji: 24 miesiące licząc od dnia podpisania protokołu odbioru,
+5. W zakres obowiązków Wykonawcy wchodzi dostarczenie, wniesienie, montaż wraz z instalacją, zapewniające pełną funkcjonalność bez konieczności dodatkowych inwestycji ze strony Zamawiającego oraz przeprowadzenie instruktażu stanowiskowego dla całości zamówienia objętego postępowaniem. Potwierdzeniem wykonania przedmiotu zamówienia będzie, podpisany przez strony bez zastrzeżeń, protokół odbioru. 
+6. Miejsce realizacji przedmiotu zamówienia: Uniwersytet Jana Długosza w Częstochowie, teren Częstochowy  (pomieszczenia wskazane przez Zamawiającego). Ryzyko przypadkowej utraty, uszkodzenia rzeczy przejdzie na Zamawiającego po odbiorze przedmiotu zamówienia przez Zamawiającego.
+7. Pozostałe warunki zgodnie z załącznikami do SWZ.</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">supplies</cbc:ProcurementTypeCode>
+      <cbc:Note languageID="POL">1. W przedmiotowym postępowaniu Zamawiający nie określił warunków udziału w postępowaniu.
+2. W celu potwierdzenia zgodności oferowanych dostaw z wymaganiami określonymi przez Zamawiającego, wykonawca zobowiązany jest złożyć wraz z ofertą następujące przedmiotowe środki dowodowe:
+1) Specyfikację techniczną oferowanego sprzętu, sporządzoną zgodnie z treścią załącznika numer 2 do SWZ, dla zadań numer 1, 2. 
+Specyfikacja winna być sporządzona zgodnie z treścią załącznika numer 2 do SWZ i winna potwierdzać spełnianie wszystkich parametrów, funkcjonalności, wymagań określonych przez Zamawiającego oraz zawierać oznaczenia typu producent, model, inne oznaczenie jednoznacznie identyfikujące produkt oraz opis oferowanych parametrów technicznych lub funkcjonalności, gdy Zamawiający takiego opisu wymaga (zgodnie z treścią załącznika numer 2 do SWZ). Zamawiający nie przewiduje możliwości uzupełnienia przedmiotowych środków dowodowych.</cbc:Note>
+      <cac:RequestedTenderTotal>
+        <cbc:EstimatedOverallContractAmount currencyID="PLN">0</cbc:EstimatedOverallContractAmount>
+      </cac:RequestedTenderTotal>
+      <cac:MainCommodityClassification>
+        <cbc:ItemClassificationCode listName="cpv">38433000</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:RealizedLocation>
+        <cac:Address>
+          <cbc:CountrySubentityCode listName="nuts">PL224</cbc:CountrySubentityCode>
+          <cac:Country>
+            <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:RealizedLocation>
+      <cac:PlannedPeriod>
+        <cbc:DurationMeasure unitCode="WEEK">20</cbc:DurationMeasure>
+      </cac:PlannedPeriod>
+      <cac:ContractExtension>
+        <cbc:OptionsDescription languageID="POL">Zamawiający nie przewiduje.</cbc:OptionsDescription>
+        <cbc:MaximumNumberNumeric>0</cbc:MaximumNumberNumeric>
+      </cac:ContractExtension>
+    </cac:ProcurementProject>
+  </cac:ProcurementProjectLot>
+</ContractNotice>

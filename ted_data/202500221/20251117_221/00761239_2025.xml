@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><ContractAwardNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractAwardNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+  <ext:UBLExtensions>
+    <ext:UBLExtension>
+      <ext:ExtensionContent>
+        <efext:EformsExtension>
+          <efac:NoticeResult>
+            <cbc:TotalAmount currencyID="EUR">38999.99</cbc:TotalAmount>
+            <efac:LotResult>
+              <cbc:ID schemeName="result">RES-0000</cbc:ID>
+              <cbc:TenderResultCode listName="winner-selection-status">selec-w</cbc:TenderResultCode>
+              <efac:LotTender>
+                <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+              </efac:LotTender>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">tenders</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>12</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-esubm</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>12</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-no-eea</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-oth-eea</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-sme</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>11</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:SettledContract>
+                <cbc:ID schemeName="contract">CON-0000</cbc:ID>
+              </efac:SettledContract>
+              <efac:TenderLot>
+                <cbc:ID schemeName="Lot">LOT-0000</cbc:ID>
+              </efac:TenderLot>
+            </efac:LotResult>
+            <efac:LotTender>
+              <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+              <cbc:RankCode>1</cbc:RankCode>
+              <efbc:TenderRankedIndicator>true</efbc:TenderRankedIndicator>
+              <efbc:TenderVariantIndicator>false</efbc:TenderVariantIndicator>
+              <cac:LegalMonetaryTotal>
+                <cbc:PayableAmount currencyID="EUR">38999.99</cbc:PayableAmount>
+              </cac:LegalMonetaryTotal>
+              <efac:SubcontractingTerm>
+                <efbc:TermCode listName="applicability">no</efbc:TermCode>
+              </efac:SubcontractingTerm>
+              <efac:TenderingParty>
+                <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+              </efac:TenderingParty>
+              <efac:TenderLot>
+                <cbc:ID schemeName="Lot">LOT-0000</cbc:ID>
+              </efac:TenderLot>
+              <efac:TenderReference>
+                <cbc:ID>13-2025VG</cbc:ID>
+              </efac:TenderReference>
+            </efac:LotTender>
+            <efac:SettledContract>
+              <cbc:ID schemeName="contract">CON-0000</cbc:ID>
+              <cbc:AwardDate>2025-09-29+02:00</cbc:AwardDate>
+              <cbc:IssueDate>2025-11-07+01:00</cbc:IssueDate>
+              <cbc:Title languageID="HRV">Usluga stručnog nadzora i koordinatora II. pri izvođenju radova izgradnje i opremanja osnovne škole u naselju Babin Vir u Požegi</cbc:Title>
+              <efac:ContractReference>
+                <cbc:ID>KLASA: 406-01/25-04/9; URBROJ: 2177-1-01/01-25-15</cbc:ID>
+              </efac:ContractReference>
+              <efac:LotTender>
+                <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+              </efac:LotTender>
+              <efac:Funding>
+                <cbc:FundingProgramCode listName="eu-programme">EURI</cbc:FundingProgramCode>
+                <cbc:Description languageID="HRV">Nacionalnog plana za oporavak i otpornost 2021.-2026.“ pod nazivom projekta „Izgradnja osnovne škole u naselju Babin vir u Požegi"</cbc:Description>
+              </efac:Funding>
+            </efac:SettledContract>
+            <efac:TenderingParty>
+              <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+              <efac:Tenderer>
+                <cbc:ID schemeName="organization">ORG-0004</cbc:ID>
+              </efac:Tenderer>
+            </efac:TenderingParty>
+          </efac:NoticeResult>
+          <efac:NoticeSubType>
+            <cbc:SubTypeCode listName="notice-subtype">29</cbc:SubTypeCode>
+          </efac:NoticeSubType>
+          <efac:Organizations>
+            <efac:Organization>
+              <efac:Company>
+                <cbc:WebsiteURI>https://www.pozega.hr</cbc:WebsiteURI>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <cbc:Name languageID="HRV">GRAD POŽEGA</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>Trg Svetog Trojstva 1</cbc:StreetName>
+                  <cbc:CityName>Požega</cbc:CityName>
+                  <cbc:PostalZone>34000</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">HR023</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">HRV</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID>95699596710</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Name>Ivana Ćališ</cbc:Name>
+                  <cbc:Telephone>+385 034311300</cbc:Telephone>
+                  <cbc:ElectronicMail>info@pozega.hr</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+            <efac:Organization>
+              <efac:Company>
+                <cbc:WebsiteURI>https://www.dkom.hr/</cbc:WebsiteURI>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <cbc:Name languageID="HRV">Državna komisija za kontrolu postupaka javne nabave</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>Ulica grada Vukovara 23/V</cbc:StreetName>
+                  <cbc:CityName>Zagreb</cbc:CityName>
+                  <cbc:PostalZone>10000</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">HR050</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">HRV</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID>95857869241</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Name>Kontakt</cbc:Name>
+                  <cbc:Telephone>+385 14559 930</cbc:Telephone>
+                  <cbc:ElectronicMail>dkom@dkom.hr</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+            <efac:Organization>
+              <efac:Company>
+                <cbc:WebsiteURI>https://www.nn.hr/</cbc:WebsiteURI>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <cbc:Name languageID="HRV">Narodne novine d.d.</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>Savski gaj  XIII. 6</cbc:StreetName>
+                  <cbc:CityName>Zagreb</cbc:CityName>
+                  <cbc:PostalZone>10020</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">HR050</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">HRV</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID>TED94</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID>HR64546066176</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Name>EOJN Helpdesk</cbc:Name>
+                  <cbc:Telephone>+385 16652889</cbc:Telephone>
+                  <cbc:ElectronicMail>eojn@nn.hr</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+            <efac:Organization>
+              <efbc:ListedOnRegulatedMarketIndicator>false</efbc:ListedOnRegulatedMarketIndicator>
+              <efac:Company>
+                <efbc:CompanySizeCode listName="economic-operator-size">micro</efbc:CompanySizeCode>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0004</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <cbc:Name languageID="HRV">URED OVLAŠTENOG INŽENJERA GRAĐEVINARSTVA MARKO NOVAK</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>GRGIN DOL 72</cbc:StreetName>
+                  <cbc:CityName>POŽEGA</cbc:CityName>
+                  <cbc:PostalZone>34000</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">HR023</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">HRV</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID>34270501062</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Name>MARKO NOVAK</cbc:Name>
+                  <cbc:Telephone>+385 98235310</cbc:Telephone>
+                  <cbc:ElectronicMail>mnovak.uoig@gmail.com</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+          </efac:Organizations>
+        <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00761239-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+      </ext:ExtensionContent>
+    </ext:UBLExtension>
+  </ext:UBLExtensions>
+  <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+  <cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+  <cbc:ID schemeName="notice-id">f8f3f27b-7891-401e-b4d7-f3834743c3ea</cbc:ID>
+  <cbc:ContractFolderID>3069aa98-3b47-4af2-b8cc-8266419cfc88</cbc:ContractFolderID>
+  <cbc:IssueDate>2025-11-13+01:00</cbc:IssueDate>
+  <cbc:IssueTime>18:00:00.0000000+01:00</cbc:IssueTime>
+  <cbc:VersionID>01</cbc:VersionID>
+  <cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+  <cbc:NoticeTypeCode listName="result">can-standard</cbc:NoticeTypeCode>
+  <cbc:NoticeLanguageCode>HRV</cbc:NoticeLanguageCode>
+  <cac:ContractingParty>
+    <cbc:BuyerProfileURI>https://www.pozega.hr</cbc:BuyerProfileURI>
+    <cac:ContractingPartyType>
+      <cbc:PartyTypeCode listName="buyer-legal-type">la</cbc:PartyTypeCode>
+    </cac:ContractingPartyType>
+    <cac:ContractingActivity>
+      <cbc:ActivityTypeCode listName="authority-activity">gen-pub</cbc:ActivityTypeCode>
+    </cac:ContractingActivity>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:ServiceProviderParty>
+        <cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode>
+        <cac:Party>
+          <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+          </cac:PartyIdentification>
+        </cac:Party>
+      </cac:ServiceProviderParty>
+    </cac:Party>
+  </cac:ContractingParty>
+  <cac:TenderingProcess>
+    <cbc:Description languageID="HRV">Otvoreni postupak</cbc:Description>
+    <cbc:ProcedureCode listName="procurement-procedure-type">open</cbc:ProcedureCode>
+  </cac:TenderingProcess>
+  <cac:ProcurementProject>
+    <cbc:ID schemeName="InternalID">NMV 10/25</cbc:ID>
+    <cbc:Name languageID="HRV">Usluga stručnog nadzora i koordinatora II. pri izvođenju radova izgradnje i opremanja osnovne škole u naselju Babin Vir u Požegi</cbc:Name>
+    <cbc:Description languageID="HRV">Stručni nadzor i koordinator II.  na izvođenju radova i opremanju nove školske zgrade u naselju Babin Vir u Požegi.</cbc:Description>
+    <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+    <cac:RequestedTenderTotal>
+      <cbc:EstimatedOverallContractAmount currencyID="EUR">136324.12</cbc:EstimatedOverallContractAmount>
+    </cac:RequestedTenderTotal>
+    <cac:MainCommodityClassification>
+      <cbc:ItemClassificationCode listName="cpv">71247000</cbc:ItemClassificationCode>
+    </cac:MainCommodityClassification>
+    <cac:RealizedLocation>
+      <cbc:Description languageID="HRV">Izvođenje radova izvršavat će se na području Grada Požege, Slavka Kolara 5.</cbc:Description>
+      <cac:Address>
+        <cbc:CountrySubentityCode listName="nuts">HR023</cbc:CountrySubentityCode>
+        <cac:Country>
+          <cbc:IdentificationCode listName="country">HRV</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:RealizedLocation>
+  </cac:ProcurementProject>
+  <cac:ProcurementProjectLot>
+    <cbc:ID schemeName="Lot">LOT-0000</cbc:ID>
+    <cac:TenderingTerms>
+      <cbc:FundingProgramCode listName="eu-funded">eu-funds</cbc:FundingProgramCode>
+      <cac:AwardingTerms>
+        <cac:AwardingCriterion>
+          <cac:SubordinateAwardingCriterion>
+            <ext:UBLExtensions>
+              <ext:UBLExtension>
+                <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                    <efac:AwardCriterionParameter>
+                      <efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+                      <efbc:ParameterNumeric>60</efbc:ParameterNumeric>
+                    </efac:AwardCriterionParameter>
+                  </efext:EformsExtension>
+                </ext:ExtensionContent>
+              </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+            <cbc:Name languageID="HRV">Cijena ponude</cbc:Name>
+            <cbc:Description languageID="HRV">Cijena ponude</cbc:Description>
+          </cac:SubordinateAwardingCriterion>
+          <cac:SubordinateAwardingCriterion>
+            <ext:UBLExtensions>
+              <ext:UBLExtension>
+                <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                    <efac:AwardCriterionParameter>
+                      <efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+                      <efbc:ParameterNumeric>40</efbc:ParameterNumeric>
+                    </efac:AwardCriterionParameter>
+                  </efext:EformsExtension>
+                </ext:ExtensionContent>
+              </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+            <cbc:Name languageID="HRV">Specifično iskustvo stručnjaka 1. - Glavni nadzorni inženjer</cbc:Name>
+            <cbc:Description languageID="HRV">Naručitelj kao drugi kriterij odabira ponude određuje stručno iskustvo glavnog nadzornog inženjera koji će biti uključen u izvršenje Ugovora u svrhu vrednovanja kvalitete stručnjaka temeljem specifičnog stručnog iskustva, odnosno da stručnjak ima primjereno iskustvo i znanje u svojstvu odgovorne osobe-glavnog nadzornog inženjera u izvršenju usluga stručnog nadzora građenja nad izvođenjem radova izgradnje i/ili rekonstrukcije i/ili dogradnje zgrada javne namjene i/ili poslovno-stambenih i/ili višestambenih zgrada namjene na objektu bruto površine veće od 3000 m2, što Naručitelju daje potvrdu da je, s obzirom na opseg, predmet i vrijednost radova čije je izvršenje nadzirao, sposoban kvalitetno, stručno, pravovremeno i valjano izvršiti ugovorenu uslugu.</cbc:Description>
+          </cac:SubordinateAwardingCriterion>
+        </cac:AwardingCriterion>
+      </cac:AwardingTerms>
+      <cac:AdditionalInformationParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+        </cac:PartyIdentification>
+      </cac:AdditionalInformationParty>
+      <cac:AppealTerms>
+        <cbc:Description languageID="HRV">Nezadovoljna strana može izjavljivanjem žalbe tražiti zaštitu svojih prava pred Državnom komisijom za kontrolu postupaka javne nabave, Koturaška cesta 43/IV, 10000 Zagreb, u pisanom obliku.
+ Žalba se dostavlja neposredno elektroničkim sredstvima komunikacije putem međusobno povezanih informacijskih sustava Državne komisije i EOJN RH. U žalbenom postupku odlučuje se o zakonitosti postupaka, radnji, propuštanja radnji i odluka donesenih u postupcima javne nabave te o zakonitosti ugovora o javnoj nabavi sklopljenih bez provedbe postupaka javne nabave. Pravodobnost žalbe utvrđuje Državna komisija.
+U otvorenom postupku žalba se izjavljuje u roku od deset dana, i to od dana (članak 406. stavak 1. ZJN 2016):
+1.	objave poziva na nadmetanje, u odnosu na sadržaj poziva ili dokumentacije o nabavi,
+2.	objave obavijesti o ispravku, u odnosu na sadržaj ispravka,
+3.	objave izmjene dokumentacije o nabavi, u odnosu na sadržaj izmjene dokumentacije,
+4.	otvaranja ponuda u odnosu na propuštanje naručitelja da valjano odgovori na pravodobno dostavljen, zahtjev dodatne informacije, objašnjenja ili izmjene dokumentacije o nabavi te na postupak otvaranja ponuda
+5.	primitka odluke o odabiru ili poništenju, u odnosu na postupak pregleda, ocjene i odabira ponuda, ili razloge poništenja.
+
+Žalitelj koji je propustio izjaviti žalbu u određenoj fazi otvorenog postupka javne nabave sukladno odredbi stavka 1. ovoga članka nema pravo na žalbu u kasnijoj fazi postupka za prethodnu fazu.</cbc:Description>
+        <cac:AppealInformationParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+          </cac:PartyIdentification>
+        </cac:AppealInformationParty>
+        <cac:AppealReceiverParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+          </cac:PartyIdentification>
+        </cac:AppealReceiverParty>
+      </cac:AppealTerms>
+    </cac:TenderingTerms>
+    <cac:TenderingProcess>
+      <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+      <cac:AuctionTerms>
+        <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+      </cac:AuctionTerms>
+      <cac:ContractingSystem>
+        <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+      </cac:ContractingSystem>
+      <cac:ContractingSystem>
+        <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+      </cac:ContractingSystem>
+    </cac:TenderingProcess>
+    <cac:ProcurementProject>
+      <cbc:ID schemeName="internalID">NMV 10/25</cbc:ID>
+      <cbc:Name languageID="HRV">Usluga stručnog nadzora i koordinatora II. pri izvođenju radova izgradnje i opremanja osnovne škole u naselju Babin Vir u Požegi</cbc:Name>
+      <cbc:Description languageID="HRV">Predmet nabave su usluge stručnog nadzora građenja i koordinatora zaštite na radu koji se izvode na izgradnji i opremanju  nove školske zgrade u naselju Babin Vir u Požegi, koja se mora izvršiti prema Glavnom projektu zajedničke oznake 036/2024, izrađenom od strane glavnog projektanta Darka Ojvana, dipl. ing. građ., sukladno građevinskoj dozvoli izdane od strane Požeško-slavonske županije,  pripadajućem Troškovniku i uvjetima iz ove dokumentacije.
+Detaljan opis usluga je dan u Projektnom zadatku.
+Stručni nadzor građenja provodi se sukladno važećem Zakona o gradnji na način provedbe stručnog nadzora građenja, sukladno važećem Pravilniku o načinu provedbe stručnog nadzora građenja, uvjetima i načinu vođenja građevinskog dnevnika te o sadržaju završnog izvješća nadzornog inženjera, sukladno važećem Zakonu o poslovima i djelatnostima prostornog uređenja i gradnje.
+Obveze i aktivnosti koordinatora zaštite na radu vršit će se prema važećem Zakonu u zaštiti na radu i važećem Pravilniku o zaštiti na radu na privremenim gradilištima.
+Procijenjena vrijednost izvođenja radova i opremanje iznosi =14.550.000,00 eura (bez PDV-a).
+Dokumentacija o nabavi s prilozima za izvođenje radova i opremanje, objavljena je 26.03.2025.godine na EOJN RH (oznaka Obavijesti o nadmetanju: 2025/S F02-0003308) i trenutno je u tijeku.  
+Planirani rok završetka radova, tako i usluge stručnog nadzora je okvirno do 31.12.2026. godine od obostranog potpisa ugovora te dodatnih 30 dana za izradu potrebnih izvještaja, te je rok indikativan i umnogome ovisi o tijeku izvođenja radova i dobave opreme.
+Budući da se na građevini izvodi više vrsta radova i radovi većeg opsega, stručni nadzor mora provoditi više nadzornih inženjera odgovarajuće struke te će se imenovati glavni nadzorni inženjer, a na prijedlog odabranog ponuditelja predmetne usluge.
+
+Usluge stručnog nadzora građenja uključuju:
+- usluge stručnog nadzora - glavni nadzorni inženjer građenja (arhitektonske, građevinske, strojarske ili elektrotehničke struke)
+- usluge stručnog nadzora za građevinske i obrtničke radove -nadzorni inženjer građenja građevinske/arhitektonske struke
+- usluge stručnog nadzora za elektrotehničke radove-nadzorni inženjer elektrotehničke struke
+- usluge stručnog nadzora za strojarske radove -nadzorni inženjer strojarske struke
+- usluge koordinatora zaštite na radu.
+
+Obvezno je nuđenje cjelokupnog predmeta nabave sa svim navedenim stavkama u troškovniku.
+Odabrani ponuditelj je odgovoran za štetu koja nastane Naručitelju u sklopu provedbe projekta Izgradnje i opremanja osnovne škole u naselju Babin Vir u Požegi, a koja nastane zbog nepostupanja u skladu s pravilima struke.</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+      <cac:ProcurementAdditionalType>
+        <cbc:ProcurementTypeCode listName="accessibility">n-inc</cbc:ProcurementTypeCode>
+      </cac:ProcurementAdditionalType>
+      <cac:RequestedTenderTotal>
+        <cbc:EstimatedOverallContractAmount currencyID="EUR">136324.12</cbc:EstimatedOverallContractAmount>
+      </cac:RequestedTenderTotal>
+      <cac:MainCommodityClassification>
+        <cbc:ItemClassificationCode listName="cpv">71247000</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:RealizedLocation>
+        <cbc:Description languageID="HRV">Izvođenje radova izvršavat će se na području Grada Požege, Slavka Kolara 5.</cbc:Description>
+        <cac:Address>
+          <cbc:CountrySubentityCode listName="nuts">HR023</cbc:CountrySubentityCode>
+          <cac:Country>
+            <cbc:IdentificationCode listName="country">HRV</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:RealizedLocation>
+      <cac:ContractExtension>
+        <cbc:MaximumNumberNumeric>0</cbc:MaximumNumberNumeric>
+      </cac:ContractExtension>
+    </cac:ProcurementProject>
+  </cac:ProcurementProjectLot>
+  <cac:TenderResult>
+    <cbc:AwardDate>2000-01-01+01:00</cbc:AwardDate>
+  </cac:TenderResult>
+</ContractAwardNotice>

@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractAwardNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractAwardNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:ns8="urn:oasis:names:specification:ubl:schema:xsd:ContractNotice-2" xmlns:ns9="urn:oasis:names:specification:ubl:schema:xsd:PriorInformationNotice-2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <ext:UBLExtensions>
+        <ext:UBLExtension>
+            <ext:ExtensionContent>
+                <efext:EformsExtension>
+                    <efac:NoticeResult>
+                        <cbc:TotalAmount currencyID="CHF">1479802.30</cbc:TotalAmount>
+                        <efac:LotResult>
+                            <cbc:ID schemeName="result">RES-0000</cbc:ID>
+                            <cbc:HigherTenderAmount currencyID="CHF">1479802.30</cbc:HigherTenderAmount>
+                            <cbc:LowerTenderAmount currencyID="CHF">1479802.30</cbc:LowerTenderAmount>
+                            <cbc:TenderResultCode listName="winner-selection-status">selec-w</cbc:TenderResultCode>
+                            <efac:LotTender>
+                                <cbc:ID schemeName="tender">TEN-0000</cbc:ID>
+                            </efac:LotTender>
+                            <efac:ReceivedSubmissionsStatistics>
+                                <efbc:StatisticsCode listName="received-submission-type">tenders</efbc:StatisticsCode>
+                                <efbc:StatisticsNumeric>1</efbc:StatisticsNumeric>
+                            </efac:ReceivedSubmissionsStatistics>
+                            <efac:SettledContract>
+                                <cbc:ID schemeName="contract">CON-0000</cbc:ID>
+                            </efac:SettledContract>
+                            <efac:TenderLot>
+                                <cbc:ID schemeName="Lot">LOT-0000</cbc:ID>
+                            </efac:TenderLot>
+                        </efac:LotResult>
+                        <efac:LotTender>
+                            <cbc:ID schemeName="tender">TEN-0000</cbc:ID>
+                            <efbc:TenderRankedIndicator>false</efbc:TenderRankedIndicator>
+                            <efbc:TenderVariantIndicator>false</efbc:TenderVariantIndicator>
+                            <cac:LegalMonetaryTotal>
+                                <cbc:PayableAmount currencyID="CHF">1479802.30</cbc:PayableAmount>
+                            </cac:LegalMonetaryTotal>
+                            <efac:SubcontractingTerm>
+                                <efbc:TermCode listName="applicability">no</efbc:TermCode>
+                            </efac:SubcontractingTerm>
+                            <efac:TenderingParty>
+                                <cbc:ID schemeName="tendering-party">TPA-0010</cbc:ID>
+                            </efac:TenderingParty>
+                            <efac:TenderLot>
+                                <cbc:ID schemeName="Lot">LOT-0000</cbc:ID>
+                            </efac:TenderLot>
+                            <efac:TenderReference>
+                                <cbc:ID>21f4e35a-26af-4001-bcb2-1a62dce6b515</cbc:ID>
+                            </efac:TenderReference>
+                        </efac:LotTender>
+                        <efac:SettledContract>
+                            <cbc:ID schemeName="contract">CON-0000</cbc:ID>
+                            <cbc:IssueDate>2025-11-14+01:00</cbc:IssueDate>
+                            <efac:ContractReference>
+                                <cbc:ID>N/A</cbc:ID>
+                            </efac:ContractReference>
+                            <efac:LotTender>
+                                <cbc:ID schemeName="tender">TEN-0000</cbc:ID>
+                            </efac:LotTender>
+                        </efac:SettledContract>
+                        <efac:TenderingParty>
+                            <cbc:ID schemeName="tendering-party">TPA-0010</cbc:ID>
+                            <efac:Tenderer>
+                                <cbc:ID schemeName="organization">ORG-0010</cbc:ID>
+                            </efac:Tenderer>
+                        </efac:TenderingParty>
+                    </efac:NoticeResult>
+                    <efac:NoticeSubType>
+                        <cbc:SubTypeCode listName="notice-subtype">29</cbc:SubTypeCode>
+                    </efac:NoticeSubType>
+                    <efac:Organizations>
+                        <efac:Organization>
+                            <efac:Company>
+                                <cac:PartyIdentification>
+                                    <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                                </cac:PartyIdentification>
+                                <cac:PartyName>
+                                    <cbc:Name languageID="DEU">Bundesamt für Strassen ASTRA - Abteilung Strasseninfrastruktur West - Filiale Thun </cbc:Name>
+                                </cac:PartyName>
+                                <cac:PartyName>
+                                    <cbc:Name languageID="FRA">Office fédéral des routes OFROU -  Division Infrastructure routière Ouest - Filiale Thoune</cbc:Name>
+                                </cac:PartyName>
+                                <cac:PostalAddress>
+                                    <cbc:StreetName>Uttigenstrasse 54</cbc:StreetName>
+                                    <cbc:CityName>Thun</cbc:CityName>
+                                    <cbc:PostalZone>3600</cbc:PostalZone>
+                                    <cbc:CountrySubentityCode listName="nuts">CH021</cbc:CountrySubentityCode>
+                                    <cac:Country>
+                                        <cbc:IdentificationCode listName="country">CHE</cbc:IdentificationCode>
+                                    </cac:Country>
+                                </cac:PostalAddress>
+                                <cac:PartyLegalEntity>
+                                    <cbc:CompanyID>e780c140-71dc-4938-bee5-bd6968f56290</cbc:CompanyID>
+                                </cac:PartyLegalEntity>
+                                <cac:Contact>
+                                    <cbc:Telephone>+41584682400</cbc:Telephone>
+                                    <cbc:ElectronicMail>beschaffung.thun@astra.admin.ch</cbc:ElectronicMail>
+                                </cac:Contact>
+                            </efac:Company>
+                        </efac:Organization>
+                        <efac:Organization>
+                            <efac:Company>
+                                <cbc:WebsiteURI>https://www.bvger.ch</cbc:WebsiteURI>
+                                <cac:PartyIdentification>
+                                    <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                                </cac:PartyIdentification>
+                                <cac:PartyName>
+                                    <cbc:Name languageID="DEU">Bundesverwaltungsgericht</cbc:Name>
+                                </cac:PartyName>
+                                <cac:PartyName>
+                                    <cbc:Name languageID="FRA">Tribunal administratif fédéral</cbc:Name>
+                                </cac:PartyName>
+                                <cac:PostalAddress>
+                                    <cbc:StreetName>Postfach</cbc:StreetName>
+                                    <cbc:CityName>St. Gallen</cbc:CityName>
+                                    <cbc:PostalZone>9023</cbc:PostalZone>
+                                    <cbc:CountrySubentityCode listName="nuts">CH055</cbc:CountrySubentityCode>
+                                    <cac:Country>
+                                        <cbc:IdentificationCode listName="country">CHE</cbc:IdentificationCode>
+                                    </cac:Country>
+                                </cac:PostalAddress>
+                                <cac:PartyLegalEntity>
+                                    <cbc:CompanyID>BVGER</cbc:CompanyID>
+                                </cac:PartyLegalEntity>
+                                <cac:Contact>
+                                    <cbc:Telephone>+41584652626</cbc:Telephone>
+                                    <cbc:ElectronicMail>info@bvger.admin.ch</cbc:ElectronicMail>
+                                </cac:Contact>
+                            </efac:Company>
+                        </efac:Organization>
+                        <efac:Organization>
+                            <efac:Company>
+                                <cbc:WebsiteURI>https://www.simap.ch</cbc:WebsiteURI>
+                                <cac:PartyIdentification>
+                                    <cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+                                </cac:PartyIdentification>
+                                <cac:PartyName>
+                                    <cbc:Name languageID="DEU">Simap.ch</cbc:Name>
+                                </cac:PartyName>
+                                <cac:PartyName>
+                                    <cbc:Name languageID="FRA">Simap.ch</cbc:Name>
+                                </cac:PartyName>
+                                <cac:PostalAddress>
+                                    <cbc:StreetName>Holzikofenweg 36</cbc:StreetName>
+                                    <cbc:CityName>Bern</cbc:CityName>
+                                    <cbc:PostalZone>3003</cbc:PostalZone>
+                                    <cbc:CountrySubentityCode listName="nuts">CH021</cbc:CountrySubentityCode>
+                                    <cac:Country>
+                                        <cbc:IdentificationCode listName="country">CHE</cbc:IdentificationCode>
+                                    </cac:Country>
+                                </cac:PostalAddress>
+                                <cac:PartyLegalEntity>
+                                    <cbc:CompanyID>CH001</cbc:CompanyID>
+                                </cac:PartyLegalEntity>
+                                <cac:Contact>
+                                    <cbc:Telephone>+41584646388</cbc:Telephone>
+                                    <cbc:ElectronicMail>support@simap.ch</cbc:ElectronicMail>
+                                </cac:Contact>
+                            </efac:Company>
+                        </efac:Organization>
+                        <efac:Organization>
+                            <efbc:ListedOnRegulatedMarketIndicator>false</efbc:ListedOnRegulatedMarketIndicator>
+                            <efbc:NaturalPersonIndicator>false</efbc:NaturalPersonIndicator>
+                            <efac:Company>
+                                <efbc:CompanySizeCode listName="economic-operator-size">micro</efbc:CompanySizeCode>
+                                <cac:PartyIdentification>
+                                    <cbc:ID schemeName="organization">ORG-0010</cbc:ID>
+                                </cac:PartyIdentification>
+                                <cac:PartyName>
+                                    <cbc:Name languageID="DEU">DE_Brand Anlagenbau AG</cbc:Name>
+                                </cac:PartyName>
+                                <cac:PartyName>
+                                    <cbc:Name languageID="FRA">FR_Brand Anlagenbau AG</cbc:Name>
+                                </cac:PartyName>
+                                <cac:PostalAddress>
+                                    <cbc:StreetName>Bahnhofstrasse 2</cbc:StreetName>
+                                    <cbc:CityName>Lützelflüh-Goldbach</cbc:CityName>
+                                    <cbc:PostalZone>3432</cbc:PostalZone>
+                                    <cbc:CountrySubentityCode listName="nuts">CH021</cbc:CountrySubentityCode>
+                                    <cac:Country>
+                                        <cbc:IdentificationCode listName="country">CHE</cbc:IdentificationCode>
+                                    </cac:Country>
+                                </cac:PostalAddress>
+                                <cac:PartyLegalEntity>
+                                    <cbc:CompanyID>8fd0dfee-6eea-4a57-a52d-38f344011c0e</cbc:CompanyID>
+                                </cac:PartyLegalEntity>
+                            </efac:Company>
+                        </efac:Organization>
+                    </efac:Organizations>
+                <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00761847-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+            </ext:ExtensionContent>
+        </ext:UBLExtension>
+    </ext:UBLExtensions>
+    <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+    <cbc:CustomizationID>eforms-sdk-1.12</cbc:CustomizationID>
+    <cbc:ID schemeName="notice-id">a724766b-947b-40ee-8794-cbd0b6ac86f6</cbc:ID>
+    <cbc:ContractFolderID>117a426d-b634-4363-850b-d3d8e206610d</cbc:ContractFolderID>
+    <cbc:IssueDate>2025-11-14+01:00</cbc:IssueDate>
+    <cbc:IssueTime>02:26:05+01:00</cbc:IssueTime>
+    <cbc:VersionID>01</cbc:VersionID>
+    <cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+    <cbc:NoticeTypeCode listName="result">can-standard</cbc:NoticeTypeCode>
+    <cbc:NoticeLanguageCode>DEU</cbc:NoticeLanguageCode>
+    <cac:AdditionalNoticeLanguage>
+        <cbc:ID>FRA</cbc:ID>
+    </cac:AdditionalNoticeLanguage>
+    <cac:ContractingParty>
+        <cac:ContractingPartyType>
+            <cbc:PartyTypeCode listName="buyer-legal-type">body-pl-cga</cbc:PartyTypeCode>
+        </cac:ContractingPartyType>
+        <cac:ContractingActivity>
+            <cbc:ActivityTypeCode listName="authority-activity">gen-pub</cbc:ActivityTypeCode>
+        </cac:ContractingActivity>
+        <cac:Party>
+            <cac:PartyIdentification>
+                <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:ServiceProviderParty>
+                <cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode>
+                <cac:Party>
+                    <cac:PartyIdentification>
+                        <cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+                    </cac:PartyIdentification>
+                </cac:Party>
+            </cac:ServiceProviderParty>
+        </cac:Party>
+    </cac:ContractingParty>
+    <cac:TenderingProcess>
+        <cbc:ProcedureCode listName="procurement-procedure-type">open</cbc:ProcedureCode>
+    </cac:TenderingProcess>
+    <cac:ProcurementProject>
+        <cbc:Name languageID="DEU">N06.40 MP-080294 - EP Thun Nord - Spiez - Beschaffung Aggregate, Pumpen u. Metallbau für SABA`s (ID 11168)</cbc:Name>
+        <cbc:Name languageID="FRA">N06.40 MP-080294 - EP Thun Nord - Spiez - Beschaffung Aggregate, Pumpen u. Metalbau für SABA`s (ID 11168)</cbc:Name>
+        <cbc:Description languageID="DEU">Im Zuge der Sanierung der Nationalstrasse N06 zwischen Thun und Spiez werden drei neue Strassenabwasserbehandlungsanlagen gebaut und diverse Ölrückhaltebecken umgebaut. Der Auftrag umfasst die Lieferung, Montage, Inbetriebnahme und Funktionsprüfung der in diesen Entwässerungsbauwerken neu verbauten Aggregate, Pumpen und Metallbauelemente.</cbc:Description>
+        <cbc:Description languageID="FRA">Dans le cadre de l'assainissement de la route nationale N06 entre Thoune et Spiez, trois nouveaux systèmes d’évacuation et de traitement des eaux de chaussée seront construites et divers bassins de rétention d'huile seront transformés. Le mandat comprend la livraison, le montage, la mise en service et les essais de fonctionnement des nouveaux agrégats, pompes et éléments de construction métallique installés dans ces ouvrages d'évacuation des eaux.</cbc:Description>
+        <cbc:ProcurementTypeCode listName="contract-nature">works</cbc:ProcurementTypeCode>
+        <cbc:Note languageID="DEU">Begründung des Zuschlagentscheides
+Es ist ein Angebot eingegangen. Die Qualität des Angebots als auch des Anbieters sind gut.
+Der Preis ist marktkonform.</cbc:Note>
+        <cbc:Note languageID="FRA">Justification de la décision d’adjudication
+Une offre a été reçue. La qualité de l'offre et du fournisseur est bonne.
+Le prix est conforme au marché.</cbc:Note>
+        <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">45262670</cbc:ItemClassificationCode>
+        </cac:MainCommodityClassification>
+    </cac:ProcurementProject>
+    <cac:ProcurementProjectLot>
+        <cbc:ID schemeName="Lot">LOT-0000</cbc:ID>
+        <cac:TenderingTerms>
+            <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+            <cac:AwardingTerms>
+                <cac:AwardingCriterion>
+                    <cac:SubordinateAwardingCriterion>
+                        <ext:UBLExtensions>
+                            <ext:UBLExtension>
+                                <ext:ExtensionContent>
+                                    <efext:EformsExtension>
+                                        <efac:AwardCriterionParameter>
+                                            <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                            <efbc:ParameterNumeric>80</efbc:ParameterNumeric>
+                                        </efac:AwardCriterionParameter>
+                                    </efext:EformsExtension>
+                                </ext:ExtensionContent>
+                            </ext:UBLExtension>
+                        </ext:UBLExtensions>
+                        <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                        <cbc:Name languageID="DEU">ZK1 PREIS </cbc:Name>
+                        <cbc:Name languageID="FRA">CA1 PRIX </cbc:Name>
+                        <cbc:Description languageID="DEU">Bereinigte Angebotssumme</cbc:Description>
+                        <cbc:Description languageID="FRA">Montant ajusté de l'offre</cbc:Description>
+                    </cac:SubordinateAwardingCriterion>
+                    <cac:SubordinateAwardingCriterion>
+                        <ext:UBLExtensions>
+                            <ext:UBLExtension>
+                                <ext:ExtensionContent>
+                                    <efext:EformsExtension>
+                                        <efac:AwardCriterionParameter>
+                                            <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                            <efbc:ParameterNumeric>15</efbc:ParameterNumeric>
+                                        </efac:AwardCriterionParameter>
+                                    </efext:EformsExtension>
+                                </ext:ExtensionContent>
+                            </ext:UBLExtension>
+                        </ext:UBLExtensions>
+                        <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+                        <cbc:Name languageID="DEU">ZK2 Qualität / Plausibilität des Angebots </cbc:Name>
+                        <cbc:Name languageID="FRA">CA2 Qualité/plausibilité de l’offre </cbc:Name>
+                        <cbc:Description languageID="DEU">Technischer Bericht inkl. der technischen Details und Nachweis der Eignung von Aggregaten, Pumpen und Metallbau für die spezifischen Anwendungen bei den einzelnen Entwässerungsbauwerken
+
+Der technische Bericht umfasst die folgenden Elemente:
+· Aufgabenanalyse Arbeiten aus Sicht des Anbieters 
+· Nachweis der Eignung von Aggregaten und Pumpen für die spezifische Anwendung
+· Bauabläufe
+· Organisation inkl. Organigramm des Anbieters
+· Beurteilung/Kommentar Umsetzung Notfallkonzept</cbc:Description>
+                        <cbc:Description languageID="FRA">Rapport technique, y compris les détails techniques et la preuve de l'adéquation des agrégats, des pompes et de la construction métallique aux applications spécifiques pour les différents ouvrages d'évacuation des eaux
+
+Le rapport technique comprend les éléments suivants :
+· Analyse des tâches du point de vue du fournisseur
+· Preuve de l'adéquation des groupes et des pompes pour l'application spécifique
+· Déroulement des travaux
+· Organisation, y compris organigramme du fournisseur
+· Évaluation/commentaire Mise en œuvre du plan d'urgence</cbc:Description>
+                    </cac:SubordinateAwardingCriterion>
+                    <cac:SubordinateAwardingCriterion>
+                        <ext:UBLExtensions>
+                            <ext:UBLExtension>
+                                <ext:ExtensionContent>
+                                    <efext:EformsExtension>
+                                        <efac:AwardCriterionParameter>
+                                            <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                            <efbc:ParameterNumeric>5</efbc:ParameterNumeric>
+                                        </efac:AwardCriterionParameter>
+                                    </efext:EformsExtension>
+                                </ext:ExtensionContent>
+                            </ext:UBLExtension>
+                        </ext:UBLExtensions>
+                        <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+                        <cbc:Name languageID="DEU">ZK3 Qualität des Anbieters </cbc:Name>
+                        <cbc:Name languageID="FRA">CA3 Qualité du soumissionnaire </cbc:Name>
+                        <cbc:Description languageID="DEU">Referenz der Schlüsselperson Projektleiter
+Ein Referenzobjekt über abgeschlossene Arbeiten in gleichwertiger Funktion oder Stv.-Funktion mit vergleichbarer Komplexität und aus dem gleichen Fachbereich (Lieferung, Montage, Inbetriebnahme und Funktionsprüfung von Aggregaten, Pumpen und Metallbau für Bauwerke der Siedlungsentwässerung).
+
+Abgabe Lebenslauf. Angabe der Berufsausbildung, der projektspezifischen Berufserfahrungen sowie der Weiterbildungen werden mitbewertet.</cbc:Description>
+                        <cbc:Description languageID="FRA">Références de la personne clé
+
+Un objet de référence sur des travaux achevés dans une fonction équivalente ou une fonction suppléante d'une complexité comparable et dans le même domaine spécialisé (livraison, montage, mise en service et contrôle du fonctionnement d'agrégats, de pompes et de constructions métalliques pour des ouvrages d'assainissement urbain)
+
+Remise du CV. La formation professionnelle, l'expérience professionnelle spécifique au projet et les formations continues sont également prises en compte dans l'évaluation.</cbc:Description>
+                    </cac:SubordinateAwardingCriterion>
+                </cac:AwardingCriterion>
+            </cac:AwardingTerms>
+            <cac:AdditionalInformationParty>
+                <cac:PartyIdentification>
+                    <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                </cac:PartyIdentification>
+            </cac:AdditionalInformationParty>
+            <cac:AppealTerms>
+                <cac:PresentationPeriod>
+                    <cbc:Description languageID="DEU">Rechtsmittelbelehrung
+Gegen diese Verfügung kann gemäss Art. 56 Abs. 1 des Bundesgesetzes über das öffentliche Beschaffungswesen (BöB) innert 20 Tagen seit Eröffnung schriftlich Beschwerde beim Bundesverwaltungsgericht, Postfach, 9023 St. Gallen, erhoben werden. Die Beschwerde ist im Doppel einzureichen und hat die Begehren, deren Begründung mit Angabe der Beweismittel sowie die Unterschrift der beschwerdeführenden Person oder ihrer Vertretung zu enthalten. Eine Kopie der vorliegenden Verfügung und vorhandene Beweismittel sind beizulegen.
+Die Bestimmungen des Verwaltungsverfahrensgesetzes (VwVG) über den Fristenstillstand finden gemäss Art. 56 Abs. 2 BöB keine Anwendung.</cbc:Description>
+                    <cbc:Description languageID="FRA">Voies de droit
+Conformément à l'art. 56, al. 1, de la loi fédérale sur les marchés publics (LMP), la présente décision peut être attaquée, dans un délai de 20 jours à compter de sa notification, auprès du Tribunal administratif fédéral, case postale, 9023 Saint-Gall. Présenté en deux exemplaires, le mémoire de recours doit indiquer les conclusions, les motifs et les moyens de preuve et porter la signature de la partie recourante ou de son représentant ; y seront jointes une copie de la présente décision et les pièces invoquées comme moyens de preuve, lorsqu'elles sont disponibles.
+Conformément à l'art. 56, al. 2, LMP, les dispositions de la Loi fédérale sur la procédure administrative (PA) relatives à la suspension des délais ne s'appliquent pas.</cbc:Description>
+                </cac:PresentationPeriod>
+                <cac:AppealReceiverParty>
+                    <cac:PartyIdentification>
+                        <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                    </cac:PartyIdentification>
+                </cac:AppealReceiverParty>
+            </cac:AppealTerms>
+        </cac:TenderingTerms>
+        <cac:TenderingProcess>
+            <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+            <cac:AuctionTerms>
+                <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+            </cac:AuctionTerms>
+            <cac:ContractingSystem>
+                <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+            </cac:ContractingSystem>
+            <cac:ContractingSystem>
+                <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+            </cac:ContractingSystem>
+        </cac:TenderingProcess>
+        <cac:ProcurementProject>
+            <cbc:Name languageID="DEU">N06.40 MP-080294 - EP Thun Nord - Spiez - Beschaffung Aggregate, Pumpen u. Metallbau für SABA`s (ID 11168)</cbc:Name>
+            <cbc:Name languageID="FRA">N06.40 MP-080294 - EP Thun Nord - Spiez - Beschaffung Aggregate, Pumpen u. Metalbau für SABA`s (ID 11168)</cbc:Name>
+            <cbc:Description languageID="DEU">Im Zuge der Sanierung der Nationalstrasse N06 zwischen Thun und Spiez werden drei neue Strassenabwasserbehandlungsanlagen gebaut und diverse Ölrückhaltebecken umgebaut. Der Auftrag umfasst die Lieferung, Montage, Inbetriebnahme und Funktionsprüfung der in diesen Entwässerungsbauwerken neu verbauten Aggregate, Pumpen und Metallbauelemente.</cbc:Description>
+            <cbc:Description languageID="FRA">Dans le cadre de l'assainissement de la route nationale N06 entre Thoune et Spiez, trois nouveaux systèmes d’évacuation et de traitement des eaux de chaussée seront construites et divers bassins de rétention d'huile seront transformés. Le mandat comprend la livraison, le montage, la mise en service et les essais de fonctionnement des nouveaux agrégats, pompes et éléments de construction métallique installés dans ces ouvrages d'évacuation des eaux.</cbc:Description>
+            <cbc:ProcurementTypeCode listName="contract-nature">works</cbc:ProcurementTypeCode>
+            <cac:MainCommodityClassification>
+                <cbc:ItemClassificationCode listName="cpv">45262670</cbc:ItemClassificationCode>
+            </cac:MainCommodityClassification>
+            <cac:AdditionalCommodityClassification>
+                <cbc:ItemClassificationCode listName="cpv">42122220</cbc:ItemClassificationCode>
+            </cac:AdditionalCommodityClassification>
+            <cac:AdditionalCommodityClassification>
+                <cbc:ItemClassificationCode listName="cpv">45252130</cbc:ItemClassificationCode>
+            </cac:AdditionalCommodityClassification>
+            <cac:RealizedLocation>
+                <cbc:Description languageID="DEU">Beim Auftragnehmer sowie ASTRA Infrastrukturfiliale in Thun, so wie auf der Autobahn A6 zwischen Thun und Spiez resp. Wimmis</cbc:Description>
+                <cbc:Description languageID="FRA">Chez le mandataire et la filiale d'infrastructure de l'OFROU à Thoune, ainsi que sur l'autoroute A6 entre Thoune et Spiez ou Wimmis.</cbc:Description>
+                <cac:Address>
+                    <cbc:Region>anyw-cou</cbc:Region>
+                    <cac:Country>
+                        <cbc:IdentificationCode listName="country">CHE</cbc:IdentificationCode>
+                    </cac:Country>
+                </cac:Address>
+            </cac:RealizedLocation>
+            <cac:PlannedPeriod>
+                <cbc:StartDate>2026-02-01+01:00</cbc:StartDate>
+                <cbc:EndDate>2029-12-31+01:00</cbc:EndDate>
+            </cac:PlannedPeriod>
+            <cac:ContractExtension>
+                <cbc:MaximumNumberNumeric>1</cbc:MaximumNumberNumeric>
+                <cac:Renewal>
+                    <cac:Period>
+                        <cbc:Description languageID="DEU">Beschreibung der Verlängerung: Die Anfangs- und Enddaten sind provisorisch. Die Terminangaben können in Abhängigkeit des Projektverlaufs / Kreditgenehmigung von den Angaben abweichen und berechtigen nicht zu Mehrforderungen. Eine Verlängerung kommt dann zum Tragen, wenn die erforderliche Kreditfreigabe, die Fristen für die Genehmigungsverfahren und/oder unvorhergesehene Umstände dies erfordern.</cbc:Description>
+                        <cbc:Description languageID="FRA">Description des reconductions : Les dates de début et de fin du marché sont provisoires. Les indications de délais peuvent évoluer en fonction du déroulement / avancement du projet / des approbations des crédits en question sans donner droit à d'éventuelles plus-values. Une prolongation du contrat entre en ligne de compte, lorsque la libération des crédits nécessaires, les délais pour la procédure d'approbation et/ou des événements imprévisibles la rendent nécessaire.</cbc:Description>
+                    </cac:Period>
+                </cac:Renewal>
+            </cac:ContractExtension>
+        </cac:ProcurementProject>
+    </cac:ProcurementProjectLot>
+    <cac:TenderResult>
+        <cbc:AwardDate>2000-01-01Z</cbc:AwardDate>
+    </cac:TenderResult>
+</ContractAwardNotice>

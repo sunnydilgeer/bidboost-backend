@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+   <ext:UBLExtensions>
+      <ext:UBLExtension>
+         <ext:ExtensionContent>
+            <efext:EformsExtension>
+               <efac:NoticeSubType>
+                  <cbc:SubTypeCode listName="notice-subtype">16</cbc:SubTypeCode>
+               </efac:NoticeSubType>
+               <efac:Organizations>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://lagow.pl/</cbc:WebsiteURI>
+                        <cbc:EndpointID>https://lagow.pl/kontakt.html</cbc:EndpointID>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Gmina Łagów</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>ul. Spacerowa 7</cbc:StreetName>
+                           <cbc:CityName>Łagów</cbc:CityName>
+                           <cbc:PostalZone>66-220</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL432</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>9700770480</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>68 3412186</cbc:Telephone>
+                           <cbc:ElectronicMail>sekretariat@lagow.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://www.uzp.gov.pl/kio</cbc:WebsiteURI>
+                        <cbc:EndpointID>https://epuap.gov.pl/wps/portal/strefa-klienta/katalog-spraw/opis-uslugi/odwolanie-do-krajowej-izby-odwolawczej/UZP</cbc:EndpointID>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Krajowa Izba Odwoławcza</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>ul. Postępu 17a</cbc:StreetName>
+                           <cbc:CityName>Warszawa</cbc:CityName>
+                           <cbc:PostalZone>02-676</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL911</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>5262239325</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+48 224587777</cbc:Telephone>
+                           <cbc:Telefax>+48 224587777</cbc:Telefax>
+                           <cbc:ElectronicMail>uzp@uzp.gov.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://op.europa.eu</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0000</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Publications Office of the European Union</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:CityName>Luxembourg</cbc:CityName>
+                           <cbc:PostalZone>2417</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">LU000</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">LUX</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>PUBL</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+352 29291</cbc:Telephone>
+                           <cbc:ElectronicMail>ted@publications.europa.eu</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+               </efac:Organizations>
+            <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00758722-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+         </ext:ExtensionContent>
+      </ext:UBLExtension>
+   </ext:UBLExtensions>
+   <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+   <cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+   <cbc:ID schemeName="notice-id">b7ebb0ba-1824-417a-a5b1-90c9ec1cfaad</cbc:ID>
+   <cbc:ContractFolderID>61f2d99c-f575-4346-b4db-9d586042baa9</cbc:ContractFolderID>
+   <cbc:IssueDate>2025-11-14Z</cbc:IssueDate>
+   <cbc:IssueTime>12:45:33Z</cbc:IssueTime>
+   <cbc:VersionID>01</cbc:VersionID>
+   <cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+   <cbc:NoticeTypeCode listName="competition">cn-standard</cbc:NoticeTypeCode>
+   <cbc:NoticeLanguageCode listName="language">POL</cbc:NoticeLanguageCode>
+   <cac:ContractingParty>
+      <cbc:BuyerProfileURI>https://ezamowienia.gov.pl/</cbc:BuyerProfileURI>
+      <cac:ContractingPartyType>
+         <cbc:PartyTypeCode listName="buyer-legal-type">la</cbc:PartyTypeCode>
+      </cac:ContractingPartyType>
+      <cac:ContractingActivity>
+         <cbc:ActivityTypeCode listName="authority-activity">gen-pub</cbc:ActivityTypeCode>
+      </cac:ContractingActivity>
+      <cac:Party>
+         <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+         </cac:PartyIdentification>
+         <cac:ServiceProviderParty>
+            <cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode>
+            <cac:Party>
+               <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0000</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:Party>
+         </cac:ServiceProviderParty>
+      </cac:Party>
+   </cac:ContractingParty>
+   <cac:TenderingTerms>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-grounds-source">epo-procurement-document</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-grounds-source">epo-notice</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-grounds-source">epo-sub-espd</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-natl</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="POL">Z postępowania o udzielenie niniejszego zamówienia wyklucza się wykonawców, w
+stosunku do których zachodzi którakolwiek z okoliczności wskazanych:
+a) w art. 108 ust. 1 ustawy Pzp (obligatoryjne przesłanki wykluczenia)
+b) w art. 109 ust. 1 pkt 4 ustawy Pzp (fakultatywne przesłanki wykluczenia) tj.
+- w stosunku do którego otwarto likwidacje ogłoszono upadłość, którego aktywami
+zarządza likwidator lub sąd, zawarł układ z wierzycielami, którego działalność
+gospodarcza jest zawieszona albo znajduje się on w innej tego rodzaju sytuacji
+wynikającej z podobnej procedury przewidzianej w przepisach miejsca wszczęcia
+tej procedury.
+Wykonawca, który podlega wykluczeniu na podstawie art. 108 ust. 1 pkt 1,2 i 5 oraz art.
+109 ust. 1 pkt 4 może przedstawić dowody na to, że podjęte przez niego środki są
+wystarczające do wykazania jego rzetelności, w szczególności udowodnić, że:
+a) naprawił lub zobowiązał się do naprawienia szkody wyrządzonej przestępstwem,
+wykroczeniem lub swoim nieprawidłowym postępowaniem, w tym poprzez
+zadośćuczynienie pieniężne.
+b) wyczerpująco wyjaśnił fakty i okoliczności związane z przestępstwem, wykroczeniem
+lub swoim nieprawidłowym postępowaniem oraz spowodowanymi przez nie szkodami,
+aktywnie współpracując odpowiednio z właściwymi organami, w tym organami
+ścigania, lub zamawiającym.
+c) podjął konkretne środki techniczne, organizacyjne i kadrowe, odpowiednie dla
+zapobiegania dalszym przestępstwom, wykroczeniom lub nieprawidłowemu
+postępowaniu, w szczególności
+- zerwał wszelkie powiązania z osobami lub podmiotami odpowiedzialnymi za
+nieprawidłowe postępowanie wykonawcy,
+- zreorganizował personel,
+- wdrożył system sprawozdawczości i kontroli,
+- utworzył struktury audytu wewnętrznego do monitorowania przestrzegania
+przepisów, wewnętrznych regulacji lub standardów,
+- wprowadził wewnętrzne regulacje dotyczące odpowiedzialności i odszkodowań za
+nieprzestrzeganie przepisów, wewnętrznych regulacji lub standardów.
+Wykonawca nie podlega wykluczeniu, jeżeli zamawiający, uwzględniając wagę i szczególne
+okoliczności czynu wykonawcy, uzna za wystarczające dowody przedstawione na podstawie
+pkt 3.2.
+W przypadkach, o których mowa w art. 108 ust. 1 pkt 6 ustawy Pzp, przed wykluczeniem
+wykonawcy, zamawiający zapewnia temu wykonawcy możliwość udowodnienia, że jego
+udział w przygotowaniu postępowania o udzielenie zamówienia nie zakłóci konkurencji.
+Zamawiający wskazuje w protokole sposób zapewnienia konkurencji(zgodnie z art. 85 ust. 2
+ustawy Pzp).</cbc:Description>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-laund</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="POL">Zamawiający informuje, iż z postępowania o udzielenie zamówienia wykluczy również
+Wykonawcę na podstawie art. art. 5k rozporządzenia Rady (UE) nr 833/2014 z dnia 31 lipca
+2014 r. dotyczącego środków ograniczających w związku z działaniami Rosji
+destabilizującymi sytuację na Ukrainie (Dz. Urz. UE nr L 229 z 31.7.2014, str. 1),w
+brzmieniu nadanym rozporządzeniem Rady (UE) 2022/576 w sprawie zmiany
+rozporządzenia (UE) nr 833/2014 dotyczącego środków ograniczających w związku z
+działaniami Rosji destabilizującymi sytuację na Ukrainie (Dz. Urz. UE nr L 111 z 8.4.2022,
+str. 1) lub na podstawie art. 7 ust. 1 ustawy o szczególnych rozwiązaniach w zakresie
+przeciwdziałania wspieraniu agresji na Ukrainę oraz służących ochronie bezpieczeństwa
+narodowego.
+Zamawiający może wykluczyć wykonawcę na każdym etapie postępowania o udzielenie
+zamówienia.
+Zamawiający odrzuci ofertę złożoną przez Wykonawcę podlegającego wykluczeniu z
+postępowania.</cbc:Description>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+   </cac:TenderingTerms>
+   <cac:TenderingProcess>
+      <cbc:ProcedureCode listName="procurement-procedure-type">open</cbc:ProcedureCode>
+      <cac:ProcessJustification>
+         <cbc:ProcessReasonCode listName="accelerated-procedure">false</cbc:ProcessReasonCode>
+      </cac:ProcessJustification>
+   </cac:TenderingProcess>
+   <cac:ProcurementProject>
+      <cbc:ID schemeName="InternalID">R.I.271.4.2025.RN</cbc:ID>
+      <cbc:Name languageID="POL">ODBIÓR I TRANSPORT ODPADÓW KOMUNALNYCH OD WŁAŚCICIELI NIERUCHOMOŚCI ZAMIESZKAŁYCH I NIEZAMIESZKAŁYCH POŁOŻONYCH NA TERENIE GMINY ŁAGÓW</cbc:Name>
+      <cbc:Description languageID="POL">Przedmiot zamówienia obejmuje:
+1. Odbiór i transport odpadów komunalnych tj.:
+1.1.Odbiór bezpośrednio z nieruchomości odpadów pochodzących z nieruchomości zamieszkałych
+oraz nieruchomości niezamieszkałych, na których powstają odpady komunalne objętych gminnym
+systemem odbioru odpadów komunalnych:
+a) niesegregowanych (zmieszanych) odpadów komunalnych (pozostałości po selektywnej zbiórce)
+odpadów lub zmieszanych odpadów komunalnych : 20 03 01;
+b) odpadów segregowanych tj.:
+ papier i tektura, w tym opakowania z papieru i tektury, : 15 01 01, 20 01 01,
+ tworzywa sztuczne, w tym opakowania z tworzyw sztucznych, opakowania
+wielomateriałowe, metale, w tym opakowania metalowe – zbierane łącznie : 15 01 02, 15 01 06, 20 01 39 ,
+ szkło bezbarwne i kolorowe, opakowania ze szkła : 15 01 07,
+ odpady ulegające biodegradacji w tym odpady kuchenne ulegające biodegradacji : 20 02 01,
+20 01 08,
+c) odbiór w formie mobilnej zbiórki tzw. „wystawki ” (z nieruchomości objętych gminnym
+systemem gospodarki odpadami komunalnymi ) raz do roku w okresie wiosennym :
+ odpadów wielkogabarytowych ( 20 03 07) ,
+ zużytego sprzętu elektrycznego i elektronicznego (20 01 35, 20 01 36)
+ zużytych opon ( 16 01 03)
+ odpadów odzieży i tekstyliów (20 01 10, 20 01 11),
+i przekazanie ich do Zakładu Unieszkodliwiania Odpadów Komunalnych z siedzibą w miejscowości
+Długoszyn 80, 69-200 Sulęcin przez okres od : 01.02.2026r. do 31.01.2027r.
+1.2. Odbiór i transport przeterminowanych leków z pojemników znajdujących się w siedzibie
+Urzędu Gminy w Łagowie znajdującego się przy ul. Spacerowej 7 (20 01 31*, 20 01 32).
+1.3. Odbiór i transport zużytych baterii i akumulatorów z pojemników znajdujących się w siedzibie
+Urzędu Gminy w Łagowie znajdujących się przy ul. Spacerowej 6 (20 01 33*, 20 01 34).
+1.4. Odbiór odpadów o których mowa w pkt 1.1, lit. a odbywać się będzie poprzez opróżnianie
+pojemników ustawionych w punktach gromadzenia odpadów, jak również zebranie odpadów
+pozostawionych luzem/ w workach właścicieli nieruchomości / we wskazanych miejscach
+zorganizowanych przez właścicieli nieruchomości tj. przed posesją,
+1.5. W przypadku przepełnionych pojemników na odpady, o których mowa w pkt. 1.1, lit. b. w
+sytuacji, w której ze względu na przepełnienie pojemników, odpady które się nie mieszczą
+pozostawiane będą (np. w workach) obok pojemnika danej frakcji, należy odebrać wszystkie odpady,
+zarówno te umieszczone w pojemniku, jak i obok pojemnika.
+2. Wyposażenie nieruchomości w pojemniki/worki do zbierania odpadów komunalnych z
+nieruchomości.
+Szczegółowy opis przedmiotu zamówienia stanowi załącznik nr 9 do SWZ.</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+      <cac:MainCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">90511000</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">90512000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">90513100</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:RealizedLocation>
+         <cac:Address>
+            <cbc:CountrySubentityCode listName="nuts">PL432</cbc:CountrySubentityCode>
+            <cac:Country>
+               <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+            </cac:Country>
+         </cac:Address>
+      </cac:RealizedLocation>
+   </cac:ProcurementProject>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+      <cac:TenderingTerms>
+         <ext:UBLExtensions>
+            <ext:UBLExtension>
+               <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-suit-reg-prof</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="POL">Aktualny wpis do rejestru działalności regulowanej, o którym mowa w art. 9b i 9c
+ustawy z dnia 13 września 1996 r. o utrzymaniu czystości i porządku w gminach (tj. Dz. U. z
+2022 r. poz. 1297, ze zm.) - wpis do rejestru winien obejmować, co najmniej odpady
+określone w opisie przedmiotu zamówienia.
+Warunek dotyczący uprawnień do prowadzenia określonej działalności gospodarczej lub
+zawodowej, jest spełniony, jeżeli co najmniej jeden z wykonawców wspólnie ubiegających
+się o udzielenie zamówienia posiada uprawnienia do prowadzenia określonej działalności
+gospodarczej lub zawodowej i zrealizuje usługi, do których realizacji te uprawnienia są
+wymagane.</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-ref-services</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="POL">W okresie ostatnich 3 lat przed upływem terminu składania ofert, a jeżeli okres prowadzeni a działalności jest krótszy w tym okresie, wykonał należycie co najmniej jedną usługę polegającą na odbiorze i transporcie odpadów komunalnych na kwotę nie mniejszą niż 800.000,00 zł brutto.
+W przypadku wykonawców wspólnie ubiegających się o udzielenie zamówienia a także w przypadku gdy wykonawca polega na zdolnościach technicznych lub zawodowych innego podmiotu, w odniesieniu do warunków określonych powyżej winien wykazać się przynajmniej jeden z wykonawców wspólnie ubiegających się o udzielenie zamówienia lub podmiot na którego zdolnościach technicznych lub zawodowych Wykonawca będzie polegał.</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-facil-tools</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="POL">Dysponowanie potencjałem technicznym tj.:
+ dwoma pojazdami przystosowanymi do odbierania zmieszanych odpadów komunalnych,
+ dwoma pojazdami przystosowanymi do odbierania selektywnie zebranych odpadów komunalnych,
+ co najmniej 1 pojazd przystosowany do odbioru odpadów wielkogabarytowych.
+W przypadku wykonawców wspólnie ubiegających się o udzielenie zamówienia a także w przypadku gdy wykonawca polega na zdolnościach technicznych lub zawodowych innego podmiotu, w odniesieniu do warunków określonych powyżej winien wykazać się przynajmniej jeden z wykonawców wspólnie ubiegających się o udzielenie zamówienia lub podmiot na którego zdolnościach technicznych lub zawodowych Wykonawca będzie polegał.</cbc:Description>
+                     </efac:SelectionCriteria>
+                  </efext:EformsExtension>
+               </ext:ExtensionContent>
+            </ext:UBLExtension>
+         </ext:UBLExtensions>
+         <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+         <cac:RequiredFinancialGuarantee>
+            <cbc:GuaranteeTypeCode listName="tender-guarantee-required">true</cbc:GuaranteeTypeCode>
+            <cbc:Description languageID="POL">WYMAGANIA DOTYCZĄCE ZABEZPIECZENIA NALEŻYTEGO WYKONANIA UMOWY W SPRAWIE ZAMÓWIENIA PUBLICZNEGO STANOWI DZIAŁ XIX SWZ.</cbc:Description>
+         </cac:RequiredFinancialGuarantee>
+         <cac:CallForTendersDocumentReference>
+            <cbc:ID>https://ezamowienia.gov.pl/</cbc:ID>
+            <cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+            <cac:Attachment>
+               <cac:ExternalReference>
+                  <cbc:URI>https://ezamowienia.gov.pl/</cbc:URI>
+               </cac:ExternalReference>
+            </cac:Attachment>
+         </cac:CallForTendersDocumentReference>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="selection-criteria-source">epo-procurement-document</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="selection-criteria-source">epo-notice</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="selection-criteria-source">epo-sub-espd</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="reserved-procurement">none</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="reserved-execution">no</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="einvoicing">allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="ecatalog-submission">not-allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:AwardingTerms>
+            <cac:AwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>60</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                  <cbc:Description languageID="POL">Kryterium nr 1 – cena przedstawiona w ofercie będzie oceniana zgodnie z
+zależnością:
+C = cena oferowana minimalna brutto/ cena badanej oferty brutto x 60
+gdzie:
+C- Liczba punktów przyznanych rozpatrywanej ofercie wg kryterium cena
+60- Waga kryterium
+Maksymalną liczbę punktów wynoszącą 60 pkt otrzyma oferta z najniższą oferowaną ceną.
+Podstawą przyznania punktów w kryterium „cena” będzie cena ofertowa brutto podana przez Wykonawcę w Formularzu ofertowym, stanowiącym Załącznik nr 1 do SWZ.</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>40</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="POL">Aspekty środowiskowe</cbc:Name>
+                  <cbc:Description languageID="POL">W kryterium tym można uzyskać maksymalnie 40 punktów, wg poniższego. Wykonawca, który
+wykaże, że dysponuje na potrzeby realizacji przedmiotowego zamówienia:
+1. Brak pojazdów spełniających normy emisji spalin EURO 5 - 0 pkt
+2. Co najmniej 1 pojazd spełniający normy emisji spalin EURO 5 - 20 pkt
+3. Co najmniej 2 pojazdy spełniające normy emisji spalin EURO 5 - 40 pkt
+Kontrola spełnienia kryteriów środowiskowych w zakresie pojazdów odbywać się będzie na podstawie oświadczenia Wykonawcy złożonego w formularzu oferty.
+W razie wątpliwości Zamawiający może żądać dodatkowych dokumentów.
+W przypadku, gdy Wykonawca nie poda żadnych danych w ofercie, Zamawiający nie przyzna
+punktów w kryterium pozacenowym.
+Uwaga: maksymalna ilość punktów przyznanych w niniejszym kryterium to 40,00 pkt.</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+            </cac:AwardingCriterion>
+         </cac:AwardingTerms>
+         <cac:TenderRecipientParty>
+            <cbc:EndpointID>https://ezamowienia.gov.pl/</cbc:EndpointID>
+         </cac:TenderRecipientParty>
+         <cac:TenderValidityPeriod>
+            <cbc:DurationMeasure unitCode="DAY">90</cbc:DurationMeasure>
+         </cac:TenderValidityPeriod>
+         <cac:AppealTerms>
+            <cac:PresentationPeriod>
+               <cbc:Description languageID="POL">Wykonawcy oraz innemu podmiotowi przysługują środki ochrony prawnej opisane w Dziale IX ustawy z dnia 11 września 2019 r. Prawo zamówień publicznych., jeżeli ma lub miał interes w uzyskaniu zamówienia oraz poniósł lub może ponieść szkodę w wyniku naruszenia przez Zamawiającego przepisów ustawy Pzp. Terminy na wniesienie odwołania określa art. 515 ustawy Pzp. 1.Odwołanie wnosi się w przypadku zamówień, których wartość jest większa niż progi unijne, w terminie: a) 10 dni od dnia przekazania informacji o czynności zamawiającego stanowiącej podstawę jego wniesienia, jeżeli informacja została przekazana przy użyciu środków komunikacji elektronicznej, b) 15 dni od dnia przekazania informacji o czynności zamawiającego stanowiącej podstawę jego wniesienia, jeżeli informacja została przekazana w sposób inny niż określony w lit. A. 2. Odwołanie wobec treści ogłoszenia wszczynającego postępowanie o udzielenie zamówienia lub wobec treści dokumentów zamówienia, wnosi się w terminie 10 dni od dnia publikacji ogłoszenia w Dzienniku Urzędowym Unii Europejskiej lub zamieszczenia dokumentów zamówienia na stronie internetowej prowadzonego postępowania, w przypadku zamówień, których wartość jest równa albo przekracza progi unijne. 3. Terminy oblicza się według przepisów prawa cywilnego. Jeżeli koniec terminu do wykonania czynności przypada na sobotę lub dzień ustawowo wolny od pracy, termin upływa dnia następnego po dniu lub dniach wolnych od pracy.</cbc:Description>
+            </cac:PresentationPeriod>
+            <cac:AppealInformationParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealInformationParty>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+         </cac:AppealTerms>
+         <cac:Language>
+            <cbc:ID>POL</cbc:ID>
+         </cac:Language>
+         <cac:PostAwardProcess>
+            <cbc:ElectronicOrderUsageIndicator>true</cbc:ElectronicOrderUsageIndicator>
+            <cbc:ElectronicPaymentUsageIndicator>true</cbc:ElectronicPaymentUsageIndicator>
+         </cac:PostAwardProcess>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <cbc:SubmissionMethodCode listName="esubmission">required</cbc:SubmissionMethodCode>
+         <cbc:GovernmentAgreementConstraintIndicator>false</cbc:GovernmentAgreementConstraintIndicator>
+         <cac:TenderSubmissionDeadlinePeriod>
+            <cbc:EndDate>2025-12-15+02:00</cbc:EndDate>
+            <cbc:EndTime>09:00:00+02:00</cbc:EndTime>
+         </cac:TenderSubmissionDeadlinePeriod>
+         <cac:OpenTenderEvent>
+            <cbc:OccurrenceDate>2025-12-15+02:00</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>10:00:00+02:00</cbc:OccurrenceTime>
+            <cac:OccurenceLocation>
+               <cbc:Description languageID="POL">https://ezamowienia.gov.pl/</cbc:Description>
+            </cac:OccurenceLocation>
+         </cac:OpenTenderEvent>
+         <cac:AuctionTerms>
+            <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+         </cac:AuctionTerms>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:Name languageID="POL">ODBIÓR I TRANSPORT ODPADÓW KOMUNALNYCH OD WŁAŚCICIELI NIERUCHOMOŚCI ZAMIESZKAŁYCH I NIEZAMIESZKAŁYCH POŁOŻONYCH NA TERENIE GMINY ŁAGÓW</cbc:Name>
+         <cbc:Description languageID="POL">Szczegółowy opis przedmiotu zamówienia stanowi załącznik nr 9 do SWZ.</cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">90511000</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">90512000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">90513100</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:RealizedLocation>
+            <cac:Address>
+               <cbc:CountrySubentityCode listName="nuts">PL432</cbc:CountrySubentityCode>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+         <cac:PlannedPeriod>
+            <cbc:StartDate>2026-02-01+01:00</cbc:StartDate>
+            <cbc:DurationMeasure unitCode="MONTH">12</cbc:DurationMeasure>
+         </cac:PlannedPeriod>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+</ContractNotice>

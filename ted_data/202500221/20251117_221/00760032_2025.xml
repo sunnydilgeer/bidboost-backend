@@ -1,0 +1,924 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+   <ext:UBLExtensions>
+      <ext:UBLExtension>
+         <ext:ExtensionContent>
+            <efext:EformsExtension>
+               <efac:NoticeSubType>
+                  <cbc:SubTypeCode listName="notice-subtype">16</cbc:SubTypeCode>
+               </efac:NoticeSubType>
+               <efac:Organizations>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">ZAKŁADY KOMUNALNE SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>UL. KILIŃSKIEGO 46 B</cbc:StreetName>
+                           <cbc:CityName>RABKA-ZDRÓJ</cbc:CityName>
+                           <cbc:PostalZone>34-700 RABKA-ZDRÓJ</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL219</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>NIP 7350008425</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+48182677395</cbc:Telephone>
+                           <cbc:ElectronicMail>zku@rabka.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://www.uzp.gov.pl/kio</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">KRAJOWA IZBA ODWOŁAWCZA</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>UL. POSTĘPU 17A</cbc:StreetName>
+                           <cbc:CityName>WARSZAWA</cbc:CityName>
+                           <cbc:PostalZone>02676</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL911</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>NIP 5262239325</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+48224587801</cbc:Telephone>
+                           <cbc:ElectronicMail>odwolania@uzp.gov.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://op.europa.eu</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0000</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Publications Office of the European Union</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:CityName>Luxembourg</cbc:CityName>
+                           <cbc:PostalZone>2417</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">LU000</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">LUX</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>PUBL</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+352 29291</cbc:Telephone>
+                           <cbc:ElectronicMail>ted@publications.europa.eu</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+               </efac:Organizations>
+            <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00760032-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+         </ext:ExtensionContent>
+      </ext:UBLExtension>
+   </ext:UBLExtensions>
+   <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+   <cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+   <cbc:ID schemeName="notice-id">0ed20922-73cd-4287-95f6-bf12616b7b4d</cbc:ID>
+   <cbc:ContractFolderID>d445b344-7090-4cfe-a41d-1c8941b1688f</cbc:ContractFolderID>
+   <cbc:IssueDate>2025-11-14Z</cbc:IssueDate>
+   <cbc:IssueTime>13:02:36Z</cbc:IssueTime>
+   <cbc:VersionID>01</cbc:VersionID>
+   <cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+   <cbc:NoticeTypeCode listName="competition">cn-standard</cbc:NoticeTypeCode>
+   <cbc:NoticeLanguageCode listName="language">POL</cbc:NoticeLanguageCode>
+   <cac:ContractingParty>
+      <cbc:BuyerProfileURI>https://ezamowienia.gov.pl/pl/</cbc:BuyerProfileURI>
+      <cac:ContractingPartyType>
+         <cbc:PartyTypeCode listName="buyer-legal-type">la</cbc:PartyTypeCode>
+      </cac:ContractingPartyType>
+      <cac:ContractingActivity>
+         <cbc:ActivityTypeCode listName="authority-activity">gen-pub</cbc:ActivityTypeCode>
+      </cac:ContractingActivity>
+      <cac:Party>
+         <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+         </cac:PartyIdentification>
+         <cac:ServiceProviderParty>
+            <cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode>
+            <cac:Party>
+               <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0000</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:Party>
+         </cac:ServiceProviderParty>
+      </cac:Party>
+   </cac:ContractingParty>
+   <cac:TenderingTerms>
+      <cac:ProcurementLegislationDocumentReference>
+         <cbc:ID>art. 132 ustawy Pzp- Postępowanie o udzielenie zamówieniapublicznego prowadzone jest w trybie przetargu nieograniczonego z zastosowaniem przepisów ustawy z dnia 11 września 2019 r Prawo zamówień publicznych</cbc:ID>
+      </cac:ProcurementLegislationDocumentReference>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-grounds-source">epo-procurement-document</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:LotDistribution>
+         <cbc:MaximumLotsAwardedNumeric>3</cbc:MaximumLotsAwardedNumeric>
+         <cbc:MaximumLotsSubmittedNumeric>3</cbc:MaximumLotsSubmittedNumeric>
+      </cac:LotDistribution>
+   </cac:TenderingTerms>
+   <cac:TenderingProcess>
+      <cbc:ProcedureCode listName="procurement-procedure-type">open</cbc:ProcedureCode>
+      <cac:ProcessJustification>
+         <cbc:ProcessReasonCode listName="accelerated-procedure">false</cbc:ProcessReasonCode>
+      </cac:ProcessJustification>
+   </cac:TenderingProcess>
+   <cac:ProcurementProject>
+      <cbc:ID schemeName="InternalID">ZK.ZP.09.2025</cbc:ID>
+      <cbc:Name languageID="POL">Transport i zagospodarowanie odpadów w 2026r.</cbc:Name>
+      <cbc:Description languageID="POL">1.Przedmiotem zamówienia jest świadczenie przez Wykonawcę usługi polegającej na transporcie i zagospodarowaniu odpadów.
+2.Zamawiający dopuszcza składanie ofert częściowych na poszczególne zadania:
+A.Zadanie nr 1. – zagospodarowanie odpadów:
+1.Przedmiotem zamówienia jest świadczenie przez Wykonawcę usługi polegającej na  zagospodarowaniu odpadów sklasyfikowanych w katalogu odpadów pod kodami: 
+- 20 03 01 zmieszane (niesegregowane) odpady komunalne 
+- 20 02 01 (odpady ulegające biodegradacji)
+- 19 08 02 (zawartość piaskowników)
+- 19 08 01 (skratki)
+- 20 01 11 (tekstylia)
+2.Masa odpadów do zagospodarowania:
+- odpady o kodzie 20 03 01 – 680 Mg
+- odpady o kodzie 20 02 01 – 5 Mg
+- odpady o kodzie 19 08 02 – 12 Mg
+- odpady o kodzie 19 08 01 – 25 Mg
+- odpady o kodzie 20 01 11 - 1 Mg
+Zamawiający zastrzega sobie możliwość skorzystania z prawa opcji, tj. przekazania większej ilości odpadów będących przedmiotem zamówienia (do 60% wartości zamówienia podstawowego) w zależności od faktycznych potrzeb i ilości.
+B.Zadanie nr 2 - transport i zagospodarowanie odpadów:
+1.Przedmiotem zamówienia jest świadczenie przez Wykonawcę usługi polegającej na  transporcie i zagospodarowaniu odpadów sklasyfikowanych w katalogu odpadów pod kodami:
+- 20 03 07 (odpady wielkogabarytowe)
+- 17 01 07 (mix budowlany) 
+- 16 01 03 (zużyte opony)
+- 04 01 08 (odpady ze skóry wygarbowanej zawierającej chrom)
+2.Masa odpadów wynosi:
+- 20 03 07 (odpady wielkogabarytowe) – 50 Mg
+- 17 01 07 (mix budowlany) – 160 Mg
+- 16 01 03 (zużyte opony) – 8 Mg
+- 04 01 08 (odpady ze skóry wygarbowanej zawierającej chrom) – 12 Mg
+3.Zamawiający zastrzega sobie możliwość skorzystania z prawa opcji, tj. przekazania większej ilości odpadów będących przedmiotem zamówienia (do 60% wartości zamówienia podstawowego) w zależności od faktycznych potrzeb i ilości.
+C.Zadanie nr 3.- transport i zagospodarowanie odpadów:
+1.Przedmiotem zamówienia jest świadczenie przez Wykonawcę usługi polegającej na  transporcie i zagospodarowaniu odpadów sklasyfikowanych w katalogu odpadów pod kodami:
+- 19 12 01 (papier i tektura) 
+- 19 12 04 (tworzywa sztuczne i guma)
+- 19 12 07 (drewno inne niż wymienione w 19 12 06)
+- 19 12 08 (tekstylia)
+- 19 12 10 (odpady palne – paliwo alternatywne).
+2.Odbiór odpadów będzie realizowany z Zakładu Przetwarzania Odpadów (dalej ZPO) Spółki Zakłady Komunalne w Rabce-Zdroju.
+3.Wykonawca do wykonania zadania udostępni co najmniej 2 kontenery o pojemności min. 24 m3 
+4.Masa odpadów do zagospodarowania:
+- 19 12 01 (papier i tektura) – 30 Mg
+- 19 12 04 (tworzywa sztuczne i guma) – 80 Mg
+- 19 12 07 (drewno inne niż wymienione w 19 12 06) – 20 Mg
+- 19 12 08 (tekstylia) – 20 Mg
+- 19 12 10 (odpady palne – paliwo alternatywne) – 30 Mg
+5.Zamawiający zastrzega sobie możliwość skorzystania z prawa opcji, tj. przekazania większej ilości odpadów będących przedmiotem zamówienia (do 60% wartości zamówienia podstawowego) w zależności od faktycznych potrzeb i ilości.
+Szczegółowy opis przedmiotu zamówienia znajduje się w rozdziale IV SWZ oraz projektowanych postanowieniach umownych stanowiących załącznik nr 8a,8b, 8c do SWZ.
+</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+      <cac:MainCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">90500000</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">90514000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">90533000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:RealizedLocation>
+         <cac:Address>
+            <cbc:CountrySubentityCode listName="nuts">PL219</cbc:CountrySubentityCode>
+            <cac:Country>
+               <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+            </cac:Country>
+         </cac:Address>
+      </cac:RealizedLocation>
+   </cac:ProcurementProject>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+      <cac:TenderingTerms>
+         <cbc:VariantConstraintCode listName="permission">not-allowed</cbc:VariantConstraintCode>
+         <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+         <cac:CallForTendersDocumentReference>
+            <ext:UBLExtensions>
+               <ext:UBLExtension>
+                  <ext:ExtensionContent>
+                     <efext:EformsExtension>
+                        <efac:OfficialLanguages>
+                           <cac:Language>
+                              <cbc:ID>POL</cbc:ID>
+                           </cac:Language>
+                        </efac:OfficialLanguages>
+                     </efext:EformsExtension>
+                  </ext:ExtensionContent>
+               </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:ID>ZK.ZP.09.2025</cbc:ID>
+            <cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+            <cac:Attachment>
+               <cac:ExternalReference>
+                  <cbc:URI>https://ezamowienia.gov.pl/</cbc:URI>
+               </cac:ExternalReference>
+            </cac:Attachment>
+         </cac:CallForTendersDocumentReference>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="selection-criteria-source">epo-procurement-document</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="reserved-procurement">none</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="reserved-execution">no</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="einvoicing">allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="ecatalog-submission">not-allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:AwardingTerms>
+            <cac:AwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>100</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                  <cbc:Description languageID="POL">A. Kryteria oceny ofert i ich znaczenie
+Przy wyborze najkorzystniejszej oferty Zamawiający będzie się kierował następującymi kryteriami analogicznie dla zadania nr 1, 2 i 3: Cena "KC"=100%
+B. Sposób oceny ofert w oparciu o kryteria
+1. Ocenie poddane zostaną oferty nie podlegające odrzuceniu.
+2. Zamawiający dokona oceny ofert w zakresie kryterium „Cena” na następujących zasadach:
+a) Podstawą oceny ofert w tym kryterium będzie cena brutto za wykonanie przedmiotu zamówienia, podana przez Wykonawcę w Formularzu ofertowym.
+b) Liczba punktów przyznanych poszczególnym ofertom wyliczona zostanie wg. formuły:
+Kc=Cmin/C of ocen*100
+gdzie:
+Kc –liczba punktów otrzymanych w kryterium „Cena”
+C min– cena najniższa wśród ofert nie odrzuconych
+C of ocen– cena oferty badanej
+c) Ilość punktów obliczona według powyższej formuły zostanie zaokrąglona do dwóch miejsc po przecinku.
+3. Za najkorzystniejszą uznana zostanie oferta, która otrzyma największą ilość punktów rozumianą jako suma punktów przyznanych na podstawie kryteriów oceny ofert podanych w punkcie A, a obliczonych zgodnie z zasadami określonymi w punkcie B.
+4. Zamawiający dokona oceny ofert przyznając punkty w ramach poszczególnych kryteriów oceny ofert, przyjmując zasadę, że 1 % = 1 pkt. Maksymalna liczba punktów w kryterium równa jest określonej wadze kryterium w %. 
+</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+            </cac:AwardingCriterion>
+         </cac:AwardingTerms>
+         <cac:AdditionalInformationParty>
+            <cac:PartyIdentification>
+               <cbc:ID>ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:AdditionalInformationParty>
+         <cac:TenderRecipientParty>
+            <cbc:EndpointID>https://ezamowienia.gov.pl/</cbc:EndpointID>
+         </cac:TenderRecipientParty>
+         <cac:TenderValidityPeriod>
+            <cbc:DurationMeasure unitCode="DAY">90</cbc:DurationMeasure>
+         </cac:TenderValidityPeriod>
+         <cac:AppealTerms>
+            <cac:PresentationPeriod>
+               <cbc:Description languageID="POL">1. Środki ochrony prawnej przysługują Wykonawcy, jeżeli ma lub miał interes w uzyskaniu zamówienia oraz poniósł lub może ponieść szkodę w wyniku naruszenia przez Zamawiającego przepisów Pzp.
+2. Odwołanie przysługuje na:
+a) niezgodną z przepisami ustawy czynność Zamawiającego, podjętą w postępowaniu o udzielenie zamówienia, w tym na projektowane postanowienie umowy;
+b) zaniechanie czynności w postępowaniu o udzielenie zamówienia, do której Zamawiający był obowiązany na podstawie ustawy.
+3. Odwołanie wnosi się ̨ do Prezesa Krajowej Izby Odwoławczej w formie pisemnej albo w formie elektronicznej albo w postaci elektronicznej opatrzone podpisem zaufanym.
+4. Na orzeczenie Krajowej Izby Odwoławczej oraz postanowienie Prezesa Krajowej Izby Odwoławczej, o którym mowa w art. 519 ust. 1 Pzp, stronom oraz uczestnikom postępowania  odwoławczego  przysługuje  skarga  do  sądu.  Skargę̨ wnosi  się ̨ do  Sadu Okręgowego w Warszawie za pośrednictwem Prezesa Krajowej Izby Odwoławczej.
+5. Szczegółowe informacje dotyczące środków ochrony prawnej określone są w Dziale IX „Środki ochrony prawnej” ustawy Pzp.
+</cbc:Description>
+            </cac:PresentationPeriod>
+            <cac:AppealInformationParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealInformationParty>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+         </cac:AppealTerms>
+         <cac:Language>
+            <cbc:ID>POL</cbc:ID>
+         </cac:Language>
+         <cac:PostAwardProcess>
+            <cbc:ElectronicOrderUsageIndicator>false</cbc:ElectronicOrderUsageIndicator>
+            <cbc:ElectronicPaymentUsageIndicator>true</cbc:ElectronicPaymentUsageIndicator>
+         </cac:PostAwardProcess>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <cbc:SubmissionMethodCode listName="esubmission">required</cbc:SubmissionMethodCode>
+         <cbc:GovernmentAgreementConstraintIndicator>false</cbc:GovernmentAgreementConstraintIndicator>
+         <cac:TenderSubmissionDeadlinePeriod>
+            <cbc:EndDate>2025-12-16+01:00</cbc:EndDate>
+            <cbc:EndTime>11:00:00+01:00</cbc:EndTime>
+         </cac:TenderSubmissionDeadlinePeriod>
+         <cac:OpenTenderEvent>
+            <cbc:OccurrenceDate>2025-12-16+01:00</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>11:30:00+01:00</cbc:OccurrenceTime>
+         </cac:OpenTenderEvent>
+         <cac:AuctionTerms>
+            <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+         </cac:AuctionTerms>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:ID schemeName="InternalID">Zadanie nr 1. – zagospodarowanie odpadów:</cbc:ID>
+         <cbc:Name languageID="POL">Zagospodarowanie odpadów</cbc:Name>
+         <cbc:Description languageID="POL">1.Przedmiotem zamówienia jest świadczenie przez Wykonawcę usługi polegającej na  zagospodarowaniu odpadów sklasyfikowanych w katalogu odpadów pod kodami: 
+- 20 03 01 zmieszane (niesegregowane) odpady komunalne 
+- 20 02 01 (odpady ulegające biodegradacji)
+- 19 08 02 (zawartość piaskowników)
+- 19 08 01 (skratki)
+- 20 01 11 (tekstylia)
+2.Masa odpadów do zagospodarowania:
+- odpady o kodzie 20 03 01 – 680 Mg
+- odpady o kodzie 20 02 01 – 5 Mg
+- odpady o kodzie 19 08 02 – 12 Mg
+- odpady o kodzie 19 08 01 – 25 Mg
+- odpady o kodzie 20 01 11 - 1 Mg
+Zamawiający zastrzega sobie możliwość skorzystania z prawa opcji, tj. przekazania większej ilości odpadów będących przedmiotem zamówienia (do 60% wartości zamówienia podstawowego) w zależności od faktycznych potrzeb i ilości.
+3.Przedmiot zamówienia winien być realizowany przez Wykonawcę zgodnie z:
+1)ustawą z dnia 13 września 1996 r. o utrzymaniu czystości i porządku w gminach (t. j. Dz.U. 2025 poz. 733,  z późn. zm.);
+2)ustawą z dnia 14 grudnia 2012 r. o odpadach (t. j. Dz.U. 2023 poz. 1587, z późn. zm.) oraz aktami prawnymi wydanymi na ich podstawie.
+4.Transport odpadów:
+1)Transport odpadów odbywać się będzie przez Zamawiającego bezpośrednio do miejsca przetwarzania, tj. instalacji wskazanej przez Wykonawcę w złożonej ofercie pod warunkiem odległości instalacji nie większej niż 70 km od Zakładu Przetwarzania Odpadów (ZPO) Zamawiającego, zakładając trasę optymalną dla pojazdu Spółki o minimalnej masie własnej zestawu 15 Mg, po drogach publicznych.
+2)Odpady będące przedmiotem zamówienia gromadzone będą luzem lub w workach.
+3)Odbierane odpady będą każdorazowo ważone na legalizowanej wadze Zamawiającego. Ważenie będzie potwierdzone wystawieniem kwitu wagowego.
+4)Zamawiający i Wykonawca mają prawo do przeprowadzenia kontroli wagi odpadów przed wyjazdem z siedziby Zamawiającego. 
+5)Po zakończeniu każdego miesiąca Wykonawca przekazuje Zamawiającemu drogą elektroniczną zestawienie wagowe przyjętych odpadów, a w terminach określonych prawem informacje o sposobie ich zagospodarowania.
+6)Na wezwanie Zamawiającego przesłane faksem lub mailem, Wykonawca zobowiązany jest przekazać kopię dokumentów potwierdzonych za zgodność z oryginałem dotyczących legalizacji wagi, w terminie dwóch dni roboczych od dnia otrzymania wezwania.
+5.Miejsce, transport i częstotliwość odbioru odpadów:
+1)Odbiór odpadów odbywać się będzie w dni robocze w godzinach od 7:00 do 15:00.
+2)Zlecenie odbioru składane będzie telefonicznie lub za pośrednictwem poczty elektronicznej.
+3)Zamawiający zastrzega sobie prawo do  transportu odpadów do instalacji codziennie. 
+6.Ewidencja i rozliczanie odpadów:
+1)Każda ilość odebranych odpadów będzie ewidencjonowana przez Wykonawcę.
+2)Ewidencja będzie zawierać: ilość odpadu, nr rejestracyjny pojazdu dostarczającego odpad, określony kod odpadu oraz datę odebrania odpadów.
+3)Potwierdzeniem przyjęcia odpadów będzie karta przekazania odpadów potwierdzona w systemie ewidencyjnym BDO.
+4)Zamawiający może żądać od Wykonawcy wyjaśnień ustnych oraz pisemnych, a także okazania do wglądu oryginałów lub kopii dokumentów potwierdzonych za zgodność z oryginałem związanych z wykonywaniem przedmiotu zamówienia w szczególności kwitów wagowych i przedłożenia ich kopii potwierdzonych za zgodność z oryginałem, a Wykonawca zobowiązany jest do przekazania żądanych informacji i dokumentów w terminie wskazanym przez Zamawiającego, nie krótszym niż 2 dni robocze.
+5)Zamawiający wymaga przedłożenia Zamawiającemu w formie elektronicznej w formacie .pdf zestawienia ilości zagospodarowanych odpadów z uwzględnieniem procesów odzysku bądź unieszkodliwiania obejmujący okres na jaki została zawarta umowa w terminie 7 dni od zakończenia realizacji umowy.
+7.Wymagania prawne i środowiskowe dotyczące zagospodarowania odpadów.
+1)Wykonawca zgodnie z obowiązującymi przepisami ustawy o utrzymaniu czystości i porządku w gminach, zobowiązany jest do osiągnięcia poziomu ograniczenia odpadów komunalnych przekazywanych do składowania. Brak udokumentowania osiągnięcia poziomu uznany zostanie za brak osiągnięcia tego poziomu przez Wykonawcę.
+2)Obliczenia poziomów, o których mowa w pkt 1) należy wykazać na podstawie obowiązujących przepisów ustawy o utrzymaniu czystości i porządku w gminach, w tym obowiązujących aktów wykonawczych w tym zakresie.
+8.Wykonawca odpowiada za:
+1)Zapewnienie, zgodnie z wymogami powszechnie obowiązującego prawa:
+a)zagospodarowania odpadów w procesach odzysku (R) i/lub unieszkodliwiania (D),
+b)postępowania z odpadami zgodnie z hierarchią postępowania z odpadami,
+c)prowadzenia ewidencji odpadów zgodnie z przepisami;
+2)Informowanie o sposobie postępowania w przypadku odmowy przyjęcia odpadów przez instalacje;
+3)Sporządzenie sprawozdań miesięcznych i przekazywanie ich w formie pisemnej oraz na nośniku danych w formie elektronicznej w formacie .pdf na wezwanie Zamawiającego w terminie 14 dni licząc od dnia wezwania. 
+4)Zapewnienie Zamawiającemu prawa do wglądu w oryginały dokumentów:
+−KPO/KPOK,
+−KEO/KEOK,
+−kwity wagowe,
+−oświadczenie instalacji o wytworzonych odpadach oraz przekazanych do przygotowania do ponownego użycia i recyklingu oraz przekazanych do składowania bądź termicznego przekształcenia,
+−lub zapewnienie kopii dokumentów potwierdzonych za zgodność.
+</cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+         <cbc:SMESuitableIndicator>true</cbc:SMESuitableIndicator>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">90500000</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">90514000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">90533000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:RealizedLocation>
+            <cac:Address>
+               <cbc:CityName>Rabka-Zdrój</cbc:CityName>
+               <cbc:CountrySubentityCode listName="nuts">PL219</cbc:CountrySubentityCode>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+         <cac:PlannedPeriod>
+            <cbc:StartDate>2026-01-01+01:00</cbc:StartDate>
+            <cbc:EndDate>2026-12-31+01:00</cbc:EndDate>
+         </cac:PlannedPeriod>
+         <cac:ContractExtension>
+            <cbc:OptionsDescription languageID="POL">1. W ramach realizacji niniejszego zamówienia Zamawiający przewiduje możliwość skorzystania z prawa opcji, o którym mowa w art. 441 ust. 1 Pzp, w zakresie, którego Zamawiający przewiduje zwiększenie świadczenia usługi transportu  i zagospodarowania odpadów w ilości nie większej niż 60% zamówienia podstawowego.
+2. Zamawiający w ramach przewidywanego prawa opcji zastrzega możliwość zwiększenia świadczenia usługi transportu i zagospodarowania odpadów w ramach umowy ponad zakres podstawowy zamówienia. Zamawiający podejmie decyzję co do możliwości i woli skorzystania z zastrzeżonego prawa opcji (określonego w pkt. 1), zgodnie z zapotrzebowaniem i posiadanymi możliwościami finansowymi. Zastrzega się, iż zakres opcjonalny zamówienia objęty prawem opcji nie stanowi zobowiązania umownego (w tym finansowego) Zamawiającego zaciąganego w momencie zawarcia umowy w sprawie zamówienia, a przewidywany zakres opcjonalny zamówienia nie jest gwarantowany do realizacji. Realizacja (uruchomienie) prawa opcji (zakresu opcjonalnego zamówienia) nie stanowi zmiany warunków niniejszej umowy i nie wymaga zawarcia aneksu do niniejszej umowy. W przypadku skorzystania przez Zamawiającego z prawa opcji uruchomiony w tym trybie zakres opcjonalny ma być realizowany w sposób analogiczny, jak zakres podstawowy.
+3. Decyzja o realizacji lub rezygnacji z zamówienia opcjonalnego jest wyłącznym uprawnieniem Zamawiającego. Zamówienie opcjonalne nie stanowi zobowiązania Zamawiającego do jego udzielenia, jak również nie stanowi podstawy do dochodzenia przez Wykonawcę roszczeń odszkodowawczych z tytułu niezrealizowania tego zamówienia. 
+4. Przedmiotowe prawo opcji może być realizowane przez Zamawiającego etapowo / częściowo / fragmentarycznie / sukcesywnie, przy czym może zostać zrealizowane nie później niż do dnia 31.12.2026 r. (tzn. w okresie obowiązywania umowy). Po upływie tego terminu zastrzeżone prawo opcji (w zakresie, w jakim nie zostało uruchomione) wygasa, w związku z czym Zamawiający po upływie tego terminu nie może już z niego skorzystać.
+5. Odnośnie zakresu podstawowego zamówienia, Zamawiający zastrzega sobie możliwość zlecenia usług w większym zakresie, a także zwiększenia ilości oraz zmiany rodzaju usług w zależności od potrzeb Zamawiającego (w stosunku do ilości określonych w formularzu ofertowym) w ramach wynagrodzenia umownego. 
+</cbc:OptionsDescription>
+         </cac:ContractExtension>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0002</cbc:ID>
+      <cac:TenderingTerms>
+         <cbc:VariantConstraintCode listName="permission">not-allowed</cbc:VariantConstraintCode>
+         <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+         <cac:CallForTendersDocumentReference>
+            <ext:UBLExtensions>
+               <ext:UBLExtension>
+                  <ext:ExtensionContent>
+                     <efext:EformsExtension>
+                        <efac:OfficialLanguages>
+                           <cac:Language>
+                              <cbc:ID>POL</cbc:ID>
+                           </cac:Language>
+                        </efac:OfficialLanguages>
+                     </efext:EformsExtension>
+                  </ext:ExtensionContent>
+               </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:ID>ZK.ZP.09.2025</cbc:ID>
+            <cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+            <cac:Attachment>
+               <cac:ExternalReference>
+                  <cbc:URI>https://ezamowienia.gov.pl/</cbc:URI>
+               </cac:ExternalReference>
+            </cac:Attachment>
+         </cac:CallForTendersDocumentReference>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="selection-criteria-source">epo-procurement-document</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="reserved-procurement">none</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="reserved-execution">no</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="einvoicing">allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="ecatalog-submission">not-allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:AwardingTerms>
+            <cac:AwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>100</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                  <cbc:Description languageID="POL">A. Kryteria oceny ofert i ich znaczenie
+Przy wyborze najkorzystniejszej oferty Zamawiający będzie się kierował następującymi kryteriami analogicznie dla zadania nr 1, 2 i 3: Cena "KC"=100%
+B. Sposób oceny ofert w oparciu o kryteria
+1. Ocenie poddane zostaną oferty nie podlegające odrzuceniu.
+2. Zamawiający dokona oceny ofert w zakresie kryterium „Cena” na następujących zasadach:
+a) Podstawą oceny ofert w tym kryterium będzie cena brutto za wykonanie przedmiotu zamówienia, podana przez Wykonawcę w Formularzu ofertowym.
+b) Liczba punktów przyznanych poszczególnym ofertom wyliczona zostanie wg. formuły:
+Kc=Cmin/C of ocen*100
+gdzie:
+Kc –liczba punktów otrzymanych w kryterium „Cena”
+C min– cena najniższa wśród ofert nie odrzuconych
+C of ocen– cena oferty badanej
+c) Ilość punktów obliczona według powyższej formuły zostanie zaokrąglona do dwóch miejsc po przecinku.
+3. Za najkorzystniejszą uznana zostanie oferta, która otrzyma największą ilość punktów rozumianą jako suma punktów przyznanych na podstawie kryteriów oceny ofert podanych w punkcie A, a obliczonych zgodnie z zasadami określonymi w punkcie B.
+4. Zamawiający dokona oceny ofert przyznając punkty w ramach poszczególnych kryteriów oceny ofert, przyjmując zasadę, że 1 % = 1 pkt. Maksymalna liczba punktów w kryterium równa jest określonej wadze kryterium w %. 
+</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+            </cac:AwardingCriterion>
+         </cac:AwardingTerms>
+         <cac:AdditionalInformationParty>
+            <cac:PartyIdentification>
+               <cbc:ID>ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:AdditionalInformationParty>
+         <cac:TenderRecipientParty>
+            <cbc:EndpointID>https://ezamowienia.gov.pl/</cbc:EndpointID>
+         </cac:TenderRecipientParty>
+         <cac:TenderValidityPeriod>
+            <cbc:DurationMeasure unitCode="DAY">90</cbc:DurationMeasure>
+         </cac:TenderValidityPeriod>
+         <cac:AppealTerms>
+            <cac:PresentationPeriod>
+               <cbc:Description languageID="POL">1. Środki ochrony prawnej przysługują Wykonawcy, jeżeli ma lub miał interes w uzyskaniu zamówienia oraz poniósł lub może ponieść szkodę w wyniku naruszenia przez Zamawiającego przepisów Pzp.
+2. Odwołanie przysługuje na:
+a) niezgodną z przepisami ustawy czynność Zamawiającego, podjętą w postępowaniu o udzielenie zamówienia, w tym na projektowane postanowienie umowy;
+b) zaniechanie czynności w postępowaniu o udzielenie zamówienia, do której Zamawiający był obowiązany na podstawie ustawy.
+3. Odwołanie wnosi się ̨ do Prezesa Krajowej Izby Odwoławczej w formie pisemnej albo w formie elektronicznej albo w postaci elektronicznej opatrzone podpisem zaufanym.
+4. Na orzeczenie Krajowej Izby Odwoławczej oraz postanowienie Prezesa Krajowej Izby Odwoławczej, o którym mowa w art. 519 ust. 1 Pzp, stronom oraz uczestnikom postępowania  odwoławczego  przysługuje  skarga  do  sądu.  Skargę̨ wnosi  się ̨ do  Sadu Okręgowego w Warszawie za pośrednictwem Prezesa Krajowej Izby Odwoławczej.
+5. Szczegółowe informacje dotyczące środków ochrony prawnej określone są w Dziale IX „Środki ochrony prawnej” ustawy Pzp.
+</cbc:Description>
+            </cac:PresentationPeriod>
+            <cac:AppealInformationParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealInformationParty>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+         </cac:AppealTerms>
+         <cac:Language>
+            <cbc:ID>POL</cbc:ID>
+         </cac:Language>
+         <cac:PostAwardProcess>
+            <cbc:ElectronicOrderUsageIndicator>false</cbc:ElectronicOrderUsageIndicator>
+            <cbc:ElectronicPaymentUsageIndicator>true</cbc:ElectronicPaymentUsageIndicator>
+         </cac:PostAwardProcess>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <cbc:SubmissionMethodCode listName="esubmission">required</cbc:SubmissionMethodCode>
+         <cbc:GovernmentAgreementConstraintIndicator>false</cbc:GovernmentAgreementConstraintIndicator>
+         <cac:TenderSubmissionDeadlinePeriod>
+            <cbc:EndDate>2025-12-16+01:00</cbc:EndDate>
+            <cbc:EndTime>11:00:00+01:00</cbc:EndTime>
+         </cac:TenderSubmissionDeadlinePeriod>
+         <cac:OpenTenderEvent>
+            <cbc:OccurrenceDate>2025-12-16+01:00</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>11:30:00+01:00</cbc:OccurrenceTime>
+         </cac:OpenTenderEvent>
+         <cac:AuctionTerms>
+            <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+         </cac:AuctionTerms>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:ID schemeName="InternalID">Zadanie nr 2 - transport i zagospodarowanie odpadów:</cbc:ID>
+         <cbc:Name languageID="POL">Transport i zagospodarowanie odpadów</cbc:Name>
+         <cbc:Description languageID="POL">1.Przedmiotem zamówienia jest świadczenie przez Wykonawcę usługi polegającej na  transporcie i zagospodarowaniu odpadów sklasyfikowanych w katalogu odpadów pod kodami:
+- 20 03 07 (odpady wielkogabarytowe)
+- 17 01 07 (mix budowlany) 
+- 16 01 03 (zużyte opony)
+- 04 01 08 (odpady ze skóry wygarbowanej zawierającej chrom)
+2.Masa odpadów wynosi:
+- 20 03 07 (odpady wielkogabarytowe) – 50 Mg
+- 17 01 07 (mix budowlany) – 160 Mg
+- 16 01 03 (zużyte opony) – 8 Mg
+- 04 01 08 (odpady ze skóry wygarbowanej zawierającej chrom) – 12 Mg
+3.Zamawiający zastrzega sobie możliwość skorzystania z prawa opcji, tj. przekazania większej ilości odpadów będących przedmiotem zamówienia (do 60% wartości zamówienia podstawowego) w zależności od faktycznych potrzeb i ilości.
+4.Przedmiot zamówienia winien być realizowany przez Wykonawcę zgodnie z:
+1)ustawą z dnia 13 września 1996 r. o utrzymaniu czystości i porządku w gminach (t. j. Dz.U. 2025 poz. 733,z późn. zm.);
+2)ustawą z dnia 14 grudnia 2012 r. o odpadach (t. j. Dz.U. 2023 poz. 1587z późn. zm.) oraz aktami prawnymi wydanymi na ich podstawie.
+5.Transport odpadów:
+1)Transport odpadów z ZPO Zamawiającego do instalacji będzie realizowany środkami transportu Wykonawcy i na jego koszt. W przypadku awarii Wykonawca zapewni samochód zastępczy lub po uzgodnieniu, Zamawiający wykona transport na koszt Wykonawcy.
+2)Odpady będące przedmiotem zamówienia gromadzone będą luzem lub w workach.
+3)Odbierane odpady muszą być każdorazowo ważone na legalizowanej wadze Zamawiającego. Ważenie musi być potwierdzone wystawieniem kwitu wagowego.
+4)Zamawiający i Wykonawca mają prawo do przeprowadzenia kontroli wagi odpadów przed wyjazdem z siedziby Zamawiającego. 
+5)Po zakończeniu każdego miesiąca Wykonawca przekazuje Zamawiającemu drogą elektroniczną zestawienie wagowe przyjętych odpadów, a w terminach określonych prawem informacje o sposobie ich zagospodarowania.
+6)Na wezwanie Zamawiającego przesłane faksem lub mailem, Wykonawca zobowiązany jest przekazać kopię dokumentów potwierdzonych za zgodność z oryginałem dotyczących legalizacji wagi, w terminie dwóch dni roboczych od dnia otrzymania wezwania.
+6.Miejsce, transport i częstotliwość odbioru odpadów:
+1)Odbiór odpadów odbywać się będzie w dni robocze w godzinach od 7:00 do 15:00.
+2)Zlecenie odbioru składane będzie telefonicznie lub za pośrednictwem poczty elektronicznej.
+3)Transport odpadów przez Wykonawcę nastąpi od zgłoszenia złożonego do godz. 10.00 w ciągu 2 dni roboczych -  do godz. 14.00
+4)Zgłoszenia złożone po godz. 10.00 są traktowane jako złożone w następnym dniu roboczym.
+5)W szczególnych przypadkach odpady mogą być przyjmowane w innych dniach i godzinach, co wymaga wcześniejszego uzgodnienia pomiędzy stronami.
+6)Wykonawca będzie odbierać odpady z ZPO Zamawiającego, znajdującego się w Rabce-Zdroju przy ul. Zaryte 141 B.
+7)Dojazd do miejsca odbioru odpadów jest utwardzony oraz nieutrudniony.
+8)Zamawiający zapewnia załadunek odpadów do środków transportu Wykonawcy własnymi środkami.
+9)Wykonawca do wykonania zadania udostępni co najmniej 2 kontenery o pojemności min. 24 m3.
+7.Ewidencja i rozliczanie odpadów:
+1)Każda ilość odebranych odpadów będzie ewidencjonowana przez Wykonawcę.
+2)Ewidencja będzie zawierać: ilość odpadu, nr rejestracyjny pojazdu dostarczającego odpad, określony kod odpadu oraz datę odebrania odpadów.
+3)Potwierdzeniem przyjęcia odpadów będzie karta przekazania odpadów potwierdzona w systemie ewidencyjnym BDO.
+4)Zamawiający może żądać od Wykonawcy wyjaśnień ustnych oraz pisemnych, a także okazania do wglądu oryginałów lub kopii dokumentów potwierdzonych za zgodność z oryginałem związanych z wykonywaniem przedmiotu zamówienia w szczególności kwitów wagowych i przedłożenia ich kopii potwierdzonych za zgodność z oryginałem, a Wykonawca zobowiązany jest do przekazania żądanych informacji i dokumentów w terminie wskazanym przez Zamawiającego, nie krótszym niż 2 dni robocze.
+5)Zamawiający wymaga przedłożenia Zamawiającemu w formie elektronicznej w formacie .pdf zestawienia ilości zagospodarowanych odpadów z uwzględnieniem procesów odzysku bądź unieszkodliwiania obejmujący okres na jaki została zawarta umowa w terminie 7 dni od zakończenia realizacji umowy.
+8.Wymagania prawne i środowiskowe dotyczące zagospodarowania odpadów.
+1)Wykonawca zgodnie z obowiązującymi przepisami ustawy o utrzymaniu czystości i porządku w gminach, zobowiązany jest do osiągnięcia poziomu ograniczenia odpadów komunalnych przekazywanych do składowania. Brak udokumentowania osiągnięcia poziomu uznany zostanie za brak osiągnięcia tego poziomu przez Wykonawcę.
+2)Obliczenia poziomów, o których mowa w pkt. 1 należy wykazać na podstawie obowiązujących przepisów ustawy o utrzymaniu czystości i porządku w gminach, w tym obowiązujących aktów wykonawczych w tym zakresie.
+9.Wykonawca odpowiada za:
+1)Zapewnienie, zgodnie z wymogami powszechnie obowiązującego prawa:
+a)zagospodarowania odpadów w procesach odzysku (R) i/lub unieszkodliwiania (D),
+b)postępowania z odpadami zgodnie z hierarchią postępowania z odpadami,
+c)prowadzenia ewidencji odpadów zgodnie z przepisami;
+2)Informowanie o sposobie postępowania w przypadku odmowy przyjęcia odpadów przez instalacje;
+3)Sporządzenie sprawozdań miesięcznych i przekazywanie ich w formie pisemnej oraz na nośniku danych w formie elektronicznej w formacie .pdf na wezwanie Zamawiającego w terminie 14 dni licząc od dnia wezwania.
+4)Zapewnienie Zamawiającemu prawa do wglądu w oryginały dokumentów:
+- KPO/KPOK,
+- KEO/KEOK,
+- kwity wagowe,
+- oświadczenie instalacji o wytworzonych odpadach oraz przekazanych do przygotowania do ponownego użycia i recyklingu oraz przekazanych do składowania bądź termicznego przekształcenia, lub zapewnienie kopii dokumentów potwierdzonych za zgodność.
+</cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+         <cbc:SMESuitableIndicator>true</cbc:SMESuitableIndicator>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">90500000</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">90514000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">90533000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">90511000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">90512000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:RealizedLocation>
+            <cac:Address>
+               <cbc:CityName>Rabka-Zdrój</cbc:CityName>
+               <cbc:CountrySubentityCode listName="nuts">PL219</cbc:CountrySubentityCode>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+         <cac:PlannedPeriod>
+            <cbc:StartDate>2026-01-01+01:00</cbc:StartDate>
+            <cbc:EndDate>2026-12-31+01:00</cbc:EndDate>
+         </cac:PlannedPeriod>
+         <cac:ContractExtension>
+            <cbc:OptionsDescription languageID="POL">1. W ramach realizacji niniejszego zamówienia Zamawiający przewiduje możliwość skorzystania z prawa opcji, o którym mowa w art. 441 ust. 1 Pzp, w zakresie, którego Zamawiający przewiduje zwiększenie świadczenia usługi transportu  i zagospodarowania odpadów w ilości nie większej niż 60% zamówienia podstawowego objętego niniejszą umową.
+2.Zamawiający w ramach przewidywanego prawa opcji zastrzega możliwość zwiększenia świadczenia usługi transportu i zagospodarowania odpadów w ramach niniejszej umowy ponad zakres podstawowy zamówienia. Zamawiający podejmie decyzję co do możliwości i woli skorzystania z zastrzeżonego prawa opcji (określonego w pkt 1), zgodnie z zapotrzebowaniem i posiadanymi możliwościami finansowymi. Zastrzega się, iż zakres opcjonalny zamówienia objęty prawem opcji nie stanowi zobowiązania umownego (w tym finansowego) Zamawiającego zaciąganego w momencie zawarcia umowy w sprawie zamówienia, a przewidywany zakres opcjonalny zamówienia nie jest gwarantowany do realizacji. Realizacja (uruchomienie) prawa opcji (zakresu opcjonalnego zamówienia) nie stanowi zmiany warunków niniejszej umowy i nie wymaga zawarcia aneksu do niniejszej umowy. W przypadku skorzystania przez Zamawiającego z prawa opcji uruchomiony w tym trybie zakres opcjonalny ma być realizowany w sposób analogiczny, jak zakres podstawowy.
+3.Decyzja o realizacji lub rezygnacji z zamówienia opcjonalnego jest wyłącznym uprawnieniem Zamawiającego. Zamówienie opcjonalne nie stanowi zobowiązania Zamawiającego do jego udzielenia, jak również nie stanowi podstawy do dochodzenia przez Wykonawcę roszczeń odszkodowawczych z tytułu niezrealizowania tego zamówienia. 
+4.Przedmiotowe prawo opcji może być realizowane przez Zamawiającego etapowo / częściowo / fragmentarycznie / sukcesywnie, przy czym może zostać zrealizowane nie później niż do dnia 31.12.2026 r. (tzn. w okresie obowiązywania niniejszej umowy). Po upływie tego terminu zastrzeżone prawo opcji (w zakresie, w jakim nie zostało uruchomione) wygasa, w związku z czym Zamawiający po upływie tego terminu nie może już z niego skorzystać.
+5.Odnośnie zakresu podstawowego zamówienia, Zamawiający zastrzega sobie możliwość zlecenia usług w większym zakresie, a także zwiększenia ilości oraz zmiany rodzaju usług w zależności od potrzeb Zamawiającego (w stosunku do ilości określonych w formularzu ofertowym) w ramach wynagrodzenia umownego. 
+</cbc:OptionsDescription>
+         </cac:ContractExtension>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0003</cbc:ID>
+      <cac:TenderingTerms>
+         <cbc:VariantConstraintCode listName="permission">not-allowed</cbc:VariantConstraintCode>
+         <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+         <cac:CallForTendersDocumentReference>
+            <ext:UBLExtensions>
+               <ext:UBLExtension>
+                  <ext:ExtensionContent>
+                     <efext:EformsExtension>
+                        <efac:OfficialLanguages>
+                           <cac:Language>
+                              <cbc:ID>POL</cbc:ID>
+                           </cac:Language>
+                        </efac:OfficialLanguages>
+                     </efext:EformsExtension>
+                  </ext:ExtensionContent>
+               </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:ID>ZK.ZP.09.2025</cbc:ID>
+            <cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+            <cac:Attachment>
+               <cac:ExternalReference>
+                  <cbc:URI>https://ezamowienia.gov.pl/</cbc:URI>
+               </cac:ExternalReference>
+            </cac:Attachment>
+         </cac:CallForTendersDocumentReference>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="selection-criteria-source">epo-procurement-document</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="reserved-procurement">none</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="reserved-execution">no</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="einvoicing">allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="ecatalog-submission">not-allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:AwardingTerms>
+            <cac:AwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>100</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                  <cbc:Description languageID="POL">A. Kryteria oceny ofert i ich znaczenie
+Przy wyborze najkorzystniejszej oferty Zamawiający będzie się kierował następującymi kryteriami analogicznie dla zadania nr 1, 2 i 3: Cena "KC"=100%
+B. Sposób oceny ofert w oparciu o kryteria
+1. Ocenie poddane zostaną oferty nie podlegające odrzuceniu.
+2. Zamawiający dokona oceny ofert w zakresie kryterium „Cena” na następujących zasadach:
+a) Podstawą oceny ofert w tym kryterium będzie cena brutto za wykonanie przedmiotu zamówienia, podana przez Wykonawcę w Formularzu ofertowym.
+b) Liczba punktów przyznanych poszczególnym ofertom wyliczona zostanie wg. formuły:
+Kc=Cmin/C of ocen*100
+gdzie:
+Kc –liczba punktów otrzymanych w kryterium „Cena”
+C min– cena najniższa wśród ofert nie odrzuconych
+C of ocen– cena oferty badanej
+c) Ilość punktów obliczona według powyższej formuły zostanie zaokrąglona do dwóch miejsc po przecinku.
+3. Za najkorzystniejszą uznana zostanie oferta, która otrzyma największą ilość punktów rozumianą jako suma punktów przyznanych na podstawie kryteriów oceny ofert podanych w punkcie A, a obliczonych zgodnie z zasadami określonymi w punkcie B.
+4. Zamawiający dokona oceny ofert przyznając punkty w ramach poszczególnych kryteriów oceny ofert, przyjmując zasadę, że 1 % = 1 pkt. Maksymalna liczba punktów w kryterium równa jest określonej wadze kryterium w %. 
+</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+            </cac:AwardingCriterion>
+         </cac:AwardingTerms>
+         <cac:AdditionalInformationParty>
+            <cac:PartyIdentification>
+               <cbc:ID>ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:AdditionalInformationParty>
+         <cac:TenderRecipientParty>
+            <cbc:EndpointID>https://ezamowienia.gov.pl/</cbc:EndpointID>
+         </cac:TenderRecipientParty>
+         <cac:TenderValidityPeriod>
+            <cbc:DurationMeasure unitCode="DAY">90</cbc:DurationMeasure>
+         </cac:TenderValidityPeriod>
+         <cac:AppealTerms>
+            <cac:PresentationPeriod>
+               <cbc:Description languageID="POL">1. Środki ochrony prawnej przysługują Wykonawcy, jeżeli ma lub miał interes w uzyskaniu zamówienia oraz poniósł lub może ponieść szkodę w wyniku naruszenia przez Zamawiającego przepisów Pzp.
+2. Odwołanie przysługuje na:
+a) niezgodną z przepisami ustawy czynność Zamawiającego, podjętą w postępowaniu o udzielenie zamówienia, w tym na projektowane postanowienie umowy;
+b) zaniechanie czynności w postępowaniu o udzielenie zamówienia, do której Zamawiający był obowiązany na podstawie ustawy.
+3. Odwołanie wnosi się ̨ do Prezesa Krajowej Izby Odwoławczej w formie pisemnej albo w formie elektronicznej albo w postaci elektronicznej opatrzone podpisem zaufanym.
+4. Na orzeczenie Krajowej Izby Odwoławczej oraz postanowienie Prezesa Krajowej Izby Odwoławczej, o którym mowa w art. 519 ust. 1 Pzp, stronom oraz uczestnikom postępowania  odwoławczego  przysługuje  skarga  do  sądu.  Skargę̨ wnosi  się ̨ do  Sadu Okręgowego w Warszawie za pośrednictwem Prezesa Krajowej Izby Odwoławczej.
+5. Szczegółowe informacje dotyczące środków ochrony prawnej określone są w Dziale IX „Środki ochrony prawnej” ustawy Pzp.
+</cbc:Description>
+            </cac:PresentationPeriod>
+            <cac:AppealInformationParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealInformationParty>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+         </cac:AppealTerms>
+         <cac:Language>
+            <cbc:ID>POL</cbc:ID>
+         </cac:Language>
+         <cac:PostAwardProcess>
+            <cbc:ElectronicOrderUsageIndicator>false</cbc:ElectronicOrderUsageIndicator>
+            <cbc:ElectronicPaymentUsageIndicator>true</cbc:ElectronicPaymentUsageIndicator>
+         </cac:PostAwardProcess>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <cbc:SubmissionMethodCode listName="esubmission">required</cbc:SubmissionMethodCode>
+         <cbc:GovernmentAgreementConstraintIndicator>false</cbc:GovernmentAgreementConstraintIndicator>
+         <cac:TenderSubmissionDeadlinePeriod>
+            <cbc:EndDate>2025-12-16+01:00</cbc:EndDate>
+            <cbc:EndTime>11:00:00+01:00</cbc:EndTime>
+         </cac:TenderSubmissionDeadlinePeriod>
+         <cac:OpenTenderEvent>
+            <cbc:OccurrenceDate>2025-12-16+01:00</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>11:30:00+01:00</cbc:OccurrenceTime>
+         </cac:OpenTenderEvent>
+         <cac:AuctionTerms>
+            <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+         </cac:AuctionTerms>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:ID schemeName="InternalID">Zadanie nr 3 - transport i zagospodarowanie odpadów:</cbc:ID>
+         <cbc:Name languageID="POL">Transport i zagospodarowanie odpadów</cbc:Name>
+         <cbc:Description languageID="POL">1.Przedmiotem zamówienia jest świadczenie przez Wykonawcę usługi polegającej na  transporcie i zagospodarowaniu odpadów sklasyfikowanych w katalogu odpadów pod kodami:
+- 19 12 01 (papier i tektura) 
+- 19 12 04 (tworzywa sztuczne i guma)
+- 19 12 07 (drewno inne niż wymienione w 19 12 06)
+- 19 12 08 (tekstylia)
+- 19 12 10 (odpady palne – paliwo alternatywne).
+2.Odbiór odpadów będzie realizowany z Zakładu Przetwarzania Odpadów (dalej ZPO) Spółki Zakłady Komunalne w Rabce-Zdroju.
+3.Wykonawca do wykonania zadania udostępni co najmniej 2 kontenery o pojemności min. 24 m3 
+4.Masa odpadów do zagospodarowania:
+- 19 12 01 (papier i tektura) – 30 Mg
+- 19 12 04 (tworzywa sztuczne i guma) – 80 Mg
+- 19 12 07 (drewno inne niż wymienione w 19 12 06) – 20 Mg
+- 19 12 08 (tekstylia) – 20 Mg
+- 19 12 10 (odpady palne – paliwo alternatywne) – 30 Mg
+5.Zamawiający zastrzega sobie możliwość skorzystania z prawa opcji, tj. przekazania większej ilości odpadów będących przedmiotem zamówienia (do 60% wartości zamówienia podstawowego) w zależności od faktycznych potrzeb i ilości.
+6.Przedmiot zamówienia winien być realizowany przez Wykonawcę zgodnie z:
+1)ustawą z dnia 13 września 1996 r. o utrzymaniu czystości i porządku w gminach (t. j. Dz.U. 2025 poz. 733, z późn. zm.);
+2)ustawą z dnia 14 grudnia 2012 r. o odpadach (t.j. Dz.U. 2023 poz. 1587 z późn. zm.) oraz aktami prawnymi wydanymi na ich podstawie.
+7.Transport odpadów:
+1)Transport odpadów z ZPO Zamawiającego do instalacji będzie realizowany środkami transportu Wykonawcy i na jego koszt. W przypadku awarii Wykonawca zapewni samochód zastępczy lub po uzgodnieniu, Zamawiający wykona transport na koszt Wykonawcy.
+2)Odpady będące przedmiotem zamówienia gromadzone będą luzem lub w workach.
+3)Odbierane odpady muszą być każdorazowo ważone na legalizowanej wadze Zamawiającego. Ważenie musi być potwierdzone wystawieniem kwitu wagowego.
+4)Zamawiający i Wykonawca mają prawo do przeprowadzenia kontroli wagi odpadów przed wyjazdem z siedziby Zamawiającego.
+5)Po zakończeniu każdego miesiąca Wykonawca przekazuje Zamawiającemu drogą elektroniczną zestawienie wagowe przyjętych odpadów, a w terminach określonych prawem informacje o sposobie ich zagospodarowania.
+6)Na wezwanie Zamawiającego przesłane faksem lub mailem, Wykonawca zobowiązany jest przekazać kopię dokumentów potwierdzonych za zgodność z oryginałem dotyczących legalizacji wagi, w terminie dwóch dni roboczych od dnia otrzymania wezwania.
+8.Miejsce, transport i częstotliwość odbioru odpadów:
+1)Odbiór odpadów odbywać się będzie w dni robocze w godzinach od 7:00 do 15:00.
+2)Zlecenie odbioru składane będzie telefonicznie lub za pośrednictwem poczty elektronicznej.
+3)Transport odpadów przez Wykonawcę nastąpi od zgłoszenia złożonego do godz. 10.00 w ciągu 2 dni roboczych -  do godz. 14.00.
+4)Zgłoszenia złożone po godz. 10.00 są traktowane jako złożone w następnym dniu roboczym.
+5)W szczególnych przypadkach odpady mogą być przyjmowane w innych dniach i godzinach, co wymaga wcześniejszego uzgodnienia pomiędzy stronami.
+6)Wykonawca będzie odbierać odpady z ZPO Zamawiającego, znajdującego się w Rabce-Zdroju przy ul. Zaryte 141 B.
+7)Dojazd do miejsca odbioru odpadów jest utwardzony oraz nieutrudniony.
+8)Zamawiający zapewnia załadunek odpadów do środków transportu Wykonawcy własnymi środkami.
+9.Ewidencja i rozliczanie odpadów:
+1)Każda ilość odebranych odpadów będzie ewidencjonowana przez Wykonawcę.
+2)Ewidencja będzie zawierać: ilość odpadu, nr rejestracyjny pojazdu dostarczającego odpad, określony kod odpadu oraz datę odebrania odpadów.
+3)Potwierdzeniem przyjęcia odpadów będzie karta przekazania odpadów potwierdzona w systemie ewidencyjnym BDO.
+4)Zamawiający może żądać od Wykonawcy wyjaśnień ustnych oraz pisemnych, a także okazania do wglądu oryginałów lub kopii dokumentów potwierdzonych za zgodność z oryginałem związanych z wykonywaniem przedmiotu zamówienia w szczególności kwitów wagowych i przedłożenia ich kopii potwierdzonych za zgodność z oryginałem, a Wykonawca zobowiązany jest do przekazania żądanych informacji i dokumentów w terminie wskazanym przez Zamawiającego, nie krótszym niż 2 dni robocze.
+5)Zamawiający wymaga przedłożenia Zamawiającemu w formie elektronicznej w formacie .pdf zestawienia ilości zagospodarowanych odpadów z uwzględnieniem procesów odzysku bądź unieszkodliwiania obejmujący okres na jaki została zawarta umowa w terminie 7 dni od zakończenia realizacji umowy.
+10.Wymagania prawne i środowiskowe dotyczące zagospodarowania odpadów.
+1)Wykonawca zgodnie z obowiązującymi przepisami ustawy o utrzymaniu czystości i porządku w gminach, zobowiązany jest do osiągnięcia poziomu ograniczenia odpadów komunalnych przekazywanych do składowania. Brak udokumentowania osiągnięcia poziomu uznany zostanie za brak osiągnięcia tego poziomu przez Wykonawcę.
+2)Obliczenia poziomów, o których mowa w pkt 1) należy wykazać na podstawie obowiązujących przepisów ustawy o utrzymaniu czystości i porządku w gminach, w tym obowiązujących aktów wykonawczych w tym zakresie.
+11.Wykonawca odpowiada za:
+1)Zapewnienie, zgodnie z wymogami powszechnie obowiązującego prawa:
+a)zagospodarowania odpadów w procesach odzysku  (R) i/lub unieszkodliwiania (D),
+b)postępowania z odpadami zgodnie z hierarchią postępowania z odpadami,
+c)prowadzenia ewidencji odpadów zgodnie z przepisami;
+2)Informowanie o sposobie postępowania w przypadku odmowy przyjęcia odpadów przez instalacje;
+3)Sporządzenie sprawozdań miesięcznych i przekazywanie ich w formie pisemnej oraz na nośniku danych w formie elektronicznej w formacie .pdf na wezwanie Zamawiającego w terminie 14 dni licząc od dnia wezwania.
+4)Zapewnienie Zamawiającemu prawa do wglądu w oryginały dokumentów:
+- KPO/KPOK,
+- KEO/KEOK,
+- kwity wagowe,
+- oświadczenie instalacji o wytworzonych odpadach oraz przekazanych do przygotowania do ponownego użycia i recyklingu oraz przekazanych do składowania bądź termicznego przekształcenia,
+lub zapewnienie kopii dokumentów potwierdzonych za zgodność.</cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+         <cbc:SMESuitableIndicator>true</cbc:SMESuitableIndicator>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">90500000</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">90514000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">90533000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">90511000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">90512000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:RealizedLocation>
+            <cac:Address>
+               <cbc:CityName>Rabka-Zdrój</cbc:CityName>
+               <cbc:CountrySubentityCode listName="nuts">PL219</cbc:CountrySubentityCode>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+         <cac:PlannedPeriod>
+            <cbc:StartDate>2026-01-01+01:00</cbc:StartDate>
+            <cbc:EndDate>2026-12-31+01:00</cbc:EndDate>
+         </cac:PlannedPeriod>
+         <cac:ContractExtension>
+            <cbc:OptionsDescription languageID="POL">1.W ramach realizacji niniejszego zamówienia Zamawiający przewiduje możliwość skorzystania z prawa opcji, o którym mowa w art. 441 ust. 1 Pzp, w zakresie, którego Zamawiający przewiduje zwiększenie świadczenia usługi transportu  i zagospodarowania odpadów w ilości nie większej niż 60% zamówienia podstawowego objętego niniejszą umową.
+2.Zamawiający w ramach przewidywanego prawa opcji zastrzega możliwość zwiększenia świadczenia usługi transportu i zagospodarowania odpadów w ramach niniejszej umowy ponad zakres podstawowy zamówienia. Zamawiający podejmie decyzję co do możliwości i woli skorzystania z zastrzeżonego prawa opcji (określonego w pkt 1), zgodnie z zapotrzebowaniem i posiadanymi możliwościami finansowymi. Zastrzega się, iż zakres opcjonalny zamówienia objęty prawem opcji nie stanowi zobowiązania umownego (w tym finansowego) Zamawiającego zaciąganego w momencie zawarcia umowy w sprawie zamówienia, a przewidywany zakres opcjonalny zamówienia nie jest gwarantowany do realizacji. Realizacja (uruchomienie) prawa opcji (zakresu opcjonalnego zamówienia) nie stanowi zmiany warunków niniejszej umowy i nie wymaga zawarcia aneksu do niniejszej umowy. W przypadku skorzystania przez Zamawiającego z prawa opcji uruchomiony w tym trybie zakres opcjonalny ma być realizowany w 3.Decyzja o realizacji lub rezygnacji z zamówienia opcjonalnego jest wyłącznym uprawnieniem Zamawiającego. Zamówienie opcjonalne nie stanowi zobowiązania Zamawiającego do jego udzielenia, jak również nie stanowi podstawy do dochodzenia przez Wykonawcę roszczeń odszkodowawczych z tytułu niezrealizowania tego zamówienia. 
+4.Przedmiotowe prawo opcji może być realizowane przez Zamawiającego etapowo / częściowo / fragmentarycznie / sukcesywnie, przy czym może zostać zrealizowane nie później niż do dnia 31.12.2026 r. (tzn. w okresie obowiązywania niniejszej umowy). Po upływie tego terminu zastrzeżone prawo opcji (w zakresie, w jakim nie zostało uruchomione) wygasa, w związku z czym Zamawiający po upływie tego terminu nie może już z niego skorzystać.
+5.Odnośnie zakresu podstawowego zamówienia, Zamawiający zastrzega sobie możliwość zlecenia usług w większym zakresie, a także zwiększenia ilości oraz zmiany rodzaju usług w zależności od potrzeb Zamawiającego (w stosunku do ilości określonych w formularzu ofertowym) w ramach wynagrodzenia umownego. 
+</cbc:OptionsDescription>
+         </cac:ContractExtension>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+</ContractNotice>

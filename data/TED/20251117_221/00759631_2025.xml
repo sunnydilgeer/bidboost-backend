@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractAwardNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractAwardNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+   <ext:UBLExtensions>
+      <ext:UBLExtension>
+         <ext:ExtensionContent>
+            <efext:EformsExtension>
+               <efac:NoticeResult>
+                  <cbc:TotalAmount currencyID="PLN">3314767.96</cbc:TotalAmount>
+                  <efac:LotResult>
+                     <cbc:ID schemeName="result">RES-0001</cbc:ID>
+                     <cbc:TenderResultCode listName="winner-selection-status">selec-w</cbc:TenderResultCode>
+                     <efac:LotTender>
+                        <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                     </efac:LotTender>
+                     <efac:ReceivedSubmissionsStatistics>
+                        <efbc:StatisticsCode listName="received-submission-type">t-esubm</efbc:StatisticsCode>
+                        <efbc:StatisticsNumeric>4</efbc:StatisticsNumeric>
+                     </efac:ReceivedSubmissionsStatistics>
+                     <efac:SettledContract>
+                        <cbc:ID schemeName="contract">CON-0001</cbc:ID>
+                     </efac:SettledContract>
+                     <efac:TenderLot>
+                        <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+                     </efac:TenderLot>
+                  </efac:LotResult>
+                  <efac:LotTender>
+                     <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                     <cbc:RankCode>1</cbc:RankCode>
+                     <efbc:TenderRankedIndicator>true</efbc:TenderRankedIndicator>
+                     <efbc:TenderVariantIndicator>false</efbc:TenderVariantIndicator>
+                     <cac:LegalMonetaryTotal>
+                        <cbc:PayableAmount currencyID="PLN">3314767.96</cbc:PayableAmount>
+                     </cac:LegalMonetaryTotal>
+                     <efac:SubcontractingTerm>
+                        <efbc:TermCode listName="applicability">no</efbc:TermCode>
+                     </efac:SubcontractingTerm>
+                     <efac:TenderingParty>
+                        <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+                     </efac:TenderingParty>
+                     <efac:TenderLot>
+                        <cbc:ID>LOT-0001</cbc:ID>
+                     </efac:TenderLot>
+                     <efac:TenderReference>
+                        <cbc:ID>VEOLIA Energy Contracting Poland Sp. zo.o</cbc:ID>
+                     </efac:TenderReference>
+                  </efac:LotTender>
+                  <efac:SettledContract>
+                     <cbc:ID schemeName="contract">CON-0001</cbc:ID>
+                     <cbc:AwardDate>2025-10-29+01:00</cbc:AwardDate>
+                     <cbc:IssueDate>2025-11-14+01:00</cbc:IssueDate>
+                     <cac:SignatoryParty>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                        </cac:PartyIdentification>
+                     </cac:SignatoryParty>
+                     <efac:ContractReference>
+                        <cbc:ID>ZP-272.1.17.2025.EP</cbc:ID>
+                     </efac:ContractReference>
+                     <efac:LotTender>
+                        <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                     </efac:LotTender>
+                  </efac:SettledContract>
+                  <efac:TenderingParty>
+                     <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+                     <cbc:Name>VEOLIA Energy Contracting Poland Sp. zo.o</cbc:Name>
+                     <efac:Tenderer>
+                        <cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+                     </efac:Tenderer>
+                  </efac:TenderingParty>
+               </efac:NoticeResult>
+               <efac:NoticeSubType>
+                  <cbc:SubTypeCode listName="notice-subtype">29</cbc:SubTypeCode>
+               </efac:NoticeSubType>
+               <efac:Organizations>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>http://www.umkonskie.pl</cbc:WebsiteURI>
+                        <cbc:EndpointID>https://ezamowienia.gov.pl/pl/</cbc:EndpointID>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">GMINA KOŃSKIE</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>ul. Partyzantów 1 </cbc:StreetName>
+                           <cbc:CityName>Końskie</cbc:CityName>
+                           <cbc:PostalZone>26-200</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL721</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>658-18-72-838</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+48 41 372 32 49</cbc:Telephone>
+                           <cbc:Telefax>+48 41 372 29 55</cbc:Telefax>
+                           <cbc:ElectronicMail>przetargi@umkonskie.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI> https://www.uzp.gov.pl/kio</cbc:WebsiteURI>
+                        <cbc:EndpointID> https://www.uzp.gov.pl/kio</cbc:EndpointID>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL"> Krajowa Izba Odwoławcza</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>ul. Postępu 17a  </cbc:StreetName>
+                           <cbc:CityName>Warszawa</cbc:CityName>
+                           <cbc:PostalZone>02-676</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL911</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>5262239325</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Name>Krajowa Izba Odwoławcza</cbc:Name>
+                           <cbc:Telephone>+48 224587840</cbc:Telephone>
+                           <cbc:ElectronicMail>odwolania@uzp.gov.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <efbc:CompanySizeCode listName="economic-operator-size">sme</efbc:CompanySizeCode>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Veolia Energy Contracting Poland Sp. zo.o</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>ul. Puławska 2</cbc:StreetName>
+                           <cbc:CityName>Warszawa</cbc:CityName>
+                           <cbc:PostalZone>02-566</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL911</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>5213589769</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+48 724 444 789</cbc:Telephone>
+                           <cbc:ElectronicMail>magdalena.sztuba@veolia.com</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efbc:NaturalPersonIndicator>false</efbc:NaturalPersonIndicator>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://op.europa.eu</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0000</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Publications Office of the European Union</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:CityName>Luxembourg</cbc:CityName>
+                           <cbc:PostalZone>2417</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">LU000</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">LUX</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>PUBL</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+352 29291</cbc:Telephone>
+                           <cbc:ElectronicMail>ted@publications.europa.eu</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+               </efac:Organizations>
+            <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00759631-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+         </ext:ExtensionContent>
+      </ext:UBLExtension>
+   </ext:UBLExtensions>
+   <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+   <cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+   <cbc:ID schemeName="notice-id">b0ac8a68-1fb8-46de-bfa5-028313722ac0</cbc:ID>
+   <cbc:ContractFolderID>158a2e74-6616-4e9a-adeb-a2136b7ea6de</cbc:ContractFolderID>
+   <cbc:IssueDate>2025-11-14Z</cbc:IssueDate>
+   <cbc:IssueTime>06:27:49Z</cbc:IssueTime>
+   <cbc:VersionID>01</cbc:VersionID>
+   <cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+   <cbc:NoticeTypeCode listName="result">can-standard</cbc:NoticeTypeCode>
+   <cbc:NoticeLanguageCode listName="language">POL</cbc:NoticeLanguageCode>
+   <cac:ContractingParty>
+      <cbc:BuyerProfileURI>https://ezamowienia.gov.pl/</cbc:BuyerProfileURI>
+      <cac:ContractingPartyType>
+         <cbc:PartyTypeCode listName="buyer-legal-type">body-pl</cbc:PartyTypeCode>
+      </cac:ContractingPartyType>
+      <cac:ContractingActivity>
+         <cbc:ActivityTypeCode listName="authority-activity">gen-pub</cbc:ActivityTypeCode>
+      </cac:ContractingActivity>
+      <cac:Party>
+         <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+         </cac:PartyIdentification>
+         <cac:ServiceProviderParty>
+            <cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode>
+            <cac:Party>
+               <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0000</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:Party>
+         </cac:ServiceProviderParty>
+      </cac:Party>
+   </cac:ContractingParty>
+   <cac:TenderingTerms>
+      <cac:ProcurementLegislationDocumentReference>
+         <cbc:ID>LocalLegalBasis</cbc:ID>
+         <cbc:DocumentDescription languageID="POL">art.132 pzp</cbc:DocumentDescription>
+      </cac:ProcurementLegislationDocumentReference>
+   </cac:TenderingTerms>
+   <cac:TenderingProcess>
+      <cbc:ProcedureCode listName="procurement-procedure-type">open</cbc:ProcedureCode>
+      <cac:NoticeDocumentReference>
+         <cbc:ID schemeName="ojs-notice-id">601116-2025</cbc:ID>
+      </cac:NoticeDocumentReference>
+      <cac:ProcessJustification>
+         <cbc:ProcessReasonCode listName="accelerated-procedure">false</cbc:ProcessReasonCode>
+      </cac:ProcessJustification>
+   </cac:TenderingProcess>
+   <cac:ProcurementProject>
+      <cbc:ID schemeName="InternalID">ZP-271.1.17.2025.EP</cbc:ID>
+      <cbc:Name languageID="POL">Dostawa energii elektrycznej dla  Gminy Końskie, Gminy Radoszyce, Gminy Fałków, Gminy Ruda Maleniecka, Gminy Gowarczów, Biblioteki Publicznej Miasta i Gminy w Końskich im. Cezarego Chlebowskiego, Koneckiego Centrum Kultury w Końskich  oraz ich jednostek organizacyjnych na potrzeby eksploatacji budynków, lokali, obiektów użytkowych i oświetlenia ulicznego</cbc:Name>
+      <cbc:Description languageID="POL">Dostawa energii elektrycznej dla  Gminy Końskie, Gminy Radoszyce, Gminy Fałków, Gminy Ruda Maleniecka, Gminy Gowarczów, Biblioteki Publicznej Miasta i Gminy w Końskich im. Cezarego Chlebowskiego, Koneckiego Centrum Kultury w Końskich  oraz ich jednostek organizacyjnych na potrzeby eksploatacji budynków, lokali, obiektów użytkowych i oświetlenia ulicznego
+Przedmiotem zamówienia jest dostawa energii elektrycznej zgodnie z obowiązującymi przepisami, standardami jakościowymi Ustawy PE oraz przepisami wykonawczymi 
+w szczególności Rozporządzenia Ministra Gospodarki z dnia 22 marca 2023r. w sprawie szczególnych warunków funkcjonowania systemu elektroenergetycznego ( Dz.U. z 2023 poz. 819) dla podmiotowych punktów poboru biorących udział w postępowaniu, których wykaz znajduje się w załączniku nr 1 do SWZ. ( Szacunkowa ilość dostarczanej energii +/-10%). 
+Szacunkowa ilość zużycia energii na 2026r.-  5 647 387,48 kWh
+Szczegółowy opis przedmiotu zamówienia określa załącznik nr 1 do SWZ.
+</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">supplies</cbc:ProcurementTypeCode>
+      <cbc:Note languageID="POL">Termin wykonania wykonania zamówienia do 31.12.2026 1. Planowany termin
+rozpoczęcia sprzedaży to 01.01.2026 r., lecz nie wcześniej niż po pozytywnie
+przeprowadzonej procedurze zmiany sprzedawcy i przyjęciu umowy do realizacji przez OSD.
+Natomiast termin zakończenia sprzedaży to 31.12.2026 r. 2. Z przyczyn formalno-prawnych (w
+tym również opisanych w ust. 1) Zamawiający dopuszcza zmianę terminu rozpoczęcia dostaw
+energii elektrycznej, przy jednoczesnym zastrzeżeniu granicznego terminu zakończenia
+dostaw – 31.12.2026 r. 3. Umowa niniejsza zawarta zostaje na czas określony od dnia
+podpisania umowy do dnia 31.12.2026 r., z zastrzeżeniem postanowień ust. 1 i ust. 2. Termin
+związania ofertą do dnia 20.01.2026. Brak możliwości składania ofert częściowych. Do oferty
+Wykonawca dołącza Do oferty Wykonawca dołącza: a) formularz ofertowy- załącznik nr 1a do
+SWZ w formie elektronicznej opatrzonej kwalifikowanym podpisem elektronicznym b)
+oświadczenia w formie elektronicznej opatrzone kwalifikowanym podpisem elektronicznym, o
+których mowa: - w pkt. 9.1.1 SWZ -oraz 9.1.2 SWZ ( jeżeli dotyczy), c) oświadczenie, w formie
+elektronicznej opatrzone kwalifikowanym podpisem elektronicznym z którego wynika, które
+dostawy wykonają poszczególni Wykonawcy – przy czym obowiązek ten dotyczy wyłącznie
+Wykonawców wspólnie ubiegających się o udzielenie zamówienia, zgodnie z art. 117 ust. 4
+ustawy- zał. 7 do SWZ . d) W celu potwierdzenia, że osoba działająca w imieniu Wykonawcy
+jest umocowana do reprezentowania należy dołączyć do oferty – odpis lub informację z
+Krajowego Rejestru Sądowego, Centralnej Ewidencji i Informacji o Działalności Gospodarczej
+lub innego właściwego rejestru. Wykonawca nie jest zobowiązany do złożenia w/w
+dokumentu, jeżeli Zamawiający może go uzyskać za pomocą bezpłatnych i ogólnodostępnych
+baz danych, o ile Wykonawca wskazał dane umożliwiające dostęp do tych dokumentów. Jeżeli
+w imieniu Wykonawcy działa osoba, której umocowanie do jego reprezentowania nie wynika z
+dokumentów, o których mowa powyżej, Zamawiający żąda złożenia pełnomocnictwa lub
+innego dokumentu potwierdzającego umocowanie do reprezentowania Wykonawcy.
+Zamawiający przewiduje zastosowanie art. 139 ust. 1 ustawy tj. Zamawiający najpierw dokona
+badania i oceny ofert, a następnie dokona kwalifikacji podmiotowej Wykonawcy, którego oferta
+została najwyżej oceniona, w zakresie braku podstaw do wykluczenia oraz spełnienia
+warunków udziału w postępowaniu. Jednocześnie nie zwalnia to Wykonawców z obowiązku
+załączenia JEDZ do oferty Wszelkie zmiany do umowy określono w dokumencie projektowane
+postanowienia umowy 1. O udzielenie zamówienia mogą ubiegać się wyłącznie Wykonawcy,
+którzy spełniają warunki udziału w postępowaniu, określone przez Zamawiającego oraz nie
+podlegają wykluczeniu na podstawie art. 108 ust. 1 ustawy oraz art. 7 ust. 1 ustawy z dnia 13kwietnia 2022 r. o szczególnych rozwiązaniach w zakresie przeciwdziałania wspieraniu agresji
+na Ukrainę oraz służących ochronie bezpieczeństwa narodowego (Dz.U. z 2024 r., poz. 507);
+c)art. 5k rozporządzenia Rady (UE) nr 833/2014 z dnia 31 lipca 2014 r. dotyczącego środków
+ograniczających w związku z działaniami Rosji destabilizującymi sytuację na Ukrainie (Dz. U.
+UE. L. z 2014 r. Nr 229, str. 1 z późn. zm.) w brzmieniu nadanym rozporządzeniem Rady (UE)
+2022/576 w sprawie zmiany rozporządzenia (UE) nr 833/2014 dotyczącego środków
+ograniczających w związku z działaniami Rosji destabilizującymi sytuację na Ukrainie (Dz.
+Urz. UE nr L 111 z 8.4.2022, str. 1). 2. Warunek udziału w postępowaniu dotyczy uprawnień
+do prowadzenia określonej działalności gospodarczej lub zawodowej, o ile wynika to z
+odrębnych przepisów. W zakresie uprawnień do prowadzenia określonej działalności
+gospodarczej lub zawodowej. Wykonawca powinien posiadać aktualną koncesję na
+prowadzenie działalności gospodarczej w zakresie obrotu energią zgodnie z ustawą Prawo
+Energetyczne (Dz. U. z 2024 poz. 226) potwierdzającą posiadanie uprawnień do prowadzenia
+działalności w zakresie obrotu energią elektryczną. 3. W przypadku Wykonawców wspólnie
+ubiegających się o udzielenie zamówienia, warunek dotyczący uprawnień do prowadzenia
+określonej działalności gospodarczej lub zawodowej, o którym mowa powyżej, będzie
+spełniony, jeżeli co najmniej jeden z Wykonawców wspólnie ubiegających się o udzielenie
+zamówienia będzie posiadał uprawnienia do prowadzenia określonej działalności
+gospodarczej lub zawodowej i zrealizuje dostawy, do których realizacji te uprawnienia są
+wymagane. 4. Wykonawcy wspólnie ubiegający się o udzielenie zamówienia zgodnie z art.117
+ust. 4 ustawy dołączają do oferty oświadczenie, z którego wynika, które dostawy wykonają
+poszczególni Wykonawcy- załącznik 7 do SWZ 5. W przypadku Wykonawców wspólnie
+ubiegających się o udzielenie zamówienia, żaden z nich nie może podlegać wykluczeniu na
+podstawie art. 108 ust. 1 ustawy oraz na podstawie art. 7 ust. 1 ustawy z dnia 13 kwietnia
+2022 r. o szczególnych rozwiązaniach w zakresie przeciwdziałania wspieraniu agresji na
+Ukrainę oraz służących ochronie bezpieczeństwa narodowego (Dz.U. z 2024 r., poz. 507);
+oraz art. 5k rozporządzenia Rady (UE) nr 833/2014 z dnia 31 lipca 2014 r. dotyczącego
+środków ograniczających w związku z działaniami Rosji destabilizującymi sytuację na Ukrainie
+(Dz. U. UE. L. z 2014 r. Nr 229, str. 1 z późn. zm.) w brzmieniu nadanym rozporządzeniem
+Rady (UE) 2022/576 w sprawie zmiany rozporządzenia (UE) nr 833/2014 dotyczącego
+środków ograniczających w związku z działaniami Rosji destabilizującymi sytuację na Ukrainie
+(Dz. Urz. UE nr L 111 z 8.4.2022, str. 1). Zamawiający nie przewiduje wykluczenia z podstaw
+art. 109 pzp.W postępowaniu o udzielenie zamówienia publicznego
+komunikacja między Zamawiającym, a Wykonawcami odbywać będzie się w języku polskim
+przy użyciu Platformy eZamówienia, która jest dostępna pod adresem https://ezamowienia.gov.
+pl/ Sposób sporządzenia dokumentów elektronicznych lub dokumentów elektronicznych
+będących kopią elektroniczną treści zapisanej w postaci papierowej (cyfrowe odwzorowania)
+musi być zgodny z wymaganiami określonymi w rozporządzeniu Prezesa Rady Ministrów z
+dnia 30 grudnia 2020 r. w sprawie sposobu sporządzania i przekazywania informacji oraz
+wymagań technicznych dla dokumentów elektronicznych oraz środków komunikacji
+elektronicznej w postępowaniu o udzielenie zamówienia publicznego lub konkursie. 10.6
+Dokumenty elektroniczne, o których mowa w § 2 ust. 1 rozporządzenia o jakim mowa w pkt
+10.22 SWZ, sporządza się w formie elektronicznej opatrzone kwalifikowanym podpisem
+elektronicznym, w formatach danych określonych w przepisach rozporządzenia Rady
+Ministrów y Ministrów z dnia 21 maja 2024r.w sprawie Krajowych Ram Interoperacyjności,
+minimalnych wymagań dla rejestrów publicznych i wymiany informacji w postaci elektronicznej
+oraz minimalnych wymagań dla systemów teleinformatycznych Dz.U.2024.773 z dnia
+2024.05.22 i przekazuje się jako załączniki. W przypadku formatów, o których mowa w art. 66ust. 1 ustawy Pzp, ww. regulacje nie będą miały bezpośredniego zastosowania.Maksymalny
+rozmiar plików przesyłanych za pośrednictwem „Formularzy do komunikacji” wynosi 150 MB
+(wielkość ta dotyczy plików przesyłanych jako załączniki do jednego formularza). Szczegółowe
+informacje zostały zawarte SWZ</cbc:Note>
+      <cac:MainCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">09310000</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:RealizedLocation>
+         <cac:Address>
+            <cbc:CityName>Gmina Końskie, Gmina Radoszyce, Gmina Fałków, Gmina Ruda Maleniecka, Gmina Gowarczów </cbc:CityName>
+            <cbc:PostalZone>26-200</cbc:PostalZone>
+            <cbc:CountrySubentityCode listName="nuts">PL721</cbc:CountrySubentityCode>
+            <cac:Country>
+               <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+            </cac:Country>
+         </cac:Address>
+      </cac:RealizedLocation>
+   </cac:ProcurementProject>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+      <cac:TenderingTerms>
+         <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+         <cac:AwardingTerms>
+            <cac:AwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>100</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="POL">Cena (C) – waga 100 pkt.</cbc:Name>
+                  <cbc:Description languageID="POL">Cena (C) – waga 100 pkt. Podstawą przyznania punktów w kryterium „cena” będzie
+wskazanie łącznej szacunkowa cena brutto za realizację całego przedmiotu zamówienia podana
+przez Wykonawcę w Formularzu Ofertowym</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+            </cac:AwardingCriterion>
+         </cac:AwardingTerms>
+         <cac:AppealTerms>
+            <cac:PresentationPeriod>
+               <cbc:Description languageID="POL">1. Zasady, terminy oraz sposób korzystania ze środków
+ochrony prawnej szczegółowo regulują przepisy działu IX ustawy – Środki ochrony prawnej
+(art. 505-590 ustawy). 2. Środki ochrony prawnej przysługują Wykonawcy oraz innemu
+podmiotowi, jeżeli ma lub miał interes w uzyskaniu zamówienia oraz poniósł lub może ponieść
+szkodę w wyniku naruszenia przez Zamawiającego przepisów ustawy. 3. Środki
+ochronyprawnej wobec ogłoszenia wszczynającego postępowanie o udzielenie zamówienia
+oraz dokumentów zamówienia przysługują również organizacjom wpisanym na listę, o której
+mowa w art. 469 pkt 15, oraz Rzecznikowi Małych i Średnich Przedsiębiorców. 4. Odwołanie
+przysługuje na: 1) niezgodną z przepisami ustawy czynność Zamawiającego, podjętą w
+postępowaniu o udzielenie zamówienia, w tym na projektowane postanowienie umowy; 2)
+zaniechanie czynności w postępowaniu o udzielenie zamówienia, do której Zamawiający by
+obowiązany na podstawie ustawy. 5. Odwołanie wnosi się w terminie: 1) 10 dni od dnia
+przekazania informacji o czynności Zamawiającego stanowiącej podstawę jego wniesienia,
+jeżeli informacja została przekazana przy użyciu środków komunikacji elektronicznej; 2) 15 dni
+od dnia przekazania informacji o czynności Zamawiającego stanowiącej podstawę jego
+wniesienia, jeżeli informacja została przekazana w sposób inny niż określony w pkt 5 pkt. 1. 6.
+Odwołanie wobec treści ogłoszenia wszczynającego postępowanie o udzielenie zamówienia
+lub wobec treści dokumentów zamówienia wnosi się w terminie 10 dni od dnia publikacji
+ogłoszenia w Dzienniku Urzędowym Unii Europejskiej lub zamieszczenia dokumentów
+zamówienia na stronie internetowej. 7. Odwołanie w przypadkach innych niż określone w pkt 5
+i 6 wnosi się w terminie 10 dni od dnia, w którym powzięto lub przy zachowaniu należytej
+staranności można było powziąć wiadomość o okolicznościach stanowiących podstawę jego
+wniesienia. 8. Jeżeli Zamawiający mimo takiego obowiązku nie przesłał Wykonawcy
+zawiadomienia o wyborze najkorzystniejszej oferty, odwołanie wnosi się nie później niż w
+terminie: 1) 30 dni od dnia publikacji w Dzienniku Urzędowym Unii Europejskiej ogłoszenia o
+udzieleniu zamówienia; 2) 6 miesięcy od dnia zawarcia umowy, jeżeli Zamawiający nie
+opublikował w Dzienniku Urzędowym Unii Europejskiej ogłoszenia o udzieleniu zamówienia. 9.
+Odwołanie wnosi się do Prezesa Krajowej Izby Odwoławczej w formie pisemnej albo w formie
+elektronicznej albo w postaci elektronicznej opatrzone podpisem zaufanym. 10. Na orzeczenie
+Krajowej Izby Odwoławczej oraz postanowienie Prezesa Krajowej Izby Odwoławczej, o którym
+mowa w art. 519 ust. 1 ustawy, stronom oraz uczestnikom postępowania odwoławczego
+przysługuje skarga do sądu. Skargę wnosi się do Sądu Okręgowego w Warszawie za
+pośrednictwem Prezesa Krajowej Izby Odwoławczej</cbc:Description>
+            </cac:PresentationPeriod>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+         </cac:AppealTerms>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+         <cac:AuctionTerms>
+            <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+         </cac:AuctionTerms>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:ID schemeName="InternalID">ZP-271.1.17.2025.EP</cbc:ID>
+         <cbc:Name languageID="POL">Dostawa energii elektrycznej dla  Gminy Końskie, Gminy Radoszyce, Gminy Fałków, Gminy Ruda Maleniecka, Gminy Gowarczów, Biblioteki Publicznej Miasta i Gminy w Końskich im. Cezarego Chlebowskiego, Koneckiego Centrum Kultury w Końskich  oraz ich jednostek organizacyjnych na potrzeby eksploatacji budynków, lokali, obiektów użytkowych i oświetlenia ulicznego</cbc:Name>
+         <cbc:Description languageID="POL">Dostawa energii elektrycznej dla  Gminy Końskie, Gminy Radoszyce, Gminy Fałków, Gminy Ruda Maleniecka, Gminy Gowarczów, Biblioteki Publicznej Miasta i Gminy w Końskich im. Cezarego Chlebowskiego, Koneckiego Centrum Kultury w Końskich  oraz ich jednostek organizacyjnych na potrzeby eksploatacji budynków, lokali, obiektów użytkowych i oświetlenia ulicznego
+Przedmiotem zamówienia jest dostawa energii elektrycznej zgodnie z obowiązującymi przepisami, standardami jakościowymi Ustawy PE oraz przepisami wykonawczymi 
+w szczególności Rozporządzenia Ministra Gospodarki z dnia 22 marca 2023r. w sprawie szczególnych warunków funkcjonowania systemu elektroenergetycznego ( Dz.U. z 2023 poz. 819) dla podmiotowych punktów poboru biorących udział w postępowaniu, których wykaz znajduje się w załączniku nr 1 do SWZ. ( Szacunkowa ilość dostarczanej energii +/-10%). 
+Szacunkowa ilość zużycia energii na 2026r.-  5 647 387,48 kWh
+Szczegółowy opis przedmiotu zamówienia określa załącznik nr 1 do SWZ.
+</cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">supplies</cbc:ProcurementTypeCode>
+         <cbc:Note languageID="POL">Wykaz podmiotowych środków dowodowych, oświadczeń lub
+dokumentów potwierdzających spełnienie warunków w postępowaniu oraz brak podstaw
+wykluczenia. 9.1.1. W celu potwierdzenia spełniania warunków udziału w postępowaniu, oraz
+braku podstaw wykluczenia Wykonawca zobowiązany jest złożyć wraz z ofertą: a) JEDZOświadczenie
+Wykonawcy- złożone na formularzu jednolitego europejskiego dokumentu
+zamówienia, sporządzone zgodnie ze wzorem standardowego formularza określonego w
+rozporządzeniu wykonawczym Komisji (UE) 2016/7 z dnia 5 stycznia 2016 r. ustanawiającym
+standardowy formularz jednolitego europejskiego dokumentu zamówienia (Dz. Urz. UE L 3 z
+06.01.2016, str. 16), zwanego dalej „JEDZ”. WAŻNE: Wykonawca przygotowując JEDZ może
+ograniczyć się tylko do wypełniania sekcji α części IV formularza JEDZ i nie musi wypełniać
+żadnej z pozostałych sekcji w części IV. Właściwej (dowodowej) weryfikacji spełniania
+konkretnych, określonych przez Zamawiającego, warunków udziału w postępowaniu
+Zamawiający dokona co do zasady na zakończenie postępowania w oparciu o stosowne
+dokumenty składane przez Wykonawcę, którego oferta została oceniona najwyżej, na
+wezwanie zamawiającego. b) oświadczenie o niepodleganiu wykluczeniu z postępowania na
+podstawie art. 7 ustawy z dnia 13 kwietnia 2022 r. o szczególnych rozwiązaniach w zakresie
+przeciwdziałania wspieraniu agresji na Ukrainę oraz służących ochronie bezpieczeństwa
+narodowego (Dz.U. z 2024 r., poz. 507) oraz art. 5k rozporządzenia Rady (UE) nr 833/2014 z
+dnia 31 lipca 2014 r. dotyczącego środków ograniczających w związku z działaniami Rosji
+destabilizującymi sytuację na Ukrainie (Dz. U. UE. L. z 2014 r. Nr 229, str. 1 z późn. zm.) w
+brzmieniu nadanym rozporządzeniem Rady (UE) 2022/576 w sprawie zmiany rozporządzenia
+(UE) nr833/2014 dotyczącego środków ograniczających w związku z działaniami Rosji
+destabilizującymi sytuację na Ukrainie (Dz. Urz. UE nr L 111 z 8.4.2022, str. 1),sporządzone
+według wzoru stanowiącego Załącznik nr 2a do SWZ. 9.1.2 W przypadku wspólnego
+ubiegania się o zamówienie przez Wykonawców, oświadczenia o których mowa powyżej
+składa każdy z Wykonawców. Oświadczenia te potwierdzają brak podstaw wykluczenia oraz
+spełnianie warunków udziału w postępowaniu w zakresie, w jakim każdy z Wykonawców
+wykazuje spełnianie warunków udziału w postępowaniu (o ile Zamawiający określił warunki
+udziału w postępowaniu). 9.1.3 Zamawiający informuje, że na stronie internetowej Urzędu
+Zamówień Publicznych opublikowana została aktualna wersja instrukcji wypełniania
+Jednolitego Europejskiego Dokumentu Zamówienia (JEDZ/ESPD): https://www.uzp.gov.pl
+/aktualnosci/aktualna-wersja-instrukcji-wypelniania-jedzespd . Wykonawca przy wypełnieniu
+oświadczenia na formularzu JEDZ może wykorzystać również narzędzie dostępne na stronie
+https://espd.uzp.gov.pl/ 4. Wykonawca, którego oferta zostanie najwyżej oceniona, zostanie
+wezwany na podstawie art. 126 ust. 1 ustawy do złożenia w wyznaczonym terminie, nie
+krótszym niż 10 dni od dnia wezwania, aktualnych na dzień złożenia następujących
+podmiotowych środków dowodowych: 1) składanych na potwierdzenie braku podstawwykluczenia, o których mowa w art. 108 ustawy: a) informacji z Krajowego Rejestru Karnego w
+zakresie art. 108 ust. 1 pkt 1 i 2 ustawy - sporządzonej nie wcześniej niż 6 miesięcy przed jej
+złożeniem; b) informacji z Krajowego Rejestru Karnego w zakresie art. 108 ust. 1 pkt 4 ustawy
+- sporządzonej nie wcześniej niż 6 miesięcy przed jej złożeniem; c) oświadczenia Wykonawcy
+w zakresie art. 108 ust. 1 pkt 5 ustawy, o braku przynależności do tej samej grupy kapitałowej
+w rozumieniu ustawy z dnia 16 lutego 2007 r. o ochronie konkurencji i konsumentów , z innym
+wykonawcą, który złożył odrębną ofertę, albo oświadczenia o przynależności do tej samej
+grupy kapitałowej wraz z dokumentami lub informacjami potwierdzającymi przygotowanie
+oferty, niezależnie od innego wykonawcy należącego do tej samej grupy kapitałowej, albo
+oświadczenia o tym, że nie należy do żadnej grupy kapitałowej; - załącznik nr 4 do SWZ d)
+oświadczenie Wykonawcy o aktualności informacji zawartych w JEDZ, w zakresie podstaw
+wykluczenia z postępowania wskazanych przez Zamawiającego, o których mowa w: - art. 108
+ust. 1 pkt 3 ustawy, - art. 108 ust. 1 pkt 4 ustawy, dotyczących orzeczenia zakazu ubiegania
+się o zamówienie publiczne tytułem środka zapobiegawczego, - art. 108 ust. 1 pkt 5 ustawy,
+dotyczących zawarcia z innymi wykonawcami porozumienia mającego na celu zakłócenie
+konkurencji, - art. 108 ust. 1 pkt 6 ustawy-załącznik nr 5/6 do SWZ e) oświadczenia
+Wykonawcy o aktualności informacji zawartych w oświadczeniu o niepodleganiu wykluczeniu z
+postępowania na podstawie art. 7 ustawy z dnia 13 kwietnia 2022 r. o szczególnych
+rozwiązaniach w zakresie przeciwdziałania wspieraniu agresji na Ukrainę oraz służących
+ochronie bezpieczeństwa narodowego (Dz.U. z 2024 r., poz. 507) oraz art. 5k rozporządzenia
+Rady (UE) nr 833/2014 z dnia 31 lipca 2014 r. dotyczącego środków ograniczających w
+związku z działaniami Rosji destabilizującymi sytuację na Ukrainie (Dz. U. UE. L. z 2014 r. Nr
+229, str. 1 z późn. zm.) w brzmieniu nadanym rozporządzeniem Rady (UE) 2022/576 w
+sprawie zmiany rozporządzenia (UE) nr 833/2014 dotyczącego środków ograniczających w
+związku z działaniami Rosji destabilizującymi sytuację na Ukrainie (Dz. Urz. UE nr L 111 z
+8.4.2022, str. 1)-Załącznik nr 8 do SWZ 2) składanych na potwierdzenie spełnienia warunków
+udziału w postępowaniu dotyczącego posiadania uprawnień do prowadzenia określonej
+działalności gospodarczej lub zawodowej, o ile wynika to z odrębnych przepisów, tj. aktualną
+koncesję na prowadzenie działalności gospodarczej w zakresie obrotu energią zgodnie z
+ustawą Prawo Energetyczne (Dz. U. z 2024 poz. 226) potwierdzającą posiadanie uprawnień
+do prowadzenia działalności w zakresie obrotu energią elektryczną. W przypadku
+Wykonawców wspólnie ubiegających się o udzielenie zamówienia dokument składa ten z
+Wykonawców, który będzie odpowiadał za realizację dostaw objętych uprawnieniem. 5. Jeżeli
+Wykonawca ma siedzibę lub miejsce zamieszkania lub miejsce zamieszkania ma osoba której
+dotyczy informacja albo dokument, poza granicami Rzeczypospolitej Polskiej, zamiast
+informacji z Krajowego Rejestru Karnego, o której mowa w ust. 4 pkt 1 lit. a) – b)– niniejszego
+rozdziału, składa informację z odpowiedniego rejestru, takiego jak rejestr sądowy, albo, w
+przypadku braku takiego rejestru, inny równoważny dokument wydany przez właściwy organ
+sądowy lub administracyjny kraju, w którym wykonawca ma siedzibę lub miejsce
+zamieszkania, w zakresie, o którym mowa w ust. 4 pkt 1 lit. a) – b) niniejszego rozdziału. 6.
+Dokument, o którym mowa w ust. 4 pkt 1 lit a,b, niniejszego rozdziału, powinien być
+wystawiony nie wcześniej niż 6 miesięcy przed jego złożeniem. 7. Jeżeli w kraju, w którym
+wykonawca ma siedzibę lub miejsce zamieszkania lub miejsce zamieszkania ma osoba której
+dokument dotyczy, nie wydaje się dokumentów, o których mowa w ust. 4 pkt.1 lut. a-b
+niniejszego rozdziału, lub gdy dokumenty te nie odnoszą się do wszystkich przypadków, o
+których mowa w art. 108 ust. 1 pkt 1, 2 i 4 ustawy, zastępuje się je odpowiednio w całości lub
+w części dokumentem zawierającym odpowiednio oświadczenie Wykonawcy, ze wskazaniem
+osoby albo osób uprawnionych do jego reprezentacji, lub oświadczenie osoby, której
+dokument miał dotyczyć, złożone pod przysięgą, lub, jeżeli w kraju, w którym wykonawca ma
+siedzibę lub miejsce zamieszkania lub miejsce zamieszkania ma osoba której dokument miałdotyczyć, nie ma przepisów o oświadczeniu pod przysięgą, złożone przed organem sądowym
+lub administracyjnym, notariuszem, organem samorządu zawodowego lub gospodarczego,
+właściwym ze względu na siedzibę lub miejsce zamieszkania wykonawcy, lub miejsce
+zamieszkania osoby, której dokument miał dotyczyć. Dokument, powinien być wystawiony nie
+wcześniej niż 6 miesięcy przed jego złożeniem 8. Wykonawca nie jest zobowiązany do
+złożenia podmiotowych środków dowodowych, które Zamawiający posiada jeżeli Wykonawca
+wskaże te środki oraz potwierdzi ich prawidłowość i aktualność.</cbc:Note>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">09310000</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:RealizedLocation>
+            <cac:Address>
+               <cbc:CityName>Gmina Końskie, Gmina Radoszyce, Gmina Fałków, Gmina Ruda Maleniecka, Gmina Gowarczów</cbc:CityName>
+               <cbc:PostalZone>26-200</cbc:PostalZone>
+               <cbc:CountrySubentityCode listName="nuts">PL721</cbc:CountrySubentityCode>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+         <cac:PlannedPeriod>
+            <cbc:StartDate>2026-01-01+01:00</cbc:StartDate>
+            <cbc:EndDate>2026-12-31+01:00</cbc:EndDate>
+         </cac:PlannedPeriod>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+   <cac:TenderResult>
+      <cbc:AwardDate>2000-01-01Z</cbc:AwardDate>
+   </cac:TenderResult>
+</ContractAwardNotice>

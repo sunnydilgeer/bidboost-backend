@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+   <ext:UBLExtensions>
+      <ext:UBLExtension>
+         <ext:ExtensionContent>
+            <efext:EformsExtension>
+               <efac:NoticeSubType>
+                  <cbc:SubTypeCode listName="notice-subtype">16</cbc:SubTypeCode>
+               </efac:NoticeSubType>
+               <efac:Organizations>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://www.steb-koeln.de</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="DEU">StEB Stadtentwässerungsbetriebe Köln, AöR</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>Ostmerheimer Str. 555</cbc:StreetName>
+                           <cbc:CityName>Köln</cbc:CityName>
+                           <cbc:PostalZone>51109</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">DEA23</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>Berichtseinheit-ID 00003201</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>0049 221 221 22955</cbc:Telephone>
+                           <cbc:ElectronicMail>submissionsstelle@steb-koeln.de</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://www.bezregkoeln.nrw.de/themen/wirtschaft/vergabekammer-rheinland</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="DEU">Vergabekammer Rheinland – Spruchkörper Köln c/o Bezirksregierung Köln</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>Zeughausstraße 2-10, 50667 Köln</cbc:StreetName>
+                           <cbc:CityName>Köln</cbc:CityName>
+                           <cbc:PostalZone>50667</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">DEA23</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>05315-03002-81</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+49 221147-3045</cbc:Telephone>
+                           <cbc:Telefax>+49 221147-2889</cbc:Telefax>
+                           <cbc:ElectronicMail>VKRheinland@bezreg-koeln.nrw.de</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+               <efac:Organization><efac:Company><cac:PartyIdentification><cbc:ID schemeName="organization">ORG-0003</cbc:ID></cac:PartyIdentification><cac:PartyName><cbc:Name languageID="DEU">Datenservice Öffentlicher Einkauf (in Verantwortung des Beschaffungsamts des BMI)</cbc:Name></cac:PartyName><cac:PostalAddress><cbc:CityName>Bonn</cbc:CityName><cbc:PostalZone>53119</cbc:PostalZone><cbc:CountrySubentityCode listName="nuts">DEA22</cbc:CountrySubentityCode><cac:Country><cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode></cac:Country></cac:PostalAddress><cac:PartyLegalEntity><cbc:CompanyID schemeID="002">0204:994-DOEVD-83</cbc:CompanyID></cac:PartyLegalEntity><cac:Contact><cbc:Telephone>+49228996100</cbc:Telephone><cbc:ElectronicMail>noreply.esender_hub@bescha.bund.de</cbc:ElectronicMail></cac:Contact></efac:Company></efac:Organization></efac:Organizations>
+            <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00760770-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+         </ext:ExtensionContent>
+      </ext:UBLExtension>
+   </ext:UBLExtensions>
+   <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+   <cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+   <cbc:ProfileID>eforms-sdk-1.13</cbc:ProfileID>
+   <cbc:ID schemeName="notice-id">18d43653-5d29-4987-8387-3a3c24ba287d</cbc:ID>
+   <cbc:ContractFolderID>e79ac84b-0f7f-4023-b8d2-3fd504ae3bd1</cbc:ContractFolderID>
+   <cbc:IssueDate>2025-11-14+01:00</cbc:IssueDate>
+   <cbc:IssueTime>14:09:19+01:00</cbc:IssueTime>
+   <cbc:VersionID>01</cbc:VersionID>
+   <cbc:RequestedPublicationDate>2025-11-16+01:00</cbc:RequestedPublicationDate>
+   <cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+   <cbc:NoticeTypeCode listName="competition">cn-standard</cbc:NoticeTypeCode>
+   <cbc:NoticeLanguageCode>DEU</cbc:NoticeLanguageCode>
+   <cac:ContractingParty>
+      <cbc:BuyerProfileURI>https://www.subreport.de</cbc:BuyerProfileURI>
+      <cac:ContractingPartyType>
+         <cbc:PartyTypeCode listName="buyer-legal-type">body-pl-la</cbc:PartyTypeCode>
+      </cac:ContractingPartyType>
+      <cac:ContractingActivity>
+         <cbc:ActivityTypeCode listName="authority-activity">env-pro</cbc:ActivityTypeCode>
+      </cac:ContractingActivity>
+      <cac:Party>
+         <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+         </cac:PartyIdentification>
+      <cac:ServiceProviderParty><cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode><cac:Party><cac:PartyIdentification><cbc:ID schemeName="organization">ORG-0003</cbc:ID></cac:PartyIdentification></cac:Party></cac:ServiceProviderParty></cac:Party>
+   </cac:ContractingParty>
+   <cac:TenderingTerms>
+      <cac:ProcurementLegislationDocumentReference>
+         <cbc:ID>vgv</cbc:ID>
+      </cac:ProcurementLegislationDocumentReference>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-corrpt</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">Vorstehender Ausschlussgrund wurde nur Beispielhaft ausgewählt. Es ist folgendes zu beachten:
+
+I.	Es gelten alle zwingenden Ausschlussgründe nach § 123 GWB und alle fakultativen Ausschlussgründe nach § 124 GWB bzw. alle zwingenden und fakultativen Ausschlussgründe nach § 6e EU VOB/A. Ferner gelten die Ausschlussgründe nach § 21 AEntG, § 98c AufenthG, § 19 MiLoG, § 21 SchwarzArbG und § 22 LkSG. 
+
+Nachweisführung durch den Bieter/Bewerber, dass die vorgenannten Ausschlussgründe nicht vorliegen:
+
+1.	Erklärung des Bieters/Bewerbers, dass durch die Person oder das Verhalten des Bieters/Bewerbers oder dem Bieter/Bewerber zurechnender Personen keine gesetzlichen Ausschlussgründe begründet sind. 
+Hierfür kann der Bieter/Bewerber das Formblatt „Eigenerklärung zur Eignung“ ausfüllen und einreichen.
+
+Der Bieter/Bewerber hat die Erklärung mit dem Angebot einzureichen. Im Falle eines Teilnahmewettbewerbs hat er sie bereits mit dem Teilnahmeantrag einzureichen.
+
+
+2.	Erklärung des Bieters/Bewerbers, dass er seiner Verpflichtung zur Zahlung von Steuern und Sozialversicherungsbeiträgen nachgekommen ist. 
+Hierfür kann der Bieter/Bewerber das Formblatt „Eigenerklärung zur Eignung“ ausfüllen und einreichen.
+
+Der Bieter/Bewerber hat die Erklärung mit dem Angebot einzureichen. Im Falle eines Teilnahmewettbewerbs hat er sie bereits mit dem Teilnahmeantrag einzureichen.
+
+Falls das Angebot/der Teilnahmeantrag des Bieters/Bewerbers in die engere Wahl kommt, hat er auf gesondertes Verlangen der Vergabestelle als Beleg seiner vorgenannten Erklärung folgende Nachweise innerhalb einer von der Vergabestelle gesetzten angemessen Frist einzureichen:
+
+a.	Bei Ausschreibungen von Liefer-/Dienstleistungen (VgV):
+
+(1)	Unbedenklichkeitsbescheinigung des Finanzamts bzw. Bescheinigung in Steuersachen, soweit das Finanzamt derartige Bescheinigungen ausstellt.
+
+(2)	Unbedenklichkeitsbescheinigung der Berufsgenossenschaft des für den Bieter/Bewerber zuständigen Versicherungsträgers, sofern der Bieter/Bewerber zur Mitgliedschaft in einer Berufsgenossenschaft verpflichtet ist.
+
+
+b.	Bei Ausschreibungen von Bauleistungen (EU VOB/A):
+
+(1)	Unbedenklichkeitsbescheinigung des Finanzamts bzw. Bescheinigung in Steuersachen, soweit das Finanzamt derartige Bescheinigungen ausstellt.
+
+(2)	Unbedenklichkeitsbescheinigung der tariflichen Sozialkasse, soweit der Betrieb des Bieters/Bewerbers beitragspflichtig ist.
+
+Das Angebot/der Teilnahmeantrag des Bieters/Bewerbers kann ausgeschlossen werden, wenn er die gesondert angeforderten Nachweise nicht vollständig binnen der von der Vergabestelle gesetzten angemessenen Frist einreicht.
+
+II.	Ferner werden in Artikel 5k) Abs. 1 der Verordnung (EU) Nr. 833/2014 in der Fassung des Art. 1 Ziff. 15 der Verordnung (EU) 2022/1269 des Rates vom 21. Juli 2022 (Sanktionen VO) genannte Unternehmen oder Personen mit Russlandbezug ausgeschlossen.
+
+Nachweisführung durch den Bieter/Bewerber, dass der vorgenannte Ausschlussgrund nicht vorliegt:
+
+•	Erklärung des Bieters/Bewerbers, dass er nicht zu den in Artikel 5k) Abs. 1 der Verordnung (EU) Nr. 833/2014 in der Fassung des Art. 1 Ziff. 15 der Verordnung (EU) 2022/1269 des Rates vom 21. Juli 2022 (Sanktionen VO) genannte Unternehmen oder Personen mit Russlandbezug gehört. 
+Gehört der Bieter/Bewerber einer Gruppe von Unternehmen an, hat er zu erklären, dass dies auch nicht auf die verbundenen Unternehmen zutrifft. Hierfür kann der Bieter das Formblatt „Eigenerklärung zum 5. Sanktionspaket – RUS-Sanktionen“ ausfüllen und einreichen. 
+
+Die Erklärung ist mit dem Angebot/Teilnahmeantrag einzureichen.
+
+III.	Zur Bekämpfung von Wettbewerbsbeschränkungen hat der Bieter/Bewerber auf Verlangen Auskünfte darüber zu geben, ob und auf welche Art der Bieter wirtschaftlich und rechtlich mit Unternehmen verbunden ist.
+
+IV.	Werden die Leistungen von einer Bietergemeinschaft angeboten, sind die in I. – bis III. genannten Erklärungen für jedes Mitglied der Bietergemeinschaft zu erklären und die in I. und II. genannten Nachweise für jedes Mitglied der Bietergemeinschaft zu erbringen. 
+Will sich der Bieter/Bewerber bei der Leistungserbringung Dritter bedienen, sind die in I. bis II. genannten Auskünfte und Nachweise auf Verlangen auch von Dritten abzugeben.</cbc:Description>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-grounds-source">epo-notice</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+   </cac:TenderingTerms>
+   <cac:TenderingProcess>
+      <ext:UBLExtensions>
+         <ext:UBLExtension>
+            <ext:ExtensionContent>
+               <efext:EformsExtension>
+                  <efbc:ProcedureRelaunchIndicator>false</efbc:ProcedureRelaunchIndicator>
+               </efext:EformsExtension>
+            </ext:ExtensionContent>
+         </ext:UBLExtension>
+      </ext:UBLExtensions>
+      <cbc:ProcedureCode listName="procurement-procedure-type">neg-w-call</cbc:ProcedureCode>
+      <cac:ProcessJustification>
+         <cbc:ProcessReasonCode listName="accelerated-procedure">false</cbc:ProcessReasonCode>
+      </cac:ProcessJustification>
+   </cac:TenderingProcess>
+   <cac:ProcurementProject>
+      <cbc:ID schemeName="InternalID">2025000150</cbc:ID>
+      <cbc:Name languageID="DEU">SAP S/4 HANA Transition ERP &amp; BW</cbc:Name>
+      <cbc:Description languageID="DEU">Umstellung des ERP-Systems auf SAP S/4 HANA sowie die parallele Umstellung des BW-Systems auf SAP BW/4 HANA bei den StEB Köln</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+      <cbc:Note languageID="DEU">Die Stadtentwässerungsbetriebe Köln, AöR, wickeln ihre Ausschreibungen und Teilnahmewettbewerbe in digitaler Form ab. Die entsprechenden Unterlagen stehen Ihnen auf einer Vergabeplattform im Internet zur Verfügung. Näheres entnehmen Sie bitte der Homepage der StEB Köln, AöR: http://www.steb-koeln.de/unternehmen/ausschreibungen/oeffentliche-ausschreibungen-der-steb.jsp</cbc:Note>
+      <cac:MainCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">72200000</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:RealizedLocation>
+         <cac:Address>
+            <cbc:CityName>Köln</cbc:CityName>
+            <cbc:CountrySubentityCode listName="nuts">DEA23</cbc:CountrySubentityCode>
+            <cac:Country>
+               <cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+            </cac:Country>
+         </cac:Address>
+      </cac:RealizedLocation>
+   </cac:ProcurementProject>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+      <cac:TenderingTerms>
+         <ext:UBLExtensions>
+            <ext:UBLExtension>
+               <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-suit-reg-prof</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">Befähigung und Erlaubnis der Berufsausübung:
+Ist der Bieter/Bewerber zur Eintragung in ein Handels- bzw. Berufsregister oder der Handwerksrolle seines Sitzes oder Wohnsitzes verpflichtet, hat er dies mit Abgabe seines Angebots/Teilnahmeantrags zu erklären. Diese Erklärung kann er in dem Formblatt „Eigenerklärung zur Eignung“ vornehmen.
+
+Falls das Angebot/der Teilnahmeantrag des Bieters/Bewerbers in die engere Wahl kommt, hat er auf gesondertes Verlangen der Vergabestelle seine Eintragung in dem entsprechenden Register nachzuweisen.
+Werden die Leistungen von einer Bietergemeinschaft angeboten sind die vorgenannten Erklärungen und Nachweise für jedes Mitglied der Bietergemeinschaft zu erbringen.</cbc:Description>
+                        <efbc:SecondStageIndicator>true</efbc:SecondStageIndicator>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-other</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">Die Bewerber haben die in Formblatt TNW03_Eigenerklärung zur Eignung 124_LD genannten Eignungskriterien zu erfüllen sowie die wirtschaftliche und finanzielle (vgl. Abschnitt 2.2.) genauso wie die technische und berufliche Leistungsfähigkeit (vgl. Abschnitt 2.2.2) zu gewährleisten, um grundsätzlich geeignet zu sein.
+Die Eignungsmatrix („TNW 01_Eignungsmatrix“) ist hierzu von den Bewerbern ausgefüllt mit dem Teilnahmeantrag einzureichen.</cbc:Description>
+                        <efbc:SecondStageIndicator>true</efbc:SecondStageIndicator>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-other</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">Eine Haftpflichtversicherung für Vermögensschäden mit einer versicherten Summe von Berufshaftpflichtversicherungsdeckung in Höhe von 1.500.000,00 EUR für Personen- und Sachschäden pro Schaden und Jahr ist mit Abgabe des Teilnahmeantrags vorzulegen. Falls eine entsprechende Versicherung noch nicht vorhanden ist, muss mit Eigenerklärung verbindlich versichert werden, dass im Falle eines Vertragsschlusses eine solche Versicherung abgeschlossen wird.</cbc:Description>
+                        <efbc:SecondStageIndicator>true</efbc:SecondStageIndicator>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-mgmt-qual</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">Muss_02_Bestätigung_Projektteam_deutschsprachig gemäß Formblatt „TNW06_Eigenerklärung – Projektteam deutschsprachig“
+Muss_03_Eine Referenz zur Konvertierung des SAP-Systems auf SAP S/4 HANA mit den Bestandteilen Implementierung, Customizing	sowie Betreuung während des Go-Live und der Hypercare-Phase (einzureichen gemäß Formblatt „TNW02_Formblatt_MUSS-Referenzen“)
+Muss_04_Eine Referenz zur BI-Transformation einschließlich BW4HANA und SAC mit den Bestandteilen Konzeption, Implementierung sowie Betreuung während des Go-Live und der Hypercare-Phase (einzureichen gemäß Formblatt „TNW02_Formblatt_MUSS-Referenzen“)
+Muss_05_Ausgefüllte Referenznachweise gemäß Formblatt „TNW02_Formblatt_MUSS-Referenzen“ und Formblatt „TNW09_Formblatt_Differenzierungs-Referenzen“
+Differenzierungskriterien zur Reduktion der Anzahl der Bewerber
+Nach Prüfung der Teilnahmeanträge auf die grundsätzliche Eignung der Bewerber erfolgt eine Reduktion auf vier geeignete Bewerber, die zur Abgabe eines ersten Angebots aufgefordert werden. Auswahl und Rangbildung richten sich nach der Höhe der erreichten Punkte wie unten beschrieben sowie in TNW01_Eignungsmatrix aufgeführt. 
+Erläuterung: Sechs von acht Bewerbern erfüllen die Mindestanforderungen und sind geeignet. Der AG bildet nach Punkten nun eine Rangfolge und lässt die nach Rangfolge ersten vier Bewerber zum Bieterwettbewerb zu, zwei Bewerber erhalten dagegen ein Absageschreiben.
+Bei Ranggleichheit werden entsprechend mehr Bieter aufgefordert, ein Angebot abzugeben.
+Sofern die Zahl geeigneter Bewerber unter der Mindestzahl liegt, wird der AG das Vergabeverfahren fortführen, indem er den oder die Bewerber einlädt, die über die geforderte Eignung verfügen. Andere Unternehmen, die sich nicht um die Teilnahme beworben haben, oder Bewerber, die nicht über die geforderte Eignung verfügen, dürfen dann nicht zu demselben Verfahren zugelassen werden, § 51 Abs. 3 Satz 3 VgV.
+Zur Bildung einer Rangfolge wird auf folgende Differenzierungskriterien zurückgegriffen:
+Diff_06: Anzahl vergleichbarer Referenzen SAP S/4 HANA-Transformation
+Inhalt:
+Die Punktvergabe erfolgt basierend auf der Anzahl vergleichbarer Referenzen.
+Darunter wird verstanden:
+SAP S/4 HANA-Transformation
+mit den Bestandteilen
+• Implementierung 
+• Customizing
+• Betreuung während des Go-Live und der Hypercare-Phase 
+Bewertung:
+• 10 Punkte: 3 Referenzen, die diese Bestandteile vollständig abdecken
+• 6 Punkte: 2 Referenzen mit vollständiger Übereinstimmung
+• 3 Punkte: 1 Referenz mit vollständiger Übereinstimmung
+• 0 Punkte: Keine Übereinstimmung in den Referenzen
+Diff_07: Anzahl vergleichbarer Referenzen BI-Transformation
+Inhalt:
+Die Punktvergabe erfolgt basierend auf der Anzahl vergleichbarer Referenzen.
+Darunter wird verstanden:
+BI-Transformation einschließlich BW4HANA und SAC
+mit den Bestandteilen
+• Konzeption
+• Implementierung 
+• Betreuung während des Go-Live und der Hypercare-Phase 
+Bewertung:
+• 10 Punkte: 3 Referenzen, die diese Bestandteile vollständig abdecken
+• 6 Punkte: 2 Referenzen mit vollständiger Übereinstimmung
+• 3 Punkte: 1 Referenz mit vollständiger Übereinstimmung
+• 0 Punkte: Keine Übereinstimmung in den Referenzen
+Diff_08: Übereinstimmung in Umfang 
+Inhalt:
+Die Punktvergabe erfolgt basierend auf der Anzahl der Übereinstimmungen hinsichtlich des Umfangs der eingereichten Referenz in Bezug auf die StEB-Rahmenbedingungen.
+Darunter wird verstanden:
+Die Übereinstimmung mit den drei Projektspezifikationen
+• Projektlaufzeit: zwischen zwei und drei Jahren
+• Projektvolumen: zwischen 1,0 und 3,5 Millionen Euro
+• Anzahl Endnutzer: zwischen 200 und 300 
+Bewertung:
+• 10 Punkte: Die Referenz erfüllt alle 3 Projektspezifikationen 
+• 6 Punkte: Die Referenz erfüllt 2 der Projektspezifikationen 
+• 3 Punkte: Die Referenz erfüllt 1 Projektspezifikation 
+• 0 Punkte: Keine Übereinstimmung in den Referenzen
+Hinweis:
+Es werden insgesamt sechs Referenzen bewertet. Jede dieser Referenzen wird einzeln hinsichtlich ihrer Übereinstimmung mit den drei Projektspezifikationen bewertet. Die abschließende Punktzahl für dieses Kriterium ergibt sich aus dem Durchschnitt der Bewertungen aller eingereichten Referenzen. Falls der Bewerber weniger als sechs Referenzen einreicht, werden die fehlenden Referenzen mit jeweils 0 Punkten bewertet und in den Durchschnitt einbezogen.
+Diff_09: Übereinstimmung in Art des Auftraggebers
+Inhalt:
+Die Punktevergabe basiert darauf, inwieweit die eingereichte Referenz mit der Art des Auftraggebers der StEB Köln übereinstimmt. Die Übereinstimmung wird anhand folgender Kriterien bewertet:
+• Ein öffentlicher Auftraggeber im Bereich Siedlungswasserwirtschaft im „DACH“-Raum
+• Ein öffentlicher Auftraggeber oder ein reguliertes Unternehmen im „DACH“-Raum, jedoch nicht zwingend im Bereich Siedlungswasserwirtschaft
+• Ein öffentlicher Auftraggeber oder ein reguliertes Unternehmen, unabhängig vom geografischen Gebiet
+Bewertung:
+• 10 Punkte: Die Referenz umfasst einen öffentlichen Auftraggeber im Bereich Siedlungswasserwirtschaft im „DACH“-Raum
+• 6 Punkte: Die Referenz umfasst entweder einen öffentlichen Auftraggeber oder ein reguliertes Unternehmen im „DACH“-Raum, jedoch nicht zwingend im Bereich Siedlungswasserwirtschaft
+• 3 Punkte: Die Referenz umfasst einen öffentlichen Auftraggeber oder ein reguliertes Unternehmen, unabhängig vom geografischen Gebiet
+• 0 Punkte: Die Referenz umfasst einen sonstigen Auftraggeber
+Hinweis: 
+Es werden insgesamt sechs Referenzen bewertet. Jede dieser Referenzen wird einzeln hinsichtlich ihrer Übereinstimmung mit der Art des Auftraggebers bewertet. Die abschließende Punktzahl für dieses Kriterium ergibt sich aus dem Durchschnitt der Bewertungen aller eingereichten Referenzen. Falls der Bewerber weniger als sechs Referenzen einreicht, werden die fehlenden Referenzen mit jeweils 0 Punkten bewertet und in den Durchschnitt einbezogen.</cbc:Description>
+                        <efbc:SecondStageIndicator>true</efbc:SecondStageIndicator>
+                     </efac:SelectionCriteria>
+                     <efac:StrategicProcurement>
+                        <efbc:ApplicableLegalBasis listName="cvd-scope">false</efbc:ApplicableLegalBasis>
+                     </efac:StrategicProcurement>
+                  </efext:EformsExtension>
+               </ext:ExtensionContent>
+            </ext:UBLExtension>
+         </ext:UBLExtensions>
+         <cbc:VariantConstraintCode listName="permission">not-allowed</cbc:VariantConstraintCode>
+         <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+         <cbc:RequiredCurriculaCode listName="requirement-stage">t-requ</cbc:RequiredCurriculaCode>
+         <cbc:RecurringProcurementIndicator>false</cbc:RecurringProcurementIndicator>
+         <cbc:MultipleTendersCode listName="permission">allowed</cbc:MultipleTendersCode>
+         <cac:RequiredFinancialGuarantee>
+            <cbc:GuaranteeTypeCode listName="tender-guarantee-required">false</cbc:GuaranteeTypeCode>
+         </cac:RequiredFinancialGuarantee>
+         <cac:CallForTendersDocumentReference>
+            <ext:UBLExtensions>
+               <ext:UBLExtension>
+                  <ext:ExtensionContent>
+                     <efext:EformsExtension>
+                        <efac:OfficialLanguages>
+                           <cac:Language>
+                              <cbc:ID>DEU</cbc:ID>
+                           </cac:Language>
+                        </efac:OfficialLanguages>
+                     </efext:EformsExtension>
+                  </ext:ExtensionContent>
+               </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:ID>E92585427</cbc:ID>
+            <cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+            <cac:Attachment>
+               <cac:ExternalReference>
+                  <cbc:URI>https://www.subreport.de/E92585427</cbc:URI>
+               </cac:ExternalReference>
+            </cac:Attachment>
+         </cac:CallForTendersDocumentReference>
+         <cac:TendererQualificationRequest>
+            <cbc:CompanyLegalFormCode listName="required">true</cbc:CompanyLegalFormCode>
+            <cbc:CompanyLegalForm languageID="DEU">gesamtschuldnerisch haftend mit bevollmächtigtem Vertreter</cbc:CompanyLegalForm>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="selection-criteria-source">epo-notice</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="reserved-procurement">none</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="missing-info-submission">late-all</cbc:TendererRequirementTypeCode>
+               <cbc:Description languageID="DEU">Der Auftraggeber behält sich vor, fehlende, unvollständige oder fehlerhafte Unterlagen nachzufordern, soweit dies rechtlich zulässig ist, insbesondere im Sinne des § 56 VgV/ § 16a VOB/A EU.</cbc:Description>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="ecatalog-submission">not-allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="einvoicing">allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="esignature-submission">false</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="nda">true</cbc:ExecutionRequirementCode>
+            <cbc:Description languageID="DEU">EVB-IT Dienstvertrag</cbc:Description>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="reserved-execution">no</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:AwardingTerms>
+            <cbc:NoFurtherNegotiationIndicator>true</cbc:NoFurtherNegotiationIndicator>
+            <cac:AwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>60</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="DEU">Leistung</cbc:Name>
+                  <cbc:Description languageID="DEU">Die Wertungssumme L bildet sich unter Berücksichtigung der Anlage VHV02_Bewertungsmatrix.
+Insgesamt entfallen auf die Qualität der Leistung (L) 60% der Wertung. 
+Dabei unterteilt sich die Qualität in drei Unterkategorien mit einer anteiligen Wertung: 
+1. Konzepte (L1): 24% - Die maximal erreichbare Punktzahl beträgt 24.
+2. Passfähigkeit des Teams (L2): 18% - Die maximal erreichbare Punktzahl beträgt 18.
+3. Bieterassessment (L3): 18% - Die maximal erreichbare Punktzahl beträgt 18. 
+
+Die erreichte Punktzahl des Bieters wird in ein Verhältnis zu der maximal erreichbaren Punktzahl gesetzt. 
+Die Berechnung der gewichteten Punktzahl der Bieter erfolgt nach folgender Formel:
+
+Gewichteter Punktzahl Qualität_(Bieter A)= ((Punktzahl Bieter A)/(max. erreichbare Punktzahl)) x 100 x 60%</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>40</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="DEU">Preis</cbc:Name>
+                  <cbc:Description languageID="DEU">Punktzahl_(Bieter A)= ((Angebotspreis günstigster Bieter)/(Angebotspreis Bieter A)) x 100 x 40%</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+            </cac:AwardingCriterion>
+         </cac:AwardingTerms>
+         <cac:AdditionalInformationParty>
+            <cac:PartyIdentification>
+               <cbc:ID>ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:AdditionalInformationParty>
+         <cac:TenderRecipientParty>
+            <cbc:EndpointID>https://www.subreport.de/E92585427</cbc:EndpointID>
+            <cac:PartyIdentification>
+               <cbc:ID>ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:TenderRecipientParty>
+         <cac:TenderEvaluationParty>
+            <cac:PartyIdentification>
+               <cbc:ID>ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:TenderEvaluationParty>
+         <cac:AppealTerms>
+            <cac:PresentationPeriod>
+               <cbc:Description languageID="DEU">Für die Einlegung von Rechtsbehelfen gelten die Fristenregelungen des Gesetzes gegen Wettbewerbsbeschränkungen (GWB).
+Siehe § 160 Abs. 3 S. 1 Nr. 4 GWB:
+Erhebt ein Bieter eine Rüge gemäß § 160 Abs. 3 Nr. 1 - 3 GWB und erhält er daraufhin eine Mitteilung der StEB Köln, dass seiner Rüge nicht abgeholfen wird, so kann der betroffene Bieter binnen 15 Tagen nach Eingang der Mitteilung einen Nachprüfungsantrag bei der Vergabekammer Rheinland stellen.
+
+Siehe§ 160 Abs. 3 S. 2 i.V.m. § 135 Abs. 2 GWB:
+Will ein Bieter die Feststellung der Unwirksamkeit des Vertrags nach § 135 Abs. 1 Nr. 2 GWB im Wege eines Nachprüfungsverfahrens beantragen, gilt folgendes:
+Die Unwirksamkeit kann nur festgestellt werden, wenn sie im Nachprüfungsverfahren innerhalb von 30 Kalendertagen nach der Information der betroffenen Bieter und Bewerber durch die StEB Köln über den Abschluss des Vertrags, jedoch nicht später als sechs Monate nach Vertragsschluss geltend gemacht worden ist.
+Haben die StEB Köln die Auftragsvergabe im Amtsblatt der Europäischen Union bekannt gemacht, endet die Frist zur Geltendmachung der Unwirksamkeit 30 Kalendertage nach Veröffentlichung der Bekanntmachung der Auftragsvergabe im Amtsblatt der Europäischen Union.</cbc:Description>
+            </cac:PresentationPeriod>
+            <cac:AppealInformationParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0001</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealInformationParty>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+         </cac:AppealTerms>
+         <cac:Language>
+            <cbc:ID>DEU</cbc:ID>
+         </cac:Language>
+         <cac:PostAwardProcess>
+            <cbc:ElectronicOrderUsageIndicator>true</cbc:ElectronicOrderUsageIndicator>
+            <cbc:ElectronicPaymentUsageIndicator>true</cbc:ElectronicPaymentUsageIndicator>
+         </cac:PostAwardProcess>
+         <cac:SecurityClearanceTerm>
+            <cbc:Code listName="required">false</cbc:Code>
+         </cac:SecurityClearanceTerm>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <ext:UBLExtensions>
+            <ext:UBLExtension>
+               <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                     <efbc:AccessToolName>Bieterkommunikation auf der E-Vergabeplattform</efbc:AccessToolName>
+                     <efbc:ProcedureRelaunchIndicator>false</efbc:ProcedureRelaunchIndicator>
+                  </efext:EformsExtension>
+               </ext:ExtensionContent>
+            </ext:UBLExtension>
+         </ext:UBLExtensions>
+         <cbc:SubmissionMethodCode listName="esubmission">required</cbc:SubmissionMethodCode>
+         <cbc:CandidateReductionConstraintIndicator>true</cbc:CandidateReductionConstraintIndicator>
+         <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+         <cbc:AccessToolsURI>https://www.subreport-elvis.de</cbc:AccessToolsURI>
+         <cac:InvitationSubmissionPeriod>
+            <cbc:StartDate>2026-01-12+01:00</cbc:StartDate>
+         </cac:InvitationSubmissionPeriod>
+         <cac:ParticipationRequestReceptionPeriod>
+            <cbc:EndDate>2025-12-15+01:00</cbc:EndDate>
+            <cbc:EndTime>11:00:00+01:00</cbc:EndTime>
+         </cac:ParticipationRequestReceptionPeriod>
+         <cac:EconomicOperatorShortList>
+            <cbc:LimitationDescription>true</cbc:LimitationDescription>
+            <cbc:MaximumQuantity>4</cbc:MaximumQuantity>
+            <cbc:MinimumQuantity>3</cbc:MinimumQuantity>
+         </cac:EconomicOperatorShortList>
+         <cac:AuctionTerms>
+            <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+         </cac:AuctionTerms>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:ID schemeName="InternalID">LOT-0001 2025000150</cbc:ID>
+         <cbc:Name languageID="DEU">SAP S/4HANA Transition ERP &amp; BW</cbc:Name>
+         <cbc:Description languageID="DEU">Umstellung des ERP-Systems auf SAP S/4HANA sowie die parallele Umstellung des BW-Systems auf SAP BW/4HANA bei den StEB Köln</cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+         <cbc:Note languageID="DEU">#Besonders auch geeignet für:freelance#, #Besonders auch geeignet für:startup#, #Besonders auch geeignet für:other-sme#, #Besonders auch geeignet für:selbst#</cbc:Note>
+         <cbc:SMESuitableIndicator>true</cbc:SMESuitableIndicator>
+         <cac:ProcurementAdditionalType>
+            <cbc:ProcurementTypeCode listName="strategic-procurement">none</cbc:ProcurementTypeCode>
+         </cac:ProcurementAdditionalType>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">72200000</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:RealizedLocation>
+            <cac:Address>
+               <cbc:CityName>Köln</cbc:CityName>
+               <cbc:CountrySubentityCode listName="nuts">DEA23</cbc:CountrySubentityCode>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+         <cac:PlannedPeriod>
+            <cbc:StartDate>2026-04-01+02:00</cbc:StartDate>
+            <cbc:EndDate>2028-06-30+02:00</cbc:EndDate>
+         </cac:PlannedPeriod>
+         <cac:ContractExtension>
+            <cbc:OptionsDescription languageID="DEU">1x 2 Jahre optionale Verlängerung durch den AG</cbc:OptionsDescription>
+            <cbc:MaximumNumberNumeric>1</cbc:MaximumNumberNumeric>
+            <cac:Renewal>
+               <cac:Period>
+                  <cbc:Description languageID="DEU">Nach Projektende und Abschluss der Stabilisierungsphase soll als zusätzliche Option ein mindestens zweijähriger Support angeboten werden.</cbc:Description>
+               </cac:Period>
+            </cac:Renewal>
+         </cac:ContractExtension>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+</ContractNotice>

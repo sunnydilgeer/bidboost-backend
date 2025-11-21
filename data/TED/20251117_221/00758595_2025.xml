@@ -1,0 +1,769 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+   <ext:UBLExtensions>
+      <ext:UBLExtension>
+         <ext:ExtensionContent>
+            <efext:EformsExtension>
+               <efac:NoticeSubType>
+                  <cbc:SubTypeCode listName="notice-subtype">16</cbc:SubTypeCode>
+               </efac:NoticeSubType>
+               <efac:Organizations>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>http://rpn.gov.pl/bip</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Roztoczański Park Narodowy</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>ul. Plażowa 2</cbc:StreetName>
+                           <cbc:CityName>Zwierzyniec</cbc:CityName>
+                           <cbc:PostalZone>22-470</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL812</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>NIP: 9223045949</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>REGON: 061362589</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+48846872066</cbc:Telephone>
+                           <cbc:ElectronicMail>sekretariat@roztoczanskipn.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>http://www.uzp.gov.pl/</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Krajowa Izba Odwoławcza</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>ul. Postępu 17A</cbc:StreetName>
+                           <cbc:CityName>Warszawa</cbc:CityName>
+                           <cbc:PostalZone>02-676</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL913</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>5262239325</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+48 224587801</cbc:Telephone>
+                           <cbc:ElectronicMail>odwolania@uzp.gov.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+               </efac:Organizations>
+            <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00758595-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+         </ext:ExtensionContent>
+      </ext:UBLExtension>
+   </ext:UBLExtensions>
+   <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+   <cbc:CustomizationID>eforms-sdk-1.12</cbc:CustomizationID>
+   <cbc:ID schemeName="notice-id">5992c3c5-0108-40cf-a912-225c7ed6a8e8</cbc:ID>
+   <cbc:ContractFolderID>2c09df79-9050-4ec6-9230-2b9cda551e2d</cbc:ContractFolderID>
+   <cbc:IssueDate>2025-11-14+01:00</cbc:IssueDate>
+   <cbc:IssueTime>13:28:23+01:00</cbc:IssueTime>
+   <cbc:VersionID>02</cbc:VersionID>
+   <cbc:RequestedPublicationDate>2025-11-17+01:00</cbc:RequestedPublicationDate>
+   <cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+   <cbc:NoticeTypeCode listName="competition">cn-standard</cbc:NoticeTypeCode>
+   <cbc:NoticeLanguageCode>POL</cbc:NoticeLanguageCode>
+   <cac:ContractingParty>
+      <cac:ContractingPartyType>
+         <cbc:PartyTypeCode listName="buyer-legal-type">body-pl-cga</cbc:PartyTypeCode>
+      </cac:ContractingPartyType>
+      <cac:ContractingActivity>
+         <cbc:ActivityTypeCode listName="authority-activity">env-pro</cbc:ActivityTypeCode>
+      </cac:ContractingActivity>
+      <cac:Party>
+         <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+         </cac:PartyIdentification>
+      </cac:Party>
+   </cac:ContractingParty>
+   <cac:TenderingTerms>
+      <cac:ProcurementLegislationDocumentReference>
+         <cbc:ID>LocalLegalBasis</cbc:ID>
+         <cbc:DocumentDescription languageID="POL">Ustawa z dnia 11 września 2019 r. Prawo zamówień publicznych PZP (tekst jedn.: Dz. U. z 2024 r. poz. 1320 z późn. zm. )  art. 129 ust. 1 pkt 1) w zw. z art. 129 ust. 2 oraz art. 132-139 ustawy z dnia 11 września 2019 r. Prawo zamówień publicznych .</cbc:DocumentDescription>
+      </cac:ProcurementLegislationDocumentReference>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-grounds-source">epo-procurement-document</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:LotDistribution>
+         <cbc:MaximumLotsAwardedNumeric>1</cbc:MaximumLotsAwardedNumeric>
+         <cbc:MaximumLotsSubmittedNumeric>1</cbc:MaximumLotsSubmittedNumeric>
+      </cac:LotDistribution>
+   </cac:TenderingTerms>
+   <cac:TenderingProcess>
+      <cbc:ProcedureCode listName="procurement-procedure-type">open</cbc:ProcedureCode>
+      <cac:ProcessJustification>
+         <cbc:ProcessReasonCode listName="accelerated-procedure">false</cbc:ProcessReasonCode>
+      </cac:ProcessJustification>
+   </cac:TenderingProcess>
+   <cac:ProcurementProject>
+      <cbc:ID schemeName="InternalID">DOP.271.7.2025.zb</cbc:ID>
+      <cbc:Name languageID="POL">Zabiegi pielęgnacyjno – ochronne w Roztoczańskim Parku Narodowym  w 2026 roku</cbc:Name>
+      <cbc:Description languageID="POL">Przedmiotem zamówienia jest wykonanie usług z zakresu zabiegów – pielęgnacyjno- ochronnych w Roztoczańskim Parku Narodowym w 2026 roku,  obejmujące w szczególności: 
+a)  zabiegi przebudowy, pielęgnacyjne i profilaktyczne (pozyskanie drewna) wraz ze zrywką drewna, 
+b)  zabiegi z zakresu hodowli lasu,
+b)  zabiegi z  zakresu ochrony nieleśnych ekosystemów lądowych,
+c)   zabiegi z zakresu ochrony zwierząt specjalnej troski,
+d) zabiegi z zakresu ochrony ekosystemów leśnych przed czynnikami biotycznymi i abiotycznymi,
+e) zabiegi z zakresu ochrony przeciwpożarowej lasu i szkodnictwa, 
+f)  zabiegi z zakresu ochrony przyrody nieożywionej i gleb, 
+g)   zabiegi z zakresu ochrony ekosystemów wodnych, 
+h)  zabiegi z zakresu ochrony roślin,
+i)   zabiegi z zakresu ochrony zwierząt łownych,
+j) zabiegi z zakresu ochrony walorów krajobrazowych 
+k) zabiegi z zakresu działalności administracyjnej,
+l) zabiegi z zakresu regulacji stanu posiadania,
+m) zabiegi z zakresu zagospodarowania turystycznego,
+n)  zabiegi z zakresu remontów dróg,
+o)  zabiegi z zakresu ochrony zachowawczej rodzimych ras zwierząt. 
+Zakres rzeczowy przedmiotu zamówienia obejmuje sumaryczne ilości prac z zakresu zabiegów pielęgnacyjno-ochronnych, wynikających z Załącznika nr 3 do SWZ.</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+      <cac:MainCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">77200000</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">77210000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">90721700</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">75251110</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">77100000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">45000000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">45340000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">45342000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:RealizedLocation>
+         <cbc:Description languageID="POL">I. Postępowanie jest prowadzone w trybie przetargu nieograniczonego, na podstawie art. 129 ust. 1 pkt 1) w zw. z art. 129 ust. 2 oraz art. 132-139 ustawy z dnia 11 września 2019 r. Prawo zamówień publicznych PZP (tekst jedn.: Dz. U. z 2024 r. poz. 1320 z późn. zm. ), zgodnie z zasadami przewidzianymi dla tzw. procedury odwróconej, o której mowa w art. 139 ust. 1, 3-4 PZP. II. Specyfikacja Warunków Zamówienia (SWZ z załącznikami) stanowi dokumenty zamówienia. III. Warunki udziału w postępowaniu: Warunki udziału w postępowaniu dotyczące sytuacji finansowej, zdolności technicznej lub zawodowej w zakresie doświadczenia, osób skierowanych do realizacji zamówienia oraz potencjału technicznego Wykonawcy oraz podmiotowe środki dowodowe, jakie na potwierdzenia ich spełnienia zobowiązany będzie złożyć Wykonawca na wezwanie Zamawiającego w trybie ar. 126 ust. 1 PZP, zostały określone w dokumentach zamówienia. Wykaz wymaganych doświadczeń i podmiotowych środków dowodowych zawiera SWZ. IV. Zamawiający przewiduje możliwość udzielenia zamówień, o których mowa w art. 214 ust. 1 pkt 7) PZP (zwanych dalej zamówieniami podobnymi), w okresie 3 lat od dnia udzielenia zamówienia podstawowego. Zamówienia będą polegały na powtórzeniu usług zgodnych z usługami stanowiącymi przedmiot niniejszego postepowania oraz usług podobnych do nich w aspekcie technologicznym ich wykonawstwa. Zakres rzeczowy usług stanowiących przedmiot zamówienia, o których mowa w zdaniu poprzednim nie przekroczy 20 % wartości zamówienia. V. Komunikacja: Złożenie oferty oraz Komunikacja między Zamawiającym a Wykonawcą odbywać się będzie przy użyciu Platformy e-Zamówienia, która jest dostępna pod adresem: https://ezamowienia.gov.pl. Korzystanie z Platformy e-Zamówienia jest bezpłatne. Szczegółowe informacje w tym zakresie zawarte są w SWZ. VI. Pozostałe informacje zawiera SWZ.</cbc:Description>
+         <cac:Address>
+            <cbc:CountrySubentityCode listName="nuts">PL812</cbc:CountrySubentityCode>
+            <cac:Country>
+               <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+            </cac:Country>
+         </cac:Address>
+      </cac:RealizedLocation>
+   </cac:ProcurementProject>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+      <cac:TenderingTerms>
+         <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+         <cac:RequiredFinancialGuarantee>
+            <cbc:GuaranteeTypeCode listName="tender-guarantee-required">true</cbc:GuaranteeTypeCode>
+            <cbc:Description languageID="POL">Zamawiający wymaga wniesienia wadium w wysokości określonej poniżej dla  dla Pakietu I w wysokości:  11 000,00 PLN.
+
+Szczegółowe wymagania dotyczące wadium zostały opisane w pkt. 11 SWZ.</cbc:Description>
+         </cac:RequiredFinancialGuarantee>
+         <cac:CallForTendersDocumentReference>
+            <ext:UBLExtensions>
+               <ext:UBLExtension>
+                  <ext:ExtensionContent>
+                     <efext:EformsExtension>
+                        <efac:OfficialLanguages>
+                           <cac:Language>
+                              <cbc:ID>POL</cbc:ID>
+                           </cac:Language>
+                        </efac:OfficialLanguages>
+                     </efext:EformsExtension>
+                  </ext:ExtensionContent>
+               </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:ID>generated_id</cbc:ID>
+            <cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+            <cac:Attachment>
+               <cac:ExternalReference>
+                  <cbc:URI>https://ezamowienia.gov.pl/mp-client/search/list/ocds-148610-2c09df79-9050-4ec6-9230-2b9cda551e2d</cbc:URI>
+               </cac:ExternalReference>
+            </cac:Attachment>
+         </cac:CallForTendersDocumentReference>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="selection-criteria-source">epo-procurement-document</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="reserved-procurement">none</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="reserved-execution">no</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="conditions">performance</cbc:ExecutionRequirementCode>
+            <cbc:Description languageID="POL">1. Wykonawca zobowiązany będzie do realizowania zamówienia na zasadach i warunkach opisanych we wzorze umowy -zał. nr 12. Zamawiający przewiduje możliwość wprowadzania zmian do zawartej umowy w sposób i na warunkach opisanych we wzorze umowy.
+2. Zamawiający zgodnie z art. 95 PZP wymaga zatrudnienia przez Wykonawcę lub podwykonawcę na podstawie stosunku pracy osób wykonujących czynności w zakresie realizacji zamówienia polegające na ścince drzew, usługi lub roboty budowlane (montaż i demontaż barier ochronnych) oraz wszystkich czynnościach wykonywanych przez osoby wyznaczone do realizacji zamówienia lub nadzoru i ocenione przy wyborze ofert w kryterium „kwalifikacje zawodowe” (osoby z wykształceniem wyższym o kierunku leśnictwo lub osoby z wykształceniem średnim o kierunku leśnictwo lub studium zawodowe świadczenia usług na rzecz leśnictwa), jeżeli wykonanie tych czynności polega na wykonywaniu pracy w sposób określony w art. 22 § 1 ustawy z dnia 26.06.1974 r. - Kodeks pracy.</cbc:Description>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="einvoicing">allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="ecatalog-submission">not-allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:AwardingTerms>
+            <cac:AwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="POL">Kryterium Cena</cbc:Name>
+                  <cbc:Description languageID="POL">W ramach każdego z powyższych kryteriów można otrzymać maksymalnie 100 pkt, co po przeliczeniu przez odpowiednia wagę procentową oznacza, że w kryterium „Cena” można otrzymać maksymalnie 60 pkt, w kryterium „Kwalifikacje zawodowe” można otrzymać maksymalnie 20 pkt., natomiast w kryterium „Aspekty środowiskowe” można otrzymać maksymalnie 20 pkt.
+
+Kryterium Cena 
+W ramach kryterium „Cena” ocena ofert zostanie dokonana przy zastosowaniu wzoru: 
+
+Liczba punktów =	najniższa spośród ofert badanych cena brutto oferty x 60 pkt/
+	cena brutto oferty badanej	
+Ocenie w ramach kryterium „Cena” podlegać będzie cena łączna brutto podana w Formularzu Ofertowym.
+Z uwagi na postanowienia art. 225 ust. 1 Pzp, jeżeli złożono ofertę, której wybór prowadziłby do powstania u Zamawiającego obowiązku podatkowego zgodnie z przepisami o podatku od towarów i usług, Zamawiający w celu oceny takiej oferty dolicza do przedstawionej w niej ceny podatek od towarów i usług, który miałby obowiązek rozliczyć zgodnie  z tymi przepisami. Za najkorzystniejszą ofertę w danym Pakiecie uznana zostanie oferta Wykonawcy, która uzyska największą liczbę punktów.</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="POL">Kwalifikacje zawodowe</cbc:Name>
+                  <cbc:Description languageID="POL">Kryterium Kwalifikacje zawodowe 
+ 
+W kryterium „Kwalifikacje zawodowe" ocenione zostanie wykształcenie zawodowe osób wyznaczonych do realizacji zamówienia lub nadzoru:
+punkty przyznawane będą w następujący sposób:
+- za każdą osobę z wykształceniem wyższym o kierunku leśnictwo – 10 pkt;
+- za każdą osobę z wykształceniem średnim o kierunku leśnictwo lub studium zawodowe świadczenia usług na rzecz leśnictwa – 5 pkt;
+Maksymalnie w kryterium Kwalifikacje zawodowe Wykonawca może otrzymać 20 pkt.
+Ocena zostanie dokonana na podstawie informacji zawartych w Formularzu Ofertowym (Załącznik nr 1) oraz w Wykazie osób (Załącznik nr 10) złożonym przez Wykonawcę.</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="POL">Aspekty środowiskowe</cbc:Name>
+                  <cbc:Description languageID="POL">W kryterium „Aspekty środowiskowe" ocenione zostanie dysponowanie akumulatorowymi pilarkami łańcuchowymi. Punkty przyznawane będą w następujący sposób:   
+- za  każdą  sztukę akumulatorowej pilarki łańcuchowej – 2,50 pkt; 
+
+Maksymalnie w kryterium Aspekty środowiskowe Wykonawca może otrzymać 20 pkt.  
+Ocena  zostanie  dokonana  na  podstawie  informacji  zawartych w Formularzu Ofertowym (Załącznik nr 1 do SWZ) oraz w Wykazie urządzeń technicznych dostępnych Wykonawcy w celu wykonania zamówienia publicznego (Załącznik nr 11) złożonym przez Wykonawcę .</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+            </cac:AwardingCriterion>
+         </cac:AwardingTerms>
+         <cac:TenderRecipientParty>
+            <cbc:EndpointID>https://ezamowienia.gov.pl/mp-client/search/list/ocds-148610-2c09df79-9050-4ec6-9230-2b9cda551e2d</cbc:EndpointID>
+         </cac:TenderRecipientParty>
+         <cac:TenderValidityPeriod>
+            <cbc:DurationMeasure unitCode="DAY">90</cbc:DurationMeasure>
+         </cac:TenderValidityPeriod>
+         <cac:AppealTerms>
+            <cac:PresentationPeriod>
+               <cbc:Description languageID="POL">1. 	Wykonawcy, a także innemu podmiotowi, jeżeli ma lub miał interes w uzyskaniu zamówienia oraz poniósł lub może ponieść szkodę w wyniku naruszenia przez Zamawiającego przepisów PZP, przysługują środki ochrony prawnej określone w dziale IX PZP tj. odwołanie i skarga do sądu. Postępowanie odwoławcze uregulowane zostało w przepisach art. 506-578 PZP, a postępowanie skargowe w przepisach art. 579-590 PZP.
+2.	Odwołanie przysługuje na:
+1)	niezgodną z przepisami PZP czynność Zamawiającego, podjętą w postępowaniu o udzielenie zamówienia, w tym na projektowane postanowienie umowy;
+2)	zaniechanie czynności w postępowaniu o udzielenie zamówienia, do której Zamawiający był obowiązany na podstawie PZP;
+3)	zaniechanie przeprowadzenia postępowania o udzielenie zamówienia na podstawie PZP, mimo że Zamawiający był do tego obowiązany.
+3.	Odwołanie wnosi się do Prezesa Krajowej Izby Odwoławczej. Odwołujący przekazuje Zamawiającemu odwołanie wniesione w formie elektronicznej albo w postaci elektronicznej albo kopię tego odwołania, jeżeli zostało ono wniesione w formie pisemnej, przed upływem terminu do wniesienia odwołania w taki sposób, aby mógł on zapoznać się z jego treścią przed upływem tego terminu.  Domniemywa się, że Zamawiający mógł zapoznać się z treścią odwołania przed upływem terminu do jego wniesienia, jeżeli przekazanie odpowiednio odwołania albo jego kopii nastąpiło przed upływem terminu do jego wniesienia przy użyciu środków komunikacji elektronicznej.
+4.	Odwołanie wnosi się w terminie: (a) 10 dni od dnia przekazania informacji o czynności Zamawiającego stanowiącej podstawę jego wniesienia, jeżeli informacja została przekazana przy użyciu środków komunikacji elektronicznej, (b) 15 dni od dnia przekazania informacji o czynności Zamawiającego stanowiącej podstawę jego wniesienia, jeżeli informacja została przekazana w sposób inny niż określony w lit. (a).
+5.	Odwołanie wobec treści ogłoszenia wszczynającego postępowanie o udzielenie zamówienia lub wobec treści dokumentów zamówienia wnosi się w terminie 10 dni od dnia publikacji ogłoszenia w Dzienniku Urzędowym Unii Europejskiej lub zamieszczenia dokumentów zamówienia na stronie internetowej.
+6.	Odwołanie w przypadkach innych niż określone w pkt 19.4. i 19.5 SWZ wnosi się w terminie 10 dni od dnia, w którym powzięto lub przy zachowaniu należytej staranności można było powziąć wiadomość o okolicznościach stanowiących podstawę jego wniesienia. 
+7.	Na orzeczenie Krajowej Izby Odwoławczej oraz postanowienie Prezesa Krajowej Izby Odwoławczej, o którym mowa w art. 519 ust. 1 PZP, stronom oraz uczestnikom postępowania przysługuje skarga do sądu. Skargę wnosi się do Sądu Okręgowego w Warszawie - sądu zamówień publicznych. Skargę wnosi się za pośrednictwem Prezesa Krajowej Izby Odwoławczej, w terminie 14 dni od dnia doręczenia orzeczenia Krajowej Izby Odwoławczej lub postanowienia Prezesa Krajowej Izby Odwoławczej, o którym mowa w art. 519 ust. 1 PZP, przesyłając jednocześnie jej odpis przeciwnikowi skargi. Złożenie skargi w placówce pocztowej operatora wyznaczonego w rozumieniu ustawy z dnia 23 listopada 2012 r. - Prawo pocztowe (tekst jedn. Dz. U. z 2025 r. poz. 366), jest równoznaczne z jej wniesieniem.</cbc:Description>
+            </cac:PresentationPeriod>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+         </cac:AppealTerms>
+         <cac:Language>
+            <cbc:ID>POL</cbc:ID>
+         </cac:Language>
+         <cac:PostAwardProcess>
+            <cbc:ElectronicOrderUsageIndicator>false</cbc:ElectronicOrderUsageIndicator>
+            <cbc:ElectronicPaymentUsageIndicator>true</cbc:ElectronicPaymentUsageIndicator>
+         </cac:PostAwardProcess>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <cbc:SubmissionMethodCode listName="esubmission">required</cbc:SubmissionMethodCode>
+         <cbc:GovernmentAgreementConstraintIndicator>false</cbc:GovernmentAgreementConstraintIndicator>
+         <cac:TenderSubmissionDeadlinePeriod>
+            <cbc:EndDate>2025-12-16Z</cbc:EndDate>
+            <cbc:EndTime>10:00:00+01:00</cbc:EndTime>
+         </cac:TenderSubmissionDeadlinePeriod>
+         <cac:OpenTenderEvent>
+            <cbc:OccurrenceDate>2025-12-16Z</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>10:30:00+01:00</cbc:OccurrenceTime>
+            <cac:OccurenceLocation>
+               <cbc:Description languageID="POL">https://ezamowienia.gov.pl</cbc:Description>
+            </cac:OccurenceLocation>
+         </cac:OpenTenderEvent>
+         <cac:AuctionTerms>
+            <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+         </cac:AuctionTerms>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:ID schemeName="InternalID">Pakiet I</cbc:ID>
+         <cbc:Name languageID="POL">Pakiet I - Zabiegi pielęgnacyjno - ochronne w obwodzie ochronnym Jarugi i Słupy</cbc:Name>
+         <cbc:Description languageID="POL">Wykonanie usług z zakresu zabiegów pielęgnacyjno - ochronnych w obwodzie
+ochronnym Jarugi i Słupy w 2026 roku. Szczegółowy opis zamówienia zawarto w załącznikach do SWZ.
+Wewnętrzny identyfikator: Pakiet I</cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+         <cbc:SMESuitableIndicator>true</cbc:SMESuitableIndicator>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">77200000</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">77210000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">90721700</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">75251110</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">77100000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">45000000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">45340000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">45342000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:RealizedLocation>
+            <cbc:Description languageID="POL">Miejscem realizacji przedmiotu zamówienia będzie obszar administracyjny obwodu ochronnego Jarugi i Słupy Roztoczańskiego Parku Narodowego.
+Mapę lokalizacji obwodów ochronnych RPN stanowi załącznik nr 13 do SWZ.</cbc:Description>
+            <cac:Address>
+               <cbc:CountrySubentityCode listName="nuts">PL812</cbc:CountrySubentityCode>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+         <cac:PlannedPeriod>
+            <cbc:EndDate>2026-12-31Z</cbc:EndDate>
+            <cbc:DurationMeasure unitCode="MONTH">12</cbc:DurationMeasure>
+         </cac:PlannedPeriod>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0002</cbc:ID>
+      <cac:TenderingTerms>
+         <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+         <cac:RequiredFinancialGuarantee>
+            <cbc:GuaranteeTypeCode listName="tender-guarantee-required">true</cbc:GuaranteeTypeCode>
+            <cbc:Description languageID="POL">Zamawiający wymaga wniesienia wadium w wysokości określonej poniżej dla  dla Pakietu II w wysokości:  10 000,00 PLN
+
+Szczegółowe wymagania dotyczące wadium zostały opisane w pkt. 11 SWZ.</cbc:Description>
+         </cac:RequiredFinancialGuarantee>
+         <cac:CallForTendersDocumentReference>
+            <ext:UBLExtensions>
+               <ext:UBLExtension>
+                  <ext:ExtensionContent>
+                     <efext:EformsExtension>
+                        <efac:OfficialLanguages>
+                           <cac:Language>
+                              <cbc:ID>POL</cbc:ID>
+                           </cac:Language>
+                        </efac:OfficialLanguages>
+                     </efext:EformsExtension>
+                  </ext:ExtensionContent>
+               </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:ID>generated_id</cbc:ID>
+            <cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+            <cac:Attachment>
+               <cac:ExternalReference>
+                  <cbc:URI>https://ezamowienia.gov.pl/mp-client/search/list/ocds-148610-2c09df79-9050-4ec6-9230-2b9cda551e2d</cbc:URI>
+               </cac:ExternalReference>
+            </cac:Attachment>
+         </cac:CallForTendersDocumentReference>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="selection-criteria-source">epo-procurement-document</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="reserved-procurement">none</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="reserved-execution">no</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="conditions">performance</cbc:ExecutionRequirementCode>
+            <cbc:Description languageID="POL">1. Wykonawca zobowiązany będzie do realizowania zamówienia na zasadach i warunkach opisanych we wzorze umowy -zał. nr 12. Zamawiający przewiduje możliwość wprowadzania zmian do zawartej umowy w sposób i na warunkach opisanych we wzorze umowy.
+2. Zamawiający zgodnie z art. 95 PZP wymaga zatrudnienia przez Wykonawcę lub podwykonawcę na podstawie stosunku pracy osób wykonujących czynności w zakresie realizacji zamówienia polegające na ścince drzew, usługi lub roboty budowlane (montaż i demontaż barier ochronnych) oraz wszystkich czynnościach wykonywanych przez osoby wyznaczone do realizacji zamówienia lub nadzoru i ocenione przy wyborze ofert w kryterium „kwalifikacje zawodowe” (osoby z wykształceniem wyższym o kierunku leśnictwo lub osoby z wykształceniem średnim o kierunku leśnictwo lub studium zawodowe świadczenia usług na rzecz leśnictwa), jeżeli wykonanie tych czynności polega na wykonywaniu pracy w sposób określony w art. 22 § 1 ustawy z dnia 26.06.1974 r. - Kodeks pracy.</cbc:Description>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="einvoicing">allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="ecatalog-submission">not-allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:AwardingTerms>
+            <cac:AwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="POL">Kryterium Cena</cbc:Name>
+                  <cbc:Description languageID="POL">W ramach każdego z powyższych kryteriów można otrzymać maksymalnie 100 pkt, co po przeliczeniu przez odpowiednia wagę procentową oznacza, że w kryterium „Cena” można otrzymać maksymalnie 60 pkt, w kryterium „Kwalifikacje zawodowe” można otrzymać maksymalnie 20 pkt., natomiast w kryterium „Aspekty środowiskowe” można otrzymać maksymalnie 20 pkt.
+
+Kryterium Cena 
+W ramach kryterium „Cena” ocena ofert zostanie dokonana przy zastosowaniu wzoru: 
+
+Liczba punktów =	najniższa spośród ofert badanych cena brutto oferty x 60 pkt/
+	cena brutto oferty badanej	
+Ocenie w ramach kryterium „Cena” podlegać będzie cena łączna brutto podana w Formularzu Ofertowym.
+Z uwagi na postanowienia art. 225 ust. 1 Pzp, jeżeli złożono ofertę, której wybór prowadziłby do powstania u Zamawiającego obowiązku podatkowego zgodnie z przepisami o podatku od towarów i usług, Zamawiający w celu oceny takiej oferty dolicza do przedstawionej w niej ceny podatek od towarów i usług, który miałby obowiązek rozliczyć zgodnie  z tymi przepisami. Za najkorzystniejszą ofertę w danym Pakiecie uznana zostanie oferta Wykonawcy, która uzyska największą liczbę punktów.</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="POL">Kwalifikacje zawodowe</cbc:Name>
+                  <cbc:Description languageID="POL">Kryterium Kwalifikacje zawodowe 
+ 
+W kryterium „Kwalifikacje zawodowe" ocenione zostanie wykształcenie zawodowe osób wyznaczonych do realizacji zamówienia lub nadzoru:
+punkty przyznawane będą w następujący sposób:
+- za każdą osobę z wykształceniem wyższym o kierunku leśnictwo – 10 pkt;
+- za każdą osobę z wykształceniem średnim o kierunku leśnictwo lub studium zawodowe świadczenia usług na rzecz leśnictwa – 5 pkt;
+Maksymalnie w kryterium Kwalifikacje zawodowe Wykonawca może otrzymać 20 pkt.
+Ocena zostanie dokonana na podstawie informacji zawartych w Formularzu Ofertowym (Załącznik nr 1) oraz w Wykazie osób (Załącznik nr 10) złożonym przez Wykonawcę.</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="POL">Aspekty środowiskowe</cbc:Name>
+                  <cbc:Description languageID="POL">Kryterium Aspekty środowiskowe 
+ 
+W kryterium „Aspekty środowiskowe" ocenione zostanie dysponowanie akumulatorowymi pilarkami łańcuchowymi. Punkty przyznawane będą w następujący sposób:   
+- za  każdą  sztukę akumulatorowej pilarki łańcuchowej – 2,50 pkt; 
+
+Maksymalnie w kryterium Aspekty środowiskowe Wykonawca może otrzymać 20 pkt.  
+Ocena  zostanie  dokonana  na  podstawie  informacji  zawartych w Formularzu Ofertowym (Załącznik nr 1 do SWZ) oraz w Wykazie urządzeń technicznych dostępnych Wykonawcy w celu wykonania zamówienia publicznego (Załącznik nr 11) złożonym przez Wykonawcę .</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+            </cac:AwardingCriterion>
+         </cac:AwardingTerms>
+         <cac:TenderRecipientParty>
+            <cbc:EndpointID>https://ezamowienia.gov.pl/mp-client/search/list/ocds-148610-2c09df79-9050-4ec6-9230-2b9cda551e2d</cbc:EndpointID>
+         </cac:TenderRecipientParty>
+         <cac:TenderValidityPeriod>
+            <cbc:DurationMeasure unitCode="DAY">90</cbc:DurationMeasure>
+         </cac:TenderValidityPeriod>
+         <cac:AppealTerms>
+            <cac:PresentationPeriod>
+               <cbc:Description languageID="POL">1. 	Wykonawcy, a także innemu podmiotowi, jeżeli ma lub miał interes w uzyskaniu zamówienia oraz poniósł lub może ponieść szkodę w wyniku naruszenia przez Zamawiającego przepisów PZP, przysługują środki ochrony prawnej określone w dziale IX PZP tj. odwołanie i skarga do sądu. Postępowanie odwoławcze uregulowane zostało w przepisach art. 506-578 PZP, a postępowanie skargowe w przepisach art. 579-590 PZP.
+2.	Odwołanie przysługuje na:
+1)	niezgodną z przepisami PZP czynność Zamawiającego, podjętą w postępowaniu o udzielenie zamówienia, w tym na projektowane postanowienie umowy;
+2)	zaniechanie czynności w postępowaniu o udzielenie zamówienia, do której Zamawiający był obowiązany na podstawie PZP;
+3)	zaniechanie przeprowadzenia postępowania o udzielenie zamówienia na podstawie PZP, mimo że Zamawiający był do tego obowiązany.
+3.	Odwołanie wnosi się do Prezesa Krajowej Izby Odwoławczej. Odwołujący przekazuje Zamawiającemu odwołanie wniesione w formie elektronicznej albo w postaci elektronicznej albo kopię tego odwołania, jeżeli zostało ono wniesione w formie pisemnej, przed upływem terminu do wniesienia odwołania w taki sposób, aby mógł on zapoznać się z jego treścią przed upływem tego terminu.  Domniemywa się, że Zamawiający mógł zapoznać się z treścią odwołania przed upływem terminu do jego wniesienia, jeżeli przekazanie odpowiednio odwołania albo jego kopii nastąpiło przed upływem terminu do jego wniesienia przy użyciu środków komunikacji elektronicznej.
+4.	Odwołanie wnosi się w terminie: (a) 10 dni od dnia przekazania informacji o czynności Zamawiającego stanowiącej podstawę jego wniesienia, jeżeli informacja została przekazana przy użyciu środków komunikacji elektronicznej, (b) 15 dni od dnia przekazania informacji o czynności Zamawiającego stanowiącej podstawę jego wniesienia, jeżeli informacja została przekazana w sposób inny niż określony w lit. (a).
+5.	Odwołanie wobec treści ogłoszenia wszczynającego postępowanie o udzielenie zamówienia lub wobec treści dokumentów zamówienia wnosi się w terminie 10 dni od dnia publikacji ogłoszenia w Dzienniku Urzędowym Unii Europejskiej lub zamieszczenia dokumentów zamówienia na stronie internetowej.
+6.	Odwołanie w przypadkach innych niż określone w pkt 19.4. i 19.5 SWZ wnosi się w terminie 10 dni od dnia, w którym powzięto lub przy zachowaniu należytej staranności można było powziąć wiadomość o okolicznościach stanowiących podstawę jego wniesienia. 
+7.	Na orzeczenie Krajowej Izby Odwoławczej oraz postanowienie Prezesa Krajowej Izby Odwoławczej, o którym mowa w art. 519 ust. 1 PZP, stronom oraz uczestnikom postępowania przysługuje skarga do sądu. Skargę wnosi się do Sądu Okręgowego w Warszawie - sądu zamówień publicznych. Skargę wnosi się za pośrednictwem Prezesa Krajowej Izby Odwoławczej, w terminie 14 dni od dnia doręczenia orzeczenia Krajowej Izby Odwoławczej lub postanowienia Prezesa Krajowej Izby Odwoławczej, o którym mowa w art. 519 ust. 1 PZP, przesyłając jednocześnie jej odpis przeciwnikowi skargi. Złożenie skargi w placówce pocztowej operatora wyznaczonego w rozumieniu ustawy z dnia 23 listopada 2012 r. - Prawo pocztowe (tekst jedn. Dz. U. z 2025 r. poz. 366), jest równoznaczne z jej wniesieniem. .</cbc:Description>
+            </cac:PresentationPeriod>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+         </cac:AppealTerms>
+         <cac:Language>
+            <cbc:ID>POL</cbc:ID>
+         </cac:Language>
+         <cac:PostAwardProcess>
+            <cbc:ElectronicOrderUsageIndicator>false</cbc:ElectronicOrderUsageIndicator>
+            <cbc:ElectronicPaymentUsageIndicator>true</cbc:ElectronicPaymentUsageIndicator>
+         </cac:PostAwardProcess>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <cbc:SubmissionMethodCode listName="esubmission">required</cbc:SubmissionMethodCode>
+         <cbc:GovernmentAgreementConstraintIndicator>false</cbc:GovernmentAgreementConstraintIndicator>
+         <cac:TenderSubmissionDeadlinePeriod>
+            <cbc:EndDate>2025-12-16Z</cbc:EndDate>
+            <cbc:EndTime>10:00:00+01:00</cbc:EndTime>
+         </cac:TenderSubmissionDeadlinePeriod>
+         <cac:OpenTenderEvent>
+            <cbc:OccurrenceDate>2025-12-16Z</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>10:30:00+01:00</cbc:OccurrenceTime>
+            <cac:OccurenceLocation>
+               <cbc:Description languageID="POL">https://ezamowienia.gov.pl</cbc:Description>
+            </cac:OccurenceLocation>
+         </cac:OpenTenderEvent>
+         <cac:AuctionTerms>
+            <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+         </cac:AuctionTerms>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:ID schemeName="InternalID">Pakiet II</cbc:ID>
+         <cbc:Name languageID="POL">Pakiet II -Zabiegi pielęgnacyjno - ochronne w obwodzie ochronnym Horodzisko i Obrocz</cbc:Name>
+         <cbc:Description languageID="POL">Wykonanie usług z zakresu zabiegów pielęgnacyjno - ochronnych w obwodzie
+ochronnym  Horodzisko i Obrocz w 2026 roku. Szczegółowy opis zamówienia zawarto w załącznikach do SWZ.
+Wewnętrzny identyfikator: Pakiet II</cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+         <cbc:SMESuitableIndicator>true</cbc:SMESuitableIndicator>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">77200000</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">77210000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">90721700</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">75251120</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">77100000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">45000000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">45340000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">45342000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:RealizedLocation>
+            <cbc:Description languageID="POL">Miejscem realizacji przedmiotu zamówienia będzie obszar administracyjny obwodu ochronnego Horodzisko i Obrocz Roztoczańskiego Parku Narodowego. Mapę lokalizacji obwodów ochronnych RPN stanowi załącznik nr 13 do SWZ.</cbc:Description>
+            <cac:Address>
+               <cbc:CountrySubentityCode listName="nuts">PL812</cbc:CountrySubentityCode>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+         <cac:PlannedPeriod>
+            <cbc:EndDate>2026-12-31Z</cbc:EndDate>
+            <cbc:DurationMeasure unitCode="MONTH">12</cbc:DurationMeasure>
+         </cac:PlannedPeriod>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0003</cbc:ID>
+      <cac:TenderingTerms>
+         <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+         <cac:RequiredFinancialGuarantee>
+            <cbc:GuaranteeTypeCode listName="tender-guarantee-required">true</cbc:GuaranteeTypeCode>
+            <cbc:Description languageID="POL">Zamawiający wymaga wniesienia wadium w wysokości określonej poniżej dla Pakietu III	w wysokości:  9 000,00 PLN
+
+Szczegółowe wymagania dotyczące wadium zostały opisane w pkt. 11 SWZ.</cbc:Description>
+         </cac:RequiredFinancialGuarantee>
+         <cac:CallForTendersDocumentReference>
+            <ext:UBLExtensions>
+               <ext:UBLExtension>
+                  <ext:ExtensionContent>
+                     <efext:EformsExtension>
+                        <efac:OfficialLanguages>
+                           <cac:Language>
+                              <cbc:ID>POL</cbc:ID>
+                           </cac:Language>
+                        </efac:OfficialLanguages>
+                     </efext:EformsExtension>
+                  </ext:ExtensionContent>
+               </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:ID>generated_id</cbc:ID>
+            <cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+            <cac:Attachment>
+               <cac:ExternalReference>
+                  <cbc:URI>https://ezamowienia.gov.pl/mp-client/search/list/ocds-148610-2c09df79-9050-4ec6-9230-2b9cda551e2d</cbc:URI>
+               </cac:ExternalReference>
+            </cac:Attachment>
+         </cac:CallForTendersDocumentReference>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="selection-criteria-source">epo-procurement-document</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="reserved-procurement">none</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="reserved-execution">no</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="conditions">performance</cbc:ExecutionRequirementCode>
+            <cbc:Description languageID="POL">1. Wykonawca zobowiązany będzie do realizowania zamówienia na zasadach i warunkach opisanych we wzorze umowy -zał. nr 12. Zamawiający przewiduje możliwość wprowadzania zmian do zawartej umowy w sposób i na warunkach opisanych we wzorze umowy.
+2. Zamawiający zgodnie z art. 95 PZP wymaga zatrudnienia przez Wykonawcę lub podwykonawcę na podstawie stosunku pracy osób wykonujących czynności w zakresie realizacji zamówienia polegające na ścince drzew, usługi lub roboty budowlane (montaż i demontaż barier ochronnych) oraz wszystkich czynnościach wykonywanych przez osoby wyznaczone do realizacji zamówienia lub nadzoru i ocenione przy wyborze ofert w kryterium „kwalifikacje zawodowe” (osoby z wykształceniem wyższym o kierunku leśnictwo lub osoby z wykształceniem średnim o kierunku leśnictwo lub studium zawodowe świadczenia usług na rzecz leśnictwa), jeżeli wykonanie tych czynności polega na wykonywaniu pracy w sposób określony w art. 22 § 1 ustawy z dnia 26.06.1974 r. - Kodeks pracy.</cbc:Description>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="einvoicing">allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="ecatalog-submission">not-allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:AwardingTerms>
+            <cac:AwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="POL">Kryterium Cena</cbc:Name>
+                  <cbc:Description languageID="POL">W ramach każdego z powyższych kryteriów można otrzymać maksymalnie 100 pkt, co po przeliczeniu przez odpowiednia wagę procentową oznacza, że w kryterium „Cena” można otrzymać maksymalnie 60 pkt, w kryterium „Kwalifikacje zawodowe” można otrzymać maksymalnie 20 pkt., natomiast w kryterium „Aspekty środowiskowe” można otrzymać maksymalnie 20 pkt.
+
+Kryterium Cena 
+W ramach kryterium „Cena” ocena ofert zostanie dokonana przy zastosowaniu wzoru: 
+
+Liczba punktów =	najniższa spośród ofert badanych cena brutto oferty x 60 pkt/
+	cena brutto oferty badanej	
+Ocenie w ramach kryterium „Cena” podlegać będzie cena łączna brutto podana w Formularzu Ofertowym.
+Z uwagi na postanowienia art. 225 ust. 1 Pzp, jeżeli złożono ofertę, której wybór prowadziłby do powstania u Zamawiającego obowiązku podatkowego zgodnie z przepisami o podatku od towarów i usług, Zamawiający w celu oceny takiej oferty dolicza do przedstawionej w niej ceny podatek od towarów i usług, który miałby obowiązek rozliczyć zgodnie  z tymi przepisami. Za najkorzystniejszą ofertę w danym Pakiecie uznana zostanie oferta Wykonawcy, która uzyska największą liczbę punktów.</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="POL">Kwalifikacje zawodowe</cbc:Name>
+                  <cbc:Description languageID="POL">Kryterium Kwalifikacje zawodowe 
+ 
+W kryterium „Kwalifikacje zawodowe" ocenione zostanie wykształcenie zawodowe osób wyznaczonych do realizacji zamówienia lub nadzoru:
+punkty przyznawane będą w następujący sposób:
+- za każdą osobę z wykształceniem wyższym o kierunku leśnictwo – 10 pkt;
+- za każdą osobę z wykształceniem średnim o kierunku leśnictwo lub studium zawodowe świadczenia usług na rzecz leśnictwa – 5 pkt;
+Maksymalnie w kryterium Kwalifikacje zawodowe Wykonawca może otrzymać 20 pkt.
+Ocena zostanie dokonana na podstawie informacji zawartych w Formularzu Ofertowym (Załącznik nr 1) oraz w Wykazie osób (Załącznik nr 10) złożonym przez Wykonawcę.</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="POL">Kryterium Aspekty środowiskowe</cbc:Name>
+                  <cbc:Description languageID="POL">Kryterium Aspekty środowiskowe 
+ 
+W kryterium „Aspekty środowiskowe" ocenione zostanie dysponowanie akumulatorowymi pilarkami łańcuchowymi. Punkty przyznawane będą w następujący sposób:   
+- za  każdą  sztukę akumulatorowej pilarki łańcuchowej – 2,50 pkt; 
+
+Maksymalnie w kryterium Aspekty środowiskowe Wykonawca może otrzymać 20 pkt.  
+Ocena  zostanie  dokonana  na  podstawie  informacji  zawartych w Formularzu Ofertowym (Załącznik nr 1 do SWZ) oraz w Wykazie urządzeń technicznych dostępnych Wykonawcy w celu wykonania zamówienia publicznego (Załącznik nr 11) złożonym przez Wykonawcę .</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+            </cac:AwardingCriterion>
+         </cac:AwardingTerms>
+         <cac:TenderRecipientParty>
+            <cbc:EndpointID>https://ezamowienia.gov.pl/mp-client/search/list/ocds-148610-2c09df79-9050-4ec6-9230-2b9cda551e2d</cbc:EndpointID>
+         </cac:TenderRecipientParty>
+         <cac:TenderValidityPeriod>
+            <cbc:DurationMeasure unitCode="DAY">90</cbc:DurationMeasure>
+         </cac:TenderValidityPeriod>
+         <cac:AppealTerms>
+            <cac:PresentationPeriod>
+               <cbc:Description languageID="POL">1. 	Wykonawcy, a także innemu podmiotowi, jeżeli ma lub miał interes w uzyskaniu zamówienia oraz poniósł lub może ponieść szkodę w wyniku naruszenia przez Zamawiającego przepisów PZP, przysługują środki ochrony prawnej określone w dziale IX PZP tj. odwołanie i skarga do sądu. Postępowanie odwoławcze uregulowane zostało w przepisach art. 506-578 PZP, a postępowanie skargowe w przepisach art. 579-590 PZP.
+2.	Odwołanie przysługuje na:
+1)	niezgodną z przepisami PZP czynność Zamawiającego, podjętą w postępowaniu o udzielenie zamówienia, w tym na projektowane postanowienie umowy;
+2)	zaniechanie czynności w postępowaniu o udzielenie zamówienia, do której Zamawiający był obowiązany na podstawie PZP;
+3)	zaniechanie przeprowadzenia postępowania o udzielenie zamówienia na podstawie PZP, mimo że Zamawiający był do tego obowiązany.
+3.	Odwołanie wnosi się do Prezesa Krajowej Izby Odwoławczej. Odwołujący przekazuje Zamawiającemu odwołanie wniesione w formie elektronicznej albo w postaci elektronicznej albo kopię tego odwołania, jeżeli zostało ono wniesione w formie pisemnej, przed upływem terminu do wniesienia odwołania w taki sposób, aby mógł on zapoznać się z jego treścią przed upływem tego terminu.  Domniemywa się, że Zamawiający mógł zapoznać się z treścią odwołania przed upływem terminu do jego wniesienia, jeżeli przekazanie odpowiednio odwołania albo jego kopii nastąpiło przed upływem terminu do jego wniesienia przy użyciu środków komunikacji elektronicznej.
+4.	Odwołanie wnosi się w terminie: (a) 10 dni od dnia przekazania informacji o czynności Zamawiającego stanowiącej podstawę jego wniesienia, jeżeli informacja została przekazana przy użyciu środków komunikacji elektronicznej, (b) 15 dni od dnia przekazania informacji o czynności Zamawiającego stanowiącej podstawę jego wniesienia, jeżeli informacja została przekazana w sposób inny niż określony w lit. (a).
+5.	Odwołanie wobec treści ogłoszenia wszczynającego postępowanie o udzielenie zamówienia lub wobec treści dokumentów zamówienia wnosi się w terminie 10 dni od dnia publikacji ogłoszenia w Dzienniku Urzędowym Unii Europejskiej lub zamieszczenia dokumentów zamówienia na stronie internetowej.
+6.	Odwołanie w przypadkach innych niż określone w pkt 19.4. i 19.5 SWZ wnosi się w terminie 10 dni od dnia, w którym powzięto lub przy zachowaniu należytej staranności można było powziąć wiadomość o okolicznościach stanowiących podstawę jego wniesienia. 
+7.	Na orzeczenie Krajowej Izby Odwoławczej oraz postanowienie Prezesa Krajowej Izby Odwoławczej, o którym mowa w art. 519 ust. 1 PZP, stronom oraz uczestnikom postępowania przysługuje skarga do sądu. Skargę wnosi się do Sądu Okręgowego w Warszawie - sądu zamówień publicznych. Skargę wnosi się za pośrednictwem Prezesa Krajowej Izby Odwoławczej, w terminie 14 dni od dnia doręczenia orzeczenia Krajowej Izby Odwoławczej lub postanowienia Prezesa Krajowej Izby Odwoławczej, o którym mowa w art. 519 ust. 1 PZP, przesyłając jednocześnie jej odpis przeciwnikowi skargi. Złożenie skargi w placówce pocztowej operatora wyznaczonego w rozumieniu ustawy z dnia 23 listopada 2012 r. - Prawo pocztowe (tekst jedn. Dz. U. z 2025 r. poz. 366), jest równoznaczne z jej wniesieniem. .</cbc:Description>
+            </cac:PresentationPeriod>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+         </cac:AppealTerms>
+         <cac:Language>
+            <cbc:ID>POL</cbc:ID>
+         </cac:Language>
+         <cac:PostAwardProcess>
+            <cbc:ElectronicOrderUsageIndicator>false</cbc:ElectronicOrderUsageIndicator>
+            <cbc:ElectronicPaymentUsageIndicator>true</cbc:ElectronicPaymentUsageIndicator>
+         </cac:PostAwardProcess>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <cbc:SubmissionMethodCode listName="esubmission">required</cbc:SubmissionMethodCode>
+         <cbc:GovernmentAgreementConstraintIndicator>false</cbc:GovernmentAgreementConstraintIndicator>
+         <cac:TenderSubmissionDeadlinePeriod>
+            <cbc:EndDate>2025-12-16Z</cbc:EndDate>
+            <cbc:EndTime>10:00:00+01:00</cbc:EndTime>
+         </cac:TenderSubmissionDeadlinePeriod>
+         <cac:OpenTenderEvent>
+            <cbc:OccurrenceDate>2025-12-16Z</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>10:30:00+01:00</cbc:OccurrenceTime>
+            <cac:OccurenceLocation>
+               <cbc:Description languageID="POL">https://ezamowienia.gov.pl</cbc:Description>
+            </cac:OccurenceLocation>
+         </cac:OpenTenderEvent>
+         <cac:AuctionTerms>
+            <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+         </cac:AuctionTerms>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:ID schemeName="InternalID">Pakiet III</cbc:ID>
+         <cbc:Name languageID="POL">Pakiet III - Zabiegi pielęgnacyjno - ochronne w obwodzie ochronnym Bukowa Góra i Kruglik</cbc:Name>
+         <cbc:Description languageID="POL">Wykonanie usług z zakresu zabiegów pielęgnacyjno - ochronnych Bukowa Góra i Kruglik w 2026 roku. Szczegółowy opis zamówienia zawarto w załącznikach do SWZ. Wewnętrzny identyfikator: Pakiet III.</cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">77200000</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">77210000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">90721700</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">75251110</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">77100000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">45000000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">45340000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">45342000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:RealizedLocation>
+            <cbc:Description languageID="POL">Miejscem realizacji przedmiotu zamówienia będzie obszar administracyjny obwodu ochronnego Bukowa Góra i Kruglik Roztoczańskiego Parku Narodowego. Mapę lokalizacji obwodów ochronnych RPN stanowi załącznik nr 13 do SWZ.</cbc:Description>
+            <cac:Address>
+               <cbc:CountrySubentityCode listName="nuts">PL812</cbc:CountrySubentityCode>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+         <cac:PlannedPeriod>
+            <cbc:EndDate>2026-12-31Z</cbc:EndDate>
+            <cbc:DurationMeasure unitCode="MONTH">12</cbc:DurationMeasure>
+         </cac:PlannedPeriod>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+</ContractNotice>

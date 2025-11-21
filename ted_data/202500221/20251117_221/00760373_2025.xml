@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><can:ContractAwardNotice xmlns:can="urn:oasis:names:specification:ubl:schema:xsd:ContractAwardNotice-2" xmlns:brin="http://data.europa.eu/p27/eforms-business-registration-information-notice/1" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:cn="urn:oasis:names:specification:ubl:schema:xsd:ContractNotice-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:pin="urn:oasis:names:specification:ubl:schema:xsd:PriorInformationNotice-2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ext:UBLExtensions>
+    <ext:UBLExtension>
+      <ext:ExtensionContent>
+        <efext:EformsExtension>
+          <efac:NoticeResult>
+            <cbc:TotalAmount currencyID="EUR">0.01</cbc:TotalAmount>
+            <efac:LotResult>
+              <cbc:ID schemeName="result">RES-0001</cbc:ID>
+              <cbc:HigherTenderAmount currencyID="EUR">0.01</cbc:HigherTenderAmount>
+              <cbc:LowerTenderAmount currencyID="EUR">0.01</cbc:LowerTenderAmount>
+              <cbc:TenderResultCode listName="winner-selection-status">selec-w</cbc:TenderResultCode>
+              <efac:LotTender>
+                <cbc:ID>TEN-0001</cbc:ID>
+              </efac:LotTender>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">tenders</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>3</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:SettledContract>
+                <cbc:ID>CON-0001</cbc:ID>
+              </efac:SettledContract>
+              <efac:TenderLot>
+                <cbc:ID>LOT-0001</cbc:ID>
+              </efac:TenderLot>
+            </efac:LotResult>
+            <efac:LotTender>
+              <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+              <cbc:RankCode>1</cbc:RankCode>
+              <efbc:TenderVariantIndicator>false</efbc:TenderVariantIndicator>
+              <cac:LegalMonetaryTotal>
+                <cbc:PayableAmount currencyID="EUR">0.01</cbc:PayableAmount>
+              </cac:LegalMonetaryTotal>
+              <efac:SubcontractingTerm>
+                <efbc:TermCode listName="applicability">not-known</efbc:TermCode>
+              </efac:SubcontractingTerm>
+              <efac:TenderingParty>
+                <cbc:ID>TPA-0001</cbc:ID>
+              </efac:TenderingParty>
+              <efac:TenderLot>
+                <cbc:ID>LOT-0001</cbc:ID>
+              </efac:TenderLot>
+              <efac:TenderReference>
+                <cbc:ID>251002</cbc:ID>
+              </efac:TenderReference>
+            </efac:LotTender>
+            <efac:SettledContract>
+              <cbc:ID schemeName="contract">CON-0001</cbc:ID>
+              <cbc:AwardDate>2025-10-30+01:00</cbc:AwardDate>
+              <cbc:IssueDate>2025-11-11+01:00</cbc:IssueDate>
+              <efac:ContractReference>
+                <cbc:ID>251002</cbc:ID>
+              </efac:ContractReference>
+              <efac:LotTender>
+                <cbc:ID>TEN-0001</cbc:ID>
+              </efac:LotTender>
+            </efac:SettledContract>
+            <efac:TenderingParty>
+              <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+              <cbc:Name>Kettner &amp; Baur GmbH</cbc:Name>
+              <efac:Tenderer>
+                <cbc:ID>ORG-0003</cbc:ID>
+              </efac:Tenderer>
+            </efac:TenderingParty>
+          </efac:NoticeResult>
+          <efac:NoticeSubType>
+            <cbc:SubTypeCode listName="notice-subtype">29</cbc:SubTypeCode>
+          </efac:NoticeSubType>
+          <efac:Organizations>
+            <efac:Organization>
+              <efac:Company>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <cbc:Name languageID="DEU">Landkreis Unterallgäu</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>Bad Wörishofer Str. 33</cbc:StreetName>
+                  <cbc:CityName>Mindelheim</cbc:CityName>
+                  <cbc:PostalZone>87719</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">DE27C</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID>09778000-000-85</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Name>Verfahrensbetreuung:
+Lehmann Consult GmbH &amp; Co. KG</cbc:Name>
+                  <cbc:Telephone>+49 7351 440 993-13</cbc:Telephone>
+                  <cbc:ElectronicMail>wettbewerb@lehmannconsult.de</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+            <efac:Organization>
+              <efac:Company>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <cbc:Name languageID="DEU">Vergabekammer Südbayern, Regierung von Oberbayern</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>Maximilianstraße 39</cbc:StreetName>
+                  <cbc:CityName>München</cbc:CityName>
+                  <cbc:PostalZone>80538</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">DE212</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID>vergabekammer.suedbayern@reg-ob.bayern.de</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Telephone>089 - 2176-2411</cbc:Telephone>
+                  <cbc:ElectronicMail>vergabekammer.suedbayern@reg-ob.bayern.de</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+            <efac:Organization>
+              <efac:UltimateBeneficialOwner>
+                <cbc:ID>UBO-0001</cbc:ID>
+              </efac:UltimateBeneficialOwner>
+              <efac:Company>
+                <efbc:CompanySizeCode listName="economic-operator-size">medium</efbc:CompanySizeCode>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <cbc:Name languageID="DEU">Kettner &amp; Baur GmbH</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>Zeissweg 4</cbc:StreetName>
+                  <cbc:CityName>Memmingen</cbc:CityName>
+                  <cbc:PostalZone>87700</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">DE274</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID>251002</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:ElectronicMail>info@ibkb-elektrotechnik.de</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+            <efac:Organization><efac:Company><cac:PartyIdentification><cbc:ID schemeName="organization">ORG-0004</cbc:ID></cac:PartyIdentification><cac:PartyName><cbc:Name languageID="DEU">Datenservice Öffentlicher Einkauf (in Verantwortung des Beschaffungsamts des BMI)</cbc:Name></cac:PartyName><cac:PostalAddress><cbc:CityName>Bonn</cbc:CityName><cbc:PostalZone>53119</cbc:PostalZone><cbc:CountrySubentityCode listName="nuts">DEA22</cbc:CountrySubentityCode><cac:Country><cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode></cac:Country></cac:PostalAddress><cac:PartyLegalEntity><cbc:CompanyID schemeID="002">0204:994-DOEVD-83</cbc:CompanyID></cac:PartyLegalEntity><cac:Contact><cbc:Telephone>+49228996100</cbc:Telephone><cbc:ElectronicMail>noreply.esender_hub@bescha.bund.de</cbc:ElectronicMail></cac:Contact></efac:Company></efac:Organization><efac:UltimateBeneficialOwner>
+              <cbc:ID schemeName="ubo">UBO-0001</cbc:ID>
+              <cbc:FamilyName>Kettner &amp; Baur GmbH</cbc:FamilyName>
+              <cac:Contact>
+                <cbc:ElectronicMail>info@ibkb-elektrotechnik.de</cbc:ElectronicMail>
+              </cac:Contact>
+            </efac:UltimateBeneficialOwner>
+          </efac:Organizations>
+        <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00760373-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+      </ext:ExtensionContent>
+    </ext:UBLExtension>
+  </ext:UBLExtensions>
+  <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+  <cbc:CustomizationID>eforms-sdk-1.12</cbc:CustomizationID>
+  <cbc:ProfileID>eforms-sdk-1.12</cbc:ProfileID>
+  <cbc:ID schemeName="notice-id">d4f67cc4-0dac-4312-9f65-9479ae80012d</cbc:ID>
+  <cbc:ContractFolderID>e5ab0195-c7ab-4f60-9044-8b46cc884988</cbc:ContractFolderID>
+  <cbc:IssueDate>2025-11-14+01:00</cbc:IssueDate>
+  <cbc:IssueTime>09:01:00+01:00</cbc:IssueTime>
+  <cbc:VersionID>01</cbc:VersionID>
+  <cbc:RequestedPublicationDate>2025-11-14+01:00</cbc:RequestedPublicationDate>
+  <cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+  <cbc:NoticeTypeCode listName="result">can-standard</cbc:NoticeTypeCode>
+  <cbc:NoticeLanguageCode listName="language">DEU</cbc:NoticeLanguageCode>
+  <cac:ContractingParty>
+    <cbc:BuyerProfileURI>https://plattform.aumass.de/Veroeffentlichung/av25ac2c-eu</cbc:BuyerProfileURI>
+    <cac:ContractingPartyType>
+      <cbc:PartyTypeCode listName="buyer-legal-type">la</cbc:PartyTypeCode>
+    </cac:ContractingPartyType>
+    <cac:ContractingActivity>
+      <cbc:ActivityTypeCode listName="authority-activity">gen-pub</cbc:ActivityTypeCode>
+    </cac:ContractingActivity>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID>ORG-0001</cbc:ID>
+      </cac:PartyIdentification>
+    <cac:ServiceProviderParty><cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode><cac:Party><cac:PartyIdentification><cbc:ID schemeName="organization">ORG-0004</cbc:ID></cac:PartyIdentification></cac:Party></cac:ServiceProviderParty></cac:Party>
+  </cac:ContractingParty>
+  <cac:TenderingTerms>
+    <cac:ProcurementLegislationDocumentReference>
+      <ext:UBLExtensions>
+        <ext:UBLExtension>
+          <ext:ExtensionContent>
+            <efext:EformsExtension>
+              <efac:FieldsPrivacy>
+                <efbc:FieldIdentifierCode listName="non-publication-identifier">cro-bor-law</efbc:FieldIdentifierCode>
+                <cbc:ReasonCode listName="non-publication-justification">oth-int</cbc:ReasonCode>
+              </efac:FieldsPrivacy>
+            </efext:EformsExtension>
+          </ext:ExtensionContent>
+        </ext:UBLExtension>
+      </ext:UBLExtensions>
+      <cbc:ID>CrossBorderLaw</cbc:ID>
+      <cbc:DocumentDescription languageID="DEU">unpublished</cbc:DocumentDescription>
+    </cac:ProcurementLegislationDocumentReference>
+    <cac:ProcurementLegislationDocumentReference>
+      <cbc:ID>vgv</cbc:ID>
+    </cac:ProcurementLegislationDocumentReference>
+  </cac:TenderingTerms>
+  <cac:TenderingProcess>
+    <cbc:ProcedureCode listName="procurement-procedure-type">neg-w-call</cbc:ProcedureCode>
+    <cac:ProcessJustification>
+      <cbc:ProcessReasonCode listName="accelerated-procedure">false</cbc:ProcessReasonCode>
+    </cac:ProcessJustification>
+  </cac:TenderingProcess>
+  <cac:ProcurementProject>
+    <cbc:ID>25.027</cbc:ID>
+    <cbc:Name languageID="DEU">Erweiterung "Bündelungsbau" Landratsamt Unterallgäu, Fachplanung Elektro</cbc:Name>
+    <cbc:Description languageID="DEU">Der Landkreis Unterallgäu beabsichtigt, mittels eines Verhandlungsverfahrens mit Teilnahmewettbewerb, die Vergabe der Fachplanung Elektro (LPH 1-9) für die Erweiterung der Räumlichkeiten der Kreisverwaltung des bestehenden Landratsamts Unterallgäu in Mindelheim. Die Beauftragung soll stufenweise erfolgen. In der ersten Stufe sollen die LPH 1-2 beauftragt werden. Der Auftraggeber beabsichtigt, bei Fortsetzung der Planung und Ausführung der Baumaßnahme weitere LPH (3-9) abzurufen. Er behält sich vor, die Beauftragung auf einzelne Leistungsphasen bzw. Teilleistungen einzelner Leistungsstufen oder auf einzelne Abschnitte der Baumaßnahme zu beschränken.
+
+Die Fachplanung Elektro gem. § 55 HOAI 2021 Absatz 1, (LPH 1-9) soll nach derzeitigem Stand folgende Anlagengruppen abdecken: 
+ALG 4: Starkstromanlagen, 
+ALG 5: Fernmelde- und informationstechnische Anlagen, 
+Optional ALG 7: nutzungsspezifische Anlagen und verfahrenstechnische Anlagen, 
+Optional ALG 8: Gebäudeautomation und Automation von Ingenieurbauwerken. 
+
+Alle Erschließungs-Maßnahmen (öffentlich und nichtöffentlich), die im Rahmen der KG 200 erforderlich werden, sind vom Fachplaner mit zu berücksichtigen.
+</cbc:Description>
+    <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+    <cac:MainCommodityClassification>
+      <cbc:ItemClassificationCode listName="cpv">71240000</cbc:ItemClassificationCode>
+    </cac:MainCommodityClassification>
+    <cac:AdditionalCommodityClassification>
+      <cbc:ItemClassificationCode listName="cpv">71321000</cbc:ItemClassificationCode>
+    </cac:AdditionalCommodityClassification>
+    <cac:AdditionalCommodityClassification>
+      <cbc:ItemClassificationCode listName="cpv">71300000</cbc:ItemClassificationCode>
+    </cac:AdditionalCommodityClassification>
+    <cac:RealizedLocation>
+      <cac:Address>
+        <cbc:StreetName>Bad Wörishofer Str.</cbc:StreetName>
+        <cbc:CityName>Mindelheim</cbc:CityName>
+        <cbc:PostalZone>87719</cbc:PostalZone>
+        <cbc:CountrySubentityCode listName="nuts">DE27C</cbc:CountrySubentityCode>
+        <cac:Country>
+          <cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:RealizedLocation>
+  </cac:ProcurementProject>
+  <cac:ProcurementProjectLot>
+    <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+    <cac:TenderingTerms>
+      <ext:UBLExtensions>
+        <ext:UBLExtension>
+          <ext:ExtensionContent>
+            <efext:EformsExtension>
+              <efac:StrategicProcurement>
+                <efbc:ApplicableLegalBasis listName="cvd-scope">false</efbc:ApplicableLegalBasis>
+              </efac:StrategicProcurement>
+            </efext:EformsExtension>
+          </ext:ExtensionContent>
+        </ext:UBLExtension>
+      </ext:UBLExtensions>
+      <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+      <cac:AwardingTerms>
+        <cac:AwardingCriterion>
+          <cac:SubordinateAwardingCriterion>
+            <ext:UBLExtensions>
+              <ext:UBLExtension>
+                <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                    <efac:AwardCriterionParameter>
+                      <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                      <efbc:ParameterNumeric>30</efbc:ParameterNumeric>
+                    </efac:AwardCriterionParameter>
+                  </efext:EformsExtension>
+                </ext:ExtensionContent>
+              </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+            <cbc:Name languageID="DEU">Honorar</cbc:Name>
+            <cbc:Description languageID="DEU">Bezüglich des Kriteriums „Honorarsatz“ erhält das günstigste Angebot 10 von 10 möglichen Punkten. Ein fiktives Angebot, das 30% teurer als das günstigste Angebot ist, erhält 0 Punkte, dazwischen wird linear interpoliert. </cbc:Description>
+          </cac:SubordinateAwardingCriterion>
+          <cac:SubordinateAwardingCriterion>
+            <ext:UBLExtensions>
+              <ext:UBLExtension>
+                <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                    <efac:AwardCriterionParameter>
+                      <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                      <efbc:ParameterNumeric>45</efbc:ParameterNumeric>
+                    </efac:AwardCriterionParameter>
+                  </efext:EformsExtension>
+                </ext:ExtensionContent>
+              </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+            <cbc:Name languageID="DEU">Organisation, Qualifikation und Erfahrung des betrauten Personals</cbc:Name>
+            <cbc:Description languageID="DEU">Herangehensweise bei Besonderheiten und Schwierigkeiten: 10%
+Herangehensweise an das Projekt und Organisation des Projektes unter Berücksichtigung der Schnittstellen zu anderen Projektbeteiligten: 15%
+Zusammenarbeit mit dem Auftraggeber: 20%</cbc:Description>
+          </cac:SubordinateAwardingCriterion>
+          <cac:SubordinateAwardingCriterion>
+            <ext:UBLExtensions>
+              <ext:UBLExtension>
+                <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                    <efac:AwardCriterionParameter>
+                      <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                      <efbc:ParameterNumeric>25</efbc:ParameterNumeric>
+                    </efac:AwardCriterionParameter>
+                  </efext:EformsExtension>
+                </ext:ExtensionContent>
+              </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+            <cbc:Name languageID="DEU">Qualität</cbc:Name>
+            <cbc:Description languageID="DEU">Konzept zur Qualitätssicherung in der Planung: 5% 
+Vorgehensweise zur Terminplanung und -sicherung: 10% 
+Vorgehensweise zur Kostenoptimierung und -sicherung: 10%</cbc:Description>
+          </cac:SubordinateAwardingCriterion>
+        </cac:AwardingCriterion>
+      </cac:AwardingTerms>
+      <cac:AppealTerms>
+        <cac:PresentationPeriod>
+          <cbc:Description languageID="DEU">Vergabeverfahren, bei denen der Auftragswert die EU-Schwellenwerte erreicht oder überschreitet, können auf Antrag in einem formellen Verfahren vor der Vergabekammer auf ihre Rechtmäßigkeit überprüft werden (§ 155 Absatz 1 GWB).
+
+Die Grundlagen des Nachprüfungsverfahrens ergeben sich aus den §§ 160 ff. GWB.
+1) Etwaige Vergabeverstöße muss der Bewerber/Bieter gemäß § 160 Abs. 3 Nr. 1 GWB innerhalb von 10 Tagen nach Kenntnisnahme rügen.
+2) Verstöße gegen Vergabevorschriften, die aufgrund der Bekanntmachung erkennbar sind, sind nach § 160 Abs. 3 Nr. 2 GWB spätestens bis zum Ablauf der in der Bekanntmachung benannten Frist zur Abgabe der Bewerbung oder der Angebote gegenüber dem Auftraggeber zu rügen.
+3) Verstöße gegen Vergabevorschriften, die erst in den Vergabeunterlagen erkennbar sind, sind nach § 160 Abs. 3 Nr. 3 GWB spätestens bis zum Ablauf der Frist zur Bewerbungs- oder Angebotsabgabe gegenüber dem Auftraggeber zu rügen.
+4) Ein Vergabenachprüfungsantrag ist nach § 160 Abs. 3 Nr. 4 GWB innerhalb von 15 Kalendertagen nach Eingang der Mitteilung des Auftraggebers, einer Rüge nicht abhelfen zu wollen, bei der Vergabekammer einzureichen.
+
+Der Auftraggeber muss nach § 134 GWB die nicht berücksichtigten Bieter über seine Zuschlagsentscheidung informieren, und zwar 10 Kalendertage vor der Zuschlagsentscheidung, wenn die Information auf elektronischem Wege versendet wird. Die Frist beginnt am Tag nach der Absendung der Information durch den Auftraggeber. Innerhalb dieser Frist kann der Bieter die Entscheidung des Auftraggebers vor der Vergabekammer überprüfen lassen. Unterbleibt die Information der Bieter durch den Auftraggeber oder erteilt er den Zuschlag vor Fristablauf, so ist der Vertrag unwirksam (§ 135 Absatz 1 Nr. 1 GWB).
+
+Verstöße im Sinne von § 135 Abs. 1 GWB (Unwirksamkeit des Vertrages) sind in einem Nachprüfungsverfahren innerhalb von 30 Kalendertagen ab Kenntnis des Verstoßes, jedoch nicht später als 6 Monate nach Vertragsschluss geltend zu machen. Hat der Auftraggeber die Auftragsvergabe im EU-Amtsblatt bekanntgemacht, endet die Frist zur Geltendmachung der Unwirksamkeit 30 Kalendertage nach Veröffentlichung der Bekanntmachung der Auftragsvergabe im Amtsblatt der EU (§ 135 Abs. 2 GWB). </cbc:Description>
+        </cac:PresentationPeriod>
+        <cac:AppealReceiverParty>
+          <cac:PartyIdentification>
+            <cbc:ID>ORG-0002</cbc:ID>
+          </cac:PartyIdentification>
+        </cac:AppealReceiverParty>
+      </cac:AppealTerms>
+    </cac:TenderingTerms>
+    <cac:TenderingProcess>
+      <cbc:GovernmentAgreementConstraintIndicator>false</cbc:GovernmentAgreementConstraintIndicator>
+      <cac:AuctionTerms>
+        <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+      </cac:AuctionTerms>
+      <cac:FrameworkAgreement>
+        <cac:SubsequentProcessTenderRequirement>
+          <cbc:Name>buyer-categories</cbc:Name>
+        </cac:SubsequentProcessTenderRequirement>
+      </cac:FrameworkAgreement>
+      <cac:ContractingSystem>
+        <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+      </cac:ContractingSystem>
+      <cac:ContractingSystem>
+        <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+      </cac:ContractingSystem>
+    </cac:TenderingProcess>
+    <cac:ProcurementProject>
+      <cbc:ID>25.027</cbc:ID>
+      <cbc:Name languageID="DEU">Erweiterung "Bündelungsbau" Landratsamt Unterallgäu: Fachplanung Elektro</cbc:Name>
+      <cbc:Description languageID="DEU">Der Landkreis Unterallgäu beabsichtigt, mittels eines Verhandlungsverfahrens mit Teilnahmewettbewerb, die Vergabe der Fachplanung Elektro (LPH 1-9) für die Erweiterung der Räumlichkeiten der Kreisverwaltung des bestehenden Landratsamts Unterallgäu in Mindelheim. Die Beauftragung soll stufenweise erfolgen. In der ersten Stufe sollen die LPH 1-2 beauftragt werden. Der Auftraggeber beabsichtigt, bei Fortsetzung der Planung und Ausführung der Baumaßnahme weitere LPH (3-9) abzurufen. Er behält sich vor, die Beauftragung auf einzelne Leistungsphasen bzw. Teilleistungen einzelner Leistungsstufen oder auf einzelne Abschnitte der Baumaßnahme zu beschränken.
+
+Die Fachplanung Elektro gem. § 55 HOAI 2021 Absatz 1, (LPH 1-9) soll nach derzeitigem Stand folgende Anlagengruppen abdecken: 
+ALG 4: Starkstromanlagen, 
+ALG 5: Fernmelde- und informationstechnische Anlagen, 
+Optional ALG 7: nutzungsspezifische Anlagen und verfahrenstechnische Anlagen, 
+Optional ALG 8: Gebäudeautomation und Automation von Ingenieurbauwerken. 
+
+Alle Erschließungs-Maßnahmen (öffentlich und nichtöffentlich), die im Rahmen der KG 200 erforderlich werden, sind vom Fachplaner mit zu berücksichtigen.
+</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+      <cac:ProcurementAdditionalType>
+        <cbc:ProcurementTypeCode listName="strategic-procurement">none</cbc:ProcurementTypeCode>
+      </cac:ProcurementAdditionalType>
+      <cac:MainCommodityClassification>
+        <cbc:ItemClassificationCode listName="cpv">71240000</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+        <cbc:ItemClassificationCode listName="cpv">71300000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+        <cbc:ItemClassificationCode listName="cpv">71321000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:RealizedLocation>
+        <cac:Address>
+          <cbc:StreetName>Bad Wörishofer Str.</cbc:StreetName>
+          <cbc:CityName>Mindelheim</cbc:CityName>
+          <cbc:PostalZone>87719</cbc:PostalZone>
+          <cbc:CountrySubentityCode listName="nuts">DE27C</cbc:CountrySubentityCode>
+          <cac:Country>
+            <cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:RealizedLocation>
+      <cac:PlannedPeriod>
+        <cbc:StartDate>2026-01-02+01:00</cbc:StartDate>
+        <cbc:EndDate>2029-12-21+01:00</cbc:EndDate>
+      </cac:PlannedPeriod>
+    </cac:ProcurementProject>
+  </cac:ProcurementProjectLot>
+  <cac:TenderResult>
+    <cbc:AwardDate>2000-01-01+01:00</cbc:AwardDate>
+  </cac:TenderResult>
+</can:ContractAwardNotice>

@@ -1,0 +1,622 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+   <ext:UBLExtensions>
+      <ext:UBLExtension>
+         <ext:ExtensionContent>
+            <efext:EformsExtension>
+               <efac:NoticeSubType>
+                  <cbc:SubTypeCode listName="notice-subtype">16</cbc:SubTypeCode>
+               </efac:NoticeSubType>
+               <efac:Organizations>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://wfosigw.pl/</cbc:WebsiteURI>
+                        <cbc:EndpointID>https://platformazakupowa.pl/pn/wfosigw</cbc:EndpointID>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Wojewódzki Fundusz Ochrony Środowiska i Gospodarki Wodnej w Warszawie</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>ul. Ogrodowa 5/7</cbc:StreetName>
+                           <cbc:CityName>Warszawa</cbc:CityName>
+                           <cbc:PostalZone>00-893</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL911</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>REGON142148155</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Name>Wojewódzki Fundusz Ochrony Środowiska i Gospodarki Wodnej w Warszawie</cbc:Name>
+                           <cbc:Telephone>+48 225044117</cbc:Telephone>
+                           <cbc:ElectronicMail>poczta@wfosigw.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://www.gov.pl/web/uzp/krajowa-izba-odwolawcza</cbc:WebsiteURI>
+                        <cbc:EndpointID>https://www.gov.pl/web/uzp/epuap</cbc:EndpointID>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Krajowa Izba Odwoławcza</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>ul. Postępu 17 A</cbc:StreetName>
+                           <cbc:CityName>Warszawa</cbc:CityName>
+                           <cbc:PostalZone>02-676</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL911</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>REGON010828091</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Name>Krajowa Izba Odwoławcza</cbc:Name>
+                           <cbc:Telephone>+48224587801</cbc:Telephone>
+                           <cbc:ElectronicMail>odwolania@uzp.gov.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://op.europa.eu</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0000</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Publications Office of the European Union</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:CityName>Luxembourg</cbc:CityName>
+                           <cbc:PostalZone>2417</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">LU000</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">LUX</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>PUBL</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+352 29291</cbc:Telephone>
+                           <cbc:ElectronicMail>ted@publications.europa.eu</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+               </efac:Organizations>
+            <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00760831-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+         </ext:ExtensionContent>
+      </ext:UBLExtension>
+   </ext:UBLExtensions>
+   <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+   <cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+   <cbc:ID schemeName="notice-id">ecf877b2-88e6-4107-8f78-6c1091bc7d10</cbc:ID>
+   <cbc:ContractFolderID>09bf1893-c2bb-42e8-a3df-ffe641374be1</cbc:ContractFolderID>
+   <cbc:IssueDate>2025-11-13Z</cbc:IssueDate>
+   <cbc:IssueTime>17:38:34Z</cbc:IssueTime>
+   <cbc:VersionID>01</cbc:VersionID>
+   <cbc:RequestedPublicationDate>2025-11-17Z</cbc:RequestedPublicationDate>
+   <cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+   <cbc:NoticeTypeCode listName="competition">cn-standard</cbc:NoticeTypeCode>
+   <cbc:NoticeLanguageCode listName="language">POL</cbc:NoticeLanguageCode>
+   <cac:ContractingParty>
+      <cbc:BuyerProfileURI>https://platformazakupowa.pl/pn/wfosigw</cbc:BuyerProfileURI>
+      <cac:ContractingPartyType>
+         <cbc:PartyTypeCode listName="buyer-legal-type">body-pl-ra</cbc:PartyTypeCode>
+      </cac:ContractingPartyType>
+      <cac:ContractingActivity>
+         <cbc:ActivityTypeCode listName="authority-activity">env-pro</cbc:ActivityTypeCode>
+      </cac:ContractingActivity>
+      <cac:Party>
+         <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+         </cac:PartyIdentification>
+         <cac:ServiceProviderParty>
+            <cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode>
+            <cac:Party>
+               <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0000</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:Party>
+         </cac:ServiceProviderParty>
+      </cac:Party>
+   </cac:ContractingParty>
+   <cac:TenderingTerms>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-grounds-source">epo-notice</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-prep-confl</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="POL">Dotyczy art.108 ust.1 pkt 6 ustawy Pzp</cbc:Description>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-corrpt</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="POL">Dotyczy art. 108 ust. 1 pkt 1lit. c) ustawy Pzp</cbc:Description>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-fraud</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="POL">Dotyczy art. 108 ust. 1 pkt 1lit. g) ustawy Pzp</cbc:Description>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-bre-lab-law</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="POL">Dotyczy art. 108 ust. 1 pkt 1 lit. f) i h) ustawy Pzp</cbc:Description>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-bre-soc-law</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="POL">Dotyczy art. 108 ust. 1 pkt 1 lit. f) i h) ustawy Pzp</cbc:Description>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-pmt-bre-ssc</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="POL">Dotyczy art. 108 ust. 1 pkt 3 ustawy Pzp</cbc:Description>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-pmt-bre-tax</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="POL">Dotyczy art. 108 ust. 1 pkt 3 ustawy Pzp</cbc:Description>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-distortion</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="POL">Dotyczy art. 108 ust. 1 pkt 5 ustawy Pzp</cbc:Description>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-traffick</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="POL">Dotyczy art. 108 ust. 1 pkt 1 lit. b) i f) ustawy Pzp</cbc:Description>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-laund</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="POL">Dotyczy art. 108 ust. 1 pkt 1 lit.d) ustawy Pzp</cbc:Description>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-terror</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="POL">Dotyczy art. 108 ust. 1 pkt 1 lit. e) ustawy Pzp</cbc:Description>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-part</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="POL">Dotyczy art. 108 ust. 1 pkt 1 lit. a) ustawy Pzp</cbc:Description>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-natl</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="POL">Dotyczy art. 7 ust. 1 ustawy z 13.04.2022 o szczególnych rozwiązaniach w zakresie przeciwdziałania wspieraniu agresji na Ukrainę oraz służących ochronie bezpieczeństwa narodowego</cbc:Description>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-misrepresent</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="POL">Dotyczy art. 109 ust. 1 pkt 8 i 10 ustawy Pzp</cbc:Description>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+   </cac:TenderingTerms>
+   <cac:TenderingProcess>
+      <cbc:Description languageID="POL">1. Zamawiający będzie stosował procedurę, o której mowa w art. 139 ust. 1 ustawy Pzp (tzw. procedurę odwróconą).
+2. W pierwszej kolejności Zamawiający dokonana badania i oceny ofert, a następnie dokona kwalifikacji podmiotowej Wykonawcy, którego oferta została najwyżej oceniona, w zakresie braku podstaw wykluczenia oraz spełniania warunków udziału w postępowaniu.
+3. Zamawiający wymaga złożenia wraz Ofertą oświadczenia, o którym mowa w Rozdziale 9 ust. 1 pkt 1) SWZ.
+4. Jeżeli wobec Wykonawcy, którego oferta została najwyżej oceniona zachodzą podstawy wykluczenia, Wykonawca ten nie spełnia warunków udziału w postępowaniu, nie składa podmiotowych środków dowodowych lub oświadczenia, o którym mowa w Rozdziale 9 ust. 1 pkt 1) SWZ potwierdzających brak podstaw do wykluczenia lub spełnianie warunków udziału w postępowaniu, Zamawiający dokona ponownego badania i oceny ofert pozostałych Wykonawców, a następnie dokonana kwalifikacji podmiotowej Wykonawcy, którego oferta została najwyżej ocenia, w zakresie braku podstaw wykluczenia oraz spełniania warunków udziału w postępowaniu. 
+5. Zamawiający kontynuuje procedurę, o której mowa w ust. 4 powyżej do momentu wyboru najkorzystniejszej oferty albo unieważnienia postępowania o udzielenie zamówienia.</cbc:Description>
+      <cbc:ProcedureCode listName="procurement-procedure-type">open</cbc:ProcedureCode>
+      <cac:ProcessJustification>
+         <cbc:ProcessReasonCode listName="accelerated-procedure">false</cbc:ProcessReasonCode>
+      </cac:ProcessJustification>
+   </cac:TenderingProcess>
+   <cac:ProcurementProject>
+      <cbc:ID schemeName="InternalID">ZP-13/2025</cbc:ID>
+      <cbc:Name languageID="POL">Nadzór serwisowy nad Zintegrowanym Systemem Zarządzania do obsługi procesów WFOŚiGW w Warszawie - 24 miesiące</cbc:Name>
+      <cbc:Description languageID="POL">1. Przedmiot zamówienia obejmuje:
+1) w ramach zakresu podstawowego zamówienia:
+a) świadczenie na rzecz Zamawiającego usługi nadzoru serwisowego, w tym usługi serwisu pogwarancyjnego, asysty technicznej i opieki powdrożeniowej Zintegrowanego Systemu Informatycznego (ZSI) do obsługi działalności Funduszu obejmującej moduły: Umowy i Wnioski, Wnioski na Zarząd, Generator raportów (Sprawozdawczość finansowa z działalności), Finanse-Księgowość, Generator JPK oraz integracja z Ministerstwem Finansów oraz z Urzędem Skarbowym, Płace i Kadry, Środki Trwałe, Podpis cyfrowy aplet JAVA oraz Szafir SDK Web Module,  Portal Pracownika, Integracja z EZD PUW, Integracja z Centralną Bazą Czystego Powietrza (CBCP), Wizualizacja mechanizmów integracji z CBCP, Integracja z bazą Centralnej Ewidencji Emisyjności Budynków (ZONE), Obieg poczty i dokumentacji Kancelaria – workflow, Prawo aktualizacji licencji narzędzi wspomagających obsługę baz danych (licencja Ag-grid), Portal Beneficjenta; w zakresie określonym w Szczegółowym opisie przedmiotu zamówienia stanowiącym Załącznik nr 1 do wzoru Umowy, stanowiącej Załącznik nr 8 do SWZ, a także inne usługi informatyczne, niewymienione w tym załączniku, których potrzeba wykonania może zaistnieć w okresie obowiązywania umowy;
+b) świadczenie usługi modyfikacji ZSI na zlecenie Zamawiającego, w zakresie niewymienionym w rozdziale I ust. 1 Szczegółowego opisu przedmiotu zamówienia, zawartego w Załączniku nr 1 do wzoru Umowy, stanowiącej Załącznik nr 8 do SWZ, a także innych usług informatycznych, niewymienionych w Załączniku nr 1 do wzoru Umowy, których potrzeba wykonania może zaistnieć w okresie obowiązywania umowy - w ramach limitu 1 500 roboczogodzin obowiązującego w trakcie trwania Umowy;
+c) dostawę, uruchomienie Portalu Beneficjenta w nowej technologii oraz wykonać trzy formularze wniosków - szczegółowo opisanych w rozdziale I ust. 2 pkt 2.3. Załącznika nr 1 do wzoru Umowy, stanowiącej Załącznik nr 8 do SWZ;
+d) dostawę licencji i uruchomienie modułu Analiz i Sprawozdawczości w nowej technologii - szczegółowo opisanych w rozdziale I ust. 2 pkt 2.4. Załącznika nr 1 do wzoru Umowy, stanowiącej Załącznik nr 8 do SWZ;
+2) w ramach zakresu opcjonalnego zamówienia (w przypadku uruchomienia przez Zamawiającego  zastrzeżonego  prawa  opcji  zgodnie  z  zapisami  § 2 wzoru  Umowy) - świadczenie usługi modyfikacji ZSI na zlecenie Zamawiającego, w zakresie niewymienionym w rozdziale I ust. 1 Szczegółowego opisu przedmiotu zamówienia, zawartego w Załączniku nr 1 do wzoru Umowy, stanowiącej Załącznik nr 8 do SWZ, a także innych usług informatycznych, niewymienionych w Załączniku nr 1 do wzoru Umowy, których potrzeba wykonania może zaistnieć w okresie obowiązywania umowy - w ramach limitu 750 roboczogodzin obowiązującego w trakcie trwania Umowy.
+2. Szczegółowy zakres Usług określony został w załączniku nr 1 do wzoru umowy, stanowiącej załącznik nr 10 do SWZ.</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+      <cbc:Note languageID="POL">1. Ofertę wraz z wymaganymi dokumentami należy umieścić na platformazakupowa.pl pod adresem: https://platformazakupowa.pl/pn/wfosigw w myśl ustawy Pzp na stronie internetowej prowadzonego postępowania.
+2. Po wypełnieniu Formularza składania oferty lub wniosku i dołączenia wszystkich wymaganych załączników należy kliknąć przycisk „Przejdź do podsumowania”.
+3. Oferta lub wniosek składana elektronicznie musi zostać podpisana elektronicznym podpisem kwalifikowanym. W procesie składania oferty za pośrednictwem platformazakupowa.pl Wykonawca powinien złożyć podpis bezpośrednio na dokumentach przesłanych za pośrednictwem platformazakupowa.pl Zamawiający zaleca stosowanie podpisu na każdym załączonym pliku osobno, w szczególności wskazanych w art. 63 ust. 1 oraz ust. 2 ustawy Pzp, gdzie zaznaczono, iż oferty, wnioski o dopuszczenie do udziału w postępowaniu oraz oświadczenie, o którym mowa w art. 125 ust. 1 ustawy Pzp sporządza się, pod rygorem nieważności, w formie elektronicznej i opatruje się kwalifikowanym podpisem elektronicznym.
+4. Za datę złożenia oferty przyjmuje się datę jej przekazania w systemie (platformie) w drugim kroku składania oferty poprzez kliknięcie przycisku “Złóż ofertę” i wyświetlenie się komunikatu, że oferta została zaszyfrowana i złożona.
+5. Szczegółowa instrukcja dla Wykonawców dotycząca złożenia, zmiany i wycofania oferty znajduje się na stronie internetowej pod adresem: https://platformazakupowa.pl/strona/45-instrukcje 
+6. Wykonawca wraz z ofertą składa: 
+1) oświadczenie, o którym mowa w art. 125 ust. 1 ustawy Pzp;
+Oświadczenie wskazane powyżej nie jest podmiotowym środkiem dowodowym i stanowi tymczasowy dowód potwierdzający brak podstaw wykluczenia i spełnianie warunków udziału w postępowaniu na dzień składania ofert.
+Oświadczenie, o którym mowa powyżej (w formie jednolitego europejskiego dokumentu zamówienia sporządzonego zgodnie z wzorem standardowego formularza określonego w rozporządzeniu Wykonawczym Komisji Europejskiej wydanym na podstawie art. 59 ust. 2 dyrektywy 2014/24/UE, zwanego dalej „jednolitym dokumentem” lub „JEDZ”), Wykonawca zobowiązany jest przesłać Zamawiającemu w formie elektronicznej (tj. opatrzonej kwalifikowanym podpisem elektronicznym), zgodnie z zasadami określonymi w Rozdziale 10 SWZ.
+Wykonawca wypełnia JEDZ, tworząc dokument elektroniczny. Może korzystać z narzędzia ESPD lub innych dostępnych narzędzi lub oprogramowania, które umożliwiają wypełnienie JEDZ i utworzenie dokumentu elektronicznego.
+Jednolity dokument przygotowany wstępnie przez Zamawiającego dla przedmiotowego postępowania (w formacie xml – do zaimportowania w serwisie ESPD) jest dostępny na Platformie w miejscu zamieszczenia niniejszej SWZ - załącznik nr 2 do SWZ.
+W zakresie „części IV Kryteria kwalifikacji” JEDZ, Wykonawca może ograniczyć się do wypełnienia sekcji alfa, w takim przypadku Wykonawca nie wypełnia żadnej z pozostałych sekcji (A-D) w części IV JEDZ.  
+Zamawiający zastrzega, że w Części III Sekcja C jednolitego dokumentu „Podstawy związane z niewypłacalnością, konfliktem interesów lub wykroczeniami zawodowymi” w podsekcji „Czy wykonawca, wedle własnej wiedzy, naruszył swoje obowiązki w dziedzinie prawa środowiska, prawa socjalnego i prawa pracy” Wykonawca składa oświadczenie w zakresie:
+- przestępstwa, o którym mowa w art. 9 lub art. 10 ustawy z dnia 15 czerwca 2012 r. o skutkach powierzania wykonywania pracy cudzoziemcom przebywającym wbrew przepisom na terytorium Rzeczypospolitej Polskiej (Dz. U. poz. 769 ze zm.). 
+W związku z tym, że Zamawiający nie stosuje przesłanek fakultatywnych, o których mowa w art. 109 ust. 1 pkt  2) lit. b) i c) i 3) w zakresie odnoszącym się do pkt. 2) lit. b) ustawy Pzp w Części III Sekcja C jednolitego dokumentu „Podstawy związane z niewypłacalnością, konfliktem interesów lub wykroczeniami zawodowymi” Wykonawca składa oświadczenie w zakresie wyżej wymienionych przestępstw, stanowiących obligatoryjną przesłankę wykluczenia określonych w art. 108 ust. 1 pkt 1) lit. f) i h) oraz pkt 2) ustawy Pzp.
+2) w przypadku Wykonawcy, który polega na zdolnościach podmiotów udostępniających zasoby, przedstawia, wraz z oświadczeniem, o którym mowa w pkt 1), także JEDZ podmiotu udostępniającego zasoby, potwierdzające brak podstaw wykluczenia tego podmiotu oraz odpowiednio spełnianie warunków udziału w postępowaniu, w zakresie, w jakim wykonawca powołuje się na jego zasoby.
+3) zobowiązanie podmiotu udostępniającego zasoby do oddania mu do dyspozycji niezbędnych zasobów na potrzeby realizacji danego zamówienia lub inny podmiotowy środek dowodowy potwierdzający, że Wykonawca realizując zamówienie, będzie dysponował niezbędnymi zasobami tych podmiotów, w sytuacji, gdy Wykonawca polega na zdolnościach lub sytuacji podmiotów udostępniających zasoby. Przykładowy wzór zobowiązania został zawarty w załączniku nr 4 do SWZ.
+(UWAGA: dotyczy sytuacji, w której Wykonawca powołuje się na zasoby podmiotu udostępniającego zasoby w celu wykazania spełnienia warunków udziału w postępowaniu)
+4) oświadczenie Wykonawców wspólnie ubiegających się o udzielenie zamówienia, z którego będzie wynikało, które usługi wykonają poszczególni Wykonawcy, w przypadku wykazania spełnienia warunków udziału w postępowaniu. Wzór oświadczenia zawarty jest 
+w załączniku nr 3 do SWZ.
+(UWAGA: dotyczy sytuacji, gdy Wykonawcy wspólnie ubiegają się o udzielenie zamówienia)
+5) oświadczenie dotyczące przepisów sankcyjnych związanych z wojną w Ukrainie (składa: Wykonawca, każdy z Wykonawców wspólnie ubiegający się o udzielenie zamówienia, podmiot udostępniający zasoby z zastrzeżeniem, że podmiot udostepniający zasoby składa oświadczenie w części II, tylko wtedy gdy przypada na niego ponad 10% wartości zamówienia). Oświadczenie to Wykonawca przekazuje w postaci elektronicznej opatrzone kwalifikowanym podpisem elektronicznym. Wzór oświadczenia zawarty jest w załączniku nr 5 do SWZ.
+7. Oświadczenie, o którym mowa w ust. 6 pkt 1) powyżej składają odrębnie:
+1) Wykonawca;
+2) każdy spośród Wykonawców wspólnie ubiegających się o udzielenie zamówienia. W takim przypadku oświadczenie potwierdza brak podstaw wykluczenia Wykonawcy oraz spełnianie warunków udziału w postępowaniu w zakresie, w jakim każdy z Wykonawców wykazuje spełnianie warunków udziału w postępowaniu;
+3) podmiot udostępniający zasoby, na którego zasoby powołuje się Wykonawca. W takim przypadku oświadczenie potwierdza brak podstaw wykluczenia tego podmiotu oraz spełnianie warunków udziału w postępowaniu w zakresie, w jakim Wykonawca powołuje się na zasoby tego podmiotu.
+8. Zamawiający przed udzieleniem zamówienia, wezwie Wykonawcę, którego oferta została najwyżej oceniona, do złożenia w wyznaczonym terminie, nie krótszym niż 10 dni, aktualnych na dzień złożenia, następujących podmiotowych środków dowodowych na potwierdzenie, że Wykonawca nie podlega wykluczeniu z postępowania:
+1) informację z Krajowego Rejestru Karnego w zakresie:
+a) art. 108 ust. 1 pkt 1 i 2 ustawy Pzp,
+b) art. 108 ust. 1 pkt 4 ustawy Pzp,  dotyczącą orzeczenia zakazu ubiegania się o zamówienie publiczne tytułem środka karnego,
+- sporządzoną nie wcześniej niż 6 miesięcy przed jej złożeniem; 
+2) oświadczenie Wykonawcy, w zakresie art. 108 ust. 1 pkt 5 ustawy Pzp, o braku przynależności do tej samej grupy kapitałowej, w rozumieniu ustawy z dnia 16 lutego 2007 r. o ochronie konkurencji i konsumentów (Dz. U. z 2021 r. poz. 275), z innym Wykonawcą, który złożył odrębną ofertę, ofertę częściową albo oświadczenie o przynależności do tej samej grupy kapitałowej wraz z dokumentami lub informacjami potwierdzającymi przygotowanie oferty, oferty częściowej niezależnie od innego Wykonawcy należącego do tej samej grupy kapitałowej. Wzór oświadczenia stanowi załącznik 6 do SWZ.
+3) oświadczenie Wykonawcy o aktualności informacji zawartych w oświadczeniu, o którym mowa w art. 125 ust. 1 ustawy Pzp, w zakresie podstaw wykluczenia z postępowania wskazanych przez Zmawiającego, o których mowa w:
+a) art. 108 ust. 1 pkt 3 ustawy Pzp,
+b) art. 108 ust. 1 pkt 4 ustawy Pzp  dotyczących orzeczenia zakazu ubiegania się o zamówienie publiczne tytułem środka zapobiegawczego,
+c) art. 108 ust. 1 pkt 5 ustawy Pzp  dotyczących zawarcia z innymi Wykonawcami porozumienia mającego na celu zakłócenie konkurencji,
+d) art. 108 ust. 1 pkt 6 ustawy Pzp,
+e) art. 109 ust. 1 pkt 8 i 10 ustawy Pzp.
+Wzór powyższego oświadczenia stanowi załącznik 7 do SWZ.
+9. Wykonawca jest związany ofertą przez 90 dni od dnia terminu składania ofert, tj. do dnia 14.03.2026 r.
+10. Aspekty dot. procedury zostały szczegółowo określone w SWZ.
+11. Termin wykonania przedmiotu zamówienia -24 miesiące od dnia podpisania umowy, nie wcześniej jednak niż od 01.01.2026 r.
+12. Zamawiający nie dopuszcza składania ofert częściowych. Zamawiający nie dokonał podziału zamówienia na części, ponieważ nie wpłynęłoby to na podniesienie efektywności i dostępności zamówienia. Najkorzystniejszym, z punktu widzenia organizacyjnego i ekonomicznego, rozwiązaniem jest świadczenie usług przez tego samego Wykonawcę. W przypadku podziału zamówienia na części każdy z Wykonawców musiałby dostosować się pod względem organizacyjnym do pozostałych Wykonawców, co wiązałoby się z łączną wyższą ceną wszystkich części zamówienia w porównaniu do kosztu jednego zamówienia. Przyjęty sposób postępowania oraz jego zakres nie wyklucza możliwości realizacji zamówienia przez małych i średnich przedsiębiorców. Zakres przedmiotu zamówienia odpowiada profilowi działalności małych i średnich przedsiębiorstw, funkcjonujących na rynku regionalnym i lokalnym.</cbc:Note>
+      <cac:MainCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">72267000</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">72250000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:RealizedLocation>
+         <cac:Address>
+            <cbc:CityName>Warszawa</cbc:CityName>
+            <cbc:CountrySubentityCode listName="nuts">PL911</cbc:CountrySubentityCode>
+            <cac:Country>
+               <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+            </cac:Country>
+         </cac:Address>
+      </cac:RealizedLocation>
+   </cac:ProcurementProject>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+      <cac:TenderingTerms>
+         <ext:UBLExtensions>
+            <ext:UBLExtension>
+               <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-ref-services</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="POL">O udzielenie zamówienia mogą ubiegać się Wykonawcy, którzy w zakresie zdolności technicznej lub zawodowej:
+w zakresie wiedzy i doświadczenia: 
+Wykonawca spełni ten warunek jeśli wykaże, że należycie wykonał lub wykonuje w okresie ostatnich trzech lat przed upływem terminu składania ofert, a jeśli okres prowadzenia działalności jest krótszy – w tym okresie, co najmniej dwie usługi, z których każda polegała/polega na serwisowaniu systemu informatycznego opartego na bazie ORACLE dla liczby użytkowników min. 50, z których każda była/jest świadczona w sposób ciągły przez okres co najmniej 12 miesięcy. 
+W przypadku, gdy Wykonawca aktualnie wykonuje usługę Zamawiający uzna, że warunek jest spełniony, jeżeli od rozpoczęcia realizacji usługi do dnia wystawienia dowodu określającego, czy ta usługa jest wykonywana należycie upłynęło 12 miesięcy.
+Uwaga:
+Warunek doświadczenia nie podlega sumowaniu - oznacza to, że albo Wykonawca składający ofertę wykaże się realizacją określonej liczby usług, albo jeden z Wykonawców występujących wspólnie wykaże się realizacją tych usług (warunek nie będzie spełniony, jeżeli Wykonawcy występujący wspólnie w sumie wykażą się zrealizowaniem wymaganych usług, ale żaden z nich nie posiada tego doświadczenia samodzielnie), albo w sytuacji gdy Wykonawca, który nie ma wymaganego doświadczenia (nie ma wymaganej liczby wykonanych usług), polega na zasobach innego podmiotu - podmiot ten musi wykazać samodzielnie zrealizowanie odpowiedniej liczby usług.
+UWAGA: Jeżeli wartość usługi wskazanej w wykazie jest podana w walucie innej niż PLN, Wykonawca zobowiązany jest, na potrzeby niniejszego postępowania, dokonać przeliczenia jej wartości na PLN wg średniego kursu NBP (www.nbp.pl tabela A - tabela kursów średnich walut obcych) z dnia zakończenia usługi o zakresie jak wyżej wraz z podaniem kursu oraz daty jego obowiązywania (zgodnie z tabelą A -tabela kursów średnich walut obcych) wg których dokonano przeliczenia, w przypadku usług nadal realizowanych - według tabeli kursów średnich walut obcych z dnia rozpoczęcia realizacji danej usługi.
+Zamawiający przed udzieleniem zamówienia, wezwie Wykonawcę, którego oferta została najwyżej oceniona, do złożenia w wyznaczonym terminie, nie krótszym niż 10 dni, aktualnych na dzień złożenia, następujących podmiotowych środków dowodowych:
+Na potwierdzenie spełnienia warunków udziału w postępowaniu:
+1) Wykaz usług wykonanych, a w przypadku świadczeń powtarzających się lub ciągłych również wykonywanych, w okresie ostatnich 3 lat, a jeżeli okres prowadzenia działalności jest krótszy – w tym okresie, w zakresie niezbędnym do wykazania spełniania warunku zdolności technicznej lub zawodowej (doświadczenia) opisanego w Rozdziale 8 ust. 1 pkt. 2) lit. d), wraz z podaniem ich wartości, przedmiotu, dat wykonania i podmiotów, na rzecz których usługi zostały wykonane lub są wykonywane, oraz załączeniem dowodów określających, czy te usługi zostały wykonane lub są wykonywane należycie, przy czym dowodami, o których mowa, są referencje bądź inne dokumenty sporządzone przez podmiot, na rzecz którego usługi zostały wykonane, a w przypadku świadczeń powtarzających się lub ciągłych są wykonywane, a jeżeli Wykonawca z przyczyn niezależnych od niego nie jest w stanie uzyskać tych dokumentów – oświadczenie Wykonawcy. Wzór wykazu stanowi Załącznik 8 do SWZ.
+W przypadku świadczeń powtarzających się lub ciągłych nadal wykonywanych referencje bądź inne dokumenty potwierdzające ich należyte wykonywanie powinny być wystawione w okresie ostatnich 3 miesięcy.</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-staff-tech-work</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="POL">O udzielenie zamówienia mogą ubiegać się Wykonawcy, którzy w zakresie zdolności technicznej lub zawodowej:
+w zakresie potencjału osobowego: 
+Wykonawca spełni ten warunek jeśli wykaże, że dysponuje minimum 2 osobowym zespołem, który będzie uczestniczył w wykonaniu zamówienia, legitymującym się kwalifikacjami zawodowymi, doświadczeniem i wykształceniem odpowiednim do zadań jakie zostaną mu powierzone – zgodnie z poniższym wykazem:
+1) (osoba pierwsza) minimum 1 osoba posiadająca co najmniej jeden z czterech niżej wymienionych certyfikatów:
+• OCA - Oracle Certified Associate,
+• OCP - Ocacle Certified Professional,
+• OCE - Ocacle Certified Expert,
+• Ocacle Certified Master,
+o profilu: Baza danych Oracle dla roli zawodowej Database Developer lub Database Administrator lub równoważnych do ww.
+Przez certyfikat równoważny Zamawiający rozumie certyfikat analogiczny co do zakresu z przykładowymi certyfikatami wskazanymi z nazwy, co jest rozumiane jako:
+a) analogiczna dziedzina merytoryczna,
+b) analogiczny stopień poziomu kompetencji,
+c) analogiczny poziom doświadczenia zawodowego wymaganego do otrzymania certyfikatu,
+d) potwierdzony egzaminem w przypadku, gdy ww. certyfikat podany 
+z nazwy musi być potwierdzony egzaminem. 
+2) (osoba druga) minimum 1 osoba posiadająca co najmniej 2 letnie doświadczenie 
+w wykonywaniu serwisu sieci komputerowych i baz danych.
+Zamawiający przed udzieleniem zamówienia, wezwie Wykonawcę, którego oferta została najwyżej oceniona, do złożenia w wyznaczonym terminie, nie krótszym niż 10 dni, aktualnych na dzień złożenia, następujących podmiotowych środków dowodowych:
+Na potwierdzenie spełnienia warunków udziału w postępowaniu:
+1) Wykaz osób, skierowanych przez Wykonawcę do realizacji zamówienia publicznego, w zakresie niezbędnym do wykazania spełnienia warunku kwalifikacji zawodowych opisanego w Rozdziale 8 ust. 1 pkt. 2) lit. d), w szczególności odpowiedzialnych za zaświadczenie usług, kontrolę jakości wraz z informacjami na temat ich kwalifikacji zawodowych, uprawnień, doświadczenia i wykształcenia niezbędnych do wykonania zamówienia publicznego, a także zakresu wykonywanych przez nie czynności oraz informacją o podstawie do dysponowania tymi osobami - Wzór wykazu stanowi Załącznik nr 9 do SWZ.</cbc:Description>
+                     </efac:SelectionCriteria>
+                  </efext:EformsExtension>
+               </ext:ExtensionContent>
+            </ext:UBLExtension>
+         </ext:UBLExtensions>
+         <cbc:VariantConstraintCode listName="permission">not-allowed</cbc:VariantConstraintCode>
+         <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+         <cbc:MultipleTendersCode listName="permission">not-allowed</cbc:MultipleTendersCode>
+         <cac:RequiredFinancialGuarantee>
+            <cbc:GuaranteeTypeCode listName="tender-guarantee-required">true</cbc:GuaranteeTypeCode>
+            <cbc:Description languageID="POL">Zamawiający żąda od Wykonawcy, z którym zostanie podpisana umowa wniesienia zabezpieczenia należytego wykonania umowy w wysokości 3% ceny całkowitej za zamówienie podstawowe podanej w ofercie.</cbc:Description>
+         </cac:RequiredFinancialGuarantee>
+         <cac:CallForTendersDocumentReference>
+            <ext:UBLExtensions>
+               <ext:UBLExtension>
+                  <ext:ExtensionContent>
+                     <efext:EformsExtension>
+                        <efac:OfficialLanguages>
+                           <cac:Language>
+                              <cbc:ID>POL</cbc:ID>
+                           </cac:Language>
+                        </efac:OfficialLanguages>
+                     </efext:EformsExtension>
+                  </ext:ExtensionContent>
+               </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:ID>ZP-13/2025</cbc:ID>
+            <cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+            <cac:Attachment>
+               <cac:ExternalReference>
+                  <cbc:URI>https://platformazakupowa.pl/pn/wfosigw</cbc:URI>
+               </cac:ExternalReference>
+            </cac:Attachment>
+         </cac:CallForTendersDocumentReference>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="selection-criteria-source">epo-notice</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="reserved-procurement">none</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="reserved-execution">no</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="conditions">performance</cbc:ExecutionRequirementCode>
+            <cbc:Description languageID="POL">1. Wykonawca w celu realizacji zamówienia zobowiązany jest samodzielnie uregulować wszelkie prawa, w tym autorskie prawa majątkowe do kodów źródłowych bezpośrednio z ich właścicielem, którym jest Prolan Sp. z o.o. z siedzibą przy ul. J. Słowackiego 2A, 41-800 Zabrze.
+2. Wykonawca zobowiązuje się świadczyć zamówienie, w taki sposób ażeby realizacja nie naruszała praw własności intelektualnej ani innych praw osób trzecich.</cbc:Description>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="einvoicing">allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="ecatalog-submission">not-allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="esignature-submission">true</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:AwardingTerms>
+            <cac:AwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>60</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="POL">Cena za zamówienie podstawowe</cbc:Name>
+                  <cbc:Description languageID="POL">Cena za zamówienie podstawowe (C) – waga 60%
+Oferta w tym kryterium może uzyskać maksymalnie 60 punktów.
+Kryterium będzie rozpatrywane na podstawie łącznej wartości brutto oferty. Liczba punktów w tym kryterium zostanie obliczona na podstawie poniższego wzoru:
+C = Cmin/cob	x 60 pkt	
+gdzie:
+C – całkowita liczba punktów oferty w kryterium „cena za zamówienie podstawowe”;
+Cmin – najniższa cena brutto za zamówienie podstawowe brutto jaka została zaoferowana spośród nieodrzuconych ofert;
+Cob	– cena brutto za zamówienie podstawowe jaka została zaoferowana w badanej ofercie;
+Punktacja zostanie zaokrąglona z dokładnością do dwóch miejsc po przecinku.</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>40</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="POL">Czas usunięcia awarii krytycznej</cbc:Name>
+                  <cbc:Description languageID="POL">Czas usunięcia awarii krytycznej (A) – waga 40%
+Oferta w tym kryterium może uzyskać maksymalnie 40 punktów.
+Czas usunięcia awarii krytycznej – czas wyrażony w godzinach, liczony od momentu otrzymania zgłoszenia przez Wykonawcę (eSerwis lub e-mailem dokonanego w dni robocze) do momentu usunięcia awarii, z dopuszczeniem rozwiązania zastępczego, doraźnie rozwiązującego problem awarii krytycznej. Awaria krytyczna jest tu rozumiana jako wystąpienie katastroficznego uszkodzenia programu (uszkodzenia uniemożliwiającego pracę w aplikacji) lub Bazy Danych, opisanego w rozdziale I ust. 1 pkt 1.16 tiret pierwsze Szczegółowego Opisu przedmiotu zamówienia, zawartego w Załączniku nr 1 do Umowy, stanowiącej Załącznik nr 10 do SWZ.
+Minimalny czas usunięcia awarii krytycznej wynosi 2 godziny a maksymalny czas usunięcia awarii krytycznej wynosi 12 godzin. Zaoferowany czas usunięcia awarii krytycznej musi być wpisany w formularzu ofertowym w pełnych godzinach tj. musi być określony liczbą całkowitą w przedziale od 2 do 12. 
+W przypadku zaoferowania czasu usunięcia awarii krytycznej krótszego niż 2 godziny lub dłuższego niż 12 godzin, oferta Wykonawcy zostanie odrzucona, jako niezgodna z warunkami zamówienia. W przypadku nie wskazania czasu usunięcia awarii krytycznej w formularzu ofertowym, Zamawiający przyjmie, iż Wykonawca zaoferował maksymalny czas usunięcia awarii krytycznej, tj. 12 godzin.
+Liczba punktów w tym kryterium zostanie obliczona na podstawie poniższego wzoru:
+A = Amin/Aob	x 40 pkt	
+gdzie:
+A – całkowita liczba punktów oferty w kryterium „czas usunięcia awarii krytycznej”;
+Amin – najkrótszy czas usunięcia awarii krytycznej jaki został zaoferowany spośród nieodrzuconych ofert;
+Aob – Czas usunięcia awarii krytycznej jaki został zaoferowany w badanej ofercie;
+Punktacja zostanie zaokrąglana z dokładnością do dwóch miejsc po przecinku.
+Łączna suma uzyskanych punktów z wszystkich kryteriów stanowić będzie końcową ocenę danej oferty, obliczenia dokonywane będą z dokładnością do dwóch miejsc po przecinku wg wzoru:
+P= C+A
+Gdzie: 
+P - całkowita liczba punktów uzyskana przez ofertę;
+C - całkowita liczba punktów oferty w kryterium „cena za zamówienie podstawowe”;
+A - całkowita liczba punktów oferty w kryterium „czas usunięcia awarii krytycznej”.</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+            </cac:AwardingCriterion>
+         </cac:AwardingTerms>
+         <cac:AdditionalInformationParty>
+            <cac:PartyIdentification>
+               <cbc:ID>ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:AdditionalInformationParty>
+         <cac:TenderRecipientParty>
+            <cbc:EndpointID>https://platformazakupowa.pl/pn/wfosigw</cbc:EndpointID>
+            <cac:PartyIdentification>
+               <cbc:ID>ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:TenderRecipientParty>
+         <cac:TenderEvaluationParty>
+            <cac:PartyIdentification>
+               <cbc:ID>ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:TenderEvaluationParty>
+         <cac:TenderValidityPeriod>
+            <cbc:DurationMeasure unitCode="DAY">90</cbc:DurationMeasure>
+         </cac:TenderValidityPeriod>
+         <cac:AppealTerms>
+            <cac:PresentationPeriod>
+               <cbc:Description languageID="POL">1. Wykonawcy, a także innemu podmiotowi, jeżeli ma lub miał interes w uzyskaniu zamówienia oraz poniósł lub może ponieść szkodę w wyniku naruszenia przez Zamawiającego przepisów ustawy Pzp, przysługują środki ochrony prawnej określone w Dziale IX ustawy Pzp. Środki ochrony prawnej wobec ogłoszenia o zamówieniu oraz dokumentów zamówienia przysługują również organizacjom wpisanym na listę, o której mowa w art. 469 pkt 15 ustawy Pzp oraz Rzecznikowi Małych i Średnich Przedsiębiorców.
+2. Odwołanie przysługuje na:
+1) niezgodną z przepisami ustawy Pzp czynność Zamawiającego, podjętą w postępowaniu o udzielenie zamówienia w tym na projektowane postanowienia umowy;
+2) zaniechanie czynności w postępowaniu o udzieleniu zamówienia, do której Zamawiający był zobowiązany na podstawie ustawy Pzp.
+3. Odwołanie zawiera:
+1) imię i nazwisko albo nazwę, miejsce zamieszkania albo siedzibę, numer telefonu oraz adres poczty elektronicznej Odwołującego oraz imię i nazwisko przedstawiciela (przedstawicieli);
+2) nazwę i siedzibę Zamawiającego, numer telefonu oraz adres poczty elektronicznej Zamawiającego;
+3) numer PESEL lub NIP odwołującego będącego osobą fizyczną, jeżeli jest on obowiązany do jego posiadania albo posiada go nie mając takiego obowiązku;
+4) numer w Krajowym Rejestrze Sądowym, a w przypadku jego braku – numer w innym właściwym rejestrze, ewidencji lub NIP Odwołującego nie będącą osobą fizyczną, który nie ma obowiązku wpisu we właściwym rejestrze lub ewidencji, jeżeli jest on obowiązany do jego posiadania;
+5) określenie przedmiotu zamówienia;
+6) wskazanie numeru publikacji w Dzienniku Urzędowym Unii Europejskiej;
+7) wskazanie czynności lub zaniechania czynności Zamawiającego, której zarzuca się niezgodność z przepisami ustawy;
+8) zwięzłe przedstawienie zarzutów;
+9) żądanie co do sposobu rozstrzygnięcia odwołania;
+10) wskazanie okoliczności faktycznych i prawnych uzasadniających wniesienie odwołania oraz dowodów na poparcie przytoczonych okoliczności;
+11) podpis Odwołującego albo jego przedstawiciela lub przedstawicieli;
+12) wykaz załączników.
+4. Do odwołania dołącza się:
+1) dowód uiszczenia wpisu od odwołania w wymaganej wysokości;
+2) dowód przekazania odpowiednio odwołania albo jego kopii Zamawiającemu;
+3) dokument potwierdzający umocowanie do reprezentowania Odwołującego.
+5. Odwołanie wnosi się do Prezesa Izby w formie pisemnej albo w formie elektronicznej albo w postaci elektronicznej opatrzonej podpisem zaufanym.
+6. Odwołujący przekazuje Zamawiającemu odwołanie wniesione w formie elektronicznej albo w postaci elektronicznej albo kopię tego odwołania, jeżeli zostało ono wniesione w formie pisemnej, przed upływem terminu do wniesienia odwołania w taki sposób, aby mógł on zapoznać się z jego treścią przed upływem tego terminu. Domniemywa się, że Zamawiający mógł zapoznać się z treścią odwołania przed upływem terminu do jego wniesienia, jeżeli przekazanie odpowiednio odwołania albo jego kopii nastąpiło przed upływem terminu do jego wniesienia przy użyciu środków komunikacji elektronicznej.
+7. Odwołanie wnosi się w terminach:
+1) 10 dni od dnia przesłania informacji o czynności Zamawiającego stanowiącej podstawę jego wniesienia, jeżeli informacja została przekazana przy użyciu środków komunikacji elektronicznej albo w terminie 15 dni – jeżeli informacja została przekazana w inny sposób;
+2) 10 dni od dnia publikacji ogłoszenia w Dzienniku Urzędowym Unii Europejskiej lub zamieszczenia dokumentów zamówienia na Platformie wobec treści ogłoszenia o zamówieniu lub wobec treści dokumentów zamówienia;
+3) Odwołanie w przypadkach innych niż określone w pkt 1 i 2 wnosi się w terminie 10 dni od dnia, w którym powzięto lub przy zachowaniu należytej staranności można było powziąć wiadomość o okolicznościach stanowiących podstawę jego wniesienia.
+4) Jeżeli Zamawiający nie przesłał Wykonawcy zawiadomienia o wyborze najkorzystniejszej oferty odwołanie wnosi się nie później niż w terminie:
+a) 30 dni od dnia publikacji w Dzienniku Urzędowym Unii Europejskiej ogłoszenia o udzieleniu zamówienia;
+b) 6 miesięcy od dnia zawarcia umowy, jeżeli Zamawiający nie opublikował w Dzienniku Urzędowym Unii Europejskiej ogłoszenia o udzieleniu zamówienia.
+8. Szczegółowe zasady postępowania po wniesieniu odwołania, określają stosowne przepisy Działu IX ustawy Pzp.
+9. Na orzeczenie Krajowej Izby Odwoławczej oraz postanowienie Prezesa Izby, o którym mowa 
+w art. 519 ust. 1 ustawy Pzp, stronom oraz uczestnikom postępowania odwoławczego przysługuje skarga do sądu.
+10.	Skargę wnosi się do Sądu Okręgowego w Warszawie – sądu zamówień publicznych.
+11. Skargę wnosi się za pośrednictwem Prezesa Krajowej Izby Odwoławczej w terminie 14 dni od dnia doręczenia orzeczenia Krajowej Izby Odwoławczej lub postanowienia Prezesa Izby, o którym mowa w art. 519 ust. 1 ustawy Pzp przesyłając jednocześnie jej odpis przeciwnikowi skargi. Złożenie skargi w placówce pocztowej operatora wyznaczonego w rozumieniu ustawy z dnia 23 listopada 2012 Prawo pocztowe (t.j. Dz. U. z 2022 r. poz. 896 ze zm.) albo wysłanie na adres do doręczeń elektronicznych, o którym mowa w art. 2 pkt 1 ustawy z dnia 18 listopada 2020 r. o doręczeniach elektronicznych jest równoznaczne z jej wniesieniem.
+12. Od wyroku sądu lub postanowienia kończącego postępowanie w sprawie przysługuje skarga kasacyjna do Sądu Najwyższego.</cbc:Description>
+            </cac:PresentationPeriod>
+            <cac:AppealInformationParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealInformationParty>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+         </cac:AppealTerms>
+         <cac:Language>
+            <cbc:ID>POL</cbc:ID>
+         </cac:Language>
+         <cac:PostAwardProcess>
+            <cbc:ElectronicOrderUsageIndicator>true</cbc:ElectronicOrderUsageIndicator>
+            <cbc:ElectronicPaymentUsageIndicator>true</cbc:ElectronicPaymentUsageIndicator>
+         </cac:PostAwardProcess>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <cbc:SubmissionMethodCode listName="esubmission">required</cbc:SubmissionMethodCode>
+         <cbc:GovernmentAgreementConstraintIndicator>false</cbc:GovernmentAgreementConstraintIndicator>
+         <cac:TenderSubmissionDeadlinePeriod>
+            <cbc:EndDate>2025-12-15+01:00</cbc:EndDate>
+            <cbc:EndTime>10:00:00+01:00</cbc:EndTime>
+         </cac:TenderSubmissionDeadlinePeriod>
+         <cac:OpenTenderEvent>
+            <cbc:OccurrenceDate>2025-12-15+01:00</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>10:30:00+01:00</cbc:OccurrenceTime>
+            <cac:OccurenceLocation>
+               <cbc:Description languageID="POL">https://platformazakupowa.pl/pn/wfosigw</cbc:Description>
+            </cac:OccurenceLocation>
+         </cac:OpenTenderEvent>
+         <cac:AuctionTerms>
+            <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+         </cac:AuctionTerms>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:ID schemeName="InternalID">ZP-13/2025</cbc:ID>
+         <cbc:Name languageID="POL">Nadzór serwisowy nad Zintegrowanym Systemem Zarządzania do obsługi procesów WFOŚiGW w Warszawie - 24 miesiące</cbc:Name>
+         <cbc:Description languageID="POL">1. Przedmiot zamówienia obejmuje:
+1) w ramach zakresu podstawowego zamówienia:
+a) świadczenie na rzecz Zamawiającego usługi nadzoru serwisowego, w tym usługi serwisu pogwarancyjnego, asysty technicznej i opieki powdrożeniowej Zintegrowanego Systemu Informatycznego (ZSI) do obsługi działalności Funduszu obejmującej moduły: Umowy i Wnioski, Wnioski na Zarząd, Generator raportów (Sprawozdawczość finansowa z działalności), Finanse-Księgowość, Generator JPK oraz integracja z Ministerstwem Finansów oraz z Urzędem Skarbowym, Płace i Kadry, Środki Trwałe, Podpis cyfrowy aplet JAVA oraz Szafir SDK Web Module,  Portal Pracownika, Integracja z EZD PUW, Integracja z Centralną Bazą Czystego Powietrza (CBCP), Wizualizacja mechanizmów integracji z CBCP, Integracja z bazą Centralnej Ewidencji Emisyjności Budynków (ZONE), Obieg poczty i dokumentacji Kancelaria – workflow, Prawo aktualizacji licencji narzędzi wspomagających obsługę baz danych (licencja Ag-grid), Portal Beneficjenta; w zakresie określonym w Szczegółowym opisie przedmiotu zamówienia stanowiącym Załącznik nr 1 do wzoru Umowy, stanowiącej Załącznik nr 8 do SWZ, a także inne usługi informatyczne, niewymienione w tym załączniku, których potrzeba wykonania może zaistnieć w okresie obowiązywania umowy;
+b) świadczenie usługi modyfikacji ZSI na zlecenie Zamawiającego, w zakresie niewymienionym w rozdziale I ust. 1 Szczegółowego opisu przedmiotu zamówienia, zawartego w Załączniku nr 1 do wzoru Umowy, stanowiącej Załącznik nr 8 do SWZ, a także innych usług informatycznych, niewymienionych w Załączniku nr 1 do wzoru Umowy, których potrzeba wykonania może zaistnieć w okresie obowiązywania umowy - w ramach limitu 1 500 roboczogodzin obowiązującego w trakcie trwania Umowy;
+c) dostawę, uruchomienie Portalu Beneficjenta w nowej technologii oraz wykonać trzy formularze wniosków - szczegółowo opisanych w rozdziale I ust. 2 pkt 2.3. Załącznika nr 1 do wzoru Umowy, stanowiącej Załącznik nr 8 do SWZ;
+d) dostawę licencji i uruchomienie modułu Analiz i Sprawozdawczości w nowej technologii - szczegółowo opisanych w rozdziale I ust. 2 pkt 2.4. Załącznika nr 1 do wzoru Umowy, stanowiącej Załącznik nr 8 do SWZ;
+2) w ramach zakresu opcjonalnego zamówienia (w przypadku uruchomienia przez Zamawiającego  zastrzeżonego  prawa  opcji  zgodnie  z  zapisami  § 2 wzoru  Umowy) - świadczenie usługi modyfikacji ZSI na zlecenie Zamawiającego, w zakresie niewymienionym w rozdziale I ust. 1 Szczegółowego opisu przedmiotu zamówienia, zawartego w Załączniku nr 1 do wzoru Umowy, stanowiącej Załącznik nr 8 do SWZ, a także innych usług informatycznych, niewymienionych w Załączniku nr 1 do wzoru Umowy, których potrzeba wykonania może zaistnieć w okresie obowiązywania umowy - w ramach limitu 750 roboczogodzin obowiązującego w trakcie trwania Umowy.
+2. Szczegółowy zakres Usług określony został w załączniku nr 1 do wzoru umowy, stanowiącej załącznik nr 10 do SWZ.</cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+         <cbc:SMESuitableIndicator>true</cbc:SMESuitableIndicator>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">72267000</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">72250000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:RealizedLocation>
+            <cac:Address>
+               <cbc:CityName>Warszawa</cbc:CityName>
+               <cbc:CountrySubentityCode listName="nuts">PL911</cbc:CountrySubentityCode>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+         <cac:PlannedPeriod>
+            <cbc:DurationMeasure unitCode="MONTH">24</cbc:DurationMeasure>
+         </cac:PlannedPeriod>
+         <cac:ContractExtension>
+            <cbc:OptionsDescription languageID="POL">1.Przedmiot zamówienia w ramach zakresu opcjonalnego obejmuje (w przypadku uruchomienia przez Zamawiającego  zastrzeżonego  prawa  opcji  zgodnie  z  zapisami  § 2 wzoru  Umowy) - świadczenie usługi modyfikacji ZSI na zlecenie Zamawiającego, w zakresie niewymienionym w rozdziale I ust. 1 Szczegółowego opisu przedmiotu zamówienia, zawartego w Załączniku nr 1 do wzoru Umowy, stanowiącej Załącznik nr 8 do SWZ, a także innych usług informatycznych, niewymienionych w Załączniku nr 1 do wzoru Umowy, których potrzeba wykonania może zaistnieć w okresie obowiązywania umowy - w ramach limitu 750 roboczogodzin obowiązującego w trakcie trwania Umowy.
+Zamawiający wymaga, aby podane przez Wykonawcę ceny jednostkowe za realizację zamówienia opcjonalnego były identyczne, jak ceny jednostkowe zamówienia podstawowego wskazane przez Wykonawcę w ofercie. Cena za zamówienie opcjonalne będzie podlegała zmianom w sposób analogiczny jak za zamówienie podstawowe, zgodnie ze wzorem umowy stanowiącym załącznik nr 10 do umowy.
+2. Zamawiający w ramach przewidywanego prawa opcji zastrzega możliwość zwiększenia ilości/zakresu usług w ramach niniejszej umowy ponad zakres podstawowy zamówienia – w maksymalnym zakresie określonym w ust. 1 powyżej (zakres opcjonalny zamówienia). 
+3. Zamawiający podejmie decyzję co do możliwości i woli skorzystania z zastrzeżonego prawa opcji zgodnie z zapotrzebowaniem i posiadanymi możliwościami finansowymi. 
+4. Zastrzega się, iż zakres opcjonalny zamówienia objęty prawem opcji nie stanowi zobowiązania umownego (w tym finansowego) Zamawiającego zaciąganego w momencie zawarcia Umowy w sprawie zamówienia, a przewidywany zakres opcjonalny zamówienia nie jest gwarantowany do realizacji. 
+5. Realizacja (uruchomienie) prawa opcji dokonywana jest poprzez złożenie Wykonawcy przez Zamawiającego, w okresie obowiązywania Umowy, oświadczenia określającego zakres konkretnych usług. Wzór oświadczenia o skorzystaniu przez Zamawiającego z prawa opcji określa załącznik nr 7 do wzoru Umowy.
+6. Realizacja (uruchomienie) prawa opcji (zakresu opcjonalnego zamówienia) nie stanowi zmiany warunków niniejszej Umowy i nie wymaga zawarcia aneksu do Umowy.
+7. Przedmiotowe prawo opcji może być realizowane przez Zamawiającego etapowo / częściowo / fragmentarycznie / sukcesywnie w okresie realizacji zamówienia, przy czym oświadczenie o skorzystaniu przez Zamawiającego z prawa opcji (ewentualnie ostatnie z takich oświadczeń – w przypadku etapowego korzystania prawa opcji) może zostać złożone najpóźniej do dnia zakończenia umowy. Po upływie tego terminu zastrzeżone prawo opcji (w zakresie, w jakim nie zostało uruchomione) wygasa, w związku z czym Zamawiający po upływie tego terminu nie może już z niego skorzystać. 
+8. Wykonawca jest zobowiązany do wykonania usług w ramach prawa opcji w przypadku i w zakresie, w jakim korzysta z niego Zamawiający, zgodnie z treścią oświadczenia (oświadczeń) Zamawiającego o skorzystaniu z prawa opcji i warunkami określonymi we wzorze Umowie.
+9. W przypadku skorzystania przez Zamawiającego z prawa opcji uruchomiony w tym trybie zakres opcjonalny ma być realizowany w sposób analogiczny, jak zakres podstawowy (przy zastrzeżeniu wyraźnych postanowień umowy swoistych dla zakresu opcjonalnego).
+10. Przedmiotu zamówienia objętego zakresem opcjonalnym zamówienia (w razie jego uruchomienia i realizacji) dotyczą te same warunki i zobowiązania umowne Wykonawcy (w tym sposobu realizacji przedmiotu Umowy), co przedmiotu umowy objętego zakresem podstawowym zamówienia.
+11. Zakres opcjonalny zamówienia stanowi przedmiot Umowy, przy czym konieczność jego realizacji aktualizuje się w przypadku skorzystania przez Zamawiającego z zastrzeżonego prawa opcji zgodnie z zapisami niniejszej Umowy (w zakresie, w jakim opcja jest uruchamiana). 
+12. W momencie złożenia oświadczenia o skorzystaniu z prawa opcji następuje zaciągnięcie przez Zamawiającego zobowiązania finansowego w wysokości wynikającej z zakresu usług objętego realizowaną na mocy danego oświadczenia opcją. 
+13. Wykonawcy nie przysługuje żadne roszczenie w stosunku do Zamawiającego w przypadku, gdy Zamawiający z opcji nie skorzysta.</cbc:OptionsDescription>
+         </cac:ContractExtension>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+</ContractNotice>

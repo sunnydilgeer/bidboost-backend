@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractAwardNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractAwardNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+   <ext:UBLExtensions>
+      <ext:UBLExtension>
+         <ext:ExtensionContent>
+            <efext:EformsExtension>
+               <efac:NoticeResult>
+                  <cbc:TotalAmount currencyID="PLN">2464336.1</cbc:TotalAmount>
+                  <efac:LotResult>
+                     <cbc:ID schemeName="result">RES-0001</cbc:ID>
+                     <cbc:HigherTenderAmount currencyID="PLN">2597084.6</cbc:HigherTenderAmount>
+                     <cbc:LowerTenderAmount currencyID="PLN">2464336.1</cbc:LowerTenderAmount>
+                     <cbc:TenderResultCode listName="winner-selection-status">selec-w</cbc:TenderResultCode>
+                     <efac:LotTender>
+                        <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                     </efac:LotTender>
+                     <efac:ReceivedSubmissionsStatistics>
+                        <efbc:StatisticsCode listName="received-submission-type">t-esubm</efbc:StatisticsCode>
+                        <efbc:StatisticsNumeric>2</efbc:StatisticsNumeric>
+                     </efac:ReceivedSubmissionsStatistics>
+                     <efac:SettledContract>
+                        <cbc:ID schemeName="contract">CON-0001</cbc:ID>
+                     </efac:SettledContract>
+                     <efac:TenderLot>
+                        <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+                     </efac:TenderLot>
+                  </efac:LotResult>
+                  <efac:LotTender>
+                     <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                     <cbc:RankCode>1</cbc:RankCode>
+                     <efbc:TenderRankedIndicator>true</efbc:TenderRankedIndicator>
+                     <cac:LegalMonetaryTotal>
+                        <cbc:PayableAmount currencyID="PLN">2464336.1</cbc:PayableAmount>
+                     </cac:LegalMonetaryTotal>
+                     <efac:SubcontractingTerm>
+                        <efbc:TermCode listName="applicability">no</efbc:TermCode>
+                     </efac:SubcontractingTerm>
+                     <efac:TenderingParty>
+                        <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+                     </efac:TenderingParty>
+                     <efac:TenderLot>
+                        <cbc:ID>LOT-0001</cbc:ID>
+                     </efac:TenderLot>
+                     <efac:TenderReference>
+                        <cbc:ID>oferta nr 1</cbc:ID>
+                     </efac:TenderReference>
+                  </efac:LotTender>
+                  <efac:SettledContract>
+                     <cbc:ID schemeName="contract">CON-0001</cbc:ID>
+                     <cbc:AwardDate>2025-10-22+02:00</cbc:AwardDate>
+                     <cbc:IssueDate>2025-11-06+01:00</cbc:IssueDate>
+                     <cbc:Title languageID="POL">Udzielenie i obsługa kredytu długoterminowego w wysokości 8 100 000,00 zł w tym: na pokrycie deficytu budżetu do wysokości 6 450 000,00 zł oraz na spłatę wcześniej zaciągniętych zobowiązań z tytułu kredytów i pożyczek w kwocie 1 650 000,00 zł</cbc:Title>
+                     <cac:SignatoryParty>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                        </cac:PartyIdentification>
+                     </cac:SignatoryParty>
+                     <efac:ContractReference>
+                        <cbc:ID>387-30001-10-61-10/85/25</cbc:ID>
+                     </efac:ContractReference>
+                     <efac:LotTender>
+                        <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                     </efac:LotTender>
+                  </efac:SettledContract>
+                  <efac:TenderingParty>
+                     <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+                     <cbc:Name>Konsorcjum: Bank Spółdzielczy w Kalwarii Zebrzydowskiej Bank Spółdzielczy w Brzeźnicy Bank Spółdzielczy w Dobczycach</cbc:Name>
+                     <efac:Tenderer>
+                        <cbc:ID schemeName="organization">ORG-0004</cbc:ID>
+                        <efbc:GroupLeadIndicator>true</efbc:GroupLeadIndicator>
+                     </efac:Tenderer>
+                     <efac:Tenderer>
+                        <cbc:ID schemeName="organization">ORG-0005</cbc:ID>
+                        <efbc:GroupLeadIndicator>false</efbc:GroupLeadIndicator>
+                     </efac:Tenderer>
+                     <efac:Tenderer>
+                        <cbc:ID schemeName="organization">ORG-0006</cbc:ID>
+                        <efbc:GroupLeadIndicator>false</efbc:GroupLeadIndicator>
+                     </efac:Tenderer>
+                  </efac:TenderingParty>
+               </efac:NoticeResult>
+               <efac:NoticeSubType>
+                  <cbc:SubTypeCode listName="notice-subtype">29</cbc:SubTypeCode>
+               </efac:NoticeSubType>
+               <efac:Organizations>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://samorzad.gov.pl/web/gmina-kalwaria-zebrzydowska/</cbc:WebsiteURI>
+                        <cbc:EndpointID>https://ezamowienia.gov.pl/mp-client/search/list/ocds-148610-c38c6565-b326-4a3c-9bdc-4dc0119799e3</cbc:EndpointID>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Gmina Kalwaria Zebrzydowska</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>ul. Mickiewicza 7</cbc:StreetName>
+                           <cbc:CityName>Kalwaria Zebrzydowska</cbc:CityName>
+                           <cbc:PostalZone>34-130</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL21A</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>5511158182</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+48338766700</cbc:Telephone>
+                           <cbc:ElectronicMail>zp@kalwaria-zebrzydowska.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://www.gov.pl/web/uzp/o-kio</cbc:WebsiteURI>
+                        <cbc:EndpointID>https://www.gov.pl/web/uzp/kontakt2</cbc:EndpointID>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Krajowa Izba Odwoławcza</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>ul. Postępu 17a</cbc:StreetName>
+                           <cbc:CityName>Warszawa</cbc:CityName>
+                           <cbc:PostalZone>02-676</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL911</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>5262239325</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Name>Sekretariat Biura Odwołań</cbc:Name>
+                           <cbc:Telephone>+48224587801</cbc:Telephone>
+                           <cbc:ElectronicMail>odwolania@uzp.gov.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Publications Office of the European Union</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:CityName>Luksembourg</cbc:CityName>
+                           <cbc:PostalZone>2417</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">LU000</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">LUX</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>PUBL</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+35229291</cbc:Telephone>
+                           <cbc:ElectronicMail>ted@publications.europa.eu</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <efbc:CompanySizeCode listName="economic-operator-size">sme</efbc:CompanySizeCode>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0004</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Bank Spółdzielczy w Kalwarii Zebrzydowskiej</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>ul. Jagiellońska 2</cbc:StreetName>
+                           <cbc:CityName>Kalwaria Zebrzydowska</cbc:CityName>
+                           <cbc:PostalZone>34-130</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL21A</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>5510012973</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+48338766323</cbc:Telephone>
+                           <cbc:ElectronicMail>bank@bskalwaria.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <efbc:CompanySizeCode listName="economic-operator-size">sme</efbc:CompanySizeCode>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0005</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Bank Spółdzielczy w Brzeźnicy</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>ul. Kalwaryjska 5</cbc:StreetName>
+                           <cbc:CityName>Brzeźnica</cbc:CityName>
+                           <cbc:PostalZone>34-114</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL214</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>5510017692</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+48338792004</cbc:Telephone>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <efbc:CompanySizeCode listName="economic-operator-size">sme</efbc:CompanySizeCode>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0006</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Bank Spółdzielczy w Dobczycach</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>ul. Kilińskiego 2</cbc:StreetName>
+                           <cbc:CityName>Dobczyce</cbc:CityName>
+                           <cbc:PostalZone>32-410</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL214</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>6810009800</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+48123727956</cbc:Telephone>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efbc:NaturalPersonIndicator>false</efbc:NaturalPersonIndicator>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://op.europa.eu</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0000</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Publications Office of the European Union</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:CityName>Luxembourg</cbc:CityName>
+                           <cbc:PostalZone>2417</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">LU000</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">LUX</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>PUBL</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+352 29291</cbc:Telephone>
+                           <cbc:ElectronicMail>ted@publications.europa.eu</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+               </efac:Organizations>
+            <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00759911-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+         </ext:ExtensionContent>
+      </ext:UBLExtension>
+   </ext:UBLExtensions>
+   <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+   <cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+   <cbc:ID schemeName="notice-id">cfb2e58b-4120-4f63-9f31-f5bedc80da61</cbc:ID>
+   <cbc:ContractFolderID>eaf8e3f0-9d4e-4dfb-b45b-8d8fba822063</cbc:ContractFolderID>
+   <cbc:IssueDate>2025-11-14Z</cbc:IssueDate>
+   <cbc:IssueTime>09:45:41Z</cbc:IssueTime>
+   <cbc:VersionID>01</cbc:VersionID>
+   <cbc:RequestedPublicationDate>2025-11-17Z</cbc:RequestedPublicationDate>
+   <cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+   <cbc:NoticeTypeCode listName="result">can-standard</cbc:NoticeTypeCode>
+   <cbc:NoticeLanguageCode listName="language">POL</cbc:NoticeLanguageCode>
+   <cac:ContractingParty>
+      <cac:ContractingPartyType>
+         <cbc:PartyTypeCode listName="buyer-legal-type">la</cbc:PartyTypeCode>
+      </cac:ContractingPartyType>
+      <cac:ContractingActivity>
+         <cbc:ActivityTypeCode listName="authority-activity">gen-pub</cbc:ActivityTypeCode>
+      </cac:ContractingActivity>
+      <cac:Party>
+         <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+         </cac:PartyIdentification>
+         <cac:ServiceProviderParty>
+            <cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode>
+            <cac:Party>
+               <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0000</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:Party>
+         </cac:ServiceProviderParty>
+         <cac:ServiceProviderParty>
+            <cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode>
+            <cac:Party>
+               <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:Party>
+         </cac:ServiceProviderParty>
+      </cac:Party>
+   </cac:ContractingParty>
+   <cac:TenderingProcess>
+      <cbc:Description languageID="POL">1.Komunikacja w postępowaniu o udzielenie zamówienia, w tym składanie ofert, wymiana informacji oraz przekazywanie dokumentów lub oświadczeń, z uwzględnieniem wyjątków określonych w ustawie Prawo zamówień publicznych zwanej dalej p.z.p., odbywa się przy użyciu środków komunikacji elektronicznej w rozumieniu ustawy z dnia 18 lipca 2002 r. o świadczeniu usług drogą elektroniczną.
+2. W postępowaniu o udzielenie zamówienia publicznego komunikacja między Zamawiającym a wykonawcami odbywa się przy użyciu Platformy e-Zamówienia, która jest dostępna pod adresem: https://ezamowienia.gov.pl
+3. Korzystanie z Platformy e-Zamówienia jest bezpłatne.
+4. Adres strony internetowej prowadzonego postępowania (link prowadzący bezpośrednio do widoku postępowania na Platformie e-Zamówienia): 
+https://ezamowienia.gov.pl/mp-client/search/list/ocds-148610-c38c6565-b326-4a3c-9bdc-4dc0119799e3 
+Postępowanie można wyszukać również ze strony głównej Platformy e-Zamówienia (przycisk „Przeglądaj postępowania/konkursy”).
+5. Identyfikator (ID) postępowania na Platformie e-Zamówienia: ocds-148610-c38c6565-b326-4a3c-9bdc-4dc0119799e3
+6. Wykonawca zamierzający wziąć udział w postępowaniu o udzielenie zamówienia publicznego musi posiadać konto podmiotu „Wykonawca” na Platformie e-Zamówienia. Szczegółowe informacje na temat zakładania kont podmiotów oraz zasady i warunki korzystania z Platformy e-Zamówienia określa Regulamin Platformy e-Zamówienia, dostępny na stronie internetowej https://ezamowienia.gov.pl oraz informacje zamieszczone w zakładce „Centrum Pomocy”. 
+7. Sposób sporządzenia dokumentów elektronicznych lub dokumentów elektronicznych będących kopią elektroniczną treści zapisanej w postaci papierowej (cyfrowe odwzorowania) musi być zgodny z wymaganiami określonymi w rozporządzeniu Prezesa Rady Ministrów w sprawie sposobu sporządzania i przekazywania informacji oraz wymagań technicznych dla dokumentów elektronicznych oraz środków komunikacji elektronicznej w postępowaniu o udzielenie zamówienia publicznego lub konkursie, zwanym dalej rozporz. w sprawie wymagań dla dokumentów elektronicznych.
+8. Dokumenty elektroniczne, o których mowa w § 2 ust. 1 rozporz. Prezesa Rady Ministrów w sprawie wymagań dla dokumentów elektronicznych, sporządza się w postaci elektronicznej, w formatach danych określonych w przepisach rozporządzenia Rady Ministrów w sprawie Krajowych Ram Interoperacyjności, minimalnych wymagań dla rejestrów publicznych i wymiany informacji w postaci elektronicznej oraz minimalnych wymagań dla systemów teleinformatycznych z uwzględnieniem rodzaju przekazywanych danych i przekazuje się jako załączniki. W przypadku formatów, o których mowa w art. 66 ust. 1 ustawy p.z.p., ww. regulacje nie będą miały bezpośredniego zastosowania.
+9. Informacje, oświadczenia lub dokumenty, inne niż wymienione w § 2 ust. 1 rozporz. Prezesa Rady Ministrów w sprawie wymagań dla dokumentów elektronicznych, przekazywane w postępowaniu sporządza się w postaci elektronicznej:
+9.1.w formatach danych określonych w przepisach rozporządzenia Rady Ministrów w sprawie Krajowych Ram Interoperacyjności (i przekazuje się jako załącznik), lub 
+9.2.jako tekst wpisany bezpośrednio do wiadomości przekazywanej przy użyciu środków komunikacji elektronicznej (np. w treści wiadomości e-mail lub w treści „Formularza do komunikacji”).
+10.	Jeżeli dokumenty elektroniczne, przekazywane przy użyciu środków komunikacji elektronicznej, zawierają informacje stanowiące tajemnicę przedsiębiorstwa w rozumieniu przepisów ustawy z dnia 16 kwietnia 1993 r. o zwalczaniu nieuczciwej konkurencji wykonawca, w celu utrzymania w poufności tych informacji, przekazuje je  w wydzielonym i odpowiednio oznaczonym pliku, wraz z jednoczesnym zaznaczeniem w nazwie pliku „Dokument stanowiący tajemnicę przedsiębiorstwa”.
+11. Komunikacja w postępowaniu, z wyłączeniem składania ofert, odbywa się drogą elektroniczną za pośrednictwem formularzy do komunikacji dostępnych w zakładce „Formularze” („Formularze do komunikacji”). Za pośrednictwem „Formularzy do komunikacji” odbywa się w szczególności przekazywanie wezwań i zawiadomień, zadawanie pytań i udzielanie odpowiedzi. Formularze do komunikacji umożliwiają również dołączenie załącznika do przesyłanej wiadomości (przycisk „dodaj załącznik”). W przypadku załączników, które są zgodnie z ustawą Pzp lub rozporządzeniem Prezesa Rady Ministrów w sprawie wymagań dla dokumentów elektronicznych opatrzone kwalifikowanym podpisem elektronicznym, mogą być opatrzone, zgodnie z wyborem wykonawcy/wykonawcy wspólnie ubiegającego się o udzielenie zamówienia/podmiotu udostępniającego zasoby, podpisem zewnętrznym lub wewnętrznym. W zależności od rodzaju podpisu i jego typu (zewnętrzny, wewnętrzny) dodaje się do przesyłanej wiadomości uprzednio podpisane dokumenty wraz z wygenerowanym plikiem podpisu (typ zewnętrzny) lub dokument z wszytym podpisem (typ wewnętrzny).
+12.	Możliwość korzystania w postępowaniu z „Formularzy do komunikacji” w pełnym zakresie wymaga posiadania konta „Wykonawcy” na Platformie e-Zamówienia oraz zalogowania się na Platformie e-Zamówienia. Do korzystania z „Formularzy do komunikacji” służących do zadawania pytań dotyczących treści dokumentów zamówienia wystarczające jest posiadanie tzw. konta uproszczonego na Platformie e-Zamówienia.
+13.	Wszystkie wysłane i odebrane w postępowaniu przez wykonawcę wiadomości widoczne są po zalogowaniu w podglądzie postępowania w zakładce „Komunikacja”.
+14.	Maksymalny rozmiar plików przesyłanych za pośrednictwem „Formularzy do komunikacji” wynosi 150 MB (wielkość ta dotyczy plików przesyłanych jako załączniki do jednego formularza).
+15.	Minimalne wymagania techniczne dotyczące sprzętu używanego w celu korzystania z usług Platformy e-Zamówienia oraz informacje dotyczące specyfikacji połączenia określa Regulamin Platformy e-Zamówienia.</cbc:Description>
+      <cbc:ProcedureCode listName="procurement-procedure-type">open</cbc:ProcedureCode>
+      <cac:NoticeDocumentReference>
+         <cbc:ID schemeName="ojs-notice-id">574278-2025</cbc:ID>
+      </cac:NoticeDocumentReference>
+      <cac:ProcessJustification>
+         <cbc:ProcessReasonCode listName="accelerated-procedure">false</cbc:ProcessReasonCode>
+      </cac:ProcessJustification>
+   </cac:TenderingProcess>
+   <cac:ProcurementProject>
+      <cbc:ID schemeName="InternalID">ZP.271.20.2025</cbc:ID>
+      <cbc:Name languageID="POL">Udzielenie i obsługa kredytu długoterminowego w wysokości 8 100 000,00 zł w tym: na pokrycie deficytu budżetu do wysokości 6 450 000,00 zł oraz na spłatę wcześniej zaciągniętych zobowiązań z tytułu kredytów i pożyczek w kwocie 1 650 000,00 zł</cbc:Name>
+      <cbc:Description languageID="POL">1. Przedmiotem zamówienia jest: Udzielenie i obsługa kredytu długoterminowego w wysokości 8 100 000,00 zł /słownie złotych: osiem milionów sto tysięcy/, w tym: na pokrycie deficytu budżetu do wysokości 6 450 000,00 zł /słownie złotych: sześć milionów czterysta pięćdziesiąt tysięcy/ oraz na spłatę wcześniej zaciągniętych zobowiązań z tytułu kredytów i pożyczek w kwocie 1 650 000,00 zł /słownie złotych: jeden milion sześćset pięćdziesiąt tysięcy/.
+2. Planuje się wypłatę kredytu w 3 transzach:
+rok 2025	- I transza kredytu:	4 000 000,00 zł (słownie złotych: cztery miliony 00/100),
+rok 2025	- II transza kredytu:	2 000 000,00 zł (słownie złotych: dwa miliony 00/100),
+rok 2025	- III transza kredytu: 	2 100 000,00 zł (słownie złotych: dwa miliony sto tysięcy 00/100),
+Łącznie: 8 100 000,00 złotych (słownie złotych: osiem milionów sto tysięcy 00/100). 
+Kredytobiorca zastrzega sobie możliwość przesunięcia terminu uruchomienia transz oraz niewykorzystania pełnej kwoty kredytu, poprzez złożenie dyspozycji na niższą kwotę I, II i III transzy bądź ich rezygnację. Kredytobiorca  zapewnia wykorzystanie kredytu w 50% łącznej kwoty co daje 4 050 000,00 zł (słownie złotych: cztery miliony pięćdziesiąt tysięcy 0/100).
+3. Okres spłaty kapitału od 31.03.2027 r. do 31.07.2036 r.  Waluta kredytu: PLN.  Zabezpieczenie kredytu weksel in blanco. Źródło pokrycia spłaty: dochody budżetu gminy. 
+4. Wykorzystana kwota kredytu oprocentowana jest według zmiennej stawki WIBOR dla 3-miesięcznych depozytów międzybankowych, powiększonej o stałą w trakcie trwania Umowy marżę Banku. Stawka WIBOR 3M (ang. Warsaw Interbank Offered Rate) jest Wskaźnikiem referencyjnym, który ulega zmianie w zależności od zmiany stawki WIBOR 3 M. Dla celów zamówienia należy przyjąć WIBOR 3M z dnia 21 lipca 2025 r. Zamawiający nie przewiduje prowizji od udzielonego kredytu.</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+      <cbc:Note languageID="POL">1. Do oferty Wykonawca dołącza oświadczenie o niepodleganiu wykluczeniu oraz spełnianiu warunków udziału w postępowaniu w zakresie wskazanym przez zamawiającego. Przedmiotowe oświadczenie Wykonawca składa na formularzu Jednolitego Europejskiego Dokumentu Zamówienia zwanego dalej JEDZ, sporządzonym zgodnie ze wzorem standardowego formularza określonego w rozporządzeniu wykonawczym Komisji (UE) 2016/7 z dnia 5 stycznia 2016 r. ustanawiającego standardowy formularz jednolitego europejskiego dokumentu zamówienia. Oświadczenie stanowi dowód potwierdzający brak podstaw wykluczenia oraz spełnianie warunków udziału w postępowaniu odpowiednio na dzień składania ofert, tymczasowo zastępujący wymagane przez zamawiającego podmiotowe środki dowodowe. Wzór JEDZ stanowi zał. nr 2 do specyfikacji warunków zamówienia zwanej dalej SWZ. 2. W przypadku wspólnego ubiegania się o udzielenie zamówienia przez wykonawców JEDZ składa każdy z wykonawców. Oświadczenia te potwierdzają brak podstaw wykluczenia oraz spełnianie warunków udziału w postępowaniu w zakresie, w jakim każdy z wykonawców wykazuje spełnianie warunków udziału w postępowaniu. 3. W odniesieniu do warunków dotyczących wykształcenia, kwalifikacji zawodowych lub doświadczenia, wykonawcy wspólnie ubiegający się o udzielenie zamówienia mogą polegać na zdolnościach tych z wykonawców, którzy wykonają usługi, do realizacji których te zdolności są wymagane. W takim przypadku Wykonawcy wspólnie ubiegający się o udzielenie zamówienia dołączają do oferty oświadczenie, z którego wynika, które usługi wykonają poszczególni Wykonawcy. 4. Ofertę sporządza się w języku polskim na Formularzu Ofertowym - zgodnie z zał. nr 1 do SWZ. Wraz z ofertą Wykonawca jest zobowiązany złożyć: 1) oświadczenie w formie JEDZ, o którym mowa w Rozdz. IX ust. 1 SWZ; 2) oświadczenie wykonawcy/wykonawców wspólnie ubiegających się o udzielenie zamówienia dotyczące przesłanek wykluczenia z art. 5k rozporz. 833/2014 oraz art. 7 ust. 1 ustawy z dnia 13 kwietnia 2022 r. o szczególnych rozwiązaniach w zakresie przeciwdziałania wspieraniu agresji na Ukrainę oraz służących ochronie bezpieczeństwa narodowego wg wzoru zał. nr 3 do SWZ; 3) dokumenty, z których wynika prawo do podpisania oferty; tj. odpis lub informacja z Krajowego Rejestru Sądowego, Centralnej Ewidencji i Informacji o Działalności Gospodarczej lub innego rejestru, odpowiednie pełnomocnictwa (jeżeli dotyczy). 5. Zamawiający przed wyborem najkorzystniejszej oferty wzywa wykonawcę, którego oferta została najwyżej oceniona, do złożenia w wyznaczonym terminie, nie krótszym niż 10 dni, aktualnych na dzień złożenia podmiotowych środków dowodowych. Należy złożyć:
+5.1.	Informację z Krajowego Rejestru Karnego w zakresie: 
+5.1.1.	Art. 108 ust. 1 pkt 1 i 2 ustawy p.z.p.
+5.1.2.	Art. 108 ust. 1 pkt 4 ustawy p.z.p dotyczącej orzeczenia zakazu ubiegania się o zamówienie publiczne tytułem środka karnego
+-sporządzoną nie wcześniej niż 6 miesięcy przed jej złożeniem;
+5.2.	Oświadczenie wykonawcy, w zakresie art. 108 ust. 1 pkt 5 p.z.p., o braku przynależności do tej samej grupy kapitałowej, w rozumieniu ustawy z dnia 16.02.2007 r. o ochronie konkurencji i konsumentów, z innym wykonawcą, który złożył odrębną ofertę, ofertę częściową lub wniosek o dopuszczenie do udziału w postępowaniu, albo oświadczenia o przynależności do tej samej grupy kapitałowej wraz z dokumentami lub informacjami potwierdzającymi przygotowanie oferty, oferty częściowej lub wniosku o dopuszczenie do udziału w postępowaniu niezależnie od innego wykonawcy należącego do tej samej grupy kapitałowej - załącznik nr 4 do SWZ;
+5.3. Oświadczenie wykonawcy o aktualności informacji zawartych w oświadczeniu, o którym mowa w art. 125 ust. 1 ustawy p.z.p. - załącznik nr 5 do SWZ, w zakresie podstaw wykluczenia z postępowania wskazanych przez zamawiającego, o których mowa w:
+a) art. 108 ust. 1 pkt 3 ustawy p.z.p.,
+b) art. 108 ust. 1 pkt 4 ustawy p.z.p., dotyczących orzeczenia zakazu ubiegania się o zamówienie publiczne tytułem środka zapobiegawczego,
+c) art. 108 ust. 1 pkt 5 ustawy p.z.p., dotyczących zawarcia z innymi wykonawcami porozumienia mającego na celu zakłócenie konkurencji,
+d) art. 108 ust. 1 pkt 6 ustawy p.z.p.;
+5.4. Aktualne zezwolenie na wykonywanie czynności bankowych w zakresie udzielania kredytów wydane przez Komisję Nadzoru Finansowego, zgodnie z ustawą z dnia 29 sierpnia 1997 r. Prawo bankowe (t.j. Dz. U. z 2024 r. poz. 1646 z późn. zm.) lub dokumenty równoważne (potwierdzające prawo prowadzenia na terenie RP działalności bankowej w zakresie udzielania kredytów zgodnie z przepisami powołanej wyżej ustawy).
+6. Jeżeli Wykonawca ma siedzibę lub miejsce zamieszkania poza granicami Rzeczypospolitej Polskiej: zamiast dokumentu, o którym mowa w pkt 5.1, składa informację z odpowiedniego rejestru, takiego jak rejestr sądowy, albo, w przypadku braku takiego rejestru, inny równoważny dokument wydany przez właściwy organ sądowy lub administracyjny kraju, w którym wykonawca ma siedzibę lub miejsce zamieszkania, w zakresie, o którym mowa w art. 108 ust. 1 pkt 1, 2 i 4 p.z.p. - wystawiony nie wcześniej niż 6 miesięcy przed jego złożeniem.
+7. Jeżeli w kraju, w którym wykonawca ma siedzibę lub miejsce zamieszkania, nie wydaje się dokumentów, o których mowa w pkt 6, lub gdy dokumenty te nie odnoszą się do wszystkich przypadków wskazanych w SWZ, zastępuje się je odpowiednio w całości lub w części dokumentem zawierającym odpowiednio oświadczenie wykonawcy, ze wskazaniem osoby albo osób uprawnionych do jego reprezentacji, lub oświadczenie osoby, której dokument miał dotyczyć, złożone pod przysięgą, lub, jeżeli w kraju, w którym wykonawca ma siedzibę lub miejsce zamieszkania nie ma przepisów o oświadczeniu pod przysięgą, złożone przed organem sądowym lub administracyjnym, notariuszem, organem samorządu zawodowego lub gospodarczego, właściwym ze względu na siedzibę lub miejsce zamieszkania wykonawcy. Wymaganie dotyczące terminu wystawienia dokumentów lub oświadczeń jest analogiczne jak w pkt 6.</cbc:Note>
+      <cac:RequestedTenderTotal>
+         <cbc:EstimatedOverallContractAmount currencyID="PLN">2503474.38</cbc:EstimatedOverallContractAmount>
+      </cac:RequestedTenderTotal>
+      <cac:MainCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">66110000</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">66113000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:RealizedLocation>
+         <cbc:Description languageID="POL">Kalwaria Zebrzydowska</cbc:Description>
+         <cac:Address>
+            <cbc:CountrySubentityCode listName="nuts">PL21A</cbc:CountrySubentityCode>
+            <cac:Country>
+               <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+            </cac:Country>
+         </cac:Address>
+      </cac:RealizedLocation>
+   </cac:ProcurementProject>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+      <cac:TenderingTerms>
+         <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+         <cac:AwardingTerms>
+            <cac:AwardingCriterion>
+               <cbc:CalculationExpression languageID="POL">.</cbc:CalculationExpression>
+               <cac:SubordinateAwardingCriterion>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="POL">.</cbc:Name>
+                  <cbc:Description languageID="POL">Przy wyborze najkorzystniejszej oferty Zamawiający będzie kierował się wyłącznie kryterium ceny: waga 100%. Wykonawca w formularzu oferty poda cenę za wykonanie przedmiotu zamówienia, która będzie stanowić całkowity koszt obsługi kredytu i zawierać wszystkie koszty, które poniesie Zamawiający.</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+            </cac:AwardingCriterion>
+         </cac:AwardingTerms>
+         <cac:AppealTerms>
+            <cac:PresentationPeriod>
+               <cbc:Description languageID="POL">1. Wykonawcom oraz innym podmiotom, które mają lub miały interes w uzyskaniu zamówienia oraz poniosły lub mogą ponieść szkodę w wyniku naruszenia przez zamawiającego przepisów ustawy p.z.p., przysługują środki ochrony prawnej określone w Dziale IX ustawy p.z.p. 2. Środki ochrony prawnej wobec ogłoszenia wszczętego postępowania o udzielenie zamówienia oraz dokumentów zamówienia przysługują również organizacjom wpisanym na listę, o której mowa w art. 469 pkt 15 ustawy p.z.p. oraz Rzecznikowi Małych i Średnich Przedsiębiorców. 3. Odwołanie przysługuje na: 1) niezgodną z przepisami ustawy czynność zamawiającego, podjętą w postępowaniu o udzielenie zamówienia, o zawarcie umowy ramowej, dynamicznym systemie zakupów, systemie kwalifikowania wykonawców, w tym na projektowane postanowienie umowy; 2) zaniechanie czynności w postępowaniu o udzielenie zamówienia, o zawarcie umowy ramowej, dynamicznym systemie zakupów, systemie kwalifikowania wykonawców, do której zamawiający był obowiązany na podstawie ustawy; 3) zaniechanie przeprowadzenia postępowania o udzielenie zamówienia na podstawie ustawy, mimo że zamawiający był do tego obowiązany. 4. Pisma w postępowaniu odwoławczym wnosi się w formie pisemnej albo w formie elektronicznej albo w postaci elektronicznej, z tym że odwołanie i przystąpienie do postępowania odwoławczego, wniesione w postaci elektronicznej, wymagają opatrzenia podpisem zaufanym. Pisma w formie pisemnej wnosi się za pośrednictwem operatora pocztowego, w rozumieniu ustawy z dnia 23 listopada 2012r. – Prawo pocztowe, osobiście, za pośrednictwem posłańca, a pisma w postaci elektronicznej wnosi się przy użyciu środków komunikacji elektronicznej, w tym na adres do doręczeń elektronicznych, o którym mowa w art. 2 pkt 1 ustawy z dnia 18 listopada 2020 r. o doręczeniach elektronicznych. 5. Odwołanie wnosi się do Prezesa Izby. 6. Odwołujący przekazuje zamawiającemu odwołanie wniesione w formie elektronicznej albo postaci elektronicznej albo kopię tego odwołania, jeżeli zostało ono wniesione w formie pisemnej, przed upływem terminu do wniesienia odwołania w taki sposób, aby mógł on zapoznać się z jego treścią przed upływem tego terminu. 7. Odwołanie powinno wskazywać w szczególności czynność lub zaniechanie czynności zamawiającego, której zarzuca się niezgodność z przepisami ustawy lub wskazanie zaniechania przeprowadzenia postępowania o udzielenie zamówienia. Odwołanie powinno zawierać również zwięzłe przedstawienie zarzutów, żądanie co do sposobu rozstrzygnięcia odwołania oraz wskazywać okoliczności faktyczne i prawne uzasadniające wniesienie odwołania oraz dowody na poparcie przytoczonych okoliczności. Szczegółowa zawartość odwołania określona została w art. 516 ustawy p.z.p. 8. Odwołanie wnosi się w terminie 10 dni od dnia przesłania informacji o czynności zamawiającego stanowiącej podstawę jego wniesienia jeżeli informacja została przesłana przy użyciu środków komunikacji elektronicznej. 9. Odwołanie wobec treści ogłoszenia wszczętego postępowania o udzielenie zamówienia lub treści dokumentów zamówienia, wnosi się w terminie 10 od dni zamieszczenia ogłoszenia w Dzienniku Urzędowym Unii Europejskiej lub dokumentów zamówienia na stronie internetowej. 10. Odwołanie wobec czynności innych niż określone w pkt 8 i 9 wnosi się w terminie 10 dni od dnia, w którym powzięto lub przy zachowaniu należytej staranności można było powziąć wiadomość o okolicznościach stanowiących podstawę jego wniesienia. 11. Na orzeczenie KIO oraz postanowienie Prezesa KIO, o którym mowa w art. 519 ust. 1 ustawy p.z.p, stronom oraz uczestnikom postępowania odwoławczego przysługuje skarga do sądu. 12. W postępowaniu toczącym się wskutek wniesienia skargi stosuje się odpowiednio przepisy ustawy z dnia 17.11.1964 r. - Kodeks postępowania cywilnego o apelacji, jeżeli przepisy Działu IX rozdziału 3 ustawy p.z.p. nie stanowią inaczej. 13. Skargę wnosi się do Sądu Okręgowego w Warszawie - sądu zamówień publicznych. 14. Skargę wnosi się za pośrednictwem Prezesa Izby, w terminie 14 dni od dnia doręczenia orzeczenia Izby lub postanowienia Prezesa Izby, o którym mowa w art. 519 ust. 1 ustawy p.z.p., przesyłając jednocześnie jej odpis przeciwnikowi skargi. Złożenie skargi w placówce pocztowej operatora wyznaczonego w rozumieniu ustawy z dnia 23.11.2012 r. - Prawo pocztowe jest równoznaczne z jej wniesieniem. 15. Prezes Izby przekazuje skargę wraz z aktami postępowania odwoławczego do sądu zamówień publicznych w terminie 7 dni od dnia jej otrzymania.</cbc:Description>
+            </cac:PresentationPeriod>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+         </cac:AppealTerms>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <cbc:GovernmentAgreementConstraintIndicator>false</cbc:GovernmentAgreementConstraintIndicator>
+         <cac:AuctionTerms>
+            <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+         </cac:AuctionTerms>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:ID schemeName="InternalID">ZP.271.20.2025</cbc:ID>
+         <cbc:Name languageID="POL">Udzielenie i obsługa kredytu długoterminowego w wysokości 8 100 000,00 zł w tym: na pokrycie deficytu budżetu do wysokości 6 450 000,00 zł oraz na spłatę wcześniej zaciągniętych zobowiązań z tytułu kredytów i pożyczek w kwocie 1 650 000,00 zł</cbc:Name>
+         <cbc:Description languageID="POL">1. Przedmiotem zamówienia jest:  Udzielenie i obsługa kredytu długoterminowego w wysokości 8 100 000,00 zł /słownie złotych: osiem milionów sto tysięcy/, w tym: na pokrycie deficytu budżetu do wysokości 6 450 000,00 zł /słownie złotych: sześć milionów czterysta pięćdziesiąt tysięcy/ oraz na spłatę wcześniej zaciągniętych zobowiązań z tytułu kredytów i pożyczek w kwocie 1 650 000,00 zł /słownie złotych: jeden milion sześćset pięćdziesiąt tysięcy/.
+2.	Planuje się wypłatę kredytu w 3 transzach:
+rok 2025	- I transza kredytu:	4 000 000,00 zł (słownie złotych: cztery miliony 00/100)
+rok 2025	- II transza kredytu:	2 000 000,00 zł (słownie złotych: dwa miliony 00/100)
+rok 2025	- III transza kredytu: 	2 100 000,00 zł (słownie złotych: dwa miliony sto tysięcy 00/100)
+Łącznie	 8 100 000,00 złotych (słownie złotych: osiem milionów sto tysięcy 00/100). 
+Kredytobiorca zastrzega sobie możliwość przesunięcia terminu uruchomienia transz oraz niewykorzystania pełnej kwoty kredytu, poprzez złożenie dyspozycji na niższą kwotę I, II i III transzy bądź ich rezygnację. Kredytobiorca  zapewnia wykorzystanie kredytu w 50% łącznej kwoty co daje 4 050 000,00 zł (słownie złotych: cztery miliony pięćdziesiąt tysięcy 0/100). 
+3. Okres spłaty kapitału od 31.03.2027 r. do 31.07.2036 r. Waluta kredytu: PLN.  Zabezpieczenie kredytu weksel in blanco. Źródło pokrycia spłaty: dochody budżetu gminy. 
+4. Wykorzystana kwota kredytu oprocentowana jest według zmiennej stawki WIBOR dla 3-miesięcznych depozytów międzybankowych, powiększonej o stałą w trakcie trwania Umowy marżę Banku. Stawka WIBOR 3M (ang. Warsaw Interbank Offered Rate) jest Wskaźnikiem referencyjnym, który ulega zmianie w zależności od zmiany stawki WIBOR 3 M. Dla celów zamówienia należy przyjąć WIBOR 3M z dnia 21 lipca 2025 r. Zamawiający nie przewiduje prowizji od udzielonego kredytu.</cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+         <cbc:Note languageID="POL">W związku z zawarciem umowy w dniu 06.11.2025 r. szacowany okres obowiązywania jest od dnia 06.11.2025 r. 
+</cbc:Note>
+         <cac:RequestedTenderTotal>
+            <cbc:EstimatedOverallContractAmount currencyID="PLN">2503474.38</cbc:EstimatedOverallContractAmount>
+         </cac:RequestedTenderTotal>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">66110000</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">66113000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:RealizedLocation>
+            <cbc:Description languageID="POL">Kalwaria Zebrzydowska</cbc:Description>
+            <cac:Address>
+               <cbc:CountrySubentityCode listName="nuts">PL21A</cbc:CountrySubentityCode>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+         <cac:PlannedPeriod>
+            <cbc:StartDate>2025-11-05+01:00</cbc:StartDate>
+            <cbc:EndDate>2036-07-31+02:00</cbc:EndDate>
+         </cac:PlannedPeriod>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+   <cac:TenderResult>
+      <cbc:AwardDate>2000-01-01Z</cbc:AwardDate>
+   </cac:TenderResult>
+</ContractAwardNotice>

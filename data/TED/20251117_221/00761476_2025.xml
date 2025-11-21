@@ -1,0 +1,648 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractAwardNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractAwardNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+   <ext:UBLExtensions>
+      <ext:UBLExtension>
+         <ext:ExtensionContent>
+            <efext:EformsExtension>
+               <efac:NoticeResult>
+                  <efac:LotResult>
+                     <cbc:ID schemeName="result">RES-0001</cbc:ID>
+                     <cbc:TenderResultCode listName="winner-selection-status">clos-nw</cbc:TenderResultCode>
+                     <efac:DecisionReason>
+                        <efbc:DecisionReasonCode listName="non-award-justification">ins-fund</efbc:DecisionReasonCode>
+                     </efac:DecisionReason>
+                     <efac:ReceivedSubmissionsStatistics>
+                        <efbc:StatisticsCode listName="received-submission-type">tenders</efbc:StatisticsCode>
+                        <efbc:StatisticsNumeric>5</efbc:StatisticsNumeric>
+                     </efac:ReceivedSubmissionsStatistics>
+                     <efac:ReceivedSubmissionsStatistics>
+                        <efbc:StatisticsCode listName="received-submission-type">t-esubm</efbc:StatisticsCode>
+                        <efbc:StatisticsNumeric>5</efbc:StatisticsNumeric>
+                     </efac:ReceivedSubmissionsStatistics>
+                     <efac:ReceivedSubmissionsStatistics>
+                        <efbc:StatisticsCode listName="received-submission-type">t-sme</efbc:StatisticsCode>
+                        <efbc:StatisticsNumeric>4</efbc:StatisticsNumeric>
+                     </efac:ReceivedSubmissionsStatistics>
+                     <efac:ReceivedSubmissionsStatistics>
+                        <efbc:StatisticsCode listName="received-submission-type">t-oth-eea</efbc:StatisticsCode>
+                        <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+                     </efac:ReceivedSubmissionsStatistics>
+                     <efac:ReceivedSubmissionsStatistics>
+                        <efbc:StatisticsCode listName="received-submission-type">t-no-eea</efbc:StatisticsCode>
+                        <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+                     </efac:ReceivedSubmissionsStatistics>
+                     <efac:TenderLot>
+                        <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+                     </efac:TenderLot>
+                  </efac:LotResult>
+                  <efac:LotResult>
+                     <cbc:ID schemeName="result">RES-0002</cbc:ID>
+                     <cbc:TenderResultCode listName="winner-selection-status">clos-nw</cbc:TenderResultCode>
+                     <efac:DecisionReason>
+                        <efbc:DecisionReasonCode listName="non-award-justification">ins-fund</efbc:DecisionReasonCode>
+                     </efac:DecisionReason>
+                     <efac:ReceivedSubmissionsStatistics>
+                        <efbc:StatisticsCode listName="received-submission-type">tenders</efbc:StatisticsCode>
+                        <efbc:StatisticsNumeric>3</efbc:StatisticsNumeric>
+                     </efac:ReceivedSubmissionsStatistics>
+                     <efac:ReceivedSubmissionsStatistics>
+                        <efbc:StatisticsCode listName="received-submission-type">t-esubm</efbc:StatisticsCode>
+                        <efbc:StatisticsNumeric>3</efbc:StatisticsNumeric>
+                     </efac:ReceivedSubmissionsStatistics>
+                     <efac:ReceivedSubmissionsStatistics>
+                        <efbc:StatisticsCode listName="received-submission-type">t-sme</efbc:StatisticsCode>
+                        <efbc:StatisticsNumeric>2</efbc:StatisticsNumeric>
+                     </efac:ReceivedSubmissionsStatistics>
+                     <efac:ReceivedSubmissionsStatistics>
+                        <efbc:StatisticsCode listName="received-submission-type">t-oth-eea</efbc:StatisticsCode>
+                        <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+                     </efac:ReceivedSubmissionsStatistics>
+                     <efac:ReceivedSubmissionsStatistics>
+                        <efbc:StatisticsCode listName="received-submission-type">t-no-eea</efbc:StatisticsCode>
+                        <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+                     </efac:ReceivedSubmissionsStatistics>
+                     <efac:TenderLot>
+                        <cbc:ID schemeName="Lot">LOT-0002</cbc:ID>
+                     </efac:TenderLot>
+                  </efac:LotResult>
+               </efac:NoticeResult>
+               <efac:NoticeSubType>
+                  <cbc:SubTypeCode listName="notice-subtype">29</cbc:SubTypeCode>
+               </efac:NoticeSubType>
+               <efac:Organizations>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://www.wieliczka.eu</cbc:WebsiteURI>
+                        <cbc:EndpointID>https://platformazakupowa.pl/pn/wieliczka</cbc:EndpointID>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Gmina Wieliczka</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>ul. Powstania Warszawskiego 1</cbc:StreetName>
+                           <cbc:CityName>Wieliczka</cbc:CityName>
+                           <cbc:PostalZone>32-020</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL214</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>NIP: 6830011450, REGON: 351555364</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Name>Urząd Miasta i Gminy w Wielicze</cbc:Name>
+                           <cbc:Telephone>+48 122634100</cbc:Telephone>
+                           <cbc:Telefax>+48 122786860</cbc:Telefax>
+                           <cbc:ElectronicMail>magistrat@wieliczka.eu</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Krajowa Izba Odwoławcza</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>ul. Postępu 17A</cbc:StreetName>
+                           <cbc:CityName>Warszawa</cbc:CityName>
+                           <cbc:PostalZone>02-676</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL911</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>NIP: 5262239325, REGON: 010828091</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+48 224587801</cbc:Telephone>
+                           <cbc:ElectronicMail>odwolania@uzp.gov.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efbc:NaturalPersonIndicator>false</efbc:NaturalPersonIndicator>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://op.europa.eu</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0000</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Publications Office of the European Union</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:CityName>Luxembourg</cbc:CityName>
+                           <cbc:PostalZone>2417</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">LU000</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">LUX</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>PUBL</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+352 29291</cbc:Telephone>
+                           <cbc:ElectronicMail>ted@publications.europa.eu</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+               </efac:Organizations>
+            <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00761476-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+         </ext:ExtensionContent>
+      </ext:UBLExtension>
+   </ext:UBLExtensions>
+   <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+   <cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+   <cbc:ID schemeName="notice-id">4fde4fbf-bf0e-4cdc-b7a5-14c101de4050</cbc:ID>
+   <cbc:ContractFolderID>d6c10a19-3d1b-409a-88ed-42c01d6bde9d</cbc:ContractFolderID>
+   <cbc:IssueDate>2025-11-14Z</cbc:IssueDate>
+   <cbc:IssueTime>06:55:03Z</cbc:IssueTime>
+   <cbc:VersionID>01</cbc:VersionID>
+   <cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+   <cbc:NoticeTypeCode listName="result">can-standard</cbc:NoticeTypeCode>
+   <cbc:NoticeLanguageCode listName="language">POL</cbc:NoticeLanguageCode>
+   <cac:ContractingParty>
+      <cac:ContractingPartyType>
+         <cbc:PartyTypeCode listName="buyer-legal-type">la</cbc:PartyTypeCode>
+      </cac:ContractingPartyType>
+      <cac:ContractingActivity>
+         <cbc:ActivityTypeCode listName="authority-activity">gen-pub</cbc:ActivityTypeCode>
+      </cac:ContractingActivity>
+      <cac:Party>
+         <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+         </cac:PartyIdentification>
+         <cac:ServiceProviderParty>
+            <cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode>
+            <cac:Party>
+               <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0000</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:Party>
+         </cac:ServiceProviderParty>
+      </cac:Party>
+   </cac:ContractingParty>
+   <cac:TenderingTerms>
+      <cac:ProcurementLegislationDocumentReference>
+         <cbc:ID>LocalLegalBasis</cbc:ID>
+         <cbc:DocumentDescription languageID="POL">Postępowanie prowadzone jest w trybie przetargu nieograniczonego na podstawie art. 132 ustawy z 11 września 2019 r. - Prawo zamówień publicznych (tj.: Dz. U. z 2024 r. poz. 1320 z późn. zm.)</cbc:DocumentDescription>
+      </cac:ProcurementLegislationDocumentReference>
+   </cac:TenderingTerms>
+   <cac:TenderingProcess>
+      <cbc:ProcedureCode listName="procurement-procedure-type">open</cbc:ProcedureCode>
+      <cac:NoticeDocumentReference>
+         <cbc:ID schemeName="ojs-notice-id">644927-2025</cbc:ID>
+      </cac:NoticeDocumentReference>
+      <cac:ProcessJustification>
+         <cbc:ProcessReasonCode listName="accelerated-procedure">false</cbc:ProcessReasonCode>
+      </cac:ProcessJustification>
+   </cac:TenderingProcess>
+   <cac:ProcurementProject>
+      <cbc:ID schemeName="InternalID">BZP.271.13.2025</cbc:ID>
+      <cbc:Name languageID="POL">Odbiór i zagospodarowanie odpadów zmieszanych, odpadów biodegradowalnych i odpadów kuchennych, od właścicieli nieruchomości zamieszkałych na terenie Gminy Wieliczka w latach 2026-2027</cbc:Name>
+      <cbc:Description languageID="POL">1. Przedmiotem zamówienia jest świadczenie usługi odbioru, transportu oraz zagospodarowania niesegregowanych (zmieszanych) odpadów komunalnych, odpadów biodegradowalnych i odpadów kuchennych ulegających biodegradacji, w ramach zadań:
+1.1) Zadanie 1 obejmuje świadczenie usługi odbioru oraz zagospodarowania odpadów komunalnych powstałych i zebranych na nieruchomościach zamieszkałych, położonych w granicach administracyjnych Gminy Wieliczka w sektorze I obejmującym miasto Wieliczka, w tym:
+a) Odbiór, transport i zagospodarowanie niesegregowanych (zmieszanych) odpadów komunalnych, to jest odpadów komunalnych o kodzie 20 03 01 oraz odpadów komunalnych nie wymienionych w innych podgrupach o kodzie 20 03 99, gromadzonych w pojemnikach, kontenerach lub workach. Przewidywana ilość odpadów dla zakresu podstawowego: 16 500 Mg;
+b) Odbiór, transport i zagospodarowanie odpadów biodegradowalnych o kodzie 20 02 01 gromadzonych w pojemnikach lub workach. Przewidywana ilość odpadów dla zakresu podstawowego: 1 100 Mg;
+c) Odbiór, transport i zagospodarowanie odpadów kuchennych ulegających biodegradacji o kodzie 20 01 08 gromadzonych w pojemnikach lub workach. Przewidywana ilość odpadów dla zakresu podstawowego: 200 Mg.
+Celem Zamawiającego jest realizacja racjonalnej gospodarki odpadami ze szczególnym naciskiem na osiągnięcie efektywnych wyników w segregacji.
+Informacje niezbędne dla wykonania zamówienia dla Zadania 1, zasady gromadzenia, odbioru odpadów komunalnych oraz obowiązki Wykonawcy zawarte są w standardach wykonywania usług i ich szczegółowym zakresie stanowiącym załącznik nr 10 do SWZ.  
+2.1) Zadanie 2 obejmuje świadczenie usługi odbioru, transportu oraz zagospodarowania odpadów komunalnych powstałych i zebranych na nieruchomościach zamieszkałych, położonych na terenie Gminy Wieliczka w sektorze II obejmującym 29 sołectw, w tym:
+a) Odbiór, transport i zagospodarowanie niesegregowanych (zmieszanych) odpadów komunalnych, to jest odpadów komunalnych o kodzie 20 03 01 oraz odpadów komunalnych nie wymienionych w innych podgrupach o kodzie 20 03 99, gromadzonych w pojemnikach, kontenerach lub workach. Przewidywana ilość odpadów dla zakresu podstawowego: 16 800 Mg;
+b) Odbiór, transport i zagospodarowanie odpadów biodegradowalnych o kodzie 20 02 01 gromadzonych w pojemnikach lub workach. Przewidywana ilość odpadów dla zakresu podstawowego: 1 300 Mg;
+c) Odbiór, transport i zagospodarowanie odpadów kuchennych ulegających biodegradacji o kodzie 20 01 08 gromadzonych w pojemnikach lub workach. Przewidywana ilość odpadów dla zakresu podstawowego: 200 Mg.
+Celem Zamawiającego jest realizacja racjonalnej gospodarki odpadami ze szczególnym naciskiem na osiągnięcie efektywnych wyników w segregacji.
+Informacje niezbędne dla wykonania zamówienia dla Zadania 2, zasady gromadzenia, odbioru odpadów komunalnych oraz obowiązki Wykonawcy zawarte są w standardach wykonywania usług i ich szczegółowym zakresie stanowiącym załącznik nr 11 do SWZ.
+3. Zamawiający dopuszcza składanie ofert częściowych, przy czym każde zadanie będzie stanowić odrębną część zamówienia. Zamawiający nie ogranicza ilości zadań (części) na które Wykonawca może składać ofertę. Wykonawca może zatem złożyć ofertę na jedno lub dwa zadania (części).
+4. Obszar Sektora I i Sektora II zostały określone Uchwałą nr XXIX/399/2013 Rady Miejskiej w Wieliczce z dnia 8 marca 2013 r. w sprawie podziału obszaru gminy Wieliczka na Sektory w celu zorganizowania odbierania odpadów komunalnych od właścicieli nieruchomości na której zamieszkują mieszkańcy.
+5.  Zamawiający wymaga, aby usługi przetwarzania odpadów w ramach zadania nr 1 i zadania nr 2, były wykonywane w:
+5.1) instalacji/instalacjach komunalnych o której/których mowa w art. 38 b) ustawy z dnia 14 grudnia 2012 r. o odpadach lub instalacji/instalacjach odzysku i unieszkodliwiania prowadzonej/prowadzonych przez Wykonawcę, a Wykonawca posiada dla tej/tych instalacji decyzję/decyzje właściwego organu obejmującą zezwolenie na przetwarzanie odpadów o kodzie 20 03 01, odpadów komunalnych nie wymienionych w innych podgrupach o kodzie 20 03 99 oraz odpadów o kodzie 20 02 01 i 20 01 08 co najmniej w okresie od 02.01.2026 r. do 31.12.2027 r.
+lub
+5.2) instalacji/instalacjach komunalnych o której/których mowa w art. 38 b) ustawy z dnia 14 grudnia 2012 r. o odpadach lub instalacji/instalacjach odzysku i unieszkodliwiania  prowadzonej/prowadzonych przez podmiot/podmioty z którym/którymi Wykonawca zawarł umowę/umowy, przy czym przedmiotem tej/tych umowy/umów jest przetwarzanie odpadów o kodzie 20 03 01, odpadów komunalnych nie wymienionych w innych podgrupach o kodzie 20 03 99 oraz odpadów o kodzie 20 02 01 i 20 01 08 a podmiot/podmioty prowadzący/prowadzące instalację/instalacje posiada/posiadają dla niej decyzję właściwego organu obejmującą zezwolenie na przetwarzanie tych odpadów co najmniej w okresie od 02.01.2026 r. do 31.12.2027 r.
+</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+      <cbc:Note languageID="POL">1. Niniejsze postępowanie prowadzone jest w trybie przetargu nieograniczonego o którym mówią art. 132 – 139 uPzp, oraz na warunkach określonych w Specyfikacji Warunków Zamówienia, zwaną dalej „SWZ”. 2. Do niniejszego postępowania stosuje się przepisy właściwe dla zamówień o wartości powyżej progów unijnych o których mowa w art. 3 uPzp. 
+3. Do niniejszego postępowania stosuje się przepisy dotyczące robót budowlanych. 
+4. Zamawiający zastrzega sobie prawo do zastosowania procedury odwróconej o której mowa w art. 139 ust. 1 uPzp, zgodnie z którą najpierw dokona badania i oceny ofert, a następnie dokona kwalifikacji podmiotowej wykonawcy, którego oferta została najwyżej oceniona, w zakresie braku podstaw wykluczenia oraz spełniania warunków udziału w postępowaniu. 
+5. Do nin. postępowania oraz zawartej w jego wyniku umowy, zastosowanie ma art. 5k rozporządzenia (UE) nr 833/2014 dotyczącego środków ograniczających w związku z działaniami Rosji destabilizującymi sytuację na Ukrainie zmienionego ROZPORZĄDZENIEM RADY (UE) 2022/576 z dnia 8 kwietnia 2022 r. 
+6. W związku z faktem, iż JEDZ nie przewiduje przesłanek wykluczenia określonych w art. 5k rozporządzenia (UE) nr 833/2014 dotyczącego środków ograniczających w związku z działaniami Rosji destabilizującymi sytuację na Ukrainie zmienionego ROZPORZĄDZENIEM RADY (UE) 2022/576 z dnia 8 kwietnia 2022 r. Zamawiający, oprócz JEDZ żąda złożenia wraz z ofertą oświadczenia wykonawcy/wykonawcy wspólnie ubiegającego się o udzielenie zamówienia dotyczącego przesłanek wykluczenia z art. 5k rozporządzenia 833/2014 składane na podstawie art. 125 ust. 1 ustawy Pzp sporządzonego według wzoru stanowiącego załącznik nr 2a do SWZ. Oświadczenia podmiotu udostępniającego zasoby dotyczącego przesłanek wykluczenia z art. 5k rozporządzenia 833/2014 składane na podstawie art. 125 ust. 5 ustawy pzp sporządzonego według wzoru stanowiącego załącznik nr 2b do SWZ. (w przypadku wystąpienia takiego podmiotu). 
+7. Jeżeli wykonawca ma siedzibę lub miejsce zamieszkania poza granicami Rzeczypospolitej Polskiej lub miejsce zamieszkania ma osoba, której dotyczy informacja albo dokument, zamiast:
+7.1) informacji z Krajowego Rejestru Karnego w zakresie art. 108 ust. 1 pkt 1 i 2 uPzp, art. 108 ust. 1 pkt 4 uPzp, dotyczącej orzeczenia zakazu ubiegania się o zamówienie publiczne tytułem środka karnego, art. 109 ust. 1 pkt 2 lit. a) uPzp, art. 109 ust. 1 pkt 2 lit. b) uPzp, dotyczącej ukarania za wykroczenie, za które wymierzono karę aresztu, art. 109 ust. 1 pkt 3 uPzp, dotyczącej skazania za przestępstwo lub ukarania za wykroczenie, za które wymierzono karę aresztu – składa informację z odpowiedniego rejestru, takiego jak rejestr sądowy, albo, w przypadku braku takiego rejestru, inny równoważny dokument wydany przez właściwy organ sądowy lub administracyjny kraju, w którym wykonawca ma siedzibę lub miejsce zamieszkania, lub miejsce zamieszkania ma osoba, której dotyczy informacja albo dokument, w zakresie, o którym mowa wyżej; 
+7.2) informacji z Centralnego Rejestru Beneficjentów Rzeczywistych w zakresie art. 108 ust. 2 uPzp, jeżeli odrębne przepisy wymagają wpisy do tego rejestru, składa informację z odpowiedniego rejestru zawierającego informacje o jego beneficjentach rzeczywistych albo, w przypadku braku  takiego rejestru, inny równoważny dokument wydany przez właściwy organ sądowy lub administracyjny kraju,  w którym wykonawca ma siedzibę lub miejsce zamieszkania, określający jego beneficjentów rzeczywistych; 
+7.3) Zaświadczenia właściwego naczelnika urzędu skarbowego potwierdzającego, że wykonawca nie zalega z opłacaniem podatków i opłat, w zakresie art. 109 ust. 1 pkt 1 ustawy, wystawionego nie wcześniej niż 3 miesiące przed jego złożeniem, a w przypadku zalegania z opłacaniem podatków lub opłat wraz z zaświadczeniem dokumentów potwierdzających, że odpowiednio przed upływem terminu składania wniosków o dopuszczenie do udziału w postępowaniu albo przed upływem terminu składania ofert wykonawca dokonał płatności należnych podatków lub opłat wraz z odsetkami lub grzywnami lub zawarł wiążące porozumienie w sprawie spłat tych należności, zaświadczenia albo innego dokumentu właściwej terenowej jednostki organizacyjnej Zakładu Ubezpieczeń Społecznych lub właściwego oddziału regionalnego lub właściwej placówki terenowej Kasy Rolniczego Ubezpieczenia Społecznego potwierdzającego, że wykonawca nie zalega z opłacaniem składek na ubezpieczenia społeczne i zdrowotne, w zakresie art. 109 ust. 1 pkt 1 uPzp, wystawionego nie wcześniej niż 3 miesiące przed jego złożeniem, a w przypadku zalegania z opłacaniem składek na ubezpieczenia społeczne lub zdrowotne wraz z zaświadczeniem albo innym dokumentem dokumentów potwierdzających, że odpowiednio przed upływem terminu składania wniosków o dopuszczenie do udziału w postępowaniu albo przed upływem terminu składania ofert wykonawca dokonał płatności należnych składek na ubezpieczenia społeczne lub zdrowotne wraz odsetkami lub grzywnami lub zawarł wiążące porozumienie w sprawie spłat tych należności lub Odpisu lub informacji z Krajowego Rejestru Sądowego lub z Centralnej Ewidencji i Informacji o Działalności Gospodarczej, w zakresie art. 109 ust. 1 pkt 4 uPzp, sporządzonych nie wcześniej niż 3 miesiące przed jej złożeniem, jeżeli odrębne przepisy wymagają wpisu do rejestru lub ewidencji - składa dokument lub dokumenty wystawione w kraju, w którym wykonawca ma siedzibę lub miejsce zamieszkania, potwierdzające odpowiednio, że:
+a) nie naruszył obowiązków dotyczących płatności podatków,
+opłat lub składek na ubezpieczenie społeczne lub zdrowotne, 
+b) nie otwarto jego likwidacji, nie ogłoszono upadłości, jego aktywami nie zarządza likwidator lub sąd, nie zawarł układu z wierzycielami, jego działalność gospodarcza nie jest zawieszona ani nie znajduje się on w innej tego rodzaju sytuacji wynikającej z podobnej procedury przewidzianej w przepisach miejsca wszczęcia tej procedury.
+7.4) Dokument, o którym mowa w pkt 7.1) , powinien być wystawiony nie wcześniej niż 6 miesięcy przed jego złożeniem. Dokumenty, o których mowa w ust. 7.2) i 7.3), powinny być wystawione nie wcześniej niż 3 miesiące przed ich złożeniem. 
+7.5) Jeżeli w kraju, w którym wykonawca ma siedzibę lub miejsce zamieszkania lub miejsce zamieszkania ma osoba, której dokument dotyczy, nie wydaje się dokumentów, o których mowa w pkt 7.1)-7.3) , lub gdy dokumenty te nie odnoszą się do wszystkich przypadków, o których mowa w art. 108 ust. 1 pkt 1, 2 i 4, art. 109 ust. 1 pkt 1, 2 lit. a) i b) oraz pkt 3 uPzp, zastępuje się je odpowiednio w całości lub w części dokumentem zawierającym odpowiednio oświadczenie wykonawcy, ze wskazaniem osoby albo osób uprawnionych do jego reprezentacji, lub oświadczenie osoby, której dokument miał dotyczyć, złożone pod przysięgą, lub, jeżeli w kraju, w którym wykonawca ma siedzibę lub miejsce zamieszkania lub miejsce zamieszkania ma osoba, której dokument miał dotyczyć, nie ma przepisów o oświadczeniu pod przysięgą, złożone przed organem sądowym lub administracyjnym, notariuszem, organem samorządu zawodowego lub gospodarczego, właściwym ze względu na siedzibę lub miejsce zamieszkania wykonawcy lub miejsce zamieszkania osoby, której dokument miał dotyczyć. Punkt 7.4) stosuje się.</cbc:Note>
+      <cac:RequestedTenderTotal>
+         <cbc:EstimatedOverallContractAmount currencyID="PLN">45358492.8</cbc:EstimatedOverallContractAmount>
+      </cac:RequestedTenderTotal>
+      <cac:MainCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">90500000</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">90511000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">90512000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">90513100</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">90513200</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">90533000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:RealizedLocation>
+         <cac:Address>
+            <cbc:CityName>Gmina Wieliczka</cbc:CityName>
+            <cbc:CountrySubentityCode listName="nuts">PL214</cbc:CountrySubentityCode>
+            <cac:Country>
+               <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+            </cac:Country>
+         </cac:Address>
+      </cac:RealizedLocation>
+   </cac:ProcurementProject>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+      <cac:TenderingTerms>
+         <ext:UBLExtensions>
+            <ext:UBLExtension>
+               <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                     <efac:StrategicProcurement>
+                        <efbc:ApplicableLegalBasis listName="cvd-scope">true</efbc:ApplicableLegalBasis>
+                        <efac:StrategicProcurementInformation>
+                           <efbc:ProcurementCategoryCode listName="cvd-contract-type">oth-serv-contr</efbc:ProcurementCategoryCode>
+                        </efac:StrategicProcurementInformation>
+                     </efac:StrategicProcurement>
+                     <efac:StrategicProcurement>
+                        <efbc:ApplicableLegalBasis listName="eed-scope">false</efbc:ApplicableLegalBasis>
+                     </efac:StrategicProcurement>
+                  </efext:EformsExtension>
+               </ext:ExtensionContent>
+            </ext:UBLExtension>
+         </ext:UBLExtensions>
+         <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="fsr">false</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:AwardingTerms>
+            <cac:AwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>60</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="POL">Cena</cbc:Name>
+                  <cbc:Description languageID="POL">Do oceny ofert w tym kryterium Zamawiający przyjmie całkowitą cenę brutto wynikającą z Formularza ofertowego.
+Zamawiający przyzna poszczególnym ofertom liczbę punktów na podstawie następującego wzoru:
+liczba punktów = (całkowita cena brutto oferty z najniższą ceną/ całkowita cena brutto oferty badanej) x 60</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>40</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="POL">Aspekty środowiskowe</cbc:Name>
+                  <cbc:Description languageID="POL">Do oceny ofert w tym kryterium, Zamawiający przyjmie zadeklarowaną w Formularzu ofertowym liczbę pojazdów do odbioru odpadów spełniających normę emisji spalin min. Euro 6, zgodnie z Dyrektywą 98/69/EC lub liczbę pojazdów elektrycznych lub napędzanych gazem ziemnym lub napędzanych wodorem, skierowanych do odbioru odpadów.
+Za każdy zadeklarowany pojazd do odbioru odpadów z napędem elektrycznym lub pojazd napędzany gazem ziemnym lub napędzany wodorem lub pojazd spełniający normę emisji spalin min. Euro 6 – Zamawiający przyzna Wykonawcy 5 małych punktów.
+Maksymalna liczba małych punktów jakie może uzyskać Wykonawca: 40
+Następnie do przyznanych małych punktów Zamawiający zastosuje następujący wzór, w celu przyznania liczby punktów w kryterium:
+liczba punktów = (liczba małych punktów przyznanych ofercie badanej/ najwyższa liczba małych punktów spośród złożonych ofert) x 40</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+            </cac:AwardingCriterion>
+         </cac:AwardingTerms>
+         <cac:AppealTerms>
+            <cac:PresentationPeriod>
+               <cbc:Description languageID="POL">
+     1. Środki ochrony prawnej określone w niniejszym dziale przysługują wykonawcy, uczestnikowi konkursu oraz innemu podmiotowi, jeżeli ma lub miał interes w uzyskaniu zamówienia lub nagrody w konkursie oraz poniósł lub może ponieść szkodę w wyniku naruszenia przez zamawiającego przepisów ustawy Pzp.
+     2. Środki ochrony prawnej wobec ogłoszenia wszczynającego postępowanie o udzielenie zamówienia lub ogłoszenia o konkursie oraz dokumentów zamówienia przysługują również organizacjom wpisanym na listę, o której mowa w art. 469 pkt 15 ustawy Pzp oraz Rzecznikowi Małych i Średnich Przedsiębiorców.
+     3. Odwołanie przysługuje na:
+a) niezgodną z przepisami ustawy czynność Zamawiającego, podjętą w postępowaniu o udzielenie zamówienia, w tym na projektowane postanowienie umowy;
+b) zaniechanie czynności w postępowaniu o udzielenie zamówienia do której zamawiający był obowiązany na podstawie ustawy;
+     4. Odwołanie wnosi się do Prezesa Izby. Odwołujący przekazuje kopię odwołania zamawiającemu przed upływem terminu do wniesienia odwołania w taki sposób, aby mógł on zapoznać się z jego treścią przed upływem tego terminu.
+     5. Odwołanie wobec treści ogłoszenia wszczynającego postępowanie o udzielenie zamówienia lub wobec treści dokumentów zamówienia wnosi się w terminie 10 dni od dnia publikacji ogłoszenia w Dzienniku Urzędowym Unii Europejskiej lub zamieszczenia dokumentów zamówienia na stronie internetowej.
+     6. Odwołanie wnosi się w terminie:
+       a) 10 dni od dnia przekazania informacji o czynności zamawiającego stanowiącej podstawę jego wniesienia, jeżeli informacja została przekazana przy użyciu środków komunikacji elektronicznej, 
+       b) 15 dni od dnia przekazania informacji o czynności zamawiającego stanowiącej podstawę jego wniesienia, jeżeli informacja została przekazana w sposób inny niż określony w lit. a); 
+     7. Odwołanie w przypadkach innych niż określone w pkt 5 i 6 wnosi się w terminie 10 dni od dnia, w którym powzięto lub przy zachowaniu należytej staranności można było powziąć wiadomość o okolicznościach stanowiących podstawę jego wniesienia.
+     8. Na orzeczenie Izby oraz postanowienie Prezesa Izby, o którym mowa w art. 519 ust. 1 ustawy Pzp, stronom oraz uczestnikom postępowania odwoławczego przysługuje skarga do sądu.
+     9. W postępowaniu toczącym się wskutek wniesienia skargi stosuje się odpowiednio przepisy ustawy z dnia 17 listopada 1964 r. - Kodeks postępowania cywilnego o apelacji, jeżeli przepisy niniejszego rozdziału nie stanowią inaczej.
+     10. Skargę wnosi się do Sądu Okręgowego w Warszawie - sądu zamówień publicznych, zwanego dalej "sądem zamówień publicznych".
+     11. Skargę wnosi się za pośrednictwem Prezesa Izby, w terminie 14 dni od dnia doręczenia orzeczenia Izby lub postanowienia Prezesa Izby, o którym mowa w art. 519 ust. 1 ustawy Pzp, przesyłając jednocześnie jej odpis przeciwnikowi skargi. Złożenie skargi w placówce pocztowej operatora wyznaczonego w rozumieniu ustawy z dnia 23 listopada 2012 r. - Prawo pocztowe jest równoznaczne z jej wniesieniem.
+     12. Prezes Izby przekazuje skargę wraz z aktami postępowania odwoławczego do sądu zamówień publicznych w terminie 7 dni od dnia jej otrzymania.
+     13. W sprawach nieuregulowanych w nin. punkcie w zakresie wniesienia odwołania i skargi mają zastosowanie przepisy Działu IX uPzp.</cbc:Description>
+            </cac:PresentationPeriod>
+            <cac:AppealInformationParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealInformationParty>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+         </cac:AppealTerms>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+         <cac:AuctionTerms>
+            <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+         </cac:AuctionTerms>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:ID schemeName="InternalID">Zadanie 1</cbc:ID>
+         <cbc:Name languageID="POL">Zadanie1: Odbiór i zagospodarowanie odpadów zmieszanych, odpadów biodegradowalnych i odpadów kuchennych, od właścicieli nieruchomości zamieszkałych na terenie Gminy Wieliczka w latach 2026-2027</cbc:Name>
+         <cbc:Description languageID="POL">1. Zadanie 1 obejmuje świadczenie usługi odbioru oraz zagospodarowania odpadów komunalnych powstałych i zebranych na nieruchomościach zamieszkałych, położonych w granicach administracyjnych Gminy Wieliczka w sektorze I obejmującym miasto Wieliczka, w tym:
+a) Odbiór, transport i zagospodarowanie niesegregowanych (zmieszanych) odpadów komunalnych, to jest odpadów komunalnych o kodzie 20 03 01 oraz odpadów komunalnych nie wymienionych w innych podgrupach o kodzie 20 03 99, gromadzonych w pojemnikach, kontenerach lub workach. Przewidywana ilość odpadów dla zakresu podstawowego: 16 500 Mg;
+b) Odbiór, transport i zagospodarowanie odpadów biodegradowalnych o kodzie 20 02 01 gromadzonych w pojemnikach lub workach. Przewidywana ilość odpadów dla zakresu podstawowego: 1 100 Mg;
+c) Odbiór, transport i zagospodarowanie odpadów kuchennych ulegających biodegradacji o kodzie 20 01 08 gromadzonych w pojemnikach lub workach. Przewidywana ilość odpadów dla zakresu podstawowego: 200 Mg.
+Celem Zamawiającego jest realizacja racjonalnej gospodarki odpadami ze szczególnym naciskiem na osiągnięcie efektywnych wyników w segregacji.
+Informacje niezbędne dla wykonania zamówienia dla Zadania 1, zasady gromadzenia, odbioru odpadów komunalnych oraz obowiązki Wykonawcy zawarte są w standardach wykonywania usług i ich szczegółowym zakresie stanowiącym załącznik nr 10 do SWZ.  
+2. Zamawiający wymaga, aby usługi przetwarzania odpadów były wykonywane w:
+2.1) instalacji/instalacjach komunalnych o której/których mowa w art. 38 b) ustawy z dnia 14 grudnia 2012 r. o odpadach lub instalacji/instalacjach odzysku i unieszkodliwiania prowadzonej/prowadzonych przez Wykonawcę, a Wykonawca posiada dla tej/tych instalacji decyzję/decyzje właściwego organu obejmującą zezwolenie na przetwarzanie odpadów o kodzie 20 03 01, odpadów komunalnych nie wymienionych w innych podgrupach o kodzie 20 03 99 oraz odpadów o kodzie 20 02 01 i 20 01 08 co najmniej w okresie od 02.01.2026 r. do 31.12.2027 r.
+lub
+2.2) instalacji/instalacjach komunalnych o której/których mowa w art. 38 b) ustawy z dnia 14 grudnia 2012 r. o odpadach lub instalacji/instalacjach odzysku i unieszkodliwiania  prowadzonej/prowadzonych przez podmiot/podmioty z którym/którymi Wykonawca zawarł umowę/umowy, przy czym przedmiotem tej/tych umowy/umów jest przetwarzanie odpadów o kodzie 20 03 01, odpadów komunalnych nie wymienionych w innych podgrupach o kodzie 20 03 99 oraz odpadów o kodzie 20 02 01 i 20 01 08 a podmiot/podmioty prowadzący/prowadzące instalację/instalacje posiada/posiadają dla niej decyzję właściwego organu obejmującą zezwolenie na przetwarzanie tych odpadów co najmniej w okresie od 02.01.2026 r. do 31.12.2027 r.
+3.  Zamawiający dopuszcza możliwość realizacji przedmiotu zamówienia przy użyciu stacji przeładunkowej, o której mowa w art. 23 ust. 10 ustawy z dnia 14 grudnia 2012 r. o odpadach (t.j. Dz. U. z 2023 r. poz. 1587 ze zm.) do której niezbędna jest m.in. decyzja na zbieranie opadów. </cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+         <cbc:EstimatedOverallContractQuantity unitCode="TNE">17800</cbc:EstimatedOverallContractQuantity>
+         <cac:ProcurementAdditionalType>
+            <cbc:ProcurementTypeCode listName="gpp-criteria">other</cbc:ProcurementTypeCode>
+         </cac:ProcurementAdditionalType>
+         <cac:ProcurementAdditionalType>
+            <cbc:ProcurementTypeCode listName="social-objective">work-cond</cbc:ProcurementTypeCode>
+         </cac:ProcurementAdditionalType>
+         <cac:RequestedTenderTotal>
+            <cbc:EstimatedOverallContractAmount currencyID="PLN">22402315.2</cbc:EstimatedOverallContractAmount>
+         </cac:RequestedTenderTotal>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">90500000</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">90511000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">90512000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">90513100</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">90513200</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">90533000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:RealizedLocation>
+            <cbc:Description languageID="POL">Miasto Wieliczka</cbc:Description>
+            <cac:Address>
+               <cbc:CityName>Wieliczka</cbc:CityName>
+               <cbc:PostalZone>32-020</cbc:PostalZone>
+               <cbc:CountrySubentityCode listName="nuts">PL214</cbc:CountrySubentityCode>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+         <cac:PlannedPeriod>
+            <cbc:StartDate>2026-01-02+01:00</cbc:StartDate>
+            <cbc:EndDate>2027-12-31+01:00</cbc:EndDate>
+         </cac:PlannedPeriod>
+         <cac:ContractExtension>
+            <cbc:OptionsDescription languageID="POL">1. Zamawiający przewiduje w ramach prawa opcji zwiększenie ilości odpadów przeznaczonych do odbioru, transportu i zagospodarowania w ilości nie przekraczającej:
+- odpady zmieszane: 3 300 Mg,
+- odpady biodegradowalne: 220 Mg,
+- odpady kuchenne ulegające biodegradacji: 40 Mg.
+2. Zamawiający zastrzega sobie możliwość skorzystania z prawa opcji (w całości lub w części) w przypadku gdy w trakcie trwania umowy wystąpią okoliczności wskazujące na konieczność odbioru, transportu i zagospodarowania większej niż zakładana ilości odpadów. 
+3. W celu uruchomienia prawa opcji Zamawiający złoży Wykonawcy pisemne oświadczenie woli w przedmiocie skorzystania z prawa opcji w określonym zakresie.  Oświadczenie będzie zawierało wielkość, opcji wartość opcji,  potwierdzenie środków finansowych na zrealizowanie zamówienia i będzie stanowiło załącznik do umowy. 
+4. Prawo opcji jest jednostronnym uprawnieniem Zamawiającego, z którego może, ale nie ma obowiązku skorzystać w ramach realizacji przedmiotu zamówienia. W przypadku nie skorzystania przez Zamawiającego z prawa opcji Wykonawcy nie przysługują żadne roszczenia z tego tytułu.
+5. Jeżeli Zamawiający skorzysta z prawa opcji obowiązkiem umownym wykonawcy jest wykonanie świadczenia w zakresie objętym wykorzystanym prawem opcji na warunkach takich jak zamówienie podstawowe, w szczególności przy zastosowaniu cen jednostkowych takich jak dla zamówienia podstawowego.
+6.  Zamawiający ma prawo wielokrotnie korzystać z prawa opcji po zrealizowaniu zakresu podstawowego zamówienia – jednak do wyczerpania maksymalnego zakresu prawa opcji. 
+7. Uruchomienie opcji nie będzie wymagało zmiany umowy. </cbc:OptionsDescription>
+         </cac:ContractExtension>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0002</cbc:ID>
+      <cac:TenderingTerms>
+         <ext:UBLExtensions>
+            <ext:UBLExtension>
+               <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                     <efac:StrategicProcurement>
+                        <efbc:ApplicableLegalBasis listName="cvd-scope">true</efbc:ApplicableLegalBasis>
+                        <efac:StrategicProcurementInformation>
+                           <efbc:ProcurementCategoryCode listName="cvd-contract-type">oth-serv-contr</efbc:ProcurementCategoryCode>
+                        </efac:StrategicProcurementInformation>
+                     </efac:StrategicProcurement>
+                     <efac:StrategicProcurement>
+                        <efbc:ApplicableLegalBasis listName="eed-scope">false</efbc:ApplicableLegalBasis>
+                     </efac:StrategicProcurement>
+                  </efext:EformsExtension>
+               </ext:ExtensionContent>
+            </ext:UBLExtension>
+         </ext:UBLExtensions>
+         <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="fsr">false</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:AwardingTerms>
+            <cac:AwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>60</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="POL">Cena</cbc:Name>
+                  <cbc:Description languageID="POL">Do oceny ofert w tym kryterium Zamawiający przyjmie całkowitą cenę brutto wynikającą z Formularza ofertowego.
+Zamawiający przyzna poszczególnym ofertom liczbę punktów na podstawie następującego wzoru:
+liczba punktów = (całkowita cena brutto oferty z najniższą ceną/ całkowita cena brutto oferty badanej) x 60</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>40</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="POL">Aspekty środowiskowe</cbc:Name>
+                  <cbc:Description languageID="POL">Do oceny ofert w tym kryterium, Zamawiający przyjmie zadeklarowaną w Formularzu ofertowym liczbę pojazdów do odbioru odpadów spełniających normę emisji spalin min. Euro 6, zgodnie z Dyrektywą 98/69/EC lub liczbę pojazdów elektrycznych lub napędzanych gazem ziemnym lub napędzanych wodorem, skierowanych do odbioru odpadów.
+Za każdy zadeklarowany pojazd do odbioru odpadów z napędem elektrycznym lub pojazd napędzany gazem ziemnym lub napędzany wodorem lub pojazd spełniający normę emisji spalin min. Euro 6 – Zamawiający przyzna Wykonawcy 5 małych punktów.
+Maksymalna liczba małych punktów jakie może uzyskać Wykonawca: 40
+Następnie do przyznanych małych punktów Zamawiający zastosuje następujący wzór, w celu przyznania liczby punktów w kryterium:
+liczba punktów = (liczba małych punktów przyznanych ofercie badanej/ najwyższa liczba małych punktów spośród złożonych ofert) x 40</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+            </cac:AwardingCriterion>
+         </cac:AwardingTerms>
+         <cac:AppealTerms>
+            <cac:PresentationPeriod>
+               <cbc:Description languageID="POL">
+     1. Środki ochrony prawnej określone w niniejszym dziale przysługują wykonawcy, uczestnikowi konkursu oraz innemu podmiotowi, jeżeli ma lub miał interes w uzyskaniu zamówienia lub nagrody w konkursie oraz poniósł lub może ponieść szkodę w wyniku naruszenia przez zamawiającego przepisów ustawy Pzp.
+     2. Środki ochrony prawnej wobec ogłoszenia wszczynającego postępowanie o udzielenie zamówienia lub ogłoszenia o konkursie oraz dokumentów zamówienia przysługują również organizacjom wpisanym na listę, o której mowa w art. 469 pkt 15 ustawy Pzp oraz Rzecznikowi Małych i Średnich Przedsiębiorców.
+     3. Odwołanie przysługuje na:
+a) niezgodną z przepisami ustawy czynność Zamawiającego, podjętą w postępowaniu o udzielenie zamówienia, w tym na projektowane postanowienie umowy;
+b) zaniechanie czynności w postępowaniu o udzielenie zamówienia do której zamawiający był obowiązany na podstawie ustawy;
+     4. Odwołanie wnosi się do Prezesa Izby. Odwołujący przekazuje kopię odwołania zamawiającemu przed upływem terminu do wniesienia odwołania w taki sposób, aby mógł on zapoznać się z jego treścią przed upływem tego terminu.
+     5. Odwołanie wobec treści ogłoszenia wszczynającego postępowanie o udzielenie zamówienia lub wobec treści dokumentów zamówienia wnosi się w terminie 10 dni od dnia publikacji ogłoszenia w Dzienniku Urzędowym Unii Europejskiej lub zamieszczenia dokumentów zamówienia na stronie internetowej.
+     6. Odwołanie wnosi się w terminie:
+       a) 10 dni od dnia przekazania informacji o czynności zamawiającego stanowiącej podstawę jego wniesienia, jeżeli informacja została przekazana przy użyciu środków komunikacji elektronicznej, 
+       b) 15 dni od dnia przekazania informacji o czynności zamawiającego stanowiącej podstawę jego wniesienia, jeżeli informacja została przekazana w sposób inny niż określony w lit. a); 
+     7. Odwołanie w przypadkach innych niż określone w pkt 5 i 6 wnosi się w terminie 10 dni od dnia, w którym powzięto lub przy zachowaniu należytej staranności można było powziąć wiadomość o okolicznościach stanowiących podstawę jego wniesienia.
+     8. Na orzeczenie Izby oraz postanowienie Prezesa Izby, o którym mowa w art. 519 ust. 1 ustawy Pzp, stronom oraz uczestnikom postępowania odwoławczego przysługuje skarga do sądu.
+     9. W postępowaniu toczącym się wskutek wniesienia skargi stosuje się odpowiednio przepisy ustawy z dnia 17 listopada 1964 r. - Kodeks postępowania cywilnego o apelacji, jeżeli przepisy niniejszego rozdziału nie stanowią inaczej.
+     10. Skargę wnosi się do Sądu Okręgowego w Warszawie - sądu zamówień publicznych, zwanego dalej "sądem zamówień publicznych".
+     11. Skargę wnosi się za pośrednictwem Prezesa Izby, w terminie 14 dni od dnia doręczenia orzeczenia Izby lub postanowienia Prezesa Izby, o którym mowa w art. 519 ust. 1 ustawy Pzp, przesyłając jednocześnie jej odpis przeciwnikowi skargi. Złożenie skargi w placówce pocztowej operatora wyznaczonego w rozumieniu ustawy z dnia 23 listopada 2012 r. - Prawo pocztowe jest równoznaczne z jej wniesieniem.
+     12. Prezes Izby przekazuje skargę wraz z aktami postępowania odwoławczego do sądu zamówień publicznych w terminie 7 dni od dnia jej otrzymania.
+     13. W sprawach nieuregulowanych w nin. punkcie w zakresie wniesienia odwołania i skargi mają zastosowanie przepisy Działu IX uPzp.</cbc:Description>
+            </cac:PresentationPeriod>
+            <cac:AppealInformationParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealInformationParty>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+         </cac:AppealTerms>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+         <cac:AuctionTerms>
+            <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+         </cac:AuctionTerms>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:ID schemeName="InternalID">Zadanie 2</cbc:ID>
+         <cbc:Name languageID="POL">Zadanie2: Odbiór i zagospodarowanie odpadów zmieszanych, odpadów biodegradowalnych i odpadów kuchennych, od właścicieli nieruchomości zamieszkałych na terenie Gminy Wieliczka w latach 2026-2027</cbc:Name>
+         <cbc:Description languageID="POL">1. Zadanie 2 obejmuje świadczenie usługi odbioru, transportu oraz zagospodarowania odpadów komunalnych powstałych i zebranych na nieruchomościach zamieszkałych, położonych na terenie Gminy Wieliczka w sektorze II obejmującym 29 sołectw, w tym:
+a) Odbiór, transport i zagospodarowanie niesegregowanych (zmieszanych) odpadów komunalnych, to jest odpadów komunalnych o kodzie 20 03 01 oraz odpadów komunalnych nie wymienionych w innych podgrupach o kodzie 20 03 99, gromadzonych w pojemnikach, kontenerach lub workach. Przewidywana ilość odpadów dla zakresu podstawowego: 16 800 Mg;
+b) Odbiór, transport i zagospodarowanie odpadów biodegradowalnych o kodzie 20 02 01 gromadzonych w pojemnikach lub workach. Przewidywana ilość odpadów dla zakresu podstawowego: 1 300 Mg;
+ c) Odbiór, transport i zagospodarowanie odpadów kuchennych ulegających biodegradacji o kodzie 20 01 08 gromadzonych w pojemnikach lub workach. Przewidywana ilość odpadów dla zakresu podstawowego: 200 Mg.
+Celem Zamawiającego jest realizacja racjonalnej gospodarki odpadami ze szczególnym naciskiem na osiągnięcie efektywnych wyników w segregacji.
+Informacje niezbędne dla wykonania zamówienia dla Zadania 2, zasady gromadzenia, odbioru odpadów komunalnych oraz obowiązki Wykonawcy zawarte są w standardach wykonywania usług i ich szczegółowym zakresie stanowiącym załącznik nr 11 do SWZ.  
+2. Zamawiający wymaga, aby usługi przetwarzania odpadów były wykonywane w:
+2.1) instalacji/instalacjach komunalnych o której/których mowa w art. 38 b) ustawy z dnia 14 grudnia 2012 r. o odpadach lub instalacji/instalacjach odzysku i unieszkodliwiania prowadzonej/prowadzonych przez Wykonawcę, a Wykonawca posiada dla tej/tych instalacji decyzję/decyzje właściwego organu obejmującą zezwolenie na przetwarzanie odpadów o kodzie 20 03 01, odpadów komunalnych nie wymienionych w innych podgrupach o kodzie 20 03 99 oraz odpadów o kodzie 20 02 01 i 20 01 08 co najmniej w okresie od 02.01.2026 r. do 31.12.2027 r.
+lub
+2.2) instalacji/instalacjach komunalnych o której/których mowa w art. 38 b) ustawy z dnia 14 grudnia 2012 r. o odpadach lub instalacji/instalacjach odzysku i unieszkodliwiania  prowadzonej/prowadzonych przez podmiot/podmioty z którym/którymi Wykonawca zawarł umowę/umowy, przy czym przedmiotem tej/tych umowy/umów jest przetwarzanie odpadów o kodzie 20 03 01, odpadów komunalnych nie wymienionych w innych podgrupach o kodzie 20 03 99 oraz odpadów o kodzie 20 02 01 i 20 01 08 a podmiot/podmioty prowadzący/prowadzące instalację/instalacje posiada/posiadają dla niej decyzję właściwego organu obejmującą zezwolenie na przetwarzanie tych odpadów co najmniej w okresie od 02.01.2026 r. do 31.12.2027 r.
+3.  Zamawiający dopuszcza możliwość realizacji przedmiotu zamówienia przy użyciu stacji przeładunkowej, o której mowa w art. 23 ust. 10 ustawy z dnia 14 grudnia 2012 r. o odpadach (t.j. Dz. U. z 2023 r. poz. 1587 ze zm.) do której niezbędna jest m.in. decyzja na zbieranie opadów. </cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+         <cbc:EstimatedOverallContractQuantity unitCode="TNE">18300</cbc:EstimatedOverallContractQuantity>
+         <cac:ProcurementAdditionalType>
+            <cbc:ProcurementTypeCode listName="gpp-criteria">other</cbc:ProcurementTypeCode>
+         </cac:ProcurementAdditionalType>
+         <cac:ProcurementAdditionalType>
+            <cbc:ProcurementTypeCode listName="social-objective">work-cond</cbc:ProcurementTypeCode>
+         </cac:ProcurementAdditionalType>
+         <cac:RequestedTenderTotal>
+            <cbc:EstimatedOverallContractAmount currencyID="PLN">22956177.6</cbc:EstimatedOverallContractAmount>
+         </cac:RequestedTenderTotal>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">90500000</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">90511000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">90512000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">90513100</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">90513200</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">90533000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:RealizedLocation>
+            <cbc:Description languageID="POL">Miasto Wieliczka</cbc:Description>
+            <cac:Address>
+               <cbc:CityName>Wieliczka</cbc:CityName>
+               <cbc:PostalZone>32-020</cbc:PostalZone>
+               <cbc:CountrySubentityCode listName="nuts">PL214</cbc:CountrySubentityCode>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+         <cac:PlannedPeriod>
+            <cbc:StartDate>2026-01-02+01:00</cbc:StartDate>
+            <cbc:EndDate>2027-12-31+01:00</cbc:EndDate>
+         </cac:PlannedPeriod>
+         <cac:ContractExtension>
+            <cbc:OptionsDescription languageID="POL">1. Zamawiający przewiduje w ramach prawa opcji zwiększenie ilości odpadów przeznaczonych do odbioru, transportu i zagospodarowania w ilości nie przekraczającej:
+- odpady zmieszane: 3 360 Mg,
+- odpady biodegradowalne: 260 Mg,
+- odpady kuchenne ulegające biodegradacji: 40 Mg.
+2. Zamawiający zastrzega sobie możliwość skorzystania z prawa opcji (w całości lub w części) w przypadku gdy w trakcie trwania umowy wystąpią okoliczności wskazujące na konieczność odbioru, transportu i zagospodarowania większej niż zakładana ilości odpadów. 
+3. W celu uruchomienia prawa opcji Zamawiający złoży Wykonawcy pisemne oświadczenie woli w przedmiocie skorzystania z prawa opcji w określonym zakresie.  Oświadczenie będzie zawierało wielkość, opcji wartość opcji,  potwierdzenie środków finansowych na zrealizowanie zamówienia i będzie stanowiło załącznik do umowy. 
+4. Prawo opcji jest jednostronnym uprawnieniem Zamawiającego, z którego może, ale nie ma obowiązku skorzystać w ramach realizacji przedmiotu zamówienia. W przypadku nie skorzystania przez Zamawiającego z prawa opcji Wykonawcy nie przysługują żadne roszczenia z tego tytułu.
+5. Jeżeli Zamawiający skorzysta z prawa opcji obowiązkiem umownym wykonawcy jest wykonanie świadczenia w zakresie objętym wykorzystanym prawem opcji na warunkach takich jak zamówienie podstawowe, w szczególności przy zastosowaniu cen jednostkowych takich jak dla zamówienia podstawowego.
+6.  Zamawiający ma prawo wielokrotnie korzystać z prawa opcji po zrealizowaniu zakresu podstawowego zamówienia – jednak do wyczerpania maksymalnego zakresu prawa opcji. 
+7. Uruchomienie opcji nie będzie wymagało zmiany umowy. </cbc:OptionsDescription>
+         </cac:ContractExtension>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+   <cac:TenderResult>
+      <cbc:AwardDate>2000-01-01Z</cbc:AwardDate>
+   </cac:TenderResult>
+</ContractAwardNotice>

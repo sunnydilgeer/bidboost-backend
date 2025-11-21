@@ -1,520 +1,155 @@
-from qdrant_client import QdrantClient, models
-from qdrant_client.models import Distance, VectorParams, PointStruct, Filter, FieldCondition, MatchValue, FilterSelector
-from typing import List, Dict, Any, Optional
-import uuid
-import hashlib
+"""
+Clean vector store service for contract opportunities only.
+Supports both Qdrant (dev) and will support Pinecone (production).
+"""
 import logging
-import time
+from typing import List, Dict, Any, Optional
+from qdrant_client import QdrantClient
+from qdrant_client import models
 from app.core.config import settings
-from app.models.schemas import ContractOpportunity, AwardedContract
 
 logger = logging.getLogger(__name__)
 
 class VectorStoreService:
+    """Vector store service for contract opportunities - Qdrant/Pinecone ready"""
+    
     def __init__(self):
-        max_retries = 5
-        retry_delay = 2
+        self.settings = settings
+        self.vector_size = 768  # OpenAI text-embedding-3-small
         
-        for attempt in range(max_retries):
-            try:
-                # Use QDRANT_URL if available (for cloud), otherwise use host/port (for local)
-                if settings.QDRANT_URL and "cloud.qdrant.io" in settings.QDRANT_URL:
-                    self.client = QdrantClient(
-                        url=settings.QDRANT_URL,
-                        api_key=settings.QDRANT_API_KEY
-                    )
-                else:
-                    self.client = QdrantClient(
-                        url=settings.QDRANT_URL
-                    )
-                self.collection_name = settings.QDRANT_COLLECTION_NAME
-                self._ensure_collection()
-                logger.info(f"✅ Connected to Qdrant on attempt {attempt + 1}")
-                break
-            except Exception as e:
-                if attempt < max_retries - 1:
-                    logger.warning(f"Qdrant connection attempt {attempt + 1}/{max_retries} failed, retrying in {retry_delay}s... Error: {str(e)}")
-                    time.sleep(retry_delay)
-                    retry_delay *= 2  # Exponential backoff
-                else:
-                    logger.error(f"❌ Failed to connect to Qdrant after {max_retries} attempts: {str(e)}")
-                    raise
-    
-    def _ensure_collection(self):
-        """Create collection if it doesn't exist"""
-        collections = self.client.get_collections().collections
-        collection_names = [col.name for col in collections]
+        # Collection name for contracts
+        self.collection_name = "contracts"
         
-        if self.collection_name not in collection_names:
-            self.client.create_collection(
-                collection_name=self.collection_name,
-                vectors_config=VectorParams(
-                    size=768,  # nomic-embed-text dimension
-                    distance=Distance.COSINE
-                ),
-                optimizers_config=models.OptimizersConfigDiff(
-                    indexing_threshold=1000
-                )
-            )
-            logger.info(f"Created collection: {self.collection_name}")
-        
-        # Create index for document_type field
+        # Initialize Qdrant client
+        logger.info(f"Connecting to Qdrant at: {self.settings.QDRANT_URL}")
         try:
-            self.client.create_payload_index(
-                collection_name=self.collection_name,
-                field_name="document_type",
-                field_schema="keyword"
+            self.client = QdrantClient(
+                url=self.settings.QDRANT_URL,
+                timeout=30
             )
-            logger.info(f"Created index on document_type field")
+            logger.info("✅ Qdrant client initialized successfully")
         except Exception as e:
-            logger.debug(f"Index creation skipped: {e}")
-    
-    async def add_documents(self, documents: List[Dict], llm_service):
-        """
-        Add legal documents with embeddings to Qdrant.
-        
-        Args:
-            documents: List of dicts with 'id', 'content', and 'metadata' keys
-            llm_service: Service for generating embeddings
-            
-        Returns:
-            Number of points added
-        """
-        points = []
-        
-        for doc in documents:
-            # Generate embedding
-            embedding = await llm_service.generate_embeddings(doc["content"])
-            
-            # Extract key fields from metadata for top-level access
-            metadata = doc.get("metadata", {})
-            
-            point = PointStruct(
-                id=doc["id"],
-                vector=embedding,
-                payload={
-                    "content": doc["content"],
-                    "metadata": metadata,
-                    "document_type": "legal_document",
-                    "page": metadata.get("page", 1),
-                    "document_id": metadata.get("document_id", ""),
-                    "firm_id": metadata.get("firm_id", "")
-                }
-            )
-            points.append(point)
-        
-        self.client.upsert(
-            collection_name=self.collection_name,
-            points=points,
-            wait=True
-        )
-        
-        logger.info(f"Added {len(points)} legal document chunks to vector store")
-        return len(points)
-    
-    async def add_contracts(self, contracts: List[ContractOpportunity], llm_service) -> None:
-        """
-        Add contract opportunities to vector store for semantic search.
-        
-        🚀 ENHANCED: Now embeds TITLE + DESCRIPTION for richer semantic matching
-        instead of just creating a text summary. This dramatically improves
-        capability matching accuracy.
-        """
-        try:
-            points = []
-            
-            for contract in contracts:
-                # Generate deterministic UUID from notice_id to prevent duplicates
-                point_id = str(uuid.UUID(hashlib.md5(contract.notice_id.encode()).hexdigest()))
-                
-                # Safe value formatting
-                if contract.value is not None:
-                    value_text = f"£{contract.value:,.2f}"
-                else:
-                    value_text = "Not specified"
-                
-                # Safe date formatting
-                if contract.closing_date:
-                    closing_date_text = contract.closing_date.strftime('%Y-%m-%d')
-                else:
-                    closing_date_text = "Not specified"
-                
-                # Create searchable text combining ALL key fields for display/storage
-                contract_text = f"""Title: {contract.title}
-Description: {contract.description or 'No description'}
-Buyer: {contract.buyer_name}
-Value: {value_text}
-CPV Codes: {', '.join(contract.cpv_codes) if contract.cpv_codes else 'None'}
-Region: {contract.region or 'Not specified'}
-Closing Date: {closing_date_text}
-Additional Info: {contract.additional_text or 'None'}""".strip()
-                
-                # 🚀 KEY CHANGE: Create RICH embedding text with title + description
-                # This is what gets embedded for semantic similarity matching
-                embedding_text = f"{contract.title}\n\n{contract.description or ''}".strip()
-                
-                # Clean and limit embedding text (keep first 2000 chars for context)
-                clean_embedding_text = embedding_text.replace('\r\n', ' ').replace('\r', ' ').replace('\n', ' ')
-                truncated_embedding_text = clean_embedding_text[:2000]
-                
-                # Generate embedding with TITLE + DESCRIPTION
-                embedding = await llm_service.generate_embeddings(truncated_embedding_text)
-                
-                logger.debug(f"Embedded contract {contract.notice_id[:8]}... with {len(truncated_embedding_text)} chars")
-                
-                point = PointStruct(
-                    id=point_id,
-                    vector=embedding,
-                    payload={
-                        "content": contract_text,
-                        "document_type": "contract_opportunity",
-                        "metadata": {
-                            # Core fields
-                            "notice_id": contract.notice_id,
-                            "title": contract.title,
-                            "description": contract.description,
-                            "buyer_name": contract.buyer_name,
-                            
-                            # Dates
-                            "published_date": contract.published_date.isoformat() if contract.published_date else None,
-                            "closing_date": contract.closing_date.isoformat() if contract.closing_date else None,
-                            "closing_time": contract.closing_time,
-                            "start_date": contract.start_date.isoformat() if contract.start_date else None,
-                            "end_date": contract.end_date.isoformat() if contract.end_date else None,
-                            
-                            # Financial
-                            "value": contract.value,
-                            "value_low": contract.value_low,
-                            "value_high": contract.value_high,
-                            
-                            # Location
-                            "region": contract.region,
-                            "postcode": contract.postcode,
-                            
-                            # Classification
-                            "cpv_codes": contract.cpv_codes,
-                            "notice_type": contract.notice_type,
-                            
-                            # Contact information
-                            "contact_name": contract.contact_name,
-                            "contact_email": contract.contact_email,
-                            "contact_phone": contract.contact_phone,
-                            "contact_address": contract.contact_address,
-                            "contact_website": contract.contact_website,
-                            
-                            # Additional metadata
-                            "additional_text": contract.additional_text,
-                            "attachments": contract.attachments,
-                            "links": contract.links,
-                            "suitable_for_sme": contract.suitable_for_sme,
-                            "suitable_for_vco": contract.suitable_for_vco
-                        },
-                        # Top-level fields for easy filtering
-                        "notice_id": contract.notice_id,
-                        "buyer_name": contract.buyer_name,
-                        "value": contract.value,
-                        "region": contract.region
-                    }
-                )
-                points.append(point)
-            
-            self.client.upsert(
-                collection_name=self.collection_name,
-                points=points,
-                wait=True
-            )
-            
-            logger.info(f"✅ Added {len(contracts)} contracts with ENHANCED embeddings (title + description)")
-            
-        except Exception as e:
-            logger.error(f"Failed to add contracts to vector store: {str(e)}")
+            logger.error(f"Failed to initialize Qdrant client: {e}")
             raise
     
-    async def add_fts_awards(self, awards: List[AwardedContract], llm_service) -> None:
-        """
-        Add FTS awarded contracts to vector store for past wins analysis.
-        Similar to add_contracts but for completed awards.
-        """
+    def ensure_collection_exists(self):
+        """Create contracts collection if it doesn't exist"""
         try:
-            points = []
+            collections = self.client.get_collections().collections
+            collection_exists = any(c.name == self.collection_name for c in collections)
             
-            for award in awards:
-                # Generate deterministic UUID from tender_id
-                point_id = str(uuid.UUID(hashlib.md5(award.tender_id.encode()).hexdigest()))
-                
-                # Format value
-                value_text = f"£{award.contract_value:,.2f}" if award.contract_value else "Not specified"
-                
-                # Create searchable text
-                award_text = f"""Title: {award.title}
-Description: {award.description or 'No description'}
-Supplier: {award.supplier_name or 'Not specified'}
-Buyer: {award.buyer_name or 'Not specified'}
-Value: {value_text}
-CPV Codes: {', '.join(award.cpv_codes) if award.cpv_codes else 'None'}
-Region: {award.buyer_region or 'Not specified'}
-Award Date: {award.award_date or 'Not specified'}
-Reference: {award.reference or 'None'}""".strip()
-                
-                # Create embedding text (title + description)
-                embedding_text = f"{award.title}\n\n{award.description or ''}".strip()
-                clean_embedding_text = embedding_text[:2000]
-                
-                # Generate embedding
-                embedding = await llm_service.generate_embeddings(clean_embedding_text)
-                
-                point = PointStruct(
-                    id=point_id,
-                    vector=embedding,
-                    payload={
-                        "content": award_text,
-                        "document_type": "fts_award",
-                        "metadata": {
-                            "tender_id": award.tender_id,
-                            "title": award.title,
-                            "description": award.description,
-                            "supplier_name": award.supplier_name,
-                            "buyer_name": award.buyer_name,
-                            "contract_value": award.contract_value,
-                            "award_date": award.award_date,
-                            "cpv_codes": award.cpv_codes,
-                            "buyer_region": award.buyer_region,
-                            "buyer_email": award.buyer_email,
-                            "reference": award.reference,
-                            "suitable_for_sme": award.suitable_for_sme,
-                            "url": award.url,
-                        },
-                        # Top-level fields for filtering
-                        "tender_id": award.tender_id,
-                        "supplier_name": award.supplier_name,
-                        "buyer_name": award.buyer_name,
-                        "contract_value": award.contract_value,
-                        "buyer_region": award.buyer_region,
-                    }
+            if not collection_exists:
+                logger.info(f"Creating collection: {self.collection_name}")
+                self.client.create_collection(
+                    collection_name=self.collection_name,
+                    vectors_config=models.VectorParams(
+                        size=self.vector_size,
+                        distance=models.Distance.COSINE,
+                    ),
                 )
-                points.append(point)
-            
-            self.client.upsert(
-                collection_name=self.collection_name,
-                points=points,
-                wait=True
-            )
-            
-            logger.info(f"✅ Added {len(awards)} FTS awarded contracts to vector store")
-            
+                logger.info(f"✅ Collection '{self.collection_name}' created successfully")
+            else:
+                logger.info(f"✅ Collection '{self.collection_name}' already exists")
+                
         except Exception as e:
-            logger.error(f"Failed to add FTS awards to vector store: {str(e)}")
+            logger.error(f"Error ensuring collection exists: {e}")
             raise
     
-    async def search(
-        self, 
-        query_text: str, 
-        llm_service, 
-        limit: int = 5,
-        filter_conditions: Optional[Dict[str, Any]] = None,
-        document_type: Optional[str] = None
-    ):
+    def upsert_documents(self, documents: List[Dict[str, Any]]):
         """
-        Search for similar documents/contracts with optional filtering.
+        Upsert contract opportunity documents to vector store
         
         Args:
-            query_text: The search query
-            llm_service: Service for generating query embeddings
-            limit: Maximum number of results to return
-            filter_conditions: Dict of filters (e.g., {"firm_id": "123"})
-            document_type: Filter by document type ("legal_document" or "contract_opportunity")
-            
-        Returns:
-            List of search results with content, metadata, and score
+            documents: List of dicts with 'id', 'vector', and 'payload' keys
         """
-        # Generate query embedding
-        query_embedding = await llm_service.generate_embeddings(query_text)
-        
-        # Build Qdrant filter
-        must_conditions = []
-        
-        # Add document type filter if specified
-        if document_type:
-            must_conditions.append(
-                FieldCondition(
-                    key="document_type",
-                    match=MatchValue(value=document_type)
+        try:
+            if not documents:
+                logger.warning("No documents to upsert")
+                return
+            
+            # Convert to Qdrant points
+            points = [
+                models.PointStruct(
+                    id=doc["id"],
+                    vector=doc["vector"],
+                    payload=doc["payload"]
                 )
+                for doc in documents
+            ]
+            
+            # Upsert to Qdrant
+            self.client.upsert(
+                collection_name=self.collection_name,
+                points=points
             )
-        
-        # Add custom filter conditions
-        if filter_conditions:
-            for key, value in filter_conditions.items():
-                # Check if key needs metadata prefix
-                if key in ["page", "document_id", "firm_id", "notice_id", "buyer_name", "value", "region"]:
-                    # Top-level fields
-                    field_key = key
-                else:
-                    # Nested metadata fields
-                    field_key = f"metadata.{key}"
-                
-                must_conditions.append(
-                    FieldCondition(
-                        key=field_key,
-                        match=MatchValue(value=value)
-                    )
-                )
-        
-        query_filter = Filter(must=must_conditions) if must_conditions else None
-        
-        # Search in Qdrant with optional filter
-        results = self.client.search(
-            collection_name=self.collection_name,
-            query_vector=query_embedding,
-            limit=limit,
-            query_filter=query_filter
-        )
-        
-        # Format results
-        formatted_results = []
-        for result in results:
-            formatted_result = {
-                "id": result.id,
-                "content": result.payload["content"],
-                "metadata": result.payload.get("metadata", {}),
-                "score": result.score,
-                "document_type": result.payload.get("document_type", "unknown")
-            }
             
-            # Add type-specific fields
-            if result.payload.get("document_type") == "legal_document":
-                formatted_result.update({
-                    "page": result.payload.get("page", 1),
-                    "document_id": result.payload.get("document_id", "")
-                })
-            elif result.payload.get("document_type") == "contract_opportunity":
-                formatted_result.update({
-                    "notice_id": result.payload.get("notice_id", ""),
-                    "buyer_name": result.payload.get("buyer_name", ""),
-                    "value": result.payload.get("value"),
-                    "region": result.payload.get("region")
-                })
+            logger.info(f"✅ Upserted {len(documents)} documents to {self.collection_name}")
             
-            formatted_results.append(formatted_result)
-        
-        return formatted_results
+        except Exception as e:
+            logger.error(f"Error upserting documents: {e}")
+            raise
     
     async def search_contracts(
         self,
         query_text: str,
         llm_service,
         limit: int = 10,
-        min_value: Optional[float] = None,
-        max_value: Optional[float] = None,
-        region: Optional[str] = None
+        filters: Optional[Dict[str, Any]] = None
     ) -> List[Dict[str, Any]]:
         """
-        Search specifically for contract opportunities with contract-specific filters.
+        Search for contract opportunities using semantic search
         
         Args:
             query_text: Search query
-            llm_service: Service for embeddings
-            limit: Max results
-            min_value: Minimum contract value
-            max_value: Maximum contract value
-            region: Filter by region
-        """
-        # Start with base contract filter
-        filter_conditions = {}
-        
-        if region:
-            filter_conditions["region"] = region
-        
-        # Search for contracts only
-        results = await self.search(
-            query_text=query_text,
-            llm_service=llm_service,
-            limit=limit,
-            filter_conditions=filter_conditions,
-            document_type="contract_opportunity"
-        )
-        
-        # Post-filter by value range
-        if min_value is not None or max_value is not None:
-            filtered_results = []
-            for result in results:
-                contract_value = result.get("value")
-                if contract_value is None:
-                    continue
-                
-                if min_value is not None and contract_value < min_value:
-                    continue
-                if max_value is not None and contract_value > max_value:
-                    continue
-                    
-                filtered_results.append(result)
+            llm_service: LLM service for generating embeddings
+            limit: Max number of results
+            filters: Optional Qdrant filters
             
-            results = filtered_results
-        
-        return results
-    
-    def delete_by_document_id(self, document_id: str, firm_id: str):
-        """Delete all chunks belonging to a specific legal document."""
-        self.client.delete(
-            collection_name=self.collection_name,
-            points_selector=FilterSelector(
-                filter=Filter(
-                    must=[
-                        FieldCondition(
-                            key="document_id",
-                            match=MatchValue(value=document_id)
-                        ),
-                        FieldCondition(
-                            key="firm_id",
-                            match=MatchValue(value=firm_id)
-                        )
-                    ]
-                )
-            )
-        )
-        
-        logger.info(f"Deleted all chunks for document: {document_id}")
-    
-    def delete_contracts_older_than(self, days: int = 30):
-        """Delete contract opportunities older than specified days."""
-        from datetime import datetime, timedelta
-        
-        cutoff_date = datetime.utcnow() - timedelta(days=days)
-        
-        logger.info(f"Contract cleanup requested for entries older than {days} days")
-    
-    def get_document_count(self, firm_id: Optional[str] = None, document_type: Optional[str] = None) -> int:
+        Returns:
+            List of contract opportunity dicts with scores
         """
-        Get count of documents/contracts with optional filtering.
-        
-        Args:
-            firm_id: Filter by firm ID (for legal documents)
-            document_type: Filter by document type
-        """
-        must_conditions = []
-        
-        if firm_id:
-            must_conditions.append(
-                FieldCondition(
-                    key="firm_id",
-                    match=MatchValue(value=firm_id)
-                )
-            )
-        
-        if document_type:
-            must_conditions.append(
-                FieldCondition(
-                    key="document_type",
-                    match=MatchValue(value=document_type)
-                )
-            )
-        
-        if must_conditions:
-            result = self.client.count(
+        try:
+            # Generate query embedding
+            query_vector = await llm_service.generate_embeddings(query_text)
+            
+            # Search Qdrant
+            results = self.client.search(
                 collection_name=self.collection_name,
-                count_filter=Filter(must=must_conditions)
+                query_vector=query_vector,
+                limit=limit,
+                query_filter=filters
             )
-            return result.count
-        else:
+            
+            # Format results
+            formatted_results = []
+            for result in results:
+                contract = result.payload
+                contract['score'] = result.score
+                formatted_results.append(contract)
+            
+            logger.info(f"Found {len(formatted_results)} results for query: {query_text[:50]}...")
+            return formatted_results
+            
+        except Exception as e:
+            logger.error(f"Error searching contracts: {e}")
+            raise
+    
+    def get_document_count(self) -> int:
+        """Get total number of contracts in vector store"""
+        try:
             collection_info = self.client.get_collection(self.collection_name)
-            return collection_info.points_count
+            count = collection_info.points_count
+            logger.info(f"Total contracts in {self.collection_name}: {count}")
+            return count
+        except Exception as e:
+            logger.error(f"Error getting document count: {e}")
+            return 0
+    
+    def delete_collection(self):
+        """Delete the contracts collection (use with caution!)"""
+        try:
+            self.client.delete_collection(self.collection_name)
+            logger.info(f"🗑️ Deleted collection: {self.collection_name}")
+        except Exception as e:
+            logger.error(f"Error deleting collection: {e}")
+            raise

@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+   <ext:UBLExtensions>
+      <ext:UBLExtension>
+         <ext:ExtensionContent>
+            <efext:EformsExtension>
+               <efac:NoticeSubType>
+                  <cbc:SubTypeCode listName="notice-subtype">16</cbc:SubTypeCode>
+               </efac:NoticeSubType>
+               <efac:Organizations>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>www.nfz.gov.pl</cbc:WebsiteURI>
+                        <cbc:EndpointID>https://nfz.ezamawiajacy.pl</cbc:EndpointID>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Narodowy Fundusz Zdrowia Centrala</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>ul. Rakowiecka 26/30</cbc:StreetName>
+                           <cbc:CityName>Warszawa</cbc:CityName>
+                           <cbc:PostalZone>02-528</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL911</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>1070001057</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Name>https://nfz.ezamawiajacy.pl</cbc:Name>
+                           <cbc:Telephone>225726260</cbc:Telephone>
+                           <cbc:ElectronicMail>zamowienia@nfz.gov.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>www.uzp.gov.pl</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0004</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Krajowa Izba Odwoławcza</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>Postępu 17A</cbc:StreetName>
+                           <cbc:CityName>Warszawa</cbc:CityName>
+                           <cbc:PostalZone>02-676</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL911</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>5262239325</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://op.europa.eu</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0000</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Publications Office of the European Union</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:CityName>Luxembourg</cbc:CityName>
+                           <cbc:PostalZone>2417</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">LU000</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">LUX</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>PUBL</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+352 29291</cbc:Telephone>
+                           <cbc:ElectronicMail>ted@publications.europa.eu</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+               </efac:Organizations>
+            <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00761771-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+         </ext:ExtensionContent>
+      </ext:UBLExtension>
+   </ext:UBLExtensions>
+   <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+   <cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+   <cbc:ID schemeName="notice-id">5e3c3079-ca14-49c0-882f-04e894048e4b</cbc:ID>
+   <cbc:ContractFolderID>a4d89dc4-e8ad-4518-99f9-cdf19fcd223d</cbc:ContractFolderID>
+   <cbc:IssueDate>2025-11-14Z</cbc:IssueDate>
+   <cbc:IssueTime>11:51:45Z</cbc:IssueTime>
+   <cbc:VersionID>01</cbc:VersionID>
+   <cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+   <cbc:NoticeTypeCode listName="competition">cn-standard</cbc:NoticeTypeCode>
+   <cbc:NoticeLanguageCode listName="language">POL</cbc:NoticeLanguageCode>
+   <cac:ContractingParty>
+      <cbc:BuyerProfileURI>https://nfz.ezamawiajacy.pl</cbc:BuyerProfileURI>
+      <cac:ContractingPartyType>
+         <cbc:PartyTypeCode listName="buyer-legal-type">body-pl</cbc:PartyTypeCode>
+      </cac:ContractingPartyType>
+      <cac:ContractingActivity>
+         <cbc:ActivityTypeCode listName="authority-activity">health</cbc:ActivityTypeCode>
+      </cac:ContractingActivity>
+      <cac:Party>
+         <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+         </cac:PartyIdentification>
+         <cac:ServiceProviderParty>
+            <cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode>
+            <cac:Party>
+               <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0000</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:Party>
+         </cac:ServiceProviderParty>
+      </cac:Party>
+   </cac:ContractingParty>
+   <cac:TenderingTerms>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-grounds-source">epo-procurement-document</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+   </cac:TenderingTerms>
+   <cac:TenderingProcess>
+      <cbc:ProcedureCode listName="procurement-procedure-type">open</cbc:ProcedureCode>
+      <cac:ProcessJustification>
+         <cbc:ProcessReasonCode listName="accelerated-procedure">false</cbc:ProcessReasonCode>
+      </cac:ProcessJustification>
+   </cac:TenderingProcess>
+   <cac:ProcurementProject>
+      <cbc:ID schemeName="InternalID">NFZ-BAG-SZP.251.41.2025</cbc:ID>
+      <cbc:Name languageID="POL">Modernizacja infrastruktury sieciowej</cbc:Name>
+      <cbc:Description languageID="POL">1.Modernizacja infrastruktury sieciowej.
+2.Opis przedmiotu zamówienia zawiera Załącznik nr 1 do Specyfikacji.
+3.Sposób realizacji zamówienia określa projekt Umowy stanowiący Załącznik nr 2 do Specyfikacji.</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">supplies</cbc:ProcurementTypeCode>
+      <cbc:Note languageID="POL">PODSTAWY WYKLUCZENIA WYKONAWCÓW
+1.	Zamawiający na podstawie art. 108 ust. 1 ustawy Pzp wykluczy z postępowania Wykonawcę:
+1)	będącego osobą fizyczną, którego prawomocnie skazano za przestępstwo:
+a)	udziału w zorganizowanej grupie przestępczej albo związku mającym na celu popełnienie przestępstwa lub przestępstwa skarbowego, o którym mowa w art. 258 ustawy z dnia 6 czerwca 1997 r. - Kodeks karny (Dz.U. z 2025 r. poz. 383),
+b)	handlu ludźmi, o którym mowa w art. 189a Kodeksu karnego,
+c)	o którym mowa w art. 228–230a, art. 250a Kodeksu karnego, w art. 46–48 ustawy z dnia 25 czerwca 2010 r. o sporcie (Dz. U. z 2024 r. poz. 1488, z późn. zm.) lub w art. 54 ust. 1–4 ustawy z dnia 12 maja 2011 r. o refundacji leków, środków spożywczych specjalnego przeznaczenia żywieniowego oraz wyrobów medycznych (Dz. U. z 2025 r. poz. 907, z późn. zm.),
+d)	finansowania przestępstwa o charakterze terrorystycznym, o którym mowa w art. 165a Kodeksu karnego, lub przestępstwo udaremniania lub utrudniania stwierdzenia przestępnego pochodzenia pieniędzy lub ukrywania ich pochodzenia, o którym mowa w art. 299 Kodeksu karnego,
+e)	o charakterze terrorystycznym, o którym mowa w art. 115 § 20 Kodeksu karnego, lub mające na celu popełnienie tego przestępstwa,
+f)	powierzenia wykonywania pracy małoletniemu cudzoziemcowi, o którym mowa w art. 9 ust. 2 ustawy z dnia 15 czerwca 2012 r. o skutkach powierzania wykonywania pracy cudzoziemcom przebywającym wbrew przepisom na terytorium Rzeczypospolitej Polskiej (Dz. U. z 2021 r. poz. 1745 z późn. zm.),
+g)	przeciwko obrotowi gospodarczemu, o których mowa w art. 296-307 Kodeksu karnego, przestępstwo oszustwa, o którym mowa w art. 286 Kodeksu karnego, przestępstwo przeciwko wiarygodności dokumentów, o których mowa w art. 270-277d Kodeksu karnego, lub przestępstwo skarbowe,
+h)	o którym mowa w art. 9 ust. 1 i 3 lub art. 10 ustawy z dnia 15 czerwca 2012 r. o skutkach powierzania wykonywania pracy cudzoziemcom przebywającym wbrew przepisom na terytorium Rzeczypospolitej Polskiej
+- lub za odpowiedni czyn zabroniony określony w przepisach prawa obcego;
+2)	jeżeli urzędującego członka jego organu zarządzającego lub nadzorczego, wspólnika spółki w spółce jawnej lub partnerskiej albo komplementariusza w spółce komandytowej lub komandytowo-akcyjnej lub prokurenta prawomocnie skazano za przestępstwo, o którym mowa w pkt 1;
+3)	wobec którego wydano prawomocny wyrok sądu lub ostateczną decyzję administracyjną o zaleganiu z uiszczeniem podatków, opłat lub składek na ubezpieczenie społeczne lub zdrowotne, chyba że Wykonawca odpowiednio przed upływem terminu do składania wniosków o dopuszczenie do udziału w postępowaniu albo przed upływem terminu składania ofert dokonał płatności należnych podatków, opłat lub składek na ubezpieczenie społeczne lub zdrowotne wraz z odsetkami lub grzywnami lub zawarł wiążące porozumienie w sprawie spłaty tych należności;
+4)	wobec którego prawomocnie orzeczono zakaz ubiegania się o zamówienia publiczne;
+5)	jeżeli Zamawiający może stwierdzić, na podstawie wiarygodnych przesłanek, że Wykonawca zawarł z innymi Wykonawcami porozumienie mające na celu zakłócenie konkurencji, w szczególności jeżeli należąc do tej samej grupy kapitałowej w rozumieniu ustawy z dnia 16 lutego 2007 r. o ochronie konkurencji i konsumentów (Dz. U z 2024 r. poz. 1616, z późn.zm), złożyli odrębne oferty, oferty częściowe lub wnioski o dopuszczenie do udziału w postępowaniu, chyba że wykażą, że przygotowali te oferty lub wnioski niezależnie od siebie;
+6)	jeżeli, w przypadkach, o których mowa w art. 85 ust. 1 ustawy Pzp, doszło do zakłócenia konkurencji wynikającego z wcześniejszego zaangażowania tego Wykonawcy lub podmiotu, który należy z Wykonawcą do tej samej grupy kapitałowej w rozumieniu ustawy z dnia 16 lutego 2007 r. o ochronie konkurencji i konsumentów (Dz. U. z 2024 r. poz. 1616 z późn. zm.), chyba że spowodowane tym zakłócenie konkurencji może być wyeliminowane w inny sposób niż przez wykluczenie Wykonawcy z udziału w postępowaniu o udzielenie zamówienia.
+2.	Zamawiający wykluczy również z postępowania Wykonawcę:
+1)	na podstawie art. 109 ust. 1 pkt 2 ustawy Pzp, który naruszył obowiązki w dziedzinie ochrony środowiska, prawa socjalnego lub prawa pracy:
+a)	będącego osobą fizyczną skazanego prawomocnie za przestępstwo przeciwko środowisku, o którym mowa w rozdziale XXII Kodeksu karnego lub za przestępstwo przeciwko prawom osób wykonujących pracę zarobkową, o którym mowa w rozdziale XXVIII Kodeksu karnego, lub za odpowiedni czyn zabroniony określony w przepisach prawa obcego,
+b)	będącego osobą fizyczną prawomocnie ukaranego za wykroczenie przeciwko prawom pracownika lub wykroczenie przeciwko środowisku, jeżeli za jego popełnienie wymierzono karę aresztu, ograniczenia wolności lub karę grzywny,
+c)	wobec którego wydano ostateczną decyzję administracyjną o naruszeniu obowiązków wynikających z prawa ochrony środowiska, prawa pracy lub przepisów o zabezpieczeniu społecznym, jeżeli wymierzono tą decyzją karę pieniężną;
+2)	na podstawie art. 109 ust. 1 pkt 3 ustawy Pzp, jeżeli urzędującego członka jego organu zarządzającego lub nadzorczego, wspólnika spółki w spółce jawnej lub partnerskiej albo komplementariusza w spółce komandytowej lub komandytowo-akcyjnej lub prokurenta prawomocnie skazano za przestępstwo lub ukarano za wykroczenie, o którym mowa w pkt 1 lit. a lub b;
+3)	na podstawie art. 109 ust. 1 pkt 6 ustawy Pzp, jeżeli występuje konflikt interesów w rozumieniu art. 56 ust. 2 ustawy Pzp, którego nie można skutecznie wyeliminować w inny sposób, niż przez wykluczenie Wykonawcy;
+4)	na podstawie art. 109 ust. 1 pkt 8 ustawy Pzp, który w wyniku zamierzonego działania lub rażącego niedbalstwa wprowadził Zamawiającego w błąd przy przedstawianiu informacji, że nie podlega wykluczeniu, spełnia warunki udziału w postępowaniu lub kryteria selekcji, co mogło mieć istotny wpływ na decyzje podejmowane przez Zamawiającego w postępowaniu o udzielenie zamówienia, lub który zataił te informacje lub nie jest w stanie przedstawić wymaganych podmiotowych środków dowodowych;
+5)	na podstawie art. 109 ust. 1 pkt 9 ustawy Pzp, który bezprawnie wpływał lub próbował wpływać na czynności Zamawiającego lub próbował pozyskać lub pozyskał informacje poufne, mogące dać mu przewagę w postępowaniu o udzielenie zamówienia;
+6)	na podstawie art. 109 ust. 1 pkt 10 ustawy Pzp, który w wyniku lekkomyślności lub niedbalstwa przedstawił informacje wprowadzające w błąd, co mogło mieć istotny wpływ na decyzje podejmowane przez Zamawiającego w postępowaniu o udzielenie zamówienia.
+3.	Zamawiający wykluczy z postępowania Wykonawcę na podstawie art. 5k Rozporządzenia 833/2014 oraz art. 7 ust. 1 ustawy z dnia 13 kwietnia 2022 r. o szczególnych rozwiązaniach w zakresie przeciwdziałania wspieraniu agresji na Ukrainę oraz służących ochronie bezpieczeństwa narodowego.
+4.	Wykonawca może zostać wykluczony przez Zamawiającego na każdym etapie postępowania o udzielenie zamówienia.
+WYKAZ PODMIOTOWYCH ŚRODKÓW DOWODOWYCH NA POTWIERDZENIE NIEPODLEGANIA WYKLUCZENIU: 
+1)	Oświadczenie Wykonawcy/ Wykonawcy wspólnie ubiegającego się o udzielenie zamówienia/ podmiotu udostępniającego zasoby, w zakresie art. 108 ust. 1 pkt 5 ustawy Pzp, o braku przynależności do tej samej grupy kapitałowej, w rozumieniu ustawy z dnia 16 lutego 2007 r. o ochronie konkurencji i konsumentów, z innym Wykonawcą, który złożył odrębną ofertę, ofertę częściową lub wniosek o dopuszczenie do udziału w postępowaniu, albo oświadczenia o przynależności do tej samej grupy kapitałowej wraz z dokumentami lub informacjami potwierdzającymi przygotowanie oferty, oferty częściowej lub wniosku o dopuszczenie do udziału w postępowaniu niezależnie od innego Wykonawcy należącego do tej samej grupy kapitałowej;
+2)	Oświadczenie Wykonawcy/ Wykonawcy wspólnie ubiegającego się o udzielenie zamówienia/ podmiotu udostępniającego zasoby o aktualności informacji zawartych w oświadczeniu, o którym mowa w art. 125 ust. 1 ustawy Pzp w zakresie odnoszącym się do podstaw wykluczenia wskazanych w art. 108 ust. 1 pkt 3-6 ustawy Pzp oraz w art. 109 ust. 1 pkt 2 lit. b i c, pkt 3, pkt 6, pkt 8, pkt 9, pkt 10 ustawy Pzp;
+3)	Informacja z Krajowego Rejestru Karnego w zakresie dotyczącym podstaw wykluczenia wskazanych w art. 108 ust. 1 pkt 1, 2 i 4 ustawy Pzp oraz w art. 109 ust. 1 pkt 2 lit. a i b, pkt 3 ustawy Pzp sporządzonej nie wcześniej niż 6 miesięcy przed jej złożeniem;
+4)	Oświadczenie Wykonawcy/Wykonawcy wspólnie ubiegającego się o udzielenie zamówienia o aktualności informacji zawartych w oświadczeniu dotyczącym przesłanek wykluczenia z art. 5k Rozporządzenia 833/2014 oraz art. 7 ust. 1 ustawy z dnia 13 kwietnia 2022 r. o szczególnych rozwiązaniach w zakresie przeciwdziałania wspieraniu agresji na Ukrainę oraz służących ochronie bezpieczeństwa narodowego;
+5)	Oświadczenie podmiotu udostępniającego zasoby o aktualności informacji zawartych w oświadczeniu dotyczącym przesłanek wykluczenia z art. 5k Rozporządzenia 833/2014 oraz art. 7 ust. 1 ustawy z dnia 13 kwietnia 2022 r. o szczególnych rozwiązaniach w zakresie przeciwdziałania wspieraniu agresji na Ukrainę oraz służących ochronie bezpieczeństwa narodowego.</cbc:Note>
+      <cac:ProcurementAdditionalType>
+         <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+      </cac:ProcurementAdditionalType>
+      <cac:RequestedTenderTotal>
+         <cbc:EstimatedOverallContractAmount currencyID="PLN">3326000</cbc:EstimatedOverallContractAmount>
+      </cac:RequestedTenderTotal>
+      <cac:MainCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">32424000</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">72611000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:RealizedLocation>
+         <cbc:Description languageID="POL">Miejsce realizacji: CPD1 - NETIA S.A. ul. Poleczki 13, 02-822 Warszawa.
+Zamawiający wymaga, by zamówienie zostało zrealizowane w zakresie:
+1)	dostawy Sprzętu wraz z instalacją, konfiguracją i wdrożeniem oraz z Gwarancją producenta na okres 36 miesięcy w terminie do 50 dni kalendarzowych liczonych od dnia zawarcia Umowy;
+2)	wykonania usługi migracji dwóch istniejących przełączników Nexus 9300-EX do nowego rozwiązania w terminie 98 dni kalendarzowych liczonych od dnia zawarcia Umowy;
+3)	świadczenia usługi Serwisu gwarancyjnego przez okres 36 miesięcy liczonych od dnia potwierdzenia dostawy Sprzętu wraz z instalacją, konfiguracją i wdrożeniem;
+4)	świadczenia usługi Wsparcia merytorycznego w liczbie 1152 Rbh przez okres 36 miesięcy liczonych od dnia potwierdzenia dostawy Sprzętu wraz z instalacją, konfiguracją i wdrożeniem.</cbc:Description>
+         <cac:Address>
+            <cbc:CountrySubentityCode listName="nuts">PL911</cbc:CountrySubentityCode>
+            <cac:Country>
+               <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+            </cac:Country>
+         </cac:Address>
+      </cac:RealizedLocation>
+   </cac:ProcurementProject>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+      <cac:TenderingTerms>
+         <cbc:VariantConstraintCode listName="permission">not-allowed</cbc:VariantConstraintCode>
+         <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+         <cbc:MultipleTendersCode listName="permission">not-allowed</cbc:MultipleTendersCode>
+         <cac:RequiredFinancialGuarantee>
+            <cbc:GuaranteeTypeCode listName="tender-guarantee-required">true</cbc:GuaranteeTypeCode>
+            <cbc:Description languageID="POL">1.	Wykonawca zobowiązany jest do zabezpieczenia swojej oferty wadium w wysokości: 50 000,00 zł (słownie: pięćdziesiąt tysięcy zł 00/100).
+2.	Wadium wnosi się przed upływem terminu składania ofert i utrzymuje nieprzerwanie do dnia upływu terminu związania ofertą, z wyjątkiem przypadków, o których mowa w art. 98 ust. 1 pkt 2 i 3 oraz ust. 2 ustawy Pzp.
+3.	Wadium może być wnoszone według wyboru Wykonawcy w jednej lub kilku następujących formach:
+1)	pieniądzu;
+2)	gwarancjach bankowych;
+3)	gwarancjach ubezpieczeniowych;
+4)	poręczeniach udzielanych przez podmioty, o których mowa w art. 6b ust. 5 pkt 2 ustawy z dnia 9 listopada 2000 r. o utworzeniu Polskiej Agencji Rozwoju Przedsiębiorczości (Dz. U. z 2025 r. poz. 98).
+4.	Wadium w formie pieniądza należy wnieść przelewem na rachunek bankowy: 77 1130 1017 0020 0734 8625 7421 z dopiskiem "Wadium – NFZ-BAG-SZP.251.41.2025/ modernizacja infrastruktury sieciowej.
+UWAGA: Za termin wniesienia wadium w formie pieniężnej zostanie przyjęty termin uznania rachunku Zamawiającego.
+5.	Wadium wnoszone w formie poręczeń lub gwarancji musi spełniać co najmniej poniższe wymagania:
+1)	musi obejmować odpowiedzialność za wszystkie przypadki powodujące utratę wadium przez Wykonawcę określone w ustawie Pzp, bez potwierdzania tych okoliczności;
+2)	z treści powinno jednoznacznie wynikać zobowiązanie gwaranta do zapłaty całej kwoty wadium;
+3)	powinno być nieodwołalne i bezwarunkowe oraz płatne na pierwsze żądanie;
+4)	termin obowiązywania poręczenia lub gwarancji nie może być krótszy niż termin związania ofertą (z zastrzeżeniem, iż pierwszym dniem związania ofertą jest dzień składania ofert);
+5)	w treści poręczenia lub gwarancji powinna znaleźć się nazwa oraz numer przedmiotowego postępowania;
+6)	musi zawierać wskazanie beneficjenta poręczenia lub gwarancji;
+7)	w przypadku Wykonawców wspólnie ubiegających się o udzielenie zamówienia (art. 58 ustawy Pzp), Zamawiający wymaga, aby poręczenie lub gwarancja obejmowała swą treścią wszystkich Wykonawców wspólnie ubiegających się o udzielenie zamówienia (tj. zobowiązanych z tytułu poręczenia lub gwarancji) lub aby z jej treści wynikało, że zabezpiecza ofertę Wykonawców wspólnie ubiegających się o udzielenie zamówienia (konsorcjum);
+8)	musi zostać złożone w oryginale w postaci elektronicznej.
+6.	W przypadku wniesienia wadium w formie:
+1)	pieniężnej - zaleca się, by dowód dokonania przelewu został dołączony do oferty;
+2)	poręczeń lub gwarancji - wymaga się, by oryginał dokumentu został złożony wraz z ofertą.
+7.	Oferta Wykonawcy, który nie wniesie wadium lub wniesie wadium w sposób nieprawidłowy lub nie utrzyma wadium nieprzerwanie do upływu terminu związania ofertą lub złoży wniosek o zwrot wadium w przypadku, o którym mowa w art. 98 ust. 2 pkt 3 ustawy Pzp zostanie odrzucona.
+8.	Zasady zwrotu oraz okoliczności zatrzymania wadium określa ustawa Pzp.</cbc:Description>
+         </cac:RequiredFinancialGuarantee>
+         <cac:CallForTendersDocumentReference>
+            <ext:UBLExtensions>
+               <ext:UBLExtension>
+                  <ext:ExtensionContent>
+                     <efext:EformsExtension>
+                        <efac:OfficialLanguages>
+                           <cac:Language>
+                              <cbc:ID>POL</cbc:ID>
+                           </cac:Language>
+                        </efac:OfficialLanguages>
+                     </efext:EformsExtension>
+                  </ext:ExtensionContent>
+               </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:ID>_DEFAULT_VALUE_CHANGE_ME_</cbc:ID>
+            <cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+            <cac:Attachment>
+               <cac:ExternalReference>
+                  <cbc:URI>https://nfz.ezamawiajacy.pl</cbc:URI>
+               </cac:ExternalReference>
+            </cac:Attachment>
+         </cac:CallForTendersDocumentReference>
+         <cac:PaymentTerms>
+            <cbc:Note languageID="POL">14 dni</cbc:Note>
+         </cac:PaymentTerms>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="selection-criteria-source">epo-procurement-document</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="reserved-procurement">none</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="reserved-execution">no</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="conditions">performance</cbc:ExecutionRequirementCode>
+            <cbc:Description languageID="POL">Sposób realizacji zamówienia określa projekt umowy stanowiący załącznik nr 2 do Specyfikacji</cbc:Description>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="einvoicing">allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="nda">true</cbc:ExecutionRequirementCode>
+            <cbc:Description languageID="POL">umowa o poufności stanowi załącznik do projektu umowy</cbc:Description>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="ecatalog-submission">not-allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="esignature-submission">true</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:AwardingTerms>
+            <cac:AwardingCriterion>
+               <cbc:CalculationExpression languageID="POL">.</cbc:CalculationExpression>
+               <cac:SubordinateAwardingCriterion>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                  <cbc:Description languageID="POL">1.	Przy wyborze oferty Zamawiający będzie się kierował kryterium najniższej ceny.
+2.	Kryterium cena, będzie rozpatrywane na podstawie całkowitej ceny brutto za realizację przedmiotu zamówienia, podanej przez Wykonawcę w formularzu ofertowym w ust. 1, Załącznika nr 3 do SWZ.
+3.	Ocenie będą podlegać wyłącznie oferty niepodlegające odrzuceniu.
+4.	Za najkorzystniejszą zostanie uznana oferta z najniższą ceną.
+5.	W sytuacji, gdy Zamawiający nie będzie mógł dokonać wyboru najkorzystniejszej oferty ze względu na to, że zostały złożone oferty o takiej samej cenie, wezwie on Wykonawców, którzy złożyli te oferty, do złożenia w terminie określonym przez Zamawiającego ofert dodatkowych zawierających nową cenę.
+6.	Wykonawcy, składając oferty dodatkowe, nie mogą zaoferować cen wyższych niż zaoferowane w uprzednio złożonych przez nich ofertach.
+7.	W toku badania i oceny ofert Zamawiający może żądać od Wykonawców wyjaśnień dotyczących treści złożonych przez nich ofert lub innych składanych dokumentów lub oświadczeń.
+8.	Wykonawcy są zobowiązani do przedstawienia wyjaśnień w terminie wskazanym przez Zamawiającego.</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+            </cac:AwardingCriterion>
+         </cac:AwardingTerms>
+         <cac:TenderRecipientParty>
+            <cbc:EndpointID>https://nfz.ezamawiajacy.pl</cbc:EndpointID>
+            <cac:PartyIdentification>
+               <cbc:ID>ORG-0003</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:TenderRecipientParty>
+         <cac:TenderEvaluationParty>
+            <cac:PartyIdentification>
+               <cbc:ID>ORG-0003</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:TenderEvaluationParty>
+         <cac:TenderValidityPeriod>
+            <cbc:DurationMeasure unitCode="DAY">90</cbc:DurationMeasure>
+         </cac:TenderValidityPeriod>
+         <cac:AppealTerms>
+            <cac:PresentationPeriod>
+               <cbc:Description languageID="POL">Odwołanie wnosi się w terminie 10 dni od dnia przekazania informacji o czynności zamawiającego stanowiącej podstawę jego wniesienia, jeżeli informacja została przekazana przy użyciu środków komunikacji elektronicznej. Środki ochrony prawnej przysługują Wykonawcy, jeżeli ma lub miał interes w uzyskaniu zamówienia oraz poniósł lub może ponieść szkodę w wyniku naruszenia przez Zamawiającego przepisów ustawy Pzp. W niniejszym postępowaniu przysługują środki ochrony prawnej określone w Dziale IX ustawy Pzp.</cbc:Description>
+            </cac:PresentationPeriod>
+            <cac:AppealInformationParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0004</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealInformationParty>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0004</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+         </cac:AppealTerms>
+         <cac:Language>
+            <cbc:ID>POL</cbc:ID>
+         </cac:Language>
+         <cac:PostAwardProcess>
+            <cbc:ElectronicOrderUsageIndicator>true</cbc:ElectronicOrderUsageIndicator>
+            <cbc:ElectronicPaymentUsageIndicator>true</cbc:ElectronicPaymentUsageIndicator>
+         </cac:PostAwardProcess>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <cbc:SubmissionMethodCode listName="esubmission">required</cbc:SubmissionMethodCode>
+         <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+         <cac:TenderSubmissionDeadlinePeriod>
+            <cbc:EndDate>2025-12-19+01:00</cbc:EndDate>
+            <cbc:EndTime>11:00:00+01:00</cbc:EndTime>
+         </cac:TenderSubmissionDeadlinePeriod>
+         <cac:OpenTenderEvent>
+            <cbc:OccurrenceDate>2025-12-19+01:00</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>11:30:00+01:00</cbc:OccurrenceTime>
+            <cbc:Description languageID="POL">1.W postępowaniu o udzielenie zamówienia publicznego komunikacja między Zamawiającym a Wykonawcami odbywa się przy użyciu Platformy Zakupowej https://nfz.ezamawiajacy.pl (dalej jako: "Platforma Zakupowa" lub System). 2.Wejście na platformę poprzez link: https://nfz.ezamawiajacy.pl. 3.Wykonawca przystępując do postępowania o udzielenie zamówienia publicznego, tj. bezpłatnie rejestrując się lub logując, w przypadku posiadania konta w Platformie Zakupowej, akceptuje warunki korzystania z Platformy, określone w Regulaminie zamieszczonym na stronie internetowej https://oneplace.marketplanet.pl/regulamin oraz uznaje go za wiążący. 4.Instrukcja korzystania z Platformy Zakupowej w niniejszym postępowaniu znajduje się na Platformie Zakupowej Zamawiającego w zakładce „Regulacje i procedury procesu zakupowego".  5. Wykonawca będzie związany ofertą od dnia upływu terminu składania ofert, przy czym pierwszym dniem terminu związania ofertą jest dzień, w którym upływa termin składania ofert, przez okres 90 dni, tj. do dnia 18-03-2026 r.</cbc:Description>
+            <cac:OccurenceLocation>
+               <cbc:Description languageID="POL">https://nfz.ezamawiajacy.pl</cbc:Description>
+            </cac:OccurenceLocation>
+         </cac:OpenTenderEvent>
+         <cac:AuctionTerms>
+            <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+         </cac:AuctionTerms>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:ID schemeName="InternalID">NFZ-BAG-SZP.251.41.2025</cbc:ID>
+         <cbc:Name languageID="POL">Modernizacja infrastruktury sieciowej.</cbc:Name>
+         <cbc:Description languageID="POL">1.Modernizacja infrastruktury sieciowej.
+2.Opis przedmiotu zamówienia zawiera Załącznik nr 1 do Specyfikacji.
+3.Sposób realizacji zamówienia określa projekt Umowy stanowiący Załącznik nr 2 do Specyfikacji.</cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">supplies</cbc:ProcurementTypeCode>
+         <cbc:Note languageID="POL">WARUNKI UDZIAŁU W POSTĘPOWANIU
+O udzielenie zamówienia mogą ubiegać się Wykonawcy, którzy spełniają warunki udziału w postępowaniu dotyczące:
+zdolności technicznej lub zawodowej:
+1.	Zamawiający uzna warunek w zakresie zdolności technicznej za spełniony, jeżeli Wykonawca wykaże, że wykonał (a w przypadku świadczeń powtarzających się lub ciągłych uwzględniane są również wykonywane), w okresie ostatnich 3 lat przed upływem terminu składania ofert, a jeżeli okres prowadzenia działalności jest krótszy - w tym okresie: co najmniej 2 dostawy (1 dostawa = 1 umowa) polegające na dostarczaniu sprzętu infrastruktury sieciowej wraz z instalacją, konfiguracją i wdrożeniem, każda o wartości przekraczającej 1 500 000,00 zł.
+W przypadku składania oferty przez Wykonawców wspólnie ubiegających się o udzielenie zamówienia, wyżej wymieniony warunek musi spełniać, w całości 1 Wykonawca. Zamawiający nie dopuszcza możliwości łącznego wykazywania spełniania warunku udziału w postępowaniu.
+2.	Zamawiający uzna warunek w zakresie zdolności zawodowej za spełniony, jeżeli Wykonawca wykaże, że dysponuje lub będzie dysponował podczas realizacji zamówienia co najmniej 1 osobą odpowiedzialną za świadczenie usługi, posiadającą co najmniej Certyfikat Cisco Certified Internetworking Expert CCIE (lub równoważny innego producenta), która brała udział w co najmniej 1 projekcie dotyczącym wdrożenia, rozbudowy lub modernizacji infrastruktury sieciowej, w tym uruchomienia i obsługi sprzętu, o wartości nie mniejszej niż 1,5 mln zł w okresie ostatnich 2 lat, który zakończył się powodzeniem.
+[na potwierdzenie warunku należy podać nazwę Certyfikatu oraz jego numer, nazwę i zakres projektu, czas realizacji projektu, podmiot na rzecz którego projekt był realizowany – odbiorca końcowy, wartość projektu, oświadczenie potwierdzające powodzenie projektu]
+W przypadku składania oferty przez Wykonawców wspólnie ubiegających się o udzielenie zamówienia, wyżej wymieniony warunek musi spełniać, co najmniej 1 Wykonawca lub Wykonawcy mogą spełniać go wspólnie.
+Ilekroć Zamawiający powołuje się na posiadanie określonych Certyfikatów, Zamawiający dopuszcza posiadanie równoważnych Certyfikatów innych niż wskazane przez Zamawiającego. W takim przypadku Wykonawca jest zobowiązany do wykazania, że wskazany Certyfikat potwierdza posiadanie co najmniej takiej samej wiedzy, kompetencji i doświadczenia co Certyfikat wskazany przez Zamawiającego. Certyfikat równoważny musi być wystawiony przez producenta oferowanego rozwiązania. Zamawiający w szczególności nie dopuszcza Certyfikatu wystawionego przez Wykonawcę lub podmioty od niego zależne.
+WYKAZ PODMIOTOWYCH ŚRODKÓW DOWODOWYCH NA POTWIERDZENIE SPEŁNIANIA WARUNKÓW UDZIAŁU W POSTĘPOWANIU:
+1)	Wykaz dostaw wykonanych, a w przypadku świadczeń powtarzających się lub ciągłych również wykonywanych, w okresie ostatnich 3 lat, a jeżeli okres prowadzenia działalności jest krótszy – w tym okresie, wraz z podaniem ich wartości, przedmiotu, dat wykonania i podmiotów, na rzecz których dostawy zostały wykonane lub są wykonywane, oraz załączeniem dowodów określających, czy te dostawy zostały wykonane lub są wykonywane należycie, przy czym dowodami, o których mowa, są referencje bądź inne dokumenty sporządzone przez podmiot, na rzecz którego dostawy zostały wykonane, a w przypadku świadczeń powtarzających się lub ciągłych są wykonywane, a jeżeli Wykonawca z przyczyn niezależnych od niego nie jest w stanie uzyskać tych dokumentów – oświadczenie Wykonawcy; w przypadku świadczeń powtarzających się lub ciągłych nadal wykonywanych referencje bądź inne dokumenty potwierdzające ich należyte wykonywanie powinny być wystawione w okresie ostatnich 3 miesięcy;
+2)	Wykaz osób, skierowanych przez Wykonawcę do realizacji zamówienia publicznego, w szczególności odpowiedzialnych za świadczenie usług oraz kontrolę jakości, wraz z informacjami na temat ich kwalifikacji zawodowych, uprawnień niezbędnych do wykonania zamówienia publicznego, a także zakresu wykonywanych przez nie czynności oraz informacją o podstawie do dysponowania tymi osobami;
+OPIS SPOSOBU PRZYGOTOWANIA OFERT
+1.	Wykonawca może złożyć tylko jedną ofertę. Złożenie większej liczby ofert spowoduje odrzucenie wszystkich ofert złożonych przez danego Wykonawcę.
+2.	Treść oferty musi odpowiadać treści dokumentów zamówienia.
+3.	Wykonawca składa ofertę za pośrednictwem Platformy Zakupowej.
+4.	Ofertę sporządza się w języku polskim na Formularzu ofertowym - zgodnie z Załącznikiem nr 3 do SWZ.
+5.	Elektroniczna oferta musi zawierać następujące dokumenty:
+1)	oświadczenie w formie Jednolitego Europejskiego Dokumentu Zamówienia (JEDZ/ESPD), o którym mowa w Rozdziale VII ust. 1 Specyfikacji;
+2)	zobowiązanie innego podmiotu oraz oświadczenie w formie Jednolitego Europejskiego Dokumentu Zamówienia (JEDZ/ESPD), o których mowa w Rozdziale V ust. 5 Specyfikacji (jeżeli dotyczy);
+3)	oryginał dokumentu potwierdzający wniesienie wadium (w przypadku wadium złożonego w formie poręczeń lub gwarancji);
+4)	odpis lub informację z Krajowego Rejestru Sądowego, Centralnej Ewidencji i Informacji o Działalności Gospodarczej lub innego właściwego rejestru - składaną w celu potwierdzenia, że osoba działająca w imieniu Wykonawcy (lub Wykonawców wspólnie ubiegających się o udzielnie zamówienia lub podmiotu udostępniającego zasoby) jest umocowana do jego reprezentowania, przy czym Wykonawca nie jest zobowiązany do złożenia tych dokumentów, jeżeli Zamawiający może je uzyskać za pomocą bezpłatnych ogólnodostępnych baz danych, o ile Wykonawca wskazał dane umożliwiające dostęp do tych dokumentów. Przepisu nie stosuje się do zamówień w dziedzinach obronności i bezpieczeństwa. Jeżeli w imieniu Wykonawcy działa osoba, której umocowanie do jego reprezentowania nie wynika z ww. dokumentów, Wykonawca obowiązany jest złożyć pełnomocnictwo lub inny dokument potwierdzający umocowanie do reprezentowania Wykonawcy lub Wykonawców wspólnie ubiegających się o udzielenie zamówienia lub podmiotu udostępniającego zasoby;
+5)	oświadczenie z art. 117 ust. 4 ustawy Pzp Wykonawcy wspólnie ubiegającego się o udzielenie zamówienia – zgodnie z Załącznikiem nr 4 do SWZ (dotyczy Wykonawców wspólnie ubiegających się o udzielenie zamówienia);
+6)	uzasadnienie, że zastrzeżone informacje stanowią tajemnicę przedsiębiorstwa w rozumieniu art. 11 ust. 4 ustawy o zwalczaniu nieuczciwej konkurencji (o ile dotyczy);
+7)	oświadczenie Wykonawcy/Wykonawcy wspólnie ubiegającego się o udzielenie zamówienia dotyczące przesłanek wykluczenia z art. 5k Rozporządzenia 833/2014 oraz art. 7 ust. 1 ustawy z dnia 13 kwietnia 2022 r. o szczególnych rozwiązaniach w zakresie przeciwdziałania wspieraniu agresji na Ukrainę oraz służących ochronie bezpieczeństwa narodowego zgodnie z Załącznikiem nr 5 do SWZ;
+8)	oświadczenie podmiotu udostępniającego zasoby dotyczące przesłanek wykluczenia z art. 5k Rozporządzenia 833/2014 oraz art. 7 ust. 1 ustawy z dnia 13 kwietnia 2022 r. o szczególnych rozwiązaniach w zakresie przeciwdziałania wspieraniu agresji na Ukrainę oraz służących ochronie bezpieczeństwa narodowego zgodnie z Załącznikiem nr 6 do SWZ;
+9)	Wykaz cen jednostkowych zgodnie z Załącznikiem nr 7 do SWZ;
+10)	opis rozwiązania równoważnego (*o ile zostanie zaoferowane) uwzględniający wymagania w załączniku nr 1 do SWZ (OPZ) Tabela 1 (Opis rozwiązania równoważnego nie podlega uzupełnieniu). Nie złożenie wraz z ofertą opisu rozwiązania równoważnego spowoduje odrzucenie oferty na podstawie art. 226 ust. 1 pkt 5 ustawy Pzp.
+6.Zamawiający przed wyborem najkorzystniejszej oferty wzywa Wykonawcę, którego oferta została najwyżej oceniona, do złożenia w wyznaczonym terminie, nie krótszym niż 10 dni, aktualnych na dzień złożenia podmiotowych środków dowodowych, o których mowa w Rozdz. VII ust. 3 SWZ.
+7. Zamawiający przewiduje zastosowanie tzw. procedury odwróconej o której mowa w art. 139 ust. 1 ustawy Pzp, tj. Zamawiający najpierw dokona badania i oceny ofert, a następnie dokona kwalifikacji podmiotowej Wykonawcy, którego oferta została najwyżej oceniona, w zakresie braku podstaw wykluczenia oraz spełniania warunków udziału w postępowaniu.</cbc:Note>
+         <cbc:SMESuitableIndicator>true</cbc:SMESuitableIndicator>
+         <cac:ProcurementAdditionalType>
+            <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+         </cac:ProcurementAdditionalType>
+         <cac:RequestedTenderTotal>
+            <cbc:EstimatedOverallContractAmount currencyID="PLN">3326000</cbc:EstimatedOverallContractAmount>
+         </cac:RequestedTenderTotal>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">32424000</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">72611000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:RealizedLocation>
+            <cbc:Description languageID="POL">Miejsce realizacji: CPD1 - NETIA S.A. ul. Poleczki 13, 02-822 Warszawa.
+Zamawiający wymaga, by zamówienie zostało zrealizowane w zakresie:
+1)	dostawy Sprzętu wraz z instalacją, konfiguracją i wdrożeniem oraz z Gwarancją producenta na okres 36 miesięcy w terminie do 50 dni kalendarzowych liczonych od dnia zawarcia Umowy;
+2)	wykonania usługi migracji dwóch istniejących przełączników Nexus 9300-EX do nowego rozwiązania w terminie 98 dni kalendarzowych liczonych od dnia zawarcia Umowy;
+3)	świadczenia usługi Serwisu gwarancyjnego przez okres 36 miesięcy liczonych od dnia potwierdzenia dostawy Sprzętu wraz z instalacją, konfiguracją i wdrożeniem;
+4)	świadczenia usługi Wsparcia merytorycznego w liczbie 1152 Rbh przez okres 36 miesięcy liczonych od dnia potwierdzenia dostawy Sprzętu wraz z instalacją, konfiguracją i wdrożeniem.</cbc:Description>
+            <cac:Address>
+               <cbc:CountrySubentityCode listName="nuts">PL911</cbc:CountrySubentityCode>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+         <cac:PlannedPeriod>
+            <cbc:DurationMeasure unitCode="MONTH">38</cbc:DurationMeasure>
+         </cac:PlannedPeriod>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+</ContractNotice>

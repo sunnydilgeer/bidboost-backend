@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractAwardNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractAwardNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+   <ext:UBLExtensions>
+      <ext:UBLExtension>
+         <ext:ExtensionContent>
+            <efext:EformsExtension>
+               <efac:NoticeResult>
+                  <cbc:TotalAmount currencyID="PLN">593229</cbc:TotalAmount>
+                  <efac:LotResult>
+                     <cbc:ID schemeName="result">RES-0001</cbc:ID>
+                     <cbc:TenderResultCode listName="winner-selection-status">selec-w</cbc:TenderResultCode>
+                     <efac:LotTender>
+                        <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                     </efac:LotTender>
+                     <efac:ReceivedSubmissionsStatistics>
+                        <efbc:StatisticsCode listName="received-submission-type">t-sme</efbc:StatisticsCode>
+                        <efbc:StatisticsNumeric>8</efbc:StatisticsNumeric>
+                     </efac:ReceivedSubmissionsStatistics>
+                     <efac:SettledContract>
+                        <cbc:ID schemeName="contract">CON-0001</cbc:ID>
+                     </efac:SettledContract>
+                     <efac:TenderLot>
+                        <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+                     </efac:TenderLot>
+                  </efac:LotResult>
+                  <efac:LotTender>
+                     <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                     <cbc:RankCode>1</cbc:RankCode>
+                     <efbc:TenderRankedIndicator>true</efbc:TenderRankedIndicator>
+                     <cac:LegalMonetaryTotal>
+                        <cbc:PayableAmount currencyID="PLN">593229</cbc:PayableAmount>
+                     </cac:LegalMonetaryTotal>
+                     <efac:SubcontractingTerm>
+                        <efbc:TermCode listName="applicability">no</efbc:TermCode>
+                     </efac:SubcontractingTerm>
+                     <efac:TenderingParty>
+                        <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+                     </efac:TenderingParty>
+                     <efac:TenderLot>
+                        <cbc:ID>LOT-0001</cbc:ID>
+                     </efac:TenderLot>
+                     <efac:TenderReference>
+                        <cbc:ID>Najkorzystniejsza oferta</cbc:ID>
+                     </efac:TenderReference>
+                  </efac:LotTender>
+                  <efac:SettledContract>
+                     <cbc:ID schemeName="contract">CON-0001</cbc:ID>
+                     <cbc:AwardDate>2025-10-14+02:00</cbc:AwardDate>
+                     <cbc:IssueDate>2025-11-07+01:00</cbc:IssueDate>
+                     <cac:SignatoryParty>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                        </cac:PartyIdentification>
+                     </cac:SignatoryParty>
+                     <efac:ContractReference>
+                        <cbc:ID>PRD/WIR/C/PPD/V/1/190/333/LW/2025</cbc:ID>
+                     </efac:ContractReference>
+                     <efac:LotTender>
+                        <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                     </efac:LotTender>
+                  </efac:SettledContract>
+                  <efac:TenderingParty>
+                     <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+                     <cbc:Name>BBC Best Building Consultants Sp. z o.o. Sp.k.</cbc:Name>
+                     <efac:Tenderer>
+                        <cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+                     </efac:Tenderer>
+                  </efac:TenderingParty>
+               </efac:NoticeResult>
+               <efac:NoticeSubType>
+                  <cbc:SubTypeCode listName="notice-subtype">29</cbc:SubTypeCode>
+               </efac:NoticeSubType>
+               <efac:Organizations>
+                  <efac:Organization>
+                     <efbc:AcquiringCPBIndicator>false</efbc:AcquiringCPBIndicator>
+                     <efbc:AwardingCPBIndicator>false</efbc:AwardingCPBIndicator>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://pragapld.um.warszawa.pl</cbc:WebsiteURI>
+                        <cbc:EndpointID>https://zamowienia.um.warszawa.pl</cbc:EndpointID>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Urząd miasta stołecznego Warszawy Dzielnica Praga - Południe</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>ul. Grochowska 274</cbc:StreetName>
+                           <cbc:CityName>Warszawa</cbc:CityName>
+                           <cbc:PostalZone>03-841</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL911</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>5252248481</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Name>Wydział Zamówień Publicznych dla Dzielnicy Praga-Południe</cbc:Name>
+                           <cbc:Telephone>224435509</cbc:Telephone>
+                           <cbc:ElectronicMail>pragapoludnie.wzp@um.warszawa.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://www.uzp.gov.pl/kio</cbc:WebsiteURI>
+                        <cbc:EndpointID>https://epuap.gov.pl/wps/portal/strefa-klienta/katalog-spraw/opis-uslugi/odwolanie-do-krajowej-izby-odwolawczej/UZP</cbc:EndpointID>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Krajowa Izba Odwoławcza</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>ul. Postępu 17a</cbc:StreetName>
+                           <cbc:CityName>Warszawa</cbc:CityName>
+                           <cbc:PostalZone>02-676</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL911</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>5262230325</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Name>Sekretariat Biura Odwołań</cbc:Name>
+                           <cbc:Telephone>22 458 78 01</cbc:Telephone>
+                           <cbc:ElectronicMail>odwolania@uzp.gov.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <efbc:CompanySizeCode listName="economic-operator-size">micro</efbc:CompanySizeCode>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">BBC Best Building Consultants</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>Al. Jerozolimskie 155 lok. U3</cbc:StreetName>
+                           <cbc:CityName>Warszawa</cbc:CityName>
+                           <cbc:PostalZone>02-326</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL911</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>7010595872</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Name>Warszawa</cbc:Name>
+                           <cbc:Telephone>533 200 086</cbc:Telephone>
+                           <cbc:ElectronicMail>pzp@bbconsultants.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efbc:NaturalPersonIndicator>false</efbc:NaturalPersonIndicator>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://op.europa.eu</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0000</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Publications Office of the European Union</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:CityName>Luxembourg</cbc:CityName>
+                           <cbc:PostalZone>2417</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">LU000</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">LUX</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>PUBL</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+352 29291</cbc:Telephone>
+                           <cbc:ElectronicMail>ted@publications.europa.eu</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+               </efac:Organizations>
+            <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00762058-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+         </ext:ExtensionContent>
+      </ext:UBLExtension>
+   </ext:UBLExtensions>
+   <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+   <cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+   <cbc:ID schemeName="notice-id">6d52cd2a-da1a-4dd7-92b1-265b6d9b986e</cbc:ID>
+   <cbc:ContractFolderID>debebd0f-c688-45a9-8d84-f4515c5433e4</cbc:ContractFolderID>
+   <cbc:IssueDate>2025-11-14Z</cbc:IssueDate>
+   <cbc:IssueTime>08:25:35Z</cbc:IssueTime>
+   <cbc:VersionID>01</cbc:VersionID>
+   <cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+   <cbc:NoticeTypeCode listName="result">can-standard</cbc:NoticeTypeCode>
+   <cbc:NoticeLanguageCode listName="language">POL</cbc:NoticeLanguageCode>
+   <cac:ContractingParty>
+      <cbc:BuyerProfileURI>https://zamowienia.um.warszawa.pl/pn/marketplanet</cbc:BuyerProfileURI>
+      <cac:ContractingPartyType>
+         <cbc:PartyTypeCode listName="buyer-legal-type">la</cbc:PartyTypeCode>
+      </cac:ContractingPartyType>
+      <cac:ContractingActivity>
+         <cbc:ActivityTypeCode listName="authority-activity">gen-pub</cbc:ActivityTypeCode>
+      </cac:ContractingActivity>
+      <cac:Party>
+         <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+         </cac:PartyIdentification>
+         <cac:ServiceProviderParty>
+            <cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode>
+            <cac:Party>
+               <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0000</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:Party>
+         </cac:ServiceProviderParty>
+      </cac:Party>
+   </cac:ContractingParty>
+   <cac:TenderingProcess>
+      <ext:UBLExtensions>
+         <ext:UBLExtension>
+            <ext:ExtensionContent>
+               <efext:EformsExtension>
+                  <efbc:ProcedureRelaunchIndicator>false</efbc:ProcedureRelaunchIndicator>
+               </efext:EformsExtension>
+            </ext:ExtensionContent>
+         </ext:UBLExtension>
+      </ext:UBLExtensions>
+      <cbc:ProcedureCode listName="procurement-procedure-type">open</cbc:ProcedureCode>
+      <cac:NoticeDocumentReference>
+         <cbc:ID schemeName="ojs-notice-id">516784-2025</cbc:ID>
+      </cac:NoticeDocumentReference>
+      <cac:ProcessJustification>
+         <cbc:ProcessReasonCode listName="accelerated-procedure">false</cbc:ProcessReasonCode>
+      </cac:ProcessJustification>
+   </cac:TenderingProcess>
+   <cac:ProcurementProject>
+      <cbc:Name languageID="POL">Wykonanie dokumentacji projektowej  dla zadania „Budowa hali sportowej przy Szkole Podstawowej nr 279 przy ul. Cyrklowej 1 – prace przygotowawcze”</cbc:Name>
+      <cbc:Description languageID="POL">Wykonanie dokumentacji projektowej  dla zadania „Budowa hali sportowej przy Szkole Podstawowej nr 279 przy ul. Cyrklowej 1 – prace przygotowawcze”</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+      <cbc:Note languageID="POL">W celu potwierdzenia braku podstaw do wykluczenia Zamawiający wymaga dokumentów, które to potwierdzają:
+a)	informacji z Krajowego Rejestru Karnego w zakresie określonym: 
+•	art. 108 ust. 1 pkt 1 i 2 ustawy Pzp,
+•	art. 108 ust. 1 pkt 4 ustawy Pzp, dotyczącej orzeczenia zakazu ubiegania się o zamówienie publiczne tytułem środka karnego, 
+sporządzonej nie wcześniej niż 6 miesięcy przed jej złożeniem.
+W przypadku Wykonawców wspólnie ubiegających się o udzielenie zamówienia, informacje, o których mowa w lit. a) przekazuje się w odniesieniu do każdego z Wykonawców.
+W przypadku, gdy Wykonawca polega na zdolnościach lub sytuacji innych podmiotów, informacje, o których mowa w lit. a) przekazuje się w odniesieniu do każdego z podmiotów.
+Dokument/-y należy złożyć w jednej z poniższych postaci:
+•	dokumentu elektronicznego podpisanego kwalifikowanym podpisem elektronicznym wystawionego przez podmiot upoważniony;
+•	cyfrowego odwzorowania tego dokumentu sporządzonego w postaci papierowej poświadczonego kwalifikowanym podpisem elektronicznym. Poświadczenia zgodności cyfrowego odwzorowania z dokumentem w postaci papierowej, dokonuje odpowiednio Wykonawca, Wykonawca wspólnie ubiegający się o udzielenie zamówienia, podmiot udostępniający zasoby, które każdego z nich dotyczą. Poświadczenia zgodności cyfrowego odwzorowania z dokumentem w postaci papierowej może dokonać również notariusz.
+b)	oświadczenie Wykonawcy, w zakresie art. 108 ust. 1 pkt 5 ustawy Pzp, o braku przynależności do tej samej grupy kapitałowej w rozumieniu ustawy z dnia 16 lutego 2007 r. o ochronie konkurencji i konsumentów (Dz. U. z 2021 r. poz. 275) z innym Wykonawcą, który złożył odrębną ofertę albo oświadczenie o przynależności do tej samej grupy kapitałowej wraz z dokumentami lub informacjami potwierdzającymi przygotowanie oferty niezależnie od innego Wykonawcy należącego do tej samej grupy kapitałowej (wg wzoru określonego w Załączniku nr 6 do SWZ).
+W przypadku Wykonawców wspólnie ubiegających się o udzielenie zamówienia, oświadczenie, o którym mowa w lit. b) przekazuje się w odniesieniu do każdego z Wykonawców.
+Dokument należy złożyć w formie elektronicznej tj. w postaci elektronicznej opatrzonej kwalifikowanym podpisem elektronicznym przez osobę upoważnioną do reprezentowania Wykonawcy.
+c)	oświadczenia o aktualności informacji zawartych w oświadczeniu, o którym mowa w art. 125 ust. 1 ustawy Pzp- wg wzoru stanowiącego Załącznik nr 7 do SWZ, w zakresie podstaw wykluczenia z postępowania wskazanych przez Zamawiającego, o których mowa w: 
+•	art. 108 ust. 1 pkt 3 ustawy Pzp,
+•	art. 108 ust. 1 pkt 4 ustawy Pzp, dotyczących orzeczenia zakazu ubiegania się o zamówienie publiczne tytułem środka zapobiegawczego,
+•	art. 108 ust. 1 pkt 5 ustawy Pzp, dotyczących zawarcia z innymi wykonawcami porozumienia mającego na celu zakłócenie konkurencji,
+•	art. 108 ust. 1 pkt 6 ustawy Pzp,
+•	art. 109 ust 1 pkt 1,2,4,7,8 ustaw Pzp,
+•	art. 7 ust 1 ustawy z dnia 13 kwietnia 2022 r. o szczególnych rozwiązaniach w zakresie przeciwdziałania wspieraniu agresji na Ukrainę oraz służących ochronie bezpieczeństwa narodowego (Dz. U. z 2022 r., poz. 835).
+W przypadku Wykonawców wspólnie ubiegających się o udzielenie zamówienia, oświadczenie, o którym mowa w lit. c) przekazuje się w odniesieniu do każdego z Wykonawców.
+W przypadku, gdy Wykonawca polega na zdolnościach lub sytuacji innych podmiotów, informacje, o których mowa w lit. c) przekazuje się w odniesieniu do każdego z podmiotów.
+Dokument/-y należy złożyć w formie elektronicznej tj. w postaci elektronicznej opatrzonej kwalifikowanym podpisem elektronicznym przez osobę upoważnioną do reprezentowania odpowiednio Wykonawcy, Wykonawcy wspólnie ubiegającego się o udzielenie zamówienia i/lub podmiotu udostępniającego zasoby.
+d)	oświadczenia o aktualności informacji zawartych w oświadczeniu w zakresie art. 5k rozporządzenia Rady UE 833/2014 z dnia 31 lipca 2014 r., dotyczącego środków ograniczających w związku z działaniami Rosji destabilizującymi sytuację na Ukrainie, w brzmieniu nadanym rozporządzeniem Rady UE 2022/576 z dnia 8 kwietnia 2022 r., o istnieniu albo nieistnieniu okoliczności zakazujących udzielenia Wykonawcy zamówienia publicznego, sporządzone wg wzoru określonego w Załączniku nr 8 do SWZ.
+W przypadku Wykonawców wspólnie ubiegających się o udzielenie zamówienia, oświadczenie, o którym mowa w lit. d) przekazuje się w odniesieniu do każdego z Wykonawców.
+W przypadku, gdy Wykonawca korzysta z podwykonawcy, dostawcy lub polega na zdolnościach lub sytuacji innego podmiotu, o ile przypada na niego ponad 10% wartości zamówienia, oświadczenie, o którym mowa w lit. d), przekazuje się w odniesieniu do każdego takiego podwykonawcy, dostawcy lub podmiotu.
+Dokument/-y należy złożyć w formie elektronicznej tj. w postaci elektronicznej opatrzonej kwalifikowanym podpisem elektronicznym przez osobę upoważnioną do reprezentowania odpowiednio Wykonawcy, Wykonawcy wspólnie ubiegającego się o udzielenie zamówienia, podmiotu udostępniającego zasoby, podwykonawcy.
+</cbc:Note>
+      <cac:MainCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">71000000</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">71220000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">71320000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:RealizedLocation>
+         <cac:Address>
+            <cbc:StreetName>ul. Grochowska 274</cbc:StreetName>
+            <cbc:CityName>Warszawa</cbc:CityName>
+            <cbc:PostalZone>03-841</cbc:PostalZone>
+            <cbc:CountrySubentityCode listName="nuts">PL911</cbc:CountrySubentityCode>
+            <cac:Country>
+               <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+            </cac:Country>
+         </cac:Address>
+      </cac:RealizedLocation>
+   </cac:ProcurementProject>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+      <cac:TenderingTerms>
+         <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+         <cac:AwardingTerms>
+            <cac:AwardingCriterion>
+               <cbc:CalculationExpression languageID="POL">.</cbc:CalculationExpression>
+               <cac:SubordinateAwardingCriterion>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                  <cbc:Description languageID="POL">Kryterium cena 100%. Cena brutto – według następującego wzoru: najniższa cena ofertowa brutto : cena brutto oferty badanej x 100 x 1. Z tytułu kryterium „całkowita cena brutto zamówienia (C)” Wykonawca może uzyskać maksymalnie 100,00 pkt. </cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+            </cac:AwardingCriterion>
+         </cac:AwardingTerms>
+         <cac:AdditionalInformationParty>
+            <cac:PartyIdentification>
+               <cbc:ID>ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:AdditionalInformationParty>
+         <cac:DocumentProviderParty>
+            <cac:PartyIdentification>
+               <cbc:ID>ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:DocumentProviderParty>
+         <cac:AppealTerms>
+            <cac:PresentationPeriod>
+               <cbc:Description languageID="POL">Odwołanie wnosi się: w przypadku zamówień, których
+wartość jest równa albo przekracza progi unijne, w terminie: a) 10 dni od dnia przekazania
+informacji o czynności zamawiającego stanowiącej podstawę jego wniesienia, jeżeli informacja
+została przekazana przy użyciu środków komunikacji elektronicznej, b) 15 dni od dnia
+przekazania informacji o czynności zamawiającego stanowiącej podstawę jego wniesienia,
+jeżeli informacja została przekazana w sposób inny niż określony w lit. a; 2) w przypadku
+zamówień, których wartość jest mniejsza niż progi unijne, w terminie: a) 5 dni od dnia
+przekazania informacji o czynności zamawiającego stanowiącej podstawę jego wniesienia,
+jeżeli informacja została przekazana przy użyciu środków komunikacji elektronicznej, b) 10 dni
+od dnia przekazania informacji o czynności zamawiającego stanowiącej podstawę jego
+wniesienia, jeżeli informacja została przekazana w sposób inny niż określony w lit. a. 2.
+Odwołanie wobec treści ogłoszenia wszczynającego postępowanie o udzielenie zamówienia
+lub konkurs lub wobec treści dokumentów zamówienia wnosi się w terminie: 1) 10 dni od dnia
+publikacji ogłoszenia w Dzienniku Urzędowym Unii Europejskiej lub zamieszczenia
+dokumentów zamówienia na stronie internetowej, w przypadku zamówień, których wartość jest
+równa albo przekracza progi unijne; 
+Organizacja udzielająca dodatkowych informacji na temat postępowania o udzielenie
+zamówienia: Urząd miasta stołecznego Warszawy Dzielnica Praga - Południe
+Organizacja zapewniająca dostęp offline do dokumentów zamówienia: Urząd miasta
+stołecznego Warszawy Dzielnica Praga - Południe
+Organizacja udzielająca dodatkowych informacji na temat procedur odwoławczych: Krajowa</cbc:Description>
+            </cac:PresentationPeriod>
+            <cac:AppealInformationParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealInformationParty>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+         </cac:AppealTerms>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <cbc:GovernmentAgreementConstraintIndicator>false</cbc:GovernmentAgreementConstraintIndicator>
+         <cac:AuctionTerms>
+            <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+         </cac:AuctionTerms>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:Name languageID="POL">Wykonanie dokumentacji projektowej  dla zadania „Budowa hali sportowej przy Szkole Podstawowej nr 279 przy ul. Cyrklowej 1 – prace przygotowawcze”</cbc:Name>
+         <cbc:Description languageID="POL">Wykonanie dokumentacji projektowej  dla zadania „Budowa hali sportowej przy Szkole Podstawowej nr 279 przy ul. Cyrklowej 1 – prace przygotowawcze”</cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+         <cbc:Note languageID="POL">Warunki udziału w postępowaniu
+1.	O udzielenie zamówienia publicznego mogą się ubiegać Wykonawcy, którzy:
+a)	nie podlegają wykluczeniu, 
+b)	spełniają warunki udziału w postępowaniu określone przez Zamawiającego w ogłoszeniu o zamówieniu i niniejszej SWZ.
+2.	Podstawy wykluczenia:
+Zamawiający wykluczy z postępowania Wykonawców, w stosunku do których zachodzą przesłanki wykluczenia wskazane:
+a)	w art. 108 ust. 1 ustawy Pzp;
+b)	w art. 109 ust 1: pkt 1, pkt 2, pkt 4, pkt 7, pkt 8 ustawy Pzp;
+c)	w art. 7 ust 1 ustawy z dnia 13 kwietnia 2022 r. o szczególnych rozwiązaniach w zakresie przeciwdziałania wspieraniu agresji na Ukrainę oraz służących ochronie bezpieczeństwa narodowego (Dz.U. z 2022 r., poz. 835);
+d)	w art. 5k rozporządzenia Rady UE 833/2014 z dnia 31 lipca 2014 r., dotyczącego środków ograniczających w związku z działaniami Rosji destabilizującymi sytuację na Ukrainie, w brzmieniu nadanym rozporządzeniem Rady UE 2022/576 z dnia 8 kwietnia 2022 r. 
+3.	Warunki udziału w postępowaniu:
+Za spełniających warunki udziału w postępowaniu Zamawiający uzna Wykonawców, którzy na potwierdzenie zdolności technicznej lub zawodowej :
+a)	w ciągu ostatnich 3 lat przed upływem terminu składania ofert, a jeżeli okres prowadzenia działalności jest krótszy w tym okresie, wykonali co najmniej jeden projekt budynku użyteczności publicznej o kubaturze min. 12.000 m3, a na jego podstawie uzyskali pozwolenie na budowę.  
+4.	Ocena spełnienia warunków udziału w postępowaniu i braku podstaw do wykluczenia będzie dokonywana na podstawie złożonych dokumentów i oświadczeń wg zasady: spełnia/nie spełnia.
+5.	W odniesieniu do warunków dotyczących wykształcenia, kwalifikacji zawodowych lub doświadczenia Wykonawcy mogą polegać na zdolnościach innych podmiotów, jeśli podmioty te wykonają roboty budowlane/usługi do realizacji których te zdolności są wymagane. 
+Wykonawca zobowiązany jest złożyć ofertę, w skład której wchodzi:
+1.	Wypełniony Formularz oferty – załącznik nr 1 do SWZ.
+Dokument należy złożyć w formie elektronicznej tj. w postaci elektronicznej opatrzonej kwalifikowanym podpisem elektronicznym przez osobę upoważnioną do reprezentowania Wykonawcy.
+2.	Formularz Jednolitego Europejskiego Dokumentu Zamówienia (JEDZ) – stanowiący wstępne potwierdzenie, że Wykonawca spełnia warunki udziału w postępowaniu oraz nie podlega wykluczeniu z postępowania w zakresie wskazanym w SWZ oraz ogłoszeniu o zamówieniu.
+Wykonawca może sporządzić oświadczenie JEDZ za pośrednictwem platformy zakupowej Zamawiającego znajdującej się pod adresem: https://zamowienia.um.warszawa.pl .
+Wypełniając formularz JEDZ:
+-	w zakresie części III (Podstawy wykluczenia) Wykonawca składa oświadczenia w zakresie przesłanek wykluczenia wskazanych w art. 108 ust 1 ustawy Pzp,  w art. 109 ust 1 pkt 1,2,4,7,8 ustawy Pzp i w art. 7 ust. 1 ustawy z dnia 15 kwietnia 2022 r., o szczególnych rozwiązaniach w zakresie przeciwdziałania wspieraniu agresji na Ukrainę oraz służących ochronie bezpieczeństwa narodowego (Dz.U. z 2022 r., poz. 835);
+-	w zakresie części IV (kryteria kwalifikacji) wykonawca wypełnia sekcję α;
+-	Część V formularza JEDZ nie dotyczy trybu przetargu nieograniczonego, wobec czego Wykonawca nie wypełnia tej części formularza;
+-	w zakresie części VI (Oświadczenia końcowe) Wykonawca uzupełnia obowiązkowo.
+Wykonawca podpisuje wypełniony przez siebie JEDZ kwalifikowanym podpisem elektronicznym.
+W przypadku wspólnego ubiegania się o zamówienie przez Wykonawców, każdy z Wykonawców
+wspólnie ubiegających się o zamówienie wypełnia i podpisuje kwalifikowanym podpisem elektronicznym odrębny formularz JEDZ. W takim przypadku w formularzu JEDZ w zakresie Części II (informacje dot. Wykonawcy) sekcja A - należy wpisać własne dane identyfikacyjne. W części IV (kryteria kwalifikacji) każdy z Wykonawców wypełnia sekcję α, potwierdzając spełnianie warunków udziału w postępowaniu w zakresie, w którym każdy z tych podmiotów wykazuje spełnianie warunków udziału w postępowaniu.
+W przypadku gdy Wykonawca powołuje się na zasoby innych podmiotów, zobowiązany jest przedłożyć wraz z ofertą wypełniony i podpisany kwalifikowanym podpisem elektronicznym przez każdy z tych podmiotów odrębny formularz JEDZ.
+Podmiot, na którego zdolnościach polega Wykonawca w celu wykazania braku istnienia wobec niego podstaw wykluczenia oraz spełnienia, w zakresie, w jakim powołuje się na ich zasoby, warunków udziału w postępowaniu, wypełnia część II sekcja A i B, część III (podstawy wykluczenia).
+Dokument/-y należy złożyć w formie elektronicznej tj. w postaci elektronicznej opatrzonej kwalifikowanym podpisem elektronicznym przez osobę upoważnioną do reprezentowania odpowiednio Wykonawcy, Wykonawcy wspólnie ubiegającego się o udzielenie zamówienia i/lub podmiotu udostępniającego zasoby. 
+3.	Oświadczenie Wykonawcy dotyczące przesłanek wykluczenia z art. 5k rozporządzenia 833/2014 z dnia 31 lipca 2014 r., dotyczącego środków ograniczających w związku z działaniami Rosji destabilizującymi sytuację na Ukrainie, w brzmieniu nadanym rozporządzeniem Rady UE 2022/576 z dnia 8 kwietnia 2022 r., o istnieniu albo nieistnieniu okoliczności zakazujących udzielenia Wykonawcy zamówienia publicznego, sporządzone wg wzoru określonego w Załączniku nr 2 do SWZ.
+W przypadku wspólnego ubiegania się o zamówienie przez Wykonawców, każdy z Wykonawców
+wspólnie ubiegających się o zamówienie odrębny formularz. 
+Wykonawca, który polega na zdolnościach lub sytuacji podmiotów udostępniających zasoby, w zakresie odpowiadającym ponad 10% wartości zamówienia, składa wraz z ofertą oświadczenie podmiotu udostępniającego zasoby dotyczące przesłanek wykluczenia z art. 5k rozporządzenia 833/2014 - sporządzone wg wzoru określonego w Załączniku nr 2 do SWZ.
+Dokument/-y należy złożyć w formie elektronicznej tj. w postaci elektronicznej opatrzonej kwalifikowanym podpisem elektronicznym przez osobę upoważnioną do reprezentowania odpowiednio Wykonawcy, Wykonawcy wspólnie ubiegającego się o udzielenie zamówienia i/lub podmiotu udostępniającego zasoby. 
+4.	W przypadku gdy Wykonawca polega na zdolnościach lub sytuacji podmiotów udostępniających zasoby składa wraz z ofertą zobowiązanie podmiotu udostępniającego zasoby do oddania mu do dyspozycji niezbędnych zasobów na potrzeby realizacji danego zamówienia lub inny podmiotowy środek dowodowy potwierdzający, że Wykonawca realizując zamówienie, będzie dysponował niezbędnymi zasobami tych podmiotów (wzór druku - Załącznik nr 3 do SWZ). 
+Zobowiązanie podmiotu udostępniającego zasoby, o którym mowa powyżej, musi potwierdzać, że stosunek łączący Wykonawcę z podmiotami udostępniającymi zasoby, gwarantuje rzeczywisty dostęp do tych zasobów oraz określać w szczególności: 
+	zakres dostępnych Wykonawcy zasobów podmiotu udostępniającego zasoby; 
+	 sposób i okres udostępnienia Wykonawcy i wykorzystania przez niego zasobów podmiotu udostępniającego te zasoby przy wykonywaniu zamówienia; 
+	czy i w jakim zakresie podmiot udostępniający zasoby, na zdolnościach którego Wykonawca polega w odniesieniu do warunków udziału w postępowaniu dotyczących doświadczenia, zrealizuje usługi których wskazane zdolności dotyczą. 
+Dokument/-y należy złożyć w jednej z poniższych postaci: 
+•	w formie elektronicznej (tj. w postaci elektronicznej opatrzonej kwalifikowanym podpisem elektronicznym) przez osobę upoważnioną do reprezentowania podmiotu udostępniającego zasoby,
+•	cyfrowego odwzorowania zobowiązania sporządzonego w postaci papierowej poświadczonego przez Wykonawcę lub Wykonawcę wspólnie ubiegającego się o udzielenie zamówienia, tj. podpisanego kwalifikowanym podpisem elektronicznym Wykonawcy lub Wykonawcy wspólnie ubiegającego się o udzielenie zamówienia,
+•	cyfrowego odwzorowania zobowiązania sporządzonego w postaci papierowej poświadczonego przez notariusza, tj. podpisanego kwalifikowanym podpisem elektronicznym osoby posiadającej uprawnienia notariusza.
+5.	Oświadczenie Wykonawców wspólnie ubiegających się o udzielenie zamówienia (o ile dotyczy) składane na podstawie art. 117 ust. 4 ustawy Pzp - (wzór druku - Załącznik nr 4 do SWZ) należy złożyć w formie elektronicznej tj. w postaci elektronicznej opatrzonej kwalifikowanym podpisem elektronicznym przez osobę/y upoważnioną/e do reprezentowania Wykonawców wspólnie ubiegających się o udzielenie zamówienia.
+6.	Pełnomocnictwo (o ile dotyczy tj. w przypadku, gdy oferta jest składana przez podmioty występujące wspólnie lub gdy oferta została podpisana przez inną osobę niż umocowana w dokumencie rejestrowym Wykonawcy).
+Dokument/-y należy złożyć w jednej poniższych postaci: 
+•	w formie elektronicznej (tj. w postaci elektronicznej opatrzonej kwalifikowanym podpisem elektronicznym osoby upoważnioną do reprezentowania Wykonawcy), 
+•	w postaci elektronicznej opatrzonej podpisem zaufanym lub podpisem osobistym przez osobę upoważnioną do reprezentowania Wykonawcy,
+•	cyfrowego odwzorowania pełnomocnictwa sporządzonego w postaci papierowej poświadczonego przez mocodawcę, tj. podpisanego kwalifikowanym podpisem elektronicznym, podpisem osobistym lub podpisem zaufanym mocodawcy,
+•	cyfrowego odwzorowania pełnomocnictwa sporządzonego w postaci papierowej poświadczonego przez notariusza, tj. podpisanego kwalifikowanym podpisem elektronicznym osoby posiadającej uprawnienia notariusza.</cbc:Note>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">71000000</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">71220000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">71320000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:RealizedLocation>
+            <cac:Address>
+               <cbc:CountrySubentityCode listName="nuts">PL911</cbc:CountrySubentityCode>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+         <cac:PlannedPeriod>
+            <cbc:DurationMeasure unitCode="WEEK">36</cbc:DurationMeasure>
+         </cac:PlannedPeriod>
+         <cac:ContractExtension>
+            <cbc:OptionsDescription languageID="POL">0</cbc:OptionsDescription>
+            <cbc:MaximumNumberNumeric>0</cbc:MaximumNumberNumeric>
+         </cac:ContractExtension>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+   <cac:TenderResult>
+      <cbc:AwardDate>2000-01-01Z</cbc:AwardDate>
+   </cac:TenderResult>
+</ContractAwardNotice>

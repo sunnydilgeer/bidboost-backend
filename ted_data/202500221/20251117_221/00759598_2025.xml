@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractAwardNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractAwardNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:xsi="http://www.w3.org/2001/XMLSchema">
+  <ext:UBLExtensions>
+    <ext:UBLExtension>
+      <ext:ExtensionContent>
+        <efext:EformsExtension>
+          <efbc:TransmissionDate>2025-11-11+01:00</efbc:TransmissionDate>
+          <efbc:TransmissionTime>14:20:34+01:00</efbc:TransmissionTime>
+          <efac:NoticeResult>
+            <efac:LotResult>
+              <cbc:ID schemeName="result">RES-0001</cbc:ID>
+              <cbc:TenderResultCode listName="winner-selection-status">clos-nw</cbc:TenderResultCode>
+              <efac:AppealRequestsStatistics>
+                <efbc:StatisticsCode listName="review-type">complainants</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:AppealRequestsStatistics>
+              <efac:DecisionReason>
+                <efbc:DecisionReasonCode listName="non-award-justification">no-rece</efbc:DecisionReasonCode>
+              </efac:DecisionReason>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">part-req</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">tenders</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-esubm</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-micro</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-small</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-med</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-sme</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-oth-eea</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-no-eea</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-verif-inad</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-verif-inad-low</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-no-verif</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:TenderLot>
+                <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+              </efac:TenderLot>
+            </efac:LotResult>
+          </efac:NoticeResult>
+          <efac:NoticeSubType>
+            <cbc:SubTypeCode listName="notice-subtype">29</cbc:SubTypeCode>
+          </efac:NoticeSubType>
+          <efac:Organizations>
+            <efac:Organization>
+              <efbc:AcquiringCPBIndicator>false</efbc:AcquiringCPBIndicator>
+              <efbc:AwardingCPBIndicator>false</efbc:AwardingCPBIndicator>
+              <efac:Company>
+                <cbc:WebsiteURI>https://www.budavar.hu</cbc:WebsiteURI>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <cbc:Name languageID="HUN">Budapest I. kerület Budavári Önkormányzat</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>Kapisztrán Tér 1.</cbc:StreetName>
+                  <cbc:CityName>Budapest</cbc:CityName>
+                  <cbc:PostalZone>1014</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">HU110</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">HUN</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID>15735643241</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Name>Dr. Hornyák Eszter</cbc:Name>
+                  <cbc:Telephone>+36 309408850</cbc:Telephone>
+                  <cbc:ElectronicMail>kozbeszerzes@budavar.hu</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+            <efac:Organization>
+              <efac:Company>
+                <cbc:WebsiteURI>https://www.barnao.hu</cbc:WebsiteURI>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <cbc:Name languageID="HUN">Barna Orsolya Ügyvédi Iroda</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>Bognár Utca 6/B.</cbc:StreetName>
+                  <cbc:CityName>Budapest</cbc:CityName>
+                  <cbc:PostalZone>1021</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">HU110</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">HUN</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID>18284407241</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Name>Dr. Barna Orsolya</cbc:Name>
+                  <cbc:Telephone>+36 302073792</cbc:Telephone>
+                  <cbc:ElectronicMail>barnao@barnao.hu</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+            <efac:Organization>
+              <efac:Company>
+                <cbc:WebsiteURI>https://kozbeszerzes.hu</cbc:WebsiteURI>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0004</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <cbc:Name languageID="HUN">Közbeszerzési Hatóság Közbeszerzési Döntőbizottság</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>Riadó u. 5</cbc:StreetName>
+                  <cbc:CityName>Budapest</cbc:CityName>
+                  <cbc:PostalZone>1026</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">HU110</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">HUN</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID>EKRSZ_40664534_2</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Telephone>+36 18828592</cbc:Telephone>
+                  <cbc:Telefax>+36 18828593</cbc:Telefax>
+                  <cbc:ElectronicMail>dontobizottsag@kt.hu</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+            <efac:Organization>
+              <efac:Company>
+                <cbc:WebsiteURI>https://kozbeszerzes.hu</cbc:WebsiteURI>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <cbc:Name languageID="HUN">Közbeszerzési Hatóság</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>Riadó utca 5.</cbc:StreetName>
+                  <cbc:CityName>Budapest</cbc:CityName>
+                  <cbc:PostalZone>1026</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">HU110</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">HUN</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID>EKRSZ_40664534</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Telephone>+36 18828635</cbc:Telephone>
+                  <cbc:ElectronicMail>hirdetmeny@kt.hu</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+          </efac:Organizations>
+        <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00759598-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+      </ext:ExtensionContent>
+    </ext:UBLExtension>
+  </ext:UBLExtensions>
+  <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+  <cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+  <cbc:ID schemeName="notice-id">e9ebb837-9f4a-4dab-bd42-e21a1169664d</cbc:ID>
+  <cbc:ContractFolderID>ab60ecd7-a80c-4820-9582-af9a38fce3d9</cbc:ContractFolderID>
+  <cbc:IssueDate>2025-11-13+01:00</cbc:IssueDate>
+  <cbc:IssueTime>15:40:19+01:00</cbc:IssueTime>
+  <cbc:VersionID>03</cbc:VersionID>
+  <cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+  <cbc:NoticeTypeCode listName="result">can-standard</cbc:NoticeTypeCode>
+  <cbc:NoticeLanguageCode>HUN</cbc:NoticeLanguageCode>
+  <cac:ContractingParty>
+    <cac:ContractingPartyType>
+      <cbc:PartyTypeCode listName="buyer-legal-type">la</cbc:PartyTypeCode>
+    </cac:ContractingPartyType>
+    <cac:ContractingActivity>
+      <cbc:ActivityTypeCode listName="authority-activity">gen-pub</cbc:ActivityTypeCode>
+    </cac:ContractingActivity>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:ServiceProviderParty>
+        <cbc:ServiceTypeCode listName="organisation-role">serv-prov</cbc:ServiceTypeCode>
+        <cac:Party>
+          <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+          </cac:PartyIdentification>
+        </cac:Party>
+      </cac:ServiceProviderParty>
+      <cac:ServiceProviderParty>
+        <cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode>
+        <cac:Party>
+          <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+          </cac:PartyIdentification>
+        </cac:Party>
+      </cac:ServiceProviderParty>
+    </cac:Party>
+  </cac:ContractingParty>
+  <cac:TenderingProcess>
+    <cbc:ProcedureCode listName="procurement-procedure-type">neg-wo-call</cbc:ProcedureCode>
+    <cac:ProcessJustification>
+      <cbc:ProcessReasonCode listName="direct-award-justification">contest</cbc:ProcessReasonCode>
+      <cbc:ProcessReason languageID="HUN">Az ajánlatkérő a közbeszerzési eljárást a Kbt. 98. § (5) bekezdése alapján indítja meg, figyelemmel arra, hogy az ajánlatkérő EKR000053972022 azonosítóval "Szentháromság tér zöldterületi fejlesztése" tárgyú eredményes tervpályázati eljárást folytatott le, amelynek ajánlati felhívásában jelezte, hogy a tervpályázati eljárást követően a tervezés megrendelésére irányuló szerződést a pályázat nyertesével kötik meg. A tervpályázati eljárásban az Építész Stúdió Építész Tervező és Szaktanácsadó Korlátolt Felelősségű Társaságot hirdették ki az első helyezettnek, és az ajánlatkérő - a Tervpályázati rendelet 25. § (3) k.) pontja és 26. § (2) bekezdése alapján - kizárólag az I. díjban részesített pályamű tervezőjét javasolta a tervpályázatot követő közbeszerzési eljárásban ajánlattételre történő felhívásra.</cbc:ProcessReason>
+    </cac:ProcessJustification>
+  </cac:TenderingProcess>
+  <cac:ProcurementProject>
+    <cbc:ID schemeName="InternalID">EKR001628142025</cbc:ID>
+    <cbc:Name languageID="HUN">Tervezés Szentháromság park fejlesztése HNT 2025</cbc:Name>
+    <cbc:Description languageID="HUN">Vállalkozási szerződés alapján "Budapest, I. kerület Szentháromság Park (HRSZ 6529) turisztikai fejlesztésének tervezési eljárása 2025 HNT"</cbc:Description>
+    <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+    <cbc:Note languageID="HUN">1. Az ajánlatot az ajánlattevőnek a közbeszerzési dokumentumokban meghatározott tartalmi és formai követelményeknek megfelelően kell elkészítenie és benyújtania. További közbeszerzési dokumentumok letöltése csatoltan a https://ekr.gov.hu oldalon 2. Az ajánlattevőnek a Kbt. 66. § (6) bekezdés alapján meg kell jelölni a közbeszerzésnek azon részeit, amelyek teljesítéséhez alvállalkozót vesz igénybe, ill. ezen részeknél az ajánlat benyújtásakor már ismert alvállalkozókat, valamint az ajánlattevői teljesítésen belül az alvállalkozói teljesítés tervezett százalékos arányát. Ha nem vesz igénybe alvállalkozót, köteles a nemleges nyilatkozat becsatolására is. 3. Az ajánlatnak tartalmaznia kell az ajánlattevő nyilatkozatát a Kbt. 66. § (2) bekezdés, és a 67. § (4) bekezdés szerint. 4. Az ajánlat részeként be kell nyújtani nyilatkozatot az ukrajnai helyzetet destabilizáló orosz intézkedések miatt hozott korlátozó intézkedésekről szóló 833/2014/EU tanácsi rendelet 5k. cikk (1) bekezdése szerinti tilalomról. 5. Az ajánlatban felolvasólapot kell elhelyezni, amely tartalmazza a Kbt. 68. § (4) bekezdése szerinti összes adatot. Az ajánlati árnak teljes körűnek kell lennie, tartalmaznia kell valamennyi költséget, mely a szerződés teljesítése során az ajánlattevő oldalán felmerül. 6. A 321/2015. (X.30.) Kr. 13. § alapján folyamatban lévő változásbejegyzési eljárás esetében az ajánlathoz kell csatolni a cégbírósághoz benyújtott változásbejegyzési kérelmet és az annak érkezéséről a cégbíróság által megküldött igazolást. Az ajánlattevőnek nyilatkoznia kell az ajánlatban, hogy esetében van-e folyamatban váltbejegyzési eljárás; a nemleges nyilatkozatot is az ajánlathoz kell csatolni (EKR űrlap). 7. Az ajánlatkérő a nyertes ajánlattevőnek nem teszi lehetővé gazdálkodó szervezet létrehozását. 8. Az ajánlatkérő a Kbt. 65. § (2) bekezdés második mondata alapján eltekint alkalmassági követelmények előírásától, tekintettel arra, hogy a hirdetmény nélküli tárgyalásos eljárás jogalapja szerint csak meghatározott gazdasági szereplő hívható fel ajánlattételre. 9. Az ajánlattételre felhívott gazdasági szereplő az eljárást megindító felhívásban, valamint a további közbeszerzési dokumentumokban foglaltakkal kapcsolatban a Kbt. 56. §-a szerint kiegészítő tájékoztatást kérhet az EKR használatával. 10. Az ajánlatnak tartalmaznia kell a felhívásban külön ki nem emelt egyéb nyilatkozatokat, igazolásokat és más dokumentumokat, amelyeket a dokumentáció és a Kbt. előír. 11. Hiánypótlás: a Kbt. 71. § (1)-(10) bekezdésében foglaltak szerint. 12. Az ajánlatkérő az eljárásban a Kbt. 75. § (2) bekezdés e) pontja szerinti eredménytelenségi okot nem alkalmazza. 13. A feladat jellege miatt a részajánlattétel kizárt. Az eljárásban, a megelőző tervpályázati eljárásnak megfelelően kizárólag a tervpályázati eljárás nyertese kérhető fel ajánlattételre, így a részajánlat tételének lehetősége is kizárt. 14. Az ajánlatkérő elfogadja és feldolgozza az olyan elektronikus számlákat, amelyek megfelelnek az EN 16931-1:2017 számú európai szabványnak és az Európai Bizottság által e szabványhoz az Európai Unió Hivatalos Lapjában közzétett szintaxislistának. 15. A Kbt. 99. § (2) bekezdése értelmében az eljárásban kizárólag az ajánlattételre felhívott gazdasági szereplő tehet ajánlatot, mivel az eljárás jogalapjából az következik, így az ajánlattételre felkért gazdasági szereplő más gazdasági szereplővel nem tehet közös ajánlatot. Az eljárásban kötelező végleges ajánlat megtétele. 16. FAKSZ: dr. Barna Orsolya, lajstromszám 00199 17. Az ajánlattétel részletes feltételeit, és további szükséges adatokat teljes körűen a további közbeszerzési dokumentumok tartalmazzák. 18. Az ajánlatkérő a közbeszerzési eljárást a Kbt. 98. § (5) bekezdése alapján indította meg, figyelemmel arra, hogy az ajánlatkérő EKR000053972022 azonosítóval "Szentháromság tér zöldterületi fejlesztése" tárgyú eredményes tervpályázati eljárást folytatott le, amelynek ajánlati felhívásában jelezte, hogy a tervpályázati eljárást követően a tervezés megrendelésére irányuló szerződést a pályázat nyertesével kötik meg. A tervpályázati eljárásban az Építész Stúdió Építész Tervező és Szaktanácsadó Korlátolt Felelősségű Társaságot hirdették ki az első helyezettnek, és az ajánlatkérő - a Tervpályázati rendelet 25. § (3) k.) pontja és 26. § (2) bekezdése alapján - kizárólag az I. díjban részesített pályamű tervezőjét javasolta a tervpályázatot követő közbeszerzési eljárásban ajánlattételre történő felhívásra.</cbc:Note>
+    <cac:MainCommodityClassification>
+      <cbc:ItemClassificationCode listName="cpv">71200000</cbc:ItemClassificationCode>
+    </cac:MainCommodityClassification>
+    <cac:RealizedLocation>
+      <cbc:Description languageID="HUN">1014 Budapest, Szentháromság tér (HRSZ 6529)</cbc:Description>
+      <cac:Address>
+        <cbc:CountrySubentityCode listName="nuts">HU110</cbc:CountrySubentityCode>
+        <cac:Country>
+          <cbc:IdentificationCode listName="country">HUN</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:RealizedLocation>
+  </cac:ProcurementProject>
+  <cac:ProcurementProjectLot>
+    <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+    <cac:TenderingTerms>
+      <ext:UBLExtensions>
+        <ext:UBLExtension>
+          <ext:ExtensionContent>
+            <efext:EformsExtension>
+              <efac:StrategicProcurement>
+                <efbc:ApplicableLegalBasis listName="ipi-scope">false</efbc:ApplicableLegalBasis>
+              </efac:StrategicProcurement>
+              <efac:StrategicProcurement>
+                <efbc:ApplicableLegalBasis listName="cvd-scope">false</efbc:ApplicableLegalBasis>
+              </efac:StrategicProcurement>
+              <efac:StrategicProcurement>
+                <efbc:ApplicableLegalBasis listName="eed-scope">false</efbc:ApplicableLegalBasis>
+              </efac:StrategicProcurement>
+            </efext:EformsExtension>
+          </ext:ExtensionContent>
+        </ext:UBLExtension>
+      </ext:UBLExtensions>
+      <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+      <cac:AwardingTerms>
+        <cac:AwardingCriterion>
+          <cbc:Description languageID="HUN">Értékelés során adható pontszám alsó és felső határa: 0-100 pont Módszerek: az ár szempontok esetében fordított arányosítás; a minőségi kritérium tekintetében egyenes arányosítás Részletes értékelési szempontok a további közbeszerzési dokumentumokban (AD Budavár Szentháromság tér tervezés 2025 HNT).</cbc:Description>
+          <cac:SubordinateAwardingCriterion>
+            <ext:UBLExtensions>
+              <ext:UBLExtension>
+                <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                    <efac:AwardCriterionParameter>
+                      <efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+                      <efbc:ParameterNumeric>10</efbc:ParameterNumeric>
+                    </efac:AwardCriterionParameter>
+                  </efext:EformsExtension>
+                </ext:ExtensionContent>
+              </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+            <cbc:Description languageID="HUN">2. A szerződés teljesítésében részt vevő, felsőfokú végzettségű, épülettervezés terén vezető tervezői címmel rendelkező építészként szerzett szakmai tapasztalata (60-120 hónap)</cbc:Description>
+          </cac:SubordinateAwardingCriterion>
+          <cac:SubordinateAwardingCriterion>
+            <ext:UBLExtensions>
+              <ext:UBLExtension>
+                <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                    <efac:AwardCriterionParameter>
+                      <efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+                      <efbc:ParameterNumeric>80</efbc:ParameterNumeric>
+                    </efac:AwardCriterionParameter>
+                  </efext:EformsExtension>
+                </ext:ExtensionContent>
+              </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+            <cbc:Description languageID="HUN">1.1. Egyösszegű tervezési díj (nettó HUF)</cbc:Description>
+          </cac:SubordinateAwardingCriterion>
+          <cac:SubordinateAwardingCriterion>
+            <ext:UBLExtensions>
+              <ext:UBLExtension>
+                <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                    <efac:AwardCriterionParameter>
+                      <efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+                      <efbc:ParameterNumeric>10</efbc:ParameterNumeric>
+                    </efac:AwardCriterionParameter>
+                  </efext:EformsExtension>
+                </ext:ExtensionContent>
+              </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+            <cbc:Description languageID="HUN">1.2. Tervezői művezetés díja (nettó HUF/mérnöknap)</cbc:Description>
+          </cac:SubordinateAwardingCriterion>
+        </cac:AwardingCriterion>
+      </cac:AwardingTerms>
+      <cac:AdditionalInformationParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+        </cac:PartyIdentification>
+      </cac:AdditionalInformationParty>
+      <cac:AppealTerms>
+        <cac:PresentationPeriod>
+          <cbc:Description languageID="HUN">Kbt. 148. § szerint</cbc:Description>
+        </cac:PresentationPeriod>
+        <cac:AppealInformationParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0004</cbc:ID>
+          </cac:PartyIdentification>
+        </cac:AppealInformationParty>
+        <cac:AppealReceiverParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0004</cbc:ID>
+          </cac:PartyIdentification>
+        </cac:AppealReceiverParty>
+      </cac:AppealTerms>
+    </cac:TenderingTerms>
+    <cac:TenderingProcess>
+      <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+      <cac:AuctionTerms>
+        <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+      </cac:AuctionTerms>
+      <cac:ContractingSystem>
+        <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+      </cac:ContractingSystem>
+      <cac:ContractingSystem>
+        <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+      </cac:ContractingSystem>
+    </cac:TenderingProcess>
+    <cac:ProcurementProject>
+      <cbc:ID schemeName="InternalID">EKR001628142025/1</cbc:ID>
+      <cbc:Name languageID="HUN">Tervezés Szentháromság park fejlesztése HNT 2025</cbc:Name>
+      <cbc:Description languageID="HUN">Vállalkozási szerződés alapján "Budapest, I. kerület Szentháromság Park (HRSZ 6529) turisztikai fejlesztésének tervezési eljárása 2025 HNT" A Szentháromság téren lévő 6529. hrsz. önkormányzati tulajdonú VK-KP-2 övezetű közpark a háború előtti időkben be volt építve. Jelenleg a területen kis városi park és némi beépítési található, ahonnan a Mátyás templomra a legszebb rálátás mutatkozik. A téren lévő épület és növényállomány is méltatlan a környezetéhez, az épület állapota alapján nem javasolt annak felújítása. A park növényállománya is meglehetősen kopottas, meg kell vizsgálni, hogy hogyan lehetne teljesen megújítani azt. A feladat lényege a közpark teljes megújulása, annak érdekében, hogy a környezet jelentőségéhez és minőségéhez igazodó, európai színvonalú park jöhessen létre. Meg kell vizsgálni a téren egy épület elhelyezését, ami segítené a tér és a környezet funkcionalitását, információs pavilon jelleggel. Meg kell oldani a tér alatt található barlang megközelítését, meg kell oldani a Halászbástya és a tér kapcsolatát. Olyan teret kell létrehozni, ami a változatos funkcionális igényeket ki tudja elégíteni, mind a turisták mind a várban lakók számára. Az ajánlattevő feladatainak részletes ismertetését a további közbeszerzési dokumentumok tartalmazzák.</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+      <cbc:EstimatedOverallContractQuantity unitCode="H87">1</cbc:EstimatedOverallContractQuantity>
+      <cbc:Note languageID="HUN">A felhívás II.2.7) pontjában a szerződés hatályba lépése kezdetének megjelölt dátumot csak a felhívás feladhatóságának érdekében adtuk meg. A szerződés hatályának kezdete a szerződés mindkét fél általi aláírásnak napja.</cbc:Note>
+      <cac:ProcurementAdditionalType>
+        <cbc:ProcurementTypeCode listName="gpp-criteria">none</cbc:ProcurementTypeCode>
+      </cac:ProcurementAdditionalType>
+      <cac:MainCommodityClassification>
+        <cbc:ItemClassificationCode listName="cpv">71200000</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:RealizedLocation>
+        <cbc:Description languageID="HUN">1014 Budapest, Szentháromság tér (HRSZ 6529)</cbc:Description>
+        <cac:Address>
+          <cbc:CountrySubentityCode listName="nuts">HU110</cbc:CountrySubentityCode>
+          <cac:Country>
+            <cbc:IdentificationCode listName="country">HUN</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:RealizedLocation>
+      <cac:PlannedPeriod>
+        <cbc:StartDate>2025-10-27+01:00</cbc:StartDate>
+        <cbc:EndDate>2026-01-31+01:00</cbc:EndDate>
+      </cac:PlannedPeriod>
+      <cac:ContractExtension>
+        <cbc:MaximumNumberNumeric>0</cbc:MaximumNumberNumeric>
+      </cac:ContractExtension>
+    </cac:ProcurementProject>
+  </cac:ProcurementProjectLot>
+  <cac:TenderResult>
+    <cbc:AwardDate>2000-01-01Z</cbc:AwardDate>
+  </cac:TenderResult>
+</ContractAwardNotice>

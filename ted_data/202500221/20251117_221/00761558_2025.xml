@@ -1,0 +1,858 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractAwardNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractAwardNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+   <ext:UBLExtensions>
+      <ext:UBLExtension>
+         <ext:ExtensionContent>
+            <efext:EformsExtension>
+               <efac:NoticeResult>
+                  <efac:LotResult>
+                     <cbc:ID schemeName="result">RES-0001</cbc:ID>
+                     <cbc:TenderResultCode listName="winner-selection-status">selec-w</cbc:TenderResultCode>
+                     <efac:LotTender>
+                        <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                     </efac:LotTender>
+                     <efac:ReceivedSubmissionsStatistics>
+                        <efbc:StatisticsCode listName="received-submission-type">tenders</efbc:StatisticsCode>
+                        <efbc:StatisticsNumeric>7</efbc:StatisticsNumeric>
+                     </efac:ReceivedSubmissionsStatistics>
+                     <efac:ReceivedSubmissionsStatistics>
+                        <efbc:StatisticsCode listName="received-submission-type">t-esubm</efbc:StatisticsCode>
+                        <efbc:StatisticsNumeric>7</efbc:StatisticsNumeric>
+                     </efac:ReceivedSubmissionsStatistics>
+                     <efac:SettledContract>
+                        <cbc:ID schemeName="contract">CON-0001</cbc:ID>
+                     </efac:SettledContract>
+                     <efac:TenderLot>
+                        <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+                     </efac:TenderLot>
+                  </efac:LotResult>
+                  <efac:LotResult>
+                     <cbc:ID schemeName="result">RES-0002</cbc:ID>
+                     <cbc:TenderResultCode listName="winner-selection-status">selec-w</cbc:TenderResultCode>
+                     <efac:LotTender>
+                        <cbc:ID schemeName="tender">TEN-0002</cbc:ID>
+                     </efac:LotTender>
+                     <efac:ReceivedSubmissionsStatistics>
+                        <efbc:StatisticsCode listName="received-submission-type">tenders</efbc:StatisticsCode>
+                        <efbc:StatisticsNumeric>7</efbc:StatisticsNumeric>
+                     </efac:ReceivedSubmissionsStatistics>
+                     <efac:ReceivedSubmissionsStatistics>
+                        <efbc:StatisticsCode listName="received-submission-type">t-esubm</efbc:StatisticsCode>
+                        <efbc:StatisticsNumeric>7</efbc:StatisticsNumeric>
+                     </efac:ReceivedSubmissionsStatistics>
+                     <efac:SettledContract>
+                        <cbc:ID schemeName="contract">CON-0002</cbc:ID>
+                     </efac:SettledContract>
+                     <efac:TenderLot>
+                        <cbc:ID schemeName="Lot">LOT-0002</cbc:ID>
+                     </efac:TenderLot>
+                  </efac:LotResult>
+                  <efac:LotTender>
+                     <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                     <efbc:TenderRankedIndicator>true</efbc:TenderRankedIndicator>
+                     <cac:LegalMonetaryTotal>
+                        <cbc:PayableAmount currencyID="PLN">145140</cbc:PayableAmount>
+                     </cac:LegalMonetaryTotal>
+                     <efac:SubcontractingTerm>
+                        <efbc:TermCode listName="applicability">no</efbc:TermCode>
+                     </efac:SubcontractingTerm>
+                     <efac:TenderingParty>
+                        <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+                     </efac:TenderingParty>
+                     <efac:TenderLot>
+                        <cbc:ID>LOT-0001</cbc:ID>
+                     </efac:TenderLot>
+                     <efac:TenderReference>
+                        <cbc:ID>Wykonawca ECOREN Sp. z o.o.</cbc:ID>
+                     </efac:TenderReference>
+                  </efac:LotTender>
+                  <efac:LotTender>
+                     <cbc:ID schemeName="tender">TEN-0002</cbc:ID>
+                     <efbc:TenderRankedIndicator>true</efbc:TenderRankedIndicator>
+                     <cac:LegalMonetaryTotal>
+                        <cbc:PayableAmount currencyID="PLN">227550</cbc:PayableAmount>
+                     </cac:LegalMonetaryTotal>
+                     <efac:SubcontractingTerm>
+                        <efbc:TermCode listName="applicability">no</efbc:TermCode>
+                     </efac:SubcontractingTerm>
+                     <efac:TenderingParty>
+                        <cbc:ID schemeName="tendering-party">TPA-0002</cbc:ID>
+                     </efac:TenderingParty>
+                     <efac:TenderLot>
+                        <cbc:ID>LOT-0002</cbc:ID>
+                     </efac:TenderLot>
+                     <efac:TenderReference>
+                        <cbc:ID>Wykonawca EPD TECHNIKA SOLARNA Sp. z o.o.</cbc:ID>
+                     </efac:TenderReference>
+                  </efac:LotTender>
+                  <efac:SettledContract>
+                     <cbc:ID schemeName="contract">CON-0001</cbc:ID>
+                     <cbc:AwardDate>2025-10-13+02:00</cbc:AwardDate>
+                     <cbc:IssueDate>2025-10-27+01:00</cbc:IssueDate>
+                     <cbc:Title languageID="POL">CZĘŚĆ ZAMÓWIENIA NR 1 - Termomodernizacja budynków Niepublicznej Szkoły Podstawowej im. Tadeusza Kościuszki ul. Tadeusza Kościuszki 25, 63-200 Jarocin</cbc:Title>
+                     <efac:ContractReference>
+                        <cbc:ID>WGK-RIK.272.84.2025</cbc:ID>
+                     </efac:ContractReference>
+                     <efac:LotTender>
+                        <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                     </efac:LotTender>
+                     <efac:Funding>
+                        <efbc:FinancingIdentifier>Zadania są częściowo dofinansowane ze środków Krajowego Planu Odbudowy i Zwiększania Odporności w ramach Programu Priorytetowego „Wymiana źródeł ciepła i poprawa efektywności energetycznej szkół”. Zadanie nr 1 (Termomodernizacja budynków Niepublicznej Szkoły Podstawowej im. Tadeusza Kościuszki) – częściowo dofinansowane ze środków UE.</efbc:FinancingIdentifier>
+                     </efac:Funding>
+                  </efac:SettledContract>
+                  <efac:SettledContract>
+                     <cbc:ID schemeName="contract">CON-0002</cbc:ID>
+                     <cbc:AwardDate>2025-10-14+02:00</cbc:AwardDate>
+                     <cbc:IssueDate>2025-10-27+01:00</cbc:IssueDate>
+                     <cbc:Title languageID="POL">CZĘŚĆ ZAMÓWIENIA NR 2 - Termomodernizacja budynków Zespołu Szkół nr 4 im. Władysława Broniewskiego w Jarocinie ul. Marii Curie-Skłodowskiej 2A, 4, 63-200 Jarocin</cbc:Title>
+                     <efac:ContractReference>
+                        <cbc:ID>WGK-RIK.272.85.2025</cbc:ID>
+                     </efac:ContractReference>
+                     <efac:LotTender>
+                        <cbc:ID schemeName="tender">TEN-0002</cbc:ID>
+                     </efac:LotTender>
+                     <efac:Funding>
+                        <efbc:FinancingIdentifier>Zadania są częściowo dofinansowane ze środków Krajowego Planu Odbudowy i Zwiększania Odporności w ramach Programu Priorytetowego „Wymiana źródeł ciepła i poprawa efektywności energetycznej szkół”. Zadanie nr 2 (Termomodernizacja budynków Zespołu Szkół nr 4 im. Władysława Broniewskiego w Jarocinie) – częściowo dofinansowane ze środków UE.</efbc:FinancingIdentifier>
+                     </efac:Funding>
+                  </efac:SettledContract>
+                  <efac:TenderingParty>
+                     <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+                     <cbc:Name>ECOREN Sp. z o.o.</cbc:Name>
+                     <efac:Tenderer>
+                        <cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+                     </efac:Tenderer>
+                  </efac:TenderingParty>
+                  <efac:TenderingParty>
+                     <cbc:ID schemeName="tendering-party">TPA-0002</cbc:ID>
+                     <cbc:Name>EPD TECHNIKA SOLARNA Sp. z o.o.</cbc:Name>
+                     <efac:Tenderer>
+                        <cbc:ID schemeName="organization">ORG-0004</cbc:ID>
+                     </efac:Tenderer>
+                  </efac:TenderingParty>
+               </efac:NoticeResult>
+               <efac:NoticeSubType>
+                  <cbc:SubTypeCode listName="notice-subtype">E4</cbc:SubTypeCode>
+               </efac:NoticeSubType>
+               <efac:Organizations>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">GMINA JAROCIN</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>AL. NIEPODLEGŁOŚCI 10</cbc:StreetName>
+                           <cbc:CityName>JAROCIN</cbc:CityName>
+                           <cbc:PostalZone>63-200</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL416</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>NIP 617 00 06 401</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+48 535157419</cbc:Telephone>
+                           <cbc:ElectronicMail>kaniewska@jarjarocin.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Krajowa Izba Odwoławcza</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>ul. Postępu 17</cbc:StreetName>
+                           <cbc:CityName>Warszawa</cbc:CityName>
+                           <cbc:PostalZone>02-676</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL911</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>REGON 010828091</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">ECOREN Sp. z o.o.</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>ul. Budowlanych 50</cbc:StreetName>
+                           <cbc:CityName>Gdańsk</cbc:CityName>
+                           <cbc:PostalZone>80-298</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL634</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>NIP 5842779498</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0004</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">EPD TECHNIKA SOLARNA Sp. z o.o.</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>Bukowina Sycowska 33/2</cbc:StreetName>
+                           <cbc:CityName>Międzybórz</cbc:CityName>
+                           <cbc:PostalZone>56-513</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL518</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>NIP 9112024223</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efbc:NaturalPersonIndicator>false</efbc:NaturalPersonIndicator>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://op.europa.eu</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0000</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Publications Office of the European Union</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:CityName>Luxembourg</cbc:CityName>
+                           <cbc:PostalZone>2417</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">LU000</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">LUX</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>PUBL</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+352 29291</cbc:Telephone>
+                           <cbc:ElectronicMail>ted@publications.europa.eu</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+               </efac:Organizations>
+            <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00761558-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+         </ext:ExtensionContent>
+      </ext:UBLExtension>
+   </ext:UBLExtensions>
+   <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+   <cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+   <cbc:ID schemeName="notice-id">cd039fee-0bd4-4d78-be4e-046058d87443</cbc:ID>
+   <cbc:ContractFolderID>74b20c08-58e9-4527-8e40-7b1e95cfa09c</cbc:ContractFolderID>
+   <cbc:IssueDate>2025-11-14Z</cbc:IssueDate>
+   <cbc:IssueTime>09:41:18Z</cbc:IssueTime>
+   <cbc:VersionID>01</cbc:VersionID>
+   <cbc:RegulatoryDomain>other</cbc:RegulatoryDomain>
+   <cbc:NoticeTypeCode listName="result">can-standard</cbc:NoticeTypeCode>
+   <cbc:NoticeLanguageCode listName="language">POL</cbc:NoticeLanguageCode>
+   <cac:ContractingParty>
+      <cac:ContractingPartyType>
+         <cbc:PartyTypeCode listName="buyer-legal-type">la</cbc:PartyTypeCode>
+      </cac:ContractingPartyType>
+      <cac:ContractingActivity>
+         <cbc:ActivityTypeCode listName="authority-activity">gen-pub</cbc:ActivityTypeCode>
+      </cac:ContractingActivity>
+      <cac:Party>
+         <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+         </cac:PartyIdentification>
+         <cac:ServiceProviderParty>
+            <cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode>
+            <cac:Party>
+               <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0000</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:Party>
+         </cac:ServiceProviderParty>
+      </cac:Party>
+   </cac:ContractingParty>
+   <cac:TenderingProcess>
+      <cbc:ProcedureCode listName="procurement-procedure-type">open</cbc:ProcedureCode>
+      <cac:NoticeDocumentReference>
+         <cbc:ID schemeName="ojs-notice-id">457727-2025</cbc:ID>
+      </cac:NoticeDocumentReference>
+      <cac:ProcessJustification>
+         <cbc:ProcessReasonCode listName="accelerated-procedure">true</cbc:ProcessReasonCode>
+         <cbc:ProcessReason languageID="POL">Zamawiający podpisał z NFOŚiGW umowę o dofinansowania na termomodernizację dwóch szkół wskazanych w niniejszym postępowaniu. Z przedmiotowych umów wynika, że Zamawiający jest zobowiązany wykonać prace termomodernizacyjne powyższych szkół i wydatkować środki za wykonane prace w terminie do 30.06.2026r. 
+Dofinansowanie zostało przyznane w ramach programu priorytetowego: "B1.1.3 Wymiana źródeł ciepła i poprawa efektywności energetycznej szkół"
+Wg szacowanych terminów realizacji, wykonanie projektu technicznego (stanowiące przedmiot niniejszego postępowania) będzie trwało ok. 5 miesięcy, następnie należy uwzględnić czas potrzebny na ogłoszenie i rozstrzygnięcie postępowania na roboty budowlane oraz czas konieczny do wykonania robót budowlanych (czas samych robót budowalnych szacowany jest na ok. 4-6 miesięcy). Przy uwzględnieniu powyższego, a także faktu, że niniejsza procedura przetargu nieograniczonego wymaga zastosowania dłuższych terminów (tj. m.in. czas na odpowiedź na wezwanie, czas oczekiwania na zawarcie umowy) niż w postępowaniu krajowym- skrócenie terminu składania ofert jest konieczne, aby Zamawiający mógł dochować terminu nałożonego umową przyznającą dofinansowanie i tym samym nie było zagrożenia utraty przyznanych środków. </cbc:ProcessReason>
+      </cac:ProcessJustification>
+   </cac:TenderingProcess>
+   <cac:ProcurementProject>
+      <cbc:ID schemeName="InternalID">WGK-RIK.271.1.30.2025</cbc:ID>
+      <cbc:Name languageID="POL">Wykonanie pełnobranżowej dokumentacji projektowej na termomodernizację szkół w gminie Jarocin</cbc:Name>
+      <cbc:Description languageID="POL">1.Przedmiot zamówienia obejmuje „Wykonanie pełnobranżowej dokumentacji projektowej na termomodernizację szkół w gminie Jarocin”. 
+Przedmiot zamówienia został podzielony na 2 zadania/części. Każda z części stanowi odrębny przedmiot zamówienia. Wykonawca może złożyć ofertę na jedną lub więcej części zamówienia. Wymagane jest jednak złożenie kompletnej oferty. 
+Szczegółowy Opis przedmiotu zamówienia został określony w załączniku nr 1 do SWZ (t.j. odpowiednio dla każdej z części odrębnie), tj. 
+1) zadanie nr 1 - Termomodernizacja budynków Niepublicznej Szkoły Podstawowej im. Tadeusza Kościuszki ul. Tadeusza Kościuszki 25, 63-200 Jarocin, które dotyczy przygotowania dokumentacji projektowej techniczno-wykonawczej dla budynków ujętych w audytach energetycznych Niepublicznej Szkoły Podstawowej im. Tadeusza Kościuszki w Jarocinie wraz z dostosowaniem do obowiązujących przepisów prawa; 
+2) zadanie nr 2 - Termomodernizacja budynków Zespołu Szkół nr 4 im. Władysława Broniewskiego w Jarocinie ul. Marii Curie-Skłodowskiej 2A, 4, 63-200 Jarocin, które dotyczy przygotowania dokumentacji projektowej techniczno-wykonawczej dla budynków ujętych w audycie energetycznym Zespołu Szkół nr 4 im. Władysława Broniewskiego w Jarocinie wraz z dostosowaniem do obowiązujących przepisów prawa.
+Niniejsze postępowanie prowadzone jest w trybie przetargu nieograniczonego na podstawie ustawy p.z.p. oraz niniejszej Specyfikacji Warunków Zamówienia, zwaną dalej "SWZ".
+2.	Szacunkowa wartość zamówienia przekracza kwotę określoną w obwieszczeniu Prezesa Urzędu Zamówień Publicznych wydanym na podstawie art. 3 ust. 2 p.z.p.
+3.   Postępowanie prowadzone jest w trybie przetargu nieograniczonego w rozumieniu art. 132 p.z.p., przy zastosowaniu procedury, o której mowa w art. 139 p.z.p. (tzw. procedura odwrócona).
+4.	Zgodnie z art. 257 p.z.p., Zamawiający nie przewiduje możliwość unieważnienia przedmiotowego postępowania, jeżeli środki publiczne, które Zamawiający zamierzał przeznaczyć na sfinansowanie całości lub części zamówienia, nie zostały mu przyznane.
+5.	Zamawiający nie przewiduje aukcji elektronicznej.
+6.	Zamawiający nie prowadzi postępowania w celu zawarcia umowy ramowej.
+7.	Do postępowania stosuje się przepisy dotyczące zamówienia na usługę.
+8.	 Zamawiający nie wymaga odbycia wizji lokalnej przed złożeniem oferty.
+9. Zamawiający nie wymaga sprawdzenia przez wykonawcę dokumentów niezbędnych do realizacji zamówienia dostępnych na miejscu u zamawiającego przed złożeniem oferty.
+10. Wymóg zatrudnienia przez wykonawcę lub podwykonawcę osób na podstawie stosunku pracy:
+1)	Zamawiający stosownie do art. 95 ust. 1 ustawy wymaga, aby osoby wykonujące czynności w zakresie realizacji przedmiotu zamówienia, których wykonanie polega na wykonywaniu pracy w sposób określony w art. 22 § 1 ustawy z dnia 26 czerwca 1974 r. - Kodeks pracy (Dz. U. z 2023 r. poz.1465), zostały zatrudnione przez wykonawcę lub podwykonawcę na podstawie umowy o pracę.
+2)	Rodzaj czynności niezbędnych do realizacji zamówienia, których dotyczą wymagania zatrudnienia na podstawie umowy o pracę przez wykonawcę lub podwykonawcę osób wykonujących czynności w trakcie realizacji zamówienia oraz sposób weryfikacji zatrudnienia tych osób i uprawnienia zamawiającego w zakresie kontroli spełniania przez wykonawcę wymagań związanych z zatrudnianiem tych osób oraz sankcji z tytułu niespełnienia tych wymagań przedstawiono we wzorze umowy, stanowiącym załącznik nr 6 do SWZ (ZAŁĄCZNIK NR 6A/6B).
+ 11. Zamawiający nie określa dodatkowych wymagań związanych z zatrudnianiem osób, 
+o których mowa w art. 96 ust. 2 pkt 2 Pzp.
+12. Zamawiający nie określa dodatkowych wymagań wynikających z art. 94 Pzp.
+3.	Zamawiający dopuszcza składania ofert częściowych.
+Ofertę można złożyć w odniesieniu do jednej, kilku lub wszystkich części zamówienia. Wykonawca w składanej ofercie wyceni całość prac dotyczącą danej części osobno.
+Zamawiający nie określa maksymalnej liczby części, na które może zostać udzielone zamówienia jednemu wykonawcy. 
+4.	Zamawiający nie zastrzega obowiązku osobistego wykonania przez poszczególnych wykonawców wspólnie ubiegających się o udzielenie zamówienia kluczowych zadań dotyczących zamówień na usługi.
+5.	Wspólny Słownik Zamówień CPV: 
+71221000-3 - Usługi architektoniczne w zakresie obiektów budowlanych
+71248000-8 - Nadzór nad projektem i dokumentacją
+6.	Zamawiający nie dopuszcza składania ofert wariantowych oraz w postaci katalogów elektronicznych.
+7.	Zamawiający nie przewiduje udzielania zamówień, o których mowa w art. 214 ust. 1 pkt 7 p.z.p. 
+8. Ochrona danych osobowych - rozdział II SWZ.
+9. Zamawiający nie wymaga wadium.
+10. Zamawiający nie wymaga zabezpieczenia należytego wykonania zamówienia.
+Podstawa prawna:
+Dyrektywa 2014/24/UE</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+      <cbc:Note languageID="POL">3. W związku z tym, iż wartość zamówienia nie przekracza wyrażonej w złotych równowartości kwoty dla usług 10 000 000 euro, przesłanka wykluczenia o której mowa w art. 108 ust. 2 PZP w przedmiotowym postępowaniu nie występuje.
+4. Na podstawie art. 5k rozporządzenia Rady (UE) nr 833/2014 z dnia 31 lipca 2014 r. dotyczącego środków ograniczających w związku z działaniami Rosji destabilizującymi sytuację na Ukrainie (Dz. Urz. UE nr L 229 z 31.7.2014, str. 1), (dalej: rozporządzenie 833/2014), zakazuje się udzielania lub dalszego wykonywania wszelkich zamówień publicznych lub koncesji objętych zakresem dyrektyw w sprawie zamówień publicznych, a także zakresem art. 10 ust. 1 i 3, art. 10 ust. 6 lit. a)-e), art. 10 ust. 8, 9 i 10, art. 11, 12, 13 i 14 dyrektywy 2014/23/UE, art. 7 lit. a)-d), art. 8, art. 10 lit. b)-f) i lit. h)-j) dyrektywy 2014/24/UE, art. 18, art. 21 lit. b)-e) i lit. g)-i), art. 29 i 30 dyrektywy 2014/25/UE oraz art. 13 lit. a)-d), lit. f)-h) i lit. j) dyrektywy 2009/81/WE na rzecz lub z udziałem:
+a) obywateli rosyjskich, osób fizycznych zamieszkałych w Rosji lub osób prawnych, podmiotów lub organów z siedzibą w Rosji;
+b) osób prawnych, podmiotów lub organów, do których prawa własności bezpośrednio lub pośrednio w ponad 50 % należą do podmiotu, o którym mowa w lit. a) niniejszego ustępu; lub
+c) osób fizycznych lub prawnych, podmiotów lub organów działających w imieniu lub pod kierunkiem osoby fizycznej lub prawnej, podmiotu lub organu, o których mowa w lit. a) lub b) niniejszego ustępu,
+w tym podwykonawców, dostawców lub podmiotów, na których zdolności polega się w rozumieniu dyrektyw w sprawie zamówień publicznych, w przypadku gdy przypada na nich ponad 10 % wartości zamówienia.
+5. Na podstawie art. 7 ust. 1 Ustawy z dnia 13 kwietnia 2022 r. o szczególnych rozwiązaniach w zakresie przeciwdziałania wspieraniu agresji na Ukrainę oraz służących ochronie bezpieczeństwa narodowego, zwanej dalej „ustawą przeciwko agresji na Ukrainę” – (Dz.U. z 2025 r., poz. 514), z postępowania o udzielenie zamówienia publicznego lub konkursu prowadzonego na podstawie ustawy Pzp wyklucza się:
+a)Wykonawcę oraz uczestnika konkursu wymienionego w wykazach określonych w rozporządzeniu 765/2006 i rozporządzeniu 269/2014 albo wpisanego na listę na podstawie decyzji w sprawie wpisu na listę rozstrzygającej o zastosowaniu środka, o którym mowa w art. 1 pkt 3;
+b)Wykonawcę oraz uczestnika konkursu, którego beneficjentem rzeczywistym w rozumieniu ustawy z dnia 1 marca 2018 r. o przeciwdziałaniu praniu pieniędzy oraz finansowaniu terroryzmu (Dz. U. z 2023 r. poz. 1124 z późn. zm.) jest osoba wymieniona w wykazach określonych w rozporządzeniu 765/2006 i rozporządzeniu 269/2014 albo wpisana na listę lub będąca takim beneficjentem rzeczywistym od dnia 24 lutego 2022 r., o ile została wpisana na listę na podstawie decyzji w sprawie wpisu na listę rozstrzygającej o zastosowaniu środka, o którym mowa w art. 1 pkt 3;
+c)Wykonawcę oraz uczestnika konkursu, którego jednostką dominującą w rozumieniu art. 3 ust. 1 pkt 37 ustawy z dnia 29 września 1994 r. o rachunkowości (Dz. U. z 2023 r. poz. 120, 295 i 1598 oraz z 2024 r. poz. 619, 1685 i 1863) jest podmiot wymieniony w wykazach określonych w rozporządzeniu 765/2006 i rozporządzeniu 269/2014 albo wpisany na listę lub będący taką jednostką dominującą od dnia 24 lutego 2022 r., o ile został wpisany na listę na podstawie decyzji w sprawie wpisu na listę rozstrzygającej o zastosowaniu środka, o którym mowa w art. 1 pkt 3.
+6. Weryfikacja podstaw wykluczenia, o których mowa w pkt. 4 i 5 nastąpi na podstawie: 
+a)oświadczenia złożonego na formularzu JEDZ – Załącznik nr 2 do SWZ oraz Oświadczenia o braku podstaw wykluczenia stanowiącego Załącznik nr 9 
+i 10 do SWZ, 
+b)informacji z KRS lub CEIDG, 
+c)informacji z wykazów określonych w rozporządzeniu 765/2006 i rozporządzeniu 269/2014, 
+d)a także informacji z listy rozstrzygającej o zastosowaniu środka, o którym mowa w art. 1 pkt 3 ustawy o szczególnych rozwiązaniach w zakresie przeciwdziałania wspieraniu agresji na Ukrainę oraz służących ochronie bezpieczeństwa narodowego. 
+Z uwagi na to, że informacje określone w pkt. b) - d) są powszechnie dostępne Zamawiający pobierze je samodzielnie. 
+7. Wykonawca nie podlega wykluczeniu w okolicznościach określonych w art. 108 ust. 1 pkt 1, 2 i 5 lub art. 109 ust. 1 pkt 4 lub 7 uPzp, jeżeli udowodni Zamawiającemu, że spełnił łącznie następujące przesłanki:
+1) naprawił lub zobowiązał się do naprawienia szkody wyrządzonej przestępstwem, wykroczeniem lub swoim nieprawidłowym postępowaniem, w tym poprzez zadośćuczynienie pieniężne;
+2) wyczerpująco wyjaśnił fakty i okoliczności związane z przestępstwem, wykroczeniem lub swoim nieprawidłowym postępowaniem oraz spowodowanymi przez nie szkodami, aktywnie współpracując odpowiednio z właściwymi organami, w tym organami ścigania, lub zamawiającym;
+3) podjął konkretne środki techniczne, organizacyjne i kadrowe, odpowiednie dla zapobiegania dalszym przestępstwom, wykroczeniom lub nieprawidłowemu postępowaniu, w szczególności:
+a) zerwał wszelkie powiązania z osobami lub podmiotami odpowiedzialnymi za nieprawidłowe postępowanie wykonawcy,
+b) zreorganizował personel,
+c) wdrożył system sprawozdawczości i kontroli,
+d) utworzył struktury audytu wewnętrznego do monitorowania przestrzegania przepisów, wewnętrznych regulacji lub standardów,
+e) wprowadził wewnętrzne regulacje dotyczące odpowiedzialności i odszkodowań za nieprzestrzeganie przepisów, wewnętrznych regulacji lub standardów.
+8. Zamawiający ocenia, czy podjęte przez Wykonawcę czynności, o których mowa w pkt 7. powyżej, są wystarczające do wykazania jego rzetelności, uwzględniając wagę i szczególne okoliczności czynu Wykonawcy. Jeżeli podjęte przez Wykonawcę czynności, o których mowa w pkt 7. powyżej, nie są wystarczające do wykazania jego rzetelności, Zamawiający wyklucza Wykonawcę. 
+1. Wykonawca może powierzyć wykonanie części zamówienia podwykonawcy (podwykonawcom), z zastrzeżeniem zapisów wynikających z ust. 2.
+2.Zamawiający nie zastrzega obowiązku osobistego wykonania przez Wykonawcę kluczowych części zamówienia. 
+3.Zamawiający wymaga, aby w przypadku powierzenia części zamówienia podwykonawcom, Wykonawca wskazał w ofercie części zamówienia, których wykonanie zamierza powierzyć podwykonawcom oraz podał (o ile są mu wiadome na tym etapie) nazwy (firmy) tych podwykonawców.
+4.Powierzenie części zamówienia podwykonawcom nie zwalnia Wykonawcy z odpowiedzialności za należyte wykonanie zamówienia.
+1. Wykon.mogą wspólnie ubiegać się o udzielenie zamówienia. W takim przypadku Wykonawcy ustanawiają pełnomocnika do reprezentowania ich w postępowaniu  albo do reprezentowania i zawarcia umowy w sprawie zamówienia publicznego. Pełnomocnictwo winno być załączone do oferty w postaci elektronicznej.
+2.W przypadku Wykon. wspólnie ubiegających się o udzielenie zamówienia, Jednolity Europejski Dokument Zamówienia (ESPD) składa każdy z Wykonawców wspólnie ubiegających się o zamówienie. Oświadczenie te wstępnie potwierdza spełnianie warunków udziału w postępowaniu oraz brak podstaw do wykluczenia w zakresie, w którym każdy z Wykonawców wykazuje spełnianie warunków udziału w postępowaniu oraz brak podstaw do wykluczenia.
+3.Oświadczenia i dokumenty potwierdzające brak podstaw do wykluczenia z postępowania, w tym oświadczenie dotyczące przynależności lub braku przynależności do tej samej grupy kapitałowej, składa każdy z Wykonawców wspólnie ubiegających się o zamówienie.
+4. W odniesieniu do warunków dotyczących wykształcenia, kwalifikacji zawodowych lub doświadczenia wykonawcy wspólnie ubiegający się o udzielenie zamówienia mogą polegać na zdolnościach tych z wykonawców, którzy wykonają roboty budowlane lub usługi, do realizacji których te zdolności są wymagane.
+5. W przypadku, o którym mowa w ust. 4, wykonawcy wspólnie ubiegający się 
+o udzielenie zamówienia dołączają odpowiednio do wniosku o dopuszczenie do udziału w postępowaniu albo do oferty oświadczenie, z którego wynika, które roboty budowlane, dostawy lub usługi wykonają poszczególni wykonawcy – Załącznik nr 11.
+Wykonawca może złożyć tylko jedną ofertę na daną część zamówienia.
+2.Treść oferty musi odpowiadać treści SWZ.
+3.Ofertę sporządza się w języku polskim na Formularzu Ofertowym - zgodnie z Załącznikiem nr 12A i 12B do SWZ poza aplikacją. Formularz generowany przez Platformę Zakupową jest ,,narzędziem technicznym” niezbędnym do złożenia oferty na Platformie, nie stanowi on jednak faktycznego formularza ofertowego.
+Wraz z ofertą Wykonawca jest zobowiązany złożyć:
+1)zobowiązanie innego podmiotu, o którym mowa w Rozdziale X ust. 3 pkt 1 SWZ (jeżeli   dotyczy);
+2)dokumenty, z których wynika prawo do podpisania oferty; odpowiednie pełnomocnictwa (jeżeli dotyczy);
+3) oświadczenie, z którego wynika, które usługi wykonają poszczególni Wykonawcy wspólnie ubiegający się o udzielenie zamówienia (jeśli dotyczy).
+4) Zastrzeżenie tajemnicy przedsiębiorstwa – w sytuacji, gdy oferta lub inne dokumenty składane w toku postępowania będą zawierały tajemnicę przedsiębiorstwa, wykonawca, wraz z przekazaniem takich informacji, zastrzega, że nie mogą być one udostępniane, oraz wykazuje, że zastrzeżone informacje stanowią tajemnicę przedsiębiorstwa w rozumieniu przepisów ustawy z 16 kwietnia 1993 r. o zwalczaniu nieuczciwej konkurencji (t.j. Dz. U. z 2022 r. poz. 1233 z późn. zm.). 
+Wymagana forma: Dokument musi być złożony w postaci  elektronicznej opatrzonej kwalifikowanym podpisem elektronicznym osoby upoważnionej do reprezentowania wykonawców zgodnie z formą reprezentacji określoną w dokumencie rejestrowym właściwym dla formy organizacyjnej lub innym dokumencie. 
+5)	Wykaz rozwiązań równoważnych – wykonawca, który powołuje się na rozwiązania równoważne, jest zobowiązany wykazać, że oferowane przez niego rozwiązanie spełnia wymagania określone przez zamawiającego. W takim przypadku wykonawca załącza do oferty wykaz rozwiązań równoważnych z jego opisem lub normami. 
+Forma dokum tak jak w pkt.4).</cbc:Note>
+      <cac:MainCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">71221000</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">71248000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:RealizedLocation>
+         <cbc:Description languageID="POL">DOTYCZY OBU CZĘŚCI:
+1. Wykonawca może w celu potwierdzenia spełniania warunków udziału w postępowaniu lub kryteriów selekcji, w stosownych sytuacjach oraz w odniesieniu do konkretnego zamówienia, lub jego części, polegać na zdolnościach technicznych lub zawodowych lub sytuacji finansowej lub ekonomicznej podmiotów udostępniających zasoby, niezależnie od charakteru prawnego łączących go z nimi stosunków prawnych.
+2.	Wymagania dotyczące polegania na zdolnościach lub sytuacjach innych podmiotów, o których mowa w ust.1:
+1)	Wykonawca, który polega na zdolnościach lub sytuacji innych podmiotów musi udowodnić  Zamawiającemu, że realizując zamówienie, będzie dysponował niezbędnymi zasobami tych podmiotów, w szczególności przedstawiając zobowiązanie tych podmiotów do oddania mu do dyspozycji niezbędnych zasobów na potrzeby realizacji zamówienia lub inny podmiotowy środek dowodowy potwierdzający tą okoliczność;
+2)	Zamawiający ocenia, czy udostępniane wykonawcy przez podmioty udostępniające zasoby zdolności techniczne lub zawodowe lub ich sytuacja finansowa lub ekonomiczna, pozwalają na wykazanie przez wykonawcę spełniania warunków udziału w postępowaniu, a także bada, czy nie zachodzą wobec tego podmiotu podstawy wykluczenia, które zostały przewidziane względem wykonawcy.
+3)	W odniesieniu do warunków dotyczących wykształcenia, kwalifikacji zawodowych lub doświadczenia wykonawcy mogą polegać na zdolnościach podmiotów udostępniających zasoby, jeśli podmioty te wykonają roboty budowlane lub usługi, do realizacji których te zdolności są wymagane.
+4)	Podmiot, który zobowiązał się do udostępnienia zasobów, odpowiada solidarnie z wykonawcą, który polega na jego sytuacji finansowej lub ekonomicznej, za szkodę poniesioną przez zamawiającego powstałą wskutek nieudostępnienia tych zasobów, chyba że za nieudostępnienie zasobów podmiot ten nie ponosi winy.
+5)	Jeżeli zdolności techniczne lub zawodowe, sytuacja ekonomiczna lub finansowa podmiotu udostępniającego zasoby nie potwierdzają spełniania przez wykonawcę warunków udziału w postępowaniu lub zachodzą wobec tego podmiotu podstawy wykluczenia, zamawiający żąda, aby wykonawca w terminie określonym przez zamawiającego zastąpił ten podmiot innym podmiotem lub podmiotami albo wykazał, że samodzielnie spełnia warunki udziału w postępowaniu. Wykonawca nie może, po upływie terminu składania ofert, powoływać się na zdolności lub sytuację podmiotów udostępniających zasoby, jeżeli na etapie składania ofert nie polegał on w danym zakresie na zdolnościach lub sytuacji podmiotów udostępniających zasoby.
+3.	W celu oceny, czy Wykonawca polegając na zdolnościach lub sytuacji innych podmiotów na zasadach określonych w ust. 2, będzie dysponował niezbędnymi zasobami w stopniu umożliwiającym należyte wykonanie zamówienia publicznego oraz oceny, czy stosunek łączący Wykonawcę z tymi podmiotami gwarantuje rzeczywisty dostęp do ich zasobów, a także w celu wykazania braku wobec tych podmiotów podstaw do wykluczenia oraz spełniania, w zakresie w jakim powołuje się na ich zasoby, warunków udziału w postępowaniu, Wykonawca:
+1)	składa wraz z ofertą zobowiązanie innego podmiotu do udostępnienia niezbędnych zasobów Wykonawcy - zgodnie z Załącznikiem nr 3 do SWZ;
+2)	składa na wezwanie Zamawiającego Jednolity Europejski Dokument Zamówienia (ESPD) dotyczący tych podmiotów, w zakresie wskazanym w Części II Sekcji C ESPD (Informacje na temat polegania na zdolności innych podmiotów);
+3)	w terminie określonym w Rozdziale IX ust. 3 SWZ, przedkłada w odniesieniu do tych podmiotów oświadczenia i dokumenty tam wskazane.
+Dokumenty składane na potwierdzenie braku podstaw do wykluczenia o których mowa w Rozdziale VIII ust. 6 i 7 SWZ:
+1)	Zamawiający wezwie wykonawcę, którego oferta została najwyżej ocenia, do złożenia oświadczenia Wykonawcy dotyczącego przesłanek wykluczenia z art. 5k Rozporządzenia 833/2014 oraz art. 7 ust. 1 ustawy o szczególnych rozwiązaniach w zakresie przeciwdziałania wspieraniu agresji na Ukrainę oraz służących ochronie bezpieczeństwa narodowego – Załącznik nr 9.
+2)	W przypadku polegania przez wykonawcę na zasobach innych podmiotów, Zamawiający wezwie wykonawcę którego oferta została najwyżej ocenia, do złożenia oświadczenia podmiotu udostępniającego zasoby dotyczącego przesłanek wykluczenia z art. 5k Rozporządzenia 833/2014 oraz art. 7 ust. 1 ustawy o szczególnych rozwiązaniach w zakresie przeciwdziałania wspieraniu agresji na Ukrainę oraz służących ochronie bezpieczeństwa narodowego – Załącznik nr 10.
+</cbc:Description>
+         <cac:Address>
+            <cbc:CountrySubentityCode listName="nuts">PL416</cbc:CountrySubentityCode>
+            <cac:Country>
+               <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+            </cac:Country>
+         </cac:Address>
+      </cac:RealizedLocation>
+   </cac:ProcurementProject>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+      <cac:TenderingTerms>
+         <cbc:FundingProgramCode listName="eu-funded">eu-funds</cbc:FundingProgramCode>
+         <cac:AwardingTerms>
+            <cac:AwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>60</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                  <cbc:Description languageID="POL">Punkty przyznane za kryterium „CENA – C” będą liczone w następujący sposób:
+liczba punktów „C”  =	(C min/Cbad)X waga kryterium x 100
+gdzie:
+Cmin – najniższa cena brutto wśród ważnych ofert,
+Cbad – cena brutto badanej oferty.
+</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>40</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+                  <cbc:Description languageID="POL">
+Sposób przydzielania punktów w kryterium „Gwarancja jakości i rękojmia”:
+Punkty przyznane za kryterium „Gwarancja jakości i rękojmia” będą liczone 
+w następujący sposób:
+Minimalny okres gwarancji jakości i rękojmi: 36 miesięcy.
+Maksymalny okres gwarancji jakości i rękojmi: 60 miesięcy.
+Za zadeklarowanie okresu gwarancji jakości i rękojmi, zostaną przyznane punkty według następujących zasad:
+• okres gwarancji jakości i rękojmi 36 miesięcy – 0 pkt;
+• okres gwarancji jakości i rękojmi 42 miesiące – 10 pkt;
+• okres gwarancji jakości i rękojmi 48 miesięcy – 20 pkt;
+• okres gwarancji jakości i rękojmi 54 miesiące – 30 pkt;
+• okres gwarancji jakości i rękojmi 60 miesięcy – 40 pkt.
+	UWAGA: Wykonawca uzyska punkty w przypadku wpisania w Formularzu Oferty (w wykropkowanym miejscu) terminu gwarancji jakości i rękojmi określonego w miesiącach. 
+Wykonawca zobowiązany jest udzielić gwarancji jakości i rękojmi na minimum 
+36 miesięcy. W przypadku braku wypełnienia oświadczenia w Formularzu Oferty lub wskazania innego okresu niż określone powyżej, Zamawiający uzna, iż Wykonawca deklaruje termin gwarancji jakości i rękojmi najkrótszy, tj. 36 miesięcy i przyzna mu 
+0 punktów w tym kryterium.
+	Wykonawca może wydłużyć maksymalnie termin gwarancji jakości i rękojmi do 
+60 miesięcy. Wydłużenie jeszcze bardziej tego terminu nie spowoduje naliczenia dodatkowych punktów za to kryterium.
+</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+            </cac:AwardingCriterion>
+         </cac:AwardingTerms>
+         <cac:AppealTerms>
+            <cac:PresentationPeriod>
+               <cbc:Description languageID="POL">Środki ochrony prawnej określone w niniejszym dziale przysługują wykonawcy, uczestnikowi konkursu oraz innemu podmiotowi, jeżeli ma lub miał interes w uzyskaniu zamówienia lub nagrody w konkursie oraz poniósł lub może ponieść szkodę w wyniku naruszenia przez zamawiającego przepisów ustawy p.z.p. 
+2.	Środki ochrony prawnej wobec ogłoszenia wszczynającego postępowanie o udzielenie zamówienia lub ogłoszenia o konkursie oraz dokumentów zamówienia przysługują również organizacjom wpisanym na listę, o której mowa w art. 469 pkt 15 p.z.p. oraz Rzecznikowi Małych i Średnich Przedsiębiorców.
+3.	Odwołanie przysługuje na:
+1)	niezgodną z przepisami ustawy czynność Zamawiającego, podjętą w postępowaniu o udzielenie zamówienia, w tym na projektowane postanowienie umowy;
+2)	zaniechanie czynności w postępowaniu o udzielenie zamówienia do której zamawiający był obowiązany na podstawie ustawy;
+4.	Odwołanie wnosi się do Prezesa Izby. Odwołujący przekazuje kopię odwołania zamawiającemu przed upływem terminu do wniesienia odwołania w taki sposób, aby mógł on zapoznać się z jego treścią przed upływem tego terminu.
+5.	Odwołanie wobec treści ogłoszenia lub treści SWZ wnosi się w terminie 10 dni od dnia publikacji ogłoszenia w Dzienniku Urzędowym Unii Europejskiej lub zamieszczenia dokumentów zamówienia na stronie internetowej.
+6.	Odwołanie wnosi się w terminie:
+1)	10 dni od dnia przekazania informacji o czynności zamawiającego stanowiącej podstawę jego wniesienia, jeżeli informacja została przekazana przy użyciu środków komunikacji elektronicznej,
+2)	15 dni od dnia przekazania informacji o czynności zamawiającego stanowiącej podstawę jego wniesienia, jeżeli informacja została przekazana w sposób inny niż określony w pkt 1).
+7.	Odwołanie w przypadkach innych niż określone w pkt 5 i 6 wnosi się w terminie 10 dni od dnia, w którym powzięto lub przy zachowaniu należytej staranności można było powziąć wiadomość o okolicznościach stanowiących podstawę jego wniesienia
+8.	Na orzeczenie Izby oraz postanowienie Prezesa Izby, o którym mowa w art. 519 ust. 1 ustawy p.z.p., stronom oraz uczestnikom postępowania odwoławczego przysługuje skarga do sądu.
+9.	W postępowaniu toczącym się wskutek wniesienia skargi stosuje się odpowiednio przepisy ustawy z dnia 17.11.1964 r. - Kodeks postępowania cywilnego o apelacji, jeżeli przepisy Rozdziału 3 Działu IX pzp nie stanowią inaczej.
+10.	Skargę wnosi się do Sądu Okręgowego w Warszawie - sądu zamówień publicznych, zwanego dalej "sądem zamówień publicznych".
+11.	Skargę wnosi się za pośrednictwem Prezesa Izby, w terminie 14 dni od dnia doręczenia orzeczenia Izby lub postanowienia Prezesa Izby, o którym mowa w art. 519 ust. 1 ustawy p.z.p., przesyłając jednocześnie jej odpis przeciwnikowi skargi. Złożenie skargi w placówce pocztowej operatora wyznaczonego w rozumieniu ustawy z dnia 23.11.2012 r. - Prawo pocztowe albo wysłanie na adres do doręczeń elektronicznych, o którym mowa w art. 2 pkt 1 ustawy z dnia 18 listopada 2020 r. o doręczeniach elektronicznych,  jest równoznaczne z jej wniesieniem.
+12.	Prezes Izby przekazuje skargę wraz z aktami postępowania odwoławczego do sądu zamówień publicznych w terminie 7 dni od dnia jej otrzymania.
+13. Szczegółowe informacje dotyczące środków ochrony prawnej określone są w Dziale IX „Środki ochrony prawnej” ustawy Prawo zamówień publicznych.</cbc:Description>
+            </cac:PresentationPeriod>
+            <cac:AppealInformationParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealInformationParty>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+         </cac:AppealTerms>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <cac:AuctionTerms>
+            <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+         </cac:AuctionTerms>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:ID schemeName="InternalID">WGK-RIK.271.1.30.2025 - CZĘŚĆ ZAMÓWIENIA NR 1</cbc:ID>
+         <cbc:Name languageID="POL">Wykonanie pełnobranżowej dokumentacji projektowej na termomodernizację szkół w gminie Jarocin - Termomodernizacja budynków Niepublicznej Szkoły Podstawowej im. Tadeusza Kościuszki ul. Tadeusza Kościuszki 25, 63-200 Jarocin</cbc:Name>
+         <cbc:Description languageID="POL">Zadanie nr 1 - Termomodernizacja budynków Niepublicznej Szkoły Podstawowej im. Tadeusza Kościuszki ul. Tadeusza Kościuszki 25, 63-200 Jarocin, które dotyczy przygotowania dokumentacji projektowej techniczno-wykonawczej dla budynków ujętych w audytach energetycznych Niepublicznej Szkoły Podstawowej im. Tadeusza Kościuszki w Jarocinie wraz z dostosowaniem do obowiązujących przepisów prawa.
+Zamawiający poniżej przedstawia ogólne wytyczne dla realizacji przedmiotu zamówienia: 
+1) Przez instalację uzdatniania wody rozumie się odżelaziacz / odmanganiacz oraz filtry sznurkowe itp. 
+2) Dostosowanie instalacji wodociągowej do zasilania z własnego ujęcia wód podziemnych wg uzgodnienia z Przedsiębiorstwem Wodociągów i Kanalizacji Sp. z o.o. w Jarocinie. 
+3) Zakres ew. zastosowania klimatyzacji – w uzgodnieniu z Zamawiającym. 
+4)	Montaż urządzeń do magazynowania ciepła i energii elektrycznej (np. zasobniki ciepła, akumulatory) – pojemność dobrana do zapotrzebowania obiektu, magazyny energii min. 100 kWh. 
+5)	Parametry, rozmieszczenie i liczba zewnętrznych punktów świetlnych prowadzące do właściwego doboru natężenia oświetlenia pod kątem współpracy z instalacją monitoringu zewnętrznego. 
+6)	Montaż zasilacza awaryjnego ze stabilizatorem napięcia - pojemność dobrana do zapotrzebowania obiektu w uzgodnieniu z Zamawiającym. 
+7) Modernizacja i rozbudowa instalacji monitoringu, alarmowej i kontroli dostępu – w zakresie niezbędnym dla zapewnienia ochrony całej nieruchomości w uzgodnieniu z Zamawiającym. 
+8)	Roboty związane z automatyką budynku (budynki inteligentne) – wyposażenie budynku w system czujników i detektorów oraz jeden, zintegrowany system zarządzania wszystkimi znajdującymi się w budynku instalacjami (w tym np. wyposażenie budynków w takie systemy jak BMS – Building Management System, LCN – system sterowania urządzeniami elektrycznymi, czy KNX – system sterowania budynkiem lub o podobnym zakresie działania) – przy zachowaniu kompatybilności z rozwiązaniami stosowanymi w innych obiektach Zamawiającego w nw. zakresie:
+	- zarządzania automatyką sterowniczą w źródłach ciepła (w tym zastosowanie automatyki pogodowej, czasowego sterowania pracą instalacji, polegającego na nocnym lub weekendowym obniżeniu parametrów pracy, itp.); zastosowanie układów automatycznego sterowania pracą instalacji; 
+	- odczytu liczników ciepła, niezbędnych do prawidłowego prezentowania danych o zużyciu oraz produkcji ciepła i energii elektrycznej, w tym ze źródeł odnawialnych; 
+	- odczytu liczników zużycia wody; 
+	- zarządzania zaworem odcinającym ciśnienie wody; 
+	- zarządzenia wentylacją mechaniczną; 
+	- zarządzania klimatyzacją; 
+	- zarządzania instalacją fotowoltaiczną; 
+	- zarządzania urządzeniami do magazynowania ciepła i energii elektrycznej; 
+	- zarządzania oświetleniem (włącznie z czujnikami ruchu i zmierzchu); 
+	- zarządzania instalacją elektryczną; 
+	- zarządzania automatyką z aluzji / zasłon / rolet z napędami elektrycznymi; 
+	- zarządzania instalacją zasilacza awaryjnego ze stabilizatorem napięcia; 
+	- zarządzania instalacją monitoringu, alarmową i kontroli dostępu; 
+	- zarządzania instalacją bezpieczeństwa pożarowego budynku. 
+9) Działania dostosowawcze w zakresie przygotowania infrastruktury obiektu, pod kątem odporności na zagrożenie użycia broni kinetycznej, jak i tzw. ABC – w zakresie dostosowania części obiektów (np. piwnic) do wymogów rozporządzenia ministra spraw wewnętrznych i administracji z dnia 21 lutego 2025 r. w sprawie kryteriów uznawania obiektów budowlanych albo ich części za budowle ochronne. 
+10) Wszystkie elementy stolarki (okna, drzwi, bramy) w systemie ciepłego montażu. 
+11) Napisy i grafiki zewnętrzne wraz z numerem adresowym – podświetlane z czujnikami zmierzchu – wg odrębnego projektu ustandaryzowanego przez Zamawiającego. 
+12) Opracowane audyty energetyczne i oświetleniowe dla poszczególnych części zamówienia zostały załączone do postępowania przetargowego. 
+Przedmiot zamówienia obejmuje, w szczególności: 
+1) uzyskanie map do celów projektowych (jeśli będzie wymagane), 
+2) uzyskanie wszystkich niezbędnych określonych przepisami prawa: uzgodnień, opinii, decyzji, warunków technicznych, 
+3) wykonanie projektów zagospodarowania terenu, po uprzedniej inwentaryzacji i w uzgodnieniu z Zamawiającym, 
+4) wykonanie projektu architektoniczno-budowlanego, 
+5) wykonanie projektu technicznego dla każdej branży, 
+6) wykonanie specyfikacji technicznych wykonania i odbioru robót budowlanych, 
+7)	wykonanie dokumentacji kosztorysowej zawierającej przedmiar robót oraz kosztorys inwestorski,
+8) uzyskanie akceptacji Zamawiającego; w przypadku braku akceptacji i wniesieniu uwag przez Zamawiającego należy wprowadzić uwagi do dokumentacji i ponownie złożyć do akceptacji do Zamawiającego, 
+9) uzyskanie w imieniu Zamawiającego decyzji o pozwoleniu na budowę/zgłoszenia robót niewymagających pozwolenia na budowę wraz z zaświadczeniem o niewnoszeniu uwag (w zależności od wymogów przepisów prawa), 
+10) odpowiadanie na pytania dot. dokumentacji projektowej zadawane przez wykonawców ubiegających się o udzielenie zamówienia publicznego na zakres robót określony w przedmiocie zamówienia, w terminie wskazanym każdorazowo przez Zamawiającego, a umożliwiającym udzielenie odpowiedzi zgodnie z terminem wskazanym w Prawie zamówień publicznych, 
+11) przekazywanie na żądanie Zamawiającego pisemnej informacji o stanie zaawansowania prac, 
+12) uczestniczenie w spotkaniach konsultacyjnych z udziałem Zamawiającego oraz na terenie objętym przedmiotem zamówienia, 
+13) wykonawca zobowiązany jest do trzykrotnego nieodpłatnego przeszacowania kosztorysów inwestorskich w terminie 7 dni od zgłoszenia przez Zamawiającego konieczności aktualizacji kosztorysów, 
+14) sprawowanie nadzoru autorskiego zgodnie z art. 20 Prawo budowlane. 
+Pozostałe wymagania zostały określone we wzorze umowy stanowiącym Załącznik nr 6A do SWZ.
+Rozwiązania równoważne opisane w SWZ rozdz. IV pkt.2.
+</cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+         <cbc:Note languageID="POL">DOTYCZY OBU CZĘŚCI:
+Zamawiający działając na podstawie art. 139 ust. 2 p.z.p. przewiduje żądanie oświadczenia o którym mowa w art. 125 ust. 1 p.z.p. wyłącznie od wykonawcy, którego oferta zostanie najwyżej oceniona. Przedmiotowe oświadczenie Wykonawca składa w formie Jednolitego Europejskiego Dokumentu Zamówienia (ESPD), stanowiącego Załącznik nr 2 do Rozporządzenia Wykonawczego Komisji (EU) 2016/7 z dnia 5 stycznia 2016 r. ustanawiającego standardowy formularz jednolitego europejskiego dokumentu zamówienia. Informacje zawarte w ESPD stanowią wstępne potwierdzenie, że Wykonawca nie podlega wykluczeniu oraz spełnia warunki udziału w postępowaniu.
+2.	Zamawiający informuje, iż instrukcję wypełnienia ESPD oraz edytowalną wersję formularza ESPD można znaleźć pod adresem: https://www.uzp.gov.pl/baza-wiedzy/prawo-zamowien-publicznych-regulacje/prawo-krajowe/jednolity-europejski-dokument-zamowienia. Zamawiający zaleca wypełnienie ESPD za pomocą serwisu dostępnego pod adresem:  https://espd.uzp.gov.pl/ . W tym celu przygotowany przez Zamawiającego Jednolity Europejski Dokument Zamówienia (ESPD) w formacie *.xml, stanowiący Załącznik nr 2 do SWZ, należy zaimportować do wyżej wymienionego serwisu oraz postępując zgodnie z zamieszczoną tam instrukcją wypełnić wzór elektronicznego formularza ESPD, z zastrzeżeniem poniższych uwag:
+1)	w Części II Sekcji D ESPD (Informacje dotyczące podwykonawców, na których zdolności Wykonawca nie polega) Wykonawca oświadcza czy zamierza zlecić osobom trzecim podwykonawstwo jakiejkolwiek części zamówienia (w przypadku twierdzącej odpowiedzi podaje ponadto, o ile jest to wiadome, wykaz proponowanych podwykonawców), natomiast Wykonawca nie jest zobowiązany do przedstawienia w odniesieniu do tych podwykonawców odrębnych ESPD, zawierających informacje wymagane w Części II Sekcja A i B oraz w Części III;
+2)	w Części IV Zamawiający żąda jedynie ogólnego oświadczenia dotyczącego wszystkich kryteriów kwalifikacji (sekcja α), bez wypełniania poszczególnych Sekcji A, B, C i D;
+3)	Część V (Ograniczenie liczby kwalifikujących się kandydatów) należy pozostawić niewypełnioną.
+3.	Wykaz podmiotowych środków dowodowych dla części zamówienia nr 1 i 2:
+Zamawiający przed wyborem najkorzystniejszej oferty wzywa wykonawcę, którego oferta została najwyżej oceniona, do złożenia w wyznaczonym terminie, nie krótszym niż 10 dni, aktualnych na dzień złożenia podmiotowych środków dowodowych:
+1)	Oświadczenie wykonawcy, w zakresie art. 108 ust. 1 pkt 5 p.z.p., o braku przynależności do tej samej grupy kapitałowej, w rozumieniu ustawy z dnia 16.02.2007 r. o ochronie konkurencji i konsumentów (Dz. U. z 2020 r. poz. 1076 i 1086), z innym wykonawcą, który złożył odrębną ofertę, ofertę częściową lub wniosek o dopuszczenie do udziału w postępowaniu, albo oświadczenia o przynależności do tej samej grupy kapitałowej wraz z dokumentami lub informacjami potwierdzającymi przygotowanie oferty, oferty częściowej lub wniosku o dopuszczenie do udziału w postępowaniu niezależnie od innego wykonawcy należącego do tej samej grupy kapitałowej - załącznik nr 4 do SWZ;
+2)	Odpis lub informacja z Krajowego Rejestru Sądowego lub z Centralnej Ewidencji i Informacji o Działalności Gospodarczej, w zakresie art. 109 ust. 1 pkt 4 p.z.p., sporządzone nie wcześniej niż 3 miesiące przed jej złożeniem, jeżeli odrębne przepisy wymagają wpisu do rejestru lub ewidencji;
+3)	Oświadczenie wykonawcy o aktualności informacji zawartych w oświadczeniu, o którym mowa w art. 125 ust. 1 p.z.p. w zakresie odnoszącym się do podstaw wykluczenia wskazanych w 
+- art. 108 ust. 1 pkt 3 PZP, 
+− art. 108 ust. 1 pkt 4 PZP dotyczących orzeczenia zakazu ubiegania się o zamówienie publiczne tytułem środka zapobiegawczego, 
+− art. 108 ust. 1 pkt 5 PZP dotyczących zawarcia z innymi wykonawcami porozumienia mającego na celu zakłócenie konkurencji, 
+− art. 108 ust. 1 pkt 6 PZP,
+- art. 109 ust. 1 pkt 7 p.z.p.  
+wzór oświadczenia stanowi Załącznik nr 5 do SWZ.
+4)	Informacja z Krajowego Rejestru Karnego w zakresie dotyczącym podstaw wykluczenia wskazanych w art. 108 ust. 1 pkt 1,2 i 4 (dotyczącej orzeczenia zakazu ubiegania się o zamówienie publiczne tytułem środka karnego), p.z.p. sporządzona nie wcześniej niż 6 miesięcy przed jej złożeniem.
+5) Wykaz usług wykonanych, a w przypadku świadczeń powtarzających się lub ciągłych również wykonywanych, w okresie ostatnich 3 lat, a jeżeli okres prowadzenia działalności jest krótszy - w tym okresie, wraz z podaniem ich wartości, przedmiotu, dat wykonania i podmiotów, na rzecz których usługi zostały wykonane lub są wykonywane, oraz załączeniem dowodów określających, czy te usługi zostały wykonane lub są wykonywane należycie, przy czym dowodami, o których mowa, są referencje bądź inne dokumenty sporządzone przez podmiot, na rzecz którego usługi zostały wykonane, a w przypadku świadczeń powtarzających się lub ciągłych są wykonywane, a jeżeli wykonawca z przyczyn niezależnych od niego nie jest w stanie uzyskać tych dokumentów - oświadczenie wykonawcy; w przypadku świadczeń powtarzających się lub ciągłych nadal wykonywanych referencje bądź inne dokumenty potwierdzające ich należyte wykonywanie powinny być wystawione w okresie ostatnich 3 miesięcy - załącznik nr 7 do SWZ,
+6)  wykaz osób, skierowanych przez wykonawcę do realizacji zamówienia publicznego, w szczególności odpowiedzialnych za świadczenie usług wraz z informacjami na temat ich kwalifikacji zawodowych, uprawnień, doświadczenia i wykształcenia niezbędnych do wykonania zamówienia publicznego, a także zakresu wykonywanych przez nie czynności oraz informacją o podstawie do dysponowania tymi osobami – załącznik nr 8 do SWZ.
+4. Jeżeli wykonawca ma siedzibę lub miejsce zamieszkania lub miejsce zamieszkania ma osoba, której dotyczy informacja albo dokument, poza granicami Rzeczypospolitej Polskiej, zamiast:
+a) informacji z Krajowego Rejestru Karnego, o której mowa w pkt. 9.3.4) SWZ składa informację z odpowiedniego rejestru, takiego jak rejestr sądowy, albo, w przypadku braku takiego rejestru, inny równoważny dokument wydany przez właściwy organ sądowy lub administracyjny kraju, w którym wykonawca ma siedzibę lub miejsce zamieszkania lub miejsce zamieszkania ma osoba, której dotyczy informacja albo dokument, w zakresie, o którym mowa w 9.3.4) SWZ, 
+b) zamiast odpisu albo informacji z Krajowego Rejestru Sądowego lub z Centralnej Ewidencji i Informacji o Działalności Gospodarczej, o których mowa w pkt. 9.3.2)   składa dokument lub dokumenty wystawione w kraju, w którym wykonawca ma siedzibę lub miejsce zamieszkania, potwierdzające odpowiednio, że: nie otwarto jego likwidacji, nie ogłoszono upadłości, jego aktywami nie zarządza likwidator lub sąd, nie zawarł układu z wierzycielami, jego działalność gospodarcza nie jest zawieszona ani nie znajduje się on w innej tego rodzaju sytuacji wynikającej z podobnej procedury przewidzianej w przepisach miejsca wszczęcia tej procedury. 
+5. Jeżeli w kraju, w którym Wykonawca ma siedzibę lub miejsce zamieszkania, lub miejsce zamieszkania ma osoba, której dokument dotyczy nie wydaje się dokumentów, o których mowa w pkt 9.3.2) i 9.3.4) SWZ lub gdy dokumenty te nie odnoszą się do wszystkich przypadków, o których mowa w art. 108 ust. 1 pkt 1, 2 i 4, zastępuje się je w całości lub części dokumentem zawierającym odpowiednio oświadczenie Wykonawcy, ze wskazaniem osoby albo osób uprawnionych do jego reprezentacji lub oświadczenie osoby której dokument miał dotyczyć, złożone pod przysięgą, lub, jeżeli w kraju, w którym wykonawca ma siedzibę lub miejsce zamieszkania lub miejsce zamieszkania ma osoba, której dokument miał dotyczyć, nie ma przepisów o oświadczeniu pod przysięgą, złożone przed organem sądowym lub administracyjnym, notariuszem, organem samorządu zawodowego lub gospodarczego, właściwym ze względu na siedzibę lub miejsce zamieszkania wykonawcy lub miejsce zamieszkania osoby, której dokument miał dotyczyć. Dokument, o którym mowa powyżej, powinien być wystawiony nie wcześniej niż 3 miesiące przed upływem terminu składania ofert.
+6. Dokument, o którym mowa w pkt. 4a), powinien być wystawiony nie wcześniej niż 6 miesięcy przed jego złożeniem. Dokumenty, o których mowa w pkt. 4b, powinny być wystawione nie wcześniej niż 3 miesiące przed ich złożeniem.
+7.	Zamawiający nie wzywa do złożenia podmiotowych środków dowodowych, jeżeli może je uzyskać za pomocą bezpłatnych i ogólnodostępnych baz danych, w szczególności rejestrów publicznych w rozumieniu ustawy z dnia 17.02.2005 r. o informatyzacji działalności podmiotów realizujących zadania publiczne, o ile wykonawca wskazał w jednolitym dokumencie dane umożliwiające dostęp do tych środków, a także wówczas gdy podmiotowym środkiem dowodowym jest oświadczenie, którego treść odpowiada zakresowi oświadczenia, o którym mowa w art. 125 ust. 1 ustawy PZP. Wykonawca nie jest zobowiązany do złożenia podmiotowych środków dowodowych, które zamawiający posiada, jeżeli wykonawca wskaże te środki oraz potwierdzi ich prawidłowość i aktualność.
+8.	W zakresie nieuregulowanym ustawą p.z.p. lub niniejszą SWZ do oświadczeń i dokumentów składanych przez Wykonawcę w postępowaniu, zastosowanie mają przepisy rozporządzenia Ministra Rozwoju, Pracy i Technologii z dnia 23 grudnia 2020 r. w sprawie podmiotowych środków dowodowych oraz innych dokumentów lub oświadczeń, jakich może żądać zamawiający od wykonawcy (Dz. U. z 2020 r. poz. 2415; zwanym dalej "r.p.ś.d.") oraz przepisy rozporządzenia Prezesa Rady Ministrów z dnia 30 grudnia 2020 r. w sprawie sposobu sporządzania i przekazywania informacji oraz wymagań technicznych dla dokumentów elektronicznych oraz środków komunikacji elektronicznej w postępowaniu o udzielenie zamówienia publicznego lub konkursie  (Dz.U. z 2020 r. poz. 2452 zwanym dalej "r.d.e.").
+9. Wykaz przedmiotowych środków dowodowych.
+Zamawiający nie wymaga złożenia przez Wykonawcę przedmiotowych środków dowodowych.</cbc:Note>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">71221000</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">71248000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:RealizedLocation>
+            <cbc:Description languageID="POL">Termomodernizacja budynków Niepublicznej Szkoły Podstawowej im. Tadeusza Kościuszki ul. Tadeusza Kościuszki 25, 63-200 Jarocin.</cbc:Description>
+            <cac:Address>
+               <cbc:CountrySubentityCode listName="nuts">PL416</cbc:CountrySubentityCode>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+         <cac:PlannedPeriod>
+            <cbc:DurationMeasure unitCode="DAY">150</cbc:DurationMeasure>
+         </cac:PlannedPeriod>
+         <cac:ContractExtension>
+            <cbc:OptionsDescription languageID="POL">Brak opcji.</cbc:OptionsDescription>
+         </cac:ContractExtension>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0002</cbc:ID>
+      <cac:TenderingTerms>
+         <cbc:FundingProgramCode listName="eu-funded">eu-funds</cbc:FundingProgramCode>
+         <cac:AwardingTerms>
+            <cac:AwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>60</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                  <cbc:Description languageID="POL">Punkty przyznane za kryterium „CENA – C” będą liczone w następujący sposób:
+liczba punktów „C”  =	(C min/Cbad)X waga kryterium x 100
+gdzie:
+Cmin – najniższa cena brutto wśród ważnych ofert,
+Cbad – cena brutto badanej oferty.
+</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>40</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+                  <cbc:Description languageID="POL">
+Sposób przydzielania punktów w kryterium „Gwarancja jakości i rękojmia”:
+Punkty przyznane za kryterium „Gwarancja jakości i rękojmia” będą liczone 
+w następujący sposób:
+Minimalny okres gwarancji jakości i rękojmi: 36 miesięcy.
+Maksymalny okres gwarancji jakości i rękojmi: 60 miesięcy.
+Za zadeklarowanie okresu gwarancji jakości i rękojmi, zostaną przyznane punkty według następujących zasad:
+• okres gwarancji jakości i rękojmi 36 miesięcy – 0 pkt;
+• okres gwarancji jakości i rękojmi 42 miesiące – 10 pkt;
+• okres gwarancji jakości i rękojmi 48 miesięcy – 20 pkt;
+• okres gwarancji jakości i rękojmi 54 miesiące – 30 pkt;
+• okres gwarancji jakości i rękojmi 60 miesięcy – 40 pkt.
+	UWAGA: Wykonawca uzyska punkty w przypadku wpisania w Formularzu Oferty (w wykropkowanym miejscu) terminu gwarancji jakości i rękojmi określonego w miesiącach. 
+Wykonawca zobowiązany jest udzielić gwarancji jakości i rękojmi na minimum 
+36 miesięcy. W przypadku braku wypełnienia oświadczenia w Formularzu Oferty lub wskazania innego okresu niż określone powyżej, Zamawiający uzna, iż Wykonawca deklaruje termin gwarancji jakości i rękojmi najkrótszy, tj. 36 miesięcy i przyzna mu 
+0 punktów w tym kryterium.
+	Wykonawca może wydłużyć maksymalnie termin gwarancji jakości i rękojmi do 
+60 miesięcy. Wydłużenie jeszcze bardziej tego terminu nie spowoduje naliczenia dodatkowych punktów za to kryterium.
+</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+            </cac:AwardingCriterion>
+         </cac:AwardingTerms>
+         <cac:AppealTerms>
+            <cac:PresentationPeriod>
+               <cbc:Description languageID="POL">Środki ochrony prawnej określone w niniejszym dziale przysługują wykonawcy, uczestnikowi konkursu oraz innemu podmiotowi, jeżeli ma lub miał interes w uzyskaniu zamówienia lub nagrody w konkursie oraz poniósł lub może ponieść szkodę w wyniku naruszenia przez zamawiającego przepisów ustawy p.z.p. 
+2.	Środki ochrony prawnej wobec ogłoszenia wszczynającego postępowanie o udzielenie zamówienia lub ogłoszenia o konkursie oraz dokumentów zamówienia przysługują również organizacjom wpisanym na listę, o której mowa w art. 469 pkt 15 p.z.p. oraz Rzecznikowi Małych i Średnich Przedsiębiorców.
+3.	Odwołanie przysługuje na:
+1)	niezgodną z przepisami ustawy czynność Zamawiającego, podjętą w postępowaniu o udzielenie zamówienia, w tym na projektowane postanowienie umowy;
+2)	zaniechanie czynności w postępowaniu o udzielenie zamówienia do której zamawiający był obowiązany na podstawie ustawy;
+4.	Odwołanie wnosi się do Prezesa Izby. Odwołujący przekazuje kopię odwołania zamawiającemu przed upływem terminu do wniesienia odwołania w taki sposób, aby mógł on zapoznać się z jego treścią przed upływem tego terminu.
+5.	Odwołanie wobec treści ogłoszenia lub treści SWZ wnosi się w terminie 10 dni od dnia publikacji ogłoszenia w Dzienniku Urzędowym Unii Europejskiej lub zamieszczenia dokumentów zamówienia na stronie internetowej.
+6.	Odwołanie wnosi się w terminie:
+1)	10 dni od dnia przekazania informacji o czynności zamawiającego stanowiącej podstawę jego wniesienia, jeżeli informacja została przekazana przy użyciu środków komunikacji elektronicznej,
+2)	15 dni od dnia przekazania informacji o czynności zamawiającego stanowiącej podstawę jego wniesienia, jeżeli informacja została przekazana w sposób inny niż określony w pkt 1).
+7.	Odwołanie w przypadkach innych niż określone w pkt 5 i 6 wnosi się w terminie 10 dni od dnia, w którym powzięto lub przy zachowaniu należytej staranności można było powziąć wiadomość o okolicznościach stanowiących podstawę jego wniesienia
+8.	Na orzeczenie Izby oraz postanowienie Prezesa Izby, o którym mowa w art. 519 ust. 1 ustawy p.z.p., stronom oraz uczestnikom postępowania odwoławczego przysługuje skarga do sądu.
+9.	W postępowaniu toczącym się wskutek wniesienia skargi stosuje się odpowiednio przepisy ustawy z dnia 17.11.1964 r. - Kodeks postępowania cywilnego o apelacji, jeżeli przepisy Rozdziału 3 Działu IX pzp nie stanowią inaczej.
+10.	Skargę wnosi się do Sądu Okręgowego w Warszawie - sądu zamówień publicznych, zwanego dalej "sądem zamówień publicznych".
+11.	Skargę wnosi się za pośrednictwem Prezesa Izby, w terminie 14 dni od dnia doręczenia orzeczenia Izby lub postanowienia Prezesa Izby, o którym mowa w art. 519 ust. 1 ustawy p.z.p., przesyłając jednocześnie jej odpis przeciwnikowi skargi. Złożenie skargi w placówce pocztowej operatora wyznaczonego w rozumieniu ustawy z dnia 23.11.2012 r. - Prawo pocztowe albo wysłanie na adres do doręczeń elektronicznych, o którym mowa w art. 2 pkt 1 ustawy z dnia 18 listopada 2020 r. o doręczeniach elektronicznych,  jest równoznaczne z jej wniesieniem.
+12.	Prezes Izby przekazuje skargę wraz z aktami postępowania odwoławczego do sądu zamówień publicznych w terminie 7 dni od dnia jej otrzymania.
+13. Szczegółowe informacje dotyczące środków ochrony prawnej określone są w Dziale IX „Środki ochrony prawnej” ustawy Prawo zamówień publicznych.</cbc:Description>
+            </cac:PresentationPeriod>
+            <cac:AppealInformationParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealInformationParty>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+         </cac:AppealTerms>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <cac:AuctionTerms>
+            <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+         </cac:AuctionTerms>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:ID schemeName="InternalID">WGK-RIK.271.1.30.2025 - CZĘŚĆ ZAMÓWIENIA NR 2</cbc:ID>
+         <cbc:Name languageID="POL">Wykonanie pełnobranżowej dokumentacji projektowej na termomodernizację szkół w gminie Jarocin - Termomodernizacja budynków Zespołu Szkół nr 4 im. Władysława Broniewskiego w Jarocinie ul. Marii Curie-Skłodowskiej 2A, 4, 63-200 Jarocin</cbc:Name>
+         <cbc:Description languageID="POL">Zadanie nr 2 - Termomodernizacja budynków Zespołu Szkół nr 4 im. Władysława Broniewskiego w Jarocinie ul. Marii Curie-Skłodowskiej 2A, 4, 63-200 Jarocin, które dotyczy przygotowania dokumentacji projektowej techniczno-wykonawczej dla budynków ujętych w audycie energetycznym Zespołu Szkół nr 4 im. Władysława Broniewskiego w Jarocinie wraz z dostosowaniem do obowiązujących przepisów prawa.
+Zamawiający poniżej przedstawia ogólne wytyczne dla realizacji przedmiotu zamówienia: 
+1) Przez instalację uzdatniania wody rozumie się odżelaziacz / odmanganiacz oraz filtry sznurkowe itp. 
+2) Dostosowanie instalacji wodociągowej do zasilania z własnego ujęcia wód podziemnych wg uzgodnienia z Przedsiębiorstwem Wodociągów i Kanalizacji Sp. z o.o. w Jarocinie. 
+3) Zakres ew. zastosowania klimatyzacji – w uzgodnieniu z Zamawiającym. 
+4)	Montaż urządzeń do magazynowania ciepła i energii elektrycznej (np. zasobniki ciepła, akumulatory) – pojemność dobrana do zapotrzebowania obiektu, magazyny energii min. 100 kWh. 
+5)	Parametry, rozmieszczenie i liczba zewnętrznych punktów świetlnych prowadzące do właściwego doboru natężenia oświetlenia pod kątem współpracy z instalacją monitoringu zewnętrznego. 
+6)	Montaż zasilacza awaryjnego ze stabilizatorem napięcia - pojemność dobrana do zapotrzebowania obiektu w uzgodnieniu z Zamawiającym. 
+7) Modernizacja i rozbudowa instalacji monitoringu, alarmowej i kontroli dostępu – w zakresie niezbędnym dla zapewnienia ochrony całej nieruchomości w uzgodnieniu z Zamawiającym. 
+8)	Roboty związane z automatyką budynku (budynki inteligentne) – wyposażenie budynku w system czujników i detektorów oraz jeden, zintegrowany system zarządzania wszystkimi znajdującymi się w budynku instalacjami (w tym np. wyposażenie budynków w takie systemy jak BMS – Building Management System, LCN – system sterowania urządzeniami elektrycznymi, czy KNX – system sterowania budynkiem lub o podobnym zakresie działania) – przy zachowaniu kompatybilności z rozwiązaniami stosowanymi w innych obiektach Zamawiającego w nw. zakresie:
+	- zarządzania automatyką sterowniczą w źródłach ciepła (w tym zastosowanie automatyki pogodowej, czasowego sterowania pracą instalacji, polegającego na nocnym lub weekendowym obniżeniu parametrów pracy, itp.); zastosowanie układów automatycznego sterowania pracą instalacji; 
+	- odczytu liczników ciepła, niezbędnych do prawidłowego prezentowania danych o zużyciu oraz produkcji ciepła i energii elektrycznej, w tym ze źródeł odnawialnych; 
+	- odczytu liczników zużycia wody; 
+	- zarządzania zaworem odcinającym ciśnienie wody; 
+	- zarządzenia wentylacją mechaniczną; 
+	- zarządzania klimatyzacją; 
+	- zarządzania instalacją fotowoltaiczną; 
+	- zarządzania urządzeniami do magazynowania ciepła i energii elektrycznej; 
+	- zarządzania oświetleniem (włącznie z czujnikami ruchu i zmierzchu); 
+	- zarządzania instalacją elektryczną; 
+	- zarządzania automatyką z aluzji / zasłon / rolet z napędami elektrycznymi; 
+	- zarządzania instalacją zasilacza awaryjnego ze stabilizatorem napięcia; 
+	- zarządzania instalacją monitoringu, alarmową i kontroli dostępu; 
+	- zarządzania instalacją bezpieczeństwa pożarowego budynku. 
+9) Działania dostosowawcze w zakresie przygotowania infrastruktury obiektu, pod kątem odporności na zagrożenie użycia broni kinetycznej, jak i tzw. ABC – w zakresie dostosowania części obiektów (np. piwnic) do wymogów rozporządzenia ministra spraw wewnętrznych i administracji z dnia 21 lutego 2025 r. w sprawie kryteriów uznawania obiektów budowlanych albo ich części za budowle ochronne. 
+10) Wszystkie elementy stolarki (okna, drzwi, bramy) w systemie ciepłego montażu. 
+11) Napisy i grafiki zewnętrzne wraz z numerem adresowym – podświetlane z czujnikami zmierzchu – wg odrębnego projektu ustandaryzowanego przez Zamawiającego. 
+12) Opracowane audyty energetyczne i oświetleniowe dla poszczególnych części zamówienia zostały załączone do postępowania przetargowego. 
+Przedmiot zamówienia obejmuje, w szczególności: 
+1) uzyskanie map do celów projektowych (jeśli będzie wymagane), 
+2) uzyskanie wszystkich niezbędnych określonych przepisami prawa: uzgodnień, opinii, decyzji, warunków technicznych, 
+3) wykonanie projektów zagospodarowania terenu, po uprzedniej inwentaryzacji i w uzgodnieniu z Zamawiającym, 
+4) wykonanie projektu architektoniczno-budowlanego, 
+5) wykonanie projektu technicznego dla każdej branży, 
+6) wykonanie specyfikacji technicznych wykonania i odbioru robót budowlanych, 
+7)	wykonanie dokumentacji kosztorysowej zawierającej przedmiar robót oraz kosztorys inwestorski,
+8) uzyskanie akceptacji Zamawiającego; w przypadku braku akceptacji i wniesieniu uwag przez Zamawiającego należy wprowadzić uwagi do dokumentacji i ponownie złożyć do akceptacji do Zamawiającego, 
+9) uzyskanie w imieniu Zamawiającego decyzji o pozwoleniu na budowę/zgłoszenia robót niewymagających pozwolenia na budowę wraz z zaświadczeniem o niewnoszeniu uwag (w zależności od wymogów przepisów prawa), 
+10) odpowiadanie na pytania dot. dokumentacji projektowej zadawane przez wykonawców ubiegających się o udzielenie zamówienia publicznego na zakres robót określony w przedmiocie zamówienia, w terminie wskazanym każdorazowo przez Zamawiającego, a umożliwiającym udzielenie odpowiedzi zgodnie z terminem wskazanym w Prawie zamówień publicznych, 
+11) przekazywanie na żądanie Zamawiającego pisemnej informacji o stanie zaawansowania prac, 
+12) uczestniczenie w spotkaniach konsultacyjnych z udziałem Zamawiającego oraz na terenie objętym przedmiotem zamówienia, 
+13) wykonawca zobowiązany jest do trzykrotnego nieodpłatnego przeszacowania kosztorysów inwestorskich w terminie 7 dni od zgłoszenia przez Zamawiającego konieczności aktualizacji kosztorysów, 
+14) sprawowanie nadzoru autorskiego zgodnie z art. 20 Prawo budowlane. 
+Pozostałe wymagania zostały określone we wzorze umowy stanowiącym Załącznik nr 6B do SWZ.
+Rozwiązania równoważne opisane w SWZ rozdz. IV pkt.2.
+</cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+         <cbc:Note languageID="POL">Komunikacja w postępowaniu o udzielenie zamówienia.
+1.1.	 Komunikacja w postępowaniu o udzielenie zamówienia, w tym składanie ofert,  wymiana informacji oraz przekazywanie dokumentów lub oświadczeń między zamawiającym a wykonawcą, odbywa się przy użyciu środków komunikacji elektronicznej. Przez środki komunikacji elektronicznej rozumie się środki komunikacji elektronicznej zdefiniowane w ustawie z dnia 18 lipca 2002 r. o świadczeniu usług drogą elektroniczną (Dz. U. z 2019 r. poz. 123 i 730).
+1.2.	Dokumentacja postępowania została opublikowana na Platformie Zakupowej. 
+W celu zapoznania się z dokumentacją postępowania:
+1)	przed upływem terminu składania ofert Wykonawca w menu po lewej stronie wybiera zakładkę ,,Lista ogłoszeń o postępowaniach”, następnie zakładkę ,,Aktualne”, wyszukuje przedmiotowe postępowanie i klika w wybrany link, przechodząc do obszaru postępowania.
+2)	po upływie terminu składania ofert Wykonawca w menu po lewej stronie wybiera zakładkę ,,Lista ogłoszeń o postępowaniach”, następnie zakładkę ,,Archiwalne”, wyszukuje przedmiotowe postępowanie i klika w wybrany link, przechodząc do obszaru postępowania.
+1.3.	Zamawiający dopuszcza możliwość przekazywania sobie przez strony  postępowania oświadczeń, wniosków, zawiadomień oraz informacji elektronicznie przy użyciu Platformy Zakupowej MARKETPLANET pod adresem:  https://jarocin.ezamawiajacy.pl lub na adres e-mail: kaniewska@jarjarocin.pl. 
+1.4.	Oświadczenia, wnioski, zawiadomienia lub informacje, które wpłyną do Zamawiającego, uważa się za dokumenty złożone w terminie, jeśli ich czytelna treść dotrze do Zamawiającego przed upływem tego terminu. Za datę wpływu oświadczeń, wniosków, zawiadomień oraz informacji przekazywanych na adres 
+e-mail Zamawiającego przyjmuje się datę dostarczenia wiadomości na adres e-mail Zamawiającego. Za datę wpływu oświadczeń, wniosków, zawiadomień oraz informacji w przypadku skorzystania z Platformy Zakupowej przyjmuje się datę ich złożenia na Platformie.
+1.5.	Szczegółowe zasady korzystania z Platformy Zakupowej znajdują się 
+w zakładce „Regulacje i procedury procesu zakupowego” - Instrukcja dla Wykonawcy.
+1.6.	Sposób sporządzenia dokumentów elektronicznych, oświadczeń lub elektronicznych kopii dokumentów lub oświadczeń musi być zgody 
+z wymaganiami określonymi w rozporządzeniu Prezesa Rady Ministrów z dnia 30 grudnia 2020 r. w sprawie sposobu sporządzania i przekazywania informacji oraz wymagań technicznych dla dokumentów elektronicznych oraz środków komunikacji elektronicznej oraz środków komunikacji elektronicznej w postępowaniu o udzielenie zamówienia publicznego lub konkursie oraz rozporządzeniu Ministra Rozwoju, Pracy i Technologii z dnia 23 grudnia 2020 r. w sprawie podmiotowych środków dowodowych oraz innych dokumentów lub oświadczeń, jakich może żądać zamawiający od wykonawcy. 
+1.7. W przedmiotowym postępowaniu komunikacja między Zamawiającym a Wykonawcami odbywa się przy użyciu następujących środków komunikacji elektronicznej:
+1)	Platformy do obsługi postępowań przetargowych, dostępnej pod adresem: https://jarocin.ezamawiajacy.pl;
+2)	poczty elektronicznej: kaniewska@jarjarocin.pl;  
+- z zastrzeżeniem, iż oferta, może zostać przekazana wyłącznie za pomocą powyższej Platformy.
+2.	Ogólne zasady korzystania z Platformy:
+1)	zgłoszenie do postępowania wymaga zalogowania Wykonawcy do Systemu na subdomenie; https://jarocin.ezamawiajacy.pl, lub https://oneplace.marketplanet.pl.
+2)	Wykonawca po wybraniu opcji „przystąp do postępowania” zostanie przekierowany do strony https://oneplace.marketplanet.pl, gdzie zostanie powiadomiony o możliwości zalogowania lub do założenia bezpłatnego konta. Wykonawca zakłada konto wykonując kroki procesu rejestracyjnego; podaje adres e-mail, ustanawia hasło, następnie powtarza hasło, wpisuje kod z obrazka, akceptuje regulamin, klika polecenie „zarejestruj się”. 
+3)	Rejestracja konta następuje automatycznie poprzez:
+a)	kontakt z numerem telefonu podanym w potwierdzeniu
+lub
+b)	jeżeli użytkownik nie skontaktuje się telefonicznie konto zostanie aktywowane w ciągu maksymalnie 6 godzin roboczych
+4)	Po założeniu konta Wykonawca ma możliwość złożenia Oferty w postępowaniu. 
+3.	Korzystanie z Platformy jest bezpłatne. 
+4.	Zgodnie z § 11 ust. 2 r.d.e. Zamawiający udostępnia poniżej informacje na temat specyfikacji połączenia, formatu przesyłanych danych oraz szyfrowania i oznaczania czasu przekazania i odbioru danych. Wymagania techniczne związane z korzystaniem z Platformy:
+1) Wymagania sprzętowo – aplikacyjne: 
+- stały dostęp do sieci Internet o gwarantowanej przepustowości nie mniejszej niż 512 kb/s,
+- komputer klasy PC lub MAC, spełniający wymagania zainstalowanego systemu operacyjnego oraz wymagania używanej przeglądarki internetowej;
+- zainstalowana dowolna przeglądarka internetowa w wersji wspieranej przez producenta obsługująca TLS 1.2;
+- zainstalowany program Acrobat Reader lub inny obsługujący pliki w formacie .pdf.
+2)	Zamawiający określa dopuszczalne formaty przesyłanych danych tj. plików o wielkości do 2 GB w txt, rtf, pdf, xps, odt, ods, odp, doc, xls, ppt, docx, xlsx, pptx, csv, jpg, jpeg, tif, tiff ,geotiff, png, svg, wav, mp3, avi, mpg, mpeg, mp4, m4a, mpeg4, ogg, ogv, zip, tar, gz, gzip, 7z, html, xhtml, css, xml, xsd, gml, rng, xsl, xslt, tsl, xmlsig, xades, pades, cades, asic, asics, sig, xmlenc, dxf, ath, prd.
+3)	Zamawiający określa informacje na temat kodowania i czasu odbioru danych tj.:
+Plik załączony przez Wykonawcę na Platformie Zakupowej i zapisany, widoczny jest w Systemie, jako zaszyfrowany – format kodowania UTF8. Możliwość otworzenia pliku dostępna jest dopiero po odszyfrowaniu przez Zamawiającego po upływie terminu otwarcia ofert.
+4)	Oznaczenie czasu odbioru danych przez Platformę stanowi datę oraz dokładny czas (hh:mm:ss) generowany wg. czasu lokalnego serwera synchronizowanego z Głównym Urzędem Miar, który udostępnia poprzez Internet usługę umożliwiającą synchronizację czasu w systemach komputerowych z czasem urzędowym obowiązującym w Polsce.
+5)	Zamawiający informuje, iż w przypadku jakichkolwiek wątpliwości związanych z zasadami korzystania z Platformy, Wykonawca winien skontaktować się z dostawcą rozwiązania teleinformatycznego Platforma zakupowa Jarocińskiej Agencji Rozwoju Sp. z o.o. tel. +48 22 257 22 23 (infolinia dostępna w dni robocze, w godzinach 9.00-17.00) e-mail: oneplace@marketplanet.pl
+5.	Osobą uprawnioną przez Zamawiającego do porozumiewania się z Wykonawcami jest:
+1)	w zakresie proceduralnym:
+Magdalena Kaniewska, Ewelina Gawrońska tel. 535 157 419.
+2)	w zakresie merytorycznym: 
+Pani Daria Bartkowiak, tel. 62 749 95 51.
+Joanna Banaszak tel. 62 749 95 36.
+6.	W korespondencji kierowanej do Zamawiającego Wykonawcy powinni posługiwać się numerem przedmiotowego postępowania.
+7.	Wykonawca może zwrócić się do Zamawiającego z wnioskiem o wyjaśnienie treści SWZ. Zamawiający jest obowiązany udzielić wyjaśnień niezwłocznie, jednak nie później niż na 4 dni przed upływem terminu składania ofert pod warunkiem że wniosek o wyjaśnienie treści SWZ wpłynął do zamawiającego nie później niż na 7 dni przed upływem terminu składania ofert. Jeżeli zamawiający nie udzieli wyjaśnień w terminie, o którym mowa poprzednim zdaniu, przedłuża termin składania ofert o czas niezbędny do zapoznania się wszystkich zainteresowanych wykonawców z wyjaśnieniami niezbędnymi do należytego przygotowania i złożenia ofert.  Przedłużenie terminu składania ofert nie wpływa na bieg terminu składania wniosku o wyjaśnienie treści SWZ. W przypadku gdy wniosek o wyjaśnienie treści SWZ nie wpłynął w terminie wskazanym w pierwszym zdaniu, Zamawiający nie ma obowiązku udzielania wyjaśnień SWZ oraz obowiązku przedłużenia terminu składania ofert.
+8.	W uzasadnionych przypadkach Zamawiający może przed upływem terminu składania ofert zmienić treść SWZ.
+</cbc:Note>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">71221000</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">71248000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:RealizedLocation>
+            <cbc:Description languageID="POL">Termomodernizacja budynków Zespołu Szkół nr 4 im. Władysława Broniewskiego w Jarocinie ul. Marii Curie-Skłodowskiej 2A, 4, 63-200 Jarocin
+</cbc:Description>
+            <cac:Address>
+               <cbc:CountrySubentityCode listName="nuts">PL416</cbc:CountrySubentityCode>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+         <cac:PlannedPeriod>
+            <cbc:DurationMeasure unitCode="DAY">150</cbc:DurationMeasure>
+         </cac:PlannedPeriod>
+         <cac:ContractExtension>
+            <cbc:OptionsDescription languageID="POL">Brak opcji.</cbc:OptionsDescription>
+         </cac:ContractExtension>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+   <cac:TenderResult>
+      <cbc:AwardDate>2000-01-01Z</cbc:AwardDate>
+   </cac:TenderResult>
+</ContractAwardNotice>

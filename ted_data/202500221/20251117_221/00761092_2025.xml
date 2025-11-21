@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractAwardNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractAwardNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:hilma="urn:hanselHilma:NationalNoticeExtension">
+  <ext:UBLExtensions>
+    <ext:UBLExtension>
+      <ext:ExtensionContent>
+        <efext:EformsExtension>
+          <efac:NoticeResult>
+            <cbc:TotalAmount currencyID="EUR">602500</cbc:TotalAmount>
+            <efac:LotResult>
+              <cbc:ID schemeName="result">RES-0000</cbc:ID>
+              <cbc:TenderResultCode listName="winner-selection-status">selec-w</cbc:TenderResultCode>
+              <efac:LotTender>
+                <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+              </efac:LotTender>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">tenders</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>1</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">part-req</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>1</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:SettledContract>
+                <cbc:ID schemeName="contract">CON-0001</cbc:ID>
+              </efac:SettledContract>
+              <efac:TenderLot>
+                <cbc:ID schemeName="Lot">LOT-0000</cbc:ID>
+              </efac:TenderLot>
+            </efac:LotResult>
+            <efac:LotTender>
+              <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+              <cac:LegalMonetaryTotal>
+                <cbc:PayableAmount currencyID="EUR">602500</cbc:PayableAmount>
+              </cac:LegalMonetaryTotal>
+              <efac:SubcontractingTerm>
+                <efbc:TermCode listName="applicability">no</efbc:TermCode>
+              </efac:SubcontractingTerm>
+              <efac:TenderingParty>
+                <cbc:ID>TPA-0001</cbc:ID>
+              </efac:TenderingParty>
+              <efac:TenderLot>
+                <cbc:ID schemeName="Lot">LOT-0000</cbc:ID>
+              </efac:TenderLot>
+              <efac:TenderReference>
+                <cbc:ID>Honeywell Oy</cbc:ID>
+              </efac:TenderReference>
+            </efac:LotTender>
+            <efac:SettledContract>
+              <cbc:ID schemeName="contract">CON-0001</cbc:ID>
+              <cbc:IssueDate>2025-10-31+02:00</cbc:IssueDate>
+              <efac:ContractReference>
+                <cbc:ID>2025-030374 (CON-0001)</cbc:ID>
+              </efac:ContractReference>
+              <efac:LotTender>
+                <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+              </efac:LotTender>
+            </efac:SettledContract>
+            <efac:TenderingParty>
+              <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+              <efac:Tenderer>
+                <cbc:ID schemeName="organization">ORG-0004</cbc:ID>
+              </efac:Tenderer>
+            </efac:TenderingParty>
+          </efac:NoticeResult>
+          <efac:NoticeSubType>
+            <cbc:SubTypeCode listName="notice-subtype">29</cbc:SubTypeCode>
+          </efac:NoticeSubType>
+          <efac:Organizations>
+            <efac:Organization>
+              <efbc:AcquiringCPBIndicator>false</efbc:AcquiringCPBIndicator>
+              <efac:Company>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <cbc:Name languageID="FIN">Turun seudun puhdistamo Oy</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>Polttimonkatu 2</cbc:StreetName>
+                  <cbc:CityName>Turku</cbc:CityName>
+                  <cbc:PostalZone>20100</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">FI1C1</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">FIN</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID>1774713-5</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Telephone>+358407126232</cbc:Telephone>
+                  <cbc:ElectronicMail>jyrki.haapasaari@turunseudunpuhdistamo.fi</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+            <efac:Organization>
+              <efac:Company>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <cbc:Name languageID="FIN">Hansel Oy (Hilma)</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>Mannerheiminaukio 1 A</cbc:StreetName>
+                  <cbc:CityName>Helsinki</cbc:CityName>
+                  <cbc:PostalZone>00100</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts-lvl3">FI1B1</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">FIN</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID>FI09880841</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Telephone>+358 295563630</cbc:Telephone>
+                  <cbc:ElectronicMail>tekninen@hankintailmoitukset.fi</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+            <efac:Organization>
+              <efac:Company>
+                <efbc:CompanySizeCode listName="economic-operator-size">sme</efbc:CompanySizeCode>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0004</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <cbc:Name languageID="FIN">Honeywell Oy</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>Wredenkatu 2</cbc:StreetName>
+                  <cbc:CityName>VARKAUS</cbc:CityName>
+                  <cbc:PostalZone>78250</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">FI1DB</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">FIN</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID>0195809-3</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Telephone>+358207522000</cbc:Telephone>
+                  <cbc:ElectronicMail>finland.info@honeywell.com</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+            <efac:Organization>
+              <efac:Company>
+                <cbc:WebsiteURI>http://www.oikeus.fi/markkinaoikeus</cbc:WebsiteURI>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <cbc:Name languageID="FIN">Markkinaoikeus</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>Radanrakentajantie 5</cbc:StreetName>
+                  <cbc:CityName>Helsinki</cbc:CityName>
+                  <cbc:PostalZone>00520</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts-lvl3">FI1B1</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">FIN</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID>FI30061576</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Telephone>+358 295643300</cbc:Telephone>
+                  <cbc:ElectronicMail>markkinaoikeus@oikeus.fi</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+          </efac:Organizations>
+        <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00761092-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+      </ext:ExtensionContent>
+    </ext:UBLExtension>
+  </ext:UBLExtensions>
+  <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+  <cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+  <cbc:ID schemeName="notice-id">f9448a00-8771-46ed-8930-ec9484c206ff</cbc:ID>
+  <cbc:ContractFolderID>a35299c4-79f9-40fb-a7ba-2c115869d2f7</cbc:ContractFolderID>
+  <cbc:IssueDate>2025-11-13+02:00</cbc:IssueDate>
+  <cbc:IssueTime>16:43:59+02:00</cbc:IssueTime>
+  <cbc:VersionID>01</cbc:VersionID>
+  <cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+  <cbc:NoticeTypeCode listName="result">can-standard</cbc:NoticeTypeCode>
+  <cbc:NoticeLanguageCode listName="eu-official-language">FIN</cbc:NoticeLanguageCode>
+  <cac:ContractingParty>
+    <cac:ContractingPartyType>
+      <cbc:PartyTypeCode listName="buyer-legal-type">body-pl-la</cbc:PartyTypeCode>
+    </cac:ContractingPartyType>
+    <cac:ContractingActivity>
+      <cbc:ActivityTypeCode listName="authority-activity">hc-am</cbc:ActivityTypeCode>
+    </cac:ContractingActivity>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:ServiceProviderParty>
+        <cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode>
+        <cac:Party>
+          <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+          </cac:PartyIdentification>
+        </cac:Party>
+      </cac:ServiceProviderParty>
+    </cac:Party>
+  </cac:ContractingParty>
+  <cac:TenderingProcess>
+    <cbc:ProcedureCode listName="procurement-procedure-type">neg-wo-call</cbc:ProcedureCode>
+    <cac:ProcessJustification>
+      <cbc:ProcessReasonCode listName="direct-award-justification">technical</cbc:ProcessReasonCode>
+      <cbc:ProcessReason languageID="FIN">Hankintalain 40 §:n 2 momentin 2 kohdan mukaan hankintayksikkö voi valita suorahankinnan, jos teknisestä tai yksinoikeuden suojaamiseen liittyvästä syystä vain tietty toimittaja voi toteuttaa hankinnan; lisäedellytyksenä on, että järkeviä vaihtoehtoisia tai korvaavia ratkaisuja ei ole eikä kilpailun puuttuminen johdu hankinnan ehtojen keinotekoisesta kaventamisesta.
+
+Turun seudun puhdistamo Oy:llä on käytössä Honeywell Oy:n rakennusautomaatiojärjestelmä siihen liittyvine osajärjestelmineen (taloautomaatio-, kuluvalvonta-, rikosilmoitin-, paloilmoitin- ja kameravalvontajärjestelmä). Nyt kyseessä olevassa hankinnassa on kyse olemassa olevan järjestelmän perusylläpidosta, optimoinnista ja räätälöinnistä sekä elinkaari- ja tietoturvapalvelusta.
+
+Kyseisellä järjestelmän toimittajalla on yksinoikeus hoitaa tilaajan käytössä olevan rakennusautomaatiojärjestelmän ylläpitopalveluita. Nykyinen järjestelmän toimittaja on ilmoittanut, etteivät sen rajapinnat ole avoimia muille järjestelmille, eikä rajapintojen avaaminen kolmansille osapuolille ole suunnitteilla. Järjestelmän lisenssi on mahdollista saada vain kyseiseltä toimittajalta. Kyseessä on ns. suljettu järjestelmä, sillä vain järjestelmän toimittajalla on pääsy järjestelmään. Järjestelmäkokonaisuuden ylläpitopalvelua, optimointia, räätälöintiä ja elinkaari- ja tietoturvapalvelua ei siten ole tekniseen ja yksinoikeuteen liittyvästä syystä mahdollista hankkia miltään muulta taholta. 
+
+Turun seudun puhdistamo Oy:n rakennusautomaatiojärjestelmä on hyvin kompleksinen kokonaisuus. Järjestelmän toimivuus on keskeinen osa koko huoltovarmuuskriittisen laitoksen toimintavarmuutta. Rakennusautomaatiojärjestelmällä ohjataan huoltovarmuuskriittisen laitoksen keskeisiä toimintoja, jotka varmistavat jätevedenpuhdistusprosessin jatkuvuuden ja henkilöstön turvallisuuden. Näihin kuuluu muun muassa taloautomaatiojärjestelmä, joka ylläpitää henkilöstön turvallisia työskentelyolosuhteita, sekä kulunvalvonta-, rikosilmoitin- ja kameravalvontajärjestelmät, joilla varmistetaan huoltovarmuuskriittisen laitoksen fyysinen turvallisuus. Lisäksi paloilmoitinjärjestelmä ylläpitää ja kehittää huoltovarmuuskriittisen laitoksen paloturvallisuutta viranomaisvaatimusten mukaisesti. Sopimuskumppaniksi valitulla toimittajalla on hankinnan edellyttämää osaamista ylläpitopalvelun toteuttamiseen turvallisesti ja tarkoituksenmukaisella tavalla.
+
+Ylläpidolle ei ole järkeviä vaihtoehtoisia tai korvaavia ratkaisuja. Ylläpitopalveluiden avoin kilpailuttaminen edellyttäisi käytännössä koko nykyisen rakennusautomaatiojärjestelmän vaihtamista. Sopimuskumppanin vaihtaminen aiheuttaisi hankintayksikölle merkittävää haittaa ja kustannusten merkittävää päällekkäisyyttä, sillä vaihto edellyttäisi uuden järjestelmän rakentamista kokonaisuudessaan vanhan järjestelmän rinnalle, ennen kuin uusi järjestelmä pystyttäisiin ottamaan käyttöön. Rakennusautomaatiojärjestelmän vaihtoa ei ole mahdollisuutta tehdä osissa, sillä se vaarantaisi huoltovarmuuskriittisen laitoksen toiminnan. Kokonaan uuden järjestelmän rakentaminen vanhan rinnalle tulisi hankintayksikön laskelmien mukaan kustantamaan noin 2-2,5 miljoonaa euroa, mikä ei ole taloudellisesti perusteltua.
+
+Hankinta täyttää hankintalain 40 §:n 2 momentin 2 kohdassa asetetun edellytyksen suorahankinnan tekemiselle lain kohdassa asetettuine lisäedellytyksineen.</cbc:ProcessReason>
+    </cac:ProcessJustification>
+  </cac:TenderingProcess>
+  <cac:ProcurementProject>
+    <cbc:Name languageID="FIN">Rakennusautomaatiojärjestelmän ylläpitopalvelu ajalle 1.1.2026-31.12.2030</cbc:Name>
+    <cbc:Description languageID="FIN">Hankinta pitää sisällään Turun seudun puhdistamo Oy:n rakennusautomaatiojärjestelmän perusylläpidon, optimoinnin ja räätälöinnin sekä elinkaari- ja tietoturvapalvelun ajalle 1.1.2026-31.12.2030.</cbc:Description>
+    <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+    <cac:MainCommodityClassification>
+      <cbc:ItemClassificationCode listName="cpv">50324100</cbc:ItemClassificationCode>
+    </cac:MainCommodityClassification>
+    <cac:RealizedLocation>
+      <cac:Address>
+        <cbc:CountrySubentityCode listName="nuts">FI1C1</cbc:CountrySubentityCode>
+        <cac:Country>
+          <cbc:IdentificationCode listName="country">FIN</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:RealizedLocation>
+  </cac:ProcurementProject>
+  <cac:ProcurementProjectLot>
+    <cbc:ID schemeName="Lot">LOT-0000</cbc:ID>
+    <cac:TenderingTerms>
+      <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+      <cac:AwardingTerms>
+        <cac:AwardingCriterion>
+          <cbc:CalculationExpression languageID="FIN">Ylläpitopalvelun yhteenlaskettu hinta</cbc:CalculationExpression>
+          <cac:SubordinateAwardingCriterion>
+            <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+            <cbc:Description languageID="FIN">Ylläpitopalvelun yhteenlaskettu hinta</cbc:Description>
+          </cac:SubordinateAwardingCriterion>
+        </cac:AwardingCriterion>
+      </cac:AwardingTerms>
+      <cac:AppealTerms>
+        <cac:AppealInformationParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+          </cac:PartyIdentification>
+        </cac:AppealInformationParty>
+        <cac:AppealReceiverParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+          </cac:PartyIdentification>
+        </cac:AppealReceiverParty>
+      </cac:AppealTerms>
+    </cac:TenderingTerms>
+    <cac:TenderingProcess>
+      <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+      <cac:NoticeDocumentReference>
+        <cbc:ID schemeName="ojs-notice-id">622073-2025</cbc:ID>
+      </cac:NoticeDocumentReference>
+      <cac:AuctionTerms>
+        <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+      </cac:AuctionTerms>
+      <cac:ContractingSystem>
+        <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+      </cac:ContractingSystem>
+      <cac:ContractingSystem>
+        <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+      </cac:ContractingSystem>
+    </cac:TenderingProcess>
+    <cac:ProcurementProject>
+      <cbc:ID schemeName="InternalID">2025-030374-LOT-0001</cbc:ID>
+      <cbc:Name languageID="FIN">Rakennusautomaatiojärjestelmän ylläpitopalvelu ajalle 1.1.2026-31.12.2030</cbc:Name>
+      <cbc:Description languageID="FIN">Hankinta pitää sisällään Turun seudun puhdistamo Oy:n rakennusautomaatiojärjestelmän perusylläpidon, optimoinnin ja räätälöinnin sekä elinkaari- ja tietoturvapalvelun ajalle 1.1.2026-31.12.2030.</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+      <cac:MainCommodityClassification>
+        <cbc:ItemClassificationCode listName="cpv">50324100</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:RealizedLocation>
+        <cac:Address>
+          <cbc:CountrySubentityCode listName="nuts">FI1C1</cbc:CountrySubentityCode>
+          <cac:Country>
+            <cbc:IdentificationCode listName="country">FIN</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:RealizedLocation>
+    </cac:ProcurementProject>
+  </cac:ProcurementProjectLot>
+  <cac:TenderResult>
+    <cbc:AwardDate>2000-01-01Z</cbc:AwardDate>
+  </cac:TenderResult>
+</ContractAwardNotice>

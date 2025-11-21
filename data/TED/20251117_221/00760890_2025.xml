@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+  <ext:UBLExtensions>
+    <ext:UBLExtension>
+      <ext:ExtensionContent>
+        <efext:EformsExtension>
+          <efbc:TransmissionDate>2025-11-14+00:00</efbc:TransmissionDate>
+          <efbc:TransmissionTime>07:30:50+00:00</efbc:TransmissionTime>
+          <efac:NoticeSubType>
+            <cbc:SubTypeCode listName="notice-subtype">16</cbc:SubTypeCode>
+          </efac:NoticeSubType>
+          <efac:Organizations>
+            <efac:Organization>
+              <efac:Company>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                </cac:PartyIdentification>
+                
+                <cac:PartyName>
+                  <cbc:Name languageID="ENG">Lindesnes kommune</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>Nordre Heddeland 26</cbc:StreetName>
+                  <cbc:Department>Lindesnes kommune</cbc:Department>
+                  <cbc:CityName>Marnardal</cbc:CityName>
+                  <cbc:PostalZone>4534</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">NO092</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">NOR</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID schemeID="002">921060440</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Name>Ida Foss</cbc:Name>
+                  <cbc:Telephone>+47 97693727</cbc:Telephone>
+                  <cbc:ElectronicMail>ida@odinprosjekt.no</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+            <efac:Organization>
+              <efac:Company>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                </cac:PartyIdentification>
+                
+                <cac:PartyName>
+                  <cbc:Name languageID="ENG">Agder tingrett</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>Tollbodgata 45</cbc:StreetName>
+                  <cbc:CityName>Kristiansand</cbc:CityName>
+                  <cbc:PostalZone>4614</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">NO092</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">NOR</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID schemeID="002">974732998</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+              </efac:Company>
+            </efac:Organization>
+          </efac:Organizations>
+        <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00760890-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+      </ext:ExtensionContent>
+    </ext:UBLExtension>
+  </ext:UBLExtensions>
+  <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+  <cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+  <cbc:ID schemeName="notice-id">f74c38ec-18a0-48af-b420-2c10b6d2d10e</cbc:ID>
+  <cbc:ContractFolderID>74f9191f-b900-438e-bdb8-856b0baf382b</cbc:ContractFolderID>
+  <cbc:IssueDate>2025-11-14+00:00</cbc:IssueDate>
+  <cbc:IssueTime>07:13:13+00:00</cbc:IssueTime>
+  <cbc:VersionID>01</cbc:VersionID>
+  <cbc:RequestedPublicationDate>2025-11-15Z</cbc:RequestedPublicationDate>
+  <cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+  <cbc:NoticeTypeCode listName="competition">cn-standard</cbc:NoticeTypeCode>
+  <cbc:NoticeLanguageCode>ENG</cbc:NoticeLanguageCode>
+  
+  <cac:ContractingParty>
+    <cbc:BuyerProfileURI>https://eu.eu-supply.com/ctm/company/companyinformation/index/311790</cbc:BuyerProfileURI>
+    <cac:ContractingPartyType>
+      <cbc:PartyTypeCode listName="buyer-legal-type">body-pl-la</cbc:PartyTypeCode>
+    </cac:ContractingPartyType>
+    <cac:ContractingActivity>
+      <cbc:ActivityTypeCode listName="authority-activity">pub-os</cbc:ActivityTypeCode>
+    </cac:ContractingActivity>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+      </cac:PartyIdentification>
+    </cac:Party>
+  </cac:ContractingParty>
+  <cac:TenderingTerms>
+    <cac:TendererQualificationRequest>
+      <cac:SpecificTendererRequirement>
+        <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-corrpt</cbc:TendererRequirementTypeCode>
+        
+        <cbc:Description languageID="ENG">Is the tenderer himself or a person, who is a member of the tenderer's administration, management or supervisory body or has the competence to represent or control or make decisions in such bodies, in the event a enforceable verdict has been convicted of corruption by a verdict handed down not more than five years ago, or a rejection period determined directly in the judgement that still applies? Corruption as defined in Article 3 of the Convention on Combating Corruption, Involving European Communities or European Union Member States (EUT C 195 of 25.6.1997, s. 1), and in Article 2, point 1, in the Council ́s framework decision 2003/568/RIA of 22 July 2003 on combating corruption in the private sector (EUT L 192 of 31.7.2003,  p. 54). This rejection reason also includes corruption as defined in national law for the contracting authority or supplier.</cbc:Description>
+      </cac:SpecificTendererRequirement>
+      <cac:SpecificTendererRequirement>
+        <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-fraud</cbc:TendererRequirementTypeCode>
+        
+        <cbc:Description languageID="ENG">Is the tenderer himself or a person, who is a member of the tenderer's administration, management or supervisory body or has the competence to represent or control or make decisions in such bodies, at the time a legally convicted of fraud has been convicted of fraud by a verdict handed down not more than five years ago, or a rejection period determined directly in the judgement that still applies? Fraud included in Article 1 of the Convention on protection of the Financial Interests of the European Communities (EFT C 316 of 27.11.1995, p. 48).</cbc:Description>
+      </cac:SpecificTendererRequirement>
+      <cac:SpecificTendererRequirement>
+        <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-laund</cbc:TendererRequirementTypeCode>
+        
+        <cbc:Description languageID="ENG">Is the tenderer himself or a person, who is a member of the tenderer's administration, management or supervisory body or has the competence to represent or control or make decisions in such bodies, in the event a legal verdict has been convicted of money laundering or financing terrorism by a verdict handed down no more than five years ago, or a rejection period set out directly in the judgement that still applies? Money laundering or financing terrorism As defined in Article 1 of the European Parliament and Council Directive 2005/60/EF of 26 October 2005 on preventive measures against the use of the financial system for money laundering and financing terrorism (EUT L 309 of 25.11.2005, p. 15).</cbc:Description>
+      </cac:SpecificTendererRequirement>
+      <cac:SpecificTendererRequirement>
+        <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-part</cbc:TendererRequirementTypeCode>
+        
+        <cbc:Description languageID="ENG">Is the tenderer himself or a person, who is a member of the tenderer's administration, management or supervisory body or has the competence to represent or control or make decisions in such bodies, at the time a legally convicted verdict of participation in a criminal organisation by a verdict handed down no more than five years ago, or a rejection period set out directly in the judgement that still applies? Participation in a criminal organisation as defined in Article 2 of the Council ́s framework decision 2008/841/RIA of 24 October 2008 on control of organised crime (EUT L 300 of 11.11.2008, p. 42)</cbc:Description>
+      </cac:SpecificTendererRequirement>
+      <cac:SpecificTendererRequirement>
+        <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-terror</cbc:TendererRequirementTypeCode>
+        
+        <cbc:Description languageID="ENG">Is the tenderer himself or a person, who is a member of the tenderer's administration, management or supervisory body, or has the competence to represent or control or make decisions in such bodies, in the event a legal verdict has been convicted of acts of terrorism or criminal acts connected to terrorist activities by a verdict handed down no more than five years ago, or a rejection period set out directly in the judgement that still applies? Acts of terrorism or criminal acts relating to terrorist activity as defined in Article 1 and 3 of the Council ́s framework decision 2002/475/RIA of 13 June 2002 on combating terrorism (EFT L 164, af 22.6.2002, p. 3). This rejection reason also includes incitement to, participation or attempts to commit such actions as included in Article 4 in the mentioned framework decision.</cbc:Description>
+      </cac:SpecificTendererRequirement>
+      <cac:SpecificTendererRequirement>
+        <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-traffick</cbc:TendererRequirementTypeCode>
+        
+        <cbc:Description languageID="ENG">Is the tenderer himself or a person, who is a member of the tenderer's administration, management or supervisory body or has the competence to represent or control or make decisions in such bodies, in the event a legal verdict has been convicted of child labour and other forms of human trafficking by a verdict handed down no more than five years ago, or a rejection period determined directly in the judgement that still applies? Child labour and other forms of human trafficking as defined in Article 2 of the European Parliament and council directive 2011/36/EU of 5. 1 April 2011 on the prevention and control of human trafficking and the protection of its victims and for compensation of the Council ́s framework decision 2002/629/RIA (EUT L 101 of 15.4.2011, p. 1).</cbc:Description>
+      </cac:SpecificTendererRequirement>
+      <cac:SpecificTendererRequirement>
+        <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-bre-env-law</cbc:TendererRequirementTypeCode>
+        
+        <cbc:Description languageID="ENG">Is the tenderer aware of breaches of environmental provisions as stated in national law, the relevant notice or procurement documents or Article 18 (2) of Directive 2014/24/EU.</cbc:Description>
+      </cac:SpecificTendererRequirement>
+      <cac:SpecificTendererRequirement>
+        <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-bre-lab-law</cbc:TendererRequirementTypeCode>
+        
+        <cbc:Description languageID="ENG">Is the tenderer aware of breaches of provisions on working conditions as stated in national law, the relevant notice or procurement documents or Article 18 (2) of Directive 2014/24/EU.</cbc:Description>
+      </cac:SpecificTendererRequirement>
+      <cac:SpecificTendererRequirement>
+        <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-bre-soc-law</cbc:TendererRequirementTypeCode>
+        
+        <cbc:Description languageID="ENG">Is the tenderer aware of breaches of provisions on social conditions as stated in national law, the relevant notice or procurement documents or Article 18 (2) of Directive 2014/24/EU.</cbc:Description>
+      </cac:SpecificTendererRequirement>
+      <cac:SpecificTendererRequirement>
+        <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-distortion</cbc:TendererRequirementTypeCode>
+        
+        <cbc:Description languageID="ENG">Has the tenderer entered into agreement(s) with other tenderers with the intention of turning the competition?</cbc:Description>
+      </cac:SpecificTendererRequirement>
+      <cac:SpecificTendererRequirement>
+        <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-misconduct</cbc:TendererRequirementTypeCode>
+        
+        <cbc:Description languageID="ENG">Has the tenderer committed serious errors in professional practice? If relevant, see the definitions in national law, the relevant notice or procurement documents.</cbc:Description>
+      </cac:SpecificTendererRequirement>
+      <cac:SpecificTendererRequirement>
+        <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-misrepresent</cbc:TendererRequirementTypeCode>
+        
+        <cbc:Description languageID="ENG">Have the tenderer:a) given grossly incorrect information when notifying the information required to verify that there is no basis for rejection, or of the qualification requirements being met,b) failed to provide such information,c) subject to immediately submitting the supporting documents requested by the Contracting Authority, ord) improperly affecting the Contracting Authority's decision process to acquire confidential information that could give this an unlawful advantage in connection with competition, or negligently has given misleading information that can have a significant influence on decisions on rejection, selection or award?</cbc:Description>
+      </cac:SpecificTendererRequirement>
+      <cac:SpecificTendererRequirement>
+        <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-partic-confl</cbc:TendererRequirementTypeCode>
+        
+        <cbc:Description languageID="ENG">Are tenderers aware of a conflict of interest as stated in national law, the relevant notice or procurement documents?</cbc:Description>
+      </cac:SpecificTendererRequirement>
+      <cac:SpecificTendererRequirement>
+        <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-prep-confl</cbc:TendererRequirementTypeCode>
+        
+        <cbc:Description languageID="ENG">Has the tenderer or an entity associated with the supplier advised the contracting authority or in another way been involved in the planning of the competition?</cbc:Description>
+      </cac:SpecificTendererRequirement>
+      <cac:SpecificTendererRequirement>
+        <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-sanction</cbc:TendererRequirementTypeCode>
+        
+        <cbc:Description languageID="ENG">Has the tenderer committed significant breaches of contract in connection with the fulfilment of a previous public contract, a previous contract with a public contracting authority or a previous concession contract, where the breach has led to the cancellation of the contract, compensation or other similar sanctions?</cbc:Description>
+      </cac:SpecificTendererRequirement>
+      <cac:SpecificTendererRequirement>
+        <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-pmt-bre-ssc</cbc:TendererRequirementTypeCode>
+        
+        <cbc:Description languageID="ENG">Have tenderers failed to fulfil all their social security obligations in the country where they are established and in their member state, if this is a different country than what he is established in?</cbc:Description>
+      </cac:SpecificTendererRequirement>
+      <cac:SpecificTendererRequirement>
+        <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-pmt-bre-tax</cbc:TendererRequirementTypeCode>
+        
+        <cbc:Description languageID="ENG">Has the tenderer not fulfilled his tax and duty obligations in the country in which he is established, and in the contracting authority's member state, if this is a different country than what he is established in?</cbc:Description>
+      </cac:SpecificTendererRequirement>
+      <cac:SpecificTendererRequirement>
+        <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-as-susp</cbc:TendererRequirementTypeCode>
+        
+        <cbc:Description languageID="ENG">Specify why, under the mentioned circumstances, one is able to carry out the contract, considering the current national provisions and measures for continuing the business activities? It is not necessary to provide this information if rejection of tenderers made mandatory in accordance with the current national law without the possibility for exceptions.</cbc:Description>
+      </cac:SpecificTendererRequirement>
+      <cac:SpecificTendererRequirement>
+        <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-bankr</cbc:TendererRequirementTypeCode>
+        
+        <cbc:Description languageID="ENG">Is the tenderer in a bankruptcy situation? Specify why, under the mentioned circumstances, one is able to carry out the contract, considering the current national provisions and measures for continuing the business activities? It is not necessary to provide this information if rejection of tenderers made mandatory in accordance with the current national law without the possibility for exceptions.</cbc:Description>
+      </cac:SpecificTendererRequirement>
+      <cac:SpecificTendererRequirement>
+        <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-cred-arran</cbc:TendererRequirementTypeCode>
+        
+        <cbc:Description languageID="ENG">Is the supplier in a situation where he has been forced debt arrangement?  Specify why, under the mentioned circumstances, one is able to carry out the contract, considering the current national provisions and measures for continuing the business activities? It is not necessary to provide this information if rejection of tenderers made mandatory in accordance with the current national law without the possibility for exceptions.</cbc:Description>
+      </cac:SpecificTendererRequirement>
+      <cac:SpecificTendererRequirement>
+        <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-insolvency</cbc:TendererRequirementTypeCode>
+        
+        <cbc:Description languageID="ENG">Is the tenderer in an insolvency situation? Specify why, under the mentioned circumstances, one is able to carry out the contract, considering the current national provisions and measures for continuing the business activities? It is not necessary to provide this information if rejection of tenderers made mandatory in accordance with the current national law without the possibility for exceptions.</cbc:Description>
+      </cac:SpecificTendererRequirement>
+      <cac:SpecificTendererRequirement>
+        <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-liq-admin</cbc:TendererRequirementTypeCode>
+        
+        <cbc:Description languageID="ENG">Specify why, under the mentioned circumstances, one is able to carry out the contract, considering the current national provisions and measures for continuing the business activities? It is not necessary to provide this information if rejection of tenderers made mandatory in accordance with the current national law without the possibility for exceptions.</cbc:Description>
+      </cac:SpecificTendererRequirement>
+      <cac:SpecificTendererRequirement>
+        <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-other</cbc:TendererRequirementTypeCode>
+        
+        <cbc:Description languageID="ENG">Is the supplier in a situation where he has been forced debt arrangement?  Specify why, under the mentioned circumstances, one is able to carry out the contract, considering the current national provisions and measures for continuing the business activities? It is not necessary to provide this information if rejection of tenderers made mandatory in accordance with the current national law without the possibility for exceptions.</cbc:Description>
+      </cac:SpecificTendererRequirement>
+    </cac:TendererQualificationRequest>
+    <cac:TendererQualificationRequest>
+      <cac:SpecificTendererRequirement>
+        <cbc:TendererRequirementTypeCode listName="exclusion-grounds-source">epo-notice</cbc:TendererRequirementTypeCode>
+      </cac:SpecificTendererRequirement>
+    </cac:TendererQualificationRequest>
+    <cac:LotDistribution>
+      <cbc:MaximumLotsAwardedNumeric>2</cbc:MaximumLotsAwardedNumeric>
+      <cbc:MaximumLotsSubmittedNumeric>2</cbc:MaximumLotsSubmittedNumeric>
+    </cac:LotDistribution>
+  </cac:TenderingTerms>
+  <cac:TenderingProcess>
+    <cbc:ProcedureCode listName="procurement-procedure-type">open</cbc:ProcedureCode>
+    <cac:ProcessJustification>
+      <cbc:ProcessReasonCode listName="accelerated-procedure">false</cbc:ProcessReasonCode>
+    </cac:ProcessJustification>
+  </cac:TenderingProcess>
+  <cac:ProcurementProject>
+    <cbc:ID>N/A</cbc:ID>
+    
+    <cbc:Name languageID="ENG">Procurement of a framework agreement for a service agreement for ventilation systems, heat pumps and refrigerating machines.</cbc:Name>
+    
+    <cbc:Description languageID="ENG">The aim of the framework agreement is to cover the contracting authority ́s ongoing need for trade services in ventilation work, heat pumps and cooling systems, as well as give the contracting authority access to a professionally good and financially sensible service.
+
+The contracting authority needs to enter into framework agreements for trade services for the above mentioned discipline. The municipality shall enter into a framework agreement with up to three tenderers per sub-contract.
+
+The contract will mainly include repairs and maintenance. There can, however, be that the framework agreement will be used on minor investment objects, such as alterations and new buildings. 
+
+The procurement is divided into the following lots: 
+1 Ventilation systems 
+2 Heat pumps and cooling systems</cbc:Description>
+    <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+    <cac:RequestedTenderTotal>
+      <cbc:EstimatedOverallContractAmount currencyID="NOK">20000000</cbc:EstimatedOverallContractAmount>
+    </cac:RequestedTenderTotal>
+    <cac:MainCommodityClassification>
+      <cbc:ItemClassificationCode listName="cpv">50000000</cbc:ItemClassificationCode>
+    </cac:MainCommodityClassification>
+    <cac:AdditionalCommodityClassification>
+      <cbc:ItemClassificationCode listName="cpv">42500000</cbc:ItemClassificationCode>
+    </cac:AdditionalCommodityClassification>
+    <cac:AdditionalCommodityClassification>
+      <cbc:ItemClassificationCode listName="cpv">42511110</cbc:ItemClassificationCode>
+    </cac:AdditionalCommodityClassification>
+    <cac:AdditionalCommodityClassification>
+      <cbc:ItemClassificationCode listName="cpv">42520000</cbc:ItemClassificationCode>
+    </cac:AdditionalCommodityClassification>
+    <cac:AdditionalCommodityClassification>
+      <cbc:ItemClassificationCode listName="cpv">45331000</cbc:ItemClassificationCode>
+    </cac:AdditionalCommodityClassification>
+    <cac:AdditionalCommodityClassification>
+      <cbc:ItemClassificationCode listName="cpv">45331200</cbc:ItemClassificationCode>
+    </cac:AdditionalCommodityClassification>
+    <cac:AdditionalCommodityClassification>
+      <cbc:ItemClassificationCode listName="cpv">45331211</cbc:ItemClassificationCode>
+    </cac:AdditionalCommodityClassification>
+    <cac:AdditionalCommodityClassification>
+      <cbc:ItemClassificationCode listName="cpv">71315410</cbc:ItemClassificationCode>
+    </cac:AdditionalCommodityClassification>
+    <cac:RealizedLocation>
+      <cac:Address>
+        <cbc:Region>anyw-cou</cbc:Region>
+        <cac:Country>
+          <cbc:IdentificationCode listName="country">NOR</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:RealizedLocation>
+  </cac:ProcurementProject>
+  <cac:ProcurementProjectLot>
+    <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+    <cac:TenderingTerms>
+      <ext:UBLExtensions>
+        <ext:UBLExtension>
+          <ext:ExtensionContent>
+            <efext:EformsExtension>
+              <efac:SelectionCriteria>
+                <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-suit-reg-prof</cbc:TendererRequirementTypeCode>
+                
+                <cbc:Description languageID="ENG">Tenderers shall be registered in a company register, professional register or a commerce register in the country where the tenderer is established.</cbc:Description>
+              </efac:SelectionCriteria>
+              <efac:SelectionCriteria>
+                <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-other</cbc:TendererRequirementTypeCode>
+                
+                <cbc:Description languageID="ENG">Tenderers shall have sufficient economic and financial capacity to fulfil the contract. 
+
+The required capacity will be assessed in relation to the contract ́s value, services, risk and duration.</cbc:Description>
+              </efac:SelectionCriteria>
+              <efac:SelectionCriteria>
+                <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-ref-services</cbc:TendererRequirementTypeCode>
+                
+                <cbc:Description languageID="ENG">Tenderers shall have good experience with the execution of comparable assignments.</cbc:Description>
+              </efac:SelectionCriteria>
+              <efac:SelectionCriteria>
+                <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-sec-supply</cbc:TendererRequirementTypeCode>
+                
+                <cbc:Description languageID="ENG">Tenderers shall have sufficient capacity and implementation ability to fulfil the contract.</cbc:Description>
+              </efac:SelectionCriteria>
+              <efac:SelectionCriteria>
+                <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-suit-reg-prof</cbc:TendererRequirementTypeCode>
+                
+                <cbc:Description languageID="ENG">Tenderers shall have good routines for quality management.</cbc:Description>
+              </efac:SelectionCriteria>
+            </efext:EformsExtension>
+          </ext:ExtensionContent>
+        </ext:UBLExtension>
+      </ext:UBLExtensions>
+      <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+      <cac:CallForTendersDocumentReference>
+        <cbc:ID>Anskaffelsesdokumenter</cbc:ID>
+        <cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+        <cac:Attachment>
+          <cac:ExternalReference>
+            <cbc:URI>https://eu.eu-supply.com/app/rfq/rwlentrance_s.asp?PID=445371&amp;TID=406641&amp;B=</cbc:URI>
+          </cac:ExternalReference>
+        </cac:Attachment>
+      </cac:CallForTendersDocumentReference>
+      <cac:TendererQualificationRequest>
+        <cac:SpecificTendererRequirement>
+          <cbc:TendererRequirementTypeCode listName="reserved-procurement">none</cbc:TendererRequirementTypeCode>
+        </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:TendererQualificationRequest>
+        <cac:SpecificTendererRequirement>
+          <cbc:TendererRequirementTypeCode listName="selection-criteria-source">epo-notice</cbc:TendererRequirementTypeCode>
+        </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:ContractExecutionRequirement>
+        <cbc:ExecutionRequirementCode listName="einvoicing">not-allowed</cbc:ExecutionRequirementCode>
+      </cac:ContractExecutionRequirement>
+      <cac:ContractExecutionRequirement>
+        <cbc:ExecutionRequirementCode listName="reserved-execution">yes</cbc:ExecutionRequirementCode>
+      </cac:ContractExecutionRequirement>
+      <cac:ContractExecutionRequirement>
+        <cbc:ExecutionRequirementCode listName="ecatalog-submission">allowed</cbc:ExecutionRequirementCode>
+      </cac:ContractExecutionRequirement>
+      <cac:TenderRecipientParty>
+        <cbc:EndpointID>https://eu.eu-supply.com/app/rfq/rwlentrance_s.asp?PID=445371&amp;TID=406641&amp;B=</cbc:EndpointID>
+      </cac:TenderRecipientParty>
+      <cac:TenderValidityPeriod>
+        <cbc:DurationMeasure unitCode="DAY">90</cbc:DurationMeasure>
+      </cac:TenderValidityPeriod>
+      <cac:AppealTerms>
+        <cac:PresentationPeriod>
+          
+          <cbc:Description languageID="ENG">90 days after award of contract notice</cbc:Description>
+        </cac:PresentationPeriod>
+        <cac:AppealInformationParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+          </cac:PartyIdentification>
+        </cac:AppealInformationParty>
+        <cac:AppealReceiverParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+          </cac:PartyIdentification>
+        </cac:AppealReceiverParty>
+      </cac:AppealTerms>
+      <cac:Language>
+        <cbc:ID>NOR</cbc:ID>
+      </cac:Language>
+      <cac:PostAwardProcess>
+        <cbc:ElectronicOrderUsageIndicator>false</cbc:ElectronicOrderUsageIndicator>
+        <cbc:ElectronicPaymentUsageIndicator>false</cbc:ElectronicPaymentUsageIndicator>
+      </cac:PostAwardProcess>
+    </cac:TenderingTerms>
+    <cac:TenderingProcess>
+      <cbc:SubmissionMethodCode listName="esubmission">required</cbc:SubmissionMethodCode>
+      <cbc:GovernmentAgreementConstraintIndicator>false</cbc:GovernmentAgreementConstraintIndicator>
+      <cac:TenderSubmissionDeadlinePeriod>
+        <cbc:EndDate>2025-12-18+00:00</cbc:EndDate>
+        <cbc:EndTime>11:00:00+00:00</cbc:EndTime>
+      </cac:TenderSubmissionDeadlinePeriod>
+      <cac:AuctionTerms>
+        <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+      </cac:AuctionTerms>
+      <cac:ContractingSystem>
+        <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+      </cac:ContractingSystem>
+      <cac:ContractingSystem>
+        <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+      </cac:ContractingSystem>
+    </cac:TenderingProcess>
+    <cac:ProcurementProject>
+      <cbc:ID>1-0</cbc:ID>
+      
+      <cbc:Name languageID="ENG">Ventilation systems</cbc:Name>
+      
+      <cbc:Description languageID="ENG">The aim of the framework agreement is to cover the contracting authority ́s ongoing need for trade services in ventilation work, heat pumps and cooling systems, as well as give the contracting authority access to a professionally good and financially sensible service.
+
+The contracting authority needs to enter into framework agreements for trade services for the above mentioned discipline. The municipality shall enter into a framework agreement with up to three tenderers per sub-contract.
+
+The contract will mainly include repairs and maintenance. There can, however, be that the framework agreement will be used on minor investment objects, such as alterations and new buildings. 
+
+The procurement is divided into the following lots: 
+1 Ventilation systems 
+2 Heat pumps and cooling systems</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+      <cac:RequestedTenderTotal>
+        <cbc:EstimatedOverallContractAmount currencyID="NOK">20000000</cbc:EstimatedOverallContractAmount>
+      </cac:RequestedTenderTotal>
+      <cac:MainCommodityClassification>
+        <cbc:ItemClassificationCode listName="cpv">50000000</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+        <cbc:ItemClassificationCode listName="cpv">42500000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+        <cbc:ItemClassificationCode listName="cpv">42511110</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+        <cbc:ItemClassificationCode listName="cpv">42520000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+        <cbc:ItemClassificationCode listName="cpv">45331000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+        <cbc:ItemClassificationCode listName="cpv">71315410</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:RealizedLocation>
+        
+        <cbc:Description languageID="ENG">To be executed in Lindesnes municipality.</cbc:Description>
+        <cac:Address>
+          <cbc:Region>anyw</cbc:Region>
+        </cac:Address>
+      </cac:RealizedLocation>
+      <cac:PlannedPeriod>
+        <cbc:DurationMeasure unitCode="YEAR">4</cbc:DurationMeasure>
+      </cac:PlannedPeriod>
+    </cac:ProcurementProject>
+  </cac:ProcurementProjectLot>
+  <cac:ProcurementProjectLot>
+    <cbc:ID schemeName="Lot">LOT-0002</cbc:ID>
+    <cac:TenderingTerms>
+      <ext:UBLExtensions>
+        <ext:UBLExtension>
+          <ext:ExtensionContent>
+            <efext:EformsExtension>
+              <efac:SelectionCriteria>
+                <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-suit-reg-prof</cbc:TendererRequirementTypeCode>
+                
+                <cbc:Description languageID="ENG">Tenderers shall be registered in a company register, professional register or a commerce register in the country where the tenderer is established.</cbc:Description>
+              </efac:SelectionCriteria>
+              <efac:SelectionCriteria>
+                <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-other</cbc:TendererRequirementTypeCode>
+                
+                <cbc:Description languageID="ENG">Tenderers shall have sufficient economic and financial capacity to fulfil the contract. 
+
+The required capacity will be assessed in relation to the contract ́s value, services, risk and duration.</cbc:Description>
+              </efac:SelectionCriteria>
+              <efac:SelectionCriteria>
+                <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-ref-work</cbc:TendererRequirementTypeCode>
+                
+                <cbc:Description languageID="ENG">Tenderers shall have good experience with the execution of comparable assignments.</cbc:Description>
+              </efac:SelectionCriteria>
+              <efac:SelectionCriteria>
+                <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-other</cbc:TendererRequirementTypeCode>
+                
+                <cbc:Description languageID="ENG">Tenderers shall have sufficient capacity and implementation ability to fulfil the contract.</cbc:Description>
+              </efac:SelectionCriteria>
+            </efext:EformsExtension>
+          </ext:ExtensionContent>
+        </ext:UBLExtension>
+      </ext:UBLExtensions>
+      <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+      <cac:CallForTendersDocumentReference>
+        <cbc:ID>Anskaffelsesdokumenter</cbc:ID>
+        <cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+        <cac:Attachment>
+          <cac:ExternalReference>
+            <cbc:URI>https://eu.eu-supply.com/app/rfq/rwlentrance_s.asp?PID=445371&amp;TID=406641&amp;B=</cbc:URI>
+          </cac:ExternalReference>
+        </cac:Attachment>
+      </cac:CallForTendersDocumentReference>
+      <cac:TendererQualificationRequest>
+        <cac:SpecificTendererRequirement>
+          <cbc:TendererRequirementTypeCode listName="reserved-procurement">none</cbc:TendererRequirementTypeCode>
+        </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:TendererQualificationRequest>
+        <cac:SpecificTendererRequirement>
+          <cbc:TendererRequirementTypeCode listName="selection-criteria-source">epo-notice</cbc:TendererRequirementTypeCode>
+        </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:ContractExecutionRequirement>
+        <cbc:ExecutionRequirementCode listName="einvoicing">not-allowed</cbc:ExecutionRequirementCode>
+      </cac:ContractExecutionRequirement>
+      <cac:ContractExecutionRequirement>
+        <cbc:ExecutionRequirementCode listName="reserved-execution">no</cbc:ExecutionRequirementCode>
+      </cac:ContractExecutionRequirement>
+      <cac:ContractExecutionRequirement>
+        <cbc:ExecutionRequirementCode listName="ecatalog-submission">not-allowed</cbc:ExecutionRequirementCode>
+      </cac:ContractExecutionRequirement>
+      <cac:TenderRecipientParty>
+        <cbc:EndpointID>https://eu.eu-supply.com/app/rfq/rwlentrance_s.asp?PID=445371&amp;TID=406641&amp;B=</cbc:EndpointID>
+        <cac:PartyIdentification>
+          <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+        </cac:PartyIdentification>
+      </cac:TenderRecipientParty>
+      <cac:TenderEvaluationParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+        </cac:PartyIdentification>
+      </cac:TenderEvaluationParty>
+      <cac:TenderValidityPeriod>
+        <cbc:DurationMeasure unitCode="DAY">90</cbc:DurationMeasure>
+      </cac:TenderValidityPeriod>
+      <cac:AppealTerms>
+        <cac:PresentationPeriod>
+          
+          <cbc:Description languageID="ENG">The waiting period expires 10 days after the award of contract.</cbc:Description>
+        </cac:PresentationPeriod>
+        <cac:AppealInformationParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+          </cac:PartyIdentification>
+        </cac:AppealInformationParty>
+        <cac:AppealReceiverParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+          </cac:PartyIdentification>
+        </cac:AppealReceiverParty>
+      </cac:AppealTerms>
+      <cac:Language>
+        <cbc:ID>NOR</cbc:ID>
+      </cac:Language>
+      <cac:PostAwardProcess>
+        <cbc:ElectronicOrderUsageIndicator>false</cbc:ElectronicOrderUsageIndicator>
+        <cbc:ElectronicPaymentUsageIndicator>true</cbc:ElectronicPaymentUsageIndicator>
+      </cac:PostAwardProcess>
+    </cac:TenderingTerms>
+    <cac:TenderingProcess>
+      <cbc:SubmissionMethodCode listName="esubmission">required</cbc:SubmissionMethodCode>
+      <cbc:GovernmentAgreementConstraintIndicator>false</cbc:GovernmentAgreementConstraintIndicator>
+      <cac:TenderSubmissionDeadlinePeriod>
+        <cbc:EndDate>2025-12-18+00:00</cbc:EndDate>
+        <cbc:EndTime>11:00:00+00:00</cbc:EndTime>
+      </cac:TenderSubmissionDeadlinePeriod>
+      <cac:OpenTenderEvent>
+        <cbc:OccurrenceDate>2025-12-18+00:00</cbc:OccurrenceDate>
+        <cbc:OccurrenceTime>11:00:00+00:00</cbc:OccurrenceTime>
+      </cac:OpenTenderEvent>
+      <cac:AuctionTerms>
+        <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+      </cac:AuctionTerms>
+      <cac:ContractingSystem>
+        <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+      </cac:ContractingSystem>
+      <cac:ContractingSystem>
+        <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+      </cac:ContractingSystem>
+    </cac:TenderingProcess>
+    <cac:ProcurementProject>
+      <cbc:ID>2-1</cbc:ID>
+      
+      <cbc:Name languageID="ENG">Heat pumps and cooling systems (1)</cbc:Name>
+      
+      <cbc:Description languageID="ENG">The aim of the framework agreement is to cover the contracting authority ́s ongoing need for trade services in ventilation work, heat pumps and cooling systems, as well as give the contracting authority access to a professionally good and financially sensible service.
+
+The contracting authority needs to enter into framework agreements for trade services for the above mentioned discipline. The municipality shall enter into a framework agreement with up to three tenderers per sub-contract.
+
+The contract will mainly include repairs and maintenance. There can, however, be that the framework agreement will be used on minor investment objects, such as alterations and new buildings. 
+
+The procurement is divided into the following lots: 
+1 Ventilation systems 
+2 Heat pumps and cooling systems</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+      <cac:RequestedTenderTotal>
+        <cbc:EstimatedOverallContractAmount currencyID="NOK">20000000</cbc:EstimatedOverallContractAmount>
+      </cac:RequestedTenderTotal>
+      <cac:MainCommodityClassification>
+        <cbc:ItemClassificationCode listName="cpv">50000000</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+        <cbc:ItemClassificationCode listName="cpv">42500000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+        <cbc:ItemClassificationCode listName="cpv">42511110</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+        <cbc:ItemClassificationCode listName="cpv">42520000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+        <cbc:ItemClassificationCode listName="cpv">45331000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+        <cbc:ItemClassificationCode listName="cpv">71315410</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:RealizedLocation>
+        <cac:Address>
+          <cbc:Region>anyw</cbc:Region>
+        </cac:Address>
+      </cac:RealizedLocation>
+      <cac:PlannedPeriod>
+        <cbc:DurationMeasure unitCode="YEAR">4</cbc:DurationMeasure>
+      </cac:PlannedPeriod>
+    </cac:ProcurementProject>
+  </cac:ProcurementProjectLot>
+</ContractNotice>

@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractAwardNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractAwardNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+  <ext:UBLExtensions>
+    <ext:UBLExtension>
+      <ext:ExtensionContent>
+        <efext:EformsExtension>
+          <efbc:TransmissionDate>2025-11-14+00:00</efbc:TransmissionDate>
+          <efbc:TransmissionTime>11:27:11+00:00</efbc:TransmissionTime>
+          <efac:NoticeResult>
+            <efac:LotResult>
+              <cbc:ID schemeName="result">RES-0001</cbc:ID>
+              <cbc:TenderResultCode listName="winner-selection-status">clos-nw</cbc:TenderResultCode>
+              <efac:AppealRequestsStatistics>
+                <efbc:StatisticsCode listName="review-type">complainants</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:AppealRequestsStatistics>
+              <efac:DecisionReason>
+                <efbc:DecisionReasonCode listName="non-award-justification">other</efbc:DecisionReasonCode>
+              </efac:DecisionReason>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-esubm</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>7</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:TenderLot>
+                <cbc:ID schemeName="Lot">LOT-0000</cbc:ID>
+              </efac:TenderLot>
+            </efac:LotResult>
+          </efac:NoticeResult>
+          <efac:NoticeSubType>
+            <cbc:SubTypeCode listName="notice-subtype">29</cbc:SubTypeCode>
+          </efac:NoticeSubType>
+          <efac:Organizations>
+            <efac:Organization>
+              <efac:Company>
+                <cbc:WebsiteURI>https://www.vegvesen.no</cbc:WebsiteURI>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                </cac:PartyIdentification>
+                
+                <cac:PartyName>
+                  <cbc:Name languageID="ENG">Statens vegvesen</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>Skoggata 19</cbc:StreetName>
+                  <cbc:Department>Fellesfunksjoner</cbc:Department>
+                  <cbc:CityName>Moss</cbc:CityName>
+                  <cbc:PostalZone>1500</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">NO083</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">NOR</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID schemeID="002">971032081</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Name>Siri Ringheim Heggenes</cbc:Name>
+                  <cbc:Telephone>+41 530981</cbc:Telephone>
+                  <cbc:ElectronicMail>siri.ringheim.heggenes@vegvesen.no</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+            <efac:Organization>
+              <efac:Company>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                </cac:PartyIdentification>
+                
+                <cac:PartyName>
+                  <cbc:Name languageID="ENG">Oslo tingrett</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>C.J. Hambros plass 4</cbc:StreetName>
+                  <cbc:CityName>Oslo</cbc:CityName>
+                  <cbc:PostalZone>0125</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">NO081</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">NOR</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID schemeID="002">926 725 939</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Telephone>+47 22035200</cbc:Telephone>
+                  <cbc:ElectronicMail>oslo.tingrett@domstol.no</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+          </efac:Organizations>
+        <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00760848-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+      </ext:ExtensionContent>
+    </ext:UBLExtension>
+  </ext:UBLExtensions>
+  <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+  <cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+  <cbc:ID schemeName="notice-id">ef480a4b-eef6-4bda-9c91-5e221acd3dfc</cbc:ID>
+  <cbc:ContractFolderID>05178266-591e-4bff-ba1b-01e7f2dc85d9</cbc:ContractFolderID>
+  <cbc:IssueDate>2025-11-14+00:00</cbc:IssueDate>
+  <cbc:IssueTime>11:14:10+00:00</cbc:IssueTime>
+  <cbc:VersionID>01</cbc:VersionID>
+  <cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+  <cbc:NoticeTypeCode listName="result">can-standard</cbc:NoticeTypeCode>
+  <cbc:NoticeLanguageCode>ENG</cbc:NoticeLanguageCode>
+  
+  <cac:ContractingParty>
+    <cbc:BuyerProfileURI>https://eu.eu-supply.com/ctm/company/companyinformation/index/249176</cbc:BuyerProfileURI>
+    <cac:ContractingPartyType>
+      <cbc:PartyTypeCode listName="buyer-legal-type">body-pl-cga</cbc:PartyTypeCode>
+    </cac:ContractingPartyType>
+    <cac:ContractingActivity>
+      <cbc:ActivityTypeCode listName="authority-activity">gen-pub</cbc:ActivityTypeCode>
+    </cac:ContractingActivity>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+      </cac:PartyIdentification>
+    </cac:Party>
+  </cac:ContractingParty>
+  <cac:TenderingProcess>
+    
+    <cbc:Description languageID="ENG">All qualified tenderers are invited to submit a first tender. The contracting authority will make a reduction/reduce the number of tenders with several tenders.  
+
+Implementation of negotiations:
+The contracting authority will conduct negotiations with 3 tenderers. The contracting authority will make a reduction/reduce the number of tenders with several tenders.  
+
+The reduction/choice shall be made on the basis of the stated award criteria, so that the best ranked tenders/solution proposals will continue to the next phase, cf. the procurement regulations § 23-11.  
+
+Any reduction/deselection will be made before negotiations are carried out. The negotiations are planned to be carried out as one or several separate physical meetings between the contracting authority and each of the tenderers in premises that the Contracting Authority provides. The meetings can be held digitally.   
+
+Emphasis is put on the fact that the contracting authority cannot, in the face of the other suppliers, reveal systems or other confidential information that a tenderer gives the contracting authority, without the tenderer ́s consent, cf. the procurement regulations § 23-10 (2).  
+
+The negotiations are planned to be carried out in accordance with the provisional plan as stated in the tender documentation chapter A2. The contracting authority reserves the right to hold further negotiation meetings and request further revised tenders if needed.  
+
+The purpose of the negotiation meetings is for tenderers to get feedback that will enable them to submit an improved tender.  
+
+The contracting authority will give tenderers feedback on how the contracting authority has assessed the tenderers ́ tenders in accordance with the award criteria.</cbc:Description>
+    <cbc:ProcedureCode listName="procurement-procedure-type">neg-w-call</cbc:ProcedureCode>
+    <cbc:TerminatedIndicator>true</cbc:TerminatedIndicator>
+    <cac:NoticeDocumentReference>
+      <cbc:ID schemeName="notice-id-ref">fc0d3655-1783-43ad-81a3-21cedd39c570-01</cbc:ID>
+    </cac:NoticeDocumentReference>
+    <cac:ProcessJustification>
+      <cbc:ProcessReasonCode listName="accelerated-procedure">false</cbc:ProcessReasonCode>
+    </cac:ProcessJustification>
+  </cac:TenderingProcess>
+  <cac:ProcurementProject>
+    <cbc:ID>25/66411</cbc:ID>
+    
+    <cbc:Name languageID="ENG">DK 9104 Operational contract roads Oslo-Gardermoen 2026-2031</cbc:Name>
+    
+    <cbc:Description languageID="ENG">The assignment comprises operational and maintenance assignments, with function responsibility for some of the assignments, on national roads and national foot/cycle paths with the accompanying side facilities, side areas, equipment and installations, in Oslo, Lillestrøm, Lørenskog, Ullensaker, Nittedal and Bærum municipalities in accordance with the road list given in chapter D2-V1, D2-S17 and D2-S20.</cbc:Description>
+    <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+    
+    <cbc:Note languageID="ENG">A tender conference will be held 2025-10-20, 12 digitally on teams. Register via the communication module in the KGV.
+
+Compensation for requests for participation in the competition:
+The contracting authority will not cover costs for preparing the request for participation in the competition. 
+
+Compensation for participation in the competition:
+Qualified tenderers who are invited to submit a tender, but who are not awarded the contract, will be paid NOK 200,000 excluding VAT for participation in the competition. Payment of compensation is subject to the tenderer submitting a first, revised and/or final tender.   
+
+Beyond any compensation in accordance with the above section, the tenderer must cover all costs that the tenderer incurred by participating in the competition.</cbc:Note>
+    <cac:RequestedTenderTotal>
+      <cbc:EstimatedOverallContractAmount currencyID="NOK">1000000000</cbc:EstimatedOverallContractAmount>
+    </cac:RequestedTenderTotal>
+    <cac:MainCommodityClassification>
+      <cbc:ItemClassificationCode listName="cpv">63712200</cbc:ItemClassificationCode>
+    </cac:MainCommodityClassification>
+    <cac:AdditionalCommodityClassification>
+      <cbc:ItemClassificationCode listName="cpv">63000000</cbc:ItemClassificationCode>
+    </cac:AdditionalCommodityClassification>
+    <cac:AdditionalCommodityClassification>
+      <cbc:ItemClassificationCode listName="cpv">63700000</cbc:ItemClassificationCode>
+    </cac:AdditionalCommodityClassification>
+    <cac:AdditionalCommodityClassification>
+      <cbc:ItemClassificationCode listName="cpv">63710000</cbc:ItemClassificationCode>
+    </cac:AdditionalCommodityClassification>
+    <cac:AdditionalCommodityClassification>
+      <cbc:ItemClassificationCode listName="cpv">63712000</cbc:ItemClassificationCode>
+    </cac:AdditionalCommodityClassification>
+    <cac:RealizedLocation>
+      <cac:Address>
+        <cbc:CountrySubentityCode listName="nuts">NO084</cbc:CountrySubentityCode>
+        <cac:Country>
+          <cbc:IdentificationCode listName="country">NOR</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:RealizedLocation>
+  </cac:ProcurementProject>
+  <cac:ProcurementProjectLot>
+    <cbc:ID schemeName="Lot">LOT-0000</cbc:ID>
+    <cac:TenderingTerms>
+      <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+      <cac:AwardingTerms>
+        <cac:AwardingCriterion>
+          
+          <cbc:CalculationExpression languageID="ENG">Tender sum - deduction for each award criteria, see below for each individual requirement.</cbc:CalculationExpression>
+          <cac:SubordinateAwardingCriterion>
+            <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+            
+            <cbc:Name languageID="ENG">K1 - Tender Sum</cbc:Name>
+            
+            <cbc:Description languageID="ENG">K1 - Tender Sum
+
+The tenderer shall deliver:
+- Completed chapter E
+
+The inspection calculated tender sum will be used as the tender sum (K1) in the calculation of the tender sum.</cbc:Description>
+          </cac:SubordinateAwardingCriterion>
+          <cac:SubordinateAwardingCriterion>
+            <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+            
+            <cbc:Name languageID="ENG">K2 Climate and Environment</cbc:Name>
+            
+            <cbc:Description languageID="ENG">The tenderer shall deliver:
+- Completed chapter E
+
+The inspection calculated tender sum will be used as the tender sum (K1) in the calculation of the tender sum. 
+
+K2.1 – Climate
+The tenderer shall:
+Filling in and delivering the «Klimagassbudsjett for Driftskontrakt 9104 Oslo-Gardermoen 2026-2031».
+
+The climate gas budget shall contain values/sizes/activities that together are suitable for solving the processes:
+
+95.23 Snow clearing and planing (national road) - variable part (heavy grader is not included in the budget),
+95.13 Basic package gs areas (all assignments connected to snow clearing),
+95.25 Gritting with salt (national road),
+95.13 Basic package gable areas (all assignments connected to gritting with salt),
+74.821 Sub-task edge cutting, 
+73.31 Sweeping, collecting and flushing (only applies to weekly/14th day/monthly routine sweeping and collecting on the roadway).
+
+In addition the climate gas budget shall include values/sizes/activities for job notification assignments carried out by a buffer vehicle.
+
+- Supply of AN EPD (Environmental Product Declaration) or equivalent environmental declaration type III iht. ISO 14025 for the selected salt product.
+
+Deductions up until
+230 000 000
+
+K2.2 - Environment
+The tenderer's activities in order to ensure timely, accurate and "correct" salting.
+
+The tenderer shall deliver:
+- Description of activities to ensure timely, accurate and "correct" salting.
+
+Deductions up until
+70 000 000</cbc:Description>
+          </cac:SubordinateAwardingCriterion>
+          <cac:SubordinateAwardingCriterion>
+            <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+            
+            <cbc:Name languageID="ENG">K3 Operational system year round</cbc:Name>
+            
+            <cbc:Description languageID="ENG">The contracting authority will emphasise how the tenderer shall ensure an operational system that is robust and appropriate, so that the contract specific challenges are handled and the contract ́s total risk is reduced.
+
+K3.1 - Resources 
+A selection of the resources/personnel in the contract (key personnel). 
+ 
+The tenderer ́s share of resources/personnel in the contract with relevant certificates of apprenticeship and the plan for increasing relevant certificates of apprenticeship for resources/personnel in the contract.   The tenderer shall deliver: 
+- Completed annex "Ressursplan" 
+- Overview of the share of resources/personnel in the contract with relevant certificates of apprenticeship and a plan for increasing relevant certificates of apprenticeship for resources/personnel in the contract. Share of certificates of apprenticeship is to be given with a % portion for the total number of hours for the contract ́s resources/personnel in it's entirety (both HE and the contract helpers). 
+
+Deductions up until
+30 000 000
+K4 - Winter operations
+The contracting authority will emphasise how the tenderer shall ensure an operational system for winter operations that is robust and appropriate, so that the contract specific challenges are dealt with and the contract ́s total risk is reduced. 
+ K4.1 - The tenderer ́s capacity in winter and logistics for currents.
+
+The tenderer shall deliver: 
+- Capacity calculations (indication of units and equipment in total and per lot).
+- Map of sectioning 
+- Description of type of current times, storage type, storage placement and storage capacity.
+ Deductions to
+45 000 000</cbc:Description>
+          </cac:SubordinateAwardingCriterion>
+        </cac:AwardingCriterion>
+      </cac:AwardingTerms>
+      <cac:AppealTerms>
+        <cac:PresentationPeriod>
+          
+          <cbc:Description languageID="ENG">The waiting period will be determined after the final tender has been evaluated.</cbc:Description>
+        </cac:PresentationPeriod>
+        <cac:AppealReceiverParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+          </cac:PartyIdentification>
+        </cac:AppealReceiverParty>
+      </cac:AppealTerms>
+    </cac:TenderingTerms>
+    <cac:TenderingProcess>
+      <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+      <cac:AuctionTerms>
+        <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+      </cac:AuctionTerms>
+      <cac:ContractingSystem>
+        <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+      </cac:ContractingSystem>
+      <cac:ContractingSystem>
+        <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+      </cac:ContractingSystem>
+    </cac:TenderingProcess>
+    <cac:ProcurementProject>
+      <cbc:ID>25/66411</cbc:ID>
+      
+      <cbc:Name languageID="ENG">DK 9104 Operational contract roads Oslo-Gardermoen 2026-2031</cbc:Name>
+      
+      <cbc:Description languageID="ENG">The assignment comprises operational and maintenance assignments, with function responsibility for some of the assignments, on national roads and national foot/cycle paths with the accompanying side facilities, side areas, equipment and installations, in Oslo, Lillestrøm, Lørenskog, Ullensaker, Nittedal and Bærum municipalities in accordance with the road list given in chapter D2-V1, D2-S17 and D2-S20.</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+      
+      <cbc:Note languageID="ENG">A tender conference will be held 2025-10-20, 12 digitally on teams. Register via the communication module in the KGV.
+
+Compensation for requests for participation in the competition:
+The contracting authority will not cover costs for preparing the request for participation in the competition. 
+
+Compensation for participation in the competition:
+Qualified tenderers who are invited to submit a tender, but who are not awarded the contract, will be paid NOK 200,000 excluding VAT for participation in the competition. Payment of compensation is subject to the tenderer submitting a first, revised and/or final tender.   
+
+Beyond any compensation in accordance with the above section, the tenderer must cover all costs that the tenderer incurred by participating in the competition.</cbc:Note>
+      <cac:RequestedTenderTotal>
+        <cbc:EstimatedOverallContractAmount currencyID="NOK">1000000000</cbc:EstimatedOverallContractAmount>
+      </cac:RequestedTenderTotal>
+      <cac:MainCommodityClassification>
+        <cbc:ItemClassificationCode listName="cpv">63712200</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+        <cbc:ItemClassificationCode listName="cpv">63000000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+        <cbc:ItemClassificationCode listName="cpv">63700000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+        <cbc:ItemClassificationCode listName="cpv">63710000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+        <cbc:ItemClassificationCode listName="cpv">63712000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:RealizedLocation>
+        <cac:Address>
+          <cbc:CountrySubentityCode listName="nuts">NO084</cbc:CountrySubentityCode>
+          <cac:Country>
+            <cbc:IdentificationCode listName="country">NOR</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:RealizedLocation>
+      <cac:PlannedPeriod>
+        <cbc:StartDate>2026-09-01Z</cbc:StartDate>
+        <cbc:EndDate>2031-08-31Z</cbc:EndDate>
+      </cac:PlannedPeriod>
+    </cac:ProcurementProject>
+  </cac:ProcurementProjectLot>
+  <cac:TenderResult>
+    <cbc:AwardDate>2000-01-01Z</cbc:AwardDate>
+  </cac:TenderResult>
+</ContractAwardNotice>

@@ -1,0 +1,766 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ccts-cct="urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDataTypes-2" xmlns:udt="urn:oasis:names:specification:bdndr:schema:xsd:UnqualifiedDataTypes-1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<ext:UBLExtensions>
+		<ext:UBLExtension>
+			<ext:ExtensionContent>
+				<efext:EformsExtension>
+					<efac:NoticeSubType>
+						<cbc:SubTypeCode listName="notice-subtype">16</cbc:SubTypeCode>
+					</efac:NoticeSubType>
+					<efac:Organizations>
+						<efac:Organization>
+							<efac:Company>
+								<cbc:WebsiteURI>https://www.wb-duisburg.de</cbc:WebsiteURI>
+								<cac:PartyIdentification>
+									<cbc:ID>ORG-0001</cbc:ID>
+								</cac:PartyIdentification>
+								<cac:PartyName>
+									<cbc:Name languageID="DEU">Wirtschaftsbetriebe Duisburg - AöR</cbc:Name>
+								</cac:PartyName>
+								<cac:PostalAddress>
+									<cbc:StreetName>Schifferstr. 190</cbc:StreetName>
+									<cbc:CityName>Duisburg</cbc:CityName>
+									<cbc:PostalZone>47059</cbc:PostalZone>
+									<cbc:CountrySubentityCode listName="nuts-lvl3">DEA12</cbc:CountrySubentityCode>
+									<cac:Country>
+										<cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+									</cac:Country>
+								</cac:PostalAddress>
+								<cac:PartyLegalEntity>
+									<cbc:CompanyID>DE252359155</cbc:CompanyID>
+								</cac:PartyLegalEntity>
+								<cac:Contact>
+									<cbc:Telephone>+49 2032834390</cbc:Telephone>
+									<cbc:ElectronicMail>t.schwend@wb-duisburg.de</cbc:ElectronicMail>
+								</cac:Contact>
+							</efac:Company>
+						</efac:Organization>
+						<efac:Organization>
+							<efac:Company>
+								<cac:PartyIdentification>
+									<cbc:ID>ORG-0002</cbc:ID>
+								</cac:PartyIdentification>
+								<cac:PartyName>
+									<cbc:Name languageID="DEU">Vergabekammer Rheinland</cbc:Name>
+								</cac:PartyName>
+								<cac:PostalAddress>
+									<cbc:StreetName>Zeughausstraße 2-10</cbc:StreetName>
+									<cbc:CityName>Köln</cbc:CityName>
+									<cbc:PostalZone>50667</cbc:PostalZone>
+									<cbc:CountrySubentityCode listName="nuts-lvl3">DEA23</cbc:CountrySubentityCode>
+									<cac:Country>
+										<cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+									</cac:Country>
+								</cac:PostalAddress>
+								<cac:PartyLegalEntity>
+									<cbc:CompanyID>+49 2211473045</cbc:CompanyID>
+								</cac:PartyLegalEntity>
+								<cac:Contact>
+									<cbc:Name>Frau</cbc:Name>
+									<cbc:Telephone>+49 2211473045</cbc:Telephone>
+									<cbc:Telefax>+49 2211472889</cbc:Telefax>
+									<cbc:ElectronicMail>vkrhld-d@bezreg-koeln.nrw.de</cbc:ElectronicMail>
+								</cac:Contact>
+							</efac:Company>
+						</efac:Organization>
+						<efac:Organization>
+							<efac:Company>
+								<cbc:WebsiteURI>https://www.bezreg-koeln.nrw.de</cbc:WebsiteURI>
+								<cac:PartyIdentification>
+									<cbc:ID>ORG-0003</cbc:ID>
+								</cac:PartyIdentification>
+								<cac:PartyName>
+									<cbc:Name languageID="DEU">Vergabekammer Rheinland</cbc:Name>
+								</cac:PartyName>
+								<cac:PostalAddress>
+									<cbc:StreetName>Zeughausstraße 2-10</cbc:StreetName>
+									<cbc:CityName>Köln</cbc:CityName>
+									<cbc:PostalZone>50667</cbc:PostalZone>
+									<cbc:CountrySubentityCode listName="nuts-lvl3">DEA23</cbc:CountrySubentityCode>
+									<cac:Country>
+										<cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+									</cac:Country>
+								</cac:PostalAddress>
+								<cac:PartyLegalEntity>
+									<cbc:CompanyID>12345</cbc:CompanyID>
+								</cac:PartyLegalEntity>
+								<cac:Contact>
+									<cbc:Telephone>+49 2211473045</cbc:Telephone>
+									<cbc:Telefax>+49 2211472889</cbc:Telefax>
+									<cbc:ElectronicMail>vkrhld-d@bezreg-koeln.nrw.de</cbc:ElectronicMail>
+								</cac:Contact>
+							</efac:Company>
+						</efac:Organization>
+					<efac:Organization><efac:Company><cac:PartyIdentification><cbc:ID schemeName="organization">ORG-0004</cbc:ID></cac:PartyIdentification><cac:PartyName><cbc:Name languageID="DEU">Datenservice Öffentlicher Einkauf (in Verantwortung des Beschaffungsamts des BMI)</cbc:Name></cac:PartyName><cac:PostalAddress><cbc:CityName>Bonn</cbc:CityName><cbc:PostalZone>53119</cbc:PostalZone><cbc:CountrySubentityCode listName="nuts">DEA22</cbc:CountrySubentityCode><cac:Country><cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode></cac:Country></cac:PostalAddress><cac:PartyLegalEntity><cbc:CompanyID schemeID="002">0204:994-DOEVD-83</cbc:CompanyID></cac:PartyLegalEntity><cac:Contact><cbc:Telephone>+49228996100</cbc:Telephone><cbc:ElectronicMail>noreply.esender_hub@bescha.bund.de</cbc:ElectronicMail></cac:Contact></efac:Company></efac:Organization></efac:Organizations>
+				<efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00760711-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+			</ext:ExtensionContent>
+		</ext:UBLExtension>
+	</ext:UBLExtensions>
+	<cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+	<cbc:CustomizationID>eforms-sdk-1.12</cbc:CustomizationID>
+	<cbc:ProfileID>eforms-sdk-1.12</cbc:ProfileID>
+	<cbc:ID schemeName="notice-id">97ee033a-8674-4525-af1d-11625bd30bf8</cbc:ID>
+	<cbc:ContractFolderID>5c9c7d66-dfe2-4029-917e-e2a1ae4ec7ea</cbc:ContractFolderID>
+	<cbc:IssueDate>2025-11-14+01:00</cbc:IssueDate>
+	<cbc:IssueTime>09:02:49+01:00</cbc:IssueTime>
+	<cbc:VersionID>01</cbc:VersionID>
+	<cbc:RequestedPublicationDate>2025-11-14+01:00</cbc:RequestedPublicationDate>
+	<cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+	<cbc:NoticeTypeCode listName="competition">cn-standard</cbc:NoticeTypeCode>
+	<cbc:NoticeLanguageCode listID="eu-official-language">DEU</cbc:NoticeLanguageCode>
+	<cac:ContractingParty>
+		<cac:ContractingPartyType>
+			<cbc:PartyTypeCode listName="buyer-legal-type">body-pl-la</cbc:PartyTypeCode>
+		</cac:ContractingPartyType>
+		<cac:ContractingActivity>
+			<cbc:ActivityTypeCode listName="authority-activity">gen-pub</cbc:ActivityTypeCode>
+		</cac:ContractingActivity>
+		<cac:Party>
+			<cac:PartyIdentification>
+				<cbc:ID>ORG-0001</cbc:ID>
+			</cac:PartyIdentification>
+		<cac:ServiceProviderParty><cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode><cac:Party><cac:PartyIdentification><cbc:ID schemeName="organization">ORG-0004</cbc:ID></cac:PartyIdentification></cac:Party></cac:ServiceProviderParty></cac:Party>
+	</cac:ContractingParty>
+	<cac:TenderingTerms>
+		<ext:UBLExtensions>
+			<ext:UBLExtension>
+				<ext:ExtensionContent>
+					<efext:EformsExtension>
+						<efac:StrategicProcurement>
+							<efbc:ApplicableLegalBasis listName="cvd-scope">false</efbc:ApplicableLegalBasis>
+						</efac:StrategicProcurement>
+					</efext:EformsExtension>
+				</ext:ExtensionContent>
+			</ext:UBLExtension>
+		</ext:UBLExtensions>
+		<cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+		<cac:RequiredFinancialGuarantee>
+			<cbc:GuaranteeTypeCode listName="tender-guarantee-required">false</cbc:GuaranteeTypeCode>
+		</cac:RequiredFinancialGuarantee>
+		<cac:ProcurementLegislationDocumentReference>
+			<cbc:ID>vob-a-eu</cbc:ID>
+		</cac:ProcurementLegislationDocumentReference>
+		<cac:CallForTendersDocumentReference>
+			<ext:UBLExtensions>
+				<ext:UBLExtension>
+					<ext:ExtensionContent>
+						<efext:EformsExtension>
+							<efac:OfficialLanguages>
+								<cac:Language>
+									<cbc:ID>DEU</cbc:ID>
+								</cac:Language>
+							</efac:OfficialLanguages>
+						</efext:EformsExtension>
+					</ext:ExtensionContent>
+				</ext:UBLExtension>
+			</ext:UBLExtensions>
+			<cbc:ID>SomeTenderDocID1</cbc:ID>
+			<cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+		</cac:CallForTendersDocumentReference>
+		<cac:TendererQualificationRequest>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-natl-bre-nat-law</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Es sind alle im § 123 - 126 GWB genannten Ausschussgründe wirksam. Der Bewerber/die Bewerbergemeinschaft hat eine Eigenerklärung zu den Ausschlussgründen einzureichen. Das entsprechende Formular ("Erklärung des Bieters") ist in Teil 3 - Vordrucke - der Vergabeunterlagen enthalten.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-part</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Bieter die in den vergangenen 5 Jahren nach § 129 StGB (Strafgesetzbuch) wegen der Bildung einer krimineller Vereinigungen in Deutschland oder wegen § 129b StGB wegen der Bildung einer kriminellen Vereinigungen im Ausland rechtskräftig verurteilt wurden und die nicht zweifelsfrei belegen können, dass sie allen Maßnahmen zur Selbstreinigung nach § 125 Abs. (1) GWB uneingeschränkt nachgekommen sind, werden gem. § 123 Abs. (1) Nr. 1 GWB aufgrund mangelnder Eignung, resultierend aus fehlender Gesetzestreue, vom Verfahren ausgeschlossen.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-terror</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Bieter die in den vergangenen 5 Jahren nach § 129a StGB (Strafgesetzbuch) wegen der Bildung einer terroristischer Vereinigungen in Deutschland oder nach § 129b StGB wegen der Bildung einer terroristischen Vereinigungen im Ausland verurteilt wurden und die nicht zweifelsfrei belegen können, dass sie allen Maßnahmen zur Selbstreinigung nach § 125 Abs. (1) GWB uneingeschränkt nachgekommen sind, werden gem. § 123 Abs. (1) Nr. 1 GWB aufgrund mangelnder Eignung, resultierend aus fehlender Gesetzestreue vom Verfahren ausgeschlossen.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-laund</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Bieter die in den letzten 5 Jahren nach § 89c StGB (Strafgesetzbuch) wegen Terrorismusfinanzierung oder wegen der Teilnahme an einer solchen Tat oder wegen der Bereitstellung oder Sammlung finanzieller Mittel in Kenntnis dessen, dass diese finanziellen Mittel ganz oder teilweise dazu verwendet werden oder verwendet werden sollen, eine Tat nach § 89a Absatz Nummer 2 StGB zu begehen oder die nach § 261 StGB wegen Geldwäsche, Verschleierung unrechtmäßig erlangter Vermögenswerte rechtskräftig verurteilt wurden und die nicht zweifelsfrei belegen können, dass sie allen Maßnahmen zur Selbstreinigung nach § 125 Abs. (1) GWB uneingeschränkt nachgekommen sind, werden in Bezug auf die Terrorismusfinanzierung gem. § 123 Abs. (1) Nr. 2 GWB  und in Bezug auf die Geldwäsche gem. § 123 Abs. (1) Nr. (3) GWB, aufgrund mangelnder Eignung, resultierend aus fehlender Gesetzestreue, vom Verfahren ausgeschlossen.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-fraud</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Bieter die in den letzten 5 Jahren nach § 263 StGB (Strafgesetzbuch) wegen Betrugs, soweit sich die Straftat gegen den Haushalt der Europäischen Gemeinschaften oder gegen Haushalte richtet, die von den Europäischen Gemeinschaften oder in deren Auftrag verwaltet werden oder nach § 264 StGB wegen Subventionsbetrugs, soweit sich die Straftat gegen den Haushalt der Europäischen Gemeinschaften oder gegen Haushalte richtet, die von den Europäischen Gemeinschaften oder in deren Auftrag verwaltet werden, rechtskräftig verurteilt wurden und die nicht zweifelsfrei belegen können, dass sie allen Maßnahmen zur Selbstreinigung nach § 125 Abs. (1) GWB uneingeschränkt nachgekommen sind, werden in Bezug auf Betrug gem. § 123 Abs. (1) Nr. 4 GWB und in Bezug auf Subventionsbetrug gem. § 123 Abs. (1) Nr. 5 GWB, aufgrund mangelnder Eignung, resultierend aus fehlender Gesetzestreue, vom Verfahren ausgeschlossen.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-corrpt</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Bieter die in den vergangenen 5 Jahren nach § 299 des  StGB (Strafgesetzbuch) wegen Bestechlichkeit und Bestechung im geschäftlichen Verkehr oder nach §108e StGB wegen Bestechlichkeit und Bestechung von Mandatsträgern oder nach §§ 333 und 334 StGB wegen Vorteilsgewährung und Bestechung, jeweils auch in Verbindung mit § 335a StGB (Ausländische und internationale Bedienstete) und Artikel 2 § 1 des EU-Gesetzes zur Bekämpfung internationaler Bestechung sowie Artikel 2 § 2 des Gesetzes zur Bekämpfung internationaler Bestechung (Bestechung ausländischer Abgeordneter im Zusammenhang mit internationalem Geschäftsverkehr) rechtskräftig verurteilt wurden und die nicht zweifelsfrei belegen können, dass sie allen Maßnahmen zur Selbstreinigung nach § 125 Abs. (1) GWB (Gesetz gegen Wettbewerbsbeschränkungen) uneingeschränkt nachgekommen sind, werden gem. § 123 Abs. (1) Nr. 6 - 9 GWB aufgrund mangelnder Eignung, resultierend aus fehlender Gesetzestreue vom Verfahren ausgeschlossen.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-traffick</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Bieter die in den letzten 5 Jahren nach § 232 StGB (Strafgesetzbuch) oder nach §233 StGB wegen Menschenhandels oder Förderung des Menschenhandels oder  Zwangsprostitution oder Zwangsarbeit oder Ausbeutung der Arbeitskraft rechtskräftig verurteilt wurden und die nicht zweifelsfrei belegen können, dass sie allen Maßnahmen zur Selbstreinigung nach § 125 Abs. (1) GWB uneingeschränkt nachgekommen sind, werden gem. § 123 Abs. (1) Nr. 10 GWB aufgrund mangelnder Eignung, resultierend aus fehlender Gesetzestreue, vom Verfahren ausgeschlossen.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-pmt-bre-tax</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Bieter bei denen in den letzten 5 Jahren durch eine rechtskräftige Gerichts- oder bestandskräftige Verwaltungsentscheidung festgestellt wurde, dass sie ihren  Verpflichtungen zur Zahlung von Steuern oder Abgaben nicht nachgekommen sind und die nicht zweifelsfrei belegen können, dass sie allen Maßnahmen zur Selbstreinigung nach § 125 Abs. (1) GWB uneingeschränkt nachgekommen sind, werden gem. § 123 Abs. (4) Nr. 1 GWB wegen mangelnder Eignung, resultierend aus fehlender Gesetzestreue vom Verfahren ausgeschlossen.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-pmt-bre-ssc</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Bieter bei denen in den letzten 5 Jahren durch eine rechtskräftige Gerichts- oder bestandskräftige Verwaltungsentscheidung festgestellt wurde, dass sie ihren  Verpflichtungen zur Zahlung von Beiträgen zur Sozialversicherung nicht nachgekommen sind und die nicht zweifelsfrei belegen können, dass sie allen Maßnahmen zur Selbstreinigung nach § 125 Abs. (1) GWB uneingeschränkt nachgekommen sind, werden gem. § 123 Abs. (4) Nr. 1 GWB wegen mangelnder Eignung, resultierend aus fehlender Gesetzestreue vom Verfahren ausgeschlossen.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-bre-env-law</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Bieter die in den letzten 3 Jahren wegen schwerer Verstöße gegen umweltrechtliche Bestimmungen rechtskräftig verurteilt wurden oder für die ein Bußgeld nach § 24 Abs. (2) LkSG (Lieferkettensorgfaltspflichtengesetz der Bundesrepublik Deutschland) verhängt wurde und die nicht zweifelsfrei belegen können, dass sie allen Maßnahmen zur Selbstreinigung nach § 125 Abs. (1) GWB uneingeschränkt nachgekommen sind, werden gem. § 124 Abs. (1) Nr. 1 GWB aufgrund mangelnder Eignung, resutlierend aus fehlender Gesetzestreue und Zuverlässigkeit, vom Verfahren ausgeschlossen.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-bre-soc-law</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Bieter bei denen in den letzten 3 Jahren durch eine rechtskräftige Gerichts- oder bestandskräftige Verwaltungsentscheidung festgestellt wurde, dass sie ihre sozialrechtlichen Verpflichtungen nicht erfüllt haben und die nicht zweifelsfrei belegen können, dass sie allen Maßnahmen zur Selbstreinigung nach § 125 Abs. (1) GWB uneingeschränkt nachgekommen sind, werden aufgrund mangelnder Eignung, resultierend aus fehlender Gesetzestreue und / oder Zuverlässigkeit gem. § 124 Abs. (1) Nr. 1 GWB von der Wertung ausgeschlossen.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-bre-lab-law</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Bieter die in den letzten 3 Jahren wegen Verstößen gegen arbeitsrechtliche Verpflichtungen rechtskräftig verurteilt oder mit einem Bußgeld vom mehr als 2.500,- EUR belegt wurden und die nicht zweifelsfrei belegen können, dass sie allen Maßnahmen zur Selbstreinigung nach § 125 Abs. (1) GWB uneingeschränkt nachgekommen sind, werden gem. § 124 Abs. (1) Nr. 1 GWB wegen mangelnder Eignung, resultierend aus fehlender Gesetzestreue vom Verfahren ausgeschlossen.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-insolvency</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Bieter die nach gesicherten Erkenntnissen des Auftraggebers zahlungsunfähig sind, werden gem. § 124 Abs. (1) Nr. 2 GWB aufgrund mangelnder Eignung resultierend aus fehlender finanzieller Leistungsfähigkeit, vom Verfahren ausgeschlossen, sofern sie keinen vom Auftraggeber akzeptierten Eignungsverleiher benennen können, der ihnen im Rahmen einer gesamtschuldnerischen Haftung zur erforderlichen finanziellen Leistungsfähigkeit verhilft.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-liq-admin</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Bieter über deren Vermögen ein Insolvenzverfahren beantragt oder eröffnet oder die Eröffnung eines solchen Verfahrens mangels Masse abgelehnt worden ist, werden gem. § 124 Abs. (1) Nr. 2 GWB aufgrund mangelnder Eignung resultierend aus fehlender finanzieller Leistungsfähigkeit, vom Verfahren ausgeschlossen, sofern sie keinen vom Auftraggeber akzeptierten Eignungsverleiher benennen können, der ihnen im Rahmen einer gesamtschuldnerischen Haftung zur erforderlichen finanziellen Leistungsfähigkeit verhilft.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-as-susp</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Bieter die ihre unternehmerische bzw. berufliche Tätigkeit in den letzten 3 Jahren nachweislich eingestellt haben, werden gem. § 124 Abs. (1) Nr. 2 GWB aufgrund mangelnder Eignung, resultierend aus fehlender Leistungsfähigkeit und Zuverlässigkeit, vom Verfahren ausgeschlossen.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-other</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Bieter die in den letzten 3 Jahren ein insolvenzähnliches Verfahren (z. B. Schutzschirmverfahren, außergerichtlicher Vergleich mit Gläubigern) durchlaufen oder eingeleitet haben, werden gem. § 124 Abs. (1) Nr. 2 GWB aufgrund mangelnder Eignung, resultierend aus fehlender finanzieller Leistungsfähigkeit vom Verfahren ausgeschlossen, sofern sie keinen vom Auftraggeber akzeptierten Eignungsverleiher benennen können, der ihnen im Rahmen einer gesamtschuldnerischen Haftung die erforderliche finanzielle Leistungsfähigkeit verschafft.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-misconduct</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Bieter die in den letzten 3 Jahren im Rahmen ihrer beruflichen Tätigkeit nachweislich eine schwere Verfehlung begangen haben und die nicht zweifelsfrei belegen können, dass sie allen Maßnahmen zur Selbstreinigung nach § 125 Abs. (1) GWB uneingeschränkt nachgekommen sind, werden gem. § 124 Abs. (1) Nr. 3 GWB aufgrund mangelnder Eignung, resultierend aus fehlender Gesetzestreue oder fehlender Zuverlässigkeit, vom Verfahren ausgeschlossen.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-distortion</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Bieter deren Beteiligung an wettbewerbsbeschränkenden Absprachen in den letzten 3 Jahren durch die Europäische Kommission, den Europäischen Gerichtshof, ein anderes ordentliches Gericht oder das Bundeskartellamt festgestellt wurde oder über deren Beteiligung an einer wettbewerbsbeschränkenden Absprache dem / der AG hinreichend gesicherte Erkenntnisse vorliegen und die nicht zweifelsfrei belegen können, dass sie allen Maßnahmen zur Selbstreinigung nach § 125 Abs. (1) GWB uneingeschränkt nachgekommen sind, werden gem. § 124 Abs. (1) Nr. 4 GWB aufgrund mangelnder Eignung, resultierend aus fehlender Gesetzestreue, vom Verfahren ausgeschlossen.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-partic-confl</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Bieter bei denen ein Interessenkonflikt bei der Durchführung des Vergabeverfahrens besteht, der die
+Unparteilichkeit und Unabhängigkeit einer für den Auftraggeber tätigen Person bei der Durchführung des Vergabeverfahrens beeinträchtigen könnte und der sich durch andere Maßnahmen nicht beseitigen lässt, werden gem. § 124 Abs. (1) Nr. 5 GWB vom Verfahren ausgeschlossen, sofern sie nicht nachweisen können, dass der Interessenkonflikt nicht bzw. nicht mehr existiert..</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-prep-confl</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Bieter bei denen eine Wettbewerbsverzerrung daraus resultiert, dass das Unternehmen bereits in die
+Vorbereitung des Vergabeverfahrens einbezogen war, und bei denen sich diese Wettbewerbsverzerrung nicht durch andere Maßnahmen beseitigen lässt, werden gem. § 124  Abs. (1) Nr. 6 GWB vom Verfahren ausgeschlossen, sofern sie nicht nachweisen können, dass die Wettbewerbsverzerrung nicht bzw. nicht mehr besteht oder Maßnahmen benennen können, durch die sich die Wettbewerbsverzerrung wirksam beheben lässt.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-sanction</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Bieter die in den letzten 3 Jahren eine wesentliche Anforderung bei der Ausführung eines früheren
+öffentlichen Auftrags oder Konzessionsvertrags erheblich oder fortdauernd mangelhaft erfüllt haben, mit der Folge einer vorzeitigen Vertragsbeendigung durch den Auftraggeber, Schadensersatz zugunsten des Auftraggebers oder einer vergleichbaren Rechtsfolge und die nicht zweifelsfrei belegen können, dass sie allen Maßnahmen zur Selbstreinigung nach § 125 Abs. (1) GWB uneingeschränkt nachgekommen sind, werden gem. § 124 Abs. (1) Nr. 7 GWB aufgrund mangelnder Eignung, resultierend aus fehlender Fachkunde oder fehlender Leistungsfähigkeit oder fehlender Zuverlässigkeit, vom Verfahren ausgeschlossen.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-misrepresent</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Bieter die in diesem Vergabeverfahren eine
+schwerwiegende Täuschung begangen oder Auskünfte zurückgehalten haben oder nicht in der Lage sind die erforderlichen Nachweise zu übermitteln oder versucht haben die Entscheidungsfindung des Auftraggebers in unzulässiger Weise zu beeinflussen oder versucht haben vertrauliche Informationen zu erhalten, um unzulässige Vorteile beim Vergabeverfahren zu erlangen oder fahrlässig oder vorsätzlich irreführende Informationen übermittelt haben, die die Vergabeentscheidung erheblich beeinflussen
+könnten, oder versucht haben, solche Informationen zu übermitteln und die nicht zweifelsfrei belegen können, dass sie allen Maßnahmen zur Selbstreinigung nach § 125 Abs. (1) GWB uneingeschränkt nachgekommen sind, werden in Bezug auf Täuschung gem. § 124 Abs. (1) Nr. 8 GWB und in Bezug auf Beeinflussung und irreführende  Informationen gem. § 124 Abs. (1) Nr. 9 GWB, wegen mangelnder Eignung, resultierend aus fehlender Gesetzestreue und fehlender Zuverlässigkeit vom Verfahren ausgeschlossen.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+		</cac:TendererQualificationRequest>
+		<cac:TendererQualificationRequest>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-grounds-source">epo-notice</cbc:TendererRequirementTypeCode>
+			</cac:SpecificTendererRequirement>
+		</cac:TendererQualificationRequest>
+		<cac:TenderRecipientParty>
+			<cac:PartyIdentification>
+				<cbc:ID>ORG-0001</cbc:ID>
+			</cac:PartyIdentification>
+		</cac:TenderRecipientParty>
+		<cac:AppealTerms>
+			<cac:PresentationPeriod>
+				<cbc:Description languageID="DEU">Die Zulässigkeit von Nachprüfungsanträgen richtet sich nach § 160 GWB. Nach § 160 Abs. 3 GWB ist ein Nachprüfungsantrag unzulässig, soweit
+
+1. der Antragsteller den geltend gemachten Verstoß gegen Vergabevorschriften vor Einreichen des Nachprüfungsantrags erkannt und gegenüber dem Auftraggeber nicht innerhalb einer Frist von 10 Kalendertagen gerügt hat; der Ablauf der Frist nach § 134 Absatz 2 GWB bleibt unberührt,
+
+2. Verstöße gegen Vergabevorschriften, die aufgrund der Bekanntmachung erkennbar sind, nicht spätestens bis zum Ablauf der in der Bekanntmachung benannten Frist zur Bewerbung oder zur Angebotsabgabe gegenüber dem Auftraggeber gerügt werden,
+
+3. Verstöße gegen Vergabevorschriften, die erst in den Vergabeunterlagen erkennbar sind, nicht spätestens bis zum Ablauf der Frist zur Bewerbung oder zur Angebotsabgabe gegenüber dem Auftraggeber gerügt werden,
+
+4. Mehr als 15 Kalendertage nach Eingang der Mitteilung des Auftraggebers, einer Rüge nicht abhelfen zu wollen, vergangen sind.
+
+Dies gilt nicht bei einem Antrag auf Feststellung der Unwirksamkeit des Vertrags nach § 135 Absatz 1 Nummer 2 GWB. § 134 Absatz 1 Satz 2 GWB bleibt unberührt.
+
+**********************************************************
+**********************************************************
+**********************************************************
+**********************************************************
+**********************************************************
+
+Auswahlkriterien und Bewertung
+
+Maßgebende Auswahlkriterien zur Begrenzung der Anzahl der Bewerber gem. § 3b EU Abs. 3, Nr. 3 i.V.m. Abs. 2, Nr. 3 VOB/A sind:
+
+a) Finanzielle und wirtschaftliche Leistungsfähigkeit (max. 18 Wertungspunkte)
+- Kriterium "Durchschnittlicher Jahresumsatz (Gesamtumsatz)" 
+- Kriterium "Durchschnittlicher Jahresumsatz (für Leistungen im Tätigkeitsbereich des Auftrags)"
+b) Technische und berufliche Leistungsfähigkeit (max. 30 Wertungspunkte)
+- Kriterium "Referenzen"
+
+
+Die genaue Erläuterung der Auswahlkriterien für die Teilnahmeanträge befindet sich in den Teilnahmebedingungen (1001_Teilnahmebedingungen-250903) sowie in der dazugehörigen Wertungsmatrix (1003 Auswahlmatrix Teilnahmewettbewerb) auf die an dieser Stelle ausdrücklich verwiesen wird.
+**********************************************************
+**********************************************************
+**********************************************************
+**********************************************************
+**********************************************************</cbc:Description>
+			</cac:PresentationPeriod>
+			<cac:AppealInformationParty>
+				<cac:PartyIdentification>
+					<cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+				</cac:PartyIdentification>
+			</cac:AppealInformationParty>
+			<cac:AppealReceiverParty>
+				<cac:PartyIdentification>
+					<cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+				</cac:PartyIdentification>
+			</cac:AppealReceiverParty>
+		</cac:AppealTerms>
+		<cac:Language>
+			<cbc:ID>DEU</cbc:ID>
+		</cac:Language>
+	</cac:TenderingTerms>
+	<cac:TenderingProcess>
+		<cbc:ProcedureCode listName="procurement-procedure-type">neg-w-call</cbc:ProcedureCode>
+		<cbc:AccessToolsURI>https://www.vergabe.metropoleruhr.de/VMPSatellite/notice/CXS0YRTYTZ49GW4S</cbc:AccessToolsURI>
+		<cac:ProcessJustification>
+			<cbc:ProcessReasonCode listName="accelerated-procedure">false</cbc:ProcessReasonCode>
+		</cac:ProcessJustification>
+		<cac:AuctionTerms>
+			<cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+		</cac:AuctionTerms>
+	</cac:TenderingProcess>
+	<cac:ProcurementProject>
+		<cbc:ID schemeName="internalID">2025-0764</cbc:ID>
+		<cbc:Name languageID="DEU">2025-0764 Planung, Herstellung, Montage und Inbetriebnahme einer Pontonbrücke über den Innenhafen Duisburg</cbc:Name>
+		<cbc:Description languageID="DEU">Im Jahr 2021 wurde der alte schwimmende Steg über den Innenhafen abgebaut. Aufgrund der 
+wachsenden Nachfrage zur Überquerung des Innenhafens soll eine neue schwimmende Brücke 
+an gleicher Stelle errichtet werden. 
+Gegenstand dieser Leistungsbeschreibung mit Leistungsprogramm ist folglich die Planung und 
+Ausführung eines Ersatzneubaus für die 2021 zurückgebaute Überquerung als neue Fußgänger-
+verbindung über den Innenhafen Duisburg.  
+Die Neue Querung über den Innenhafen Duisburg soll hierbei annähernd inmitten des Innenha-
+fenbeckens platziert werden und eine direkte Fußgängerverbindung zwischen Nord- und Südufer 
+schaffen. Dies reduziert die Wegstrecke für Fußgänger von einem ans andere Ufer erheblich, da 
+sie nicht um das Innenhafenbecken herumgehen müssen. 
+Die neue Querung bindet am Nordufer an die bestehende Uferpromenade mit ihrem Verkehrsweg 
+an. An beiden Ufern wird die Brücke an den Widerlagern leicht erhöht um über die denkmalge-
+schützte Böschungsmauer auszukragen. Das Geländeniveau wird so angepasst, dass vom Ver-
+kehrsweg (Nordufer) und altem Gleisbett (Südufer) nur sehr flache Rampen auf die Brücke füh-
+ren. Bestehende Ufergeländer werden in einem Übergangsbereich auf die Höhen des Brücken-
+geländers angepasst.</cbc:Description>
+		<cbc:ProcurementTypeCode listName="contract-nature">works</cbc:ProcurementTypeCode>
+		<cbc:Note languageID="DEU">#Bekanntmachungs-ID: CXS0YRTYTZ49GW4S#
+
+
+keine</cbc:Note>
+		<cac:MainCommodityClassification>
+			<cbc:ItemClassificationCode listName="cpv">45000000</cbc:ItemClassificationCode>
+		</cac:MainCommodityClassification>
+		<cac:RealizedLocation>
+			<cac:Address>
+				<cbc:StreetName>Innenhafen Duisburg</cbc:StreetName>
+				<cbc:CityName>Duisburg</cbc:CityName>
+				<cbc:PostalZone>47053</cbc:PostalZone>
+				<cbc:CountrySubentityCode listName="nuts">DEA12</cbc:CountrySubentityCode>
+				<cac:Country>
+					<cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:Address>
+		</cac:RealizedLocation>
+	</cac:ProcurementProject>
+	<cac:ProcurementProjectLot>
+		<cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+		<cac:TenderingTerms>
+			<ext:UBLExtensions>
+				<ext:UBLExtension>
+					<ext:ExtensionContent>
+						<efext:EformsExtension>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-suit-auth-mbrshp</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Auflistung zur persönlichen Lage - Die gesamten im Folgenden aufgeführten Eignungskriterien für die Befähigung und Erlaubnis zur Berufsausübung befinden sich mit den geforderten Nachweisen über das Nichtvorliegen von Ausschlussgründen und für den Fall, dass Kapazitäten anderer Unternehmen in Anspruch genommen werden, sowie mit Hinweisen zu den zugehörigen Formblättern ebenso nochmal zusammengefasst im Dokument "1001_Teilnahmebedingungen-250903" der Vergabeunterlagen.
+
+Eigenerklärung zur Eintragung in das Berufs- oder Handelsregister oder der Handwerksrolle des Sitzes oder Wohnsitzes (§ 6a EU Nr. 1 VOB/A).
+Sofern der Antrag in die engere Wahl kommt, ist diese durch den Nachweis der Gewerbeanmeldung, der Eintragung in das Berufs- oder Handelsregister oder der Handwerksrolle zu ersetzen.
+--&gt; Formblatt Eigenerklärung zur Eignung</cbc:Description>
+								<efbc:SecondStageIndicator>true</efbc:SecondStageIndicator>
+								<efac:CriterionParameter>
+									<efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+									<efbc:ParameterNumeric>0.01</efbc:ParameterNumeric>
+								</efac:CriterionParameter>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-suit-auth-mbrshp</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Wirtschaftliche und finanzielle Leistungsfähigkeit - 1) Befähigung und Erlaubnis zur Berufsausübung 
+Eigenerklärung zur Eintragung in das Berufs- oder Handelsregister oder 
+der Handwerksrolle des Sitzes oder Wohnsitzes (§ 6a EU Nr. 1 VOB/A). 
+Sofern der Antrag in die engere Wahl kommt, ist diese durch den 
+Nachweis der Gewerbeanmeldung, der Eintragung in das Berufs- oder 
+Handelsregister oder der Handwerksrolle zu ersetzen 
+- Formblatt Eigenerklärung zur Eignung 
+
+2) Wirtschaftliche und finanzielle Leistungsfähigkeit 
+a) Eigenerklärung über den jährlichen allgemeinen Gesamtumsatz (mind. 3,2 Mio. EUR netto/Jahr) des Unternehmens bezogen auf die letzten drei 
+Geschäftsjahre (§ 6a EU Nr. 2c VOB/A). Sofern der Antrag in die engere Wahl kommt, kann die AG verlangen, diese durch eine Bestätigung eines 
+vereidigten Wirtschaftsprüfers/ Steuerberaters oder entsprechend testierte Jahresabschlüsse oder entsprechend testierte Gewinn- und 
+Verlustrechnungen zu ersetzen. 
+- Formblatt Eigenerklärung zur Eignung 
+
+b) Eigenerklärung über den jährlichen spezifischen Umsatz (mind. 1,6 Mio. EUR netto/Jahr) des Unternehmens bezogen auf Projekte, die mit den vorliegenden strukturell vergleichbar sind, und die letzten drei Geschäftsjahre (§ 6a EU Nr. 2c VOB/A). Sofern der Antrag in die engere Wahl kommt, kann die AG verlangen, diese durch eine Bestätigung eines 
+vereidigten Wirtschaftsprüfers/ Steuerberaters oder entsprechend testierte Jahresabschlüsse oder entsprechend testierte Gewinn- und 
+Verlustrechnungen zu ersetzen. 
+- Formblatt Eigenerklärung zur Eignung 
+
+c) Eigenerklärung zu einer Berufshaftpflichtversicherung mit Mindestdeckungssumme für Personen- und Sachschäden und für 
+Vermögensschäden i.H.v. jeweils EUR 7,5 Mio. (§ 6a EU Nr. 2a VOB/A). 
+Sofern der Antrag in die engere Wahl kommt, ist diese durch die Kopie 
+der Versicherungspolice oder Bestätigung der 
+Versicherungsgesellschaft, dass für den Fall der Auftragserteilung eine solche abgeschlossen wird, zu ersetzen. 
+- Formblatt Eigenerklärung zur Eignung</cbc:Description>
+								<efbc:SecondStageIndicator>true</efbc:SecondStageIndicator>
+								<efac:CriterionParameter>
+									<efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+									<efbc:ParameterNumeric>0.01</efbc:ParameterNumeric>
+								</efac:CriterionParameter>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-suit-auth-mbrshp</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">technische und berufliche Leistungsfähigkeit - a) Benennung und Beschreibung der erbrachten vergleichbaren Bauleistungen mit Angabe der eigenen Leistungsinhalte, des Auftragswertes, der Leistungszeit, der Auftraggeberin, eines Ansprechpartners inkl. Telefonnummer, E-Mail-Adresse und 
+Funktionsbezeichnung. Für die wichtigsten Bauleistungen behält sich die 
+Auftraggeberin vor Nachweise über die ordnungsgemäße Ausführung 
+und das Ergebnis durch Bescheinigungen der entsprechenden Auftraggeberin einzufordern (§ 6a EU Nr. 3a VOB/A). 
+
+Es müssen mind. 1 vergleichbare Bauleistungen vorgelegt werden, die zudem mind. die folgenden Leistungen enthalten haben bzw. die folgenden Kriterien erfüllen: 
+
+- Herstellung von Stahl- oder Aluminiumbrücke mit einer 
+Stützweite - 20 m über Gewässer o.Ä. (wünschenswert, aber 
+nicht gefordert: schwimmende Brückenkonstruktionen) 
+
+Um einen ausreichenden Wettbewerb sicherzustellen, werden 
+vorliegend aufgrund der Komplexität und des Umfangs der 
+gegenständlichen Leistungen unter den zuvor genannten Kriterien auch einschlägige Bauleistungen aus den letzten 10 Jahren berücksichtigt.
+Eine Pflicht zur Vorlage von Referenzen, die länger als fünf Jahre zurückliegen, wird hiermit jedoch nicht begründet. 
+Aus der Beschreibung der Referenzen muss zumindest hervorgehen, dass die o.g. Kriterien erfüllt werden. 
+
+- Formblatt Referenzen 
+(Das Formblatt ist je nach Anzahl der Referenzen eigenständig zu vervielfältigen)  
+ 
+b) Vorlage von Studiennachweisen und Bescheinigungen über die berufliche Befähigung der Führungskräfte des Unternehmens. 
+Mindestanforderung ist hierbei, dass der Bewerber durch die Vorlage nachweist, dass mind. 1 Führungskraft berechtigt ist, die 
+Berufsbezeichnung "Dipl.-Ing." oder einer vergleichbaren Berufsbezeichnung ("Master of Science" o.Ä.) zu führen (§ 6a EU Nr. 3e 
+VOB/A). 
+
+- Formblatt Eigenerklärung zur Eignung inkl. gesonderter Nachweis 
+
+c) Eigenerklärung über die in den letzten drei abgeschlossenen Geschäftsjahren jahresdurchschnittlich beschäftigten Arbeitskräfte, 
+gegliedert nach Berufs- bzw. Lohngruppen und mit gesondert ausgewiesenem technischen Leitungspersonal (§ 6a EU Nr. 3g VOB/A). 
+
+- Formblatt Eigenerklärung zur Eignung  
+
+d) Erklärung, aus der hervorgeht, über welche Ausstattung, welche Geräte 
+und welche technische Ausrüstung das Unternehmen für die Erbringung 
+der Bauleistung verfügt. (§ 6a EU Nr. 3h VOB/A). 
+- Formblatt Eigenerklärung zur Eignung inkl. gesonderter Erklärung 
+
+e) Eigenerklärung des Bewerbers zum Nachunternehmereinsatz, d.h. 
+welche Teile des Auftrags unter Umständen als Unteraufträge vergeben 
+werden sollen (§ 6a EU Nr. 3i VOB/A).  
+- Formblatt Nachunternehmer</cbc:Description>
+								<efbc:SecondStageIndicator>true</efbc:SecondStageIndicator>
+								<efac:CriterionParameter>
+									<efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+									<efbc:ParameterNumeric>0.01</efbc:ParameterNumeric>
+								</efac:CriterionParameter>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-suit-auth-mbrshp</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Besondere Bedingungen für die Ausführung - a) Eigenerklärung zum Nichtvorliegen von Ausschlussgründen gemäß § 6e 
+EU Abs. 1, Nr. 1-10 VOB/A sowie den im Dokument "Eigenerklärung zur Eignung" aufgeführten Gründen i.S.v. § 6e EU Abs. 6, Nr. 1-9 VOB/A. 
+Sofern der Antrag in die engere Wahl kommt, ist die Erklärung durch eine Auskunft aus dem Bundes- oder Gewerbezentralregister zu ersetzen (§ 
+6b EU Abs. 1, Nr. 2 VOB/A). 
+
+- Formblatt Eigenerklärung zur Eignung  
+
+b) Eigenerklärung über die Zahlung von Steuern und Abgaben und Beiträgen zur Sozialversicherung (§ 6e EU Abs. 4 VOB/A). Sofern der Antrag in die engere Wahl kommt, ist diese durch eine steuerliche 
+Unbedenklichkeitsbescheinigung des zuständigen Finanzamtes und eine Unbedenklichkeitsbescheinigung der zuständigen Sozialversicherungs- bzw. Sozialkassenträger zu ersetzen (§ 6b EU Abs. 
+1, Nr. 2 VOB/A). 
+- Formblatt Eigenerklärung zur Eignung  
+
+c) Eigenerklärung, dass der Bewerber nicht innerhalb der letzten 2 Jahre gem. § 21 Abs. 1 Satz 1 oder 2 des 
+Schwarzarbeitsbekämpfungsgesetzes, § 21 Abs. 1 des 
+Arbeitnehmerentsendegesetzes, § 19 des Mindestlohngesetzes oder § 98c des Aufenthaltsgesetzes mit einer Freiheitsstrafe von mehr als drei Monaten oder einer Geldstrafe von mehr als neunzig Tagessätzen verurteilt oder mit einer Geldbuße von wenigstens zweitausendfünfhundert Euro belegt worden ist. Sofern der Antrag in die engere Wahl kommt, ist die Erklärung durch eine Auskunft aus dem 
+Bundes- oder Gewerbezentralregister zu ersetzen (§ 6b EU Abs. 1, Nr. 2 VOB/A). 
+
+- Formblatt Eigenerklärung zur Eignung  
+
+d) Eigenreklärung, Sanktionspaket: Umsetzung von Artikel 5ki Absatz 3 
+der Verordnung (EU) 2022/576 des Rates vom 8. April 2022 
+- Formblatt Eigenerklärung Sanktionspaket  
+
+e) Erklärung des Bewerbers zur Bildung einer Bewerber- 
+/Bietergemeinschaft. 
+Die Bewerber-/ Bietergemeinschaft hat mit ihrem Antrag eine Erklärung aller Mitglieder in Textform abzugeben, 
+- in der die Bildung einer Arbeitsgemeinschaft im Auftragsfall erklärt ist, 
+- in der alle Mitglieder aufgeführt sind und der für die Durchführung 
+des Vertrages bevollmächtigte Vertreter bezeichnet ist, 
+- dass der bevollmächtigte Vertreter die Mitglieder gegenüber dem 
+Auftraggeber rechtsverbindlich vertritt und 
+- dass alle Mitglieder als Gesamtschuldner haften. 
+
+- Formblatt Bewerber-/ Bietergemeinschaft 
+
+f) Sofern Kapazitäten anderer Unternehmen in Anspruch genommen 
+werden sollen, d.h. der Bewerber sich bei der Erfüllung eines Auftrages im Hinblick auf die erforderliche wirtschaftliche, finanzielle, technische 
+und berufliche Leistungsfähigkeit anderer Unternehmen bedienen möchte (Eignungsleihe), Benennung der hierfür vorgesehenen 
+Leistungen und Unternehmen (§ 6d EU Abs. 1, Satz 1 VOB/A). 
+
+- Formblatt Eignungsleihe 
+
+Der Nachweis, dass die erforderlichen Kapazitäten der anderen Unternehmen zur Verfügung stehen, ist durch Vorlage entsprechender Verpflichtungserklärungen dieser Unternehmen zu erbringen (§ 6d EU 
+Abs. 1, Satz 1, 2 VOB/A). 
+
+- Formblatt Verpflichtungserklärung 
+
+Die Inanspruchnahme der Kapazitäten anderer Unternehmen für die berufliche Befähigung (§ 6a EU Abs. 1, Nr. 3e) oder die berufliche 
+Erfahrung (§ 6a EU Abs. 1, Nr. 3a und b) ist nur möglich, wenn diese Unternehmen die Arbeiten ausführen, für die diese Kapazitäten benötigt 
+werden (§ 6d EU Abs. 1, Satz 3 VOB/A). 
+ 
+
+Werden die Kapazitäten anderer Unternehmen in Anspruch genommen, 
+so muss die Nachweisführung entsprechend § 6b EU auch für diese Unternehmen erfolgen (§ 6d EU Abs. 3 VOB/A). Diese Unternehmen 
+müssen ebenso die entsprechenden Anforderungen an die Eignung gemäß § 6a EU erfüllen und es dürfen keine Ausschlussgründe gemäß 
+§ 6e EU vorliegen (§ 6d EU Abs. 1, Satz 4 VOB/A). Der Bewerber hat ein Unternehmen, das eine einschlägige Eignungsanforderung nicht erfüllt oder bei dem Ausschlussgründe gemäß § 6e EU Absatz 1 bis 6 
+vorliegen, innerhalb einer von der Vergabestelle gesetzten Frist zu 
+ersetzen (§ 6d EU Abs. 1, Satz 5, 6 VOB/A). 
+
+ 
+Sofern im Hinblick auf die Kriterien für die wirtschaftliche und finanzielle Leistungsfähigkeit Kapazitäten anderer Unternehmen in Anspruch genommen werden, haftet der Bewerber und diese Unternehmen gemeinsam für die Auftragsausführung (§ 6d EU Abs. 2 VOB/A).</cbc:Description>
+								<efbc:SecondStageIndicator>true</efbc:SecondStageIndicator>
+								<efac:CriterionParameter>
+									<efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+									<efbc:ParameterNumeric>100.00</efbc:ParameterNumeric>
+								</efac:CriterionParameter>
+							</efac:SelectionCriteria>
+							<efac:StrategicProcurement>
+								<efbc:ApplicableLegalBasis listName="cvd-scope">false</efbc:ApplicableLegalBasis>
+							</efac:StrategicProcurement>
+						</efext:EformsExtension>
+					</ext:ExtensionContent>
+				</ext:UBLExtension>
+			</ext:UBLExtensions>
+			<cbc:VariantConstraintCode listName="permission">not-allowed</cbc:VariantConstraintCode>
+			<cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+			<cbc:RequiredCurriculaCode listName="requirement-stage">par-requ</cbc:RequiredCurriculaCode>
+			<cbc:MultipleTendersCode listName="permission">not-allowed</cbc:MultipleTendersCode>
+			<cac:RequiredFinancialGuarantee>
+				<cbc:GuaranteeTypeCode listName="tender-guarantee-required">false</cbc:GuaranteeTypeCode>
+			</cac:RequiredFinancialGuarantee>
+			<cac:CallForTendersDocumentReference>
+				<ext:UBLExtensions>
+					<ext:UBLExtension>
+						<ext:ExtensionContent>
+							<efext:EformsExtension>
+								<efac:OfficialLanguages>
+									<cac:Language>
+										<cbc:ID>DEU</cbc:ID>
+									</cac:Language>
+								</efac:OfficialLanguages>
+							</efext:EformsExtension>
+						</ext:ExtensionContent>
+					</ext:UBLExtension>
+				</ext:UBLExtensions>
+				<cbc:ID>SomeTenderDocID1</cbc:ID>
+				<cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+				<cac:Attachment>
+					<cac:ExternalReference>
+						<cbc:URI>https://www.vergabe.metropoleruhr.de/VMPSatellite/notice/CXS0YRTYTZ49GW4S/documents</cbc:URI>
+					</cac:ExternalReference>
+				</cac:Attachment>
+			</cac:CallForTendersDocumentReference>
+			<cac:TendererQualificationRequest>
+				<cbc:CompanyLegalFormCode listName="required">false</cbc:CompanyLegalFormCode>
+			</cac:TendererQualificationRequest>
+			<cac:TendererQualificationRequest>
+				<cac:SpecificTendererRequirement>
+					<cbc:TendererRequirementTypeCode listName="missing-info-submission">late-some</cbc:TendererRequirementTypeCode>
+					<cbc:Description languageID="DEU">Die Nachforderung erfolgt gemäß §16a EU VOB/A.</cbc:Description>
+				</cac:SpecificTendererRequirement>
+			</cac:TendererQualificationRequest>
+			<cac:TendererQualificationRequest>
+				<cac:SpecificTendererRequirement>
+					<cbc:TendererRequirementTypeCode listName="reserved-procurement">none</cbc:TendererRequirementTypeCode>
+				</cac:SpecificTendererRequirement>
+			</cac:TendererQualificationRequest>
+			<cac:TendererQualificationRequest>
+				<cac:SpecificTendererRequirement>
+					<cbc:TendererRequirementTypeCode listName="selection-criteria-source">epo-notice</cbc:TendererRequirementTypeCode>
+				</cac:SpecificTendererRequirement>
+			</cac:TendererQualificationRequest>
+			<cac:ContractExecutionRequirement>
+				<cbc:ExecutionRequirementCode listName="reserved-execution">no</cbc:ExecutionRequirementCode>
+			</cac:ContractExecutionRequirement>
+			<cac:ContractExecutionRequirement>
+				<cbc:ExecutionRequirementCode listName="ecatalog-submission">not-allowed</cbc:ExecutionRequirementCode>
+			</cac:ContractExecutionRequirement>
+			<cac:ContractExecutionRequirement>
+				<cbc:ExecutionRequirementCode listName="einvoicing">required</cbc:ExecutionRequirementCode>
+			</cac:ContractExecutionRequirement>
+			<cac:ContractExecutionRequirement>
+				<cbc:ExecutionRequirementCode listName="conditions">performance</cbc:ExecutionRequirementCode>
+				<cbc:Description languageID="DEU">keine</cbc:Description>
+			</cac:ContractExecutionRequirement>
+			<cac:ContractExecutionRequirement>
+				<cbc:ExecutionRequirementCode listName="fsr">false</cbc:ExecutionRequirementCode>
+			</cac:ContractExecutionRequirement>
+			<cac:AwardingTerms>
+				<cbc:NoFurtherNegotiationIndicator>true</cbc:NoFurtherNegotiationIndicator>
+			</cac:AwardingTerms>
+			<cac:AdditionalInformationParty>
+				<cac:PartyIdentification>
+					<cbc:ID>ORG-0001</cbc:ID>
+				</cac:PartyIdentification>
+			</cac:AdditionalInformationParty>
+			<cac:TenderRecipientParty>
+				<cbc:EndpointID>https://www.vergabe.metropoleruhr.de/VMPSatellite/notice/CXS0YRTYTZ49GW4S</cbc:EndpointID>
+				<cac:PartyIdentification>
+					<cbc:ID>ORG-0001</cbc:ID>
+				</cac:PartyIdentification>
+			</cac:TenderRecipientParty>
+			<cac:AppealTerms>
+				<cac:PresentationPeriod>
+					<cbc:Description languageID="DEU">Die Zulässigkeit von Nachprüfungsanträgen richtet sich nach § 160 GWB. Nach § 160 Abs. 3 GWB ist ein Nachprüfungsantrag unzulässig, soweit
+
+1. der Antragsteller den geltend gemachten Verstoß gegen Vergabevorschriften vor Einreichen des Nachprüfungsantrags erkannt und gegenüber dem Auftraggeber nicht innerhalb einer Frist von 10 Kalendertagen gerügt hat; der Ablauf der Frist nach § 134 Absatz 2 GWB bleibt unberührt,
+
+2. Verstöße gegen Vergabevorschriften, die aufgrund der Bekanntmachung erkennbar sind, nicht spätestens bis zum Ablauf der in der Bekanntmachung benannten Frist zur Bewerbung oder zur Angebotsabgabe gegenüber dem Auftraggeber gerügt werden,
+
+3. Verstöße gegen Vergabevorschriften, die erst in den Vergabeunterlagen erkennbar sind, nicht spätestens bis zum Ablauf der Frist zur Bewerbung oder zur Angebotsabgabe gegenüber dem Auftraggeber gerügt werden,
+
+4. Mehr als 15 Kalendertage nach Eingang der Mitteilung des Auftraggebers, einer Rüge nicht abhelfen zu wollen, vergangen sind.
+
+Dies gilt nicht bei einem Antrag auf Feststellung der Unwirksamkeit des Vertrags nach § 135 Absatz 1 Nummer 2 GWB. § 134 Absatz 1 Satz 2 GWB bleibt unberührt.
+
+**********************************************************
+**********************************************************
+**********************************************************
+**********************************************************
+**********************************************************
+
+Auswahlkriterien und Bewertung
+
+Maßgebende Auswahlkriterien zur Begrenzung der Anzahl der Bewerber gem. § 3b EU Abs. 3, Nr. 3 i.V.m. Abs. 2, Nr. 3 VOB/A sind:
+
+a) Finanzielle und wirtschaftliche Leistungsfähigkeit (max. 18 Wertungspunkte)
+- Kriterium "Durchschnittlicher Jahresumsatz (Gesamtumsatz)" 
+- Kriterium "Durchschnittlicher Jahresumsatz (für Leistungen im Tätigkeitsbereich des Auftrags)"
+b) Technische und berufliche Leistungsfähigkeit (max. 30 Wertungspunkte)
+- Kriterium "Referenzen"
+
+
+Die genaue Erläuterung der Auswahlkriterien für die Teilnahmeanträge befindet sich in den Teilnahmebedingungen (1001_Teilnahmebedingungen-250903) sowie in der dazugehörigen Wertungsmatrix (1003 Auswahlmatrix Teilnahmewettbewerb) auf die an dieser Stelle ausdrücklich verwiesen wird.
+**********************************************************
+**********************************************************
+**********************************************************
+**********************************************************
+**********************************************************</cbc:Description>
+				</cac:PresentationPeriod>
+				<cac:AppealInformationParty>
+					<cac:PartyIdentification>
+						<cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+					</cac:PartyIdentification>
+				</cac:AppealInformationParty>
+				<cac:AppealReceiverParty>
+					<cac:PartyIdentification>
+						<cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+					</cac:PartyIdentification>
+				</cac:AppealReceiverParty>
+			</cac:AppealTerms>
+			<cac:Language>
+				<cbc:ID>DEU</cbc:ID>
+			</cac:Language>
+			<cac:PostAwardProcess>
+				<cbc:ElectronicOrderUsageIndicator>true</cbc:ElectronicOrderUsageIndicator>
+				<cbc:ElectronicPaymentUsageIndicator>true</cbc:ElectronicPaymentUsageIndicator>
+			</cac:PostAwardProcess>
+			<cac:SecurityClearanceTerm>
+				<cbc:Code listName="required">false</cbc:Code>
+			</cac:SecurityClearanceTerm>
+		</cac:TenderingTerms>
+		<cac:TenderingProcess>
+			<cbc:SubmissionMethodCode listName="esubmission">required</cbc:SubmissionMethodCode>
+			<cbc:CandidateReductionConstraintIndicator>true</cbc:CandidateReductionConstraintIndicator>
+			<cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+			<cbc:AccessToolsURI>https://www.vergabe.metropoleruhr.de/VMPSatellite/notice/CXS0YRTYTZ49GW4S</cbc:AccessToolsURI>
+			<cac:InvitationSubmissionPeriod>
+				<cbc:StartDate>2026-01-07+01:00</cbc:StartDate>
+			</cac:InvitationSubmissionPeriod>
+			<cac:ParticipationRequestReceptionPeriod>
+				<cbc:EndDate>2025-12-16+01:00</cbc:EndDate>
+				<cbc:EndTime>10:00:00+01:00</cbc:EndTime>
+			</cac:ParticipationRequestReceptionPeriod>
+			<cac:AdditionalInformationRequestPeriod>
+				<cbc:EndDate>2025-12-08+01:00</cbc:EndDate>
+				<cbc:EndTime>23:59:59+01:00</cbc:EndTime>
+			</cac:AdditionalInformationRequestPeriod>
+			<cac:EconomicOperatorShortList>
+				<cbc:LimitationDescription>true</cbc:LimitationDescription>
+				<cbc:MaximumQuantity>3</cbc:MaximumQuantity>
+				<cbc:MinimumQuantity>3</cbc:MinimumQuantity>
+			</cac:EconomicOperatorShortList>
+			<cac:AuctionTerms>
+				<cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+			</cac:AuctionTerms>
+			<cac:ContractingSystem>
+				<cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+			</cac:ContractingSystem>
+			<cac:ContractingSystem>
+				<cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+			</cac:ContractingSystem>
+		</cac:TenderingProcess>
+		<cac:ProcurementProject>
+			<cbc:ID schemeName="internalID">2025-0764</cbc:ID>
+			<cbc:Name languageID="DEU">2025-0764 Planung, Herstellung, Montage und Inbetriebnahme einer Pontonbrücke über den Innenhafen Duisburg</cbc:Name>
+			<cbc:Description languageID="DEU">Die Auftraggeberin (AG) nimmt an, dass die Gesamtmaßnahme in zwei wesentlichen Bauphasen 
+untergliedert wird, die abhängig von technischen Lösungen der Bieterin / Auftragnehmerin (AN) 
+erforderlich werden können.  
+
+Für die Bauphase 1 wird die Hauptbrücke nach Werkvorfertigung im Innenhafen montiert, dann 
+zu der bestimmten Liegefläche der Pontonbrücke verschwommen und mit den bereits ausgeleg-
+ten Flachankern als Längs- und Querfesthaltung verbunden. 
+In der Bauphase 2 werden die mit Endbrückenteile (nach Positionierung und Verankerung der 
+Hauptbrücke im Innenhafen s. Bauphase 1) mittels Gelenkbrücken an die Hauptbrücke ange-
+schlossen sowie landseitig auf die bereits vormontierten Stahlgleitplatten barrierefrei aufgelegt.  
+Die folgende Untergliederung in Bauphasen stellt daher eine mögliche Lösung dar. Es ist Aufgabe 
+der Bieterin, einen optimierten Bauablauf, ggf. in nur einer Bauphase zu entwickeln. 
+- Ausführungsplanung samt Schwimmstabilitätsnachweisen und Ankerfestlegung 
+- Prüfung der Ausführungsplanung durch eine/-n von der Bieterin / Auftragnehmerin gewählten und mit 
+entsprechenden Zulassungen ausgestatteten Prüfingenieur/-in sowie eine/-n Sachverständigen für 
+Schwimmstabilität 
+- Flussanker auf Boden des Innenhafens verlegt und verkettet, so dass Veranstaltungen wie Drachen-
+bootregatta, Nutzung Innenhafen als Schwimmbecken etc. möglich sind 
+- Herstellung Widerlagerplatten landseitig (evtl. wetterfester Stahl) und Auflagerung der Endbrückenteile, 
+Montage Hauptbrücke und der gelenkigen Endbrücken im Innenhafen  
+- Ausstattung mit unabhängiger, solarbetriebener Handlaufbeleuchtung sowie Stromspeicherung für die 
+Nachtzeit 
+- Inbetriebnahme</cbc:Description>
+			<cbc:ProcurementTypeCode listName="contract-nature">works</cbc:ProcurementTypeCode>
+			<cbc:Note languageID="DEU">#Besonders auch geeignet für:selbst#</cbc:Note>
+			<cbc:SMESuitableIndicator>true</cbc:SMESuitableIndicator>
+			<cac:ProcurementAdditionalType>
+				<cbc:ProcurementTypeCode listName="strategic-procurement">none</cbc:ProcurementTypeCode>
+			</cac:ProcurementAdditionalType>
+			<cac:MainCommodityClassification>
+				<cbc:ItemClassificationCode listName="cpv">45000000</cbc:ItemClassificationCode>
+			</cac:MainCommodityClassification>
+			<cac:RealizedLocation>
+				<cac:Address>
+					<cbc:StreetName>Innenhafen Duisburg</cbc:StreetName>
+					<cbc:CityName>Duisburg</cbc:CityName>
+					<cbc:PostalZone>47053</cbc:PostalZone>
+					<cbc:CountrySubentityCode listName="nuts">DEA12</cbc:CountrySubentityCode>
+					<cac:Country>
+						<cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+					</cac:Country>
+				</cac:Address>
+			</cac:RealizedLocation>
+			<cac:PlannedPeriod>
+				<cbc:StartDate>2026-02-01+01:00</cbc:StartDate>
+				<cbc:EndDate>2026-05-30+02:00</cbc:EndDate>
+			</cac:PlannedPeriod>
+		</cac:ProcurementProject>
+	</cac:ProcurementProjectLot>
+</ContractNotice>

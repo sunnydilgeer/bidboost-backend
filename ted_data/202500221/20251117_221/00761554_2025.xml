@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractAwardNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractAwardNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+   <ext:UBLExtensions>
+      <ext:UBLExtension>
+         <ext:ExtensionContent>
+            <efext:EformsExtension>
+               <efac:NoticeResult>
+                  <cbc:TotalAmount currencyID="PLN">129476.88</cbc:TotalAmount>
+                  <efac:LotResult>
+                     <cbc:ID schemeName="result">RES-0001</cbc:ID>
+                     <cbc:HigherTenderAmount currencyID="PLN">99597.6</cbc:HigherTenderAmount>
+                     <cbc:LowerTenderAmount currencyID="PLN">99597.6</cbc:LowerTenderAmount>
+                     <cbc:TenderResultCode listName="winner-selection-status">selec-w</cbc:TenderResultCode>
+                     <efac:LotTender>
+                        <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                     </efac:LotTender>
+                     <efac:ReceivedSubmissionsStatistics>
+                        <efbc:StatisticsCode listName="received-submission-type">t-esubm</efbc:StatisticsCode>
+                        <efbc:StatisticsNumeric>1</efbc:StatisticsNumeric>
+                     </efac:ReceivedSubmissionsStatistics>
+                     <efac:ReceivedSubmissionsStatistics>
+                        <efbc:StatisticsCode listName="received-submission-type">t-micro</efbc:StatisticsCode>
+                        <efbc:StatisticsNumeric>1</efbc:StatisticsNumeric>
+                     </efac:ReceivedSubmissionsStatistics>
+                     <efac:SettledContract>
+                        <cbc:ID schemeName="contract">CON-0001</cbc:ID>
+                     </efac:SettledContract>
+                     <efac:TenderLot>
+                        <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+                     </efac:TenderLot>
+                  </efac:LotResult>
+                  <efac:LotTender>
+                     <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                     <cbc:RankCode>1</cbc:RankCode>
+                     <efbc:TenderRankedIndicator>true</efbc:TenderRankedIndicator>
+                     <efbc:TenderVariantIndicator>false</efbc:TenderVariantIndicator>
+                     <cac:LegalMonetaryTotal>
+                        <cbc:PayableAmount currencyID="PLN">129476.88</cbc:PayableAmount>
+                     </cac:LegalMonetaryTotal>
+                     <efac:SubcontractingTerm>
+                        <efbc:TermCode listName="applicability">no</efbc:TermCode>
+                     </efac:SubcontractingTerm>
+                     <efac:TenderingParty>
+                        <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+                     </efac:TenderingParty>
+                     <efac:TenderLot>
+                        <cbc:ID>LOT-0001</cbc:ID>
+                     </efac:TenderLot>
+                     <efac:TenderReference>
+                        <cbc:ID>Oferta nr 1</cbc:ID>
+                     </efac:TenderReference>
+                  </efac:LotTender>
+                  <efac:SettledContract>
+                     <cbc:ID schemeName="contract">CON-0001</cbc:ID>
+                     <cbc:AwardDate>2025-10-07+02:00</cbc:AwardDate>
+                     <cbc:IssueDate>2025-10-21+02:00</cbc:IssueDate>
+                     <cbc:Title languageID="POL">Umowa nr GL/14/25</cbc:Title>
+                     <efac:ContractReference>
+                        <cbc:ID>Wykonanie usługi odkrzaczania i wykaszania siedlisk przyrodniczych na terenie Nadleśnictwa Barycz w latach 2025-2028</cbc:ID>
+                     </efac:ContractReference>
+                     <efac:LotTender>
+                        <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                     </efac:LotTender>
+                     <efac:Funding>
+                        <efbc:FinancingIdentifier>FENX.01.05-IW.01-0087/24</efbc:FinancingIdentifier>
+                        <cbc:FundingProgramCode listName="eu-programme">CF_2021</cbc:FundingProgramCode>
+                        <cbc:Description languageID="POL">Przedmiot niniejszego zamówienia, jest elementem usług realizowanych w ramach projektu pn. „Razem dla natury – ochrona gatunków i siedlisk na terenach cennych przyrodniczo”, współfinansowanego z programu Fundusze Europejskie na Infrastrukturę, Klimat, Środowisko 2021-2027</cbc:Description>
+                     </efac:Funding>
+                  </efac:SettledContract>
+                  <efac:TenderingParty>
+                     <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+                     <cbc:Name>P.P.U.H. DREWBUD Piotr Jędryka</cbc:Name>
+                     <efac:Tenderer>
+                        <cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+                     </efac:Tenderer>
+                  </efac:TenderingParty>
+               </efac:NoticeResult>
+               <efac:NoticeSubType>
+                  <cbc:SubTypeCode listName="notice-subtype">29</cbc:SubTypeCode>
+               </efac:NoticeSubType>
+               <efac:Organizations>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>http://www.barycz.radom.lasy.gov.pl</cbc:WebsiteURI>
+                        <cbc:EndpointID>https://platformazakupowa.pl/pn/lasy_barycz</cbc:EndpointID>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Skarb Państwa PGL LP Nadleśnictwo Barycz</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>Barycz 69</cbc:StreetName>
+                           <cbc:CityName>Końskie</cbc:CityName>
+                           <cbc:PostalZone>26-200</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL721</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>REGON 670080537</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>NIP 6580003508</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Name>Nadleśnictwo Barycz</cbc:Name>
+                           <cbc:Telephone>+48 413753850</cbc:Telephone>
+                           <cbc:ElectronicMail>barycz@radom.lasy.gov.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>http://www.uzp.gov.pl</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Krajowa Izba Odwoławcza</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>ulica Postępu 17 a</cbc:StreetName>
+                           <cbc:CityName>Warszawa</cbc:CityName>
+                           <cbc:PostalZone>02-676</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL911</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>5262239325</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+48 224587801</cbc:Telephone>
+                           <cbc:Telefax>+48 224587801</cbc:Telefax>
+                           <cbc:ElectronicMail>odwolania@uzp.gov.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efbc:ListedOnRegulatedMarketIndicator>false</efbc:ListedOnRegulatedMarketIndicator>
+                     <efac:Company>
+                        <efbc:CompanySizeCode listName="economic-operator-size">micro</efbc:CompanySizeCode>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">P.P.U.H. DREWBUD Piotr Jędryka</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>Mroczków Gościnny 44b</cbc:StreetName>
+                           <cbc:CityName>Opoczno</cbc:CityName>
+                           <cbc:PostalZone>26-300</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL713</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>NIP 7681072428</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+48 691381200</cbc:Telephone>
+                           <cbc:ElectronicMail>drewbudjp@o2.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efbc:NaturalPersonIndicator>false</efbc:NaturalPersonIndicator>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://op.europa.eu</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0000</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Publications Office of the European Union</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:CityName>Luxembourg</cbc:CityName>
+                           <cbc:PostalZone>2417</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">LU000</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">LUX</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>PUBL</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+352 29291</cbc:Telephone>
+                           <cbc:ElectronicMail>ted@publications.europa.eu</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+               </efac:Organizations>
+            <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00761554-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+         </ext:ExtensionContent>
+      </ext:UBLExtension>
+   </ext:UBLExtensions>
+   <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+   <cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+   <cbc:ID schemeName="notice-id">bdab4df3-723d-4397-bb58-e770eb8e697f</cbc:ID>
+   <cbc:ContractFolderID>5827f487-f681-4d8e-9d56-b3bace16ba7c</cbc:ContractFolderID>
+   <cbc:IssueDate>2025-11-13Z</cbc:IssueDate>
+   <cbc:IssueTime>10:40:15Z</cbc:IssueTime>
+   <cbc:VersionID>01</cbc:VersionID>
+   <cbc:RequestedPublicationDate>2025-11-17Z</cbc:RequestedPublicationDate>
+   <cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+   <cbc:NoticeTypeCode listName="result">can-standard</cbc:NoticeTypeCode>
+   <cbc:NoticeLanguageCode listName="language">POL</cbc:NoticeLanguageCode>
+   <cac:ContractingParty>
+      <cbc:BuyerProfileURI>https://platformazakupowa.pl/pn/lasy_barycz</cbc:BuyerProfileURI>
+      <cac:ContractingPartyType>
+         <cbc:PartyTypeCode listName="buyer-legal-type">body-pl</cbc:PartyTypeCode>
+      </cac:ContractingPartyType>
+      <cac:ContractingActivity>
+         <cbc:ActivityTypeCode listName="authority-activity">econ-aff</cbc:ActivityTypeCode>
+      </cac:ContractingActivity>
+      <cac:Party>
+         <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+         </cac:PartyIdentification>
+         <cac:ServiceProviderParty>
+            <cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode>
+            <cac:Party>
+               <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0000</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:Party>
+         </cac:ServiceProviderParty>
+      </cac:Party>
+   </cac:ContractingParty>
+   <cac:TenderingTerms>
+      <cac:ProcurementLegislationDocumentReference>
+         <cbc:ID>LocalLegalBasis</cbc:ID>
+         <cbc:DocumentDescription languageID="POL">Ustawa z dnia 11 września 2019 r. Prawo zamówień publicznych (tekst jedn.: Dz. U. z 2024 r., poz. 1320 z późn. zm.) - art. 129 ust. 1 pkt 1) w zw. z art. 129 ust. 2 oraz art. 132 - 139</cbc:DocumentDescription>
+      </cac:ProcurementLegislationDocumentReference>
+   </cac:TenderingTerms>
+   <cac:TenderingProcess>
+      <cbc:Description languageID="POL">W postępowaniu mogą brać udział Wykonawcy, którzy nie podlegają wykluczeniu z postępowania o udzielenie zamówienia w okolicznościach, o których mowa w art. 108 ust. 1 pkt 1-6 PZP, art. 109 ust. 1 pkt 1-5 i 7- 10 PZP oraz na podstawie art. 7 ust. 1 pkt 1-3 ustawy z dnia 13 kwietnia 2022 r. o szczególnych rozwiązaniach w zakresie przeciwdziałania wspieraniu agresji na Ukrainę oraz służących ochronie bezpieczeństwa narodowego (tekst jedn.: Dz. U. z 2023 r. poz. 1497 – „Specustawa”). 
+W postępowaniu mogą brać udział Wykonawcy, którzy nie podlegają wykluczeniu z postępowania na podstawie art. 5k rozporządzenia Rady (UE) Nr 833/2014 z dnia 31 lipca 2014 r. dotyczącego środków ograniczających w związku z działaniami Rosji destabilizującymi sytuację na Ukrainie (Dz. Urz. UE nr L 229 z 31.7.2014, str. 1 z późn. zm.). Na podstawie art. 5k ust. 1 w/w rozporządzenia Rady (UE) zakazuje się udzielania lub dalszego wykonywania wszelkich
+zamówień publicznych lub koncesji objętych zakresem dyrektyw w sprawie zamówień publicznych, a także zakresem art. 10 ust. 1, 3, ust. 6 lit. a)–e), ust. 8, 9 i 10, art. 11, 12, 13 i 14 dyrektywy 2014/23/UE, art. 7 lit a)-d), art. 8, art. 10 lit. b)–f) i lit. h)–j) dyrektywy 2014/24 /UE, art. 18, art. 21 lit. b)–e) i lit. g)–i), art. 29 i 30 dyrektywy 2014/25/UE oraz art. 13 lit. a)–d), lit. f)–h) i lit. j) dyrektywy 2009/81/WE oraz tytułu VII rozporządzenia (UE, Euratom) 2018/1046 na rzecz lub z udziałem: a) obywateli rosyjskich, osób fizycznych zamieszkałych w Rosji lub osób prawnych, podmiotów lub organów z siedzibą w Rosji; b) osób prawnych, podmiotów lub organów, do których prawa własności bezpośrednio lub pośrednio w ponad 50 % należą do podmiotu, o którym mowa w lit. a) niniejszego ustępu; lub c) osób fizycznych lub prawnych, podmiotów lub organów działających w imieniu lub pod kierunkiem podmiotu, o którym mowa w lit. a) lub b) niniejszego ustępu, w tym podwykonawców, dostawców lub podmiotów, na których zdolności polega się w rozumieniu dyrektyw w sprawie zamówień publicznych, w przypadku gdy przypada na nich ponad 10% wartości zamówienia.
+Postępowanie jest prowadzone zgodnie z zasadami przewidzianymi dla tzw. „procedury odwróconej”, o której mowa w art. 139 ust. 1- 4 PZP.
+Szczegółowy wykaz oświadczeń i dokumentów wraz z ich opisem oraz informacjami dotyczącymi: wypełnienia JEDZ,  Wykonawców mających siedzibę lub miejsce zamieszkania poza terytorium Rzeczypospolitej Polskiej, ofert wykonawców wspólnie ubiegających się o udzielenie zamówienia (konsorcjum), wykonawców wykonujących działalność w formie spółki cywilnej, zawarte są w rozdziale 9 SWZ.</cbc:Description>
+      <cbc:ProcedureCode listName="procurement-procedure-type">open</cbc:ProcedureCode>
+      <cac:NoticeDocumentReference>
+         <cbc:ID schemeName="ojs-notice-id">557029-2025</cbc:ID>
+      </cac:NoticeDocumentReference>
+      <cac:ProcessJustification>
+         <cbc:ProcessReasonCode listName="accelerated-procedure">true</cbc:ProcessReasonCode>
+         <cbc:ProcessReason languageID="POL">Zamawiający działając na podstawie art. 138 ust. 4 PZP wyznaczył termin składania krótszy niż określony w art. 138 ust. 1 PZP, ponieważ składanie ofert odbywa się w całości przy użyciu środków komunikacji elektronicznej, w sposób określony w art. 63 ust. 1 PZP.</cbc:ProcessReason>
+      </cac:ProcessJustification>
+   </cac:TenderingProcess>
+   <cac:ProcurementProject>
+      <cbc:ID schemeName="InternalID">SK.270.11.2025</cbc:ID>
+      <cbc:Name languageID="POL">Wykonanie usługi odkrzaczania i wykaszania siedlisk przyrodniczych na terenie Nadleśnictwa Barycz w latach 2025-2028</cbc:Name>
+      <cbc:Description languageID="POL">Przedmiotem zamówienia są usługi z zakresu gospodarki leśnej zgodnie z określeniem w art. 6 ust. 1 pkt. 1 ustawy z dnia 28 września 1991 r. o lasach (tekst jedn.: Dz. U. z 2025 r. poz. 567 z późn. zm. – „Ustawa o lasach”) obejmujące prace z zakresu ochrony lasu (ochrony gatunkowej), w ramach projektu „Razem dla natury – ochrona gatunków i siedlisk na terenach cennych przyrodniczo”, tj. wykaszanie i odkrzaczanie powierzchni siedlisk przyrodniczych: 7140- torfowiska przejściowe i trzęsawiska, 6410- zmiennowilgotne łąki trzęślicowe, w latach 2025-2028 na terenie leśnictw: Janów oddz. 111-k, Wąsosz oddz. 156-b i 167-b, Gatniki oddz. 213-l, 213-r i 277-p.</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+      <cbc:Note languageID="POL">Unormowania, których zobowiązany będzie w szczególności przestrzegać Wykonawca przy realizacji przedmiotu zamówienia oraz zasady ogólne realizacji przedmiotu zamówienia, zawarte są w pkt. 3.2. i 3.3. SWZ.
+Wykonawca związany jest ofertą przez 90 dni od dnia upływu terminu składania ofert, przy czym pierwszym dniem terminu związania ofertą jest dzień, w którym upływa termin składania ofert, tj. do dnia 23.12.2025 r.
+Przed zawarciem umowy w sprawie zamówienia publicznego, Wykonawca, którego oferta została uznana za najkorzystniejszą zobowiązany jest dopełnić następujących formalności:
+1)	przedłożyć Zamawiającemu: 
+a)	kopię umowy regulującej współpracę Wykonawców wspólnie ubiegających się o udzielenie zamówienia (np. umowę konsorcjum), jeżeli zamówienie będzie realizowane przez Wykonawców wspólnie ubiegających się o udzielenie zamówienia;
+b)	dokument potwierdzający posiadanie ubezpieczenia od odpowiedzialności cywilnej określony we wzorze umowy w sprawie zamówienia publicznego (załącznik nr 5 do SWZ) na sumę ubezpieczenia nie mniejszą niż 200.000 zł;
+c)	do wglądu umowę zawartą z firmą posiadającą uprawnienia do odbioru i utylizacji absorbentów skażonych olejami lub oświadczenie Wykonawcy, że jest wpisany do bazy danych o odpadach (BDO) i zobowiązuje się postępować z wytworzonymi odpadami zgodnie z przepisami prawa polskiego;
+d)	dokumenty wskazane w § 8 ust. 4 wzoru umowy (stanowiącego Załącznik nr 5 do SWZ) dot. osób wykonujących w realizacji Przedmiotu Umowy czynności polegające na wykaszaniu powierzchni leśnych, jeżeli wykonanie tych czynności polega na wykonywaniu pracy w sposób określony w art. 22 § 1 ustawy z dnia 26 czerwca 1974 r. - Kodeks pracy (tekst jedn.: Dz. U. z 2025 r. poz. 277 z późn. zm.), tj. wedle wyboru Wykonawcy: 
+(i)	oświadczenia Wykonawcy lub podwykonawcy o zatrudnieniu pracownika na podstawie umowy o pracę, zawierające informacje, w tym dane osobowe niezbędne do zweryfikowania zatrudnienia na podstawie umowy o pracę, w szczególności imię i nazwisko zatrudnionego pracownika, datę zawarcia umowy o pracę, rodzaj umowy o pracę, wymiar etatu oraz zakres obowiązków pracownika. 
+(ii)	do wglądu poświadczoną za zgodność z oryginałem odpowiednio przez Wykonawcę lub podwykonawcę kopię umowy/umów o pracę osób, do których odnosi się Obowiązek Zatrudnienia wraz z dokumentem regulującym zakres obowiązków, jeżeli został sporządzony. Kopia umowy/umów powinna zawierać informacje, w tym dane osobowe niezbędne do zweryfikowania zatrudnienia na podstawie umowy o pracę, w szczególności imię i nazwisko zatrudnionego pracownika, datę zawarcia umowy o pracę, rodzaj umowy o pracę, wymiar etatu oraz zakres obowiązków pracownika. 
+(iii)	do wglądu dokument potwierdzający zgłoszenie pracownika przez pracodawcę do ubezpieczeń lub opłacenie przez pracodawcę ubezpieczeń pracownika, zanonimizowany w sposób zapewniający ochronę danych osobowych pracowników. Imię i nazwisko pracownika nie podlega anonimizacji.
+Niedopełnienie wskazanych formalności będzie traktowane jako uchylanie się przez Wykonawcę od zawarcia umowy w sprawie zamówienia publicznego.
+Wykonawca może powierzyć realizację elementów (części) przedmiotu zamówienia podwykonawcom. W przypadku braku wskazania w Ofercie podwykonawstwa wykonawca będzie mógł wprowadzić podwykonawcę wyłącznie na warunkach określonych w umowie.
+Klauzulę informacyjną dotyczącą przetwarzania danych osobowych (RODO) zawiera rozdział 21 SWZ.
+</cbc:Note>
+      <cac:MainCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">77200000</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">77230000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">77231000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:RealizedLocation>
+         <cbc:Description languageID="POL">Teren Nadleśnictwa Barycz</cbc:Description>
+         <cac:Address>
+            <cbc:StreetName>Barycz 69</cbc:StreetName>
+            <cbc:CityName>Końskie</cbc:CityName>
+            <cbc:PostalZone>26-200</cbc:PostalZone>
+            <cbc:CountrySubentityCode listName="nuts">PL721</cbc:CountrySubentityCode>
+            <cac:Country>
+               <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+            </cac:Country>
+         </cac:Address>
+      </cac:RealizedLocation>
+   </cac:ProcurementProject>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+      <cac:TenderingTerms>
+         <cbc:FundingProgramCode listName="eu-funded">eu-funds</cbc:FundingProgramCode>
+         <cac:AwardingTerms>
+            <cac:AwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>60</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="POL">Cena łączna brutto podana w Formularzu Oferty</cbc:Name>
+                  <cbc:Description languageID="POL">W ramach kryterium „Cena” ocena ofert zostanie dokonana przy zastosowaniu wzoru: C = Cn / Co x 100 pkt x 60% gdzie: C – liczba punktów w ramach kryterium „Cena”, Cn - najniższa cena spośród ofert ocenianych, Co - cena oferty ocenianej. Ocenie w ramach kryterium „Cena” podlegać będzie cena łączna brutto podana w Formularzu Oferty (Załącznik nr 1 do SWZ). Z uwagi na postanowienia art. 225 ust. 1 PZP, jeżeli złożono ofertę, której wybór prowadziłby do powstania u Zamawiającego obowiązku podatkowego zgodnie z przepisami o podatku od towarów i usług, Zamawiający w celu oceny takiej oferty dolicza do przedstawionej w niej ceny podatek od towarów i usług, który miałby obowiązek rozliczyć zgodnie z tymi przepisami. </cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>40</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="POL">Samodzielna realizacja kluczowych elementów (części) zamówienia</cbc:Name>
+                  <cbc:Description languageID="POL">W ramach kryterium „Samodzielna realizacja kluczowych elementów (części) zamówienia” oceniane będzie przyjęcie przez Wykonawcę zobowiązania umownego do wykonywania kluczowych elementów (części) zamówienia, określonych przez Zamawiającego w SWZ, samodzielnie przez Wykonawcę składającego ofertę, tj. bez udziału podwykonawców.
+Wykonawca zamieści informację o przyjęciu bądź nie przyjęciu na siebie zobowiązania umownego do samodzielnej realizacji kluczowych części zamówienia w formularzu Oferty (załącznik nr 1 do SWZ).</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+            </cac:AwardingCriterion>
+         </cac:AwardingTerms>
+         <cac:AdditionalInformationParty>
+            <cac:PartyIdentification>
+               <cbc:ID>ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:AdditionalInformationParty>
+         <cac:DocumentProviderParty>
+            <cac:PartyIdentification>
+               <cbc:ID>ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:DocumentProviderParty>
+         <cac:AppealTerms>
+            <cac:PresentationPeriod>
+               <cbc:Description languageID="POL">1. Wykonawcy, a także innemu podmiotowi, jeżeli ma lub miał interes w uzyskaniu zamówienia oraz poniósł lub może ponieść szkodę w wyniku naruszenia przez Zamawiającego przepisów PZP, przysługują środki ochrony prawnej określone w dziale IX PZP tj. odwołanie i skarga do sądu. Postępowanie odwoławcze uregulowane zostało w przepisach art. 506-578 PZP, a postępowanie skargowe w przepisach art. 579-590 PZP. 2. Odwołanie przysługuje na: 1) niezgodną z przepisami PZP czynność Zamawiającego, podjętą w postępowaniu o udzielenie zamówienia, w tym na projektowane postanowienie umowy; 2) zaniechanie czynności w postępowaniu o udzielenie zamówienia, do której Zamawiający był obowiązany na podstawie PZP; 3) zaniechanie przeprowadzenia postępowania o udzielenie zamówienia na podstawie PZP, mimo że Zamawiający był do tego obowiązany. 3. Odwołanie wnosi się do Prezesa Krajowej Izby Odwoławczej. Odwołujący przekazuje Zamawiającemu odwołanie wniesione w formie elektronicznej albo w postaci elektronicznej albo kopię tego odwołania, jeżeli zostało ono wniesione w formie pisemnej, przed upływem terminu do wniesienia odwołania w taki sposób, aby mógł on zapoznać się z jego treścią przed upływem tego terminu. Domniemywa się, że Zamawiający mógł zapoznać się z treścią odwołania przed upływem terminu do jego wniesienia, jeżeli przekazanie odpowiednio odwołania albo jego kopii nastąpiło przed upływem terminu do jego wniesienia przy użyciu środków komunikacji elektronicznej. 4. Odwołanie wnosi się w terminie: (a) 10 dni od dnia przekazania informacji o czynności Zamawiającego stanowiącej podstawę jego wniesienia, jeżeli informacja została przekazana przy użyciu środków komunikacji elektronicznej, (b) 15 dni od dnia przekazania informacji o czynności Zamawiającego stanowiącej podstawę jego wniesienia, jeżeli informacja została przekazana w sposób inny niż określony w lit. (a). 5. Odwołanie wobec treści ogłoszenia wszczynającego postępowanie o udzielenie zamówienia lub wobec treści dokumentów zamówienia wnosi się w terminie 10 dni od dnia publikacji ogłoszenia w Dzienniku Urzędowym Unii Europejskiej lub zamieszczenia dokumentów zamówienia na stronie internetowej. 6. Odwołanie w przypadkach innych niż określone w pkt 19.4. i 19.5 SWZ wnosi się w terminie 10 dni od dnia, w którym powzięto lub przy zachowaniu należytej staranności można było powziąć wiadomość o okolicznościach stanowiących podstawę jego wniesienia. 7. Na orzeczenie Krajowej Izby Odwoławczej oraz postanowienie Prezesa Krajowej Izby Odwoławczej, o którym mowa w art. 519 ust. 1 PZP, stronom oraz uczestnikom postępowania przysługuje skarga do sądu. Skargę wnosi się do Sądu Okręgowego w Warszawie - sądu zamówień publicznych. Skargę wnosi się za pośrednictwem Prezesa Krajowej Izby Odwoławczej, w terminie 14 dni od dnia doręczenia orzeczenia Krajowej Izby Odwoławczej lub postanowienia Prezesa Krajowej Izby Odwoławczej, o którym mowa w art. 519 ust. 1 PZP, przesyłając jednocześnie jej odpis przeciwnikowi skargi. Złożenie skargi w placówce pocztowej operatora wyznaczonego w rozumieniu ustawy z dnia 23 listopada 2012 r. - Prawo pocztowe (tekst jedn. Dz. U. z 2022 r. poz. 896 z późn. zm.), jest równoznaczne z jej wniesieniem.</cbc:Description>
+            </cac:PresentationPeriod>
+            <cac:AppealInformationParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealInformationParty>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+         </cac:AppealTerms>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <cbc:GovernmentAgreementConstraintIndicator>false</cbc:GovernmentAgreementConstraintIndicator>
+         <cac:AuctionTerms>
+            <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+         </cac:AuctionTerms>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:ID schemeName="InternalID">Wykonanie usługi odkrzaczania i wykaszania siedlisk przyrodniczych na terenie Nadleśnictwa Barycz w latach 2025-2028</cbc:ID>
+         <cbc:Name languageID="POL">Wykonanie usługi odkrzaczania i wykaszania siedlisk przyrodniczych na terenie Nadleśnictwa Barycz w latach 2025-2028</cbc:Name>
+         <cbc:Description languageID="POL">1)	Przedmiotem zamówienia są usługi z zakresu gospodarki leśnej zgodnie z określeniem w art. 6 ust. 1 pkt. 1 ustawy z dnia 28 września 1991 r. o lasach (tekst jedn.: Dz. U. z 2025 r. poz. 567 z późn. zm. – „Ustawa o lasach”) obejmujące prace z zakresu ochrony lasu (ochrony gatunkowej), w ramach projektu „Razem dla natury – ochrona gatunków i siedlisk na terenach cennych przyrodniczo”, tj. wykaszanie i odkrzaczanie powierzchni siedlisk przyrodniczych: 7140- torfowiska przejściowe i trzęsawiska, 6410- zmiennowilgotne łąki trzęślicowe, w latach 2025-2028 na terenie leśnictw: Janów oddz. 111-k, Wąsosz oddz. 156-b i 167-b, Gatniki oddz. 213-l, 213-r i 277-p.
+2)	Zakres rzeczowy przedmiotu zamówienia obejmuje sumaryczne ilości prac z zakresu ochrony lasu, wynikające z załącznika nr 2 do SWZ. Zakresy rzeczowe zestawione w załączniku nr 2 do SWZ mają charakter szacunkowy.
+3)	Szczegółowy opis prac (czynności) i opisy kodów czynności opisujących poszczególne prace (czynności), wchodzących w skład przedmiotu zamówienia, oraz szczegółowy opis technologii wykonywania poszczególnych prac leśnych (czynności), wchodzących w skład przedmiotu zamówienia, wraz z opisem zasad procedury dokonywania odbiorów prac, zawarte zostały w załączniku 2 do SWZ.
+</cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">77200000</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:RealizedLocation>
+            <cbc:Description languageID="POL">Miejscem realizacji przedmiotu zamówienia będzie obszar administracyjny Nadleśnictwa Barycz. Realizacja prac wchodzących w skład przedmiotu zamówienia przewidziana jest na obszarze leśnictw Janów, Wąsosz i Gatniki (Obszar Realizacji).
+</cbc:Description>
+            <cac:Address>
+               <cbc:CountrySubentityCode listName="nuts">PL721</cbc:CountrySubentityCode>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+         <cac:PlannedPeriod>
+            <cbc:StartDate>2025-10-01+02:00</cbc:StartDate>
+            <cbc:EndDate>2028-11-30+01:00</cbc:EndDate>
+         </cac:PlannedPeriod>
+         <cac:ContractExtension>
+            <cbc:OptionsDescription languageID="POL">Zamawiający jest uprawniony zlecić Wykonawcy dodatkowy zakres rzeczowy w stosunku do łącznej ilości wszystkich czynności wycenionych w Ofercie („Opcja”). Przedmiotem Opcji będą takie same (analogiczne prace), jak opisane w SWZ i wycenione przez Wykonawcę w Ofercie. W ramach Opcji, wedle wyboru Zamawiającego, mogą zostać zlecone wszystkie, niektóre lub tylko jedna z prac wskazanych w SWZ i wycenionych przez Wykonawcę w Ofercie.
+Prace będące przedmiotem Opcji mogą zostać zlecone w ilości, która nie będzie przekraczała 30 % Wartości Przedmiotu Umowy określonej w umowie na wykonanie niniejszego zamówienia. Podstawą określenia wartości prac zleconych w ramach Opcji (w celu określenia jej zakresu) będą ceny jednostkowe poszczególnych prac zawarte w Ofercie.
+Zamawiający nie jest zobowiązany do zlecenia prac objętych przedmiotem Opcji, a Wykonawcy nie służy roszczenie o ich zlecenie.  
+Zamawiający przewiduje możliwość skorzystania z Opcji w przypadku: (1) wystąpienia potrzeby zwiększenia zakresu rzeczowego usług stanowiących przedmiot zamówienia na skutek warunków przyrodniczych, klimatycznych bądź atmosferycznych, (2) zmian na rynku sprzedaży drewna lub powierzenia Zamawiającemu nowych zadań gospodarczych lub publicznych.
+</cbc:OptionsDescription>
+         </cac:ContractExtension>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+   <cac:TenderResult>
+      <cbc:AwardDate>2000-01-01Z</cbc:AwardDate>
+   </cac:TenderResult>
+</ContractAwardNotice>

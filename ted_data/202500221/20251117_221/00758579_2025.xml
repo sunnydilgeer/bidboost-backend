@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><ContractAwardNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractAwardNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+  <ext:UBLExtensions>
+    <ext:UBLExtension>
+      <ext:ExtensionContent>
+        <efext:EformsExtension>
+          <efac:NoticeResult>
+            <efac:LotResult>
+              <cbc:ID schemeName="result">RES-0000</cbc:ID>
+              <cbc:TenderResultCode listName="winner-selection-status">clos-nw</cbc:TenderResultCode>
+              <cac:FinancingParty>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                </cac:PartyIdentification>
+              </cac:FinancingParty>
+              <cac:PayerParty>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                </cac:PartyIdentification>
+              </cac:PayerParty>
+              <efac:AppealRequestsStatistics>
+                <efbc:StatisticsCode listName="review-type">complainants</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:AppealRequestsStatistics>
+              <efac:DecisionReason>
+                <efbc:DecisionReasonCode listName="non-award-justification">chan-need</efbc:DecisionReasonCode>
+              </efac:DecisionReason>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">part-req</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>2</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:TenderLot>
+                <cbc:ID schemeName="Lot">LOT-0000</cbc:ID>
+              </efac:TenderLot>
+            </efac:LotResult>
+          </efac:NoticeResult>
+          <efac:NoticeSubType>
+            <cbc:SubTypeCode listName="notice-subtype">30</cbc:SubTypeCode>
+          </efac:NoticeSubType>
+          <efac:Organizations>
+            <efac:Organization>
+              <efac:Company>
+                <cbc:WebsiteURI>https://www.fjernvarmefyn.dk</cbc:WebsiteURI>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <cbc:Name languageID="ENG">FJERNVARME FYN AFFALDSENERGI A/S</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>Havnegade 120</cbc:StreetName>
+                  <cbc:CityName>Odense C</cbc:CityName>
+                  <cbc:PostalZone>5000</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">DK031</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">DNK</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID>25495969</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Name>Asbjørn Kjærgaard</cbc:Name>
+                  <cbc:Telephone>+45 23230909</cbc:Telephone>
+                  <cbc:ElectronicMail>x-askj@fjernvarmefyn.dk</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+            <efac:Organization>
+              <efac:Company>
+                <cbc:WebsiteURI>https://www.comdia.com/</cbc:WebsiteURI>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-1000</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <cbc:Name languageID="ENG">Comdia ApS</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>Lindvedvej 73</cbc:StreetName>
+                  <cbc:CityName>Odense S</cbc:CityName>
+                  <cbc:PostalZone>5260</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">DK031</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">DNK</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID>33501404</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Telephone>+45 7199 3672</cbc:Telephone>
+                  <cbc:ElectronicMail>support@comdia.com</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+            <efac:Organization>
+              <efac:Company>
+                <cbc:WebsiteURI>http://www.klfu.dk</cbc:WebsiteURI>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-1001</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <cbc:Name languageID="ENG">Danish Complaints Board for Public Procurement</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>Danish Appeals Boards Authority, Toldboden 2</cbc:StreetName>
+                  <cbc:CityName>Viborg</cbc:CityName>
+                  <cbc:PostalZone>8800</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">DK041</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">DNK</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID>37795526</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Telephone>+45 7240 5600</cbc:Telephone>
+                  <cbc:ElectronicMail>klfu@naevneneshus.dk</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+            <efac:Organization>
+              <efac:Company>
+                <cbc:WebsiteURI>https://www.kfst.dk/</cbc:WebsiteURI>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-1002</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <cbc:Name languageID="ENG">Danish Competition and Consumer Authority</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>Carl Jacobsens Vej 35</cbc:StreetName>
+                  <cbc:CityName>Valby</cbc:CityName>
+                  <cbc:PostalZone>2500</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">DK012</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">DNK</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID>10294819</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Telephone>+45 4171 5000</cbc:Telephone>
+                  <cbc:ElectronicMail>kfst@kfst.dk</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+          </efac:Organizations>
+        <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00758579-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+      </ext:ExtensionContent>
+    </ext:UBLExtension>
+  </ext:UBLExtensions>
+  <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+  <cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+  <cbc:ID schemeName="notice-id">655bc581-da0b-4845-81c7-d41608513cf1</cbc:ID>
+  <cbc:ContractFolderID>43870b60-f470-4359-b552-670a2970f60a</cbc:ContractFolderID>
+  <cbc:IssueDate>2025-11-14+01:00</cbc:IssueDate>
+  <cbc:IssueTime>12:28:23+01:00</cbc:IssueTime>
+  <cbc:VersionID>01</cbc:VersionID>
+  <cbc:RegulatoryDomain>32014L0025</cbc:RegulatoryDomain>
+  <cbc:NoticeTypeCode listName="result">can-standard</cbc:NoticeTypeCode>
+  <cbc:NoticeLanguageCode>ENG</cbc:NoticeLanguageCode>
+  <cac:ContractingParty>
+    <cac:ContractingPartyType>
+      <cbc:PartyTypeCode listName="buyer-legal-type">pub-undert</cbc:PartyTypeCode>
+    </cac:ContractingPartyType>
+    <cac:ContractingActivity>
+      <cbc:ActivityTypeCode listName="entity-activity">gas-heat</cbc:ActivityTypeCode>
+    </cac:ContractingActivity>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:ServiceProviderParty>
+        <cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode>
+        <cac:Party>
+          <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-1000</cbc:ID>
+          </cac:PartyIdentification>
+        </cac:Party>
+      </cac:ServiceProviderParty>
+    </cac:Party>
+  </cac:ContractingParty>
+  <cac:TenderingProcess>
+    <cbc:ProcedureCode listName="procurement-procedure-type">neg-w-call</cbc:ProcedureCode>
+    <cac:NoticeDocumentReference>
+      <cbc:ID schemeName="ojs-notice-id">607433-2025</cbc:ID>
+    </cac:NoticeDocumentReference>
+    <cac:ProcessJustification>
+      <cbc:ProcessReasonCode listName="accelerated-procedure">false</cbc:ProcessReasonCode>
+    </cac:ProcessJustification>
+  </cac:TenderingProcess>
+  <cac:ProcurementProject>
+    <cbc:ID schemeName="InternalID">551645</cbc:ID>
+    <cbc:Name languageID="ENG">Procurement of 3 noise reduction silencers including installation for Fjernvarme Fyns waste incineration lines 11, 12 and 13</cbc:Name>
+    <cbc:Description languageID="ENG">The Contracting Authority wants to procure 3 new silencers placed in front of the stack to get a noise reduction if we run through or bypass the fluegas condesations units.
+
+The procurement is conducted as a negotiated procedure with prior call for competition pursuant to the EU Utilities Directive (Directive 2014/25/EU of the European Parliament and of the Council of 26 February 2014 on procurement by entities operating in the water, energy, transport and postal services sectors and repealing Directive 2004/17/EC).</cbc:Description>
+    <cbc:ProcurementTypeCode listName="contract-nature">supplies</cbc:ProcurementTypeCode>
+    <cbc:Note languageID="ENG">Economic operators are encouraged to seek clarification of any uncertainties and ambiguities by asking questions about the Tender Material. Furthermore, it should be noted that this tender is conducted as a 'Negotiated procedure with prior call for competition', and that adjustments to the Tender Material may occur as part of potential negotiations.
+As part of the application, economic operators must ensure that a duly completed version of the European Single Procurement Document (ESPD) is submitted. The ESPD is the economic operator's 'self-declaration' serving as preliminary evidence that the economic operator is not subject to the mandatory and, if selected, voluntary grounds for exclusion and meets the requirements for suitability. According to Executive Order no. 1078 of 29/06/2022, § 11, economic operators for the current tender must not be subject to the mandatory exclusion grounds specified in sections 134a, 135, and 136 of the Public Procurement Act. Furthermore, economic operators for the current tender must not be subject to the exclusion grounds listed in section 137, paragraph 1, no. 2. Economic operators covered by the included exclusion grounds in sections 135-137 may only participate in the tender if documentation of reliability is presented, cf. section 138 of the Public Procurement Act. The contracting authority will request a “Serviceattest” (https://erhvervsstyrelsen.dk/serviceattest-ved-udbud) as documentation that economic operators are not subject to the exclusion grounds specified in section 135, paragraph 1, 2, and 3 (and if selected, section 137, paragraph 1, no. 2 ) of the Public Procurement Act. If the economic operator originates from another Member State, they must provide equivalent documentation in the version and/or from the authorities relevant in that Member State. The contracting authority reserves the right at any time during the procurement procedure to request an applicant or tenderer to submit documentation if necessary to ensure that the procedure is carried out correctly. The EU sanctions against Russia entail that economic operators subject to EU sanctions under EU Regulation no. 833/2014 as amended, article 5k, are excluded from participating in the tender. By submitting an application, the applicant confirms not to be subject to this. Conditions for participation in the form of consortia or through the use of supporting entities are described in the Tender Material. The contracting authority reserves the right to complement, supplement, or complete applications and tenders.
+
+Site visit at Havnegade 120, 5000 Odense; 
+
+In connection with the tender procedure, an inspection of the site of installation will be made available at Havnegade 120, 5000 Odense, on 15 October 2025 between 13:00 and 15:00 hours. The inspection constitutes a voluntary opportunity for tenderers to familiarize themselves with the site prior to the submission of tenders. No additional information will be provided on the day, other than a brief introduction by the Contracting Authority and a guided tour. Any specific questions must subsequently be submitted in writing via Comdia, and responses will be published in the Q&amp;A section of Comdia.
+
+Prior registration is mandatory and must be submitted to Tommy Mastrup Hansen at tmh@fjernvarmefyn.dk and/or Asbjørn Kjærgaard at x-askj@fjernvarmefyn.dk  no later than 13 October 2025 at 14:00 hours. 
+</cbc:Note>
+    <cac:ProcurementAdditionalType>
+      <cbc:ProcurementTypeCode listName="contract-nature">works</cbc:ProcurementTypeCode>
+    </cac:ProcurementAdditionalType>
+    <cac:RequestedTenderTotal>
+      <cbc:EstimatedOverallContractAmount currencyID="DKK">6000000</cbc:EstimatedOverallContractAmount>
+    </cac:RequestedTenderTotal>
+    <cac:MainCommodityClassification>
+      <cbc:ItemClassificationCode listName="cpv">42300000</cbc:ItemClassificationCode>
+    </cac:MainCommodityClassification>
+    <cac:AdditionalCommodityClassification>
+      <cbc:ItemClassificationCode listName="cpv">42390000</cbc:ItemClassificationCode>
+    </cac:AdditionalCommodityClassification>
+    <cac:AdditionalCommodityClassification>
+      <cbc:ItemClassificationCode listName="cpv">45300000</cbc:ItemClassificationCode>
+    </cac:AdditionalCommodityClassification>
+    <cac:RealizedLocation>
+      <cbc:Description languageID="ENG">The supplier will be granted access to the areas in agreemnet with the contracting authority.</cbc:Description>
+      <cac:Address>
+        <cbc:StreetName>Fjernvarme Fyn </cbc:StreetName>
+        <cbc:AdditionalStreetName>Havnegade 120</cbc:AdditionalStreetName>
+        <cbc:CityName>Odense C</cbc:CityName>
+        <cbc:PostalZone>5000</cbc:PostalZone>
+        <cbc:CountrySubentityCode listName="nuts">DK031</cbc:CountrySubentityCode>
+        <cac:Country>
+          <cbc:IdentificationCode listName="country">DNK</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:RealizedLocation>
+  </cac:ProcurementProject>
+  <cac:ProcurementProjectLot>
+    <cbc:ID schemeName="Lot">LOT-0000</cbc:ID>
+    <cac:TenderingTerms>
+      <ext:UBLExtensions>
+        <ext:UBLExtension>
+          <ext:ExtensionContent>
+            <efext:EformsExtension>
+              <efac:StrategicProcurement>
+                <efbc:ApplicableLegalBasis listName="cvd-scope">false</efbc:ApplicableLegalBasis>
+              </efac:StrategicProcurement>
+            </efext:EformsExtension>
+          </ext:ExtensionContent>
+        </ext:UBLExtension>
+      </ext:UBLExtensions>
+      <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+      <cac:AwardingTerms>
+        <cac:AwardingCriterion>
+          <cac:SubordinateAwardingCriterion>
+            <ext:UBLExtensions>
+              <ext:UBLExtension>
+                <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                    <efac:AwardCriterionParameter>
+                      <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                      <efbc:ParameterNumeric>30</efbc:ParameterNumeric>
+                    </efac:AwardCriterionParameter>
+                  </efext:EformsExtension>
+                </ext:ExtensionContent>
+              </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+            <cbc:Name languageID="ENG">Price</cbc:Name>
+            <cbc:Description languageID="ENG">The Contracting Authority assigns points for “Price” as follows:
+Price is scored on a linear scale from 0 to 10. The tender with the lowest total price will be given the highest score, 10. The lowest total price is understood as the lowest calculated total price based on the Tenderlist (Annex 2) among all compliant tenders. All other tenders are then scored on a linear scale, using the initial interpolation percentage, cf. the table 1 below, and as a result the tender with the lowest total price will be given the score 10 and a tender which is 50 % higher will be given the score 0. If 1 or more of the compliant tenders comprise a total price which is higher than the initial percentages stated in the table 1 below, The Contracting Authority will use the alternative linear scale with the same scores, but with a greater span. As a result, the span will be set at the actual difference in percentage between the lowest calculated total price among all compliant tenders and the highest calculated total price among all compliant tenders. The Contracting Authority will not expand beyond the stated maximum in Alternative 1 and as a result tenders which comprise a total price which is equal to or higher than this percentage will be scored 0. All scores from 0-10 may be used (including decimals).
+
+
+
+Table 1 – Interpolation percentage, inclusive alternative
+Initial interpolation percentage:  +50 %		                          Alternative 1 percentage(s): Highest compliant total price percentage above 50 % but below 75 % (maximum)
+</cbc:Description>
+          </cac:SubordinateAwardingCriterion>
+          <cac:SubordinateAwardingCriterion>
+            <ext:UBLExtensions>
+              <ext:UBLExtension>
+                <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                    <efac:AwardCriterionParameter>
+                      <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                      <efbc:ParameterNumeric>50</efbc:ParameterNumeric>
+                    </efac:AwardCriterionParameter>
+                  </efext:EformsExtension>
+                </ext:ExtensionContent>
+              </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+            <cbc:Name languageID="ENG">Technical Solution and performance</cbc:Name>
+            <cbc:Description languageID="ENG">For the evaluation of the sub-criteria the below should be enclosed. All sub-sub criteria’s (1,2 and 3) will be evaluated equally in the total evaluation of this criterion:
+
+1)	The tenderer should include a detailed description of the proposed technical solution (all 3 silencers), including specific details concerning the components, subcomponents and materials that will be included. Accordingly, the following elements should be described in detail:
+•	A detailed description of the proposed technical solution (all 3 silencers), including specific details concerning the components, subcomponents and materials that will be included. 
+•	Physical dimensions for each silencer and the appropriate construction especially considering access to service and maintenance for each silencer.
+The evaluation of the “Technical solution and access to service and maintenance” will be based on the tenderer’s description, and the Contracting Authority will in this respect emphasize that it is a reliable and robust solution, with an appropriate design and size that provides an easy way of conducting service and maintenance on each of the silencers.
+An overall evaluation with no decimals will be made of this sub-sub-criterion.
+
+
+2)	Noise reduction
+As part of the evaluation, the tenderer must also state the guaranteed performance of the silencers in terms of noise reduction under current conditions. (See the attached noise measurement in the special conditions clause 3.1 and 3.2 and Annex G).
+The performance must be stated in Annex 3. The tenderer should also include the calculations and/or documentation for the stated noise reduction in Annex 3.
+It should be noted the guaranteed performance stated by the tenderer will be penalized in the contract, cf. Clause 6.1.1.
+The evaluation of noise reduction will be based on the stated level as offered by the tenderer for each silencer.  The silencer with the lowest guaranteed dB will count for 50% of the evaluation of this sub-sub-criterion and the two other silencers will each count for 25% of the evaluation. If the same dB is offered on all 3 silencers they will all count the same.
+
+•	A noise reduction level of 15.00 dB (Decibel) or higher will result in a score of 10 for this sub-sub criterion, whereas a performance level of 5.00 dB will result in a score of 0. In between these two points, scores will be given on the basis of linear interpolation. An offered performance level below 5.00 dB on any of the silencers will not be accepted and will result in the tender being considered as non-compliant.
+
+Example: Guaranteed noise reduction on Silencer 1: 9dB, Silencer 2: 10dB and silencer 3: 10 dB gives a weighed noise reduction of 9,50 dB (9,00 dB * 0,5 + 10,00 dB * 0,25 + 10,00 dB * 0,25 = 9,50 dB)which equals a score of 4,50 points.
+The overall evaluation will be given with 2 decimals.
+
+
+3)	Pressure loss over silencers
+As part of the evaluation the tenderer must also state the guaranteed performance of the silencers in terms of pressure loss over the silencers. The performance must be stated in Annex 3. The tenderer should also include the calculations and/or documentation for the stated noise reduction in Annex 3.
+It should be noted the guaranteed performance stated by the tenderer will be penalized in the contract, cf. Clause 6.1.1.
+The evaluation of pressure loss over the silencers will be based on the average pressure loss level as offered by the tenderer.  
+•	An average pressure loss of 0.00 mbar (Millibar) will result in a score of 10, whereas a pressure loss of 5.00 mbar will result in a score of 0. In between these two points scores will be given on the basis of linear interpolation. An offered level above 5.00 mbar on any of the lines will not be accepted and will result in the tender being considered as non-compliant,. This is also the case even if the average pressure loss is below 5.00 mbar.
+
+Example: Guaranteed pressure loss on Silencer 1: 1,00 mbar, Silencer 2: 1,75 mbar and silencer 3: 2,50 mbar gives an average pressure loss of 1,75 mbar which equals a score of 6,50 points.
+
+The overall evaluation will be given with 2 decimals.
+
+</cbc:Description>
+          </cac:SubordinateAwardingCriterion>
+          <cac:SubordinateAwardingCriterion>
+            <ext:UBLExtensions>
+              <ext:UBLExtension>
+                <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                    <efac:AwardCriterionParameter>
+                      <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                      <efbc:ParameterNumeric>20</efbc:ParameterNumeric>
+                    </efac:AwardCriterionParameter>
+                  </efext:EformsExtension>
+                </ext:ExtensionContent>
+              </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+            <cbc:Name languageID="ENG">HSE</cbc:Name>
+            <cbc:Description languageID="ENG">For the evaluation of the sub-criteria the following should be enclosed:
+The tenderer should include a detailed HSE-plan and RAMS (Risk Assessment and Method Statements) specifically for the tendered assignment, including detailed descriptions of risk management, on-site supervision, inspections and audits.
+The evaluation will be based on the submitted HSE-plan and RAMS (Risk Assessment and Method Statements) for the specific project. It will be evaluated positive that the tenderer submits a proactive and detailed HSE-plan and RAMS for this specific assignment which - considering the complexity and scope - covers:
+•	Detailed description of how risk assessments for the specific scope of work (health and safety) are conducted to ensure that risks are eliminated rather than mitigated, including identification of risks identified for the scope of work (dismantling and preparation for assembly including working at height etc.)
+•	Detailed method statements which are relevant, safe to work by and show knowledge of the scope of work, especially considering dismantling and assembly of larger prefabricated parts (flue gas ducts, supports, insulation work etc.)
+An overall evaluation with no decimals will be made of this sub-criterion.
+
+</cbc:Description>
+          </cac:SubordinateAwardingCriterion>
+        </cac:AwardingCriterion>
+      </cac:AwardingTerms>
+      <cac:AdditionalInformationParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+        </cac:PartyIdentification>
+      </cac:AdditionalInformationParty>
+      <cac:DocumentProviderParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+        </cac:PartyIdentification>
+      </cac:DocumentProviderParty>
+      <cac:AppealTerms>
+        <cac:PresentationPeriod>
+          <cbc:Description languageID="ENG">Pursuant to the Danish Act on the Complaints Board for Public Procurement, etc. (lov om Klagenævnet for Udbud m.v.) (the Act is available (in Danish) at www.retsinformation.dk), the following deadlines apply to the lodging of complaints: Complaints for not having been selected must be submitted to the Danish Complaints Board for Public Procurement before the expiry of 20 calendar days, see section 7(1) of the Act, from the day after submission of notification to the candidates concerned of the identity of the successful tenderer where the notification is accompanied by an explanation of the grounds for the decision in accordance with section 2(1), para (1) of the Act. In other situations, complaints of award procedures, see section 7(2) of the Act, must be lodged with the Danish Complaints Board for Public Procurement before the expiry of: 1) 45 calendar days after the contracting entity has published a notice in the Official Journal of the European Union that the contracting entity has entered into a contract. The deadline is calculated from the day after the day when the notice was published. 2) 30 calendar days calculated from the day after the day when the contracting entity has notified the candidates concerned that a contract based on a framework agreement with reopening of competition or a dynamic purchasing system has been entered into where the notification has included an explanation of the relevant grounds for the decision. 3) 6 months after the contracting entity entered into a framework agreement calculated from the day after the day when the contracting entity notified the candidates and tenderers concerned, see section 2(2) of the Act. Not later than at the time of lodging a complaint with the Danish Complaints Board for Public Procurement, the complainant must notify the contracting entity in writing that a complaint has been lodged with the Danish Complaints Board for Public Procurement and whether the appeal was lodged during the stand-still period, see section 6(4) of the Act. In cases where the complaint was not lodged within the standstill period, the complainant must furthermore indicate whether a suspensory effect of the complaint has been requested, see section 12(1) of the Act. The e-mail address of the Complaints Board for Public Procurement is set out in section VI.4.1). The Complaints Board’s own complaints procedure is available at https://naevneneshus.dk/start-din-klage/klagenaevnet-for-udbud/vejledning/</cbc:Description>
+        </cac:PresentationPeriod>
+        <cac:AppealInformationParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-1002</cbc:ID>
+          </cac:PartyIdentification>
+        </cac:AppealInformationParty>
+        <cac:AppealReceiverParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-1001</cbc:ID>
+          </cac:PartyIdentification>
+        </cac:AppealReceiverParty>
+      </cac:AppealTerms>
+    </cac:TenderingTerms>
+    <cac:TenderingProcess>
+      <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+      <cac:AuctionTerms>
+        <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+      </cac:AuctionTerms>
+      <cac:ContractingSystem>
+        <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+      </cac:ContractingSystem>
+      <cac:ContractingSystem>
+        <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+      </cac:ContractingSystem>
+    </cac:TenderingProcess>
+    <cac:ProcurementProject>
+      <cbc:ID schemeName="InternalID">551645</cbc:ID>
+      <cbc:Name languageID="ENG">Procurement of 3 noise reduction silencers including installation for Fjernvarme Fyns waste incineration lines 11, 12 and 13</cbc:Name>
+      <cbc:Description languageID="ENG">The Contracting Authority wants to procure 3 new silencers placed in front of the stack to get a noise reduction if we run through or bypass the fluegas condesations units.
+
+The procurement is conducted as a negotiated procedure with prior call for competition pursuant to the EU Utilities Directive (Directive 2014/25/EU of the European Parliament and of the Council of 26 February 2014 on procurement by entities operating in the water, energy, transport and postal services sectors and repealing Directive 2004/17/EC).</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">supplies</cbc:ProcurementTypeCode>
+      <cbc:Note languageID="ENG">An economic operator participating on its own and which does not rely on the capacities of other entities in order to meet the minimum requirements and the selection criteria, must fill out one ESPD. 
+
+An economic operator participating on its own but relying on the capacities of one or more other entities must ensure that the contracting authority receives its own ESPD together with a separate ESPD setting out the relevant information for each of the entities it relies on.
+
+Finally, where groups of economic operators, including temporary associations, participate together in the procurement procedure, a separate ESPD setting out the information required under Parts II to V must be given for each of the participating economic operators.
+
+The attached ESPD from those other entities should be duly completed and signed.
+
+Site visit at Havnegade 120, 5000 Odense. 
+
+In connection with the tender procedure, an inspection of the site of installation will be made available at Havnegade 120, 5000 Odense, on 15 October 2025 between 13:00 and 15:00 hours. The inspection constitutes a voluntary opportunity for tenderers to familiarize themselves with the site prior to the submission of tenders. No additional information will be provided on the day, other than a brief introduction by the Contracting Authority and a guided tour. Any specific questions must subsequently be submitted in writing via Comdia, and responses will be published in the Q&amp;A section of Comdia.
+
+Prior registration is mandatory and must be submitted to Tommy Mastrup Hansen at tmh@fjernvarmefyn.dk and/or Asbjørn Kjærgaard at x-askj@fjernvarmefyn.dk  no later than 13 October 2025 at 14:00 hours.
+</cbc:Note>
+      <cac:ProcurementAdditionalType>
+        <cbc:ProcurementTypeCode listName="contract-nature">works</cbc:ProcurementTypeCode>
+      </cac:ProcurementAdditionalType>
+      <cac:ProcurementAdditionalType>
+        <cbc:ProcurementTypeCode listName="strategic-procurement">none</cbc:ProcurementTypeCode>
+      </cac:ProcurementAdditionalType>
+      <cac:ProcurementAdditionalType>
+        <cbc:ProcurementTypeCode listName="gpp-criteria">none</cbc:ProcurementTypeCode>
+      </cac:ProcurementAdditionalType>
+      <cac:RequestedTenderTotal>
+        <cbc:EstimatedOverallContractAmount currencyID="DKK">6000000</cbc:EstimatedOverallContractAmount>
+      </cac:RequestedTenderTotal>
+      <cac:MainCommodityClassification>
+        <cbc:ItemClassificationCode listName="cpv">42300000</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+        <cbc:ItemClassificationCode listName="cpv">42390000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+        <cbc:ItemClassificationCode listName="cpv">45300000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:RealizedLocation>
+        <cac:Address>
+          <cbc:StreetName>Fjernvarme Fyn</cbc:StreetName>
+          <cbc:AdditionalStreetName>Havnegade 120</cbc:AdditionalStreetName>
+          <cbc:CityName>Odense C</cbc:CityName>
+          <cbc:PostalZone>5000</cbc:PostalZone>
+          <cbc:CountrySubentityCode listName="nuts">DK031</cbc:CountrySubentityCode>
+          <cac:Country>
+            <cbc:IdentificationCode listName="country">DNK</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:RealizedLocation>
+      <cac:PlannedPeriod>
+        <cbc:StartDate>2026-04-07+02:00</cbc:StartDate>
+        <cbc:EndDate>2026-06-26+02:00</cbc:EndDate>
+      </cac:PlannedPeriod>
+      <cac:ContractExtension>
+        <cbc:MaximumNumberNumeric>0</cbc:MaximumNumberNumeric>
+      </cac:ContractExtension>
+    </cac:ProcurementProject>
+  </cac:ProcurementProjectLot>
+  <cac:TenderResult>
+    <cbc:AwardDate>2000-01-01+01:00</cbc:AwardDate>
+  </cac:TenderResult>
+</ContractAwardNotice>

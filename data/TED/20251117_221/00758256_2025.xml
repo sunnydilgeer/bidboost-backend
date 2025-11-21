@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ccts-cct="urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDataTypes-2" xmlns:udt="urn:oasis:names:specification:bdndr:schema:xsd:UnqualifiedDataTypes-1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<ext:UBLExtensions>
+		<ext:UBLExtension>
+			<ext:ExtensionContent>
+				<efext:EformsExtension>
+					<efac:NoticeSubType>
+						<cbc:SubTypeCode listName="notice-subtype">16</cbc:SubTypeCode>
+					</efac:NoticeSubType>
+					<efac:Organizations>
+						<efac:Organization>
+							<efac:Company>
+								<cbc:WebsiteURI>https://www.bundeswirtschaftsministerium.de/Navigation/DE/Home/home.html</cbc:WebsiteURI>
+								<cac:PartyIdentification>
+									<cbc:ID>ORG-0001</cbc:ID>
+								</cac:PartyIdentification>
+								<cac:PartyName>
+									<cbc:Name languageID="DEU">Bundesrepublik Deutschland, vertreten durch das Bundesministerium für Wirtschaft und Energie</cbc:Name>
+								</cac:PartyName>
+								<cac:PostalAddress>
+									<cbc:StreetName>Villemobler Str. 76</cbc:StreetName>
+									<cbc:CityName>Bonn</cbc:CityName>
+									<cbc:PostalZone>53123</cbc:PostalZone>
+									<cbc:CountrySubentityCode listName="nuts-lvl3">DEA22</cbc:CountrySubentityCode>
+									<cac:Country>
+										<cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+									</cac:Country>
+								</cac:PostalAddress>
+								<cac:PartyLegalEntity>
+									<cbc:CompanyID>BMWE-ZC4</cbc:CompanyID>
+								</cac:PartyLegalEntity>
+								<cac:Contact>
+									<cbc:Name>BMWE, Fachreferat VC4</cbc:Name>
+									<cbc:Telephone>+49228996154113</cbc:Telephone>
+									<cbc:ElectronicMail>EXPO2027@bmwe.bund.de</cbc:ElectronicMail>
+								</cac:Contact>
+							</efac:Company>
+						</efac:Organization>
+						<efac:Organization>
+							<efac:Company>
+								<cac:PartyIdentification>
+									<cbc:ID>ORG-0002</cbc:ID>
+								</cac:PartyIdentification>
+								<cac:PartyName>
+									<cbc:Name languageID="DEU">Laumann/Scheßl/Weismüller Architektur und Baumanagement GmbH</cbc:Name>
+								</cac:PartyName>
+								<cac:PostalAddress>
+									<cbc:StreetName>Talstr. 14</cbc:StreetName>
+									<cbc:CityName>Düsseldorf</cbc:CityName>
+									<cbc:PostalZone>40217</cbc:PostalZone>
+									<cbc:CountrySubentityCode listName="nuts-lvl3">DEA11</cbc:CountrySubentityCode>
+									<cac:Country>
+										<cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+									</cac:Country>
+								</cac:PostalAddress>
+								<cac:PartyLegalEntity>
+									<cbc:CompanyID>HRB66181</cbc:CompanyID>
+								</cac:PartyLegalEntity>
+							</efac:Company>
+						</efac:Organization>
+						<efac:Organization>
+							<efac:Company>
+								<cac:PartyIdentification>
+									<cbc:ID>ORG-0003</cbc:ID>
+								</cac:PartyIdentification>
+								<cac:PartyName>
+									<cbc:Name languageID="DEU">Vergabekammern des Bundes</cbc:Name>
+								</cac:PartyName>
+								<cac:PostalAddress>
+									<cbc:StreetName>Bundeskanzlerplatz 2-10</cbc:StreetName>
+									<cbc:CityName>Bonn</cbc:CityName>
+									<cbc:PostalZone>53113</cbc:PostalZone>
+									<cbc:CountrySubentityCode listName="nuts-lvl3">DEA22</cbc:CountrySubentityCode>
+									<cac:Country>
+										<cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+									</cac:Country>
+								</cac:PostalAddress>
+								<cac:PartyLegalEntity>
+									<cbc:CompanyID>t:022894990</cbc:CompanyID>
+								</cac:PartyLegalEntity>
+							</efac:Company>
+						</efac:Organization>
+					<efac:Organization><efac:Company><cac:PartyIdentification><cbc:ID schemeName="organization">ORG-0004</cbc:ID></cac:PartyIdentification><cac:PartyName><cbc:Name languageID="DEU">Datenservice Öffentlicher Einkauf (in Verantwortung des Beschaffungsamts des BMI)</cbc:Name></cac:PartyName><cac:PostalAddress><cbc:CityName>Bonn</cbc:CityName><cbc:PostalZone>53119</cbc:PostalZone><cbc:CountrySubentityCode listName="nuts">DEA22</cbc:CountrySubentityCode><cac:Country><cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode></cac:Country></cac:PostalAddress><cac:PartyLegalEntity><cbc:CompanyID schemeID="002">0204:994-DOEVD-83</cbc:CompanyID></cac:PartyLegalEntity><cac:Contact><cbc:Telephone>+49228996100</cbc:Telephone><cbc:ElectronicMail>noreply.esender_hub@bescha.bund.de</cbc:ElectronicMail></cac:Contact></efac:Company></efac:Organization></efac:Organizations>
+				<efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00758256-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+			</ext:ExtensionContent>
+		</ext:UBLExtension>
+	</ext:UBLExtensions>
+	<cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+	<cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+	<cbc:ProfileID>eforms-sdk-1.13</cbc:ProfileID>
+	<cbc:ID schemeName="notice-id">48586588-62a4-4267-baed-960168862aef</cbc:ID>
+	<cbc:ContractFolderID>d8d75b85-1155-4642-9c3a-e32dac7eaf18</cbc:ContractFolderID>
+	<cbc:IssueDate>2025-11-13+01:00</cbc:IssueDate>
+	<cbc:IssueTime>17:14:17+01:00</cbc:IssueTime>
+	<cbc:VersionID>01</cbc:VersionID>
+	<cbc:RequestedPublicationDate>2025-11-13+01:00</cbc:RequestedPublicationDate>
+	<cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+	<cbc:NoticeTypeCode listName="competition">cn-standard</cbc:NoticeTypeCode>
+	<cbc:NoticeLanguageCode listID="eu-official-language">DEU</cbc:NoticeLanguageCode>
+	<cac:ContractingParty>
+		<cac:ContractingPartyType>
+			<cbc:PartyTypeCode listName="buyer-legal-type">cga</cbc:PartyTypeCode>
+		</cac:ContractingPartyType>
+		<cac:ContractingActivity>
+			<cbc:ActivityTypeCode listName="authority-activity">econ-aff</cbc:ActivityTypeCode>
+		</cac:ContractingActivity>
+		<cac:Party>
+			<cac:PartyIdentification>
+				<cbc:ID>ORG-0001</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:ServiceProviderParty>
+				<cbc:ServiceTypeCode listName="organisation-role">serv-prov</cbc:ServiceTypeCode>
+				<cac:Party>
+					<cac:PartyIdentification>
+						<cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+					</cac:PartyIdentification>
+				</cac:Party>
+			</cac:ServiceProviderParty>
+		<cac:ServiceProviderParty><cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode><cac:Party><cac:PartyIdentification><cbc:ID schemeName="organization">ORG-0004</cbc:ID></cac:PartyIdentification></cac:Party></cac:ServiceProviderParty></cac:Party>
+	</cac:ContractingParty>
+	<cac:TenderingTerms>
+		<ext:UBLExtensions>
+			<ext:UBLExtension>
+				<ext:ExtensionContent>
+					<efext:EformsExtension>
+						<efac:StrategicProcurement>
+							<efbc:ApplicableLegalBasis listName="cvd-scope">false</efbc:ApplicableLegalBasis>
+						</efac:StrategicProcurement>
+						<efac:StrategicProcurement>
+							<efbc:ApplicableLegalBasis listName="eed-scope">false</efbc:ApplicableLegalBasis>
+						</efac:StrategicProcurement>
+					</efext:EformsExtension>
+				</ext:ExtensionContent>
+			</ext:UBLExtension>
+		</ext:UBLExtensions>
+		<cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+		<cac:RequiredFinancialGuarantee>
+			<cbc:GuaranteeTypeCode listName="tender-guarantee-required">false</cbc:GuaranteeTypeCode>
+		</cac:RequiredFinancialGuarantee>
+		<cac:ProcurementLegislationDocumentReference>
+			<cbc:ID>vgv</cbc:ID>
+		</cac:ProcurementLegislationDocumentReference>
+		<cac:CallForTendersDocumentReference>
+			<ext:UBLExtensions>
+				<ext:UBLExtension>
+					<ext:ExtensionContent>
+						<efext:EformsExtension>
+							<efac:OfficialLanguages>
+								<cac:Language>
+									<cbc:ID>DEU</cbc:ID>
+								</cac:Language>
+							</efac:OfficialLanguages>
+						</efext:EformsExtension>
+					</ext:ExtensionContent>
+				</ext:UBLExtension>
+			</ext:UBLExtensions>
+			<cbc:ID>SomeTenderDocID1</cbc:ID>
+			<cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+		</cac:CallForTendersDocumentReference>
+		<cac:TendererQualificationRequest>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-natl-bre-nat-law</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Ausschluss erfolgt auf Grundlage der §§ 123 und 124 GWB.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-part</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Ausschluss erfolgt auf Grundlage der §§ 123 und 124 GWB.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-terror</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Ausschluss erfolgt auf Grundlage der §§ 123 und 124 GWB.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-laund</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Ausschluss erfolgt auf Grundlage der §§ 123 und 124 GWB.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-fraud</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Ausschluss erfolgt auf Grundlage der §§ 123 und 124 GWB.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-corrpt</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Ausschluss erfolgt auf Grundlage der §§ 123 und 124 GWB.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-traffick</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Ausschluss erfolgt auf Grundlage der §§ 123 und 124 GWB.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-pmt-bre-tax</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Ausschluss erfolgt auf Grundlage der §§ 123 und 124 GWB.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-pmt-bre-ssc</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Ausschluss erfolgt auf Grundlage der §§ 123 und 124 GWB.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-bre-env-law</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Ausschluss erfolgt auf Grundlage der §§ 123 und 124 GWB.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-bre-soc-law</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Ausschluss erfolgt auf Grundlage der §§ 123 und 124 GWB.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-bre-lab-law</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Ausschluss erfolgt auf Grundlage der §§ 123 und 124 GWB.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-insolvency</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Ausschluss erfolgt auf Grundlage der §§ 123 und 124 GWB.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-liq-admin</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Ausschluss erfolgt auf Grundlage der §§ 123 und 124 GWB.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-as-susp</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Ausschluss erfolgt auf Grundlage der §§ 123 und 124 GWB.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-other</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Ausschluss erfolgt auf Grundlage der §§ 123 und 124 GWB.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-misconduct</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Ausschluss erfolgt auf Grundlage der §§ 123 und 124 GWB.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-distortion</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Ausschluss erfolgt auf Grundlage der §§ 123 und 124 GWB.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-partic-confl</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Ausschluss erfolgt auf Grundlage der §§ 123 und 124 GWB.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-prep-confl</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Ausschluss erfolgt auf Grundlage der §§ 123 und 124 GWB.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-sanction</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Ausschluss erfolgt auf Grundlage der §§ 123 und 124 GWB.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-misrepresent</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Ausschluss erfolgt auf Grundlage der §§ 123 und 124 GWB.</cbc:Description>
+			</cac:SpecificTendererRequirement>
+		</cac:TendererQualificationRequest>
+		<cac:TendererQualificationRequest>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-grounds-source">epo-notice</cbc:TendererRequirementTypeCode>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-grounds-source">epo-procurement-document</cbc:TendererRequirementTypeCode>
+			</cac:SpecificTendererRequirement>
+		</cac:TendererQualificationRequest>
+		<cac:TenderRecipientParty>
+			<cac:PartyIdentification>
+				<cbc:ID>ORG-0001</cbc:ID>
+			</cac:PartyIdentification>
+		</cac:TenderRecipientParty>
+		<cac:AppealTerms>
+			<cac:PresentationPeriod>
+				<cbc:Description languageID="DEU">§ 160 GWB lautet: (1) Die Vergabekammer leitet ein Nachprüfungsverfahren nur auf Antrag ein. (2) Antragsbefugt ist jedes Unternehmen, das ein Interesse an dem öffentlichen Auftrag oder der Konzession hat und eine Verletzung in seinen Rechten nach § 97 Absatz 6 durch Nichtbeachtung von Vergabevorschriften geltend macht. Dabei ist darzulegen, dass dem Unternehmen durch die behauptete Verletzung der Vergabevorschriften ein Schaden entstanden ist oder zu entstehen droht. (3) Der Antrag ist unzulässig, soweit 1. der Antragsteller den geltend gemachten Verstoß gegen Vergabevorschriften vor Einreichen des Nachprüfungsantrags erkannt und gegenüber dem Auftraggeber nicht innerhalb einer Frist von zehn Kalendertagen gerügt hat; der Ablauf der Frist nach § 134 Absatz 2 bleibt unberührt, 2. Verstöße gegen Vergabevorschriften, die aufgrund der Bekanntmachung erkennbar sind, nicht spätestens bis zum Ablauf der in der Bekanntmachung benannten Frist zur Bewerbung oder zur Angebotsabgabe gegenüber dem Auftraggeber gerügt werden, 3. Verstöße gegen Vergabevorschriften, die erst in den Vergabeunterlagen erkennbar sind, nicht spätestens bis zum Ablauf der Frist zur Bewerbung oder zur Angebotsabgabe gegenüber dem Auftraggeber gerügt werden, 4. mehr als 15 Kalendertage nach Eingang der Mitteilung des Auftraggebers, einer Rüge nicht abhelfen zu wollen, vergangen sind. Satz 1 gilt nicht bei einem Antrag auf Feststellung der Unwirksamkeit des Vertrags nach § 135 Absatz 1 Nummer 2. § 134 Absatz 1 Satz 2 bleibt unberührt.  Auf die weiteren Vorschriften des GWB zur Einreichung von Nachprüfungsanträgen wird hingewiesen.</cbc:Description>
+			</cac:PresentationPeriod>
+			<cac:AppealReceiverParty>
+				<cac:PartyIdentification>
+					<cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+				</cac:PartyIdentification>
+			</cac:AppealReceiverParty>
+		</cac:AppealTerms>
+		<cac:Language>
+			<cbc:ID>DEU</cbc:ID>
+		</cac:Language>
+	</cac:TenderingTerms>
+	<cac:TenderingProcess>
+		<ext:UBLExtensions>
+			<ext:UBLExtension>
+				<ext:ExtensionContent>
+					<efext:EformsExtension>
+						<efbc:AccessToolName>Die Kommunikation im Vergabeverfahren wird durch die  Laumann/Scheßl/Weismüller Architektur und Baumanagement GmbH abgewickelt. Diese wird für die Kommunikation ausschließlich die Vergabeplattform verwenden.  Fragen sind ausschließlich in Textform über die Vergabeplattform zu stellen.</efbc:AccessToolName>
+					</efext:EformsExtension>
+				</ext:ExtensionContent>
+			</ext:UBLExtension>
+		</ext:UBLExtensions>
+		<cbc:ProcedureCode listName="procurement-procedure-type">neg-w-call</cbc:ProcedureCode>
+		<cbc:AccessToolsURI>https://www.dtvp.de/Satellite/notice/CXP4DKHMD4L</cbc:AccessToolsURI>
+		<cac:ProcessJustification>
+			<cbc:ProcessReasonCode listName="accelerated-procedure">false</cbc:ProcessReasonCode>
+		</cac:ProcessJustification>
+		<cac:AuctionTerms>
+			<cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+		</cac:AuctionTerms>
+	</cac:TenderingProcess>
+	<cac:ProcurementProject>
+		<cbc:ID schemeName="internalID">54405/005#007</cbc:ID>
+		<cbc:Name languageID="DEU">Konzeption, Planung und Realisierung, technischer Betrieb, Rückbau des temporären Deutschen Pavillons für die Expo 2027 Belgrad, Serbien</cbc:Name>
+		<cbc:Description languageID="DEU">Konzepterstellung, Planung und Realisierung der Innen- und Außengestaltung des Deutschen Pavillons auf der Expo 2027 Belgrad inkl. Ausstellungsinhalten, Ausstattung, technischem Betrieb, Rückabwicklung, Entsorgung und sämtlichen Transportleistungen zum und vom Ausstellungsort.</cbc:Description>
+		<cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+		<cbc:Note languageID="DEU">#Bekanntmachungs-ID: CXP4DKHMD4L#</cbc:Note>
+		<cac:RequestedTenderTotal>
+			<cbc:EstimatedOverallContractAmount currencyID="EUR">7500000.00</cbc:EstimatedOverallContractAmount>
+		</cac:RequestedTenderTotal>
+		<cac:MainCommodityClassification>
+			<cbc:ItemClassificationCode listName="cpv">71000000</cbc:ItemClassificationCode>
+		</cac:MainCommodityClassification>
+		<cac:AdditionalCommodityClassification>
+			<cbc:ItemClassificationCode listName="cpv">45200000</cbc:ItemClassificationCode>
+		</cac:AdditionalCommodityClassification>
+		<cac:AdditionalCommodityClassification>
+			<cbc:ItemClassificationCode listName="cpv">71240000</cbc:ItemClassificationCode>
+		</cac:AdditionalCommodityClassification>
+		<cac:AdditionalCommodityClassification>
+			<cbc:ItemClassificationCode listName="cpv">45212310</cbc:ItemClassificationCode>
+		</cac:AdditionalCommodityClassification>
+		<cac:AdditionalCommodityClassification>
+			<cbc:ItemClassificationCode listName="cpv">71210000</cbc:ItemClassificationCode>
+		</cac:AdditionalCommodityClassification>
+		<cac:AdditionalCommodityClassification>
+			<cbc:ItemClassificationCode listName="cpv">79930000</cbc:ItemClassificationCode>
+		</cac:AdditionalCommodityClassification>
+		<cac:AdditionalCommodityClassification>
+			<cbc:ItemClassificationCode listName="cpv">92320000</cbc:ItemClassificationCode>
+		</cac:AdditionalCommodityClassification>
+		<cac:RealizedLocation>
+			<cac:Address>
+				<cbc:CityName>Belgrad</cbc:CityName>
+				<cbc:CountrySubentityCode listName="nuts">RS110</cbc:CountrySubentityCode>
+				<cac:Country>
+					<cbc:IdentificationCode listName="country">SRB</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:Address>
+		</cac:RealizedLocation>
+	</cac:ProcurementProject>
+	<cac:ProcurementProjectLot>
+		<cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+		<cac:TenderingTerms>
+			<ext:UBLExtensions>
+				<ext:UBLExtension>
+					<ext:ExtensionContent>
+						<efext:EformsExtension>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-suit-reg-prof</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Auflistung und kurze Beschreibung der Bedingungen: Mit dem Teilnahmeantrag haben die Bewerber ihre Eignung nachzuweisen.  Die genannten Nachweise zum Vorliegen der Zuverlässigkeit sind im Falle einer Bewerbergemeinschaft von allen Mitgliedern jeweils einzeln vorzulegen.  Im Falle einer Eignungsleihe ist eine entsprechende Erklärung des Eignungsleihers beizufügen (Anlage "Verpflichtungserklärung im Fall der Eignungsleihe"). Ist eine sonstige Unterauftragsvergabe beabsichtigt, sind die betreffenden Erklärungen - soweit bereits möglich - von allen potenziellen Unterauftragnehmern vorzulegen.   1. Befähigung und Erlaubnis zur Berufsausübung: Bewerber haben nach den Rechtsvorschriften des Staats, in dem sie niedergelassen sind, entweder die Eintragung in einem Berufs- oder Handelsregister oder auf andere Weise die erlaubte Berufsausübung nachzuweisen. Sofern für die berufliche bzw. gewerbliche Tätigkeit eine Pflicht zur Eintragung in einem der in Anhang XI zur Richtlinie 2014/24/EU über die öffentliche Auftragsvergabe genannten Register besteht, haben sie einen Ausdruck der Eintragung beizufügen, der nicht älter als sechs Monate zum Ende der Teilnahmefrist ist. Für Bieter aus Deutschland sind die betreffenden Register das Handelsregister, die Handwerksrolle, das Vereinsregister, das Partnerschaftsregister oder die Mitgliederverzeichnisse der Berufskammern der Länder (z.B. Architektenliste).  2. Eigenerklärung zum Nichtvorliegen von Ausschlussgründen:  Es ist eine Eigenerklärung gemäß Anlage "Eigenerklärung zum Nichtvorliegen von Ausschlussgründen" vorzulegen, die bestätigt, dass keiner der in den §§ 123, 124 GWB aufgeführten Ausschlusstatbestände erfüllt ist.  3. Eigenerklärung zum Nichtvorliegen von Interessenkollisionen:  Der Bewerber hat eine Eigenerklärung gemäß Anlage "Eigenerklärung zum Nichtvorliegen von Interessenkollisionen" vorzulegen, in der er bestätigt, dass er keine Interessen hat, die mit der Ausführung des Auftrags im Widerspruch stehen und sie nachteilig beeinflussen könnten. Sofern der Bewerber mit der Ausführung des Auftrags im Widerspruch stehende Interessen hat, muss glaubhaft dargelegt werden, dass die konkrete Interessenkollision die Auftragsausführung aufgrund struktureller, personeller und/oder organisatorischer Vorkehrungen nicht nachteilig beeinflussen wird.  4. Erklärung zum fehlenden Bezug zu Russland: Der Bewerber hat über die Eigenerklärung gemäß Anlage "Eigenerklärung Russland" folgende Punkte zu bestätigen:  - Der Bewerber gehört nicht zu den in Artikel 5 k) Absatz 1 der Verordnung (EU) Nr. 833/2014 in der Fassung des Art. 1 Ziff. 23 der Verordnung (EU) 2022/576 des Rates vom 8. April 2022 über restriktive Maßnahmen angesichts der Handlungen Russlands, die die Lage in der Ukraine destabilisieren, genannten Personen oder Unternehmen, die einen Bezug zu Russland im Sinne der Vorschrift aufweisen. - Die am Auftrag als Unterauftragnehmer, Lieferanten oder Unternehmen, deren Kapazitäten im Zusammenhang mit der Erbringung des Eignungsnachweises in Anspruch genommen werden, beteiligten Unternehmen, auf die mehr als 10 % des Auftragswerts entfällt, gehören ebenfalls nicht zu dem in in der Vorschrift genannten Personenkreis mit einem Bezug zu Russland im Sinne der Vorschrift. - Auch während der Vertragslaufzeit werden keine als Unterauftragnehmer, Lieferanten oder Unternehmen, deren Kapazitäten im Zusammenhang mit der Erbringung des Eignungsnachweises in Anspruch genommen werden, beteiligten Unternehmen eingesetzt, auf die mehr als 10 % des Auftragswerts entfällt.</cbc:Description>
+								<efbc:SecondStageIndicator>false</efbc:SecondStageIndicator>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-other</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Auflistung und kurze Beschreibung der Eignungskriterien:   1. Bankauskunft Zum Nachweis über die wirtschaftliche Situation und das Zahlverhalten des Bewerbers bzw. Mitglieds der Bewerbergemeinschaft ist eine Bankauskunft in Kopie vorzulegen. Diese darf bei Ablauf der Frist zur Einreichung der Teilnahmeanträge nicht älter als drei Monate sein.   2. Mindestjahresumsatz  Über die Anlage "Eigenerklärung Umsatz" sind vom Bewerber bzw. jedem Mitglied der Bewerbergemeinschaft Angaben zum Umsatz der bei Ablauf der Frist zur Einreichung der Teilnahmeanträge letzten drei abgeschlossenen Geschäftsjahre insgesamt sowie Angaben zum Umsatz der letzten drei abgeschlossenen Geschäftsjahre in dem Tätigkeitsbereich des Auftrags zu machen. Dabei muss der durchschnittliche Jahresumsatz im Bereich der zu vergebenden Leistung bei 2,5 Mio. Euro (netto) liegen - ermittelt als Durchschnitt der - sofern verfügbar - letzten drei Geschäftsjahre. Im Falle einer Bewerbergemeinschaft können die durchschnittlichen Jahresumsätze aller Mitglieder der Bewerbergemeinschaft zusammengerechnet werden.   3. Betriebshaftpflichtversicherung  Es wird ein Versicherungsschutz während des gesamten Auftragszeitraums mit einer einmaligen Mindestdeckungssumme je Versicherungsfall von 5 Mio. Euro für Personen-, Sach- und Vermögensschäden gefordert. Die Eigenerklärung zum Vorhandensein bzw. der Bereitschaft zum Abschluss einer solchen Versicherung spätestens zum Zeitpunkt der Auftragserteilung ist mittels der Anlage "Eigenerklärung Betriebshaftlichtversicherung" vorzulegen. Die Erklärung ist von jedem Mitglied der Bewerbergemeinschaft vorzulegen.  Der Auftraggeber ist berechtigt, die Einsichtnahme in das Original der Versicherungs-Police bei Vertragsunterzeichnung zu verlangen.</cbc:Description>
+								<efbc:SecondStageIndicator>false</efbc:SecondStageIndicator>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-ref-work</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Auflistung und kurze Beschreibung der Eignungskriterien:   1. Referenzen Die Erfahrung und Fachkunde werden anhand der Anlage "Referenzen" bewertet. Für die Angabe der Referenzen sind zwingend die Formulare der Anlage zu verwenden.  Der Bewerber bzw. die Bewerbergemeinschaft haben mit ihrem Teilnahmeantrag mindestens einen Referenzauftrag über die erfolgreiche Durchführung vergleichbarer Aufträge in den letzten 15 Jahren nachzuweisen. Es gelten im Übrigen die Mindestanforderungen gem. Ziff. 5.7. Bei den Referenzen kann es sich auch um solche von Eignungsleihern handeln, sofern diese sich für den Fall der Auftragserteilung zur Auftragsausführung verpflichtet haben (siehe Ziff. 5.3). Der Auftraggeber ist berechtigt, Referenzen inhaltlich zu prüfen. Die Referenzangaben werden vertraulich behandelt und dienen ausschließlich zur Beurteilung der Eignung.  2. Qualifikation des Bewerbers bzw. der Bewerbergemeinschaft Der Teilnahmeantrag muss die Angabe von mind. einem Ideengeber und einem Architekten pro Bewerber bzw. Bewerbergemeinschaft, die über sehr gute Deutsch- und Englischkenntnisse in Wort und Schrift verfügen, umfassen. Diese Angabe muss die namentliche Bezeichnung sowie die Angabe und den Nachweis der beruflichen Qualifikation der jeweiligen Personen umfassen.   3. Sprachkenntnisse: Der Bewerber bzw. der Vertreter der Bewerbergemeinschaft hat über die Anlage "Eigenerklärung Sprachkenntnisse" zu versichern, dass zu Vertragsbeginn im Rahmen der Projektleitung in ausreichendem Maße personal zur Verfügung steht, welches über Deutsch- und Englischkenntnisse verfügt.   Ausschließlich die drei geeignetsten, d.h. bestplatzierten Bewerber werden zur Abgabe eines Angebots aufgefordert.  Maßgebliches Kriterium für die Auswahl der drei geeignetsten Bewerber ist die Qualität der Referenzen. Hier gilt folgendes: Der Bewerber bzw. die Bewerbergemeinschaft muss mindestens eine Referenz einreichen, die die folgenden Mindestanforderungen erfüllt: a) Der Beginn der vom Bewerber bzw. der Bewerbergemeinschaft als Referenz aufgeführten Veranstaltung(en) darf bei Ablauf der Frist zur Einreichung der Teilnahmeanträge in keinem der Referenzaufträge mehr als 15 Jahre zurückliegen.  b) Jeder der Referenzaufträge muss sich auf ein Großprojekt aus dem Veranstaltungsbereich beziehen, welches in Art und Umfang mit dem vorliegenden Projekt vergleichbar ist. Hierzu zählen insbesondere vorangehende Weltausstellungen sowie Projekte im Zusammenhang mit internationalen Großereignissen aus den Bereichen Sport, Veranstaltungen, Medien oder Politik.  c) Jede einzelne Referenz muss die Mitverantwortung des Bewerbers oder eines Mitglieds der Bewerbergemeinschaft für die Erbringung sämtlicher folgender Leistungen nachweisen: - Kreative Konzeption; - Ausstellungsgestaltung und Innengestaltung mit dem Ziel eines hohen Erlebnis- und/oder Informationswertes für die Besucher; - Architektonische Gestaltung; - Gebäudeplanung; - Realisierung von Ausstellungs- und Innengestaltung; - Realisierung des Pavillonausbaus; - Projektmanagement für die Ausstellungs- und Baurealisierung.  d) Die Referenzaufträge müssen im Hinblick auf die Dauer der Veranstaltung(en) sowie die Anzahl der Besucher folgende Mindestanforderungen erfüllen:   - Mindestdauer der Referenzveranstaltung: fünf Tage - Mindestbesucherzahl der Referenzveranstaltung: 50.000 Besucher  e) Sollte eine Referenz auf mehrere Mitglieder der Bewerbergemeinschaft zutreffen, darf diese Referenz nur einmal pro Bewerbergemeinschaft genannt werden.  Der Bewerber bzw. die Bewerbergemeinschaft hat die vier besten Referenzen zu bezeichnen (Nr. 1 bis 4), die im Hinblick auf die Wertungskriterien "Dauer der Referenzveranstaltung" und "Zahl der Besucher" die besten Referenzen darstellen. Pro Referenz der vier besten Referenzen je Bewerber bzw. Bewerbergemeinschaft werden folgende Punkte für die Dauer der Referenzveranstaltung sowie die Besucherzahl der Referenzveranstaltung vergeben:  1. Dauer der Referenzveranstaltung  6 Punkte 121 Tage und mehr 5 Punkte 71 Tage bis 120 Tage 4 Punkte 42 bis 70 Tage 3 Punkte 22 Tage bis 41 Tage 2 Punkte zehn Tage bis 21 Tage 1 Punkt fünf bis neun Tage  2. Größe der Referenzveranstaltung 6 Punkte mehr als 550.000 Besuchende 5 Punkte 400.001 bis 550.000 Besuchende 4 Punkte 250.001 bis 400.000 Besuchende 3 Punkte 150.001 bis 250.000 Besuchende 2 Punkte 100.001 bis 150.000 Besuchende 1 Punkt 50.000 bis 100.000 Besuchende Die Punkte je Kategorie (Dauer und Besucherzahl) werden pro Referenzprojekt der vier besten Referenzen je Bewerber bzw. Bewerbergemeinschaft (und vom Bewerber bezeichneten) summiert. Dies bedeutet, dass eine maximale Punktzahl pro Bewerber bzw. Bewerbergemeinschaft von 48 Punkten (ausgehend von vier Referenzprojekten und jeweils Maximalpunktzahl pro Kategorie) erreicht werden kann.  Die drei Bewerber bzw. Bewerbergemeinschaften, die die höchste Punktzahl erreicht haben, werden zur Angebotsabgabe aufgefordert. Bei Punktgleichheit im vierten Rang werden alle viertplatzierten Bewerber zur Angebotsabgabe aufgefordert.</cbc:Description>
+								<efbc:SecondStageIndicator>true</efbc:SecondStageIndicator>
+								<efac:CriterionParameter>
+									<efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+									<efbc:ParameterNumeric>48.0</efbc:ParameterNumeric>
+								</efac:CriterionParameter>
+							</efac:SelectionCriteria>
+							<efac:StrategicProcurement>
+								<efbc:ApplicableLegalBasis listName="cvd-scope">false</efbc:ApplicableLegalBasis>
+							</efac:StrategicProcurement>
+							<efac:StrategicProcurement>
+								<efbc:ApplicableLegalBasis listName="eed-scope">false</efbc:ApplicableLegalBasis>
+							</efac:StrategicProcurement>
+						</efext:EformsExtension>
+					</ext:ExtensionContent>
+				</ext:UBLExtension>
+			</ext:UBLExtensions>
+			<cbc:VariantConstraintCode listName="permission">not-allowed</cbc:VariantConstraintCode>
+			<cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+			<cbc:MultipleTendersCode listName="permission">allowed</cbc:MultipleTendersCode>
+			<cac:RequiredFinancialGuarantee>
+				<cbc:GuaranteeTypeCode listName="tender-guarantee-required">false</cbc:GuaranteeTypeCode>
+			</cac:RequiredFinancialGuarantee>
+			<cac:CallForTendersDocumentReference>
+				<ext:UBLExtensions>
+					<ext:UBLExtension>
+						<ext:ExtensionContent>
+							<efext:EformsExtension>
+								<efac:OfficialLanguages>
+									<cac:Language>
+										<cbc:ID>DEU</cbc:ID>
+									</cac:Language>
+								</efac:OfficialLanguages>
+							</efext:EformsExtension>
+						</ext:ExtensionContent>
+					</ext:UBLExtension>
+				</ext:UBLExtensions>
+				<cbc:ID>SomeTenderDocID1</cbc:ID>
+				<cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+				<cac:Attachment>
+					<cac:ExternalReference>
+						<cbc:URI>https://www.dtvp.de/Satellite/notice/CXP4DKHMD4L/documents</cbc:URI>
+					</cac:ExternalReference>
+				</cac:Attachment>
+			</cac:CallForTendersDocumentReference>
+			<cac:TendererQualificationRequest>
+				<cbc:CompanyLegalFormCode listName="required">false</cbc:CompanyLegalFormCode>
+			</cac:TendererQualificationRequest>
+			<cac:TendererQualificationRequest>
+				<cac:SpecificTendererRequirement>
+					<cbc:TendererRequirementTypeCode listName="missing-info-submission">late-all</cbc:TendererRequirementTypeCode>
+					<cbc:Description languageID="DEU">Der Auftraggeber behält sich im Fall von fehlenden, unvollständigen oder fehlerhaften Unterlagen vor, gemäß § 56 Abs. 2 bis 5 VgV vorzugehen. Danach können Unterlagen auf Aufforderung des Auftraggebers nachgereicht oder unter besonderen Voraussetzungen korrigiert werden. Ob eine Aufforderung zur Nachreichung, Vervollständigung oder Korrektur im konkreten Fall erfolgt, wird der Auftraggeber unter ordnungsgemäßer Ausübung seines Ermessens entscheiden. Hierbei wird er insbesondere den Gleichbehandlungsgrundsatz beachten. Die Frist zur Nachreichung, Vervollständigung oder Korrektur wird grundsätzlich mindestens sechs Kalendertage betragen.</cbc:Description>
+				</cac:SpecificTendererRequirement>
+			</cac:TendererQualificationRequest>
+			<cac:TendererQualificationRequest>
+				<cac:SpecificTendererRequirement>
+					<cbc:TendererRequirementTypeCode listName="reserved-procurement">none</cbc:TendererRequirementTypeCode>
+				</cac:SpecificTendererRequirement>
+			</cac:TendererQualificationRequest>
+			<cac:TendererQualificationRequest>
+				<cac:SpecificTendererRequirement>
+					<cbc:TendererRequirementTypeCode listName="selection-criteria-source">epo-notice</cbc:TendererRequirementTypeCode>
+				</cac:SpecificTendererRequirement>
+			</cac:TendererQualificationRequest>
+			<cac:ContractExecutionRequirement>
+				<cbc:ExecutionRequirementCode listName="reserved-execution">no</cbc:ExecutionRequirementCode>
+			</cac:ContractExecutionRequirement>
+			<cac:ContractExecutionRequirement>
+				<cbc:ExecutionRequirementCode listName="ecatalog-submission">not-allowed</cbc:ExecutionRequirementCode>
+			</cac:ContractExecutionRequirement>
+			<cac:ContractExecutionRequirement>
+				<cbc:ExecutionRequirementCode listName="einvoicing">required</cbc:ExecutionRequirementCode>
+			</cac:ContractExecutionRequirement>
+			<cac:ContractExecutionRequirement>
+				<cbc:ExecutionRequirementCode listName="fsr">false</cbc:ExecutionRequirementCode>
+			</cac:ContractExecutionRequirement>
+			<cac:AwardingTerms>
+				<cbc:NoFurtherNegotiationIndicator>true</cbc:NoFurtherNegotiationIndicator>
+				<cac:AwardingCriterion>
+					<cac:SubordinateAwardingCriterion>
+						<ext:UBLExtensions>
+							<ext:UBLExtension>
+								<ext:ExtensionContent>
+									<efext:EformsExtension>
+										<efac:AwardCriterionParameter>
+											<efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+											<efbc:ParameterNumeric>55.0</efbc:ParameterNumeric>
+										</efac:AwardCriterionParameter>
+									</efext:EformsExtension>
+								</ext:ExtensionContent>
+							</ext:UBLExtension>
+						</ext:UBLExtensions>
+						<cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+						<cbc:Name languageID="DEU">Konzept: Inhaltlicher Teil</cbc:Name>
+						<cbc:Description languageID="DEU">Die Angebote / Konzepte werden anhand ihrer Wirtschaftlichkeit bewertet. Die Wirtschaftlichkeit wird anhand der im Anlage "Bewertungskriterien" aufgezeigten Parameter bewertet.</cbc:Description>
+					</cac:SubordinateAwardingCriterion>
+					<cac:SubordinateAwardingCriterion>
+						<ext:UBLExtensions>
+							<ext:UBLExtension>
+								<ext:ExtensionContent>
+									<efext:EformsExtension>
+										<efac:AwardCriterionParameter>
+											<efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+											<efbc:ParameterNumeric>35.0</efbc:ParameterNumeric>
+										</efac:AwardCriterionParameter>
+									</efext:EformsExtension>
+								</ext:ExtensionContent>
+							</ext:UBLExtension>
+						</ext:UBLExtensions>
+						<cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+						<cbc:Name languageID="DEU">Konzept: Architektonischer Teil</cbc:Name>
+						<cbc:Description languageID="DEU">Die Angebote / Konzepte werden anhand ihrer Wirtschaftlichkeit bewertet. Die Wirtschaftlichkeit wird anhand der im Anlage "Bewertungskriterien" aufgezeigten Parameter bewertet.</cbc:Description>
+					</cac:SubordinateAwardingCriterion>
+					<cac:SubordinateAwardingCriterion>
+						<ext:UBLExtensions>
+							<ext:UBLExtension>
+								<ext:ExtensionContent>
+									<efext:EformsExtension>
+										<efac:AwardCriterionParameter>
+											<efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+											<efbc:ParameterNumeric>10.0</efbc:ParameterNumeric>
+										</efac:AwardCriterionParameter>
+									</efext:EformsExtension>
+								</ext:ExtensionContent>
+							</ext:UBLExtension>
+						</ext:UBLExtensions>
+						<cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+						<cbc:Name languageID="DEU">Präsentation</cbc:Name>
+						<cbc:Description languageID="DEU">Die Angebote / Konzepte werden anhand ihrer Wirtschaftlichkeit bewertet. Die Wirtschaftlichkeit wird anhand der im Anlage "Bewertungskriterien" aufgezeigten Parameter bewertet.</cbc:Description>
+					</cac:SubordinateAwardingCriterion>
+				</cac:AwardingCriterion>
+			</cac:AwardingTerms>
+			<cac:AdditionalInformationParty>
+				<cac:PartyIdentification>
+					<cbc:ID>ORG-0001</cbc:ID>
+				</cac:PartyIdentification>
+			</cac:AdditionalInformationParty>
+			<cac:TenderRecipientParty>
+				<cbc:EndpointID>https://www.dtvp.de/Satellite/notice/CXP4DKHMD4L</cbc:EndpointID>
+				<cac:PartyIdentification>
+					<cbc:ID>ORG-0001</cbc:ID>
+				</cac:PartyIdentification>
+			</cac:TenderRecipientParty>
+			<cac:AppealTerms>
+				<cac:PresentationPeriod>
+					<cbc:Description languageID="DEU">§ 160 GWB lautet: (1) Die Vergabekammer leitet ein Nachprüfungsverfahren nur auf Antrag ein. (2) Antragsbefugt ist jedes Unternehmen, das ein Interesse an dem öffentlichen Auftrag oder der Konzession hat und eine Verletzung in seinen Rechten nach § 97 Absatz 6 durch Nichtbeachtung von Vergabevorschriften geltend macht. Dabei ist darzulegen, dass dem Unternehmen durch die behauptete Verletzung der Vergabevorschriften ein Schaden entstanden ist oder zu entstehen droht. (3) Der Antrag ist unzulässig, soweit 1. der Antragsteller den geltend gemachten Verstoß gegen Vergabevorschriften vor Einreichen des Nachprüfungsantrags erkannt und gegenüber dem Auftraggeber nicht innerhalb einer Frist von zehn Kalendertagen gerügt hat; der Ablauf der Frist nach § 134 Absatz 2 bleibt unberührt, 2. Verstöße gegen Vergabevorschriften, die aufgrund der Bekanntmachung erkennbar sind, nicht spätestens bis zum Ablauf der in der Bekanntmachung benannten Frist zur Bewerbung oder zur Angebotsabgabe gegenüber dem Auftraggeber gerügt werden, 3. Verstöße gegen Vergabevorschriften, die erst in den Vergabeunterlagen erkennbar sind, nicht spätestens bis zum Ablauf der Frist zur Bewerbung oder zur Angebotsabgabe gegenüber dem Auftraggeber gerügt werden, 4. mehr als 15 Kalendertage nach Eingang der Mitteilung des Auftraggebers, einer Rüge nicht abhelfen zu wollen, vergangen sind. Satz 1 gilt nicht bei einem Antrag auf Feststellung der Unwirksamkeit des Vertrags nach § 135 Absatz 1 Nummer 2. § 134 Absatz 1 Satz 2 bleibt unberührt.  Auf die weiteren Vorschriften des GWB zur Einreichung von Nachprüfungsanträgen wird hingewiesen.</cbc:Description>
+				</cac:PresentationPeriod>
+				<cac:AppealReceiverParty>
+					<cac:PartyIdentification>
+						<cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+					</cac:PartyIdentification>
+				</cac:AppealReceiverParty>
+			</cac:AppealTerms>
+			<cac:Language>
+				<cbc:ID>DEU</cbc:ID>
+			</cac:Language>
+			<cac:PostAwardProcess>
+				<cbc:ElectronicOrderUsageIndicator>false</cbc:ElectronicOrderUsageIndicator>
+				<cbc:ElectronicPaymentUsageIndicator>false</cbc:ElectronicPaymentUsageIndicator>
+			</cac:PostAwardProcess>
+			<cac:SecurityClearanceTerm>
+				<cbc:Code listName="required">false</cbc:Code>
+			</cac:SecurityClearanceTerm>
+		</cac:TenderingTerms>
+		<cac:TenderingProcess>
+			<ext:UBLExtensions>
+				<ext:UBLExtension>
+					<ext:ExtensionContent>
+						<efext:EformsExtension>
+							<efbc:AccessToolName>Die Kommunikation im Vergabeverfahren wird durch die  Laumann/Scheßl/Weismüller Architektur und Baumanagement GmbH abgewickelt. Diese wird für die Kommunikation ausschließlich die Vergabeplattform verwenden.  Fragen sind ausschließlich in Textform über die Vergabeplattform zu stellen.</efbc:AccessToolName>
+						</efext:EformsExtension>
+					</ext:ExtensionContent>
+				</ext:UBLExtension>
+			</ext:UBLExtensions>
+			<cbc:SubmissionMethodCode listName="esubmission">required</cbc:SubmissionMethodCode>
+			<cbc:CandidateReductionConstraintIndicator>true</cbc:CandidateReductionConstraintIndicator>
+			<cbc:GovernmentAgreementConstraintIndicator>false</cbc:GovernmentAgreementConstraintIndicator>
+			<cbc:AccessToolsURI>https://www.dtvp.de/Satellite/notice/CXP4DKHMD4L</cbc:AccessToolsURI>
+			<cac:InvitationSubmissionPeriod>
+				<cbc:StartDate>2025-12-22+01:00</cbc:StartDate>
+			</cac:InvitationSubmissionPeriod>
+			<cac:ParticipationRequestReceptionPeriod>
+				<cbc:EndDate>2025-12-15+01:00</cbc:EndDate>
+				<cbc:EndTime>12:00:00+01:00</cbc:EndTime>
+			</cac:ParticipationRequestReceptionPeriod>
+			<cac:EconomicOperatorShortList>
+				<cbc:LimitationDescription>false</cbc:LimitationDescription>
+				<cbc:MinimumQuantity>3</cbc:MinimumQuantity>
+			</cac:EconomicOperatorShortList>
+			<cac:AuctionTerms>
+				<cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+			</cac:AuctionTerms>
+			<cac:ContractingSystem>
+				<cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+			</cac:ContractingSystem>
+			<cac:ContractingSystem>
+				<cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+			</cac:ContractingSystem>
+		</cac:TenderingProcess>
+		<cac:ProcurementProject>
+			<cbc:ID schemeName="internalID">54405/005#007</cbc:ID>
+			<cbc:Name languageID="DEU">Konzeption, Planung und Realisierung, technischer Betrieb, Rückbau des temporären Deutschen Pavillons für die Expo 2027 Belgrad, Serbien</cbc:Name>
+			<cbc:Description languageID="DEU">Die Bundesrepublik Deutschland wird auf der Weltausstellung Expo 2027 Belgrad, Serbien (nachfolgend "Expo") in der Zeit vom 15. Mai 2027 bis 15. August 2027 mit einem eigenen Pavillon vertreten sein. Mit dem Deutschen Pavillon möchte die Bundesrepublik Deutschland einen attraktiven Beitrag zum Thema der Expo " Play for Humanity: Sport and Music for All" im ausgewählten Unterthema "Play for Progress" leisten. Gegenstand dieses Vergabeverfahrens sind sämtliche Leistungen betreffend Konzeption, Planung und Realisierung (Ausbau des Pavillons), technischer Betrieb, Rückbau und sämtliche Transportleistungen des temporären Deutschen Pavillons für die Expo 2027 Belgrad, Serbien sowie sämtliche dazu notwendigen Projektmanagementleistungen aus einer Hand durch den Bieter oder die Bietergemeinschaft. Für den Auftrag steht ein Budget in Höhe von EUR 7.500.000,00 (ohne deutsche MwSt.) zur Verfügung. Dies ist gleichzeitig die Obergrenze für den anzubietenden Preis im Vergabeverfahren. Angebote, die das Budget übersteigen, werden ausgeschlossen.</cbc:Description>
+			<cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+			<cbc:SMESuitableIndicator>false</cbc:SMESuitableIndicator>
+			<cac:ProcurementAdditionalType>
+				<cbc:ProcurementTypeCode listName="strategic-procurement">none</cbc:ProcurementTypeCode>
+			</cac:ProcurementAdditionalType>
+			<cac:MainCommodityClassification>
+				<cbc:ItemClassificationCode listName="cpv">71000000</cbc:ItemClassificationCode>
+			</cac:MainCommodityClassification>
+			<cac:AdditionalCommodityClassification>
+				<cbc:ItemClassificationCode listName="cpv">45200000</cbc:ItemClassificationCode>
+			</cac:AdditionalCommodityClassification>
+			<cac:AdditionalCommodityClassification>
+				<cbc:ItemClassificationCode listName="cpv">71240000</cbc:ItemClassificationCode>
+			</cac:AdditionalCommodityClassification>
+			<cac:AdditionalCommodityClassification>
+				<cbc:ItemClassificationCode listName="cpv">45212310</cbc:ItemClassificationCode>
+			</cac:AdditionalCommodityClassification>
+			<cac:AdditionalCommodityClassification>
+				<cbc:ItemClassificationCode listName="cpv">71210000</cbc:ItemClassificationCode>
+			</cac:AdditionalCommodityClassification>
+			<cac:AdditionalCommodityClassification>
+				<cbc:ItemClassificationCode listName="cpv">79930000</cbc:ItemClassificationCode>
+			</cac:AdditionalCommodityClassification>
+			<cac:AdditionalCommodityClassification>
+				<cbc:ItemClassificationCode listName="cpv">92320000</cbc:ItemClassificationCode>
+			</cac:AdditionalCommodityClassification>
+			<cac:RealizedLocation>
+				<cac:Address>
+					<cbc:CityName>Belgrad</cbc:CityName>
+					<cbc:CountrySubentityCode listName="nuts">RS110</cbc:CountrySubentityCode>
+					<cac:Country>
+						<cbc:IdentificationCode listName="country">SRB</cbc:IdentificationCode>
+					</cac:Country>
+				</cac:Address>
+			</cac:RealizedLocation>
+			<cac:PlannedPeriod>
+				<cbc:StartDate>2026-05-11+02:00</cbc:StartDate>
+				<cbc:EndDate>2027-12-31+01:00</cbc:EndDate>
+			</cac:PlannedPeriod>
+		</cac:ProcurementProject>
+	</cac:ProcurementProjectLot>
+</ContractNotice>

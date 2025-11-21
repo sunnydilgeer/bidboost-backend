@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><PriorInformationNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:PriorInformationNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:hilma="urn:hanselHilma:NationalNoticeExtension">
+  <ext:UBLExtensions>
+    <ext:UBLExtension>
+      <ext:ExtensionContent>
+        <efext:EformsExtension>
+          <efbc:TransmissionDate>2025-11-14+00:00</efbc:TransmissionDate>
+          <efbc:TransmissionTime>09:19:44+00:00</efbc:TransmissionTime>
+          <efac:NoticeSubType>
+            <cbc:SubTypeCode listName="notice-subtype">E1</cbc:SubTypeCode>
+          </efac:NoticeSubType>
+          <efac:Organizations>
+            <efac:Organization>
+              <efac:Company>
+                <cbc:WebsiteURI>http://www.servica.fi</cbc:WebsiteURI>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <cbc:Name languageID="FIN">Servica Oy</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>Saaristokatu 7</cbc:StreetName>
+                  <cbc:CityName>Kuopio</cbc:CityName>
+                  <cbc:PostalZone>70620</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">FI1DB</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">FIN</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID schemeID="002">2947618-4</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:ElectronicMail>samuli.juntunen@servica.fi</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+            <efac:Organization>
+              <efac:Company>
+                <cbc:WebsiteURI>http://hankintailmoitukset.fi</cbc:WebsiteURI>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <cbc:Name languageID="FIN">Hansel Oy (Hilma)</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>Mannerheiminaukio 1a</cbc:StreetName>
+                  <cbc:CityName>Helsinki</cbc:CityName>
+                  <cbc:PostalZone>00100</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">FI1B1</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">FIN</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID schemeID="002">FI09880841</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Name>eSender</cbc:Name>
+                  <cbc:Telephone>029 55 636 30</cbc:Telephone>
+                  <cbc:ElectronicMail>tekninen@hankintailmoitukset.fi</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+          </efac:Organizations>
+        <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00760110-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+      </ext:ExtensionContent>
+    </ext:UBLExtension>
+  </ext:UBLExtensions>
+  <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+  <cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+  <cbc:ID schemeName="notice-id">d1202398-77b3-4886-9b74-5835cf2c2b16</cbc:ID>
+  <cbc:IssueDate>2025-11-14+00:00</cbc:IssueDate>
+  <cbc:IssueTime>09:19:33+00:00</cbc:IssueTime>
+  <cbc:VersionID>01</cbc:VersionID>
+  <cbc:RegulatoryDomain>other</cbc:RegulatoryDomain>
+  <cbc:NoticeTypeCode listName="consultation">pmc</cbc:NoticeTypeCode>
+  <cbc:NoticeLanguageCode>FIN</cbc:NoticeLanguageCode>
+  <cac:ContractingParty>
+    <cac:ContractingPartyType>
+      <cbc:PartyTypeCode listName="buyer-legal-type">pub-undert</cbc:PartyTypeCode>
+    </cac:ContractingPartyType>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID>ORG-0001</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:ServiceProviderParty>
+        <cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode>
+        <cac:Party>
+          <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+          </cac:PartyIdentification>
+        </cac:Party>
+      </cac:ServiceProviderParty>
+    </cac:Party>
+  </cac:ContractingParty>
+  <cac:ProcurementProject>
+    <cbc:ID>231_000672</cbc:ID>
+    <cbc:Name languageID="FIN">Tietopyyntö / tekninen vuoropuhelu: Steriloinnin tarvikkeet</cbc:Name>
+    <cbc:Description languageID="FIN">Tämä on tietopyyntö, joka ei ole hankintailmoitus tai tarjouspyyntö. Tietopyynnön tarkoituksena on kerätä hankinnan kohdetta
+koskevaa tietoa tulevaa kilpailutusta varten. Tietopyyntöön vastaaminen ei ole edellytys kilpailutukseen osallistumiselle. Tulevan
+kilpailutuksen onnistumisen varmistamiseksi olisi kuitenkin tärkeää, että tarjoajat antaisivat hankintayksikölle mahdollisimman
+laajasti pyydettyjä tietoja. Tietopyyntö ei velvoita hankintayksikköä toteuttamaan hankintaa tietopyynnössä tai sen liitteissä
+kuvatulla tavalla ja tarjouskilpailu voidaan myös jättää toteuttamatta. Tietopyyntöön vastanneille ei makseta korvausta
+tietopyyntöön vastaamisesta tai siihen liittyviin esittelytilaisuuksiin osallistumisesta.
+
+Servica Oy kilpailuttaa Steriloinnin tarvikkeet itselleen, sekä Pohjois-Savon, Pohjois-Karjalan ja Etelä-Savon hyvinvointialueille.
+
+Tarjoajia pyydetään tutustumaan hankintayksiön alustavaan tarjouspyyntö- ja sopimusluonnokseen, sekä hankinnan liitteisiin.
+Hankintayksikkö pyrkii noudattamaan hankinnassa julkisten hankintojen periaatteita, joita ovat tasapuolisuus, syrjimättömyys,
+avoimuus ja suhteellisuus.
+
+Hankintayksikkö pyytää tarjoajia kiinnittämään huomiota seuraaviin asioihin:
+1) Onko tarjouspyynnössä saatavilla riittävästi tietoa hankintaan liittyen, jotta tarjoaminen on mahdollista?
+2) Ovatko tarjouspyynnön vaatimukset oikeassa suhteessa hankinnan laatuun nähden?
+3) Onko tarjouspyynnössä vaatimuksia tai ehtoja mitkä voisivat estää tasapuolisen ja syrjimättömän kilpailun syntymisen?
+4) Onko tarjouspyynnössä virheellistä tai ristiriitaista tietoa?
+
+Myös muihin kuin yllä oleviin asioihin kommentointi on sallittua.
+
+Tarjouspyynnössä mainitut määräajat eivät ole lopullisia ja määräytyvät vasta kun hankintailmoitus julkaistaan.
+
+TIETOPYYNTÖÖN VASTAAMINEN
+Mahdollinen tarjoaja voi osallistua tietopyyntöön lähettämällä kommentit viimeistään 26.11.2025 klo 16:00 mennessä.
+Vastaaminen tapahtuu sähköpostitse osoitteeseen samuli.juntunen@servica.fi. Otsikoikaa viestinne seuraavasti: "Tietopyyntö:
+Steriloinnin tarvikkeet [yrityksen nimi]". Annetut tiedot käsitellään luottamuksellisesti. Hankintayksikkö voi esittää
+tarkentavia jatkokysymyksiä tarjoajille. Hankintayksikkö ei ole velvollinen vastaamaan kysymyksiin tai muuttamaan hankinnan
+sisältöä tarjoajien vastauksien perusteella. Vastaamalla tietopyyntöön tarjoaja hyväksyy nämä ehdot. Tarjouspalvelu luo
+automaattisesti määräajat kysymysten jätölle.</cbc:Description>
+    <cbc:ProcurementTypeCode listName="contract-nature">supplies</cbc:ProcurementTypeCode>
+    <cac:MainCommodityClassification>
+      <cbc:ItemClassificationCode listName="cpv">33000000</cbc:ItemClassificationCode>
+    </cac:MainCommodityClassification>
+    <cac:AdditionalCommodityClassification>
+      <cbc:ItemClassificationCode listName="cpv">22000000</cbc:ItemClassificationCode>
+    </cac:AdditionalCommodityClassification>
+    <cac:RealizedLocation>
+      <cac:Address>
+        <cbc:CountrySubentityCode listName="nuts">FI1DB</cbc:CountrySubentityCode>
+        <cac:Country>
+          <cbc:IdentificationCode listName="country">FIN</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:RealizedLocation>
+  </cac:ProcurementProject>
+  <cac:ProcurementProjectLot>
+    <cbc:ID schemeName="Lot">LOT-0000</cbc:ID>
+    <cac:TenderingTerms>
+      <cac:CallForTendersDocumentReference>
+        <cbc:ID>Linkki hankinta-asiakirjoihin</cbc:ID>
+        <cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+        <cac:Attachment>
+          <cac:ExternalReference>
+            <cbc:URI>https://tarjouspalvelu.fi/servica?id=585620&amp;tpk=f06f0cce-1626-465a-9017-fc80cc64a5fc</cbc:URI>
+          </cac:ExternalReference>
+        </cac:Attachment>
+      </cac:CallForTendersDocumentReference>
+      <cac:TenderRecipientParty>
+        <cbc:EndpointID>https://tarjouspalvelu.fi/servica?id=585620&amp;tpk=f06f0cce-1626-465a-9017-fc80cc64a5fc</cbc:EndpointID>
+      </cac:TenderRecipientParty>
+      <cac:Language>
+        <cbc:ID>FIN</cbc:ID>
+      </cac:Language>
+    </cac:TenderingTerms>
+    <cac:TenderingProcess>
+      <ext:UBLExtensions>
+        <ext:UBLExtension>
+          <ext:ExtensionContent>
+            <efext:EformsExtension>
+              <efac:AnswerReceptionPeriod>
+                <cbc:EndDate>2025-11-26+00:00</cbc:EndDate>
+                <cbc:EndTime>14:00:00+00:00</cbc:EndTime>
+              </efac:AnswerReceptionPeriod>
+            </efext:EformsExtension>
+          </ext:ExtensionContent>
+        </ext:UBLExtension>
+      </ext:UBLExtensions>
+      <cbc:SubmissionMethodCode listName="esubmission">required</cbc:SubmissionMethodCode>
+    </cac:TenderingProcess>
+    <cac:ProcurementProject>
+      <cbc:ID>231_000672</cbc:ID>
+      <cbc:Name languageID="FIN">Tietopyyntö / tekninen vuoropuhelu: Steriloinnin tarvikkeet</cbc:Name>
+      <cbc:Description languageID="FIN">Tämä on tietopyyntö, joka ei ole hankintailmoitus tai tarjouspyyntö. Tietopyynnön tarkoituksena on kerätä hankinnan kohdetta
+koskevaa tietoa tulevaa kilpailutusta varten. Tietopyyntöön vastaaminen ei ole edellytys kilpailutukseen osallistumiselle. Tulevan
+kilpailutuksen onnistumisen varmistamiseksi olisi kuitenkin tärkeää, että tarjoajat antaisivat hankintayksikölle mahdollisimman
+laajasti pyydettyjä tietoja. Tietopyyntö ei velvoita hankintayksikköä toteuttamaan hankintaa tietopyynnössä tai sen liitteissä
+kuvatulla tavalla ja tarjouskilpailu voidaan myös jättää toteuttamatta. Tietopyyntöön vastanneille ei makseta korvausta
+tietopyyntöön vastaamisesta tai siihen liittyviin esittelytilaisuuksiin osallistumisesta.
+
+Servica Oy kilpailuttaa Steriloinnin tarvikkeet itselleen, sekä Pohjois-Savon, Pohjois-Karjalan ja Etelä-Savon hyvinvointialueille.
+
+Tarjoajia pyydetään tutustumaan hankintayksiön alustavaan tarjouspyyntö- ja sopimusluonnokseen, sekä hankinnan liitteisiin.
+Hankintayksikkö pyrkii noudattamaan hankinnassa julkisten hankintojen periaatteita, joita ovat tasapuolisuus, syrjimättömyys,
+avoimuus ja suhteellisuus.
+
+Hankintayksikkö pyytää tarjoajia kiinnittämään huomiota seuraaviin asioihin:
+1) Onko tarjouspyynnössä saatavilla riittävästi tietoa hankintaan liittyen, jotta tarjoaminen on mahdollista?
+2) Ovatko tarjouspyynnön vaatimukset oikeassa suhteessa hankinnan laatuun nähden?
+3) Onko tarjouspyynnössä vaatimuksia tai ehtoja mitkä voisivat estää tasapuolisen ja syrjimättömän kilpailun syntymisen?
+4) Onko tarjouspyynnössä virheellistä tai ristiriitaista tietoa?
+
+Myös muihin kuin yllä oleviin asioihin kommentointi on sallittua.
+
+Tarjouspyynnössä mainitut määräajat eivät ole lopullisia ja määräytyvät vasta kun hankintailmoitus julkaistaan.
+
+TIETOPYYNTÖÖN VASTAAMINEN
+Mahdollinen tarjoaja voi osallistua tietopyyntöön lähettämällä kommentit viimeistään 26.11.2025 klo 16:00 mennessä.
+Vastaaminen tapahtuu sähköpostitse osoitteeseen samuli.juntunen@servica.fi. Otsikoikaa viestinne seuraavasti: "Tietopyyntö:
+Steriloinnin tarvikkeet [yrityksen nimi]". Annetut tiedot käsitellään luottamuksellisesti. Hankintayksikkö voi esittää
+tarkentavia jatkokysymyksiä tarjoajille. Hankintayksikkö ei ole velvollinen vastaamaan kysymyksiin tai muuttamaan hankinnan
+sisältöä tarjoajien vastauksien perusteella. Vastaamalla tietopyyntöön tarjoaja hyväksyy nämä ehdot. Tarjouspalvelu luo
+automaattisesti määräajat kysymysten jätölle.</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">supplies</cbc:ProcurementTypeCode>
+      <cac:MainCommodityClassification>
+        <cbc:ItemClassificationCode listName="cpv">33000000</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+        <cbc:ItemClassificationCode listName="cpv">22000000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:RealizedLocation>
+        <cac:Address>
+          <cbc:CountrySubentityCode listName="nuts">FI1DB</cbc:CountrySubentityCode>
+          <cac:Country>
+            <cbc:IdentificationCode listName="country">FIN</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:RealizedLocation>
+    </cac:ProcurementProject>
+  </cac:ProcurementProjectLot>
+</PriorInformationNotice>

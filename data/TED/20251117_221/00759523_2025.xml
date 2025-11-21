@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractAwardNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractAwardNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <ext:UBLExtensions>
+      <ext:UBLExtension>
+         <ext:ExtensionContent>
+            <efext:EformsExtension>
+               <efac:NoticeResult>
+                  <cbc:TotalAmount currencyID="EUR">40950127.22</cbc:TotalAmount>
+                  <efac:LotResult>
+                     <cbc:ID schemeName="result">RES-0001</cbc:ID>
+                     <cbc:TenderResultCode listName="winner-selection-status">selec-w</cbc:TenderResultCode>
+                     <efac:LotTender>
+                        <cbc:ID>TEN-0001</cbc:ID>
+                     </efac:LotTender>
+                     <efac:ReceivedSubmissionsStatistics>
+                        <efbc:StatisticsCode listName="received-submission-type">t-esubm</efbc:StatisticsCode>
+                        <efbc:StatisticsNumeric>1</efbc:StatisticsNumeric>
+                     </efac:ReceivedSubmissionsStatistics>
+                     <efac:SettledContract>
+                        <cbc:ID>CON-0001</cbc:ID>
+                     </efac:SettledContract>
+                     <efac:TenderLot>
+                        <cbc:ID>LOT-0001</cbc:ID>
+                     </efac:TenderLot>
+                  </efac:LotResult>
+                  <efac:LotTender>
+                     <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                     <cbc:RankCode>1</cbc:RankCode>
+                     <efbc:TenderRankedIndicator>true</efbc:TenderRankedIndicator>
+                     <efbc:TenderVariantIndicator>false</efbc:TenderVariantIndicator>
+                     <cac:LegalMonetaryTotal>
+                        <cbc:PayableAmount currencyID="EUR">40950127.22</cbc:PayableAmount>
+                     </cac:LegalMonetaryTotal>
+                     <efac:Origin>
+                        <efbc:AreaCode listName="country">FRA</efbc:AreaCode>
+                     </efac:Origin>
+                     <efac:SubcontractingTerm>
+                        <efbc:TermCode listName="applicability">not-known</efbc:TermCode>
+                     </efac:SubcontractingTerm>
+                     <efac:TenderingParty>
+                        <cbc:ID>TPA-0001</cbc:ID>
+                     </efac:TenderingParty>
+                     <efac:TenderLot>
+                        <cbc:ID>LOT-0001</cbc:ID>
+                     </efac:TenderLot>
+                     <efac:TenderReference>
+                        <cbc:ID>2023PN041</cbc:ID>
+                     </efac:TenderReference>
+                  </efac:LotTender>
+                  <efac:SettledContract>
+                     <cbc:ID schemeName="contract">CON-0001</cbc:ID>
+                     <cbc:AwardDate>2025-10-03+02:00</cbc:AwardDate>
+                     <cbc:IssueDate>2025-11-04+02:00</cbc:IssueDate>
+                     <cbc:Title languageID="FRA">Equipements et travaux HT/BT pour la réalisation du tronçon Gare du CEA St Aubin – Gare de Versailles Chantiers de la ligne 18 du réseau du Grand Paris Express</cbc:Title>
+                     <cac:SignatoryParty>
+                        <cac:PartyIdentification>
+                           <cbc:ID>ORG-0001</cbc:ID>
+                        </cac:PartyIdentification>
+                     </cac:SignatoryParty>
+                     <efac:ContractReference>
+                        <cbc:ID>2023PN041</cbc:ID>
+                     </efac:ContractReference>
+                     <efac:LotTender>
+                        <cbc:ID>TEN-0001</cbc:ID>
+                     </efac:LotTender>
+                  </efac:SettledContract>
+                  <efac:TenderingParty>
+                     <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+                     <cbc:Name>Groupement BOUYGUES ENERGIES &amp; SERVICES (Mandataire) &amp; COLAS RAIL</cbc:Name>
+                     <efac:Tenderer>
+                        <cbc:ID>ORG-0003</cbc:ID>
+                        <efbc:GroupLeadIndicator>true</efbc:GroupLeadIndicator>
+                     </efac:Tenderer>
+                     <efac:Tenderer>
+                        <cbc:ID>ORG-0004</cbc:ID>
+                        <efbc:GroupLeadIndicator>false</efbc:GroupLeadIndicator>
+                     </efac:Tenderer>
+                  </efac:TenderingParty>
+               </efac:NoticeResult>
+               <efac:NoticeSubType>
+                  <cbc:SubTypeCode listName="notice-subtype">30</cbc:SubTypeCode>
+               </efac:NoticeSubType>
+               <efac:Organizations>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:EndpointID>https://www.marches-publics.gouv.fr/</cbc:EndpointID>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="FRA">Société des grands projets</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>2 Mail de la petite Espagne - Immeuble Le MOODS</cbc:StreetName>
+                           <cbc:CityName>La plaine st denis cedex</cbc:CityName>
+                           <cbc:PostalZone>93212</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">FR106</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">FRA</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>52504601700048</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+33182462000</cbc:Telephone>
+                           <cbc:ElectronicMail>marches-sgp@sgp.fr</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="FRA">Tribunal administratif de Montreuil</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>7 rue Catherine Puig</cbc:StreetName>
+                           <cbc:CityName>Montreuil</cbc:CityName>
+                           <cbc:PostalZone>93558</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">FR106</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">FRA</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>13000686900015</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Name>http://montreuil.tribunal-administratif.fr/</cbc:Name>
+                           <cbc:Telephone>+33149202000</cbc:Telephone>
+                           <cbc:ElectronicMail>greffe.ta-montreuil@juradm.fr</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efbc:ListedOnRegulatedMarketIndicator>true</efbc:ListedOnRegulatedMarketIndicator>
+                     <efac:Company>
+                        <efbc:CompanySizeCode listName="economic-operator-size">large</efbc:CompanySizeCode>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="FRA">BOUYGUES ÉNERGIES &amp; SERVICES FRANCE (Mandataire)</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>Immeuble Atlantis, Campus Challenger - 1 Avenue Eugène Freyssinet</cbc:StreetName>
+                           <cbc:CityName>Guyancourt</cbc:CityName>
+                           <cbc:PostalZone>78280</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">FR103</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">FRA</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>77566487304147</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efbc:ListedOnRegulatedMarketIndicator>true</efbc:ListedOnRegulatedMarketIndicator>
+                     <efac:Company>
+                        <efbc:CompanySizeCode listName="economic-operator-size">large</efbc:CompanySizeCode>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0004</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="FRA">COLAS RAIL</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>Tour Défense Plaza - 23 Rue Delariviere Lefoullon</cbc:StreetName>
+                           <cbc:CityName>Puteaux</cbc:CityName>
+                           <cbc:PostalZone>92800</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">FR105</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">FRA</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>63204912800903</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                     </efac:Company>
+                  </efac:Organization>
+               </efac:Organizations>
+            <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00759523-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+         </ext:ExtensionContent>
+      </ext:UBLExtension>
+   </ext:UBLExtensions>
+   <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+   <cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+   <cbc:ID schemeName="notice-id">f1814707-a44a-47cf-a9d1-b1331e520310</cbc:ID>
+   <cbc:ContractFolderID>4308cdba-2b0f-4cad-8dc4-321067f57a4e</cbc:ContractFolderID>
+   <cbc:IssueDate>2025-11-13+02:00</cbc:IssueDate>
+   <cbc:IssueTime>16:16:25+02:00</cbc:IssueTime>
+   <cbc:VersionID>01</cbc:VersionID>
+   <cbc:RegulatoryDomain>32014L0025</cbc:RegulatoryDomain>
+   <cbc:NoticeTypeCode listName="result">can-standard</cbc:NoticeTypeCode>
+   <cbc:NoticeLanguageCode listName="language">FRA</cbc:NoticeLanguageCode>
+   <cac:ContractingParty>
+      <cbc:BuyerProfileURI>https://www.marches-publics.gouv.fr/</cbc:BuyerProfileURI>
+      <cac:ContractingActivity>
+         <cbc:ActivityTypeCode listName="entity-activity">rail</cbc:ActivityTypeCode>
+      </cac:ContractingActivity>
+      <cac:Party>
+         <cac:PartyIdentification>
+            <cbc:ID>ORG-0001</cbc:ID>
+         </cac:PartyIdentification>
+      </cac:Party>
+   </cac:ContractingParty>
+   <cac:TenderingProcess>
+      <cbc:Description languageID="FRA">La présente consultation est menée selon une procédure avec négociation, conformément aux articles L. 2124-3 et R.2124-4 du code de la commande publique.</cbc:Description>
+      <cbc:ProcedureCode listName="procurement-procedure-type">neg-w-call</cbc:ProcedureCode>
+      <cac:NoticeDocumentReference>
+         <cbc:ID>ffb3b9ce-6034-4beb-8a11-3a1794a9cca1-01</cbc:ID>
+      </cac:NoticeDocumentReference>
+      <cac:ProcessJustification>
+         <cbc:ProcessReasonCode listName="accelerated-procedure">false</cbc:ProcessReasonCode>
+      </cac:ProcessJustification>
+   </cac:TenderingProcess>
+   <cac:ProcurementProject>
+      <cbc:ID>2023PN041</cbc:ID>
+      <cbc:Name languageID="FRA">Equipements et travaux HT/BT pour la réalisation du tronçon Gare du CEA St Aubin - Gare de Versailles Chantiers de la ligne 18 du réseau du Grand Paris Express</cbc:Name>
+      <cbc:Description languageID="FRA">Le périmètre géographique du marché objet de la présente consultation porte sur
+le tronçon de la gare du CEA St Aubin à la gare de Versailles Chantiers de la ligne 18 du
+réseau du Grand Paris Express. Ce périmètre correspond à la mise en service phase 2 et
+comprend: 1) Une partie composée d'une section viaduc d'environ 1km en prolongement de la
+phase 1 correspondant au tronçon de la gare d'Orly Aéroport à Gare CEA St Aubin; 2) Une
+section en passage au sol d'environ 5km comprenant 5 accès de secours, et 1 ouvrage
+annexe; 3) Une section en tranchée ouverte d'environ 0,5km; 4) Une section en tranchée
+couverte d'environ 1,5km comprenant 2 ouvrages annexes; 5) Une section en tunnel d'environ
+7km comprenant 3 gares, et 8 ouvrages annexes; 6) La boucle Haute Tension du marché est
+indépendante de la boucle Haute Tension de la phase 1. Il s'agit d'un marché unique (non
+alloti), à prix mixtes (prix unitaires et prix forfaitaires). Les travaux seront réalisés en une
+phase avec une mise en service de l'ensemble de la phase 2 (Gare du CEA St Aubin à la
+Gare de Versailles Chantiers). Le Marché comprend l'ensemble des prestations d'études, de
+fourniture, de travaux, d'installation, d'essais et de mise en service associées aux
+équipements suivants: Prestations «Haute Tension Basse Tension»: Les équipements Haute
+Tension (HTA) et Basse Tension (BT) principale, y compris câblages de ces équipements
+dans les locaux techniques HTABT des Postes de Livraison (PL), Postes Eclairage Force
+(PEF), et Postes Force (PF) et Postes Basse Tension (jusqu'aux Tableaux Généraux Basse
+Tension) Le câblage des artères HTA en ligne, jusqu'aux locaux techniques HTA des PL, PEF,
+PF et PR du Marché Traction L18 Le câblage des liaisons Basse Tension 1000Vac entre les
+PF et PBT Prestations «Fibres Optiques»: Les équipements de raccordement des liaisons
+Fibres Optiques (FO) interouvrages dans les locaux techniques Courants Faibles (CFA) et
+locaux opérateurs; Le câblage des fibres optiques en ligne, jusqu'aux locaux techniques CFA
+principal, CFA puits et locaux opérateurs ; Les fourreaux pour le cheminement des FO dans
+les caniveaux en viaduc. Prestations «Eclairage et prises pompiers en ligne»: Les
+équipements d'éclairage et de prises pompier en ligne, y compris câblage et raccordements
+sur les Tableaux divisionnaires (TD) Eclairage et TD prises pompiers. Prestations
+«Généphonie»: Les équipements de généphonie en tunnel, y compris câblage, jusqu'aux
+locaux techniques LGI et dans les puits Prestations «Détection Elévation de Température en zone de garage en tunnel»: Les équipements de détection d'élévation de température en zone
+de garage des trains en tunnel à mettre en o euvre dans les locaux techniques CFA principal
+et CFA puits ; Le câblage de détection d'élévation de température en zone de garage des
+trains en tunnel jusqu'aux locaux techniques CFA principal et CFA puits.</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">works</cbc:ProcurementTypeCode>
+      <cac:MainCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">45315300</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">45317000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">31625100</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">45312100</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">45317300</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">32551000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">45311100</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">34993100</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">32562000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">45315600</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">45317200</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">32561000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">45315500</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:RealizedLocation>
+         <cbc:Description languageID="FRA">FR10 : Ile de France</cbc:Description>
+         <cac:Address>
+            <cbc:CountrySubentityCode listName="nuts">FR101</cbc:CountrySubentityCode>
+            <cac:Country>
+               <cbc:IdentificationCode listName="country">FRA</cbc:IdentificationCode>
+            </cac:Country>
+         </cac:Address>
+      </cac:RealizedLocation>
+   </cac:ProcurementProject>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+      <cac:TenderingTerms>
+         <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+         <cac:AwardingTerms>
+            <cac:AwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>55</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                  <cbc:Description languageID="FRA">Prix</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>45</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+                  <cbc:Description languageID="FRA">Le terme "Qualité" doit être entendu comme "Valeur technique"</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+            </cac:AwardingCriterion>
+         </cac:AwardingTerms>
+         <cac:AdditionalInformationParty>
+            <cac:PartyIdentification>
+               <cbc:ID>ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:AdditionalInformationParty>
+         <cac:AppealTerms>
+            <cac:PresentationPeriod>
+               <cbc:Description languageID="FRA">Le tribunal administratif peut être saisi par
+l'application informatique télérecours citoyens,
+accessible sur le site internet www.telerecours.fr
+Voies de recours :
+- Référé contractuel (CJA, art L 551-13 et suivant),
+qui peut être exercé dans les 31 jours à compter
+de la publication d'un avis d'attribution du contrat
+au Journal Officiel de l’Union Européenne (JOUE)
+(CJA article R551-7 et suivants) ;
+-Recours en contestation de validité du contrat,
+issu de la jurisprudence "Tarn et Garonne" qui
+peut être exercé par les tiers au contrat, sans
+considération de leur qualité, dans un délai de 2
+mois à compter des mesures de publicité
+appropriées.
+Le présent contrat peut être consulté, sur simple
+demande, au siège de la Société des grands
+projets dont l'adresse figure au présent avis, sous
+réserve du respect des secrets protégés par la loi.</cbc:Description>
+            </cac:PresentationPeriod>
+            <cac:AppealInformationParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealInformationParty>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+         </cac:AppealTerms>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+         <cac:NoticeDocumentReference>
+            <cbc:ID>ffb3b9ce-6034-4beb-8a11-3a1794a9cca1-01</cbc:ID>
+         </cac:NoticeDocumentReference>
+         <cac:AuctionTerms>
+            <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+         </cac:AuctionTerms>
+         <cac:FrameworkAgreement>
+            <cac:SubsequentProcessTenderRequirement>
+               <cbc:Name>buyer-categories</cbc:Name>
+            </cac:SubsequentProcessTenderRequirement>
+         </cac:FrameworkAgreement>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:ID>2023PN041</cbc:ID>
+         <cbc:Name languageID="FRA">Equipements et travaux HT BT pour la réalisation du tronçon Gare du CEA St Aubin - Gare de Versailles Chantiers de la ligne 18 du réseau du Grand Paris Express</cbc:Name>
+         <cbc:Description languageID="FRA">Les prestations objet de la présente consultation sont les suivantes : Le Marché
+comprend l'ensemble des prestations permettant la bonne conduite du projet, notamment: Les
+prestations générales de Management de projet, de coordination, de traitement des interfaces
+et participation à la réalisation des plans de synthèse pour l'ensemble des prestations du
+marché - L'établissement de tous les documents généraux et spécifiques pour l'organisation et
+la réalisation de toutes les prestations du marché - Les études générales, les études de détail,
+les études d'interface, les études Fiabilité, Maintenabilité &amp; Disponibilité (FMD), les études de
+sécurité, les études de cybersécurité, les études de Soutien Logistique Intégré (SLI) et notes
+de calculs relatives à la bonne réalisation des prestations du marché - Les études des
+fournitures (générales et spécifiques de développement) pour leur fabrication et
+approvisionnement sur site comprenant: les contrôles et essais en usine (essai de type et
+essai de série), les stockages intermédiaires entre usine et livraisons sur sites si nécessaire,
+les livraisons sur site, la logistique, la manutention et le stockage - La logistique, les méthodes
+et les moyens techniques sur site - Les travaux et installation de tous les équipements du
+présent marché - Les contrôles et essais sur site, et l'établissement des documents qualité -
+La gestion des mises sous tension, des consignations et déconsignations - La participation aux essais d'ensemble et l'assurance d'une présence et d'une assistance pendant la marche à
+blanc de la phase de mise en service - La formation des agents d'exploitation et de
+maintenance - La fourniture du parc de pièces de rechange et petits outillages spécifiques aux
+opérations d'entretien - Les travaux de repli des installations de chantier système en fin de
+travaux. Les prestations comprennent également la gestion de la mission Consuel, une la
+contribution aux démarches et prestations de gestion des interfaces avec Enedis pour les
+Postes de Livraison jusqu'à la mise sous tension.</cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">works</cbc:ProcurementTypeCode>
+         <cbc:Note languageID="FRA">Le présent marché est conclu à prix mixtes (pour partie à prix forfaitaires et pour partie à prix unitaires).</cbc:Note>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">45315300</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:RealizedLocation>
+            <cbc:Description languageID="FRA">FR10 : Ile de France</cbc:Description>
+            <cac:Address>
+               <cbc:CountrySubentityCode listName="nuts">FR101</cbc:CountrySubentityCode>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">FRA</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+         <cac:PlannedPeriod>
+            <cbc:DurationMeasure unitCode="MONTH">62</cbc:DurationMeasure>
+         </cac:PlannedPeriod>
+         <cac:ContractExtension>
+            <cbc:MaximumNumberNumeric>0</cbc:MaximumNumberNumeric>
+         </cac:ContractExtension>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+   <cac:TenderResult>
+      <cbc:AwardDate>2000-01-01Z</cbc:AwardDate>
+   </cac:TenderResult>
+</ContractAwardNotice>

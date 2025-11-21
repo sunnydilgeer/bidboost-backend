@@ -1,0 +1,650 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractAwardNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractAwardNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:xsi="http://www.w3.org/2001/XMLSchema">
+  <ext:UBLExtensions>
+    <ext:UBLExtension>
+      <ext:ExtensionContent>
+        <efext:EformsExtension>
+          <efbc:TransmissionDate>2025-11-11+01:00</efbc:TransmissionDate>
+          <efbc:TransmissionTime>08:57:30+01:00</efbc:TransmissionTime>
+          <efac:NoticeResult>
+            <cbc:TotalAmount currencyID="HUF">771000000.00</cbc:TotalAmount>
+            <efac:LotResult>
+              <cbc:ID schemeName="result">RES-0001</cbc:ID>
+              <cbc:TenderResultCode listName="winner-selection-status">selec-w</cbc:TenderResultCode>
+              <efac:AppealRequestsStatistics>
+                <efbc:StatisticsCode listName="review-type">complainants</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:AppealRequestsStatistics>
+              <efac:AppealRequestsStatistics>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:AppealRequestsStatistics>
+              <efac:LotTender>
+                <cbc:ID schemeName="tender">TEN-3275</cbc:ID>
+              </efac:LotTender>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">part-req</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">tenders</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>1</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-esubm</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>1</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-micro</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-small</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-med</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>1</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-sme</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>1</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-oth-eea</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-no-eea</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-verif-inad</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-verif-inad-low</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-no-verif</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:SettledContract>
+                <cbc:ID schemeName="contract">CON-0001</cbc:ID>
+              </efac:SettledContract>
+              <efac:TenderLot>
+                <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+              </efac:TenderLot>
+            </efac:LotResult>
+            <efac:LotTender>
+              <cbc:ID schemeName="tender">TEN-3275</cbc:ID>
+              <cbc:RankCode>1</cbc:RankCode>
+              <efbc:TenderRankedIndicator>true</efbc:TenderRankedIndicator>
+              <efbc:TenderVariantIndicator>false</efbc:TenderVariantIndicator>
+              <cac:LegalMonetaryTotal>
+                <cbc:PayableAmount currencyID="HUF">771000000.00</cbc:PayableAmount>
+              </cac:LegalMonetaryTotal>
+              <efac:Origin>
+                <efbc:AreaCode listName="country">HUN</efbc:AreaCode>
+              </efac:Origin>
+              <efac:SubcontractingTerm>
+                <efbc:TermCode listName="applicability">no</efbc:TermCode>
+              </efac:SubcontractingTerm>
+              <efac:TenderingParty>
+                <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+              </efac:TenderingParty>
+              <efac:TenderLot>
+                <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+              </efac:TenderLot>
+              <efac:TenderReference>
+                <cbc:ID>EKR000592792025/3275</cbc:ID>
+              </efac:TenderReference>
+            </efac:LotTender>
+            <efac:SettledContract>
+              <cbc:ID schemeName="contract">CON-0001</cbc:ID>
+              <cbc:AwardDate>2025-10-27+01:00</cbc:AwardDate>
+              <cbc:IssueDate>2025-10-31+01:00</cbc:IssueDate>
+              <cbc:Title languageID="HUN">Vállalkozási keretszerződés „Műszer Automatika Kft. által gyártott biztosítóberendezési részegységek, modulok illetve alkatrészek javítása” tárgyban</cbc:Title>
+              <cbc:URI>https://ekr.gov.hu/ekr-szerzodestar/hu/szerzodesLista?eljarasAzon=EKR000592792025</cbc:URI>
+              <efac:ContractReference>
+                <cbc:ID>1</cbc:ID>
+              </efac:ContractReference>
+              <efac:LotTender>
+                <cbc:ID schemeName="tender">TEN-3275</cbc:ID>
+              </efac:LotTender>
+            </efac:SettledContract>
+            <efac:TenderingParty>
+              <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+              <efac:Tenderer>
+                <cbc:ID schemeName="organization">ORG-0006</cbc:ID>
+              </efac:Tenderer>
+            </efac:TenderingParty>
+          </efac:NoticeResult>
+          <efac:NoticeSubType>
+            <cbc:SubTypeCode listName="notice-subtype">30</cbc:SubTypeCode>
+          </efac:NoticeSubType>
+          <efac:Organizations>
+            <efac:Organization>
+              <efbc:AcquiringCPBIndicator>false</efbc:AcquiringCPBIndicator>
+              <efbc:AwardingCPBIndicator>false</efbc:AwardingCPBIndicator>
+              <efac:Company>
+                <cbc:WebsiteURI>https://www.mavcsoport.hu</cbc:WebsiteURI>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <cbc:Name languageID="HUN">MÁV Pályaműködtetési Zártkörűen Működő Részvénytársaság</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>Budafoki Út 79.</cbc:StreetName>
+                  <cbc:CityName>Budapest</cbc:CityName>
+                  <cbc:PostalZone>1117</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">HU110</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">HUN</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID>32694422243</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Name>Dr. Somoskői Evelyn</cbc:Name>
+                  <cbc:Telephone>+36 300739528</cbc:Telephone>
+                  <cbc:ElectronicMail>somoskoi.evelyn@mavcsoport.hu</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+            <efac:Organization>
+              <efac:Company>
+                <cbc:WebsiteURI>https://www.mavcsoport.hu</cbc:WebsiteURI>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <cbc:Name languageID="HUN">MÁV Szolgáltató Központ Zártkörűen Működő Részvénytársaság</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>Dévai Utca 23.</cbc:StreetName>
+                  <cbc:CityName>Budapest</cbc:CityName>
+                  <cbc:PostalZone>1134</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">HU110</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">HUN</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID>14130179244</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Name>Dr. Somoskői Evelyn</cbc:Name>
+                  <cbc:Telephone>+36 300739528</cbc:Telephone>
+                  <cbc:ElectronicMail>somoskoi.evelyn@mavcsoport.hu</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+            <efac:Organization>
+              <efbc:ListedOnRegulatedMarketIndicator>false</efbc:ListedOnRegulatedMarketIndicator>
+              <efac:UltimateBeneficialOwner>
+                <cbc:ID schemeName="ubo">UBO-0006</cbc:ID>
+              </efac:UltimateBeneficialOwner>
+              <efac:Company>
+                <cbc:WebsiteURI>https://www.muszerautomatika.hu</cbc:WebsiteURI>
+                <efbc:CompanySizeCode listName="economic-operator-size">medium</efbc:CompanySizeCode>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0006</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <cbc:Name languageID="HUN">Műszer Automatika Vegyesipari Kereskedelmi és Szolgáltató Korlátolt Felelősségű Társaság</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>Komáromi Utca 22</cbc:StreetName>
+                  <cbc:CityName>Budaörs</cbc:CityName>
+                  <cbc:PostalZone>2040</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">HU120</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">HUN</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID>10536212213</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Telephone>+36 23365280</cbc:Telephone>
+                  <cbc:Telefax>+36 23365087</cbc:Telefax>
+                  <cbc:ElectronicMail>mautom@muszerautomatika.hu</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+            <efac:Organization>
+              <efac:Company>
+                <cbc:WebsiteURI>https://kozbeszerzes.hu</cbc:WebsiteURI>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0004</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <cbc:Name languageID="HUN">Közbeszerzési Hatóság Közbeszerzési Döntőbizottság</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>Riadó u. 5</cbc:StreetName>
+                  <cbc:CityName>Budapest</cbc:CityName>
+                  <cbc:PostalZone>1026</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">HU110</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">HUN</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID>EKRSZ_40664534_2</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Telephone>+36 18828592</cbc:Telephone>
+                  <cbc:Telefax>+36 18828593</cbc:Telefax>
+                  <cbc:ElectronicMail>dontobizottsag@kt.hu</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+            <efac:Organization>
+              <efac:Company>
+                <cbc:WebsiteURI>https://kozbeszerzes.hu</cbc:WebsiteURI>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0005</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <cbc:Name languageID="HUN">Közbeszerzési Hatóság</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>Riadó utca 5.</cbc:StreetName>
+                  <cbc:CityName>Budapest</cbc:CityName>
+                  <cbc:PostalZone>1026</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">HU110</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">HUN</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID>EKRSZ_40664534</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Telephone>+36 18828635</cbc:Telephone>
+                  <cbc:ElectronicMail>hirdetmeny@kt.hu</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+            <efac:UltimateBeneficialOwner>
+              <cbc:ID schemeName="ubo">UBO-0006</cbc:ID>
+              <efac:Nationality>
+                <cbc:NationalityID>HUN</cbc:NationalityID>
+              </efac:Nationality>
+            </efac:UltimateBeneficialOwner>
+          </efac:Organizations>
+        <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00761548-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+      </ext:ExtensionContent>
+    </ext:UBLExtension>
+  </ext:UBLExtensions>
+  <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+  <cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+  <cbc:ID schemeName="notice-id">546865ea-dbdb-49f9-b294-dc8d3a258e90</cbc:ID>
+  <cbc:ContractFolderID>7d9d2730-57d7-4692-a61d-4c6ed359f6c6</cbc:ContractFolderID>
+  <cbc:IssueDate>2025-11-14+01:00</cbc:IssueDate>
+  <cbc:IssueTime>10:42:00+01:00</cbc:IssueTime>
+  <cbc:VersionID>02</cbc:VersionID>
+  <cbc:RegulatoryDomain>32014L0025</cbc:RegulatoryDomain>
+  <cbc:NoticeTypeCode listName="result">can-standard</cbc:NoticeTypeCode>
+  <cbc:NoticeLanguageCode>HUN</cbc:NoticeLanguageCode>
+  <cac:ContractingParty>
+    <cbc:BuyerProfileURI>https://www.mavcsoport.hu</cbc:BuyerProfileURI>
+    <cac:ContractingPartyType>
+      <cbc:PartyTypeCode listName="buyer-legal-type">body-pl</cbc:PartyTypeCode>
+    </cac:ContractingPartyType>
+    <cac:ContractingActivity>
+      <cbc:ActivityTypeCode listName="authority-activity">gen-pub</cbc:ActivityTypeCode>
+    </cac:ContractingActivity>
+    <cac:ContractingActivity>
+      <cbc:ActivityTypeCode listName="entity-activity">rail</cbc:ActivityTypeCode>
+    </cac:ContractingActivity>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:ServiceProviderParty>
+        <cbc:ServiceTypeCode listName="organisation-role">serv-prov</cbc:ServiceTypeCode>
+        <cac:Party>
+          <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+          </cac:PartyIdentification>
+        </cac:Party>
+      </cac:ServiceProviderParty>
+      <cac:ServiceProviderParty>
+        <cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode>
+        <cac:Party>
+          <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0005</cbc:ID>
+          </cac:PartyIdentification>
+        </cac:Party>
+      </cac:ServiceProviderParty>
+    </cac:Party>
+  </cac:ContractingParty>
+  <cac:TenderingProcess>
+    <cbc:Description languageID="HUN">Ajánlatkérő a közbeszerzési eljárást a Kbt. 81. §-a szerinti uniós nyílt közbeszerzési eljárás szabályai szerint folytatja le.</cbc:Description>
+    <cbc:ProcedureCode listName="procurement-procedure-type">open</cbc:ProcedureCode>
+    <cac:NoticeDocumentReference>
+      <cbc:ID schemeName="ojs-notice-id">532467-2025</cbc:ID>
+    </cac:NoticeDocumentReference>
+    <cac:ProcessJustification>
+      <cbc:ProcessReasonCode listName="accelerated-procedure">false</cbc:ProcessReasonCode>
+    </cac:ProcessJustification>
+  </cac:TenderingProcess>
+  <cac:ProcurementProject>
+    <cbc:ID schemeName="InternalID">EKR000592792025</cbc:ID>
+    <cbc:Name languageID="HUN">MA biztosítóberendezések javítása TEB</cbc:Name>
+    <cbc:Description languageID="HUN">Ajánlatkérő az eljárás eredményeként vállalkozási keretszerződést kíván kötni a Műszer Automatika Kft. által gyártott biztosítóberendezési részegységek, modulok, illetve alkatrészek javítására a műszaki leírásnak megfelelően 36 hónap időtartamra, vagy - amennyiben az hamarabb bekövetkezik - úgy a teljes keretösszeg kimerüléséig. A keretösszeg: nettó 771.000.000 Ft Ajánlatkérő a fenti keretösszeg tekintetében 70%-os, azaz nettó 539.700.000 Ft-nak megfelelő értékű megrendelés lehívására vállal kötelezettséget. A közbeszerzés tervezett mennyisége: Műszaki leírás a) pontja szerint: hozzávetőlegesen 5.000 db cserealkatrész biztosítása a MÁV Pályaműködtetési Zrt. számára tartalék alkatrész céljára, illetve meghibásodott, vagy javíthatatlanul tönkrement alkatrész pótlására (a Műszaki leírás 1. sz. melléklete szerint) Műszaki leírás b) pontja szerint: összesen 300 óra műhelyi javítás, Műszaki leírás c/1. pontja szerint: összesen 24.630 óra normál helyszíni hibaelhárítás Műszaki leírás c/2. pontja szerint: összesen 300 óra sürgősségi helyszíni hibaelhárítás Műszaki leírás d) pontja szerint: megtartandó műszaki oktatások: tervezetten 7x8 óra/év, (Biztosítóberendezési főnökségenként 8 óra), azaz tervezetten mindösszesen 168 óra/36 hónap Műszaki leírás e) pontja szerint: 2.005 db MA-HSH hidraulikus félsorompóhajtómű berendezés tervezett műszaki felülvizsgálata és karbantartása Műszaki leírás e) pontja szerint: 53 db MAS modulos sorompó-berendezés műszaki felülvizsgálata és karbantartása Műszaki leírás e) pontja szerint: 154 db HVH hidraulikus váltóhajtómű műszaki felülvizsgálata és karbantartása Műszaki leírás f) pontja szerint: 5 db Műszer Automatika által gyártott biztosítóberendezési részegység, rendszer felülvizsgálata, karbantartása A fenti tervezett mennyiségek a tényleges felhasználás során változhatnak, a szerződéses keretösszeg mértékén belül. Nyertes Ajánlattevő feladata a műszaki leírásban, a szerződéstervezetben és annak mellékleteiben foglalt további információknak, előírásoknak megfelelően: a) Cserealkatrészek biztosítása a MÁV Pályaműködtetési Zrt. számára tartalék alkatrész céljára, illetve meghibásodott, vagy javíthatatlanul tönkrement alkatrész pótlására b) Meghibásodott biztosítóberendezési rendszerek, részegységek javítása. c) Hibaelhárítás helyszíni támogatása d) Műszaki oktatások tartása e) Berendezések tervezett műszaki felülvizsgálata és karbantartása – megelőző karbantartás f) Műszer Automatika Kft. által gyártott termékekhez műszaki felügyelet biztosítása (felülvizsgálat, karbantartás) A közbeszerzés tárgyának részletes leírását a közbeszerzési dokumentumok részét képező műszaki leírás tartalmazza.</cbc:Description>
+    <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+    <cac:RequestedTenderTotal>
+      <cbc:EstimatedOverallContractAmount currencyID="HUF">771000000.00</cbc:EstimatedOverallContractAmount>
+    </cac:RequestedTenderTotal>
+    <cac:MainCommodityClassification>
+      <cbc:ItemClassificationCode listName="cpv">50800000</cbc:ItemClassificationCode>
+    </cac:MainCommodityClassification>
+    <cac:RealizedLocation>
+      <cbc:Description languageID="HUN">Ajánlatkérő a BT-5071 NUTS-kód mezőben feltüntetett adattal kapcsolatban jelzi, hogy a teljesítés helye nem korlátozódik csak Budapest területére, azonban az EKR sajátosságaiból adódóan csak egy terület választható ki a listából. A teljesítés helyei: Ajánlatkérő telephelyei: a MÁV Pályaműködtetési Zrt. Pályavasúti Területi Igazgatóság üzemeltetési területei: Budapest, Pécs, Miskolc, Debrecen, Szeged, Szombathely) A konkrét teljesítési helyeket az eseti megrendelések határozzák meg.</cbc:Description>
+      <cac:Address>
+        <cbc:CountrySubentityCode listName="nuts">HU110</cbc:CountrySubentityCode>
+        <cac:Country>
+          <cbc:IdentificationCode listName="country">HUN</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:RealizedLocation>
+  </cac:ProcurementProject>
+  <cac:ProcurementProjectLot>
+    <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+    <cac:TenderingTerms>
+      <ext:UBLExtensions>
+        <ext:UBLExtension>
+          <ext:ExtensionContent>
+            <efext:EformsExtension>
+              <efac:StrategicProcurement>
+                <efbc:ApplicableLegalBasis listName="ipi-scope">false</efbc:ApplicableLegalBasis>
+              </efac:StrategicProcurement>
+              <efac:StrategicProcurement>
+                <efbc:ApplicableLegalBasis listName="cvd-scope">false</efbc:ApplicableLegalBasis>
+              </efac:StrategicProcurement>
+            </efext:EformsExtension>
+          </ext:ExtensionContent>
+        </ext:UBLExtension>
+      </ext:UBLExtensions>
+      <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+      <cac:AwardingTerms>
+        <cac:AwardingCriterion>
+          <cac:SubordinateAwardingCriterion>
+            <ext:UBLExtensions>
+              <ext:UBLExtension>
+                <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                    <efac:AwardCriterionParameter>
+                      <efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+                      <efbc:ParameterNumeric>4</efbc:ParameterNumeric>
+                    </efac:AwardCriterionParameter>
+                  </efext:EformsExtension>
+                </ext:ExtensionContent>
+              </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+            <cbc:Description languageID="HUN">12. M/2 alkalmassági feltételben meghatározott szakemberek közül az egyik, Ajánlattevő által kifejezett nyilatkozattal kijelölt szakember esetében az alkalmassági minimumkövetelménynek való megfeleléshez bemutatott gyakorlati időn felüli többlettapasztalat (min. 0 hónap max. 24 hónap)</cbc:Description>
+          </cac:SubordinateAwardingCriterion>
+          <cac:SubordinateAwardingCriterion>
+            <ext:UBLExtensions>
+              <ext:UBLExtension>
+                <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                    <efac:AwardCriterionParameter>
+                      <efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+                      <efbc:ParameterNumeric>12</efbc:ParameterNumeric>
+                    </efac:AwardCriterionParameter>
+                  </efext:EformsExtension>
+                </ext:ExtensionContent>
+              </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+            <cbc:Description languageID="HUN">1. A műszaki leírás 1. sz. mellékletében szereplő részegységek árából képzett számtani átlagár (táblázat ’C’ oszlopa alapján) / A műszaki leírás a) pontjában meghatározott feladatra (nettó Ft/részegység)</cbc:Description>
+          </cac:SubordinateAwardingCriterion>
+          <cac:SubordinateAwardingCriterion>
+            <ext:UBLExtensions>
+              <ext:UBLExtension>
+                <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                    <efac:AwardCriterionParameter>
+                      <efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+                      <efbc:ParameterNumeric>10</efbc:ParameterNumeric>
+                    </efac:AwardCriterionParameter>
+                  </efext:EformsExtension>
+                </ext:ExtensionContent>
+              </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+            <cbc:Description languageID="HUN">2. A műszaki leírás 1. sz. mellékletében szereplő részegységek árából képzett számtani átlagár (táblázat ’E’ oszlopa alapján) / A műszaki leírás a) pontjában meghatározott feladatra (nettó Ft/részegység)</cbc:Description>
+          </cac:SubordinateAwardingCriterion>
+          <cac:SubordinateAwardingCriterion>
+            <ext:UBLExtensions>
+              <ext:UBLExtension>
+                <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                    <efac:AwardCriterionParameter>
+                      <efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+                      <efbc:ParameterNumeric>7</efbc:ParameterNumeric>
+                    </efac:AwardCriterionParameter>
+                  </efext:EformsExtension>
+                </ext:ExtensionContent>
+              </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+            <cbc:Description languageID="HUN">3. Műhelyi javítási rezsi óradíj műszaki leírás b) pontjában meghatározott feladatra (nettó Ft/fő/óra)</cbc:Description>
+          </cac:SubordinateAwardingCriterion>
+          <cac:SubordinateAwardingCriterion>
+            <ext:UBLExtensions>
+              <ext:UBLExtension>
+                <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                    <efac:AwardCriterionParameter>
+                      <efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+                      <efbc:ParameterNumeric>12</efbc:ParameterNumeric>
+                    </efac:AwardCriterionParameter>
+                  </efext:EformsExtension>
+                </ext:ExtensionContent>
+              </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+            <cbc:Description languageID="HUN">4. Helyszíni normál hibaelhárítás rezsi óradíj / A műszaki leírás c/1) pontjában meghatározott feladatra (nettó Ft/fő/óra)</cbc:Description>
+          </cac:SubordinateAwardingCriterion>
+          <cac:SubordinateAwardingCriterion>
+            <ext:UBLExtensions>
+              <ext:UBLExtension>
+                <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                    <efac:AwardCriterionParameter>
+                      <efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+                      <efbc:ParameterNumeric>11</efbc:ParameterNumeric>
+                    </efac:AwardCriterionParameter>
+                  </efext:EformsExtension>
+                </ext:ExtensionContent>
+              </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+            <cbc:Description languageID="HUN">5. Helyszíni sürgősségi hibaelhárítás rezsi óradíj / A műszaki leírás c/2) pontjában meghatározott feladatra (nettó Ft/fő/óra)</cbc:Description>
+          </cac:SubordinateAwardingCriterion>
+          <cac:SubordinateAwardingCriterion>
+            <ext:UBLExtensions>
+              <ext:UBLExtension>
+                <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                    <efac:AwardCriterionParameter>
+                      <efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+                      <efbc:ParameterNumeric>6</efbc:ParameterNumeric>
+                    </efac:AwardCriterionParameter>
+                  </efext:EformsExtension>
+                </ext:ExtensionContent>
+              </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+            <cbc:Description languageID="HUN">6. Magyarországi helyszíni kiszállási díj (nettó Ft/km)</cbc:Description>
+          </cac:SubordinateAwardingCriterion>
+          <cac:SubordinateAwardingCriterion>
+            <ext:UBLExtensions>
+              <ext:UBLExtension>
+                <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                    <efac:AwardCriterionParameter>
+                      <efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+                      <efbc:ParameterNumeric>7</efbc:ParameterNumeric>
+                    </efac:AwardCriterionParameter>
+                  </efext:EformsExtension>
+                </ext:ExtensionContent>
+              </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+            <cbc:Description languageID="HUN">7. Oktatás díja / A műszaki leírás d) pontjában meghatározott feladatra (nettó Ft/oktatott óra)</cbc:Description>
+          </cac:SubordinateAwardingCriterion>
+          <cac:SubordinateAwardingCriterion>
+            <ext:UBLExtensions>
+              <ext:UBLExtension>
+                <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                    <efac:AwardCriterionParameter>
+                      <efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+                      <efbc:ParameterNumeric>12</efbc:ParameterNumeric>
+                    </efac:AwardCriterionParameter>
+                  </efext:EformsExtension>
+                </ext:ExtensionContent>
+              </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+            <cbc:Description languageID="HUN">8. Karbantartási és felügyeleti díj / Az MA-HSH hidraulikus hajtóművek esetében a műszaki leírás e) pontjában meghatározott feladatokra (nettó Ft/db)</cbc:Description>
+          </cac:SubordinateAwardingCriterion>
+          <cac:SubordinateAwardingCriterion>
+            <ext:UBLExtensions>
+              <ext:UBLExtension>
+                <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                    <efac:AwardCriterionParameter>
+                      <efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+                      <efbc:ParameterNumeric>7</efbc:ParameterNumeric>
+                    </efac:AwardCriterionParameter>
+                  </efext:EformsExtension>
+                </ext:ExtensionContent>
+              </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+            <cbc:Description languageID="HUN">9. Karbantartási és felügyeleti díj /MAS modulos sorompó berendezések esetében, a műszaki leírás e) pontjában meghatározott feladatokra (nettó Ft/db)</cbc:Description>
+          </cac:SubordinateAwardingCriterion>
+          <cac:SubordinateAwardingCriterion>
+            <ext:UBLExtensions>
+              <ext:UBLExtension>
+                <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                    <efac:AwardCriterionParameter>
+                      <efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+                      <efbc:ParameterNumeric>7</efbc:ParameterNumeric>
+                    </efac:AwardCriterionParameter>
+                  </efext:EformsExtension>
+                </ext:ExtensionContent>
+              </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+            <cbc:Description languageID="HUN">10. Karbantartási és felügyeleti díj/HVH hidraulikus váltóhajtóművek esetében, a műszaki leírás e) pontjában meghatározott feladatokra (nettó Ft/db)</cbc:Description>
+          </cac:SubordinateAwardingCriterion>
+          <cac:SubordinateAwardingCriterion>
+            <ext:UBLExtensions>
+              <ext:UBLExtension>
+                <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                    <efac:AwardCriterionParameter>
+                      <efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+                      <efbc:ParameterNumeric>5</efbc:ParameterNumeric>
+                    </efac:AwardCriterionParameter>
+                  </efext:EformsExtension>
+                </ext:ExtensionContent>
+              </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+            <cbc:Description languageID="HUN">11. Műszer Automatika Kft. által gyártott termékekhez műszaki felügyelet biztosítása a műszaki leírás f) pontja szerint (nettó Ft/fő/óra)</cbc:Description>
+          </cac:SubordinateAwardingCriterion>
+        </cac:AwardingCriterion>
+      </cac:AwardingTerms>
+      <cac:AdditionalInformationParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+        </cac:PartyIdentification>
+      </cac:AdditionalInformationParty>
+      <cac:AppealTerms>
+        <cac:PresentationPeriod>
+          <cbc:Description languageID="HUN">Kbt. 148. § alapján.</cbc:Description>
+        </cac:PresentationPeriod>
+        <cac:AppealInformationParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0004</cbc:ID>
+          </cac:PartyIdentification>
+        </cac:AppealInformationParty>
+        <cac:AppealReceiverParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0004</cbc:ID>
+          </cac:PartyIdentification>
+        </cac:AppealReceiverParty>
+      </cac:AppealTerms>
+    </cac:TenderingTerms>
+    <cac:TenderingProcess>
+      <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+      <cac:AuctionTerms>
+        <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+      </cac:AuctionTerms>
+      <cac:ContractingSystem>
+        <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+      </cac:ContractingSystem>
+      <cac:ContractingSystem>
+        <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+      </cac:ContractingSystem>
+    </cac:TenderingProcess>
+    <cac:ProcurementProject>
+      <cbc:ID schemeName="InternalID">EKR000592792025/1</cbc:ID>
+      <cbc:Name languageID="HUN">MA biztosítóberendezések javítása TEB</cbc:Name>
+      <cbc:Description languageID="HUN">Ajánlatkérő az eljárás eredményeként vállalkozási keretszerződést kíván kötni a Műszer Automatika Kft. által gyártott biztosítóberendezési részegységek, modulok, illetve alkatrészek javítására a műszaki leírásnak megfelelően 36 hónap időtartamra, vagy - amennyiben az hamarabb bekövetkezik - úgy a teljes keretösszeg kimerüléséig. A keretösszeg: nettó 771.000.000 Ft Ajánlatkérő a keretösszeg 70%-ára vállal lehívási kötelezettséget, azaz nettó 539.700.000 Ft-ra. A közbeszerzés tervezett mennyisége: Műszaki leírás a) pontja szerint: hozzávetőlegesen 5.000 db cserealkatrész biztosítása a MÁV Pályaműködtetési Zrt. számára tartalék alkatrész céljára, illetve meghibásodott, vagy javíthatatlanul tönkrement alkatrész pótlására (a Műszaki leírás 1. sz. melléklete szerint) Műszaki leírás b) pontja szerint: összesen 300 óra műhelyi javítás, Műszaki leírás c/1. pontja szerint: összesen 24.630 óra normál helyszíni hibaelhárítás Műszaki leírás c/2. pontja szerint: összesen 300 óra sürgősségi helyszíni hibaelhárítás Műszaki leírás d) pontja szerint: megtartandó műszaki oktatások: tervezetten 7x8 óra/év, (Biztosítóberendezési főnökségenként 8 óra), azaz tervezetten mindösszesen 168 óra/36 hónap Műszaki leírás e) pontja szerint: 2.005 db MA-HSH hidraulikus félsorompóhajtómű berendezés tervezett műszaki felülvizsgálata és karbantartása Műszaki leírás e) pontja szerint: 53 db MAS modulos sorompó-berendezés műszaki felülvizsgálata és karbantartása Műszaki leírás e) pontja szerint: 154 db HVH hidraulikus váltóhajtómű műszaki felülvizsgálata és karbantartása Műszaki leírás f) pontja szerint: 5 db Műszer Automatika által gyártott biztosítóberendezési részegység, rendszer felülvizsgálata, karbantartása A fenti tervezett mennyiségek a tényleges felhasználás során változhatnak, a szerződéses keretösszeg mértékén belül. Nyertes Ajánlattevő feladata a műszaki leírásban, a szerződéstervezetben és annak mellékleteiben foglalt további információknak, előírásoknak megfelelően: a) Cserealkatrészek biztosítása a MÁV Pályaműködtetési Zrt. számára tartalék alkatrész céljára, illetve meghibásodott, vagy javíthatatlanul tönkrement alkatrész pótlására b) Meghibásodott biztosítóberendezési rendszerek, részegységek javítása. c) Hibaelhárítás helyszíni támogatása d) Műszaki oktatások tartása e) Berendezések tervezett műszaki felülvizsgálata és karbantartása – megelőző karbantartás f) Műszer Automatika Kft. által gyártott termékekhez műszaki felügyelet biztosítása (felülvizsgálat, karbantartás) A közbeszerzés tárgyának részletes leírását a közbeszerzési dokumentumok részét képező műszaki leírás tartalmazza. Ajánlatkérő rögzíti, hogy a fenti feladatok ellátására a szerződésben biztosított keretösszeg nettó 771.000.000 Ft. Ajánlatkérő a fenti keretösszeg tekintetében 70%-os, azaz nettó 539.700.000 Ft-nak megfelelő értékű megrendelés lehívására vállal kötelezettséget. Ajánlatkérő a szerződés időbeli hatálya alatt a döntésnek megfelelő részletekben és ütemezés szerint hívhatja le a fenti feladatok elvégzést a keretösszeg mértékéig azzal, hogy a keretösszeg kötelező lehívással érintett hányadát köteles lehívni. Ajánlatkérő a keretösszeg kötelezettségvállalással nem érintett hányadának kimerítésére kötelezettséget nem vállal, az ebből eredő bevételkiesés a nyertes ajánlattevő kockázatát képezi, így a nyertes ajánlattevő a keretösszeg kötelezettségvállalással nem érintett hányadának le nem hívása esetén semmilyen kártérítési, kártalanítási vagy egyéb igénnyel nem léphet fel Ajánlatkérővel szemben. Ajánlatkérő a keretösszeg kötelezettségvállalással nem érintett hányadának részbeni, vagy egészbeni felhasználására nyertes Ajánlattevő felé történő külön jelzés nélkül, a szerződésben meghatározott eseti megrendelések leadásával jogosult.</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+      <cbc:Note languageID="HUN">BT-36 (II.2.7.) pont folytatása: A Szerződés hatályba lépésének napja a Szerződés Felek általi aláírásának a napja. Amennyiben a Felek általi aláírás nem egy időpontban történik, úgy a későbbi aláírás napján lép hatályba a Szerződés. Ajánlatkérő a Szerződés hatályba lépésétől számított 3 évig (36 hónapig), vagy – amennyiben az hamarabb bekövetkezik, úgy – a keretösszeg kimerüléséig jogosult a Vállalkozó részére eseti megrendelést leadni. Teljesítési határidő, feltételek: A teljesítés határideje az eseti megrendelésben meghatározott időpont. A munkák a belépési és behajtási engedélyek és amennyiben szükséges, munkavégzési engedély birtokában végezhetők. A MÁV Pályaműködtetési Zrt. üzemi területére csak érvényes, személyre szóló belépési engedély vagy belépésre jogosító igazolvány, igazolás birtokában lehet belépni, illetve tartózkodni. A munkavégzés megkezdéséhez területi munkavédelmi oktatáson való részvétel szükséges.</cbc:Note>
+      <cac:ProcurementAdditionalType>
+        <cbc:ProcurementTypeCode listName="strategic-procurement">none</cbc:ProcurementTypeCode>
+      </cac:ProcurementAdditionalType>
+      <cac:ProcurementAdditionalType>
+        <cbc:ProcurementTypeCode listName="gpp-criteria">none</cbc:ProcurementTypeCode>
+      </cac:ProcurementAdditionalType>
+      <cac:RequestedTenderTotal>
+        <cbc:EstimatedOverallContractAmount currencyID="HUF">771000000.00</cbc:EstimatedOverallContractAmount>
+      </cac:RequestedTenderTotal>
+      <cac:MainCommodityClassification>
+        <cbc:ItemClassificationCode listName="cpv">50800000</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+        <cbc:ItemClassificationCode listName="cpv">50324200</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:RealizedLocation>
+        <cbc:Description languageID="HUN">Ajánlatkérő a BT-5071 NUTS-kód mezőben feltüntetett adattal kapcsolatban jelzi, hogy a teljesítés helye nem korlátozódik csak Budapest területére, azonban az EKR sajátosságaiból adódóan csak egy terület választható ki a listából. A teljesítés helyei: Ajánlatkérő telephelyei: a MÁV Pályaműködtetési Zrt. Pályavasúti Területi Igazgatóság üzemeltetési területei: Budapest, Pécs, Miskolc, Debrecen, Szeged, Szombathely) A konkrét teljesítési helyeket az eseti megrendelések határozzák meg.</cbc:Description>
+        <cac:Address>
+          <cbc:CountrySubentityCode listName="nuts">HU110</cbc:CountrySubentityCode>
+          <cac:Country>
+            <cbc:IdentificationCode listName="country">HUN</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:RealizedLocation>
+      <cac:PlannedPeriod>
+        <cbc:DurationMeasure unitCode="MONTH">36</cbc:DurationMeasure>
+      </cac:PlannedPeriod>
+      <cac:ContractExtension>
+        <cbc:MaximumNumberNumeric>1</cbc:MaximumNumberNumeric>
+        <cac:Renewal>
+          <cac:Period>
+            <cbc:Description languageID="HUN">Amennyiben a 36 hónapos időtartam alatt a keretösszeg nem kerül kimerítésre, úgy az Eseti megrendelések kibocsátására nyitva álló időtartamot Ajánlatkérő – a Vállalkozó számára küldött egyoldalú jognyilatkozattal - a Kbt. 141. § (4) bekezdés a) pontja alapján jogosult meghosszabbítani a keretösszeg kimerüléséig, de legfeljebb további 12 hónappal. A Szerződés meghosszabbítására Ajánlatkérő legkésőbb a 36 hónapos időtartam lejártát megelőző 2 (kettő) hónapig jogosult. A Szerződés fentiek szerinti meghosszabbítása esetén a Szerződés feltételei, rendelkezései változatlanul érvényesek és hatályosak maradnak.</cbc:Description>
+          </cac:Period>
+        </cac:Renewal>
+      </cac:ContractExtension>
+    </cac:ProcurementProject>
+  </cac:ProcurementProjectLot>
+  <cac:TenderResult>
+    <cbc:AwardDate>2000-01-01Z</cbc:AwardDate>
+  </cac:TenderResult>
+</ContractAwardNotice>

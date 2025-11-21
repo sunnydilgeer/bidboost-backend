@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+   <ext:UBLExtensions>
+      <ext:UBLExtension>
+         <ext:ExtensionContent>
+            <efext:EformsExtension>
+               <efac:NoticeSubType>
+                  <cbc:SubTypeCode listName="notice-subtype">17</cbc:SubTypeCode>
+               </efac:NoticeSubType>
+               <efac:Organizations>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://www.entega.ag</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="DEU">ENTEGA AG</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>Frankfurter Straße 110</cbc:StreetName>
+                           <cbc:CityName>Darmstadt</cbc:CityName>
+                           <cbc:PostalZone>64293</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">DE711</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>Berichtseinheit-ID 00003606</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>000</cbc:Telephone>
+                           <cbc:ElectronicMail>fabio.giardino@entega.ag</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="DEU">Vergabekammer des Landes Hessen beim Regierungspräsidium Darmstadt</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>Dienstgebäude: Wilhelminenstr. 1-3; Fristenbriefkasten: Luisenplatz 2</cbc:StreetName>
+                           <cbc:CityName>Darmstadt</cbc:CityName>
+                           <cbc:PostalZone>64293</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">DE711</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>06151 12-6603</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+49 6151126603</cbc:Telephone>
+                           <cbc:Telefax>+49 611327648534</cbc:Telefax>
+                           <cbc:ElectronicMail>vergabekammer@rpda.hessen.de</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+               <efac:Organization><efac:Company><cac:PartyIdentification><cbc:ID schemeName="organization">ORG-0003</cbc:ID></cac:PartyIdentification><cac:PartyName><cbc:Name languageID="DEU">Datenservice Öffentlicher Einkauf (in Verantwortung des Beschaffungsamts des BMI)</cbc:Name></cac:PartyName><cac:PostalAddress><cbc:CityName>Bonn</cbc:CityName><cbc:PostalZone>53119</cbc:PostalZone><cbc:CountrySubentityCode listName="nuts">DEA22</cbc:CountrySubentityCode><cac:Country><cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode></cac:Country></cac:PostalAddress><cac:PartyLegalEntity><cbc:CompanyID schemeID="002">0204:994-DOEVD-83</cbc:CompanyID></cac:PartyLegalEntity><cac:Contact><cbc:Telephone>+49228996100</cbc:Telephone><cbc:ElectronicMail>noreply.esender_hub@bescha.bund.de</cbc:ElectronicMail></cac:Contact></efac:Company></efac:Organization></efac:Organizations>
+            <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00758735-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+         </ext:ExtensionContent>
+      </ext:UBLExtension>
+   </ext:UBLExtensions>
+   <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+   <cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+   <cbc:ProfileID>eforms-sdk-1.13</cbc:ProfileID>
+   <cbc:ID schemeName="notice-id">e18766dc-0789-4ad3-9153-7e4f4db532ee</cbc:ID>
+   <cbc:ContractFolderID>3a94348c-79d5-472d-b268-7430f747aea8</cbc:ContractFolderID>
+   <cbc:IssueDate>2025-11-13+01:00</cbc:IssueDate>
+   <cbc:IssueTime>09:00:30+01:00</cbc:IssueTime>
+   <cbc:VersionID>01</cbc:VersionID>
+   <cbc:RequestedPublicationDate>2025-11-15+01:00</cbc:RequestedPublicationDate>
+   <cbc:RegulatoryDomain>32014L0025</cbc:RegulatoryDomain>
+   <cbc:NoticeTypeCode listName="competition">cn-standard</cbc:NoticeTypeCode>
+   <cbc:NoticeLanguageCode>DEU</cbc:NoticeLanguageCode>
+   <cac:ContractingParty>
+      <cac:ContractingPartyType>
+         <cbc:PartyTypeCode listName="buyer-legal-type">pub-undert</cbc:PartyTypeCode>
+      </cac:ContractingPartyType>
+      <cac:ContractingActivity>
+         <cbc:ActivityTypeCode listName="entity-activity">gas-heat</cbc:ActivityTypeCode>
+      </cac:ContractingActivity>
+      <cac:Party>
+         <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+         </cac:PartyIdentification>
+      <cac:ServiceProviderParty><cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode><cac:Party><cac:PartyIdentification><cbc:ID schemeName="organization">ORG-0003</cbc:ID></cac:PartyIdentification></cac:Party></cac:ServiceProviderParty></cac:Party>
+   </cac:ContractingParty>
+   <cac:TenderingTerms>
+      <cac:ProcurementLegislationDocumentReference>
+         <cbc:ID>sektvo</cbc:ID>
+      </cac:ProcurementLegislationDocumentReference>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-natl-bre-nat-law</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">Eigenerklärung, dass keine Ausschlussgründe nach §§123, 124 GWB vorliegen.</cbc:Description>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-grounds-source">epo-notice</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+   </cac:TenderingTerms>
+   <cac:TenderingProcess>
+      <cbc:ProcedureCode listName="procurement-procedure-type">neg-w-call</cbc:ProcedureCode>
+      <cac:ProcessJustification>
+         <cbc:ProcessReasonCode listName="accelerated-procedure">false</cbc:ProcessReasonCode>
+      </cac:ProcessJustification>
+   </cac:TenderingProcess>
+   <cac:ProcurementProject>
+      <cbc:Name languageID="DEU">Eberstadt Dekarbonisierungsschritt 1 Abwasserwärmepumpenanlage 
+
+Los 1: Planung Anlagentechnik zur Wärmegewinnung
+Technische Ausrüstung gem. §§ 53 ff. i.V.m. Anlage 15 HOAI inkl. der Anbindung an das Klärwerk sowie der Technischen Anlagen(-bestandteile) im Außen /Freianlagenbereich ab der Leistungsphase 2 zur förderfähigen Transformation des Wärmenetzes.</cbc:Name>
+      <cbc:Description languageID="DEU">Die ENTEGA AG („Auftraggeber“ oder „AG“) ist Eigentümerin und Betreiberin des Fernwärmenetzes im Darmstädter Stadtteil Eberstadt und des dort ansässigen Heizkraftwerks, von wo aus die Haushalte des Fernwärmesatzungsgebietes und die wenigen Anschlüsse außerhalb des Satzungsgebietes versorgt werden. Ebenso ist die Entega Abwasserreinigung GmbH Co KG die Betreiberin des Klärwerks Süd in Eberstadt.
+
+Für die Transformation des Fernwärmenetzes hin zu einer treibhausgasneutralen Wärmeversorgung (Dekarbonisierung) strebt der AG die Erlangung von Fördermitteln aus dem Fördermittelprogramm „Bundesförderung für effiziente Wärmenetze (BEW)“ an. 
+
+Als erster Schritt zur Dekarbonisierung wurde bereits mit Fördermitteln aus dem BEW Modul I eine Transformationsplanung angelehnt an die LPH 1 der HOAI für das Fernwärmenetz durchgeführt. Die Transformationsplanung kommt zu dem Ergebnis, dass die thermische Nutzung von Abwasser mittels einer Wärmepumpenanlage an der Kläranlage in Eberstadt eine kosteneffiziente und geeignete Option darstellen kann, den geforderten Erneuerbaren Energien Anteil ab 2030 bereitzustellen. Das abgeschätzte nutzbare Wärmepotential, welches mittels Wärmepumpen aus dem anfallendem Klärwasser gehoben werden kann, liegt bei nahezu 20 GWh pro Jahr bei einer thermischen Nennleistung der Wärmepumpe von ca. 3 MWth.
+
+Die Wärmepumpe soll in der Nähe des örtlichen Klärwerks auf einem noch zu erschließenden Flurstück platziert werden. Die Erschließung des Flurstücks als Baugrundstück wird von dem gesondert vom AG mit der Objektplanung beauftragten Architekten geplant. Die Planung der Abwasserwärme in diesem Bereich mitsamt Anbindung/Einbindung der Wärmepumpe in das Fernwärmenetz gehört mit zur vorliegenden Beauftragung. 
+
+Erste Prüfungen zur Eignung des Standortes führen zu dem vorläufigen Ergebnis, dass eine entsprechende Bebauung des Flurstücks möglich ist. Weitere Prüfungen müssen in den Planungsphasen entsprechend ihrer Relevanz und der behördlichen Vorgaben durchgeführt werden. 
+
+Die Planungen für das Gesamtkonzept der neuen Wärmeversorgung sind in diesem Zusammenhang unterteilt in „Anlagentechnik zur Wärmegewinnung“, „Neubau einer Energiezentrale (Gebäude und Außenanlagen)“ und „Rohrleitung zur Anbindung an das Fernwärmenetz“.
+
+Die hier ausgeschriebene Leistung umfasst dabei die erforderlichen (Planungs-)Leistungen für die Anlagentechnik i.S.d. technischen Ausrüstung zur Wärmegewinnung aus Abwasser. Dies umfasst die Anlagentechnik insb. inklusive Wärmepumpen, Nebenaggregaten, internen Verbindungsleitungen, Anbindung an das Klärwerk zum Heben der Wärmequelle, Betriebsmittel, Armaturen, und erforderliche elektrische Anschlüsse. 
+
+Der Auftragnehmer wird mit Leistungen der (Fach-)Planung für Technische Ausrüstung gem. §§ 53 ff. i.V.m. Anlage 15 HOAI inkl. der Anbindung an das Klärwerk sowie der Technischen Anlagen(-bestandteile) im Außen /Freianlagenbereich ab der Leistungsphase 2 zur förderfähigen Transformation des Wärmenetzes beauftragt. Der AN erbringt alle Leistungen, die zur funktionsgerechten, technisch einwandfreien, termingerechten und förderfähigen Ausführung der jeweils beauftragten Maßnahme erforderlich sind, auch wenn sie in den Vertragsbestandteilen nicht ausdrücklich erwähnt sind. Die Beauftragung des AN erfolgt stufenweise. 
+
+Der AG beauftragt den AN mit Abschluss dieses Vertrages zunächst mit folgenden Leistungsphasen/Leistungsstufen 
+
+•	Leistungsphasen 2 bis 4 (= Stufe 1).
+Für die Weiterbeauftragung sind  folgenden Stufen vorgesehen:
+•	Leistungsphasen 5 bis 7 (= Stufe 2)
+•	Leistungsphase 8 (= Stufe 3) 
+•	Leistungsphase 9 (= Stufe 4) 
+
+Der Auftragnehmer erbringt im Falle der Beauftragung optional darüber hinaus folgende weitere Leistungen (Besondere Leistungen):
+
+• Optionale Leistung Planung zwei weiterer Wärmeerzeuger.
+• Optionale Leistung Planung Umzug Gaskessel.  
+
+Der AN hat jedoch keinen Anspruch auf Beauftragung dieser optionalen Besonderen Leistungen. 
+
+
+Der Auftraggeber macht an dieser Stelle darauf aufmerksam, dass für das Vorhaben in relevantem Umfang Fördermittel beantragt und erwartet werden. Der Prozess der Fördermittelbeantragung findet parallel zum Vergabevorhaben statt. Aus diesem Grund wird auf folgendes hingewiesen: 
+
+Sollten die erwarteten Fördermittel nicht erteilt werden, wird der Auftraggeber von einem Vertragsschluss absehen und das Vorhaben nicht in der geplanten Form realisieren. Vor diesem Hintergrund wird im Fall der Nichterteilung der Fördermittel das laufende Vergabeverfahren aufgehoben werden. Aus der Beauftragung der ersten Stufe leitet sich keine Verpflichtung ab weitere Stufen zu beauftragen.</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+      <cbc:Note languageID="DEU">Zur Abgabe des Teilnahmeantrages sind zwingend die vom Auftraggeber bereitgestellten Formblätter zu verwenden. Diese können über den Download (vgl. 5.1.11) abgerufen werden.
+
+Auskünfte werden grundsätzlich nur auf solche Fragen erteilt, die bis spätestens 10.12.2025, 10:00 Uhr beim Auftraggeber eingegangen sind. Später eingehende Auskunftsersuchen werden nicht bearbeitet. 
+Mündliche/telefonische Anfragen werden nicht beantwortet. Auskunftsersuchen sind ausschließlich über die Vergabeplattform Subreport ELViS zu stellen und werden nur über die Vergabeplattform beantwortet. Dafür ist es notwendig, dass sich die Bewerber auf der Vergabeplattform registrieren. Der Auftraggeber weist darauf hin, dass Informationen zu Antworten auf Bewerberfragen nur registrierten Bewerbern zur Verfügung gestellt werden können. Nicht registrierte Bewerber sind selbst dafür verantwortlich, auf der Vergabeplattform regelmäßig zu prüfen, ob neue Nachrichten vorliegen. Das Risiko der vollständigen und lesbaren Übermittlung des Auskunftsersuchens trägt der anfragende Bewerber.
+
+Der Auftraggeber behält sich gemäß § 15 Abs. 4 SektVO das Recht vor, den Auftrag auf der Grundlage der Erstangebote zu vergeben, ohne Verhandlungen durchzuführen.</cbc:Note>
+      <cac:MainCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">71000000</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:RealizedLocation>
+         <cac:Address>
+            <cbc:CountrySubentityCode listName="nuts">DE711</cbc:CountrySubentityCode>
+            <cac:Country>
+               <cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+            </cac:Country>
+         </cac:Address>
+      </cac:RealizedLocation>
+   </cac:ProcurementProject>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+      <cac:TenderingTerms>
+         <ext:UBLExtensions>
+            <ext:UBLExtension>
+               <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-suit-reg-trade</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">1. Existenznachweis 
+Der Bewerber/die Bewerbergemeinschaft (alle Mitglieder) hat eine Kopie der Anmeldungs- bzw. Eintragungsbescheinigung ins Berufs- oder Handelsregister nach Maßgabe der Rechtsvorschriften des Heimatlandes; andernfalls vergleichbarer Nachweis für die Existenz und den Gegenstand des Unternehmens des Bewerbers einzureichen. 
+Der Auszug aus dem Handelsregister/vergleichbarer Nachweis darf zum Zeitpunkt des Schlusstermins für den Eingang der Teilnahmeanträge nicht älter als 6 Monate sein.
+
+2. Eigenerklärung, dass keine Ausschlussgründen nach §§ 123, 124 GWB vorliegen (Formblatt Bewerbungsbogen)
+
+3. Bewerbergemeinschaftserklärung
+Bewerbergemeinschaften müssen sich bereits als solche bewerben. Die nachträgliche Bildung einer Bewerbergemeinschaft ist nicht möglich. 
+Falls sich eine Bewerbergemeinschaft bewirbt, ist eine Erklärung einzureichen, aus der sich die Mitglieder der Bewerbergemeinschaft, die Absicht ihres Zusammenschlusses zu einer Arbeitsgemeinschaft im Auftragsfalle, die gesamtschuldnerische Haftung der Bewerbergemeinschaft sowie der bevollmächtigte Vertreter Bewerbergemeinschaft ergeben. (Formblatt Bewerbergemeinschaftserklärung)
+
+4. Nachunternehmereinsatz
+Falls der Bewerber/die Bewerbergemeinschaft Nachunternehmen einsetzen wird, muss vom Bewerber/von der Bewerbergemeinschaft erklärt werden, welcher Nachunternehmer für welche Leistung eingesetzt wird. (Formblatt Nachunternehmereinsatzerklärung)
+
+5. Nachunternehmerverpflichtungserklärung
+Falls der Bewerber/die Bewerbergemeinschaft Nachunternehmen einsetzen wird, muss vom jeweils einzusetzenden Nachunternehmer erklärt werden, welche Leistung er erbringt, dass er die technischen, personellen und wirtschaftlichen Mittel zur vertragsgerechten Erbringung der Leistung zur Verfügung steht, die Eignungsleihe erklärt wird (sofern einschlägig) und dass beim Nachunternehmer keine Ausschlussgründe nach §§ 123, 124 GWB vorliegen. (Formblatt Nachunternehmereinsatzerklärung).</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-ins</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">Der Bewerber/die Bewerbergemeinschaft muss eine Eigenerklärung über Bestehen einer Berufshaftpflichtversicherung inkl. Umwelthaftpflicht/Umweltschäden mit einer Versicherungssumme je Schadensfall (jährlich 2-fach maximiert) von jeweils mindestens 
+
+- 5 Mio. € für Personenschäden (inkl. Umwelthaftpflicht),
+- 2,5 Mio. € für sonstige Schäden (Sach- und Vermögensschäden inkl. Umwelthaftpflicht)
+- 10 Mio. € für Umweltschäden
+
+bzw. Eigenerklärung über die Bereitschaft des Bewerbers/der Bewerber eine Haftpflichtversicherung mit den vorgenannten Deckungssummen im Auftragsfall für die Dauer seiner/ihrer Verpflichtungen aus dem Vertrag abzuschließen.
+Das Einreichen einer- Versicherungsbescheinigung ist nicht erforderlich.</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-to-spec</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">Umsätze mit vergleichbaren Leistungen
+
+Angabe des Nettoumsatzes des Bewerbers/der Bewerbergemeinschaft mit vergleichbaren Leistungen in den letzten drei abgeschlossenen Geschäftsjahren. Ein abgeschlossenes Geschäftsjahr liegt vor, wenn der unternehmerische Jahresabschluss final vorliegt.
+Bei einer Bewerber- oder Bietergemeinschaft zählt der durchschnittliche Jahresumsatz der Gemeinschaft.
+
+MINDESTKRITERIUM:
+Für dem Umsatz mit vergleichbaren Leistungen für die Planung von multivalenten Wärmeversorgungsanlagen mit Wärmepumpen ist mindestes ein durchschnittlicher Umsatz von 100.000 € in den letzten drei abgeschlossenen Geschäftsjahren nachzuweisen.</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-staff-yrly-avg-mp</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">1. Personellen Kapazität des Bewerbers
+Beim Bewerber / der Bewerbergemeinschaft waren in den letzten drei abgeschlossenen Geschäftsjahren durchschnittlich folgende Anzahl an Mitarbeitern und Ingenieuren tätig.
+
+MINDESTKRITERIEN:
+Im Durchschnitt der letzten drei abgeschlossenen Geschäftsjahre mindestens 3 Mitarbeiter, davon mindestens 3 Ingenieure. Bei einer Bewerber- oder Bietergemeinschaft zählen die Mitarbeiter der Gemeinschaft.</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-ref-services</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">1. Referenzen
+Darstellung mindestens zwei erfolgreich abgeschlossener Projekte (bei einer Bewerber- oder Bietergemeinschaft zählen die Referenzen der Gemeinschaft), welche die HOAI- Leistungsphasen 2 bis 8 umfassten, in denen in den letzten 5 Jahren die Leistungsphase 8 abgeschlossen wurde und die folgenden Kriterien beinhalten: 
+
+MINDESTKRITERIEN, die alle Referenzen beinhalten müssen:
+- Planung von Wasser-Wasser Wärmepumpenanlagen ab 500 kW thermischer Leistung, 
+- Einbindung von Großwärmepumpen in Fernwärmenetze, größere Quartiersnetze (&gt;50 Abnehmer) mit inhomogenen Verbrauchern oder in multivalente Systeme mit hohem Wärmeverbrauch (&gt; 1 MW thermischer Leistung).
+- Aktive Mitwirkung bei Genehmigungs- und Abstimmungsverfahren mit Behörden.
+
+Kriterien, die wenigstens jeweils eine Referenz beinhalten muss, (dabei kann eine Referenz auch mehr als eins der nachfolgenden Kriterien erfüllen)
+- Planung und Auslegung von prozesstechnischen Aggregaten wie Pumpen, Wärmeübertragern, Armaturen und Rohrleitungen.
+- Planung und Integration von Wärmepumpen in bestehende Erzeugersysteme (z. B. KWK, Kesselanlagen).
+- Planung von Regelkonzepten und entsprechender Regelarmaturen und Betriebsmittel zur prozesstechnischen Einbindung verschiedener Wärmeerzeuger in einem multivalenten System.
+- Erfahrung mit geförderten Projekten
+
+Zu den Referenzen sind folgende Angaben zu machen:
+- Welches Unternehmen hat die Referenz erbracht
+- Kurze Beschreibung des Referenzprojekts (Stichpunkte ausreichend) 
+- Name und Adresse des Referenzauftraggebers sowie Benennung eines Ansprechpartners mit Telefonnummer beim Referenzauftraggeber
+- Zeitraum der erbrachten Planungsleistungen
+- Umfang der erbrachten Leistungen unter Angabe der erbrachten HOAI-Leistungsphasen.
+- Thermische Leistung der Wasser-Wasser Wärmepumpenanlage mit Anzahl der Wärmepumpen
+- Wärmebedarf der inhomogenen Wärmeverbraucher (Angabe Anzahl Abnehmer mit inhomogenem Verbrauch) oder thermische Leistung der multivalenten Systemabnehmer 
+- Umfang Mitwirkung bei der Genehmigungs- und Abstimmungsverfahren mit Behörden
+- Angabe geplanter und ausgelegter prozesstechnischer Aggregate
+- Angabe Erzeugersystem, in das Wärmepumpen integriert wurden
+- Angabe zur Planung von Regelkonzepten, Regelarmaturen und Betriebsmittel zur prozesstechnischen Einbindung verschiedener Wärmeerzeuger in multivalenten Systemen. 
+
+Fehlt eine der geforderten Angaben zu den Referenzen bzw. den persönlichen Referenzen, wird die jeweilige Referenz nicht gewertet.
+
+
+2. Persönliche Qualifikationen und Referenzen
+Namentliche Benennung des für die Auftragsdurchführung vorgesehenen Projektleiters, dessen Stellvertreters und des Bauleiters. 
+Nennung deren beruflicher Qualifikation und persönlicher, vergleichbarer Referenzprojekte von Anlagenplanungsleistungen, die Planung von Großwärmepumpenanlagen beinhalten, die in ein multivalentes Wärmesystem bzw. Fernwärmenetze einspeisen, der letzten 10 Jahre, bei denen die Leistungsphase 8 abgeschlossen wurde. 
+Angabe der einschlägigen Berufserfahrung des vorgesehenen Projektleiters, Stellvertreter des Projektleiters sowie der Bauleitung. 
+Mit Bauleiter ist in diesem Fall die Person gemeint, die die Bauüberwachung vor Ort während der Bauphase (LPH8 nach HOAI) übernehmen soll. Es kann sich hierbei auch um den Projektleiter oder dessen Stellvertreter handeln, wenn er die nachfolgend aufgeführten Mindestkriterien dafür erfüllt.
+
+MINDESTKRITERIEN:
+- Mindestens 5-jährige, einschlägige Berufserfahrung des Projektleiters
+- Mindestens 2 Referenzprojekte des Projektleiters
+- Mindestens 3-jährige, einschlägige Berufserfahrung des stellvertretenden Projektleiters
+- Mindestens 1 Referenzprojekt des stellvertretenden Projektleiters
+- Mindestens 5-jährige, einschlägige Berufserfahrung des Bauleiters
+- Mindestens 2 Referenzprojekte des Bauleiters
+
+Zu den persönlichen Referenzen sind folgende Angaben zu machen:
+- Berufliche Qualifikation
+- Nennung der einschlägigen Berufserfahrung in Jahren 
+- Kurze Beschreibung des Referenzprojekts (Stichpunkte ausreichend) 
+- Name und Adresse des Referenzauftraggebers, Benennung eines Ansprechpartners mit Telefonnummer beim Referenzauftraggeber
+- Zeitraum der persönlich erbrachten Leistungen 
+- Angaben zum Umfang des Bauvorhabens mit zu geplanten Komponenten, Konzepten, Systemen z. B. Wärmepumpenanlagen, Integration Wärmeerzeuger in FW-Netze
+- Angabe der durchgeführten Leistungsphase
+
+Fehlt eine der geforderten Angaben zu den Referenzen bzw. den persönlichen Referenzen, wird die jeweilige Referenz nicht gewertet</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-other</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">1. Einhaltung der Russland Sanktionen
+Der Bewerber / Bewerbergemeinschaft hat die Einhaltung der Russlandsanktionen zu bestätigen.
+
+2. Einhaltung der Verhaltensprinzipien für Lieferanten im ENTEGA-Konzern 
+Der Bewerber / die Bewerbergemeinschaft bestätigt, dass die Verhaltensprinzipien für Lieferanten im ENTEGA Konzern (abrufbar über: https://www.entega.ag/ueber-entega/zentraleinkauf) berücksichtigt und eingehalten werden</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-sec-proc</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">Vertraulichkeitsvereinbarung 
+Die Planungsunterlagen 3-9 enthalten vertrauliche Informationen.
+Der Bewerber / die Bewerbergemeinschaft hat vor Erhalt dieser Dokumente die Vertraulichkeitsvereinbarung unterzeichnet mit dem Teilnahmeantrag einzureichen. Die vertraulichen Dokumente werden mit der Angebotsaufforderung nach Vorliegen der Vertraulichkeitsvereinbarung übersendet. (Formgebundene Anlage Vertraulichkeitsvereinbarung)</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-sec-inf</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">Informationssicherheit
+Der Bewerber / die Bewerbergemeinschaft muss mit dem Teilnahmeantrag die Umsetzung der technischen und organisatorischen Maßnahmen für die Informationssicherheit, die Verarbeitung von Daten bestätigen. (Formgebundene Anlage Informationssicherheit)</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:StrategicProcurement>
+                        <efbc:ApplicableLegalBasis listName="cvd-scope">false</efbc:ApplicableLegalBasis>
+                     </efac:StrategicProcurement>
+                  </efext:EformsExtension>
+               </ext:ExtensionContent>
+            </ext:UBLExtension>
+         </ext:UBLExtensions>
+         <cbc:VariantConstraintCode listName="permission">not-allowed</cbc:VariantConstraintCode>
+         <cbc:MultipleTendersCode listName="permission">not-allowed</cbc:MultipleTendersCode>
+         <cac:RequiredFinancialGuarantee>
+            <cbc:GuaranteeTypeCode listName="tender-guarantee-required">false</cbc:GuaranteeTypeCode>
+         </cac:RequiredFinancialGuarantee>
+         <cac:CallForTendersDocumentReference>
+            <ext:UBLExtensions>
+               <ext:UBLExtension>
+                  <ext:ExtensionContent>
+                     <efext:EformsExtension>
+                        <efac:OfficialLanguages>
+                           <cac:Language>
+                              <cbc:ID>DEU</cbc:ID>
+                           </cac:Language>
+                        </efac:OfficialLanguages>
+                     </efext:EformsExtension>
+                  </ext:ExtensionContent>
+               </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:ID>E82966669</cbc:ID>
+            <cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+            <cac:Attachment>
+               <cac:ExternalReference>
+                  <cbc:URI>https://www.subreport.de/E82966669</cbc:URI>
+               </cac:ExternalReference>
+            </cac:Attachment>
+         </cac:CallForTendersDocumentReference>
+         <cac:PaymentTerms>
+            <cbc:Note languageID="DEU">-</cbc:Note>
+         </cac:PaymentTerms>
+         <cac:TendererQualificationRequest>
+            <cbc:CompanyLegalFormCode listName="required">true</cbc:CompanyLegalFormCode>
+            <cbc:CompanyLegalForm languageID="DEU">Gesamtschuldnerisch haftend mit bevollmächtigtem Vertreter.</cbc:CompanyLegalForm>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="selection-criteria-source">epo-notice</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="reserved-procurement">none</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="missing-info-submission">late-all</cbc:TendererRequirementTypeCode>
+               <cbc:Description languageID="DEU">Die Nachforderung erfolgt gem. §51 SektVO.</cbc:Description>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="conditions">performance</cbc:ExecutionRequirementCode>
+            <cbc:Description languageID="DEU">Sämtliche Anforderungen der Vergabeunterlagen sind zu erfüllen.</cbc:Description>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="ecatalog-submission">not-allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="einvoicing">required</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="reserved-execution">no</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:AwardingTerms>
+            <cac:AwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>40</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="DEU">Preis</cbc:Name>
+                  <cbc:Description languageID="DEU">Preis</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>20</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="DEU">Konzeptionelle Herangehensweise Anbindung ans Klärwerk</cbc:Name>
+                  <cbc:Description languageID="DEU">Konzeptionelle Herangehensweise Anbindung ans Klärwerk</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>25</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="DEU">Konzeptionelle Herangehensweise Planung Abwasserwärmepumpenanlage</cbc:Name>
+                  <cbc:Description languageID="DEU">Konzeptionelle Herangehensweise Planung Abwasserwärmepumpenanlage</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>10</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="DEU">Personaleinsatzkonzept</cbc:Name>
+                  <cbc:Description languageID="DEU">Personaleinsatzkonzept</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>5</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="DEU">Reaktionszeitenkonzept</cbc:Name>
+                  <cbc:Description languageID="DEU">Reaktionszeitenkonzept</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+            </cac:AwardingCriterion>
+         </cac:AwardingTerms>
+         <cac:AdditionalInformationParty>
+            <cac:PartyIdentification>
+               <cbc:ID>ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:AdditionalInformationParty>
+         <cac:TenderRecipientParty>
+            <cbc:EndpointID>https://www.subreport.de/E82966669</cbc:EndpointID>
+         </cac:TenderRecipientParty>
+         <cac:AppealTerms>
+            <cac:PresentationPeriod>
+               <cbc:Description languageID="DEU">Ein Nachprüfungsantrag zur Vergabekammer ist unzulässig, soweit mehr als 15 Kalendertage nach Eingang der Mitteilung des Auftraggebers, einer Rüge nicht abhelfen zu wollen, vergangen sind (§ 160 Abs. 3 Nr. 4 GWB). Erkennt ein Bewerber Verstöße gegen Vergabevorschriften, so hat er diese innerhalb von 10 Tagen nach Kenntniserlangung gegenüber dem Auftraggeber zu rügen. §§ 134 und 160 Abs. 3 GWB bleiben unberührt.</cbc:Description>
+            </cac:PresentationPeriod>
+            <cac:AppealInformationParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0001</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealInformationParty>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+         </cac:AppealTerms>
+         <cac:Language>
+            <cbc:ID>DEU</cbc:ID>
+         </cac:Language>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <cbc:SubmissionMethodCode listName="esubmission">required</cbc:SubmissionMethodCode>
+         <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+         <cac:ParticipationRequestReceptionPeriod>
+            <cbc:EndDate>2025-12-15+01:00</cbc:EndDate>
+            <cbc:EndTime>10:00:00+01:00</cbc:EndTime>
+         </cac:ParticipationRequestReceptionPeriod>
+         <cac:AuctionTerms>
+            <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+         </cac:AuctionTerms>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:ID schemeName="InternalID">LOT-0001 E82966669</cbc:ID>
+         <cbc:Name languageID="DEU">Eberstadt Dekarbonisierungsschritt 1 Abwasserwärmepumpenanlage 
+
+Los 1: Planung Anlagentechnik zur Wärmegewinnung –
+Technische Ausrüstung gem. §§ 53 ff. i.V.m. Anlage 15 HOAI inkl. der Anbindung an das Klärwerk sowie der Technischen Anlagen(-bestandteile) im Außen /Freianlagenbereich ab der Leistungsphase 2 zur förderfähigen Transformation des Wärmenetzes.</cbc:Name>
+         <cbc:Description languageID="DEU">Die ENTEGA AG („Auftraggeber“ oder „AG“) ist Eigentümerin und Betreiberin des Fernwärmenetzes im Darmstädter Stadtteil Eberstadt und des dort ansässigen Heizkraftwerks, von wo aus die Haushalte des Fernwärmesatzungsgebietes und die wenigen Anschlüsse außerhalb des Satzungsgebietes versorgt werden. Ebenso ist die Entega Abwasserreinigung GmbH Co KG die Betreiberin des Klärwerks Süd in Eberstadt.
+
+Für die Transformation des Fernwärmenetzes hin zu einer treibhausgasneutralen Wärmeversorgung (Dekarbonisierung) strebt der AG die Erlangung von Fördermitteln aus dem Fördermittelprogramm „Bundesförderung für effiziente Wärmenetze (BEW)“ an. 
+
+Als erster Schritt zur Dekarbonisierung wurde bereits mit Fördermitteln aus dem BEW Modul I eine Transformationsplanung angelehnt an die LPH 1 der HOAI für das Fernwärmenetz durchgeführt. Die Transformationsplanung kommt zu dem Ergebnis, dass die thermische Nutzung von Abwasser mittels einer Wärmepumpenanlage an der Kläranlage in Eberstadt eine kosteneffiziente und geeignete Option darstellen kann, den geforderten Erneuerbaren Energien Anteil ab 2030 bereitzustellen. Das abgeschätzte nutzbare Wärmepotential, welches mittels Wärmepumpen aus dem anfallendem Klärwasser gehoben werden kann, liegt bei nahezu 20 GWh pro Jahr bei einer thermischen Nennleistung der Wärmepumpe von ca. 3 MWth.
+
+Die Wärmepumpe soll in der Nähe des örtlichen Klärwerks auf einem noch zu erschließenden Flurstück platziert werden. Die Erschließung des Flurstücks als Baugrundstück wird von dem gesondert vom AG mit der Objektplanung beauftragten Architekten geplant. Die Planung der Abwasserwärme in diesem Bereich mitsamt Anbindung/Einbindung der Wärmepumpe in das Fernwärmenetz gehört mit zur vorliegenden Beauftragung. 
+
+Erste Prüfungen zur Eignung des Standortes führen zu dem vorläufigen Ergebnis, dass eine entsprechende Bebauung des Flurstücks möglich ist. Weitere Prüfungen müssen in den Planungsphasen entsprechend ihrer Relevanz und der behördlichen Vorgaben durchgeführt werden. 
+
+Die Planungen für das Gesamtkonzept der neuen Wärmeversorgung sind in diesem Zusammenhang unterteilt in „Anlagentechnik zur Wärmegewinnung“, „Neubau einer Energiezentrale (Gebäude und Außenanlagen)“ und „Rohrleitung zur Anbindung an das Fernwärmenetz“.
+
+Die hier ausgeschriebene Leistung umfasst dabei die erforderlichen (Planungs-)Leistungen für die Anlagentechnik i.S.d. technischen Ausrüstung zur Wärmegewinnung aus Abwasser. Dies umfasst die Anlagentechnik insb. inklusive Wärmepumpen, Nebenaggregaten, internen Verbindungsleitungen, Anbindung an das Klärwerk zum Heben der Wärmequelle, Betriebsmittel, Armaturen, und erforderliche elektrische Anschlüsse. 
+
+Der Auftragnehmer wird mit Leistungen der (Fach-)Planung für Technische Ausrüstung gem. §§ 53 ff. i.V.m. Anlage 15 HOAI inkl. der Anbindung an das Klärwerk sowie der Technischen Anlagen(-bestandteile) im Außen /Freianlagenbereich ab der Leistungsphase 2 zur förderfähigen Transformation des Wärmenetzes beauftragt. Der AN erbringt alle Leistungen, die zur funktionsgerechten, technisch einwandfreien, termingerechten und förderfähigen Ausführung der jeweils beauftragten Maßnahme erforderlich sind, auch wenn sie in den Vertragsbestandteilen nicht ausdrücklich erwähnt sind. Die Beauftragung des AN erfolgt stufenweise. 
+
+Der AG beauftragt den AN mit Abschluss dieses Vertrages zunächst mit folgenden Leistungsphasen/Leistungsstufen 
+
+•	Leistungsphasen 2 bis 4 (= Stufe 1).
+Für die Weiterbeauftragung sind  folgenden Stufen vorgesehen:
+•	Leistungsphasen 5 bis 7 (= Stufe 2)
+•	Leistungsphase 8 (= Stufe 3) 
+•	Leistungsphase 9 (= Stufe 4) 
+
+Der Auftragnehmer erbringt im Falle der Beauftragung optional darüber hinaus folgende weitere Leistungen (Besondere Leistungen):
+
+• Optionale Leistung Planung zwei weiterer Wärmeerzeuger.
+• Optionale Leistung Planung Umzug Gaskessel.  
+
+Der AN hat jedoch keinen Anspruch auf Beauftragung dieser optionalen Besonderen Leistungen. 
+
+
+Der Auftraggeber macht an dieser Stelle darauf aufmerksam, dass für das Vorhaben in relevantem Umfang Fördermittel beantragt und erwartet werden. Der Prozess der Fördermittelbeantragung findet parallel zum Vergabevorhaben statt. Aus diesem Grund wird auf folgendes hingewiesen: 
+
+Sollten die erwarteten Fördermittel nicht erteilt werden, wird der Auftraggeber von einem Vertragsschluss absehen und das Vorhaben nicht in der geplanten Form realisieren. Vor diesem Hintergrund wird im Fall der Nichterteilung der Fördermittel das laufende Vergabeverfahren aufgehoben werden. Aus der Beauftragung der ersten Stufe leitet sich keine Verpflichtung ab weitere Stufen zu beauftragen.</cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+         <cbc:Note languageID="DEU">#Besonders auch geeignet für:freelance#, #Besonders auch geeignet für:startup#, #Besonders auch geeignet für:other-sme#, #Besonders auch geeignet für:selbst#</cbc:Note>
+         <cbc:SMESuitableIndicator>true</cbc:SMESuitableIndicator>
+         <cac:ProcurementAdditionalType>
+            <cbc:ProcurementTypeCode listName="strategic-procurement">none</cbc:ProcurementTypeCode>
+         </cac:ProcurementAdditionalType>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">71000000</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:RealizedLocation>
+            <cac:Address>
+               <cbc:CountrySubentityCode listName="nuts">DE711</cbc:CountrySubentityCode>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+         <cac:PlannedPeriod>
+            <cbc:DescriptionCode listName="timeperiod">UNKNOWN</cbc:DescriptionCode>
+         </cac:PlannedPeriod>
+         <cac:ContractExtension>
+            <cbc:OptionsDescription languageID="DEU">Stufenweise Beauftragung:
+
+- Leistungsphasen 2 bis 4 (= Stufe 1).
+Die Weiterbeauftragung erfolgt jeweils durch einseitige schriftliche Erklärung (Einzelbeauftragung) des AG gegenüber dem AN nach Maßgabe des Verfahrens nach Ziff. 4 ZVB_Architekten- und Ingenieurverträge. Diese ist in folgenden Stufen vorgesehen:
+- Leistungsphasen 5 bis 7 (= Stufe 2)
+- Leistungsphase 8 (= Stufe 3) 
+- Leistungsphase 9 (= Stufe 4)
+
+Optionale Leistungen:
+
+- Planung zwei weiterer Wärmeerzeuger
+- Planung Umzug Gaskessel</cbc:OptionsDescription>
+            <cbc:MaximumNumberNumeric>0</cbc:MaximumNumberNumeric>
+         </cac:ContractExtension>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+</ContractNotice>

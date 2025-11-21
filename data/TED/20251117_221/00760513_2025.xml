@@ -1,0 +1,668 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><ContractAwardNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractAwardNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+  <ext:UBLExtensions>
+    <ext:UBLExtension>
+      <ext:ExtensionContent>
+        <efext:EformsExtension>
+          <efac:NoticeResult>
+            <cbc:TotalAmount currencyID="EUR">877699.8</cbc:TotalAmount>
+            <efac:LotResult>
+              <cbc:ID schemeName="result">RES-0001</cbc:ID>
+              <cbc:TenderResultCode listName="winner-selection-status">selec-w</cbc:TenderResultCode>
+              <efac:LotTender>
+                <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+              </efac:LotTender>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">tenders</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>1</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-esubm</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>1</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-no-eea</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-oth-eea</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-sme</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:SettledContract>
+                <cbc:ID schemeName="contract">CON-0001</cbc:ID>
+              </efac:SettledContract>
+              <efac:TenderLot>
+                <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+              </efac:TenderLot>
+            </efac:LotResult>
+            <efac:LotResult>
+              <cbc:ID schemeName="result">RES-0003</cbc:ID>
+              <cbc:TenderResultCode listName="winner-selection-status">selec-w</cbc:TenderResultCode>
+              <efac:LotTender>
+                <cbc:ID schemeName="tender">TEN-0002</cbc:ID>
+              </efac:LotTender>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">tenders</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>2</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-esubm</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>2</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-no-eea</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-oth-eea</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>0</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:ReceivedSubmissionsStatistics>
+                <efbc:StatisticsCode listName="received-submission-type">t-sme</efbc:StatisticsCode>
+                <efbc:StatisticsNumeric>2</efbc:StatisticsNumeric>
+              </efac:ReceivedSubmissionsStatistics>
+              <efac:SettledContract>
+                <cbc:ID schemeName="contract">CON-0002</cbc:ID>
+              </efac:SettledContract>
+              <efac:TenderLot>
+                <cbc:ID schemeName="Lot">LOT-0003</cbc:ID>
+              </efac:TenderLot>
+            </efac:LotResult>
+            <efac:LotTender>
+              <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+              <cbc:RankCode>1</cbc:RankCode>
+              <efbc:TenderRankedIndicator>true</efbc:TenderRankedIndicator>
+              <efbc:TenderVariantIndicator>false</efbc:TenderVariantIndicator>
+              <cac:LegalMonetaryTotal>
+                <cbc:PayableAmount currencyID="EUR">401810.4</cbc:PayableAmount>
+              </cac:LegalMonetaryTotal>
+              <efac:SubcontractingTerm>
+                <efbc:TermCode listName="applicability">no</efbc:TermCode>
+              </efac:SubcontractingTerm>
+              <efac:TenderingParty>
+                <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+              </efac:TenderingParty>
+              <efac:TenderLot>
+                <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+              </efac:TenderLot>
+              <efac:TenderReference>
+                <cbc:ID>TEN-0001</cbc:ID>
+              </efac:TenderReference>
+            </efac:LotTender>
+            <efac:LotTender>
+              <cbc:ID schemeName="tender">TEN-0002</cbc:ID>
+              <cbc:RankCode>1</cbc:RankCode>
+              <efbc:TenderRankedIndicator>true</efbc:TenderRankedIndicator>
+              <efbc:TenderVariantIndicator>false</efbc:TenderVariantIndicator>
+              <cac:LegalMonetaryTotal>
+                <cbc:PayableAmount currencyID="EUR">475889.4</cbc:PayableAmount>
+              </cac:LegalMonetaryTotal>
+              <efac:SubcontractingTerm>
+                <efbc:TermCode listName="applicability">no</efbc:TermCode>
+              </efac:SubcontractingTerm>
+              <efac:TenderingParty>
+                <cbc:ID schemeName="tendering-party">TPA-0002</cbc:ID>
+              </efac:TenderingParty>
+              <efac:TenderLot>
+                <cbc:ID schemeName="Lot">LOT-0003</cbc:ID>
+              </efac:TenderLot>
+              <efac:TenderReference>
+                <cbc:ID>TEN-0002</cbc:ID>
+              </efac:TenderReference>
+            </efac:LotTender>
+            <efac:SettledContract>
+              <cbc:ID schemeName="contract">CON-0001</cbc:ID>
+              <cbc:IssueDate>2025-10-31+01:00</cbc:IssueDate>
+              <cbc:Title languageID="HRV">GRUPA I (OŠ Karlobag, OŠ S.S. Kranjčevića Senj, OŠ A.G. Matoša Novalja)</cbc:Title>
+              <efbc:ContractFrameworkIndicator>true</efbc:ContractFrameworkIndicator>
+              <cac:NoticeDocumentReference>
+                <cbc:ID schemeName="notice-id-ref">2b84fd1b-1342-4753-9a12-d4b2787071bd-01</cbc:ID>
+              </cac:NoticeDocumentReference>
+              <efac:ContractReference>
+                <cbc:ID>KLASA: 406-01/25-02/07, URBROJ: 2125-02-25-60 za grupu 1 CON-0001</cbc:ID>
+              </efac:ContractReference>
+              <efac:LotTender>
+                <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+              </efac:LotTender>
+            </efac:SettledContract>
+            <efac:SettledContract>
+              <cbc:ID schemeName="contract">CON-0002</cbc:ID>
+              <cbc:IssueDate>2025-11-10+01:00</cbc:IssueDate>
+              <cbc:Title languageID="HRV">GRUPA III (OŠ Perušić, OŠ "Anž Frankopan" Kosinj, OŠ Zrinskih i Frankopana Otočac, OŠ Luke Perkovića Brinje, OŠ "Milan Sekulić" Lovinac)</cbc:Title>
+              <efbc:ContractFrameworkIndicator>true</efbc:ContractFrameworkIndicator>
+              <cac:NoticeDocumentReference>
+                <cbc:ID schemeName="notice-id-ref">840868df-4e2b-489b-987f-55ce3ec36512-01</cbc:ID>
+              </cac:NoticeDocumentReference>
+              <efac:ContractReference>
+                <cbc:ID>KLASA: 406-01/25-02/07, URBROJ: 2125-02-25-66 za grupu 3 CON-0002</cbc:ID>
+              </efac:ContractReference>
+              <efac:LotTender>
+                <cbc:ID schemeName="tender">TEN-0002</cbc:ID>
+              </efac:LotTender>
+            </efac:SettledContract>
+            <efac:TenderingParty>
+              <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+              <efac:Tenderer>
+                <cbc:ID schemeName="organization">ORG-0004</cbc:ID>
+              </efac:Tenderer>
+            </efac:TenderingParty>
+            <efac:TenderingParty>
+              <cbc:ID schemeName="tendering-party">TPA-0002</cbc:ID>
+              <efac:Tenderer>
+                <cbc:ID schemeName="organization">ORG-0005</cbc:ID>
+                <efbc:GroupLeadIndicator>true</efbc:GroupLeadIndicator>
+              </efac:Tenderer>
+              <efac:Tenderer>
+                <cbc:ID schemeName="organization">ORG-0006</cbc:ID>
+                <efbc:GroupLeadIndicator>false</efbc:GroupLeadIndicator>
+              </efac:Tenderer>
+            </efac:TenderingParty>
+          </efac:NoticeResult>
+          <efac:NoticeSubType>
+            <cbc:SubTypeCode listName="notice-subtype">29</cbc:SubTypeCode>
+          </efac:NoticeSubType>
+          <efac:Organizations>
+            <efac:Organization>
+              <efac:Company>
+                <cbc:WebsiteURI>https://licko-senjska.hr/</cbc:WebsiteURI>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <cbc:Name languageID="HRV">LIČKO-SENJSKA ŽUPANIJA</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>Dr. Franje Tuđmana 4</cbc:StreetName>
+                  <cbc:CityName>Gospić</cbc:CityName>
+                  <cbc:PostalZone>53000</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">HR032</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">HRV</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID>40774389207</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Name>Kristina Prša</cbc:Name>
+                  <cbc:Telephone>+385 53572652</cbc:Telephone>
+                  <cbc:ElectronicMail>info@licko-senjska.hr</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+            <efac:Organization>
+              <efac:Company>
+                <cbc:WebsiteURI>https://www.dkom.hr/</cbc:WebsiteURI>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <cbc:Name languageID="HRV">Državna komisija za kontrolu postupaka javne nabave</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>Ulica grada Vukovara 23/V</cbc:StreetName>
+                  <cbc:CityName>Zagreb</cbc:CityName>
+                  <cbc:PostalZone>10000</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">HR050</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">HRV</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID>95857869241</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Name>Kontakt</cbc:Name>
+                  <cbc:Telephone>+385 14559 930</cbc:Telephone>
+                  <cbc:ElectronicMail>dkom@dkom.hr</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+            <efac:Organization>
+              <efac:Company>
+                <cbc:WebsiteURI>https://www.nn.hr/</cbc:WebsiteURI>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <cbc:Name languageID="HRV">Narodne novine d.d.</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>Savski gaj  XIII. 6</cbc:StreetName>
+                  <cbc:CityName>Zagreb</cbc:CityName>
+                  <cbc:PostalZone>10020</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">HR050</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">HRV</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID>TED94</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID>HR64546066176</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Name>EOJN Helpdesk</cbc:Name>
+                  <cbc:Telephone>+385 16652889</cbc:Telephone>
+                  <cbc:ElectronicMail>eojn@nn.hr</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+            <efac:Organization>
+              <efbc:ListedOnRegulatedMarketIndicator>false</efbc:ListedOnRegulatedMarketIndicator>
+              <efac:Company>
+                <efbc:CompanySizeCode listName="economic-operator-size">large</efbc:CompanySizeCode>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0004</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <cbc:Name languageID="HRV">AUTOTRANS d. d.</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>Šetalište 20. travnja 18</cbc:StreetName>
+                  <cbc:CityName>Cres</cbc:CityName>
+                  <cbc:PostalZone>51557</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">HR031</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">HRV</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID>19819724166</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Name>Roberta Rokić Križanović</cbc:Name>
+                  <cbc:Telephone>+385 51660300</cbc:Telephone>
+                  <cbc:ElectronicMail>roberta.rokic@arriva.com.hr</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+            <efac:Organization>
+              <efbc:ListedOnRegulatedMarketIndicator>false</efbc:ListedOnRegulatedMarketIndicator>
+              <efac:Company>
+                <efbc:CompanySizeCode listName="economic-operator-size">medium</efbc:CompanySizeCode>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0005</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <cbc:Name languageID="HRV">PRIJEVOZ KNEŽEVIĆ d.o.o.</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>PRIJEBOJ 9</cbc:StreetName>
+                  <cbc:CityName>PLITVIČKA JEZERA</cbc:CityName>
+                  <cbc:PostalZone>53230</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">HR032</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">HRV</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID>28416091804</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Name>JOSIP KNEŽEVIĆ</cbc:Name>
+                  <cbc:Telephone>+385 981704478</cbc:Telephone>
+                  <cbc:ElectronicMail>prijevoz.knezevic@gmail.com</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+            <efac:Organization>
+              <efbc:ListedOnRegulatedMarketIndicator>false</efbc:ListedOnRegulatedMarketIndicator>
+              <efac:Company>
+                <efbc:CompanySizeCode listName="economic-operator-size">micro</efbc:CompanySizeCode>
+                <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0006</cbc:ID>
+                </cac:PartyIdentification>
+                <cac:PartyName>
+                  <cbc:Name languageID="HRV">OBRT ZA PRIJEVOZ PUTNIKA "VELEBIT TOURS" vl. MARIJAN VUKELIĆ, DONJI KOSINJ, Donji Kosinj 25</cbc:Name>
+                </cac:PartyName>
+                <cac:PostalAddress>
+                  <cbc:StreetName>DONJI KOSINJ 25</cbc:StreetName>
+                  <cbc:CityName>PERUŠIĆ</cbc:CityName>
+                  <cbc:PostalZone>53203</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">HR032</cbc:CountrySubentityCode>
+                  <cac:Country>
+                    <cbc:IdentificationCode listName="country">HRV</cbc:IdentificationCode>
+                  </cac:Country>
+                </cac:PostalAddress>
+                <cac:PartyLegalEntity>
+                  <cbc:CompanyID>05983230574</cbc:CompanyID>
+                </cac:PartyLegalEntity>
+                <cac:Contact>
+                  <cbc:Name>MARIJAN VUKELIĆ</cbc:Name>
+                  <cbc:Telephone>+385 53572020</cbc:Telephone>
+                  <cbc:ElectronicMail>info@velebit-tours.hr</cbc:ElectronicMail>
+                </cac:Contact>
+              </efac:Company>
+            </efac:Organization>
+          </efac:Organizations>
+        <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00760513-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+      </ext:ExtensionContent>
+    </ext:UBLExtension>
+  </ext:UBLExtensions>
+  <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+  <cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+  <cbc:ID schemeName="notice-id">0d94ad96-c474-4d4d-a817-da6aca5bce1b</cbc:ID>
+  <cbc:ContractFolderID>9c7801ca-c295-4358-9d47-18648ec5c5b9</cbc:ContractFolderID>
+  <cbc:IssueDate>2025-11-13+01:00</cbc:IssueDate>
+  <cbc:IssueTime>18:00:00.0000000+01:00</cbc:IssueTime>
+  <cbc:VersionID>01</cbc:VersionID>
+  <cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+  <cbc:NoticeTypeCode listName="result">can-standard</cbc:NoticeTypeCode>
+  <cbc:NoticeLanguageCode>HRV</cbc:NoticeLanguageCode>
+  <cac:ContractingParty>
+    <cac:ContractingPartyType>
+      <cbc:PartyTypeCode listName="buyer-legal-type">ra</cbc:PartyTypeCode>
+    </cac:ContractingPartyType>
+    <cac:ContractingActivity>
+      <cbc:ActivityTypeCode listName="authority-activity">gen-pub</cbc:ActivityTypeCode>
+    </cac:ContractingActivity>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:ServiceProviderParty>
+        <cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode>
+        <cac:Party>
+          <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+          </cac:PartyIdentification>
+        </cac:Party>
+      </cac:ServiceProviderParty>
+    </cac:Party>
+  </cac:ContractingParty>
+  <cac:TenderingProcess>
+    <cbc:Description languageID="HRV">Otvoreni postupak</cbc:Description>
+    <cbc:ProcedureCode listName="procurement-procedure-type">open</cbc:ProcedureCode>
+  </cac:TenderingProcess>
+  <cac:ProcurementProject>
+    <cbc:ID schemeName="InternalID">7/25 JN</cbc:ID>
+    <cbc:Name languageID="HRV">Prijevoz učenika osnovnih škola</cbc:Name>
+    <cbc:Description languageID="HRV">Predmet nabave je usluga prijevoza učenika osnovnih škola na administrativnom području Ličko-senjske županije kojima je Naručitelj osnivač, za školsku godinu 2025./2026. i 2026./2027.
+Ponuditelj je obvezan pružati uslugu prijevoza učenika putem posebnog linijskog prijevoza i to na linijama sukladno priloženim tehničkim specifikacijama za svaku grupu. Tehničke specifikacije sastavljene su prema trenutnom popisu učenika stoga su podložne promjenama, ovisno o mjestima prebivališta učenika. Ukoliko u tekućoj školskoj godini dođe do promjena relacija i količina prijevoza, s odabranim ponuditeljem sklopit će se dodatak ugovora.</cbc:Description>
+    <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+    <cac:RequestedTenderTotal>
+      <cbc:EstimatedOverallContractAmount currencyID="EUR">1061782</cbc:EstimatedOverallContractAmount>
+    </cac:RequestedTenderTotal>
+    <cac:MainCommodityClassification>
+      <cbc:ItemClassificationCode listName="cpv">60130000</cbc:ItemClassificationCode>
+    </cac:MainCommodityClassification>
+    <cac:RealizedLocation>
+      <cac:Address>
+        <cbc:CountrySubentityCode listName="nuts">HR032</cbc:CountrySubentityCode>
+        <cac:Country>
+          <cbc:IdentificationCode listName="country">HRV</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:RealizedLocation>
+  </cac:ProcurementProject>
+  <cac:ProcurementProjectLot>
+    <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+    <cac:TenderingTerms>
+      <ext:UBLExtensions>
+        <ext:UBLExtension>
+          <ext:ExtensionContent>
+            <efext:EformsExtension>
+              <efac:StrategicProcurement>
+                <efbc:ApplicableLegalBasis listName="cvd-scope">true</efbc:ApplicableLegalBasis>
+              </efac:StrategicProcurement>
+            </efext:EformsExtension>
+          </ext:ExtensionContent>
+        </ext:UBLExtension>
+      </ext:UBLExtensions>
+      <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+      <cac:AwardingTerms>
+        <cac:AwardingCriterion>
+          <cac:SubordinateAwardingCriterion>
+            <ext:UBLExtensions>
+              <ext:UBLExtension>
+                <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                    <efac:AwardCriterionParameter>
+                      <efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+                      <efbc:ParameterNumeric>90</efbc:ParameterNumeric>
+                    </efac:AwardCriterionParameter>
+                  </efext:EformsExtension>
+                </ext:ExtensionContent>
+              </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+            <cbc:Name languageID="HRV">Cijena ponude</cbc:Name>
+            <cbc:Description languageID="HRV">Cijena ponude</cbc:Description>
+          </cac:SubordinateAwardingCriterion>
+          <cac:SubordinateAwardingCriterion>
+            <ext:UBLExtensions>
+              <ext:UBLExtension>
+                <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                    <efac:AwardCriterionParameter>
+                      <efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+                      <efbc:ParameterNumeric>10</efbc:ParameterNumeric>
+                    </efac:AwardCriterionParameter>
+                  </efext:EformsExtension>
+                </ext:ExtensionContent>
+              </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+            <cbc:Name languageID="HRV">Prosječna starost vozila (PSV)</cbc:Name>
+            <cbc:Description languageID="HRV">Naručitelj kao drugi kriterij određuje prosječnu starost vozila u godinama starosti (1 godina, 2 godine….). Uz samu sigurnost djece koja je najvažnija, Naručitelj smatra da je važnost ovog kriterija i u tome što s novijim autobusima će biti i manje kvarova te neće biti zastoja na linijama, niti kašnjenja u školu.
+U određivanju prosjeka starosti uzimaju se u obzir sva vozila za koja ponuditelj dostavi presliku prometne dozvole i potvrde o ispunjavanju uvjeta za vozila kojima se prevoze djeca, pri čemu je minimalan broj putničkih vozila za koja se dostavljaju prometne dozvole i potvrde naveden u dokumentaciji o nabavi.
+
+Starost vozila računa se prema podatku „u prometu od“ navedenom u prometnoj dozvoli (podatak iz oznake B). Starost vozila utvrđuje se prema godini od koje je vozilo u prometu, na način da se od godine u kojoj istječe rok za dostavu ponuda (2025. godina) oduzme godina od koje je vozilo u prometu (primjerice, za vozilo koje je u prometu od 2014. godine starost se izračunava na slijedeći način 2025-2014=11 godina).
+Prosječna starost svih ponuđenih vozila SV određuje se kao: &#119930;&#119933; = &#119958;&#119948;&#119958;&#119953;&#119951;&#119938; &#119956;&#119957;&#119938;&#119955;&#119952;&#119956;&#119957; &#119953;&#119952;&#119951;&#119958;đ&#119942;&#119951;&#119946;&#119945; &#119959;&#119952;&#119963;&#119946;&#119949;&#119938; / &#119939;&#119955;&#119952;&#119947; &#119953;&#119952;&#119951;&#119958;đ&#119942;&#119951;&#119946;&#119945; &#119959;&#119952;&#119963;&#119946;&#119949;&#119938;
+Prosječna starost vozila izražava se na dvije decimale.
+
+Maksimalni broj bodova koje gospodarski subjekt može dobiti po ovom kriteriju je 10,00 bodova. Ponuditelj koji ponudi najmanju prosječnu starost ponuđenih vozila ostvarit će maksimalan broj bodova, a ostale valjane ponude će dobiti manji broj bodova korištenjem slijedeće formule: &#119927;&#119930;&#119933; = (&#119930;&#119933;&#119950;&#119946;&#119951;/&#119930;&#119933;&#119953;&#119952;&#119951;) &#119961; &#120783;&#120782;, gdje je: PSV = broj bodova koje je dobila ponuda po kriteriju prosječna starost vozila, SVmin = najmanji prosjek starosti vozila ponuđen u postupku nabave, SVpon = prosječna starost vozila ponude koja se ocjenjuje, 10 = maksimalni broj bodova za kriterij prosječna starost vozila.
+Izračun broja bodova iskazivat će se na dvije decimale.</cbc:Description>
+          </cac:SubordinateAwardingCriterion>
+        </cac:AwardingCriterion>
+      </cac:AwardingTerms>
+      <cac:AdditionalInformationParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+        </cac:PartyIdentification>
+      </cac:AdditionalInformationParty>
+      <cac:AppealTerms>
+        <cbc:Description languageID="HRV">Rok za izjavljivanje žalbe iznosi deset (10) dana i to od dana:  
+1. objave poziva na nadmetanje, u odnosu na sadržaj poziva ili dokumentacije o nabavi  
+2. objave obavijesti o ispravku, u odnosu na sadržaj ispravka  
+3. objave izmjene dokumentacije o nabavi, u odnosu na sadržaj izmjene dokumentacije  
+4. otvaranja ponuda u odnosu na propuštanje naručitelja da valjano odgovori na pravodobno dostavljen zahtjev dodatne informacije, objašnjenja ili izmjene dokumentacije o nabavi te na postupak otvaranja ponuda      
+
+Žalitelj koji je propustio izjaviti žalbu u određenoj fazi nema pravo na žalbu u kasnijoj fazi postupka za prethodnu fazu.</cbc:Description>
+        <cac:AppealInformationParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+          </cac:PartyIdentification>
+        </cac:AppealInformationParty>
+        <cac:AppealReceiverParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+          </cac:PartyIdentification>
+        </cac:AppealReceiverParty>
+      </cac:AppealTerms>
+    </cac:TenderingTerms>
+    <cac:TenderingProcess>
+      <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+      <cac:AuctionTerms>
+        <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+      </cac:AuctionTerms>
+      <cac:FrameworkAgreement>
+        <cac:SubsequentProcessTenderRequirement>
+          <cbc:Name>buyer-categories</cbc:Name>
+          <cbc:Description languageID="HRV">Naručitelji koji su navedeni u ovoj obavijesti</cbc:Description>
+        </cac:SubsequentProcessTenderRequirement>
+      </cac:FrameworkAgreement>
+      <cac:ContractingSystem>
+        <cbc:ContractingSystemTypeCode listName="framework-agreement">fa-wo-rc</cbc:ContractingSystemTypeCode>
+      </cac:ContractingSystem>
+      <cac:ContractingSystem>
+        <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+      </cac:ContractingSystem>
+    </cac:TenderingProcess>
+    <cac:ProcurementProject>
+      <cbc:ID schemeName="internalID">7/25 JN-1</cbc:ID>
+      <cbc:Name languageID="HRV">GRUPA I (OŠ Karlobag, OŠ S.S. Kranjčevića Senj, OŠ A.G. Matoša Novalja)</cbc:Name>
+      <cbc:Description languageID="HRV">Predmet nabave je usluga prijevoza učenika za OŠ Karlobag, OŠ S.S. Kranjčevića Senj i OŠ A.G. Matoša Novalja, a sve sukladno troškovniku i tehničkim specifikacijama u kojima su određene relacije, odnosno linije udaljenosti izražene u kilometrima, broj učenika, minimalan broj potrebnih vozila te okvirno vrijeme dolaska u školu i povratka, posebne napomene (min./max. veličina vozila).</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+      <cac:ProcurementAdditionalType>
+        <cbc:ProcurementTypeCode listName="accessibility">inc</cbc:ProcurementTypeCode>
+      </cac:ProcurementAdditionalType>
+      <cac:RequestedTenderTotal>
+        <cbc:EstimatedOverallContractAmount currencyID="EUR">256042</cbc:EstimatedOverallContractAmount>
+      </cac:RequestedTenderTotal>
+      <cac:MainCommodityClassification>
+        <cbc:ItemClassificationCode listName="cpv">60130000</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:RealizedLocation>
+        <cbc:Description languageID="HRV">Usluga se pruža na administrativnom području gradova Novalja i Senj te općine Karlobag.</cbc:Description>
+        <cac:Address>
+          <cbc:CountrySubentityCode listName="nuts">HR032</cbc:CountrySubentityCode>
+          <cac:Country>
+            <cbc:IdentificationCode listName="country">HRV</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:RealizedLocation>
+      <cac:ContractExtension>
+        <cbc:MaximumNumberNumeric>0</cbc:MaximumNumberNumeric>
+      </cac:ContractExtension>
+    </cac:ProcurementProject>
+  </cac:ProcurementProjectLot>
+  <cac:ProcurementProjectLot>
+    <cbc:ID schemeName="Lot">LOT-0003</cbc:ID>
+    <cac:TenderingTerms>
+      <ext:UBLExtensions>
+        <ext:UBLExtension>
+          <ext:ExtensionContent>
+            <efext:EformsExtension>
+              <efac:StrategicProcurement>
+                <efbc:ApplicableLegalBasis listName="cvd-scope">true</efbc:ApplicableLegalBasis>
+              </efac:StrategicProcurement>
+            </efext:EformsExtension>
+          </ext:ExtensionContent>
+        </ext:UBLExtension>
+      </ext:UBLExtensions>
+      <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+      <cac:AwardingTerms>
+        <cac:AwardingCriterion>
+          <cac:SubordinateAwardingCriterion>
+            <ext:UBLExtensions>
+              <ext:UBLExtension>
+                <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                    <efac:AwardCriterionParameter>
+                      <efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+                      <efbc:ParameterNumeric>90</efbc:ParameterNumeric>
+                    </efac:AwardCriterionParameter>
+                  </efext:EformsExtension>
+                </ext:ExtensionContent>
+              </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+            <cbc:Name languageID="HRV">Cijena ponude</cbc:Name>
+            <cbc:Description languageID="HRV">Cijena ponude</cbc:Description>
+          </cac:SubordinateAwardingCriterion>
+          <cac:SubordinateAwardingCriterion>
+            <ext:UBLExtensions>
+              <ext:UBLExtension>
+                <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                    <efac:AwardCriterionParameter>
+                      <efbc:ParameterCode listName="number-weight">poi-exa</efbc:ParameterCode>
+                      <efbc:ParameterNumeric>10</efbc:ParameterNumeric>
+                    </efac:AwardCriterionParameter>
+                  </efext:EformsExtension>
+                </ext:ExtensionContent>
+              </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+            <cbc:Name languageID="HRV">Prosječna starost vozila (PSV)</cbc:Name>
+            <cbc:Description languageID="HRV">Naručitelj kao drugi kriterij određuje prosječnu starost vozila u godinama starosti (1 godina, 2 godine….). Uz samu sigurnost djece koja je najvažnija, Naručitelj smatra da je važnost ovog kriterija i u tome što s novijim autobusima će biti i manje kvarova te neće biti zastoja na linijama, niti kašnjenja u školu.
+U određivanju prosjeka starosti uzimaju se u obzir sva vozila za koja ponuditelj dostavi presliku prometne dozvole i potvrde o ispunjavanju uvjeta za vozila kojima se prevoze djeca, pri čemu je minimalan broj putničkih vozila za koja se dostavljaju prometne dozvole i potvrde naveden u dokumentaciji o nabavi.
+Starost vozila računa se prema podatku „u prometu od“ navedenom u prometnoj dozvoli (podatak iz oznake B). Starost vozila utvrđuje se prema godini od koje je vozilo u prometu, na način da se od godine u kojoj istječe rok za dostavu ponuda (2025. godina) oduzme godina od koje je vozilo u prometu (primjerice, za vozilo koje je u prometu od 2014. godine starost se izračunava na slijedeći način 2025-2014=11 godina). Prosječna starost svih ponuđenih vozila SV određuje se kao: &#119930;&#119933; = &#119958;&#119948;&#119958;&#119953;&#119951;&#119938; &#119956;&#119957;&#119938;&#119955;&#119952;&#119956;&#119957; &#119953;&#119952;&#119951;&#119958;đ&#119942;&#119951;&#119946;&#119945; &#119959;&#119952;&#119963;&#119946;&#119949;&#119938; / &#119939;&#119955;&#119952;&#119947; &#119953;&#119952;&#119951;&#119958;đ&#119942;&#119951;&#119946;&#119945; &#119959;&#119952;&#119963;&#119946;&#119949;&#119938;.
+Prosječna starost vozila izražava se na dvije decimale.
+
+Maksimalni broj bodova koje gospodarski subjekt može dobiti po ovom kriteriju je 10,00 bodova. Ponuditelj koji ponudi najmanju prosječnu starost ponuđenih vozila ostvarit će maksimalan broj bodova, a ostale valjane ponude će dobiti manji broj bodova korištenjem slijedeće formule: &#119927;&#119930;&#119933; = (&#119930;&#119933;&#119950;&#119946;&#119951; / &#119930;&#119933;&#119953;&#119952;&#119951;) &#119961; &#120783;&#120782;, gdje je: PSV = broj bodova koje je dobila ponuda po kriteriju prosječna starost vozila, SVmin = najmanji prosjek starosti vozila ponuđen u postupku nabave, SVpon = prosječna starost vozila ponude koja se ocjenjuje, 10 = maksimalni broj bodova za kriterij prosječna starost vozila.
+Izračun broja bodova iskazivat će se na dvije decimale.</cbc:Description>
+          </cac:SubordinateAwardingCriterion>
+        </cac:AwardingCriterion>
+      </cac:AwardingTerms>
+      <cac:AdditionalInformationParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+        </cac:PartyIdentification>
+      </cac:AdditionalInformationParty>
+      <cac:AppealTerms>
+        <cbc:Description languageID="HRV">Rok za izjavljivanje žalbe iznosi deset (10) dana i to od dana:  
+1. objave poziva na nadmetanje, u odnosu na sadržaj poziva ili dokumentacije o nabavi  
+2. objave obavijesti o ispravku, u odnosu na sadržaj ispravka  
+3. objave izmjene dokumentacije o nabavi, u odnosu na sadržaj izmjene dokumentacije  
+4. otvaranja ponuda u odnosu na propuštanje naručitelja da valjano odgovori na pravodobno dostavljen zahtjev dodatne informacije, objašnjenja ili izmjene dokumentacije o nabavi te na postupak otvaranja ponuda      
+
+Žalitelj koji je propustio izjaviti žalbu u određenoj fazi nema pravo na žalbu u kasnijoj fazi postupka za prethodnu fazu.</cbc:Description>
+        <cac:AppealInformationParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+          </cac:PartyIdentification>
+        </cac:AppealInformationParty>
+        <cac:AppealReceiverParty>
+          <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+          </cac:PartyIdentification>
+        </cac:AppealReceiverParty>
+      </cac:AppealTerms>
+    </cac:TenderingTerms>
+    <cac:TenderingProcess>
+      <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+      <cac:AuctionTerms>
+        <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+      </cac:AuctionTerms>
+      <cac:FrameworkAgreement>
+        <cac:SubsequentProcessTenderRequirement>
+          <cbc:Name>buyer-categories</cbc:Name>
+          <cbc:Description languageID="HRV">Naručitelji koji su navedeni u ovoj obavijesti</cbc:Description>
+        </cac:SubsequentProcessTenderRequirement>
+      </cac:FrameworkAgreement>
+      <cac:ContractingSystem>
+        <cbc:ContractingSystemTypeCode listName="framework-agreement">fa-wo-rc</cbc:ContractingSystemTypeCode>
+      </cac:ContractingSystem>
+      <cac:ContractingSystem>
+        <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+      </cac:ContractingSystem>
+    </cac:TenderingProcess>
+    <cac:ProcurementProject>
+      <cbc:ID schemeName="internalID">7/25 JN-3</cbc:ID>
+      <cbc:Name languageID="HRV">GRUPA III (OŠ Perušić, OŠ "Anž Frankopan" Kosinj, OŠ Zrinskih i Frankopana Otočac, OŠ Luke Perkovića Brinje, OŠ "Milan Sekulić" Lovinac)</cbc:Name>
+      <cbc:Description languageID="HRV">Predmet nabave je usluga prijevoza učenika za OŠ Perušić, OŠ "Anž Frankopan" Kosinj, OŠ Zrinskih i Frankopana Otočac, OŠ Luke Perkovića Brinje, OŠ "Milan Sekulić" Lovinac, a sve sukladno troškovniku i tehničkim specifikacijama u kojima su određene relacije, odnosno linije udaljenosti izražene u kilometrima, broj učenika, minimalan broj potrebnih vozila te okvirno vrijeme dolaska u školu i povratka, posebne napomene (min./max. veličina vozila).</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+      <cac:ProcurementAdditionalType>
+        <cbc:ProcurementTypeCode listName="accessibility">inc</cbc:ProcurementTypeCode>
+      </cac:ProcurementAdditionalType>
+      <cac:RequestedTenderTotal>
+        <cbc:EstimatedOverallContractAmount currencyID="EUR">478906</cbc:EstimatedOverallContractAmount>
+      </cac:RequestedTenderTotal>
+      <cac:MainCommodityClassification>
+        <cbc:ItemClassificationCode listName="cpv">60130000</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:RealizedLocation>
+        <cbc:Description languageID="HRV">Usluga se pruža na administrativnom području grada Otočca, općina Perušić, Vrhovine, Brinje i Lovinac.</cbc:Description>
+        <cac:Address>
+          <cbc:CountrySubentityCode listName="nuts">HR032</cbc:CountrySubentityCode>
+          <cac:Country>
+            <cbc:IdentificationCode listName="country">HRV</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:RealizedLocation>
+      <cac:ContractExtension>
+        <cbc:MaximumNumberNumeric>0</cbc:MaximumNumberNumeric>
+      </cac:ContractExtension>
+    </cac:ProcurementProject>
+  </cac:ProcurementProjectLot>
+  <cac:TenderResult>
+    <cbc:AwardDate>2000-01-01+01:00</cbc:AwardDate>
+  </cac:TenderResult>
+</ContractAwardNotice>

@@ -1,0 +1,612 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <ext:UBLExtensions>
+      <ext:UBLExtension>
+         <ext:ExtensionContent>
+            <efext:EformsExtension>
+               <efac:NoticeSubType>
+                  <cbc:SubTypeCode listName="notice-subtype">17</cbc:SubTypeCode>
+               </efac:NoticeSubType>
+               <efac:Organizations>
+                  <efac:Organization>
+                     <efbc:AcquiringCPBIndicator>false</efbc:AcquiringCPBIndicator>
+                     <efbc:AwardingCPBIndicator>false</efbc:AwardingCPBIndicator>
+                     <efac:Company>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-7001</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="DEU">Berliner Verkehrsbetriebe, Bereich Einkauf/ Materialwirtschaft</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>Holzmarktstraße 15-17</cbc:StreetName>
+                           <cbc:CityName>Berlin</cbc:CityName>
+                           <cbc:PostalZone>10179</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">DE300</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>0204:11-2000016000-38</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+493025628962</cbc:Telephone>
+                           <cbc:ElectronicMail>Einkauf.inf1@bvg.de</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-7004</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="DEU">Vergabekammer des Landes Berlin</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>Martin- Luther- Str. 105</cbc:StreetName>
+                           <cbc:CityName>Berlin</cbc:CityName>
+                           <cbc:PostalZone>10825</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">DE300</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>11-1300000V00-74</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+49 30-9013-8316</cbc:Telephone>
+                           <cbc:Telefax>+49 30-9013-7613</cbc:Telefax>
+                           <cbc:ElectronicMail>vergabekammer@senweb.berlin.de</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+               <efac:Organization><efac:Company><cac:PartyIdentification><cbc:ID schemeName="organization">ORG-7005</cbc:ID></cac:PartyIdentification><cac:PartyName><cbc:Name languageID="DEU">Datenservice Öffentlicher Einkauf (in Verantwortung des Beschaffungsamts des BMI)</cbc:Name></cac:PartyName><cac:PostalAddress><cbc:CityName>Bonn</cbc:CityName><cbc:PostalZone>53119</cbc:PostalZone><cbc:CountrySubentityCode listName="nuts">DEA22</cbc:CountrySubentityCode><cac:Country><cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode></cac:Country></cac:PostalAddress><cac:PartyLegalEntity><cbc:CompanyID schemeID="002">0204:994-DOEVD-83</cbc:CompanyID></cac:PartyLegalEntity><cac:Contact><cbc:Telephone>+49228996100</cbc:Telephone><cbc:ElectronicMail>noreply.esender_hub@bescha.bund.de</cbc:ElectronicMail></cac:Contact></efac:Company></efac:Organization></efac:Organizations>
+            <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00761693-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+         </ext:ExtensionContent>
+      </ext:UBLExtension>
+   </ext:UBLExtensions>
+   <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+   <cbc:CustomizationID>eforms-sdk-1.12</cbc:CustomizationID>
+   <cbc:ProfileID>eforms-sdk-1.12</cbc:ProfileID>
+   <cbc:ID schemeName="notice-id">4f964239-aeca-4e81-a625-0ee5febbac23</cbc:ID>
+   <cbc:ContractFolderID>ae7d071d-eadd-4298-884c-7596e8853565</cbc:ContractFolderID>
+   <cbc:IssueDate>2025-11-14+01:00</cbc:IssueDate>
+   <cbc:IssueTime>07:01:34+01:00</cbc:IssueTime>
+   <cbc:VersionID>01</cbc:VersionID>
+   <cbc:RequestedPublicationDate>2025-11-14+01:00</cbc:RequestedPublicationDate>
+   <cbc:RegulatoryDomain>32014L0025</cbc:RegulatoryDomain>
+   <cbc:NoticeTypeCode listName="competition">cn-standard</cbc:NoticeTypeCode>
+   <cbc:NoticeLanguageCode listName="language">DEU</cbc:NoticeLanguageCode>
+   <cac:ContractingParty>
+      <cac:ContractingActivity>
+         <cbc:ActivityTypeCode listName="entity-activity">urttb</cbc:ActivityTypeCode>
+      </cac:ContractingActivity>
+      <cac:Party>
+         <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-7001</cbc:ID>
+         </cac:PartyIdentification>
+      <cac:ServiceProviderParty><cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode><cac:Party><cac:PartyIdentification><cbc:ID schemeName="organization">ORG-7005</cbc:ID></cac:PartyIdentification></cac:Party></cac:ServiceProviderParty></cac:Party>
+   </cac:ContractingParty>
+   <cac:TenderingTerms>
+      <cac:ProcurementLegislationDocumentReference>
+         <cbc:ID>sektvo</cbc:ID>
+      </cac:ProcurementLegislationDocumentReference>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-grounds-source">epo-notice</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-other</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-corrpt</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-part</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-distortion</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-bre-env-law</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-laund</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-fraud</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-traffick</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-insolvency</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-bre-lab-law</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-liq-admin</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-misrepresent</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-partic-confl</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-prep-confl</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-misconduct</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-sanction</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-bre-soc-law</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-pmt-bre-ssc</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-as-susp</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-pmt-bre-tax</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-terror</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+   </cac:TenderingTerms>
+   <cac:TenderingProcess>
+      <cbc:ProcedureCode listName="procurement-procedure-type">neg-w-call</cbc:ProcedureCode>
+      <cac:ProcessJustification>
+         <cbc:ProcessReasonCode listName="accelerated-procedure">false</cbc:ProcessReasonCode>
+      </cac:ProcessJustification>
+   </cac:TenderingProcess>
+   <cac:ProcurementProject>
+      <cbc:ID>INF1-0640-2025</cbc:ID>
+      <cbc:Name languageID="DEU">Allee der Kosmonauten - Rhinstraße Gleisbau</cbc:Name>
+      <cbc:Description languageID="DEU">Gleisbau, Straßenbau, Haltestellenbau, Kabeltiefbau, Entwässerung, Verkehrssicherung, Erdarbeiten, Garten- und Landschaftsbau</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">works</cbc:ProcurementTypeCode>
+      <cbc:Note languageID="DEU">1. Der AG ist Sektorenauftraggeber nach § 100 Abs. 1 Nr. 1
+GWB und führt hier ein Verhandlungsverfahren mit
+vorgeschaltetem Teilnahmewettbewerb durch. Der AG
+unterliegt neben dem GWB und der SektVO insbesondere dem
+Berliner Ausschreibungs- und Vergabegesetz.
+2.
+Durch diese Bekanntmachung wird der
+Teilnahmewettbewerb (TNW) begonnen, in dem sich die
+interessierten Unternehmen mit den in dieser Bekanntmachung
+angegebenen Angaben, Erklärungen u. Nachweisen um die
+Aufforderung zur Angebotsabgabe bewerben. Erst eine
+erfolgreiche Bewerbung mit positiver Eignungsprüfung u. -
+bewertung durch den AG führt zur Aufforderung zur
+Angebotsabgabe.
+3.
+Die Übermittlung von Bewerberfragen hat ausschließlich
+unter Nutzung der Funktionalität der Vergabeplattform (vgl. Ziff.
+I.3)) unter Angabe der Bezeichnung der Maßnahme (vgl. Ziff.
+II.1.1)) u. des Aktenzeichens INF1-0640-2025 zu erfolgen. Die
+Bewerber sollen das hierfür vom AG zur Verfügung gestellte
+Formular verwenden und über die Nachrichtenfunktion der
+Vergabeplattform dem AG übermitteln. Auskünfte werden
+grundsätzlich nur auf solche Fragen erteilt, die bis zum
+05.12.2025 an die unter Ziffer I.1) bezeichnete Stelle unter
+Nutzung der Funktionalität der Vergabeplattform (vgl. Ziff. I.3))
+eingegangen sind. Der AG wird etwaige Informationen (auch
+die Formulare) u. Beantwortung von Fragen von Bewerbern
+zum TNW sowie sonstige Klarstellungen des AG, die das
+Vergabeverfahren betreffen, auf der Vergabekooperation Berlin
+veröffentlichen. Der AG empfiehlt daher allen Bewerbern,
+täglich den vorbenannten Link zum Abruf von aktuellen
+Informationen u. Klarstellungen des AG sowie Antworten von
+Bewerberanfragen zum Vergabeverfahren zu nutzen. Die
+Bewerber sollen die vom AG zur Verfügung gestellten
+Formulare verwenden, ausfüllen und durch die geforderten
+Angaben, Erklärungen u. Nachweise ergänzen. Ein Verweis
+auf frühere Bewerbungen/Angebote ist nicht ausreichend.
+4.
+Mit der Benennung der Referenzen stimmt der Bewerber/
+BewGe der Kontaktaufnahme durch den AG zu den jeweiligen
+Referenzgebern zu.
+Zu Kooperationsformen im vorliegenden Vergabeverfahren (s.
+auch III.1).
+5.
+Sofern eine Bewerbung als BewGe erfolgt, ist mit dem
+Teilnahmeantrag eine von allen Mitgliedern der BewGe
+ausgefüllte Erklärung einzureichen, aus der sich auch die
+gesamtschuldnerische Haftung (vgl. Ziff. III.1.8) dieser
+Bekanntmachung) im Zuschlagsfall, die Namen sämtlicher
+Mitglieder der BewGe, ein bevollmächtigter Vertreter und die
+Absicht, sich im Fall der erfolgreichen Bewerberauswahl zur
+Bietergemeinschaft und im Zuschlagsfall zu einer
+Arbeitsgemeinschaft zusammenzuschließen, ergibt. BewGe
+dürfen nur einen Teilnahmeantrag einreichen.
+Die unter Ziffer III.1.1) bis Ziffer III.1.3) benannten Unterlagen
+sind bei Vorliegen einer Bewerbergemeinschaft für jedes
+Mitglied der Bewerbergemeinschaft in einem gesonderten
+Formular vorzulegen. Zur Erfüllung von Mindestanforderungen
+gem, III.1.2 werden die Umsätze von Mitgliedern einer BewGe
+addiert und gem. III.1.3 alle Erklärungen der Mitglieder einer
+BewGe gesamthaft ausgewertet. BewGe haben darüber
+hinaus eine Erklärung folgenden Inhalts abzugeben: Sämtliche
+Mitglieder der BewGe bzw. der Vertreter der BewGe haben/hat
+zu erklären, dass die Bildung keinen Verstoß gegen § 1 GWB
+darstellt. Darüber hinaus ist von den Mitgliedern der BewGe
+bzw. dem Vertreter dieser zu erklären, inwiefern für das
+jeweilige beteiligte Unternehmen wirtschaftlich zweckmäßige
+und kaufmännische Gründe vorliegen, sich nicht allein um die
+Auftragsvergabe zu bewerben. Der AG stellt hierzu ein
+Formblatt zur Verfügung. Es kann auf Anlagen verwiesen
+werden.
+6.
+Beabsichtigt der Bewerber oder ein Mitglied einer
+Bewerbergemeinschaft, sich hinsichtlich der wirtschaftlichen
+und finanziellen oder technischen und beruflichen
+Leistungsfähigkeit auf andere Unternehmen (Dritter /
+Nachunternehmer /konzernverbundener Unternehmen) zu
+berufen (Eignungsleihe), so sind die unter Ziffer III.1.2) bis
+III.1.3) benannten Unterlagen für die anderen Unternehmen
+insoweit in einem gesonderten Formular vorzulegen, als die
+Bezugnahme auf die Leistungsfähigkeit Dritter erfolgt.
+Zusätzlich hat der Bewerber gesondert mit dem
+Teilnahmeantrag die Verpflichtungserklärung der anderen
+Unternehmen vorzulegen, nach deren Inhalt die rechtlich und
+tatsächlich abgesicherte Verfügbarkeit über die
+entsprechenden Ressourcen der Dritten nachgewiesen wird.
+Bei einer Bezugnahme auf Kapazitäten eines anderen
+Unternehmens im
+Hinblick auf die wirtschaftliche oder finanzielle
+Leistungsfähigkeit ist durch dieses ausdrücklich zu bestätigen,
+dass es mit dem Bewerber im Auftragsfall gemeinsam für die
+Auftragsdurchführung entsprechend dem Umfang der
+Eignungsleihe haftet. Beabsichtigt der Bewerber, im Hinblick
+auf vorzulegende Nachweise/Angaben/Erklärungen für die
+erforderliche berufliche Leistungsfähigkeit wie Ausbildungsoder
+Befähigungsnachweise oder die einschlägige berufliche
+Erfahrung (Referenzen) die Kapazitäten anderer Unternehmen
+in Anspruch zu nehmen, so ist durch dieses ausdrücklich zu
+bestätigen, dass es die Leistungen als Subunternehmer im
+Auftragsfall erbringen wird, für die diese Kapazitäten benötigt
+werden.
+7.
+Der Auftraggeber hat für die Einreichung der
+Teilnahmeanträge Formulare erstellt. Diese sind für die
+Einreichung der Teilnahmeanträge zu verwenden und über die
+Vergabeplattform gem. I.1) herunterzuladen. Die
+Teilnahmeanträge müssen bis zum Schlusstermin (s. Ziffer
+IV.2.2)) über die Vergabeplattform in Textform eingereicht
+werden.
+8.
+Erläuterung zum Ablauf:
+Die BVG behält sich vor, in einer oder mehreren Runden
+Verhandlungsgespräche mit den Bietern durchzuführen. Die
+BVG behält sich ebenso vor, den Zuschlag auf der Grundlage
+der Erstangebote zu vergeben ohne in Verhandlung mit den
+Bietern zu treten. Weiterhin behält sich die BVG vor, nur mit
+den drei erstplatzierten Bietern zu verhandeln. Ein Anspruch auf
+Verhandlung besteht nicht.
+Der Auftraggeber behält sich vor, im Rahmen der
+Verhandlungen über alle Inhalte, insbesondere der
+Leistungsbeschreibung sowie des Vertragsentwurfs zu
+verhandeln. Nach Abschluss der Verhandlungen werden den
+verbliebenen Bietern mögliche Änderungen mitgeteilt und
+diese verbliebenen Bieter aufgefordert, ihre überarbeiteten
+verbindlichen Angebote abzugeben. Diese werden dann
+gemäß der bekanntgemachten Zuschlagskriterien ausgewertet.
+9.
+Datenschutz: Der Bewerber hat die Bestimmungen der
+Datenschutz-Grundverordnung, des
+Bundesdatenschutzgesetzes sowie anderer geltender Gesetze
+zum Schutz personenbezogenen Daten einzuhalten. Für die
+Übermittlung personenbezogener Daten an den Auftraggeber
+trägt der Bewerber die datenschutzrechtliche Verantwortung
+und hat entsprechend die Rechtmäßigkeit sicherzustellen (z. B.
+durch Einholung von Einwilligungen bei Angaben natürlicher
+Personen).
+10.
+Der Auftraggeber weist darauf hin, dass allein der Inhalt der
+vorliegenden EU-weiten Bekanntmachung maßgeblich ist,
+wenn die Bekanntmachung zusätzlich in weiteren
+Bekanntmachungsmedien veröffentlicht wird u. der
+Bekanntmachungstext in diesen zusätzlichen
+Bekanntmachungen nicht vollständig, unrichtig oder verändert
+wiedergegeben wird.</cbc:Note>
+      <cac:MainCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">45234126</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">45234121</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">45234116</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">45234113</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">45234111</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:RealizedLocation>
+         <cac:Address>
+            <cbc:CityName>Berlin</cbc:CityName>
+            <cbc:PostalZone>10179</cbc:PostalZone>
+            <cbc:CountrySubentityCode listName="nuts">DE300</cbc:CountrySubentityCode>
+            <cac:Country>
+               <cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+            </cac:Country>
+         </cac:Address>
+      </cac:RealizedLocation>
+   </cac:ProcurementProject>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0000</cbc:ID>
+      <cac:TenderingTerms>
+         <ext:UBLExtensions>
+            <ext:UBLExtension>
+               <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-mgmt-qual</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">Es sind mindestens 3 Referenzen, aus der die Erfahrung für die Ausführung von Arbeiten im Bereich Gleis- (Nahverkehr), Straßen-, und Haltestellenbau im innerstädtischen Raum hervorgeht und die Schnittstellen zu am Bau beteiligten Dritten (z.B. Leitungsbaufirmen) beinhalten, nachzuweisen.</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-qual-inst</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">Nachweis einer gültigen Eignungsbescheinigung der
+SL- Hannover entsprechend der DB AG Ril 826.1020
+mindestens Klasse 3 oder gleichwertig.
+Die Zulassung muss sich auf alle im LV
+genannten Schweißverfahren beziehen.</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-qual-inst</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">Nachweis gültige Eignungsbescheinigung der DB Netz AG entsprechend der DB AG Rili 826.2050 zur Durchführung von Schlussschweißungen und zur Durchführung des Spannungsausgleiches bei der Herstellung lückenloser Gleise und Weichen oder gleichwertig.
+Die Zulassung muss sich auf alle im LV
+genannten Schweißverfahren beziehen.</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-mgmt-qual</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">Der für den Einsatz vorgesehene Bauleiter ist namentlich zu benennen und muss folgende Referenzen nachweisen:
+
+- der Bauleiter muss mindestens 2 Bauvorhaben im
+Bereich Gleis- (Nahverkehr), Straßen und Haltestellenbau im innerstädtischen Raum betreut haben mit einem Auftragsvolumen von mindestens 500.000,00 EUR.</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-mgmt-qual</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">Der für den Einsatz vorgesehene Projektleiter ist namentlich zu
+benennen und muss folgende Referenzen nachweisen:
+
+- der Projektleiter muss mindestens 2 Bauvorhaben im
+Bereich Gleis- (Nahverkehr), Straßen und Haltestellenbau im innerstädtischen Raum betreut haben mit einem Auftragsvolumen von mindestens 1.000.000,00 EUR.</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:StrategicProcurement>
+                        <efbc:ApplicableLegalBasis listName="cvd-scope">false</efbc:ApplicableLegalBasis>
+                     </efac:StrategicProcurement>
+                  </efext:EformsExtension>
+               </ext:ExtensionContent>
+            </ext:UBLExtension>
+         </ext:UBLExtensions>
+         <cbc:VariantConstraintCode listName="permission">not-allowed</cbc:VariantConstraintCode>
+         <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+         <cbc:RequiredCurriculaCode listName="requirement-stage">not-requ</cbc:RequiredCurriculaCode>
+         <cbc:RecurringProcurementIndicator>false</cbc:RecurringProcurementIndicator>
+         <cbc:MultipleTendersCode listName="permission">not-allowed</cbc:MultipleTendersCode>
+         <cac:RequiredFinancialGuarantee>
+            <cbc:GuaranteeTypeCode listName="tender-guarantee-required">true</cbc:GuaranteeTypeCode>
+            <cbc:Description languageID="DEU">siehe Vergabeunterlagen</cbc:Description>
+         </cac:RequiredFinancialGuarantee>
+         <cac:CallForTendersDocumentReference>
+            <ext:UBLExtensions>
+               <ext:UBLExtension>
+                  <ext:ExtensionContent>
+                     <efext:EformsExtension>
+                        <efac:OfficialLanguages>
+                           <cac:Language>
+                              <cbc:ID>DEU</cbc:ID>
+                           </cac:Language>
+                        </efac:OfficialLanguages>
+                     </efext:EformsExtension>
+                  </ext:ExtensionContent>
+               </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:ID>TenderDoc</cbc:ID>
+            <cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+            <cac:Attachment>
+               <cac:ExternalReference>
+                  <cbc:URI>https://vergabekooperation.berlin/NetServer/TenderingProcedureDetails?function=_Details&amp;TenderOID=54321-Tender-19a7ca7687f-541d20499ea5a68d</cbc:URI>
+               </cac:ExternalReference>
+            </cac:Attachment>
+         </cac:CallForTendersDocumentReference>
+         <cac:PaymentTerms>
+            <cbc:Note languageID="DEU">siehe Vergabeunterlagen</cbc:Note>
+         </cac:PaymentTerms>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="selection-criteria-source">epo-notice</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cbc:CompanyLegalFormCode listName="required">true</cbc:CompanyLegalFormCode>
+            <cbc:CompanyLegalForm languageID="DEU">gesamtschuldnerisch haftend</cbc:CompanyLegalForm>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="missing-info-submission">late-all</cbc:TendererRequirementTypeCode>
+               <cbc:Description languageID="DEU">Der AG behält sich nach § 51 Abs. 2 SektVO unter Einhaltung der Grundsätze der Transparenz und der Gleichbehandlung vor, die Bewerber aufzufordern, fehlende, unvollständige oder fehlerhafte unternehmensbezogene Unterlagen oder sonstige Nachweise nachzureichen, zu vervollständigen oder zu korrigieren. Der Auftraggeber wird anschließend die vollständigen und fristgerecht eingegangenen Angebote inhaltlich prüfen. Die Nichterfüllung der Mindeststandards führt in jedem Fall zum Ausschluss.</cbc:Description>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="reserved-procurement">none</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="reserved-execution">no</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="conditions">performance</cbc:ExecutionRequirementCode>
+            <cbc:Description languageID="DEU">siehe Vergabeunterlagen</cbc:Description>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="einvoicing">allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="ecatalog-submission">not-allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:AwardingTerms>
+            <cac:AwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>100.00</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="DEU">Preis</cbc:Name>
+                  <cbc:Description languageID="DEU">Preis</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+            </cac:AwardingCriterion>
+         </cac:AwardingTerms>
+         <cac:AdditionalInformationParty>
+            <cac:PartyIdentification>
+               <cbc:ID schemeName="organization">ORG-7001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:AdditionalInformationParty>
+         <cac:TenderRecipientParty>
+            <cbc:EndpointID>https://vergabekooperation.berlin</cbc:EndpointID>
+         </cac:TenderRecipientParty>
+         <cac:AppealTerms>
+            <cac:PresentationPeriod>
+               <cbc:Description languageID="DEU">§ 160 GWB 
+(1) Die Vergabekammer leitet ein Nachprüfungsverfahren nur auf Antrag ein. 
+(2) Antragsbefugt ist jedes Unternehmen, das ein Interesse an dem öffentlichen Auftrag oder der Konzession hat und eine Verletzung in seinen Rechten nach § 97 Absatz 6 durch Nichtbeachtung von Vergabevorschriften geltend macht. Dabei ist darzulegen, dass dem Unternehmen durch die behauptete Verletzung der Vergabevorschriften ein Schaden entstanden ist oder zu entstehen droht.
+(3) Der Antrag ist unzulässig, soweit
+
+1. der Antragsteller den geltend gemachten Verstoß gegen Vergabevorschriften vor Einreichen des Nachprüfungsantrags erkannt und gegenüber dem Auftraggeber nicht innerhalb einer Frist von zehn Kalendertagen gerügt hat; der Ablauf der Frist nach § 134 Absatz 2 bleibt unberührt,
+2. Verstöße gegen Vergabevorschriften, die aufgrund der Bekanntmachung erkennbar sind, nicht spätestens bis zum Ablauf der in der Bekanntmachung benannten Frist zur Bewerbung oder zur Angebotsabgabe gegenüber dem Auftraggeber gerügt werden,
+3. Verstöße gegen Vergabevorschriften, die erst in den Vergabeunterlagen erkennbar sind, nicht spätestens bis zum Ablauf der Frist zur Bewerbung oder zur Angebotsabgabe gegenüber dem Auftraggeber gerügt werden,
+4. mehr als 15 Kalendertage nach Eingang der Mitteilung des Auftraggebers, einer Rüge nicht abhelfen zu wollen, vergangen sind.
+Satz 1 gilt nicht bei einem Antrag auf Feststellung der Unwirksamkeit des Vertrags nach § 135 Absatz 1 Nummer 2. § 134 Absatz 1 Satz 2 bleibt unberührt.</cbc:Description>
+            </cac:PresentationPeriod>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-7004</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+         </cac:AppealTerms>
+         <cac:Language>
+            <cbc:ID>DEU</cbc:ID>
+         </cac:Language>
+         <cac:PostAwardProcess>
+            <cbc:ElectronicOrderUsageIndicator>true</cbc:ElectronicOrderUsageIndicator>
+            <cbc:ElectronicPaymentUsageIndicator>true</cbc:ElectronicPaymentUsageIndicator>
+         </cac:PostAwardProcess>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <cbc:SubmissionMethodCode listName="esubmission">allowed</cbc:SubmissionMethodCode>
+         <cbc:CandidateReductionConstraintIndicator>false</cbc:CandidateReductionConstraintIndicator>
+         <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+         <cac:InvitationSubmissionPeriod>
+            <cbc:StartDate>2026-01-09+01:00</cbc:StartDate>
+         </cac:InvitationSubmissionPeriod>
+         <cac:ParticipationRequestReceptionPeriod>
+            <cbc:EndDate>2025-12-15+01:00</cbc:EndDate>
+            <cbc:EndTime>10:00:00+01:00</cbc:EndTime>
+         </cac:ParticipationRequestReceptionPeriod>
+         <cac:AuctionTerms>
+            <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+         </cac:AuctionTerms>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:ID>LOT-0000</cbc:ID>
+         <cbc:Name languageID="DEU">Allee der Kosmonauten - Rhinstraße Gleisbau</cbc:Name>
+         <cbc:Description languageID="DEU">Ausbau:
+• 600 m Rillenschienenrahmengleis
+• 250 m Schottergleis
+• 30 m NBS- Gleis
+• 1 St ZA als Rahmengleis
+• 1 St ZFA als Rahmengleis
+• 1 St ZA auf Holzschwellen
+• 1 St ZFA auf Holzschwellen
+• 1 St Vierfachkreuzung als Rahmengleis
+• 350 St Schwellen
+• 520 m³ Gleisschotter
+• 950 m³ Bodenaushub
+• 270 m³ Recycling-Tragschicht
+• 270 m Borde
+• 750 m² Gehwegplatten
+• 124 St Bahnsteigplatten
+• 470 m ² Mosaikpflaster
+• 2150 m² Fahrbahnkonstruktion Rahmengleis
+
+Einbau:
+• 550 m NBS A Ri 59 und 340 GHT (ca. 200m)
+• 25 m NBS So Ri 59
+• 305 m NBS So W 49
+• 215 m W 49 B 60/75, 300 Schwellen
+• 1 St ZFA 123/623-122/622 mit Kreuzungen
+• 1 St ZFA 181/681-182/682 mit Kreuzungen
+• 2 St ZA
+• 1 St Vierfachkreuzung
+• Ca. 950 to Gleisschotter
+• Ca. 410 to NBS Gleisschotter
+• 380 m Borde
+• 170m GBL 550
+• 250 m GBL 650
+• 124 St. Haltestellenplatten
+• 850 m² Gehwegplatten
+• 480 m ² Mosaikpflaster
+• 3250 m² Gussasphalt
+• 2600 m² Asphaltbinder Gleisbereich
+• 650 m² Asphaltbinder Fahrbahn
+• 2600 m² Asphalttragschicht Gleisbereich</cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">works</cbc:ProcurementTypeCode>
+         <cbc:Note languageID="DEU">Die BVG behält sich vor, in einer oder mehreren Runden Verhandlungsgespräche mit den Bietern durchzuführen. Die BVG behält sich ebenso vor, den Zuschlag auf der Grundlage der Erstangebote zu vergeben ohne in Verhandlung mit den Bietern zu treten. Weiterhin behält sich die BVG vor, nur mit den drei erstplatzierten Bietern zu verhandeln. Ein Anspruch auf Verhandlung besteht nicht.</cbc:Note>
+         <cbc:SMESuitableIndicator>false</cbc:SMESuitableIndicator>
+         <cac:ProcurementAdditionalType>
+            <cbc:ProcurementTypeCode listName="strategic-procurement">none</cbc:ProcurementTypeCode>
+         </cac:ProcurementAdditionalType>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">45234126</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">45234121</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">45234116</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">45234113</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">45234111</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:PlannedPeriod>
+            <cbc:StartDate>2026-06-28+02:00</cbc:StartDate>
+            <cbc:EndDate>2027-08-01+02:00</cbc:EndDate>
+         </cac:PlannedPeriod>
+         <cac:ContractExtension>
+            <cbc:MaximumNumberNumeric>0</cbc:MaximumNumberNumeric>
+         </cac:ContractExtension>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+</ContractNotice>

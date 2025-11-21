@@ -1,0 +1,1571 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+   <ext:UBLExtensions>
+      <ext:UBLExtension>
+         <ext:ExtensionContent>
+            <efext:EformsExtension>
+               <efac:NoticeSubType>
+                  <cbc:SubTypeCode listName="notice-subtype">16</cbc:SubTypeCode>
+               </efac:NoticeSubType>
+               <efac:Organizations>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://www.wum.edu.pl/</cbc:WebsiteURI>
+                        <cbc:EndpointID>https://wum.ezamawiajacy.pl</cbc:EndpointID>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Warszawski Uniwersytet Medyczny</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>Ul. Żwirki i Wigury 61</cbc:StreetName>
+                           <cbc:CityName>Warszawa</cbc:CityName>
+                           <cbc:PostalZone>02-091</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL911</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>5250005828</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Name>Biuro Zamówień Publicznych WUM</cbc:Name>
+                           <cbc:Telephone>225720399</cbc:Telephone>
+                           <cbc:ElectronicMail>aez@wum.edu.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://www.gov.pl/web/uzp/krajowa-izba-odwolawcza</cbc:WebsiteURI>
+                        <cbc:EndpointID>https://www.gov.pl/web/uzp/epuap</cbc:EndpointID>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Krajowa Izba Odwoławcza</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>ul. Postępu 17A</cbc:StreetName>
+                           <cbc:CityName>Warszawa</cbc:CityName>
+                           <cbc:PostalZone>02-676</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL911</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>5262239325</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Name>Sekretariat Biura Odwołań</cbc:Name>
+                           <cbc:Telephone>+48 224587801</cbc:Telephone>
+                           <cbc:ElectronicMail>odwolania@uzp.gov.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://op.europa.eu</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0000</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Publications Office of the European Union</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:CityName>Luxembourg</cbc:CityName>
+                           <cbc:PostalZone>2417</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">LU000</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">LUX</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>PUBL</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+352 29291</cbc:Telephone>
+                           <cbc:ElectronicMail>ted@publications.europa.eu</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+               </efac:Organizations>
+            <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00758859-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+         </ext:ExtensionContent>
+      </ext:UBLExtension>
+   </ext:UBLExtensions>
+   <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+   <cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+   <cbc:ID schemeName="notice-id">890daa14-e74e-4db3-b552-7745a9d95d5c</cbc:ID>
+   <cbc:ContractFolderID>4d4cdea8-c5d9-4e88-af8a-028157ae8281</cbc:ContractFolderID>
+   <cbc:IssueDate>2025-11-14Z</cbc:IssueDate>
+   <cbc:IssueTime>12:47:49Z</cbc:IssueTime>
+   <cbc:VersionID>01</cbc:VersionID>
+   <cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+   <cbc:NoticeTypeCode listName="competition">cn-standard</cbc:NoticeTypeCode>
+   <cbc:NoticeLanguageCode listName="language">POL</cbc:NoticeLanguageCode>
+   <cac:ContractingParty>
+      <cbc:BuyerProfileURI>https://wum.ezamawiajacy.pl</cbc:BuyerProfileURI>
+      <cac:ContractingPartyType>
+         <cbc:PartyTypeCode listName="buyer-legal-type">body-pl</cbc:PartyTypeCode>
+      </cac:ContractingPartyType>
+      <cac:ContractingActivity>
+         <cbc:ActivityTypeCode listName="authority-activity">education</cbc:ActivityTypeCode>
+      </cac:ContractingActivity>
+      <cac:Party>
+         <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+         </cac:PartyIdentification>
+         <cac:ServiceProviderParty>
+            <cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode>
+            <cac:Party>
+               <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0000</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:Party>
+         </cac:ServiceProviderParty>
+      </cac:Party>
+   </cac:ContractingParty>
+   <cac:TenderingTerms>
+      <cac:ProcurementLegislationDocumentReference>
+         <cbc:ID>art. 132 ustawy z dnia 11 września 2019 r. – Prawo zamówień publicznych (t.j. Dz.U. z 2024 r., poz. 1320)</cbc:ID>
+         <cbc:DocumentDescription languageID="POL">Postępowanie o udzielenie zamówienia publicznego prowadzone w trybie przetargu nieograniczonego, na podstawie art. 132 ustawy z dnia 11 września 2019 r. – Prawo zamówień publicznych (t.j. Dz.U. z 2024 r., poz. 1320)</cbc:DocumentDescription>
+      </cac:ProcurementLegislationDocumentReference>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-grounds-source">epo-notice</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-bre-lab-law</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="POL">Art. 108 ust. 1 pkt 1 lit. h i pkt 2 ustawy Prawo zamówień publicznych ( Dz.U.2024, poz.1320). Czy wykonawca, wedle własnej wiedzy, naruszył swoje obowiązki w dziedzinie prawa pracy? O których mowa, do celów niniejszego zamówienia, w prawie krajowym, w stosownym ogłoszeniu lub w dokumentach zamówienia bądź w art. 18 ust. 2 dyrektywy 2014/24/UE. Do oferty na Platformie należy załączyć oświadczenie, którego treść odpowiada zakresowi oświadczenia, o którym mowa w art. 125 ust. 1 ustawy, sporządzone w formie elektronicznej, składane na druku formularza jednolitego europejskiego dokumentu zamówienia. Zamawiający przed wyborem najkorzystniejszej oferty wezwie Wykonawcę, którego oferta została najwyżej oceniona, do złożenia w wyznaczonym terminie, nie krótszym niż 10 dni, aktualnego na dzień złożenia oświadczenia o aktualności informacji, informacji z Krajowego Rejestru Karnego sporządzonej nie wcześniej niż 6 miesięcy przed jej złożeniem. Jeżeli Wykonawca nie złoży dokumentów o których mowa powyżej lub będą one niekompletne lub będą zawierać błędy, Zamawiający wezwie Wykonawcę odpowiednio do ich złożenia, poprawienia lub uzupełnienia w wyznaczonym terminie, chyba że: 1) oferta wykonawcy podlega odrzuceniu bez względu na jej złożenie, uzupełnienie lub poprawienie lub 2) zachodzą przesłanki unieważnienia postępowania.</cbc:Description>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-distortion</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="POL">Art. 108 ust. 1 pkt 5 ustawy Prawo zamówień publicznych ( Dz.U.2024, poz. 1320). Czy wykonawca zawarł z innymi wykonawcami porozumienia mające na celu zakłócenie konkurencji? Do oferty na Platformie należy załączyć oświadczenie, którego treść odpowiada zakresowi oświadczenia, o którym mowa w art. 125 ust. 1 ustawy, sporządzone w formie elektronicznej, składane na druku formularza jednolitego europejskiego dokumentu zamówienia. Zamawiający przed wyborem najkorzystniejszej oferty wezwie Wykonawcę, którego oferta została najwyżej oceniona, do złożenia w wyznaczonym terminie, nie krótszym niż 10 dni, aktualnego na dzień złożenia oświadczenia o aktualności informacji oraz do oświadczenia dotyczącego grupy kapitałowej. Jeżeli Wykonawca nie złoży dokumentów o których mowa powyżej lub będą one niekompletne lub będą zawierać błędy, Zamawiający wezwie Wykonawcę odpowiednio do ich złożenia, poprawienia lub uzupełnienia w wyznaczonym terminie, chyba że: 1) oferta wykonawcy podlega odrzuceniu bez względu na jej złożenie, uzupełnienie lub poprawienie lub 2) zachodzą przesłanki unieważnienia postępowania.</cbc:Description>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-prep-confl</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="POL">Art. 108 ust. 1 pkt 6 ustawy Prawo zamówień publicznych ( Dz.U.2024, poz. 1320). Czy wykonawca lub przedsiębiorstwo związane z wykonawcą doradzał (-
+o) instytucji zamawiającej lub podmiotowi zamawiającemu bądź był(-o) w inny sposób zaangażowany(-e) w przygotowanie postępowania o udzielenie zamówienia? Do oferty na Platformie należy załączyć oświadczenie, którego treść odpowiada zakresowi oświadczenia, o którym mowa w art. 125 ust. 1 ustawy, sporządzone w formie elektronicznej, składane na druku formularza jednolitego europejskiego dokumentu zamówienia. Zamawiający przed wyborem najkorzystniejszej oferty wezwie Wykonawcę, którego oferta została najwyżej oceniona, do złożenia w wyznaczonym terminie, nie krótszym niż 10 dni, aktualnego na dzień
+złożenia oświadczenia o aktualności informacji. Jeżeli Wykonawca nie złoży dokumentów o których mowa powyżej lub będą one niekompletne lub będą zawierać błędy, Zamawiający wezwie Wykonawcę odpowiednio do ich złożenia, poprawienia lub uzupełnienia w wyznaczonym terminie, chyba że: 1) oferta wykonawcy podlega odrzuceniu bez względu na jej złożenie, uzupełnienie lub poprawienie lub 2) zachodzą przesłanki unieważnienia postępowania.</cbc:Description>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-part</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="POL">Art. 108 ust. 1 pkt 1 i 2 ustawy Prawo zamówień publicznych ( Dz.U.2024, poz. 1320). Czy w stosunku do samego wykonawcy bądź
+jakiejkolwiek osoby będącej członkiem organów administracyjnych, zarządzających lub nadzorczych wykonawcy, lub posiadającej w przedsiębiorstwie wykonawcy uprawnienia do reprezentowania, uprawnienia decyzyjne lub kontrolne, wydany został prawomocny wyrok za udział w organizacji przestępczej, orzeczeniem sprzed najwyżej pięciu lat lub w którym okres wykluczenia określony bezpośrednio w wyroku nadal obowiązuje? Zgodnie z definicją zawartą w art. 2 decyzji ramowej Rady 2008/841/WSiSW z dnia 24 października 2008 r. w sprawie zwalczania przestępczości zorganizowanej (Dz.U. L 300 z 11.11.2008, s. 42). Do oferty na
+Platformie należy załączyć oświadczenie, którego treść odpowiada zakresowi oświadczenia, o którym mowa w art. 125 ust. 1 ustawy, sporządzone w formie elektronicznej, składane na druku formularza jednolitego europejskiego dokumentu zamówienia. Zamawiający przed wyborem najkorzystniejszej oferty wezwie Wykonawcę, którego oferta została najwyżej oceniona, do złożenia w wyznaczonym terminie, nie krótszym niż 10 dni, aktualnego na dzień złożenia oświadczenia o aktualności informacji, informacji z Krajowego Rejestru Karnego sporządzonej nie wcześniej niż 6 miesięcy przed jej złożeniem. Jeżeli Wykonawca nie złoży dokumentów o których mowa powyżej lub będą one niekompletne lub będą zawierać błędy, Zamawiający wezwie Wykonawcę odpowiednio do ich złożenia, poprawienia lub uzupełnienia w wyznaczonym terminie, chyba że: 1) oferta wykonawcy podlega odrzuceniu bez względu na jej złożenie, uzupełnienie lub poprawienie lub 2) zachodzą przesłanki unieważnienia postępowania.</cbc:Description>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-corrpt</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="POL">Art. 108 ust. 1 pkt 1 i 2 ustawy Prawo zamówień publicznych ( Dz.U.2024, poz. 1320). Czy w stosunku do samego wykonawcy bądź jakiejkolwiek osoby będącej członkiem organów administracyjnych, zarządzających lub nadzorczych wykonawcy, lub posiadającej w przedsiębiorstwie wykonawcy uprawnienia do reprezentowania, uprawnienia decyzyjne lub kontrolne, wydany został prawomocny wyrok za korupcję, orzeczeniem sprzed najwyżej pięciu lat lub w którym okres wykluczenia określony bezpośrednio w wyroku nadal obowiązuje? Zgodnie z definicją zawartą w art. 3 Konwencji w sprawie zwalczania korupcji urzędników Wspólnot Europejskich i urzędników państw członkowskich Unii Europejskiej (Dz.U. C 195 z 25.6.1997, s. 1) i w art. 2 ust. 1 decyzji ramowej Rady 2003/568/WSiSW z dnia 22 lipca 2003 r. w sprawie zwalczania korupcji w sektorze prywatnym (Dz.U. L 192 z 31.7.2003, s. 54). Ta podstawa wykluczenia obejmuje również korupcję zdefiniowaną w prawie krajowym instytucji zamawiającej (podmiotu zamawiającego) lub wykonawcy. Do oferty na Platformie należy załączyć oświadczenie, którego treść odpowiada zakresowi oświadczenia, o którym mowa w art. 125 ust. 1 ustawy, sporządzone w formie elektronicznej, składane na druku formularza jednolitego europejskiego dokumentu zamówienia. Zamawiający przed wyborem najkorzystniejszej oferty wezwie Wykonawcę, którego oferta została najwyżej oceniona, do złożenia w wyznaczonym terminie, nie krótszym niż 10 dni, aktualnego na dzień złożenia oświadczenia o aktualności informacji, informacji z Krajowego Rejestru Karnego sporządzonej nie wcześniej niż 6 miesięcy przed jej złożeniem. Jeżeli Wykonawca nie złoży dokumentów o których mowa powyżej lub będą one niekompletne lub będą zawierać błędy, Zamawiający wezwie Wykonawcę odpowiednio do ich złożenia, poprawienia lub uzupełnienia w wyznaczonym terminie, chyba że: 1) oferta wykonawcy podlega odrzuceniu bez względu na jej złożenie, uzupełnienie lub poprawienie lub 2) zachodzą przesłanki unieważnienia postępowania.</cbc:Description>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-fraud</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="POL">Art. 108 ust. 1 pkt 1 i 2 ustawy Prawo zamówień publicznych ( Dz.U.2024, poz.1320.). Czy w stosunku do samego wykonawcy bądź jakiejkolwiek osoby będącej członkiem organów administracyjnych, zarządzających lub nadzorczych wykonawcy, lub posiadającej w przedsiębiorstwie wykonawcy uprawnienia do reprezentowania, uprawnienia decyzyjne lub kontrolne, wydany został prawomocny wyrok za nadużycie finansowe, orzeczeniem sprzed najwyżej pięciu lat lub w którym okres wykluczenia określony bezpośrednio w wyroku nadal obowiązuje? W rozumieniu art. 1 Konwencji w sprawie ochrony interesów finansowych Wspólnot Europejskich (Dz.U. C 316 z 27.11.1995, s. 48). Do oferty na Platformie należy załączyć oświadczenie, którego treść odpowiada zakresowi oświadczenia, o którym mowa w art. 125 ust. 1 ustawy, sporządzone w formie elektronicznej, składane na druku formularza jednolitego europejskiego dokumentu zamówienia. Zamawiający przed wyborem najkorzystniejszej oferty wezwie Wykonawcę, którego oferta została najwyżej oceniona, do złożenia w wyznaczonym terminie, nie krótszym niż 10 dni, aktualnego na dzień złożenia oświadczenia o aktualności informacji, informacji z Krajowego Rejestru Karnego sporządzonej nie wcześniej niż 6 miesięcy przed jej złożeniem. Jeżeli Wykonawca nie złoży dokumentów o których mowa powyżej lub będą one niekompletne lub będą zawierać błędy, Zamawiający wezwie Wykonawcę odpowiednio do ich złożenia, poprawienia lub uzupełnienia w wyznaczonym terminie, chyba że: 1) oferta wykonawcy podlega odrzuceniu bez względu na jej złożenie, uzupełnienie lub poprawienie lub 2) zachodzą przesłanki unieważnienia postępowania.</cbc:Description>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-terror</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="POL">Art. 108 ust. 1 pkt 1 i 2 ustawy Prawo zamówień publicznych ( Dz.U.2024, poz. 1320). Czy w stosunku do samego wykonawcy bądź jakiejkolwiek osoby będącej członkiem organów administracyjnych, zarządzających lub nadzorczych wykonawcy, lub posiadającej w przedsiębiorstwie wykonawcy uprawnienia do reprezentowania, uprawnienia decyzyjne lub kontrolne, wydany został prawomocny wyrok za przestępstwa terrorystyczne lub przestępstwa związane z działalnością terrorystyczną, orzeczeniem sprzed najwyżej pięciu lat lub w którym okres wykluczenia określony bezpośrednio w wyroku nadal obowiązuje? Zgodnie z definicją zawartą w art. 1 i 3 decyzji ramowej Rady z dnia 13 czerwca 2002 r. w sprawie zwalczania terroryzmu (Dz.U. L 164 z 22.6.2002, s. 3). Ta podstawa wykluczenia obejmuje również podżeganie do popełnienia przestępstwa, pomocnictwo, współsprawstwo lub usiłowanie popełnienia przestępstwa, o których to czynach mowa w art. 4 tejże decyzji ramowej. Do oferty na Platformie należy załączyć oświadczenie, którego treść odpowiada zakresowi oświadczenia, o którym mowa w art. 125 ust. 1 ustawy, sporządzone w formie elektronicznej, składane na druku formularza jednolitego europejskiego dokumentu zamówienia. Zamawiający przed wyborem najkorzystniejszej oferty wezwie Wykonawcę, którego oferta została najwyżej oceniona, do złożenia w wyznaczonym terminie, nie krótszym niż 10 dni, aktualnego na dzień złożenia oświadczenia o aktualności informacji, informacji z Krajowego Rejestru Karnego sporządzonej nie wcześniej niż 6 miesięcy przed jej złożeniem. Jeżeli Wykonawca nie złoży dokumentów o których mowa powyżej lub będą one niekompletne lub będą zawierać błędy, Zamawiający wezwie Wykonawcę odpowiednio do ich złożenia, poprawienia lub uzupełnienia w wyznaczonym terminie, chyba że: 1) oferta wykonawcy podlega odrzuceniu bez względu na jej złożenie, uzupełnienie lub poprawienie lub 2)zachodzą przesłanki unieważnienia postępowania.</cbc:Description>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-laund</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="POL">Art. 108 ust. 1 pkt 1 i 2 ustawy Prawo zamówień publicznych ( Dz.U.2024, poz.1320). Czy w stosunku do samego wykonawcy bądź jakiejkolwiek osoby będącej członkiem organów administracyjnych, zarządzających lub nadzorczych wykonawcy, lub posiadającej w przedsiębiorstwie wykonawcy uprawnienia do reprezentowania, uprawnienia decyzyjne lub kontrolne, wydany został prawomocny wyrok za pranie pieniędzy lub finansowanie terroryzmu, orzeczeniem sprzed najwyżej pięciu lat lub w którym okres wykluczenia określony bezpośrednio w wyroku nadal obowiązuje? Zgodnie z definicją zawartą w art. 1 dyrektywy 2005/60/WE Parlamentu Europejskiego i Rady z dnia 26 października 2005 r. w sprawie przeciwdziałania korzystaniu z systemu finansowego w celu prania pieniędzy oraz finansowania terroryzmu (Dz.U. L 309 z 25.11.2005, s. 15). Do oferty na Platformie należy załączyć oświadczenie, którego treść odpowiada zakresowi oświadczenia, o którym mowa w art. 125 ust. 1 ustawy, sporządzone w formie elektronicznej, składane na druku formularza jednolitego europejskiego dokumentu zamówienia. Zamawiający przed wyborem najkorzystniejszej oferty wezwie Wykonawcę, którego oferta została najwyżej oceniona, do złożenia w wyznaczonym terminie, nie krótszym niż 10 dni, aktualnego na dzień złożenia oświadczenia o aktualności informacji, informacji z Krajowego Rejestru Karnego sporządzonej nie wcześniej niż 6 miesięcy przed jej złożeniem. Jeżeli Wykonawca nie złoży dokumentów o których mowa powyżej lub będą one niekompletne lub będą zawierać błędy, Zamawiający wezwie Wykonawcę odpowiednio do ich złożenia, poprawienia lub uzupełnienia w wyznaczonym terminie, chyba że: 1) oferta wykonawcy podlega odrzuceniu bez względu na jej złożenie, uzupełnienie lub poprawienie lub 2) zachodzą przesłanki unieważnienia postępowania</cbc:Description>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-crim-traffick</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="POL">Art. 108 ust. 1 pkt 1 i 2 ustawy Prawo zamówień publicznych ( Dz.U.2024, poz.1320). Czy w stosunku do samego wykonawcy bądź jakiejkolwiek osoby będącej członkiem organów administracyjnych, zarządzających lub nadzorczych wykonawcy, lub posiadającej w przedsiębiorstwie wykonawcy uprawnienia do reprezentowania, uprawnienia decyzyjne lub kontrolne, wydany został prawomocny wyrok za pracę dzieci i inne formy handlu ludźmi, orzeczeniem sprzed najwyżej pięciu lat lub w którym okres wykluczenia określony bezpośrednio w wyroku nadal obowiązuje? Zgodnie z definicją zawartą w art. 2 dyrektywy Parlamentu Europejskiego i Rady 2011/36/UE z dnia 5 kwietnia 2011 r. w sprawie zapobiegania handlowi ludźmi i zwalczania tego procederu oraz ochrony
+ofiar, zastępującej decyzję ramową Rady 2002/629/WSiSW (Dz.U. L 101 z 15.4.2011, s. 1). Do oferty na Platformie należy załączyć oświadczenie, którego treść odpowiada zakresowi oświadczenia, o którym mowa w art. 125 ust. 1 ustawy, sporządzone w formie elektronicznej, składane na druku formularza jednolitego europejskiego dokumentu zamówienia. Zamawiający przed wyborem najkorzystniejszej oferty wezwie Wykonawcę, którego oferta została najwyżej oceniona, do złożenia w wyznaczonym terminie, nie krótszym niż 10 dni, aktualnego na dzień złożenia oświadczenia o aktualności informacji, informacji z Krajowego Rejestru Karnego sporządzonej nie wcześniej niż 6 miesięcy przed jej złożeniem. Jeżeli Wykonawca nie złoży dokumentów o których mowa powyżej lub będą one niekompletne lub będą zawierać błędy, Zamawiający wezwie Wykonawcę odpowiednio do ich złożenia, poprawienia lub uzupełnienia w wyznaczonym terminie, chyba że: 1) oferta wykonawcy podlega odrzuceniu bez względu na jej złożenie, uzupełnienie lub poprawienie lub 2) zachodzą przesłanki unieważnienia postępowania.</cbc:Description>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-pmt-bre-ssc</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="POL">Art. 108 ust. 1 pkt 3 ustawy Prawo zamówień publicznych ( Dz.U.2024, poz.1320). Czy wykonawca dopuścił się naruszenia swoich obowiązków dotyczących płatności składek na ubezpieczenie społeczne, zarówno w państwie, w którym ma siedzibę, jak i w państwie członkowskim instytucji zamawiającej lub podmiotu zamawiającego, jeżeli jest ono inne niż państwo siedziby? Do oferty na Platformie należy załączyć oświadczenie, którego treść odpowiada zakresowi oświadczenia, o którym mowa w art. 125 ust. 1 ustawy, sporządzone w formie elektronicznej, składane na druku formularza jednolitego europejskiego dokumentu zamówienia. Zamawiający przed wyborem najkorzystniejszej oferty wezwie Wykonawcę, którego oferta została najwyżej oceniona, do złożenia w wyznaczonym terminie, nie krótszym niż 10 dni, aktualnego na dzień złożenia oświadczenia o aktualności informacji. Jeżeli Wykonawca nie złoży dokumentów o których mowa powyżej lub będą one niekompletne lub będą zawierać błędy, Zamawiający wezwie Wykonawcę odpowiednio do ich złożenia, poprawienia lub uzupełnienia w wyznaczonym terminie, chyba że: 1) oferta wykonawcy podlega odrzuceniu bez względu na jej złożenie, uzupełnienie lub poprawienie lub 2) zachodzą przesłanki unieważnienia postępowania.</cbc:Description>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-pmt-bre-tax</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="POL">Art. 108 ust. 1 pkt 3 ustawy Prawo zamówień publicznych ( Dz.U.2024, poz. 1320). Czy wykonawca dopuścił się naruszenia swoich obowiązków dotyczących płatności podatków, zarówno w państwie, w którym ma siedzibę, jak i w państwie członkowskim instytucji zamawiającej lub podmiotu zamawiającego, jeżeli jest ono inne niż państwo siedziby? Do oferty na Platformie należy załączyć oświadczenie, którego treść odpowiada zakresowi oświadczenia, o którym mowa w art. 125 ust. 1 ustawy, sporządzone w formie elektronicznej, składane na druku formularza jednolitego europejskiego dokumentu zamówienia. Zamawiający przed wyborem najkorzystniejszej oferty wezwie Wykonawcę, którego oferta została najwyżej oceniona, do złożenia w wyznaczonym terminie, nie krótszym niż 10 dni, aktualnego na dzień złożenia oświadczenia o aktualności informacji. Jeżeli Wykonawca nie złoży dokumentów o których mowa powyżej lub będą one niekompletne lub będą zawierać błędy, Zamawiający wezwie Wykonawcę odpowiednio do ich złożenia, poprawienia lub uzupełnienia w wyznaczonym terminie, chyba że: 1) oferta wykonawcy podlega odrzuceniu bez względu na jej złożenie, uzupełnienie lub poprawienie lub 2) zachodzą przesłanki unieważnienia postępowania.</cbc:Description>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-natl</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="POL">Art. 108 ust. 1 pkt 1 i 4 ustawy Prawo zamówień publicznych ( Dz.U.2024, poz.1320.). Czy mają zastosowanie podstawy wykluczenia o charakterze wyłącznie krajowym określone w stosownym ogłoszeniu lub w dokumentach zamówienia? o oferty na Platformie należy załączyć oświadczenie, którego treść odpowiada zakresowi oświadczenia, o którym mowa w art. 125 ust. 1 ustawy, sporządzone w formie elektronicznej, składane na druku formularza jednolitego europejskiego dokumentu
+zamówienia. Z postępowania o udzielenie zamówienia Zamawiający wykluczy Wykonawców, wobec których zachodzą podstawy wykluczenia, o których mowa w art. 7 ust. 1 ustawy z dnia 13 kwietnia 2022 r. o szczególnych rozwiązaniach w zakresie przeciwdziałania wspieraniu agresji na Ukrainę oraz służących ochronie bezpieczeństwa narodowego (t.j. Dz.U.2024 poz. 507). Dokumentem tymczasowo zastępującym podmiotowe środki dowodowe, potwierdzającym brak podstaw wykluczenia z postepowania na dzień składania ofert, jest: oświadczenie potwierdzające brak podstaw wykluczenia z postępowania na podstawie okoliczności określonych w 5k rozporządzenia Rady (UE) 833/2014 z dnia 31 lipca 2014 r. dotyczącego środków ograniczających w związku z działaniami Rosji destabilizującymi sytuację na Ukrainie (Dz.Urz.UE.L Nr 229, str. 1 ze zm.). Oświadczenia należy złożyć wraz z ofertą. Zamawiający przed wyborem najkorzystniejszej oferty wezwie Wykonawcę, którego oferta została najwyżej oceniona, do złożenia w wyznaczonym terminie, nie krótszym niż 10 dni, aktualnego na dzień złożenia oświadczenia o aktualności informacji, informacji z Krajowego Rejestru Karnego sporządzonej nie wcześniej niż 6 miesięcy przed jej złożeniem. Jeżeli Wykonawca nie złoży dokumentów o których mowa powyżej lub będą one niekompletne lub będą zawierać błędy, Zamawiający wezwie Wykonawcę odpowiednio do ich złożenia, poprawienia lub uzupełnienia w wyznaczonym terminie, chyba że: 1) oferta wykonawcy podlega odrzuceniu bez względu na jej złożenie, uzupełnienie lub poprawienie lub 2) zachodzą przesłanki unieważnienia postępowania.</cbc:Description>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:LotDistribution>
+         <cbc:MaximumLotsAwardedNumeric>6</cbc:MaximumLotsAwardedNumeric>
+         <cbc:MaximumLotsSubmittedNumeric>6</cbc:MaximumLotsSubmittedNumeric>
+      </cac:LotDistribution>
+   </cac:TenderingTerms>
+   <cac:TenderingProcess>
+      <cbc:Description languageID="POL">1. W prowadzonym postępowaniu, w oparciu o art. 139 ust. 1 ustawy, Zamawiający najpierw dokona badania i oceny ofert, a następnie dokona kwalifikacji podmiotowej Wykonawcy, którego oferta została najwyżej oceniona, w zakresie braku podstaw wykluczenia oraz spełniania warunków udziału w postępowaniu. 
+2. Postępowanie prowadzone jest w języku polskim. 
+3. Wykonawca powinien zapoznać się ze Specyfikacją warunków zamówienia. 
+4. Informacja o sposobie złożenia oferty i komunikacja Zamawiającego z Wykonawcami za pośrednictwem platformy eZamawiający, dostępną pod adresem: https://wum.ezamawiajacy.pl lub https://oneplace.marketplanet.pl, określa Rozdział XVII SWZ. 
+5. Szczegółowe informacje dotyczące obsługi Platformy „e-zamawiający”, znajdują się na platformie „e-zamawiający” (https://wum.ezamawiajacy.pl), w zakładce „Baza Wiedzy”. 
+6. O udzielenie zamówienia mogą ubiegać się Wykonawcy, którzy nie podlegają wykluczeniu z postępowania, 1) na podstawie art. 108 ust. 1 ustawy Pzp 2) wobec których zachodzą podstawy wykluczenia, o których mowa w art. 7 ust. 1 ustawy z dnia 13 kwietnia 2022 r. o szczególnych rozwiązaniach w zakresie przeciwdziałania wspieraniu agresji na Ukrainę oraz służących ochronie bezpieczeństwa narodowego (Dz.U. 2025 poz. 514 t.j.) oraz w art. 5k rozporządzenia Rady (UE) 833/2014 z dnia 31 lipca 2014 r. dotyczącego środków ograniczających w związku z działaniami Rosji destabilizującymi sytuację na Ukrainie (Dz.Urz.UE.L Nr 229, str. 1 ze zm.). 
+7. Wymagania dotyczące wadium - Zamawiający nie wymaga wniesienia wadium. 
+8. Administratorem danych osobowych jest WARSZAWSKI UNIWERSYTET MEDYCZNY, ul. Żwirki i Wigury 61, 02-091 Warszawa reprezentowany przez Rektora WUM. Pełna informacja dotycząca przetwarzania danych osobowych została zawarta w rozdziale XXVII SWZ. 
+9.Termin związania ofertą do dnia 21.03.2026 r.</cbc:Description>
+      <cbc:ProcedureCode listName="procurement-procedure-type">open</cbc:ProcedureCode>
+      <cac:ProcessJustification>
+         <cbc:ProcessReasonCode listName="accelerated-procedure">false</cbc:ProcessReasonCode>
+      </cac:ProcessJustification>
+   </cac:TenderingProcess>
+   <cac:ProcurementProject>
+      <cbc:ID schemeName="InternalID">AEZ/S-219/2025</cbc:ID>
+      <cbc:Name languageID="POL">Dostawa urządzeń ogólnolaboratoryjnych w podziale na pakiety</cbc:Name>
+      <cbc:Description languageID="POL">Przedmiotem niniejszego zamówienia jest dostawa urządzeń ogólnolaboratoryjnych w podziale na części zamówienia, zwane Pakietami.</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">supplies</cbc:ProcurementTypeCode>
+      <cac:MainCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">38000000</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:RealizedLocation>
+         <cac:Address>
+            <cbc:CityName>Warszawa</cbc:CityName>
+            <cbc:CountrySubentityCode listName="nuts">PL911</cbc:CountrySubentityCode>
+            <cac:Country>
+               <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+            </cac:Country>
+         </cac:Address>
+      </cac:RealizedLocation>
+   </cac:ProcurementProject>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+      <cac:TenderingTerms>
+         <ext:UBLExtensions>
+            <ext:UBLExtension>
+               <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                     <efac:Funding>
+                        <efbc:FinancingIdentifier>Instrument na rzecz odbudowy i Zwiększenia Odporności (RRF)</efbc:FinancingIdentifier>
+                        <cbc:Description languageID="POL">Zamówienie realizowane jest w ramach przedsięwzięcia „Zastosowanie śliny w celu predykcji skuteczności leczenia biologicznego i pogorszenia stanu jamy ustnej u pacjentów pediatrycznych z nieswoistym zapaleniem jelit i stwardnieniem rozsianym (akronim SalivaPred)”, sfinansowanego z Krajowego Planu Odbudowy i Zwiększania Odporności Komponent D „Efektywność, dostępność i jakość systemu ochrony zdrowia”, Inwestycja D3.1.1 Kompleksowy rozwój badań w zakresie nauk medycznych i nauk o zdrowiu, na podstawie umowy o dofinansowanie nr: 2024/ABM/03/KPO/KPOD.07.07-IW.07-0192/24-00 z dnia 09.05.2025 r.</cbc:Description>
+                     </efac:Funding>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-other</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="POL">Zamawiający nie stawia warunków udziału w  tym postępowaniu.</cbc:Description>
+                     </efac:SelectionCriteria>
+                  </efext:EformsExtension>
+               </ext:ExtensionContent>
+            </ext:UBLExtension>
+         </ext:UBLExtensions>
+         <cbc:FundingProgramCode listName="eu-funded">eu-funds</cbc:FundingProgramCode>
+         <cac:CallForTendersDocumentReference>
+            <ext:UBLExtensions>
+               <ext:UBLExtension>
+                  <ext:ExtensionContent>
+                     <efext:EformsExtension>
+                        <efac:OfficialLanguages>
+                           <cac:Language>
+                              <cbc:ID>POL</cbc:ID>
+                           </cac:Language>
+                        </efac:OfficialLanguages>
+                     </efext:EformsExtension>
+                  </ext:ExtensionContent>
+               </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:ID>Na potwierdzenie braku podstaw wykluczenia, o których mowa w Rozdziale VIII SWZ, Wykonawca zobowiązany jest złożyć dokumenty, zgodnie z Rozdziałem X SWZ.</cbc:ID>
+            <cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+            <cac:Attachment>
+               <cac:ExternalReference>
+                  <cbc:URI>https://wum.ezamawiajacy.pl/pn/wum/demand/245948/notice/public/details</cbc:URI>
+               </cac:ExternalReference>
+            </cac:Attachment>
+         </cac:CallForTendersDocumentReference>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="selection-criteria-source">epo-notice</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="reserved-procurement">none</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="reserved-execution">no</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="conditions">performance</cbc:ExecutionRequirementCode>
+            <cbc:Description languageID="POL">1. Zamawiający wymaga zawarcia umowy w sprawie zamówienia publicznego na warunkach określonych w Projekcie umowy, stanowiącym Załącznik nr 6 do SWZ. 2. Przyjmuje się, że zapisy do Projektu umowy nie zakwestionowane przed złożeniem oferty zostaną przyjęte przez Wykonawcę bez zastrzeżeń w chwili jej podpisania. Wszelkie pytania i wątpliwości dotyczące Projektu umowy, będą rozpatrywane jak dla całej SWZ. 3. Mając na uwadze postanowienia art. 455 ust. 1 pkt 1 ustawy, Zamawiający dopuszcza możliwość zmiany umowy w zakresie określonym w § 10 Projektu umowy.</cbc:Description>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="einvoicing">allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="ecatalog-submission">allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="esignature-submission">true</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:AwardingTerms>
+            <cac:AwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>90</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="POL">Cena</cbc:Name>
+                  <cbc:Description languageID="POL">Kryterium Cena - Zamawiający każdej ofercie ocenianej, przyzna liczbę punktów obliczoną wg sposobu i wzoru opisanego w Rozdziale XII SWZ.</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>10</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="POL">Kryterium jakości - Gwarancja</cbc:Name>
+                  <cbc:Description languageID="POL">Zamawiający każdej ofercie ocenianej, przyzna liczbę punktów obliczoną wg sposobu opisanego w Rozdziale XII SWZ.</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+            </cac:AwardingCriterion>
+         </cac:AwardingTerms>
+         <cac:TenderRecipientParty>
+            <cbc:EndpointID>https://wum.ezamawiajacy.pl/pn/wum/demand/245948/notice/public/details</cbc:EndpointID>
+         </cac:TenderRecipientParty>
+         <cac:TenderValidityPeriod>
+            <cbc:DurationMeasure unitCode="DAY">90</cbc:DurationMeasure>
+         </cac:TenderValidityPeriod>
+         <cac:AppealTerms>
+            <cac:PresentationPeriod>
+               <cbc:Description languageID="POL">Odwołanie wnosi się do Prezesa Izby w formie pisemnej w postaci papierowej albo w postaci elektronicznej, opatrzone odpowiednio własnoręcznym
+podpisem albo kwalifikowanym podpisem elektronicznym, w terminie 10 dni od dnia przekazania informacji o czynności zamawiającego stanowiącej podstawę jego wniesienia, jeżeli informacja została przekazana przy użyciu środków komunikacji elektronicznej, albo 15 dni, jeżeli informacja została przekazana w sposób inny niż określony powyżej. 2. Odwołanie wobec treści ogłoszenia wszczynającego postępowanie o udzielenie zamówienia lub konkurs lub wobec treści dokumentów zamówienia wnosi się w terminie 10 dni od dnia zamieszczenia ogłoszenia w Dzienniku Urzędowym Unii Europejskiej lub dokumentów zamówienia na stronie
+internetowej. 3. Odwołanie wobec czynności innych niż określone w ust. 1 i 2 wnosi się w terminie 10 dni od dnia, w którym powzięto lub przy zachowaniu należytej staranności można było powziąć wiadomość o okolicznościach stanowiących podstawę jego wniesienia. 4. Jeżeli Zamawiający, mimo takiego obowiązku, nie przesłał Wykonawcy zawiadomienia o wyborze oferty najkorzystniejszej odwołanie wnosi się nie później niż w terminie: a) 30 dni od dnia publikacji w Dzienniku Urzędowym Unii Europejskiej ogłoszenia o udzieleniu zamówienia; b) 6 miesięcy od dnia zawarcia umowy, jeżeli Zamawiający nie opublikował w Dzienniku Urzędowym Unii Europejskiej ogłoszenia o udzieleniu zamówienia 5. Szczegółowy opis środków ochrony prawnej przysługujących Wykonawcom zawiera Dział IX ustawy.</cbc:Description>
+            </cac:PresentationPeriod>
+            <cac:AppealInformationParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealInformationParty>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+         </cac:AppealTerms>
+         <cac:Language>
+            <cbc:ID>POL</cbc:ID>
+         </cac:Language>
+         <cac:PostAwardProcess>
+            <cbc:ElectronicOrderUsageIndicator>true</cbc:ElectronicOrderUsageIndicator>
+            <cbc:ElectronicPaymentUsageIndicator>true</cbc:ElectronicPaymentUsageIndicator>
+         </cac:PostAwardProcess>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <cbc:SubmissionMethodCode listName="esubmission">required</cbc:SubmissionMethodCode>
+         <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+         <cac:TenderSubmissionDeadlinePeriod>
+            <cbc:EndDate>2025-12-22+01:00</cbc:EndDate>
+            <cbc:EndTime>11:00:00+01:00</cbc:EndTime>
+         </cac:TenderSubmissionDeadlinePeriod>
+         <cac:OpenTenderEvent>
+            <cbc:OccurrenceDate>2025-12-22+01:00</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>11:30:00+01:00</cbc:OccurrenceTime>
+            <cbc:Description languageID="POL">Otwarcie ofert jest niepubliczne.</cbc:Description>
+         </cac:OpenTenderEvent>
+         <cac:AuctionTerms>
+            <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+         </cac:AuctionTerms>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:Name languageID="POL">Pakiet 1: Dostawa łaźni suchej z kulkami termicznymi</cbc:Name>
+         <cbc:Description languageID="POL">Dostawa łaźni suchej z kulkami termicznymi. Szczegółowy opis przedmiotu zamówienia, z wyszczególnieniem co do rodzaju i liczby urządzeń, został określony w Formularzu wymaganych warunków technicznych, który stanowi Załączniki nr 2.1 do SWZ.</cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">supplies</cbc:ProcurementTypeCode>
+         <cbc:EstimatedOverallContractQuantity unitCode="H87">1</cbc:EstimatedOverallContractQuantity>
+         <cbc:Note languageID="POL">WPŁYW ŚRODOWISKOWY ZAMÓWIENIA:
+1) ADAPTACJA DO ZMIAN KLIMATU
+a) Zamawiający określił poniższe wymagania środowiskowe, w opisie przedmiotu zamówienia, zgodnie z art. 101 ustawy Pzp: 
+- Moc – Nie więcej niż 500W
+- Deklaracja zgodności w rozumieniu ustawy z dnia 13 kwietnia 2016 r. o systemach oceny zgodności i nadzoru rynku (t.j. Dz. U. z 2025 r., poz. 568)
+lub
+deklarację zgodności UE, o której mowa w Rozporządzeniu Parlamentu Europejskiego i Rady (UE) 2017/745 z dnia 5 kwietnia 2017 r. w sprawie wyrobów medycznych, zmiany dyrektywy 2001/83/WE, rozporządzenia (WE) nr 178/2002 i rozporządzenia (WE) nr 1223/2009 oraz uchylenia dyrektyw Rady 90/385/EWG i 93/42/EWG
+lub
+deklarację zgodności UE , o której mowa w Rozporządzeniu Parlamentu Europejskiego i Rady (UE) 2017/746 z dnia 5 kwietnia 2017 r. w sprawie wyrobów medycznych do diagnostyki in vitro oraz uchylenia dyrektywy 98/79/WE i decyzji Komisji 2010/227/UE
+b) Zamawiający określił poniższe wymagania związane z z realizacją zamówienia obejmujących aspekty środowiskowe, w Projekcie umowy, § 3. Warunki realizacji umowy, ust 2, zgodnie z art. 96 ust. 1 ustawy Pzp: 
+"Wykonawca zobowiązany jest do realizacji przedmiotu Umowy zgodnie z zasadą DNSH („do no significant harm”, czyli „nie czyń poważnych szkód”), wpisanej do rozporządzenia Parlamentu Europejskiego i Rady (UE) 2020/852 z dnia 18 czerwca 2020 r. w sprawie ustanowienia ram ułatwiających zrównoważone inwestycje tzw. taksonomia, co najmniej w zakresie określonym w ”Formularzu wymaganych warunków technicznych" 
+2) PRZEJŚCIE NA GOSPODARKĘ O OBIEGU ZAMKNIĘTYM 
+a) Zamawiający określił poniższe wymagania środowiskowe, w opisie przedmiotu zamówienia, zgodnie z art. 101 ustawy Pzp: 
+- Recykling min. 70% ponownego użycia
+- Deklaracja zgodności w rozumieniu ustawy z dnia 13 kwietnia 2016 r. o systemach oceny zgodności i nadzoru rynku (t.j. Dz. U. z 2025 r., poz. 568)
+lub
+deklarację zgodności UE, o której mowa w Rozporządzeniu Parlamentu Europejskiego i Rady (UE) 2017/745 z dnia 5 kwietnia 2017 r. w sprawie wyrobów medycznych, zmiany dyrektywy 2001/83/WE, rozporządzenia (WE) nr 178/2002 i rozporządzenia (WE) nr 1223/2009 oraz uchylenia dyrektyw Rady 90/385/EWG i 93/42/EWG
+lub
+deklarację zgodności UE , o której mowa w Rozporządzeniu Parlamentu Europejskiego i Rady (UE) 2017/746 z dnia 5 kwietnia 2017 r. w sprawie wyrobów medycznych do diagnostyki in vitro oraz uchylenia dyrektywy 98/79/WE i decyzji Komisji 2010/227/UE
+b) Zamawiający określił poniższe wymagania związane z realizacją zamówienia obejmujących aspekty środowiskowe, w Projekcie umowy, § 3. Warunki realizacji umowy, ust 2, zgodnie z art. 96 ust. 1 ustawy Pzp: 
+"Wykonawca zobowiązany jest do realizacji przedmiotu Umowy zgodnie z zasadą DNSH („do no significant harm”, czyli „nie czyń poważnych szkód”), wpisanej do rozporządzenia Parlamentu Europejskiego i Rady (UE) 2020/852 z dnia 18 czerwca 2020 r. w sprawie ustanowienia ram ułatwiających zrównoważone inwestycje tzw. taksonomia, co najmniej w zakresie określonym w ”Formularzu wymaganych warunków technicznych" 
+3) ZAPOBIEGANIE ZANIECZYSZCZENIU I JEGO KONTROLA 
+a) Zamawiający określił poniższe wymagania środowiskowe, w opisie przedmiotu zamówienia, zgodnie z art. 101 ustawy Pzp: 
+- Oferowany produkt nie zawiera substancji niebezpiecznych, takich jak kadm, rtęć, ołów oraz sześciowartościowy chrom, w ilościach przekraczających dopuszczalne limity określone w Dyrektywie 2011/65/UE (RoHS), tj. 0,01% wagowo dla kadmu oraz 0,1% wagowo dla rtęci, ołowiu i sześciowartościowego chromu, w odniesieniu do każdego materiału jednorodnego, z którego składa się produkt. Oferowane urządzenie zostało zaprojektowane i wykonane w sposób uniemożliwiający stosowanie tych substancji w innych formach niż dopuszczone prawem, przy jednoczesnym zachowaniu zgodności z wymaganiami środowiskowymi, w tym zasadą DNSH. Dopuszczalne wyjątki, o ile mają zastosowanie, wynikają z załącznika III do Dyrektywy
+- Deklaracja zgodności w rozumieniu ustawy z dnia 13 kwietnia 2016 r. o systemach oceny zgodności i nadzoru rynku (t.j. Dz. U. z 2025 r., poz. 568)
+lub
+deklarację zgodności UE, o której mowa w Rozporządzeniu Parlamentu Europejskiego i Rady (UE) 2017/745 z dnia 5 kwietnia 2017 r. w sprawie wyrobów medycznych, zmiany dyrektywy 2001/83/WE, rozporządzenia (WE) nr 178/2002 i rozporządzenia (WE) nr 1223/2009 oraz uchylenia dyrektyw Rady 90/385/EWG i 93/42/EWG
+lub
+deklarację zgodności UE , o której mowa w Rozporządzeniu Parlamentu Europejskiego i Rady (UE) 2017/746 z dnia 5 kwietnia 2017 r. w sprawie wyrobów medycznych do diagnostyki in vitro oraz uchylenia dyrektywy 98/79/WE i decyzji Komisji 2010/227/UE
+b) Zamawiający określił poniższe wymagania związane z z realizacją zamówienia obejmujących aspekty środowiskowe, w Projekcie umowy, § 3. Warunki realizacji umowy, ust 2, zgodnie z art. 96 ust. 1 ustawy Pzp: 
+"Wykonawca zobowiązany jest do realizacji przedmiotu Umowy zgodnie z zasadą DNSH („do no significant harm”, czyli „nie czyń poważnych szkód”), wpisanej do rozporządzenia Parlamentu Europejskiego i Rady (UE) 2020/852 z dnia 18 czerwca 2020 r. w sprawie ustanowienia ram ułatwiających zrównoważone inwestycje tzw. taksonomia, co najmniej w zakresie określonym w ”Formularzu wymaganych warunków technicznych" 
+PRZEDMIOTOWE ŚRODKI DOWODOWE:
+1.Dotyczy Pakietu 1: Zamawiający nie wymaga przedmiotowych środków dowodowych</cbc:Note>
+         <cac:ProcurementAdditionalType>
+            <cbc:ProcurementTypeCode listName="environmental-impact">circ-econ</cbc:ProcurementTypeCode>
+         </cac:ProcurementAdditionalType>
+         <cac:ProcurementAdditionalType>
+            <cbc:ProcurementTypeCode listName="environmental-impact">clim-adapt</cbc:ProcurementTypeCode>
+         </cac:ProcurementAdditionalType>
+         <cac:ProcurementAdditionalType>
+            <cbc:ProcurementTypeCode listName="environmental-impact">pollu-prev</cbc:ProcurementTypeCode>
+         </cac:ProcurementAdditionalType>
+         <cac:ProcurementAdditionalType>
+            <cbc:ProcurementTypeCode listName="gpp-criteria">eu</cbc:ProcurementTypeCode>
+         </cac:ProcurementAdditionalType>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">38000000</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:RealizedLocation>
+            <cac:Address>
+               <cbc:StreetName>ul. Banacha 1</cbc:StreetName>
+               <cbc:CityName>Warszawa</cbc:CityName>
+               <cbc:PostalZone>02-097</cbc:PostalZone>
+               <cbc:CountrySubentityCode listName="nuts">PL911</cbc:CountrySubentityCode>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+         <cac:PlannedPeriod>
+            <cbc:EndDate>2026-03-15+01:00</cbc:EndDate>
+            <cbc:DescriptionCode listName="timeperiod">UNKNOWN</cbc:DescriptionCode>
+         </cac:PlannedPeriod>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0002</cbc:ID>
+      <cac:TenderingTerms>
+         <ext:UBLExtensions>
+            <ext:UBLExtension>
+               <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                     <efac:Funding>
+                        <efbc:FinancingIdentifier>Instrument na rzecz odbudowy i Zwiększenia Odporności (RRF)</efbc:FinancingIdentifier>
+                        <cbc:Description languageID="POL">Zamówienie realizowane jest w ramach przedsięwzięcia „Zastosowanie śliny w celu predykcji skuteczności leczenia biologicznego i pogorszenia stanu jamy ustnej u pacjentów pediatrycznych z nieswoistym zapaleniem jelit i stwardnieniem rozsianym (akronim SalivaPred)”, sfinansowanego z Krajowego Planu Odbudowy i Zwiększania Odporności Komponent D „Efektywność, dostępność i jakość systemu ochrony zdrowia”, Inwestycja D3.1.1 Kompleksowy rozwój badań w zakresie nauk medycznych i nauk o zdrowiu, na podstawie umowy o dofinansowanie nr: 2024/ABM/03/KPO/KPOD.07.07-IW.07-0192/24-00 z dnia 09.05.2025 r.</cbc:Description>
+                     </efac:Funding>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-other</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="POL">Zamawiający nie stawia warunków udziału w  tym postępowaniu.</cbc:Description>
+                     </efac:SelectionCriteria>
+                  </efext:EformsExtension>
+               </ext:ExtensionContent>
+            </ext:UBLExtension>
+         </ext:UBLExtensions>
+         <cbc:FundingProgramCode listName="eu-funded">eu-funds</cbc:FundingProgramCode>
+         <cac:CallForTendersDocumentReference>
+            <ext:UBLExtensions>
+               <ext:UBLExtension>
+                  <ext:ExtensionContent>
+                     <efext:EformsExtension>
+                        <efac:OfficialLanguages>
+                           <cac:Language>
+                              <cbc:ID>POL</cbc:ID>
+                           </cac:Language>
+                        </efac:OfficialLanguages>
+                     </efext:EformsExtension>
+                  </ext:ExtensionContent>
+               </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:ID>Na potwierdzenie braku podstaw wykluczenia, o których mowa w Rozdziale VIII SWZ, Wykonawca zobowiązany jest złożyć dokumenty, zgodnie z Rozdziałem X SWZ.</cbc:ID>
+            <cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+            <cac:Attachment>
+               <cac:ExternalReference>
+                  <cbc:URI>https://wum.ezamawiajacy.pl/pn/wum/demand/245948/notice/public/details</cbc:URI>
+               </cac:ExternalReference>
+            </cac:Attachment>
+         </cac:CallForTendersDocumentReference>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="selection-criteria-source">epo-notice</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="reserved-procurement">none</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="reserved-execution">no</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="conditions">performance</cbc:ExecutionRequirementCode>
+            <cbc:Description languageID="POL">1. Zamawiający wymaga zawarcia umowy w sprawie zamówienia publicznego na warunkach określonych w Projekcie umowy, stanowiącym Załącznik nr 6 do SWZ. 2. Przyjmuje się, że zapisy do Projektu umowy nie zakwestionowane przed złożeniem oferty zostaną przyjęte przez Wykonawcę bez zastrzeżeń w chwili jej podpisania. Wszelkie pytania i wątpliwości dotyczące Projektu umowy, będą rozpatrywane jak dla całej SWZ. 3. Mając na uwadze postanowienia art. 455 ust. 1 pkt 1 ustawy, Zamawiający dopuszcza możliwość zmiany umowy w zakresie określonym w § 10 Projektu umowy.</cbc:Description>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="einvoicing">allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="ecatalog-submission">allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="esignature-submission">true</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:AwardingTerms>
+            <cac:AwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>90</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="POL">Cena</cbc:Name>
+                  <cbc:Description languageID="POL">Kryterium Cena - Zamawiający każdej ofercie ocenianej, przyzna liczbę punktów obliczoną wg sposobu i wzoru opisanego w Rozdziale XII SWZ.</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>10</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="POL">Kryterium jakości - Gwarancja</cbc:Name>
+                  <cbc:Description languageID="POL">Zamawiający każdej ofercie ocenianej, przyzna liczbę punktów obliczoną wg sposobu opisanego w Rozdziale XII SWZ.</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+            </cac:AwardingCriterion>
+         </cac:AwardingTerms>
+         <cac:TenderRecipientParty>
+            <cbc:EndpointID>https://wum.ezamawiajacy.pl/pn/wum/demand/245948/notice/public/details</cbc:EndpointID>
+         </cac:TenderRecipientParty>
+         <cac:TenderValidityPeriod>
+            <cbc:DurationMeasure unitCode="DAY">90</cbc:DurationMeasure>
+         </cac:TenderValidityPeriod>
+         <cac:AppealTerms>
+            <cac:PresentationPeriod>
+               <cbc:Description languageID="POL">Odwołanie wnosi się do Prezesa Izby w formie pisemnej w postaci papierowej albo w postaci elektronicznej, opatrzone odpowiednio własnoręcznym
+podpisem albo kwalifikowanym podpisem elektronicznym, w terminie 10 dni od dnia przekazania informacji o czynności zamawiającego stanowiącej podstawę jego wniesienia, jeżeli informacja została przekazana przy użyciu środków komunikacji elektronicznej, albo 15 dni, jeżeli informacja została przekazana w sposób inny niż określony powyżej. 2. Odwołanie wobec treści ogłoszenia wszczynającego postępowanie o udzielenie zamówienia lub konkurs lub wobec treści dokumentów zamówienia wnosi się w terminie 10 dni od dnia zamieszczenia ogłoszenia w Dzienniku Urzędowym Unii Europejskiej lub dokumentów zamówienia na stronie
+internetowej. 3. Odwołanie wobec czynności innych niż określone w ust. 1 i 2 wnosi się w terminie 10 dni od dnia, w którym powzięto lub przy zachowaniu należytej staranności można było powziąć wiadomość o okolicznościach stanowiących podstawę jego wniesienia. 4. Jeżeli Zamawiający, mimo takiego obowiązku, nie przesłał Wykonawcy zawiadomienia o wyborze oferty najkorzystniejszej odwołanie wnosi się nie później niż w terminie: a) 30 dni od dnia publikacji w Dzienniku Urzędowym Unii Europejskiej ogłoszenia o udzieleniu zamówienia; b) 6 miesięcy od dnia zawarcia umowy, jeżeli Zamawiający nie opublikował w Dzienniku Urzędowym Unii Europejskiej ogłoszenia o udzieleniu zamówienia 5. Szczegółowy opis środków ochrony prawnej przysługujących Wykonawcom zawiera Dział IX ustawy.</cbc:Description>
+            </cac:PresentationPeriod>
+            <cac:AppealInformationParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealInformationParty>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+         </cac:AppealTerms>
+         <cac:Language>
+            <cbc:ID>POL</cbc:ID>
+         </cac:Language>
+         <cac:PostAwardProcess>
+            <cbc:ElectronicOrderUsageIndicator>true</cbc:ElectronicOrderUsageIndicator>
+            <cbc:ElectronicPaymentUsageIndicator>true</cbc:ElectronicPaymentUsageIndicator>
+         </cac:PostAwardProcess>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <cbc:SubmissionMethodCode listName="esubmission">required</cbc:SubmissionMethodCode>
+         <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+         <cac:TenderSubmissionDeadlinePeriod>
+            <cbc:EndDate>2025-12-22+01:00</cbc:EndDate>
+            <cbc:EndTime>11:00:00+01:00</cbc:EndTime>
+         </cac:TenderSubmissionDeadlinePeriod>
+         <cac:OpenTenderEvent>
+            <cbc:OccurrenceDate>2025-12-22+01:00</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>11:30:00+01:00</cbc:OccurrenceTime>
+            <cbc:Description languageID="POL">Otwarcie ofert jest niepubliczne.</cbc:Description>
+         </cac:OpenTenderEvent>
+         <cac:AuctionTerms>
+            <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+         </cac:AuctionTerms>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:Name languageID="POL">Pakiet 2: Dostawa jonizatora antystatycznego</cbc:Name>
+         <cbc:Description languageID="POL">Dostawa jonizatora antystatycznego. Szczegółowy opis przedmiotu zamówienia, z wyszczególnieniem co do rodzaju i liczby urządzeń, został określony w Formularzu wymaganych warunków technicznych, który stanowi Załączniki nr 2.2 do SWZ.</cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">supplies</cbc:ProcurementTypeCode>
+         <cbc:EstimatedOverallContractQuantity unitCode="H87">1</cbc:EstimatedOverallContractQuantity>
+         <cbc:Note languageID="POL">WPŁYW ŚRODOWISKOWY ZAMÓWIENIA:
+1) PRZEJŚCIE NA GOSPODARKĘ O OBIEGU ZAMKNIĘTYM 
+a) Zamawiający określił poniższe wymagania środowiskowe, w opisie przedmiotu zamówienia, zgodnie z art. 101 ustawy Pzp: 
+- Recykling min. 70% ponownego użycia
+- Deklaracja zgodności w rozumieniu ustawy z dnia 13 kwietnia 2016 r. o systemach oceny zgodności i nadzoru rynku (t.j. Dz. U. z 2025 r., poz. 568)
+lub
+deklarację zgodności UE, o której mowa w Rozporządzeniu Parlamentu Europejskiego i Rady (UE) 2017/745 z dnia 5 kwietnia 2017 r. w sprawie wyrobów medycznych, zmiany dyrektywy 2001/83/WE, rozporządzenia (WE) nr 178/2002 i rozporządzenia (WE) nr 1223/2009 oraz uchylenia dyrektyw Rady 90/385/EWG i 93/42/EWG
+lub
+deklarację zgodności UE , o której mowa w Rozporządzeniu Parlamentu Europejskiego i Rady (UE) 2017/746 z dnia 5 kwietnia 2017 r. w sprawie wyrobów medycznych do diagnostyki in vitro oraz uchylenia dyrektywy 98/79/WE i decyzji Komisji 2010/227/UE
+b) Zamawiający określił poniższe wymagania związane z z realizacją zamówienia obejmujących aspekty środowiskowe, w Projekcie umowy, § 3. Warunki realizacji umowy, ust 2, zgodnie z art. 96 ust. 1 ustawy Pzp: 
+"Wykonawca zobowiązany jest do realizacji przedmiotu Umowy zgodnie z zasadą DNSH („do no significant harm”, czyli „nie czyń poważnych szkód”), wpisanej do rozporządzenia Parlamentu Europejskiego i Rady (UE) 2020/852 z dnia 18 czerwca 2020 r. w sprawie ustanowienia ram ułatwiających zrównoważone inwestycje tzw. taksonomia, co najmniej w zakresie określonym w ”Formularzu wymaganych warunków technicznych" 
+2) ZAPOBIEGANIE ZANIECZYSZCZENIU I JEGO KONTROLA 
+a) Zamawiający określił poniższe wymagania środowiskowe, w opisie przedmiotu zamówienia, zgodnie z art. 101 ustawy Pzp: 
+- Oferowany produkt nie zawiera substancji niebezpiecznych, takich jak kadm, rtęć, ołów oraz sześciowartościowy chrom, w ilościach przekraczających dopuszczalne limity określone w Dyrektywie 2011/65/UE (RoHS), tj. 0,01% wagowo dla kadmu oraz 0,1% wagowo dla rtęci, ołowiu i sześciowartościowego chromu, w odniesieniu do każdego materiału jednorodnego, z którego składa się produkt. Oferowane urządzenie zostało zaprojektowane i wykonane w sposób uniemożliwiający stosowanie tych substancji w innych formach niż dopuszczone prawem, przy jednoczesnym zachowaniu zgodności z wymaganiami środowiskowymi, w tym zasadą DNSH. Dopuszczalne wyjątki, o ile mają zastosowanie, wynikają z załącznika III do Dyrektywy
+- Deklaracja zgodności w rozumieniu ustawy z dnia 13 kwietnia 2016 r. o systemach oceny zgodności i nadzoru rynku (t.j. Dz. U. z 2025 r., poz. 568)
+lub
+deklarację zgodności UE, o której mowa w Rozporządzeniu Parlamentu Europejskiego i Rady (UE) 2017/745 z dnia 5 kwietnia 2017 r. w sprawie wyrobów medycznych, zmiany dyrektywy 2001/83/WE, rozporządzenia (WE) nr 178/2002 i rozporządzenia (WE) nr 1223/2009 oraz uchylenia dyrektyw Rady 90/385/EWG i 93/42/EWG
+lub
+deklarację zgodności UE , o której mowa w Rozporządzeniu Parlamentu Europejskiego i Rady (UE) 2017/746 z dnia 5 kwietnia 2017 r. w sprawie wyrobów medycznych do diagnostyki in vitro oraz uchylenia dyrektywy 98/79/WE i decyzji Komisji 2010/227/UE
+b) Zamawiający określił poniższe wymagania związane z z realizacją zamówienia obejmujących aspekty środowiskowe, w Projekcie umowy, § 3. Warunki realizacji umowy, ust 2, zgodnie z art. 96 ust. 1 ustawy Pzp: 
+"Wykonawca zobowiązany jest do realizacji przedmiotu Umowy zgodnie z zasadą DNSH („do no significant harm”, czyli „nie czyń poważnych szkód”), wpisanej do rozporządzenia Parlamentu Europejskiego i Rady (UE) 2020/852 z dnia 18 czerwca 2020 r. w sprawie ustanowienia ram ułatwiających zrównoważone inwestycje tzw. taksonomia, co najmniej w zakresie określonym w ”Formularzu wymaganych warunków technicznych" 
+PRZEDMIOTOWE ŚRODKI DOWODOWE:
+Dotyczy Pakietu 2: Zamawiający nie wymaga złożenia przedmiotowych środków dowodowych.</cbc:Note>
+         <cac:ProcurementAdditionalType>
+            <cbc:ProcurementTypeCode listName="environmental-impact">circ-econ</cbc:ProcurementTypeCode>
+         </cac:ProcurementAdditionalType>
+         <cac:ProcurementAdditionalType>
+            <cbc:ProcurementTypeCode listName="environmental-impact">pollu-prev</cbc:ProcurementTypeCode>
+         </cac:ProcurementAdditionalType>
+         <cac:ProcurementAdditionalType>
+            <cbc:ProcurementTypeCode listName="gpp-criteria">eu</cbc:ProcurementTypeCode>
+         </cac:ProcurementAdditionalType>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">38000000</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:RealizedLocation>
+            <cac:Address>
+               <cbc:StreetName>ul. Banacha 1</cbc:StreetName>
+               <cbc:CityName>Warszawa</cbc:CityName>
+               <cbc:PostalZone>02-097</cbc:PostalZone>
+               <cbc:CountrySubentityCode listName="nuts">PL911</cbc:CountrySubentityCode>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+         <cac:PlannedPeriod>
+            <cbc:DurationMeasure unitCode="DAY">14</cbc:DurationMeasure>
+         </cac:PlannedPeriod>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0003</cbc:ID>
+      <cac:TenderingTerms>
+         <ext:UBLExtensions>
+            <ext:UBLExtension>
+               <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                     <efac:Funding>
+                        <efbc:FinancingIdentifier>Instrument na rzecz odbudowy i Zwiększenia Odporności (RRF)</efbc:FinancingIdentifier>
+                        <cbc:Description languageID="POL">Zamówienie realizowane jest w ramach przedsięwzięcia „Opracowanie nowych systemów terapeutycznych precyzyjnego dostarczania i kontrolowanego uwalniania leków przeciwnowotworowych przeznaczonych do terapii raka trzustki”, sfinansowanego z Krajowego Planu Odbudowy i Zwiększania Odporności Komponent D „Efektywność, dostępność i jakość systemu ochrony zdrowia”, Inwestycja: D3.1.1 Kompleksowy rozwój badań w zakresie nauk medycznych i nauk o zdrowiu, na podstawie umowy o dofinansowanie nr: 2024/ABM/03/KPO/KPOD.07.07-IW.07-0211/24-00.</cbc:Description>
+                     </efac:Funding>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-other</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="POL">Zamawiający nie stawia warunków udziału w  tym postępowaniu.</cbc:Description>
+                     </efac:SelectionCriteria>
+                  </efext:EformsExtension>
+               </ext:ExtensionContent>
+            </ext:UBLExtension>
+         </ext:UBLExtensions>
+         <cbc:FundingProgramCode listName="eu-funded">eu-funds</cbc:FundingProgramCode>
+         <cac:CallForTendersDocumentReference>
+            <ext:UBLExtensions>
+               <ext:UBLExtension>
+                  <ext:ExtensionContent>
+                     <efext:EformsExtension>
+                        <efac:OfficialLanguages>
+                           <cac:Language>
+                              <cbc:ID>POL</cbc:ID>
+                           </cac:Language>
+                        </efac:OfficialLanguages>
+                     </efext:EformsExtension>
+                  </ext:ExtensionContent>
+               </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:ID>Na potwierdzenie braku podstaw wykluczenia, o których mowa w Rozdziale VIII SWZ, Wykonawca zobowiązany jest złożyć dokumenty, zgodnie z Rozdziałem X SWZ.</cbc:ID>
+            <cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+            <cac:Attachment>
+               <cac:ExternalReference>
+                  <cbc:URI>https://wum.ezamawiajacy.pl/pn/wum/demand/245948/notice/public/details</cbc:URI>
+               </cac:ExternalReference>
+            </cac:Attachment>
+         </cac:CallForTendersDocumentReference>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="selection-criteria-source">epo-notice</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="reserved-procurement">none</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="reserved-execution">no</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="conditions">performance</cbc:ExecutionRequirementCode>
+            <cbc:Description languageID="POL">1. Zamawiający wymaga zawarcia umowy w sprawie zamówienia publicznego na warunkach określonych w Projekcie umowy, stanowiącym Załącznik nr 6 do SWZ. 2. Przyjmuje się, że zapisy do Projektu umowy nie zakwestionowane przed złożeniem oferty zostaną przyjęte przez Wykonawcę bez zastrzeżeń w chwili jej podpisania. Wszelkie pytania i wątpliwości dotyczące Projektu umowy, będą rozpatrywane jak dla całej SWZ. 3. Mając na uwadze postanowienia art. 455 ust. 1 pkt 1 ustawy, Zamawiający dopuszcza możliwość zmiany umowy w zakresie określonym w § 10 Projektu umowy.</cbc:Description>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="einvoicing">allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="ecatalog-submission">allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="esignature-submission">true</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:AwardingTerms>
+            <cac:AwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>90</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="POL">Cena</cbc:Name>
+                  <cbc:Description languageID="POL">Kryterium Cena - Zamawiający każdej ofercie ocenianej, przyzna liczbę punktów obliczoną wg sposobu i wzoru opisanego w Rozdziale XII SWZ.</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>10</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="POL">Kryterium jakości - Gwarancja</cbc:Name>
+                  <cbc:Description languageID="POL">Zamawiający każdej ofercie ocenianej, przyzna liczbę punktów obliczoną wg sposobu opisanego w Rozdziale XII SWZ.</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+            </cac:AwardingCriterion>
+         </cac:AwardingTerms>
+         <cac:TenderRecipientParty>
+            <cbc:EndpointID>https://wum.ezamawiajacy.pl/pn/wum/demand/245948/notice/public/details</cbc:EndpointID>
+         </cac:TenderRecipientParty>
+         <cac:TenderValidityPeriod>
+            <cbc:DurationMeasure unitCode="DAY">90</cbc:DurationMeasure>
+         </cac:TenderValidityPeriod>
+         <cac:AppealTerms>
+            <cac:PresentationPeriod>
+               <cbc:Description languageID="POL">Odwołanie wnosi się do Prezesa Izby w formie pisemnej w postaci papierowej albo w postaci elektronicznej, opatrzone odpowiednio własnoręcznym podpisem albo kwalifikowanym podpisem elektronicznym, w terminie 10 dni od dnia przekazania informacji o czynności zamawiającego stanowiącej podstawę jego wniesienia, jeżeli informacja została przekazana przy użyciu środków komunikacji elektronicznej, albo 15 dni, jeżeli informacja została przekazana w sposób inny niż określony powyżej. 2. Odwołanie wobec treści ogłoszenia wszczynającego postępowanie o udzielenie zamówienia lub konkurs lub wobec treści dokumentów zamówienia wnosi się w terminie 10 dni od dnia zamieszczenia ogłoszenia w Dzienniku Urzędowym Unii Europejskiej lub dokumentów zamówienia na stronie internetowej. 3. Odwołanie wobec czynności innych niż określone w ust. 1 i 2 wnosi się w terminie 10 dni od dnia, w którym powzięto lub przy zachowaniu należytej staranności można było powziąć wiadomość o okolicznościach stanowiących podstawę jego wniesienia. 4. Jeżeli Zamawiający, mimo takiego obowiązku, nie przesłał Wykonawcy zawiadomienia o wyborze oferty najkorzystniejszej odwołanie wnosi się nie później niż w terminie: a) 30 dni od dnia publikacji w Dzienniku Urzędowym Unii Europejskiej ogłoszenia o udzieleniu zamówienia; b) 6 miesięcy od dnia zawarcia umowy, jeżeli Zamawiający nie opublikował w Dzienniku Urzędowym Unii Europejskiej ogłoszenia o udzieleniu zamówienia 5. Szczegółowy opis środków ochrony prawnej przysługujących Wykonawcom zawiera Dział IX ustawy.</cbc:Description>
+            </cac:PresentationPeriod>
+            <cac:AppealInformationParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealInformationParty>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+         </cac:AppealTerms>
+         <cac:Language>
+            <cbc:ID>POL</cbc:ID>
+         </cac:Language>
+         <cac:PostAwardProcess>
+            <cbc:ElectronicOrderUsageIndicator>true</cbc:ElectronicOrderUsageIndicator>
+            <cbc:ElectronicPaymentUsageIndicator>true</cbc:ElectronicPaymentUsageIndicator>
+         </cac:PostAwardProcess>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <cbc:SubmissionMethodCode listName="esubmission">required</cbc:SubmissionMethodCode>
+         <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+         <cac:TenderSubmissionDeadlinePeriod>
+            <cbc:EndDate>2025-12-22+01:00</cbc:EndDate>
+            <cbc:EndTime>11:00:00+01:00</cbc:EndTime>
+         </cac:TenderSubmissionDeadlinePeriod>
+         <cac:OpenTenderEvent>
+            <cbc:OccurrenceDate>2025-12-22+01:00</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>11:30:00+01:00</cbc:OccurrenceTime>
+            <cbc:Description languageID="POL">Otwarcie ofert jest niepubliczne.</cbc:Description>
+         </cac:OpenTenderEvent>
+         <cac:AuctionTerms>
+            <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+         </cac:AuctionTerms>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:Name languageID="POL">Pakiet 3: Dostawa płaszcza grzejnego z mieszadłem magnetycznym</cbc:Name>
+         <cbc:Description languageID="POL">Dostawa płaszcza grzejnego z mieszadłem magnetycznym. Szczegółowy opis przedmiotu zamówienia, z wyszczególnieniem co do rodzaju i liczby urządzeń, został określony w Formularzu wymaganych warunków technicznych, który stanowi Załączniki nr 2.3 do SWZ.</cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">supplies</cbc:ProcurementTypeCode>
+         <cbc:EstimatedOverallContractQuantity unitCode="H87">4</cbc:EstimatedOverallContractQuantity>
+         <cbc:Note languageID="POL">WPŁYW ŚRODOWISKOWY ZAMÓWIENIA:
+1) PRZEJŚCIE NA GOSPODARKĘ O OBIEGU ZAMKNIĘTYM 
+a) Zamawiający określił poniższe wymagania środowiskowe, w opisie przedmiotu zamówienia, zgodnie z art. 101 ustawy Pzp: 
+- Recykling min. 70% ponownego użycia
+- Deklaracja zgodności w rozumieniu ustawy z dnia 13 kwietnia 2016 r. o systemach oceny zgodności i nadzoru rynku (t.j. Dz. U. z 2025 r., poz. 568)
+lub
+deklarację zgodności UE, o której mowa w Rozporządzeniu Parlamentu Europejskiego i Rady (UE) 2017/745 z dnia 5 kwietnia 2017 r. w sprawie wyrobów medycznych, zmiany dyrektywy 2001/83/WE, rozporządzenia (WE) nr 178/2002 i rozporządzenia (WE) nr 1223/2009 oraz uchylenia dyrektyw Rady 90/385/EWG i 93/42/EWG
+lub
+deklarację zgodności UE , o której mowa w Rozporządzeniu Parlamentu Europejskiego i Rady (UE) 2017/746 z dnia 5 kwietnia 2017 r. w sprawie wyrobów medycznych do diagnostyki in vitro oraz uchylenia dyrektywy 98/79/WE i decyzji Komisji 2010/227/UE
+b) Zamawiający określił poniższe wymagania związane z z realizacją zamówienia obejmujących aspekty środowiskowe, w Projekcie umowy, § 3. Warunki realizacji umowy, ust 2, zgodnie z art. 96 ust. 1 ustawy Pzp: 
+"Wykonawca zobowiązany jest do realizacji przedmiotu Umowy zgodnie z zasadą DNSH („do no significant harm”, czyli „nie czyń poważnych szkód”), wpisanej do rozporządzenia Parlamentu Europejskiego i Rady (UE) 2020/852 z dnia 18 czerwca 2020 r. w sprawie ustanowienia ram ułatwiających zrównoważone inwestycje tzw. taksonomia, co najmniej w zakresie określonym w ”Formularzu wymaganych warunków technicznych" 
+2) ZAPOBIEGANIE ZANIECZYSZCZENIU I JEGO KONTROLA 
+a) Zamawiający określił poniższe wymagania środowiskowe, w opisie przedmiotu zamówienia, zgodnie z art. 101 ustawy Pzp: 
+- Oferowany produkt nie zawiera substancji niebezpiecznych, takich jak kadm, rtęć, ołów oraz sześciowartościowy chrom, w ilościach przekraczających dopuszczalne limity określone w Dyrektywie 2011/65/UE (RoHS), tj. 0,01% wagowo dla kadmu oraz 0,1% wagowo dla rtęci, ołowiu i sześciowartościowego chromu, w odniesieniu do każdego materiału jednorodnego, z którego składa się produkt. Oferowane urządzenie zostało zaprojektowane i wykonane w sposób uniemożliwiający stosowanie tych substancji w innych formach niż dopuszczone prawem, przy jednoczesnym zachowaniu zgodności z wymaganiami środowiskowymi, w tym zasadą DNSH. Dopuszczalne wyjątki, o ile mają zastosowanie, wynikają z załącznika III do Dyrektywy
+- Deklaracja zgodności w rozumieniu ustawy z dnia 13 kwietnia 2016 r. o systemach oceny zgodności i nadzoru rynku (t.j. Dz. U. z 2025 r., poz. 568)
+lub
+deklarację zgodności UE, o której mowa w Rozporządzeniu Parlamentu Europejskiego i Rady (UE) 2017/745 z dnia 5 kwietnia 2017 r. w sprawie wyrobów medycznych, zmiany dyrektywy 2001/83/WE, rozporządzenia (WE) nr 178/2002 i rozporządzenia (WE) nr 1223/2009 oraz uchylenia dyrektyw Rady 90/385/EWG i 93/42/EWG
+lub
+deklarację zgodności UE , o której mowa w Rozporządzeniu Parlamentu Europejskiego i Rady (UE) 2017/746 z dnia 5 kwietnia 2017 r. w sprawie wyrobów medycznych do diagnostyki in vitro oraz uchylenia dyrektywy 98/79/WE i decyzji Komisji 2010/227/UE
+b) Zamawiający określił poniższe wymagania związane z z realizacją zamówienia obejmujących aspekty środowiskowe, w Projekcie umowy, § 3. Warunki realizacji umowy, ust 2, zgodnie z art. 96 ust. 1 ustawy Pzp: 
+"Wykonawca zobowiązany jest do realizacji przedmiotu Umowy zgodnie z zasadą DNSH („do no significant harm”, czyli „nie czyń poważnych szkód”), wpisanej do rozporządzenia Parlamentu Europejskiego i Rady (UE) 2020/852 z dnia 18 czerwca 2020 r. w sprawie ustanowienia ram ułatwiających zrównoważone inwestycje tzw. taksonomia, co najmniej w zakresie określonym w ”Formularzu wymaganych warunków technicznych" 
+PRZEDMIOTOWE ŚRODKI DOWODOWE:
+Dotyczy Pakietu 3: Zamawiający nie wymaga złożenia przedmiotowych środków dowodowych.</cbc:Note>
+         <cac:ProcurementAdditionalType>
+            <cbc:ProcurementTypeCode listName="environmental-impact">circ-econ</cbc:ProcurementTypeCode>
+         </cac:ProcurementAdditionalType>
+         <cac:ProcurementAdditionalType>
+            <cbc:ProcurementTypeCode listName="environmental-impact">pollu-prev</cbc:ProcurementTypeCode>
+         </cac:ProcurementAdditionalType>
+         <cac:ProcurementAdditionalType>
+            <cbc:ProcurementTypeCode listName="gpp-criteria">eu</cbc:ProcurementTypeCode>
+         </cac:ProcurementAdditionalType>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">38000000</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:RealizedLocation>
+            <cac:Address>
+               <cbc:StreetName>ul. Banacha 1</cbc:StreetName>
+               <cbc:CityName>Warszawa</cbc:CityName>
+               <cbc:PostalZone>02-097</cbc:PostalZone>
+               <cbc:CountrySubentityCode listName="nuts">PL911</cbc:CountrySubentityCode>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+         <cac:PlannedPeriod>
+            <cbc:EndDate>2026-03-15+01:00</cbc:EndDate>
+            <cbc:DescriptionCode listName="timeperiod">UNKNOWN</cbc:DescriptionCode>
+         </cac:PlannedPeriod>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0004</cbc:ID>
+      <cac:TenderingTerms>
+         <ext:UBLExtensions>
+            <ext:UBLExtension>
+               <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                     <efac:Funding>
+                        <efbc:FinancingIdentifier>Instrument na rzecz odbudowy i Zwiększenia Odporności (RRF)</efbc:FinancingIdentifier>
+                        <cbc:Description languageID="POL">Zamówienie realizowane jest w ramach przedsięwzięcia „Opracowanie nowych systemów terapeutycznych precyzyjnego dostarczania i kontrolowanego uwalniania leków przeciwnowotworowych przeznaczonych do terapii raka trzustki”, sfinansowanego z Krajowego Planu Odbudowy i Zwiększania Odporności Komponent D „Efektywność, dostępność i jakość systemu ochrony zdrowia”, Inwestycja: D3.1.1 Kompleksowy rozwój badań w zakresie nauk medycznych i nauk o zdrowiu, na podstawie umowy o dofinansowanie nr: 2024/ABM/03/KPO/KPOD.07.07-IW.07-0211/24-00.</cbc:Description>
+                     </efac:Funding>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-other</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="POL">Zamawiający nie stawia warunków udziału w  tym postępowaniu.</cbc:Description>
+                     </efac:SelectionCriteria>
+                  </efext:EformsExtension>
+               </ext:ExtensionContent>
+            </ext:UBLExtension>
+         </ext:UBLExtensions>
+         <cbc:FundingProgramCode listName="eu-funded">eu-funds</cbc:FundingProgramCode>
+         <cac:CallForTendersDocumentReference>
+            <ext:UBLExtensions>
+               <ext:UBLExtension>
+                  <ext:ExtensionContent>
+                     <efext:EformsExtension>
+                        <efac:OfficialLanguages>
+                           <cac:Language>
+                              <cbc:ID>POL</cbc:ID>
+                           </cac:Language>
+                        </efac:OfficialLanguages>
+                     </efext:EformsExtension>
+                  </ext:ExtensionContent>
+               </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:ID>Na potwierdzenie braku podstaw wykluczenia, o których mowa w Rozdziale VIII SWZ, Wykonawca zobowiązany jest złożyć dokumenty, zgodnie z Rozdziałem X SWZ.</cbc:ID>
+            <cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+            <cac:Attachment>
+               <cac:ExternalReference>
+                  <cbc:URI>https://wum.ezamawiajacy.pl/pn/wum/demand/245948/notice/public/details</cbc:URI>
+               </cac:ExternalReference>
+            </cac:Attachment>
+         </cac:CallForTendersDocumentReference>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="selection-criteria-source">epo-notice</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="reserved-procurement">none</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="reserved-execution">no</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="conditions">performance</cbc:ExecutionRequirementCode>
+            <cbc:Description languageID="POL">1. Zamawiający wymaga zawarcia umowy w sprawie zamówienia publicznego na warunkach określonych w Projekcie umowy, stanowiącym Załącznik nr 6 do SWZ. 2. Przyjmuje się, że zapisy do Projektu umowy nie zakwestionowane przed złożeniem oferty zostaną przyjęte przez Wykonawcę bez zastrzeżeń w chwili jej podpisania. Wszelkie pytania i wątpliwości dotyczące Projektu umowy, będą rozpatrywane jak dla całej SWZ. 3. Mając na uwadze postanowienia art. 455 ust. 1 pkt 1 ustawy, Zamawiający dopuszcza możliwość zmiany umowy w zakresie określonym w § 10 Projektu umowy.</cbc:Description>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="einvoicing">allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="ecatalog-submission">allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="esignature-submission">true</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:AwardingTerms>
+            <cac:AwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>90</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="POL">Cena</cbc:Name>
+                  <cbc:Description languageID="POL">Kryterium Cena - Zamawiający każdej ofercie ocenianej, przyzna liczbę punktów obliczoną wg sposobu i wzoru opisanego w Rozdziale XII SWZ.</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>10</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="POL">Kryterium jakości - Gwarancja</cbc:Name>
+                  <cbc:Description languageID="POL">Zamawiający każdej ofercie ocenianej, przyzna liczbę punktów obliczoną wg sposobu opisanego w Rozdziale XII SWZ.</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+            </cac:AwardingCriterion>
+         </cac:AwardingTerms>
+         <cac:TenderRecipientParty>
+            <cbc:EndpointID>https://wum.ezamawiajacy.pl/pn/wum/demand/245948/notice/public/details</cbc:EndpointID>
+         </cac:TenderRecipientParty>
+         <cac:TenderValidityPeriod>
+            <cbc:DurationMeasure unitCode="DAY">90</cbc:DurationMeasure>
+         </cac:TenderValidityPeriod>
+         <cac:AppealTerms>
+            <cac:PresentationPeriod>
+               <cbc:Description languageID="POL">Odwołanie wnosi się do Prezesa Izby w formie pisemnej w postaci papierowej albo w postaci elektronicznej, opatrzone odpowiednio własnoręcznym podpisem albo kwalifikowanym podpisem elektronicznym, w terminie 10 dni od dnia przekazania informacji o czynności zamawiającego stanowiącej podstawę jego wniesienia, jeżeli informacja została przekazana przy użyciu środków komunikacji elektronicznej, albo 15 dni, jeżeli informacja została przekazana w sposób inny niż określony powyżej. 2. Odwołanie wobec treści ogłoszenia wszczynającego postępowanie o udzielenie zamówienia lub konkurs lub wobec treści dokumentów zamówienia wnosi się w terminie 10 dni od dnia zamieszczenia ogłoszenia w Dzienniku Urzędowym Unii Europejskiej lub dokumentów zamówienia na stronie internetowej. 3. Odwołanie wobec czynności innych niż określone w ust. 1 i 2 wnosi się w terminie 10 dni od dnia, w którym powzięto lub przy zachowaniu należytej staranności można było powziąć wiadomość o okolicznościach stanowiących podstawę jego wniesienia. 4. Jeżeli Zamawiający, mimo takiego obowiązku, nie przesłał Wykonawcy zawiadomienia o wyborze oferty najkorzystniejszej odwołanie wnosi się nie później niż w terminie: a) 30 dni od dnia publikacji w Dzienniku Urzędowym Unii Europejskiej ogłoszenia o udzieleniu zamówienia; b) 6 miesięcy od dnia zawarcia umowy, jeżeli Zamawiający nie opublikował w Dzienniku Urzędowym Unii Europejskiej ogłoszenia o udzieleniu zamówienia 5. Szczegółowy opis środków ochrony prawnej przysługujących Wykonawcom zawiera Dział IX ustawy.</cbc:Description>
+            </cac:PresentationPeriod>
+            <cac:AppealInformationParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealInformationParty>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+         </cac:AppealTerms>
+         <cac:Language>
+            <cbc:ID>POL</cbc:ID>
+         </cac:Language>
+         <cac:PostAwardProcess>
+            <cbc:ElectronicOrderUsageIndicator>true</cbc:ElectronicOrderUsageIndicator>
+            <cbc:ElectronicPaymentUsageIndicator>true</cbc:ElectronicPaymentUsageIndicator>
+         </cac:PostAwardProcess>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <cbc:SubmissionMethodCode listName="esubmission">required</cbc:SubmissionMethodCode>
+         <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+         <cac:TenderSubmissionDeadlinePeriod>
+            <cbc:EndDate>2025-12-22+01:00</cbc:EndDate>
+            <cbc:EndTime>11:00:00+01:00</cbc:EndTime>
+         </cac:TenderSubmissionDeadlinePeriod>
+         <cac:OpenTenderEvent>
+            <cbc:OccurrenceDate>2025-12-22+01:00</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>11:30:00+01:00</cbc:OccurrenceTime>
+            <cbc:Description languageID="POL">Otwarcie ofert jest niepubliczne.</cbc:Description>
+         </cac:OpenTenderEvent>
+         <cac:AuctionTerms>
+            <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+         </cac:AuctionTerms>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:Name languageID="POL">Pakiet 4: Dostawa zestawu urządzeń ogólnolabolatoryjnych</cbc:Name>
+         <cbc:Description languageID="POL">Dostawa zestawu urządzeń ogólnolabolatoryjnych. Szczegółowy opis przedmiotu zamówienia, z wyszczególnieniem co do rodzaju i liczby urządzeń, został określony w Formularzu wymaganych warunków technicznych, który stanowi Załączniki nr 2.4 do SWZ.</cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">supplies</cbc:ProcurementTypeCode>
+         <cbc:EstimatedOverallContractQuantity unitCode="H87">1</cbc:EstimatedOverallContractQuantity>
+         <cbc:Note languageID="POL">WPŁYW ŚRODOWISKOWY ZAMÓWIENIA:
+1) PRZEJŚCIE NA GOSPODARKĘ O OBIEGU ZAMKNIĘTYM 
+a) Zamawiający określił poniższe wymagania środowiskowe, w opisie przedmiotu zamówienia, zgodnie z art. 101 ustawy Pzp: 
+- Recykling min. 70% ponownego użycia
+- Deklaracja zgodności w rozumieniu ustawy z dnia 13 kwietnia 2016 r. o systemach oceny zgodności i nadzoru rynku (t.j. Dz. U. z 2025 r., poz. 568)
+lub
+deklarację zgodności UE, o której mowa w Rozporządzeniu Parlamentu Europejskiego i Rady (UE) 2017/745 z dnia 5 kwietnia 2017 r. w sprawie wyrobów medycznych, zmiany dyrektywy 2001/83/WE, rozporządzenia (WE) nr 178/2002 i rozporządzenia (WE) nr 1223/2009 oraz uchylenia dyrektyw Rady 90/385/EWG i 93/42/EWG
+lub
+deklarację zgodności UE , o której mowa w Rozporządzeniu Parlamentu Europejskiego i Rady (UE) 2017/746 z dnia 5 kwietnia 2017 r. w sprawie wyrobów medycznych do diagnostyki in vitro oraz uchylenia dyrektywy 98/79/WE i decyzji Komisji 2010/227/UE
+b) Zamawiający określił poniższe wymagania związane z z realizacją zamówienia obejmujących aspekty środowiskowe, w Projekcie umowy, § 3. Warunki realizacji umowy, ust 2, zgodnie z art. 96 ust. 1 ustawy Pzp: 
+"Wykonawca zobowiązany jest do realizacji przedmiotu Umowy zgodnie z zasadą DNSH („do no significant harm”, czyli „nie czyń poważnych szkód”), wpisanej do rozporządzenia Parlamentu Europejskiego i Rady (UE) 2020/852 z dnia 18 czerwca 2020 r. w sprawie ustanowienia ram ułatwiających zrównoważone inwestycje tzw. taksonomia, co najmniej w zakresie określonym w ”Formularzu wymaganych warunków technicznych" 
+2) ZAPOBIEGANIE ZANIECZYSZCZENIU I JEGO KONTROLA 
+a) Zamawiający określił poniższe wymagania środowiskowe, w opisie przedmiotu zamówienia, zgodnie z art. 101 ustawy Pzp: 
+- Oferowane urządzenia nie zawierają w swoim składzie niebezpiecznych substancji, takich jak kadm, rtęć, ołów oraz sześciowartościowy chrom, w ilościach przekraczających dopuszczalne limity określone w Dyrektywie 2011/65/UE (RoHS), tj. 0,01% wagowo dla kadmu oraz 0,1% wagowo dla rtęci, ołowiu i sześciowartościowego chromu, w odniesieniu do każdego materiału jednorodnego, z którego składa się produkt. Oferowane urządzenie zostało zaprojektowane i wykonane w sposób uniemożliwiający stosowanie tych substancji w innych formach niż dopuszczone prawem, przy jednoczesnym zachowaniu zgodności z wymaganiami
+środowiskowymi, w tym zasadą DNSH. Dopuszczalne wyjątki, o ile mają zastosowanie, wynikają z załącznika III do Dyrektywy
+- Deklaracja zgodności w rozumieniu ustawy z dnia 13 kwietnia 2016 r. o systemach oceny zgodności i nadzoru rynku (t.j. Dz. U. z 2025 r., poz. 568)
+lub
+deklarację zgodności UE, o której mowa w Rozporządzeniu Parlamentu Europejskiego i Rady (UE) 2017/745 z dnia 5 kwietnia 2017 r. w sprawie wyrobów medycznych, zmiany dyrektywy 2001/83/WE, rozporządzenia (WE) nr 178/2002 i rozporządzenia (WE) nr 1223/2009 oraz uchylenia dyrektyw Rady 90/385/EWG i 93/42/EWG
+lub
+deklarację zgodności UE , o której mowa w Rozporządzeniu Parlamentu Europejskiego i Rady (UE) 2017/746 z dnia 5 kwietnia 2017 r. w sprawie wyrobów medycznych do diagnostyki in vitro oraz uchylenia dyrektywy 98/79/WE i decyzji Komisji 2010/227/UE
+b) Zamawiający określił poniższe wymagania związane z z realizacją zamówienia obejmujących aspekty środowiskowe, w Projekcie umowy, § 3. Warunki realizacji umowy, ust 2, zgodnie z art. 96 ust. 1 ustawy Pzp: 
+"Wykonawca zobowiązany jest do realizacji przedmiotu Umowy zgodnie z zasadą DNSH („do no significant harm”, czyli „nie czyń poważnych szkód”), wpisanej do rozporządzenia Parlamentu Europejskiego i Rady (UE) 2020/852 z dnia 18 czerwca 2020 r. w sprawie ustanowienia ram ułatwiających zrównoważone inwestycje tzw. taksonomia, co najmniej w zakresie określonym w ”Formularzu wymaganych warunków technicznych" 
+PRZEDMIOTOWE ŚRODKI DOWODOWE:
+1.Dotyczy Pakietu 4: Zamawiający nie wymaga złożenia przedmiotowych środków dowodowych</cbc:Note>
+         <cac:ProcurementAdditionalType>
+            <cbc:ProcurementTypeCode listName="environmental-impact">circ-econ</cbc:ProcurementTypeCode>
+         </cac:ProcurementAdditionalType>
+         <cac:ProcurementAdditionalType>
+            <cbc:ProcurementTypeCode listName="environmental-impact">pollu-prev</cbc:ProcurementTypeCode>
+         </cac:ProcurementAdditionalType>
+         <cac:ProcurementAdditionalType>
+            <cbc:ProcurementTypeCode listName="gpp-criteria">eu</cbc:ProcurementTypeCode>
+         </cac:ProcurementAdditionalType>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">38000000</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:RealizedLocation>
+            <cac:Address>
+               <cbc:StreetName>ul. Banacha 1</cbc:StreetName>
+               <cbc:CityName>Warszawa</cbc:CityName>
+               <cbc:PostalZone>02-097</cbc:PostalZone>
+               <cbc:CountrySubentityCode listName="nuts">PL911</cbc:CountrySubentityCode>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+         <cac:PlannedPeriod>
+            <cbc:DurationMeasure unitCode="DAY">21</cbc:DurationMeasure>
+         </cac:PlannedPeriod>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0005</cbc:ID>
+      <cac:TenderingTerms>
+         <ext:UBLExtensions>
+            <ext:UBLExtension>
+               <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                     <efac:Funding>
+                        <efbc:FinancingIdentifier>Instrument na rzecz odbudowy i Zwiększenia Odporności (RRF)</efbc:FinancingIdentifier>
+                        <cbc:Description languageID="POL">Zamówienie realizowane jest w ramach przedsięwzięcia „Opracowanie nowych systemów terapeutycznych precyzyjnego dostarczania i kontrolowanego uwalniania leków przeciwnowotworowych przeznaczonych do terapii raka trzustki”, sfinansowanego z Krajowego Planu Odbudowy i Zwiększania Odporności Komponent D „Efektywność, dostępność i jakość systemu ochrony zdrowia”, Inwestycja: D3.1.1 Kompleksowy rozwój badań w zakresie nauk medycznych i nauk o zdrowiu, na podstawie umowy o dofinansowanie nr: 2024/ABM/03/KPO/KPOD.07.07-IW.07-0211/24-00.</cbc:Description>
+                     </efac:Funding>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-other</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="POL">Zamawiający nie stawia warunków udziału w  tym postępowaniu.</cbc:Description>
+                     </efac:SelectionCriteria>
+                  </efext:EformsExtension>
+               </ext:ExtensionContent>
+            </ext:UBLExtension>
+         </ext:UBLExtensions>
+         <cbc:FundingProgramCode listName="eu-funded">eu-funds</cbc:FundingProgramCode>
+         <cac:CallForTendersDocumentReference>
+            <ext:UBLExtensions>
+               <ext:UBLExtension>
+                  <ext:ExtensionContent>
+                     <efext:EformsExtension>
+                        <efac:OfficialLanguages>
+                           <cac:Language>
+                              <cbc:ID>POL</cbc:ID>
+                           </cac:Language>
+                        </efac:OfficialLanguages>
+                     </efext:EformsExtension>
+                  </ext:ExtensionContent>
+               </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:ID>Na potwierdzenie braku podstaw wykluczenia, o których mowa w Rozdziale VIII SWZ, Wykonawca zobowiązany jest złożyć dokumenty, zgodnie z Rozdziałem X SWZ.</cbc:ID>
+            <cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+            <cac:Attachment>
+               <cac:ExternalReference>
+                  <cbc:URI>https://wum.ezamawiajacy.pl/pn/wum/demand/245948/notice/public/details</cbc:URI>
+               </cac:ExternalReference>
+            </cac:Attachment>
+         </cac:CallForTendersDocumentReference>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="selection-criteria-source">epo-notice</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="reserved-procurement">none</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="reserved-execution">no</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="conditions">performance</cbc:ExecutionRequirementCode>
+            <cbc:Description languageID="POL">1. Zamawiający wymaga zawarcia umowy w sprawie zamówienia publicznego na warunkach określonych w Projekcie umowy, stanowiącym Załącznik nr 6 do SWZ. 2. Przyjmuje się, że zapisy do Projektu umowy nie zakwestionowane przed złożeniem oferty zostaną przyjęte przez Wykonawcę bez zastrzeżeń w chwili jej podpisania. Wszelkie pytania i wątpliwości dotyczące Projektu umowy, będą rozpatrywane jak dla całej SWZ. 3. Mając na uwadze postanowienia art. 455 ust. 1 pkt 1 ustawy, Zamawiający dopuszcza możliwość zmiany umowy w zakresie określonym w § 10 Projektu umowy.</cbc:Description>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="einvoicing">allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="ecatalog-submission">allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="esignature-submission">true</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:AwardingTerms>
+            <cac:AwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>60</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="POL">Cena</cbc:Name>
+                  <cbc:Description languageID="POL">Kryterium Cena - Zamawiający każdej ofercie ocenianej, przyzna liczbę punktów obliczoną wg sposobu i wzoru opisanego w Rozdziale XII SWZ.</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>40</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="POL">Jakość</cbc:Name>
+                  <cbc:Description languageID="POL">Kryterium Jakość - Zamawiający każdej ofercie ocenianej, przyzna liczbę punktów obliczoną wg sposobu i wzoru opisanego w Rozdziale XII SWZ. W kryterium jakości (KJ) – 40%. Zamawiający każdej z ofert przyzna liczbę punktów obliczoną wg wzoru: liczba punktów oferty ocenianej w kryterium „Jakość"= liczba punktów przyznanych ofercie ocenianej w podkryterium „Ocena techniczna”+ liczba punktów przyznanych ofercie ocenianej w podkryterium „Gwarancja” a) W podkryterium oceny technicznej (PKOT) – 30 % b) W podkryterium gwarancja (PKG) – 10%.</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+            </cac:AwardingCriterion>
+         </cac:AwardingTerms>
+         <cac:TenderRecipientParty>
+            <cbc:EndpointID>https://wum.ezamawiajacy.pl/pn/wum/demand/245948/notice/public/details</cbc:EndpointID>
+         </cac:TenderRecipientParty>
+         <cac:TenderValidityPeriod>
+            <cbc:DurationMeasure unitCode="DAY">90</cbc:DurationMeasure>
+         </cac:TenderValidityPeriod>
+         <cac:AppealTerms>
+            <cac:PresentationPeriod>
+               <cbc:Description languageID="POL">Odwołanie wnosi się do Prezesa Izby w formie pisemnej w postaci papierowej albo w postaci elektronicznej, opatrzone odpowiednio własnoręcznym podpisem albo kwalifikowanym podpisem elektronicznym, w terminie 10 dni od dnia przekazania informacji o czynności zamawiającego stanowiącej podstawę jego wniesienia, jeżeli informacja została przekazana przy użyciu środków komunikacji elektronicznej, albo 15 dni, jeżeli informacja została przekazana w sposób inny niż określony powyżej. 2. Odwołanie wobec treści ogłoszenia wszczynającego postępowanie o udzielenie zamówienia lub konkurs lub wobec treści dokumentów zamówienia wnosi się w terminie 10 dni od dnia zamieszczenia ogłoszenia w Dzienniku Urzędowym Unii Europejskiej lub dokumentów zamówienia na stronie internetowej. 3. Odwołanie wobec czynności innych niż określone w ust. 1 i 2 wnosi się w terminie 10 dni od dnia, w którym powzięto lub przy zachowaniu należytej staranności można było powziąć wiadomość o okolicznościach stanowiących podstawę jego wniesienia. 4. Jeżeli Zamawiający, mimo takiego obowiązku, nie przesłał Wykonawcy zawiadomienia o wyborze oferty najkorzystniejszej odwołanie wnosi się nie później niż w terminie: a) 30 dni od dnia publikacji w Dzienniku Urzędowym Unii Europejskiej ogłoszenia o udzieleniu zamówienia; b) 6 miesięcy od dnia zawarcia umowy, jeżeli Zamawiający nie opublikował w Dzienniku Urzędowym Unii Europejskiej ogłoszenia o udzieleniu zamówienia 5. Szczegółowy opis środków ochrony prawnej przysługujących Wykonawcom zawiera Dział IX ustawy.</cbc:Description>
+            </cac:PresentationPeriod>
+            <cac:AppealInformationParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealInformationParty>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+         </cac:AppealTerms>
+         <cac:Language>
+            <cbc:ID>POL</cbc:ID>
+         </cac:Language>
+         <cac:PostAwardProcess>
+            <cbc:ElectronicOrderUsageIndicator>true</cbc:ElectronicOrderUsageIndicator>
+            <cbc:ElectronicPaymentUsageIndicator>true</cbc:ElectronicPaymentUsageIndicator>
+         </cac:PostAwardProcess>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <cbc:SubmissionMethodCode listName="esubmission">required</cbc:SubmissionMethodCode>
+         <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+         <cac:TenderSubmissionDeadlinePeriod>
+            <cbc:EndDate>2025-12-22+01:00</cbc:EndDate>
+            <cbc:EndTime>11:00:00+01:00</cbc:EndTime>
+         </cac:TenderSubmissionDeadlinePeriod>
+         <cac:OpenTenderEvent>
+            <cbc:OccurrenceDate>2025-12-22+01:00</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>11:30:00+01:00</cbc:OccurrenceTime>
+            <cbc:Description languageID="POL">Otwarcie ofert jest niepubliczne.</cbc:Description>
+         </cac:OpenTenderEvent>
+         <cac:AuctionTerms>
+            <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+         </cac:AuctionTerms>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:Name languageID="POL">Pakiet 5: Dostawa różnicowego kalorymetra skaningowego (DSC) z wyposażeniem, analizatora termograwimetrycznego z wyposażeniem oraz zewnętrznej jednostki sterującej</cbc:Name>
+         <cbc:Description languageID="POL">Dostawa różnicowego kalorymetra skaningowego (DSC) z wyposażeniem, analizatora termograwimetrycznego z wyposażeniem oraz zewnętrznej jednostki sterującej. Szczegółowy opis przedmiotu zamówienia, z wyszczególnieniem co do rodzaju i liczby urządzeń, został określony w Formularzu wymaganych warunków technicznych, który stanowi Załączniki nr 2.5 do SWZ.</cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">supplies</cbc:ProcurementTypeCode>
+         <cbc:Note languageID="POL">WPŁYW ŚRODOWISKOWY ZAMÓWIENIA:
+1) PRZEJŚCIE NA GOSPODARKĘ O OBIEGU ZAMKNIĘTYM 
+a) Zamawiający określił poniższe wymagania środowiskowe, w opisie przedmiotu zamówienia, zgodnie z art. 101 ustawy Pzp: 
+- Recykling min. 70% ponownego użycia
+- Deklaracja zgodności w rozumieniu ustawy z dnia 13 kwietnia 2016 r. o systemach oceny zgodności i nadzoru rynku (t.j. Dz. U. z 2025 r., poz. 568)
+lub
+deklarację zgodności UE, o której mowa w Rozporządzeniu Parlamentu Europejskiego i Rady (UE) 2017/745 z dnia 5 kwietnia 2017 r. w sprawie wyrobów medycznych, zmiany dyrektywy 2001/83/WE, rozporządzenia (WE) nr 178/2002 i rozporządzenia (WE) nr 1223/2009 oraz uchylenia dyrektyw Rady 90/385/EWG i 93/42/EWG
+lub
+deklarację zgodności UE , o której mowa w Rozporządzeniu Parlamentu Europejskiego i Rady (UE) 2017/746 z dnia 5 kwietnia 2017 r. w sprawie wyrobów medycznych do diagnostyki in vitro oraz uchylenia dyrektywy 98/79/WE i decyzji Komisji 2010/227/UE
+b) Zamawiający określił poniższe wymagania związane z z realizacją zamówienia obejmujących aspekty środowiskowe, w Projekcie umowy, § 3. Warunki realizacji umowy, ust 2, zgodnie z art. 96 ust. 1 ustawy Pzp: 
+"Wykonawca zobowiązany jest do realizacji przedmiotu Umowy zgodnie z zasadą DNSH („do no significant harm”, czyli „nie czyń poważnych szkód”), wpisanej do rozporządzenia Parlamentu Europejskiego i Rady (UE) 2020/852 z dnia 18 czerwca 2020 r. w sprawie ustanowienia ram ułatwiających zrównoważone inwestycje tzw. taksonomia, co najmniej w zakresie określonym w ”Formularzu wymaganych warunków technicznych" 
+2) ZAPOBIEGANIE ZANIECZYSZCZENIU I JEGO KONTROLA 
+a) Zamawiający określił poniższe wymagania środowiskowe, w opisie przedmiotu zamówienia, zgodnie z art. 101 ustawy Pzp: 
+- Nie zawierają w swoim składzie niebezpiecznych substancji, takich jak kadm, rtęć, ołów oraz sześciowartościowy chrom, w ilościach przekraczających dopuszczalne limity określone w Dyrektywie 2011/65/UE (RoHS), tj. 0,01% wagowo dla kadmu oraz 0,1% wagowo dla rtęci, ołowiu i sześciowartościowego chromu, w odniesieniu do każdego materiału jednorodnego, z którego składa się produkt. Oferowane urządzenie zostało zaprojektowane i wykonane w sposób uniemożliwiający stosowanie tych substancji w innych formach niż dopuszczone prawem, przy jednoczesnym zachowaniu zgodności z wymaganiami
+środowiskowymi, w tym zasadą DNSH. Dopuszczalne wyjątki, o ile mają zastosowanie, wynikają z załącznika III do Dyrektywy
+- Deklaracja zgodności w rozumieniu ustawy z dnia 13 kwietnia 2016 r. o systemach oceny zgodności i nadzoru rynku (t.j. Dz. U. z 2025 r., poz. 568)
+lub
+deklarację zgodności UE, o której mowa w Rozporządzeniu Parlamentu Europejskiego i Rady (UE) 2017/745 z dnia 5 kwietnia 2017 r. w sprawie wyrobów medycznych, zmiany dyrektywy 2001/83/WE, rozporządzenia (WE) nr 178/2002 i rozporządzenia (WE) nr 1223/2009 oraz uchylenia dyrektyw Rady 90/385/EWG i 93/42/EWG
+lub
+deklarację zgodności UE , o której mowa w Rozporządzeniu Parlamentu Europejskiego i Rady (UE) 2017/746 z dnia 5 kwietnia 2017 r. w sprawie wyrobów medycznych do diagnostyki in vitro oraz uchylenia dyrektywy 98/79/WE i decyzji Komisji 2010/227/UE
+b) Zamawiający określił poniższe wymagania związane z z realizacją zamówienia obejmujących aspekty środowiskowe, w Projekcie umowy, § 3. Warunki realizacji umowy, ust 2, zgodnie z art. 96 ust. 1 ustawy Pzp: 
+"Wykonawca zobowiązany jest do realizacji przedmiotu Umowy zgodnie z zasadą DNSH („do no significant harm”, czyli „nie czyń poważnych szkód”), wpisanej do rozporządzenia Parlamentu Europejskiego i Rady (UE) 2020/852 z dnia 18 czerwca 2020 r. w sprawie ustanowienia ram ułatwiających zrównoważone inwestycje tzw. taksonomia, co najmniej w zakresie określonym w ”Formularzu wymaganych warunków technicznych" 
+PRZEDMIOTOWE ŚRODKI DOWODOWE:
+1. Dotyczy Pakietu 5: W celu potwierdzenia, że oferowane dostawy spełniają określone przez Zamawiającego wymagania funkcjonalne i techniczne, żąda złożenia wraz z ofertą następujących przedmiotowych środków dowodowych:
+karty katalogowej oferowanego urządzenia, instrukcji obsługi lub innych dokumentów producenta lub przedstawiciela producenta lub dystrybutora, potwierdzających zgodność deklarowanych parametrów technicznych z wymaganiami i cechami, określonymi w Formularzu wymaganych warunków technicznych, stanowiącym odpowiednio Załącznik nr 2.5 do SWZ. 
+Zamawiający wymaga potwierdzenia przy pomocy przedmiotowych środków dowodowych wyłącznie tych parametrów, dla których taki wymóg odznaczył w Formularzu wymaganych warunków technicznych.
+Zamawiający dopuszcza możliwość posługiwania się dokumentami pozyskanymi ze stron internetowych producenta lub przedstawiciela producenta oferowanych urządzeń.
+Dokumenty, o których mowa powyżej, składane są w języku polskim lub w przypadku innych języków wraz z tłumaczeniem na język polski.
+2.	Jeżeli Wykonawca nie złoży przedmiotowych środków dowodowych wraz z ofertą lub złożone przedmiotowe środki dowodowe będą niekompletne, nie będą one podlegały uzupełnieniu, a oferta Wykonawcy zostanie odrzucona na podstawie art. 226 ust. 1 pkt 2 lit c ustawy.
+3.	Zamawiający może żądać od Wykonawcy wyjaśnień dotyczących treści przedmiotowych środków dowodowych.
+</cbc:Note>
+         <cac:ProcurementAdditionalType>
+            <cbc:ProcurementTypeCode listName="environmental-impact">circ-econ</cbc:ProcurementTypeCode>
+         </cac:ProcurementAdditionalType>
+         <cac:ProcurementAdditionalType>
+            <cbc:ProcurementTypeCode listName="environmental-impact">pollu-prev</cbc:ProcurementTypeCode>
+         </cac:ProcurementAdditionalType>
+         <cac:ProcurementAdditionalType>
+            <cbc:ProcurementTypeCode listName="gpp-criteria">eu</cbc:ProcurementTypeCode>
+         </cac:ProcurementAdditionalType>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">38000000</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:RealizedLocation>
+            <cac:Address>
+               <cbc:StreetName>ul. Banacha 1</cbc:StreetName>
+               <cbc:CityName>Warszawa</cbc:CityName>
+               <cbc:PostalZone>02-097</cbc:PostalZone>
+               <cbc:CountrySubentityCode listName="nuts">PL911</cbc:CountrySubentityCode>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+         <cac:PlannedPeriod>
+            <cbc:EndDate>2026-03-15+01:00</cbc:EndDate>
+            <cbc:DescriptionCode listName="timeperiod">UNKNOWN</cbc:DescriptionCode>
+         </cac:PlannedPeriod>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0006</cbc:ID>
+      <cac:TenderingTerms>
+         <ext:UBLExtensions>
+            <ext:UBLExtension>
+               <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                     <efac:Funding>
+                        <efbc:FinancingIdentifier>Instrument na rzecz odbudowy i Zwiększenia Odporności (RRF)</efbc:FinancingIdentifier>
+                        <cbc:Description languageID="POL">Zamówienie realizowane jest w ramach przedsięwzięcia „Opracowanie nowych systemów terapeutycznych precyzyjnego dostarczania i kontrolowanego uwalniania leków przeciwnowotworowych przeznaczonych do terapii raka trzustki”, sfinansowanego z Krajowego Planu Odbudowy i Zwiększania Odporności Komponent D „Efektywność, dostępność i jakość systemu ochrony zdrowia”, Inwestycja: D3.1.1 Kompleksowy rozwój badań w zakresie nauk medycznych i nauk o zdrowiu, na podstawie umowy o dofinansowanie nr: 2024/ABM/03/KPO/KPOD.07.07-IW.07-0211/24-00.</cbc:Description>
+                     </efac:Funding>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-other</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="POL">Zamawiający nie stawia warunków udziału w  tym postępowaniu.</cbc:Description>
+                     </efac:SelectionCriteria>
+                  </efext:EformsExtension>
+               </ext:ExtensionContent>
+            </ext:UBLExtension>
+         </ext:UBLExtensions>
+         <cbc:FundingProgramCode listName="eu-funded">eu-funds</cbc:FundingProgramCode>
+         <cac:CallForTendersDocumentReference>
+            <ext:UBLExtensions>
+               <ext:UBLExtension>
+                  <ext:ExtensionContent>
+                     <efext:EformsExtension>
+                        <efac:OfficialLanguages>
+                           <cac:Language>
+                              <cbc:ID>POL</cbc:ID>
+                           </cac:Language>
+                        </efac:OfficialLanguages>
+                     </efext:EformsExtension>
+                  </ext:ExtensionContent>
+               </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:ID>Na potwierdzenie braku podstaw wykluczenia, o których mowa w Rozdziale VIII SWZ, Wykonawca zobowiązany jest złożyć dokumenty, zgodnie z Rozdziałem X SWZ.</cbc:ID>
+            <cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+            <cac:Attachment>
+               <cac:ExternalReference>
+                  <cbc:URI>https://wum.ezamawiajacy.pl/pn/wum/demand/245948/notice/public/details</cbc:URI>
+               </cac:ExternalReference>
+            </cac:Attachment>
+         </cac:CallForTendersDocumentReference>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="selection-criteria-source">epo-notice</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="reserved-procurement">none</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="reserved-execution">no</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="conditions">performance</cbc:ExecutionRequirementCode>
+            <cbc:Description languageID="POL">1. Zamawiający wymaga zawarcia umowy w sprawie zamówienia publicznego na warunkach określonych w Projekcie umowy, stanowiącym Załącznik nr 6 do SWZ. 2. Przyjmuje się, że zapisy do Projektu umowy nie zakwestionowane przed złożeniem oferty zostaną przyjęte przez Wykonawcę bez zastrzeżeń w chwili jej podpisania. Wszelkie pytania i wątpliwości dotyczące Projektu umowy, będą rozpatrywane jak dla całej SWZ. 3. Mając na uwadze postanowienia art. 455 ust. 1 pkt 1 ustawy, Zamawiający dopuszcza możliwość zmiany umowy w zakresie określonym w § 10 Projektu umowy.</cbc:Description>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="einvoicing">allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="ecatalog-submission">allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="esignature-submission">true</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:AwardingTerms>
+            <cac:AwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>90</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="POL">Cena</cbc:Name>
+                  <cbc:Description languageID="POL">Kryterium Cena - Zamawiający każdej ofercie ocenianej, przyzna liczbę punktów obliczoną wg sposobu i wzoru opisanego w Rozdziale XII SWZ.</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>10</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="POL">Kryterium jakości - Gwarancja</cbc:Name>
+                  <cbc:Description languageID="POL">Zamawiający każdej ofercie ocenianej, przyzna liczbę punktów obliczoną wg sposobu opisanego w Rozdziale XII SWZ.</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+            </cac:AwardingCriterion>
+         </cac:AwardingTerms>
+         <cac:TenderRecipientParty>
+            <cbc:EndpointID>https://wum.ezamawiajacy.pl/pn/wum/demand/245948/notice/public/details</cbc:EndpointID>
+         </cac:TenderRecipientParty>
+         <cac:TenderValidityPeriod>
+            <cbc:DurationMeasure unitCode="DAY">90</cbc:DurationMeasure>
+         </cac:TenderValidityPeriod>
+         <cac:AppealTerms>
+            <cac:PresentationPeriod>
+               <cbc:Description languageID="POL">Odwołanie wnosi się do Prezesa Izby w formie pisemnej w postaci papierowej albo w postaci elektronicznej, opatrzone odpowiednio własnoręcznym podpisem albo kwalifikowanym podpisem elektronicznym, w terminie 10 dni od dnia przekazania informacji o czynności zamawiającego stanowiącej podstawę jego wniesienia, jeżeli informacja została przekazana przy użyciu środków komunikacji elektronicznej, albo 15 dni, jeżeli informacja została przekazana w sposób inny niż określony powyżej. 2. Odwołanie wobec treści ogłoszenia wszczynającego postępowanie o udzielenie zamówienia lub konkurs lub wobec treści dokumentów zamówienia wnosi się w terminie 10 dni od dnia zamieszczenia ogłoszenia w Dzienniku Urzędowym Unii Europejskiej lub dokumentów zamówienia na stronie internetowej. 3. Odwołanie wobec czynności innych niż określone w ust. 1 i 2 wnosi się w terminie 10 dni od dnia, w którym powzięto lub przy zachowaniu należytej staranności można było powziąć wiadomość o okolicznościach stanowiących podstawę jego wniesienia. 4. Jeżeli Zamawiający, mimo takiego obowiązku, nie przesłał Wykonawcy zawiadomienia o wyborze oferty najkorzystniejszej odwołanie wnosi się nie później niż w terminie: a) 30 dni od dnia publikacji w Dzienniku Urzędowym Unii Europejskiej ogłoszenia o udzieleniu zamówienia; b) 6 miesięcy od dnia zawarcia umowy, jeżeli Zamawiający nie opublikował w Dzienniku Urzędowym Unii Europejskiej ogłoszenia o udzieleniu zamówienia 5. Szczegółowy opis środków ochrony prawnej przysługujących Wykonawcom zawiera Dział IX ustawy.</cbc:Description>
+            </cac:PresentationPeriod>
+            <cac:AppealInformationParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealInformationParty>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+         </cac:AppealTerms>
+         <cac:Language>
+            <cbc:ID>POL</cbc:ID>
+         </cac:Language>
+         <cac:PostAwardProcess>
+            <cbc:ElectronicOrderUsageIndicator>true</cbc:ElectronicOrderUsageIndicator>
+            <cbc:ElectronicPaymentUsageIndicator>true</cbc:ElectronicPaymentUsageIndicator>
+         </cac:PostAwardProcess>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <cbc:SubmissionMethodCode listName="esubmission">required</cbc:SubmissionMethodCode>
+         <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+         <cac:TenderSubmissionDeadlinePeriod>
+            <cbc:EndDate>2025-12-22+01:00</cbc:EndDate>
+            <cbc:EndTime>11:00:00+01:00</cbc:EndTime>
+         </cac:TenderSubmissionDeadlinePeriod>
+         <cac:OpenTenderEvent>
+            <cbc:OccurrenceDate>2025-12-22+01:00</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>11:30:00+01:00</cbc:OccurrenceTime>
+            <cbc:Description languageID="POL">Otwarcie ofert jest niepubliczne.</cbc:Description>
+         </cac:OpenTenderEvent>
+         <cac:AuctionTerms>
+            <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+         </cac:AuctionTerms>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:Name languageID="POL">Pakiet 6: Dostawa systemu inkubacji</cbc:Name>
+         <cbc:Description languageID="POL">Dostawa systemu inkubacji. Szczegółowy opis przedmiotu zamówienia, z wyszczególnieniem co do rodzaju i liczby urządzeń, został określony w Formularzu wymaganych warunków technicznych, który stanowi Załączniki nr 2.6 do SWZ.</cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">supplies</cbc:ProcurementTypeCode>
+         <cbc:Note languageID="POL">WPŁYW ŚRODOWISKOWY ZAMÓWIENIA:
+1) PRZEJŚCIE NA GOSPODARKĘ O OBIEGU ZAMKNIĘTYM 
+a) Zamawiający określił poniższe wymagania środowiskowe, w opisie przedmiotu zamówienia, zgodnie z art. 101 ustawy Pzp: 
+- Recykling min. 70% ponownego użycia
+- Deklaracja zgodności w rozumieniu ustawy z dnia 13 kwietnia 2016 r. o systemach oceny zgodności i nadzoru rynku (t.j. Dz. U. z 2025 r., poz. 568)
+lub
+deklarację zgodności UE, o której mowa w Rozporządzeniu Parlamentu Europejskiego i Rady (UE) 2017/745 z dnia 5 kwietnia 2017 r. w sprawie wyrobów medycznych, zmiany dyrektywy 2001/83/WE, rozporządzenia (WE) nr 178/2002 i rozporządzenia (WE) nr 1223/2009 oraz uchylenia dyrektyw Rady 90/385/EWG i 93/42/EWG
+lub
+deklarację zgodności UE , o której mowa w Rozporządzeniu Parlamentu Europejskiego i Rady (UE) 2017/746 z dnia 5 kwietnia 2017 r. w sprawie wyrobów medycznych do diagnostyki in vitro oraz uchylenia dyrektywy 98/79/WE i decyzji Komisji 2010/227/UE
+b) Zamawiający określił poniższe wymagania związane z z realizacją zamówienia obejmujących aspekty środowiskowe, w Projekcie umowy, § 3. Warunki realizacji umowy, ust 2, zgodnie z art. 96 ust. 1 ustawy Pzp: 
+"Wykonawca zobowiązany jest do realizacji przedmiotu Umowy zgodnie z zasadą DNSH („do no significant harm”, czyli „nie czyń poważnych szkód”), wpisanej do rozporządzenia Parlamentu Europejskiego i Rady (UE) 2020/852 z dnia 18 czerwca 2020 r. w sprawie ustanowienia ram ułatwiających zrównoważone inwestycje tzw. taksonomia, co najmniej w zakresie określonym w ”Formularzu wymaganych warunków technicznych" 
+2) ZAPOBIEGANIE ZANIECZYSZCZENIU I JEGO KONTROLA 
+a) Zamawiający określił poniższe wymagania środowiskowe, w opisie przedmiotu zamówienia, zgodnie z art. 101 ustawy Pzp: 
+- Nie zawierają w swoim składzie niebezpiecznych substancji, takich jak kadm, rtęć, ołów oraz sześciowartościowy chrom, w ilościach przekraczających dopuszczalne limity określone w Dyrektywie 2011/65/UE (RoHS), tj. 0,01% wagowo dla kadmu oraz 0,1% wagowo dla rtęci, ołowiu i sześciowartościowego chromu, w odniesieniu do każdego materiału jednorodnego, z którego składa się produkt. Oferowane urządzenie zostało zaprojektowane i wykonane w sposób uniemożliwiający stosowanie tych substancji w innych formach niż dopuszczone prawem, przy jednoczesnym zachowaniu zgodności z wymaganiami
+środowiskowymi, w tym zasadą DNSH. Dopuszczalne wyjątki, o ile mają zastosowanie, wynikają z załącznika III do Dyrektywy
+- Deklaracja zgodności w rozumieniu ustawy z dnia 13 kwietnia 2016 r. o systemach oceny zgodności i nadzoru rynku (t.j. Dz. U. z 2025 r., poz. 568)
+lub
+deklarację zgodności UE, o której mowa w Rozporządzeniu Parlamentu Europejskiego i Rady (UE) 2017/745 z dnia 5 kwietnia 2017 r. w sprawie wyrobów medycznych, zmiany dyrektywy 2001/83/WE, rozporządzenia (WE) nr 178/2002 i rozporządzenia (WE) nr 1223/2009 oraz uchylenia dyrektyw Rady 90/385/EWG i 93/42/EWG
+lub
+deklarację zgodności UE , o której mowa w Rozporządzeniu Parlamentu Europejskiego i Rady (UE) 2017/746 z dnia 5 kwietnia 2017 r. w sprawie wyrobów medycznych do diagnostyki in vitro oraz uchylenia dyrektywy 98/79/WE i decyzji Komisji 2010/227/UE
+b) Zamawiający określił poniższe wymagania związane z z realizacją zamówienia obejmujących aspekty środowiskowe, w Projekcie umowy, § 3. Warunki realizacji umowy, ust 2, zgodnie z art. 96 ust. 1 ustawy Pzp: 
+"Wykonawca zobowiązany jest do realizacji przedmiotu Umowy zgodnie z zasadą DNSH („do no significant harm”, czyli „nie czyń poważnych szkód”), wpisanej do rozporządzenia Parlamentu Europejskiego i Rady (UE) 2020/852 z dnia 18 czerwca 2020 r. w sprawie ustanowienia ram ułatwiających zrównoważone inwestycje tzw. taksonomia, co najmniej w zakresie określonym w ”Formularzu wymaganych warunków technicznych" 
+PRZEDMIOTOWE ŚRODKI DOWODOWE:
+1. Dotyczy Pakietu 6: W celu potwierdzenia, że oferowane dostawy spełniają określone przez Zamawiającego wymagania funkcjonalne i techniczne, żąda złożenia wraz z ofertą następujących przedmiotowych środków dowodowych:
+karty katalogowej oferowanego urządzenia, instrukcji obsługi lub innych dokumentów producenta lub przedstawiciela producenta lub dystrybutora, potwierdzających zgodność deklarowanych parametrów technicznych z wymaganiami i cechami, określonymi w Formularzu wymaganych warunków technicznych, stanowiącym odpowiednio Załącznik nr 2.6 do SWZ. 
+Zamawiający wymaga potwierdzenia przy pomocy przedmiotowych środków dowodowych wyłącznie tych parametrów, dla których taki wymóg odznaczył w Formularzu wymaganych warunków technicznych.
+Zamawiający dopuszcza możliwość posługiwania się dokumentami pozyskanymi ze stron internetowych producenta lub przedstawiciela producenta oferowanych urządzeń.
+Dokumenty, o których mowa powyżej, składane są w języku polskim lub w przypadku innych języków wraz z tłumaczeniem na język polski.
+2.	Jeżeli Wykonawca nie złoży przedmiotowych środków dowodowych wraz z ofertą lub złożone przedmiotowe środki dowodowe będą niekompletne, nie będą one podlegały uzupełnieniu, a oferta Wykonawcy zostanie odrzucona na podstawie art. 226 ust. 1 pkt 2 lit c ustawy.
+3.	Zamawiający może żądać od Wykonawcy wyjaśnień dotyczących treści przedmiotowych środków dowodowych.
+</cbc:Note>
+         <cac:ProcurementAdditionalType>
+            <cbc:ProcurementTypeCode listName="environmental-impact">circ-econ</cbc:ProcurementTypeCode>
+         </cac:ProcurementAdditionalType>
+         <cac:ProcurementAdditionalType>
+            <cbc:ProcurementTypeCode listName="environmental-impact">pollu-prev</cbc:ProcurementTypeCode>
+         </cac:ProcurementAdditionalType>
+         <cac:ProcurementAdditionalType>
+            <cbc:ProcurementTypeCode listName="gpp-criteria">eu</cbc:ProcurementTypeCode>
+         </cac:ProcurementAdditionalType>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">38000000</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:RealizedLocation>
+            <cac:Address>
+               <cbc:StreetName>ul. Banacha 1</cbc:StreetName>
+               <cbc:CityName>Warszawa</cbc:CityName>
+               <cbc:PostalZone>02-097</cbc:PostalZone>
+               <cbc:CountrySubentityCode listName="nuts">PL911</cbc:CountrySubentityCode>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+         <cac:PlannedPeriod>
+            <cbc:EndDate>2026-03-15+01:00</cbc:EndDate>
+            <cbc:DescriptionCode listName="timeperiod">UNKNOWN</cbc:DescriptionCode>
+         </cac:PlannedPeriod>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+</ContractNotice>

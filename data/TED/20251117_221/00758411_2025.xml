@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractAwardNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractAwardNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:ns8="urn:oasis:names:specification:ubl:schema:xsd:ContractNotice-2" xmlns:ns9="urn:oasis:names:specification:ubl:schema:xsd:PriorInformationNotice-2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <ext:UBLExtensions>
+        <ext:UBLExtension>
+            <ext:ExtensionContent>
+                <efext:EformsExtension>
+                    <efac:NoticeResult>
+                        <cbc:TotalAmount currencyID="CHF">2002423.00</cbc:TotalAmount>
+                        <efac:LotResult>
+                            <cbc:ID schemeName="result">RES-0000</cbc:ID>
+                            <cbc:HigherTenderAmount currencyID="CHF">2002423.00</cbc:HigherTenderAmount>
+                            <cbc:LowerTenderAmount currencyID="CHF">2002423.00</cbc:LowerTenderAmount>
+                            <cbc:TenderResultCode listName="winner-selection-status">selec-w</cbc:TenderResultCode>
+                            <efac:LotTender>
+                                <cbc:ID schemeName="tender">TEN-0000</cbc:ID>
+                            </efac:LotTender>
+                            <efac:ReceivedSubmissionsStatistics>
+                                <efbc:StatisticsCode listName="received-submission-type">tenders</efbc:StatisticsCode>
+                                <efbc:StatisticsNumeric>6</efbc:StatisticsNumeric>
+                            </efac:ReceivedSubmissionsStatistics>
+                            <efac:SettledContract>
+                                <cbc:ID schemeName="contract">CON-0000</cbc:ID>
+                            </efac:SettledContract>
+                            <efac:TenderLot>
+                                <cbc:ID schemeName="Lot">LOT-0000</cbc:ID>
+                            </efac:TenderLot>
+                        </efac:LotResult>
+                        <efac:LotTender>
+                            <cbc:ID schemeName="tender">TEN-0000</cbc:ID>
+                            <efbc:TenderRankedIndicator>false</efbc:TenderRankedIndicator>
+                            <efbc:TenderVariantIndicator>false</efbc:TenderVariantIndicator>
+                            <cac:LegalMonetaryTotal>
+                                <cbc:PayableAmount currencyID="CHF">2002423.00</cbc:PayableAmount>
+                            </cac:LegalMonetaryTotal>
+                            <efac:SubcontractingTerm>
+                                <efbc:TermCode listName="applicability">no</efbc:TermCode>
+                            </efac:SubcontractingTerm>
+                            <efac:TenderingParty>
+                                <cbc:ID schemeName="tendering-party">TPA-0010</cbc:ID>
+                            </efac:TenderingParty>
+                            <efac:TenderLot>
+                                <cbc:ID schemeName="Lot">LOT-0000</cbc:ID>
+                            </efac:TenderLot>
+                            <efac:TenderReference>
+                                <cbc:ID>6d85ecde-5dfa-4cd9-846f-c793e9a2c589</cbc:ID>
+                            </efac:TenderReference>
+                        </efac:LotTender>
+                        <efac:SettledContract>
+                            <cbc:ID schemeName="contract">CON-0000</cbc:ID>
+                            <cbc:IssueDate>2025-11-14+01:00</cbc:IssueDate>
+                            <efac:ContractReference>
+                                <cbc:ID>N/A</cbc:ID>
+                            </efac:ContractReference>
+                            <efac:LotTender>
+                                <cbc:ID schemeName="tender">TEN-0000</cbc:ID>
+                            </efac:LotTender>
+                        </efac:SettledContract>
+                        <efac:TenderingParty>
+                            <cbc:ID schemeName="tendering-party">TPA-0010</cbc:ID>
+                            <efac:Tenderer>
+                                <cbc:ID schemeName="organization">ORG-0010</cbc:ID>
+                            </efac:Tenderer>
+                        </efac:TenderingParty>
+                    </efac:NoticeResult>
+                    <efac:NoticeSubType>
+                        <cbc:SubTypeCode listName="notice-subtype">29</cbc:SubTypeCode>
+                    </efac:NoticeSubType>
+                    <efac:Organizations>
+                        <efac:Organization>
+                            <efac:Company>
+                                <cac:PartyIdentification>
+                                    <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                                </cac:PartyIdentification>
+                                <cac:PartyName>
+                                    <cbc:Name languageID="DEU">ETH Zürich, Informatikdienste </cbc:Name>
+                                </cac:PartyName>
+                                <cac:PartyName>
+                                    <cbc:Name languageID="FRA">ETH Zurich, Services informatiques</cbc:Name>
+                                </cac:PartyName>
+                                <cac:PartyName>
+                                    <cbc:Name languageID="ENG">ETH Zurich, IT Services</cbc:Name>
+                                </cac:PartyName>
+                                <cac:PostalAddress>
+                                    <cbc:StreetName>Binzmühlestrasse 130</cbc:StreetName>
+                                    <cbc:CityName>Zürich</cbc:CityName>
+                                    <cbc:PostalZone>8092</cbc:PostalZone>
+                                    <cbc:CountrySubentityCode listName="nuts">CH040</cbc:CountrySubentityCode>
+                                    <cac:Country>
+                                        <cbc:IdentificationCode listName="country">CHE</cbc:IdentificationCode>
+                                    </cac:Country>
+                                </cac:PostalAddress>
+                                <cac:PartyLegalEntity>
+                                    <cbc:CompanyID>d11d9002-ef70-4c6f-a34f-43e4988b66e1</cbc:CompanyID>
+                                </cac:PartyLegalEntity>
+                                <cac:Contact>
+                                    <cbc:Telephone>+41448466111</cbc:Telephone>
+                                    <cbc:ElectronicMail>gatt-wto@id.ethz.ch</cbc:ElectronicMail>
+                                </cac:Contact>
+                            </efac:Company>
+                        </efac:Organization>
+                        <efac:Organization>
+                            <efac:Company>
+                                <cbc:WebsiteURI>https://www.bvger.ch</cbc:WebsiteURI>
+                                <cac:PartyIdentification>
+                                    <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                                </cac:PartyIdentification>
+                                <cac:PartyName>
+                                    <cbc:Name languageID="DEU">Bundesverwaltungsgericht</cbc:Name>
+                                </cac:PartyName>
+                                <cac:PartyName>
+                                    <cbc:Name languageID="FRA">Tribunal administratif fédéral</cbc:Name>
+                                </cac:PartyName>
+                                <cac:PartyName>
+                                    <cbc:Name languageID="ENG">Tribunal administrativ federal</cbc:Name>
+                                </cac:PartyName>
+                                <cac:PostalAddress>
+                                    <cbc:StreetName>Postfach</cbc:StreetName>
+                                    <cbc:CityName>St. Gallen</cbc:CityName>
+                                    <cbc:PostalZone>9023</cbc:PostalZone>
+                                    <cbc:CountrySubentityCode listName="nuts">CH055</cbc:CountrySubentityCode>
+                                    <cac:Country>
+                                        <cbc:IdentificationCode listName="country">CHE</cbc:IdentificationCode>
+                                    </cac:Country>
+                                </cac:PostalAddress>
+                                <cac:PartyLegalEntity>
+                                    <cbc:CompanyID>BVGER</cbc:CompanyID>
+                                </cac:PartyLegalEntity>
+                                <cac:Contact>
+                                    <cbc:Telephone>+41584652626</cbc:Telephone>
+                                    <cbc:ElectronicMail>info@bvger.admin.ch</cbc:ElectronicMail>
+                                </cac:Contact>
+                            </efac:Company>
+                        </efac:Organization>
+                        <efac:Organization>
+                            <efac:Company>
+                                <cbc:WebsiteURI>https://www.simap.ch</cbc:WebsiteURI>
+                                <cac:PartyIdentification>
+                                    <cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+                                </cac:PartyIdentification>
+                                <cac:PartyName>
+                                    <cbc:Name languageID="DEU">Simap.ch</cbc:Name>
+                                </cac:PartyName>
+                                <cac:PartyName>
+                                    <cbc:Name languageID="FRA">Simap.ch</cbc:Name>
+                                </cac:PartyName>
+                                <cac:PartyName>
+                                    <cbc:Name languageID="ENG">Simap.ch</cbc:Name>
+                                </cac:PartyName>
+                                <cac:PostalAddress>
+                                    <cbc:StreetName>Holzikofenweg 36</cbc:StreetName>
+                                    <cbc:CityName>Bern</cbc:CityName>
+                                    <cbc:PostalZone>3003</cbc:PostalZone>
+                                    <cbc:CountrySubentityCode listName="nuts">CH021</cbc:CountrySubentityCode>
+                                    <cac:Country>
+                                        <cbc:IdentificationCode listName="country">CHE</cbc:IdentificationCode>
+                                    </cac:Country>
+                                </cac:PostalAddress>
+                                <cac:PartyLegalEntity>
+                                    <cbc:CompanyID>CH001</cbc:CompanyID>
+                                </cac:PartyLegalEntity>
+                                <cac:Contact>
+                                    <cbc:Telephone>+41584646388</cbc:Telephone>
+                                    <cbc:ElectronicMail>support@simap.ch</cbc:ElectronicMail>
+                                </cac:Contact>
+                            </efac:Company>
+                        </efac:Organization>
+                        <efac:Organization>
+                            <efbc:ListedOnRegulatedMarketIndicator>false</efbc:ListedOnRegulatedMarketIndicator>
+                            <efbc:NaturalPersonIndicator>false</efbc:NaturalPersonIndicator>
+                            <efac:Company>
+                                <efbc:CompanySizeCode listName="economic-operator-size">large</efbc:CompanySizeCode>
+                                <cac:PartyIdentification>
+                                    <cbc:ID schemeName="organization">ORG-0010</cbc:ID>
+                                </cac:PartyIdentification>
+                                <cac:PartyName>
+                                    <cbc:Name languageID="DEU">DE_Merkle Switzerland AG</cbc:Name>
+                                </cac:PartyName>
+                                <cac:PartyName>
+                                    <cbc:Name languageID="FRA">FR_Merkle Switzerland AG</cbc:Name>
+                                </cac:PartyName>
+                                <cac:PartyName>
+                                    <cbc:Name languageID="ENG">EN_Merkle Switzerland AG</cbc:Name>
+                                </cac:PartyName>
+                                <cac:PostalAddress>
+                                    <cbc:StreetName>Giessereistrasse 18</cbc:StreetName>
+                                    <cbc:CityName>Zürich</cbc:CityName>
+                                    <cbc:PostalZone>8005</cbc:PostalZone>
+                                    <cbc:CountrySubentityCode listName="nuts">CH040</cbc:CountrySubentityCode>
+                                    <cac:Country>
+                                        <cbc:IdentificationCode listName="country">CHE</cbc:IdentificationCode>
+                                    </cac:Country>
+                                </cac:PostalAddress>
+                                <cac:PartyLegalEntity>
+                                    <cbc:CompanyID>a4d521e9-8d17-44d8-9490-3a5b8f981a1f</cbc:CompanyID>
+                                </cac:PartyLegalEntity>
+                            </efac:Company>
+                        </efac:Organization>
+                    </efac:Organizations>
+                <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00758411-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+            </ext:ExtensionContent>
+        </ext:UBLExtension>
+    </ext:UBLExtensions>
+    <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+    <cbc:CustomizationID>eforms-sdk-1.12</cbc:CustomizationID>
+    <cbc:ID schemeName="notice-id">04e630a3-87a9-4680-bf63-ba8bdaccc090</cbc:ID>
+    <cbc:ContractFolderID>b7415b39-6796-4a0c-9ceb-35ca1b26921a</cbc:ContractFolderID>
+    <cbc:IssueDate>2025-11-14+01:00</cbc:IssueDate>
+    <cbc:IssueTime>02:26:10+01:00</cbc:IssueTime>
+    <cbc:VersionID>01</cbc:VersionID>
+    <cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+    <cbc:NoticeTypeCode listName="result">can-standard</cbc:NoticeTypeCode>
+    <cbc:NoticeLanguageCode>DEU</cbc:NoticeLanguageCode>
+    <cac:AdditionalNoticeLanguage>
+        <cbc:ID>FRA</cbc:ID>
+    </cac:AdditionalNoticeLanguage>
+    <cac:AdditionalNoticeLanguage>
+        <cbc:ID>ENG</cbc:ID>
+    </cac:AdditionalNoticeLanguage>
+    <cac:ContractingParty>
+        <cac:ContractingPartyType>
+            <cbc:PartyTypeCode listName="buyer-legal-type">body-pl</cbc:PartyTypeCode>
+        </cac:ContractingPartyType>
+        <cac:ContractingActivity>
+            <cbc:ActivityTypeCode listName="authority-activity">education</cbc:ActivityTypeCode>
+        </cac:ContractingActivity>
+        <cac:Party>
+            <cac:PartyIdentification>
+                <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:ServiceProviderParty>
+                <cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode>
+                <cac:Party>
+                    <cac:PartyIdentification>
+                        <cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+                    </cac:PartyIdentification>
+                </cac:Party>
+            </cac:ServiceProviderParty>
+        </cac:Party>
+    </cac:ContractingParty>
+    <cac:TenderingProcess>
+        <cbc:ProcedureCode listName="procurement-procedure-type">open</cbc:ProcedureCode>
+    </cac:TenderingProcess>
+    <cac:ProcurementProject>
+        <cbc:Name languageID="DEU">Web- und Digitalagentur für die Weiterentwicklung der Online- Kommunikationskanäle der ETH Zürich</cbc:Name>
+        <cbc:Name languageID="FRA">Agence web et numérique pour le développement des canaux de communication en ligne de l'ETH Zurich</cbc:Name>
+        <cbc:Name languageID="ENG">Web and digital agency for the further development of ETH Zurich's online communication channels</cbc:Name>
+        <cbc:Description languageID="DEU">Diese Ausschreibung dient der Auswahl einer Web- und Digital-Agentur, die die ETH Zürich bei der Weiterentwicklung ihrer Online-Kommunikationskanäle unterstützt. Dafür soll ein Rahmenvertrag abgeschlossen werden.</cbc:Description>
+        <cbc:Description languageID="FRA">Cet appel d'offres vise à sélectionner une agence web et numérique qui aidera l'ETH Zurich à développer ses canaux de communication en ligne. Un contrat-cadre sera conclu à cet effet.</cbc:Description>
+        <cbc:Description languageID="ENG">This call for tenders aims to select a web and digital agency to help ETH Zurich develop its online communication channels. A framework agreement will be concluded for this purpose.</cbc:Description>
+        <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+        <cbc:Note languageID="DEU">Begründung des Zuschlagentscheides
+Den Zuschlag erhält die Firma Merkle Switzerland AG. Der Zuschlag wurde auf Basis der in den Ausschreibungsunterlagen definierten Zuschlagskriterien Qualität und Wirtschaftlichkeit erteilt. Das Angebot des Zuschlagsempfängers erzielte im Rahmen der Evaluation die höchste Gesamtbewertung. Insbesondere konnte das Angebot durch eine sehr hohe Qualitätserfüllung in den relevanten Kriterien überzeugen und wies zugleich ein vorteilhaftes Preis-Leistungs-Verhältnis auf.</cbc:Note>
+        <cbc:Note languageID="FRA">Justification de la décision d’adjudication
+Le marché est attribué à la société Merkle AG. L'attribution a été décidée sur la base des critères de qualité et de rentabilité définis dans le dossier d'appel d'offres. L'offre du soumissionnaire retenu a obtenu la meilleure note globale lors de l'évaluation. Elle s'est notamment distinguée par un très haut niveau de qualité dans les critères pertinents, tout en présentant un rapport qualité-prix avantageux.</cbc:Note>
+        <cbc:Note languageID="ENG">Substantiation for award decision
+The contract was awarded to Merkle AG. The contract was awarded on the basis of the award criteria of quality and cost-effectiveness defined in the tender documents. The successful bidder's offer received the highest overall rating in the evaluation. In particular, the offer impressed with its very high quality performance in the relevant criteria and at the same time offered a favourable price-performance ratio.</cbc:Note>
+        <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">72000000</cbc:ItemClassificationCode>
+        </cac:MainCommodityClassification>
+    </cac:ProcurementProject>
+    <cac:ProcurementProjectLot>
+        <cbc:ID schemeName="Lot">LOT-0000</cbc:ID>
+        <cac:TenderingTerms>
+            <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+            <cac:AwardingTerms>
+                <cac:AwardingCriterion>
+                    <cbc:CalculationExpression languageID="DEU">Die Zuschlagskriterien wurden den Anbietern mit der Ausschreibung zugestellt.</cbc:CalculationExpression>
+                    <cbc:CalculationExpression languageID="FRA">Les critères d’adjudication ont été envoyés aux soumissionnaires avec l’appel d’offres.</cbc:CalculationExpression>
+                    <cbc:CalculationExpression languageID="ENG">The award criteria were provided to the tenderers with the invitiaton to tender.</cbc:CalculationExpression>
+                    <cac:SubordinateAwardingCriterion>
+                        <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+                        <cbc:Description languageID="DEU">Zuschlagskriterien</cbc:Description>
+                        <cbc:Description languageID="FRA">Critères d’adjudication</cbc:Description>
+                        <cbc:Description languageID="ENG">Award criteria</cbc:Description>
+                    </cac:SubordinateAwardingCriterion>
+                </cac:AwardingCriterion>
+            </cac:AwardingTerms>
+            <cac:AdditionalInformationParty>
+                <cac:PartyIdentification>
+                    <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                </cac:PartyIdentification>
+            </cac:AdditionalInformationParty>
+            <cac:AppealTerms>
+                <cac:PresentationPeriod>
+                    <cbc:Description languageID="DEU">Rechtsmittelbelehrung
+Gegen diese Verfügung kann gemäss Art. 56 Abs. 1 des Bundesgesetzes über das öffentliche Beschaffungswesen (BöB) innert 20 Tagen seit Eröffnung schriftlich Beschwerde beim Bundesverwaltungsgericht, Postfach, 9023 St. Gallen, erhoben werden. Die Beschwerde ist im Doppel einzureichen und hat die Begehren, deren Begründung mit Angabe der Beweismittel sowie die Unterschrift der beschwerdeführenden Person oder ihrer Vertretung zu enthalten. Eine Kopie der vorliegenden Verfügung und vorhandene Beweismittel sind beizulegen.
+Die Bestimmungen des Verwaltungsverfahrensgesetzes (VwVG) über den Fristenstillstand finden gemäss Art. 56 Abs. 2 BöB keine Anwendung.</cbc:Description>
+                    <cbc:Description languageID="FRA">Voies de droit
+Conformément à l'art. 56, al. 1, de la loi fédérale sur les marchés publics (LMP), la présente décision peut être attaquée, dans un délai de 20 jours à compter de sa notification, auprès du Tribunal administratif fédéral, case postale, 9023 Saint-Gall. Présenté en deux exemplaires, le mémoire de recours doit indiquer les conclusions, les motifs et les moyens de preuve et porter la signature de la partie recourante ou de son représentant ; y seront jointes une copie de la présente décision et les pièces invoquées comme moyens de preuve, lorsqu'elles sont disponibles.
+Conformément à l'art. 56, al. 2, LMP, les dispositions de la Loi fédérale sur la procédure administrative (PA) relatives à la suspension des délais ne s'appliquent pas.</cbc:Description>
+                    <cbc:Description languageID="ENG">Instructions on legal remedies
+In accordance with Article 56 paragraph 1 of the Public Procurement Act (PPA), a written appeal against this decision can be lodged with the Federal Administrative Court, P.O. Box, 9023 St. Gallen, Switzerland, within 20 days of notification. Any appeal is to be submitted in duplicate and must include what is being sought, the grounds for appeal, evidence and the signature of the person lodging the appeal or his or her representative. A copy of this decision and available evidence must be included.
+The provisions of the Administrative Procedure Act (APA) on legal holidays do not apply in accordance with Article 56 paragraph 2 of the PPA.</cbc:Description>
+                </cac:PresentationPeriod>
+                <cac:AppealReceiverParty>
+                    <cac:PartyIdentification>
+                        <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                    </cac:PartyIdentification>
+                </cac:AppealReceiverParty>
+            </cac:AppealTerms>
+        </cac:TenderingTerms>
+        <cac:TenderingProcess>
+            <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+            <cac:AuctionTerms>
+                <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+            </cac:AuctionTerms>
+            <cac:ContractingSystem>
+                <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+            </cac:ContractingSystem>
+            <cac:ContractingSystem>
+                <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+            </cac:ContractingSystem>
+        </cac:TenderingProcess>
+        <cac:ProcurementProject>
+            <cbc:Name languageID="DEU">Web- und Digitalagentur für die Weiterentwicklung der Online- Kommunikationskanäle der ETH Zürich</cbc:Name>
+            <cbc:Name languageID="FRA">Agence web et numérique pour le développement des canaux de communication en ligne de l'ETH Zurich</cbc:Name>
+            <cbc:Name languageID="ENG">Web and digital agency for the further development of ETH Zurich's online communication channels</cbc:Name>
+            <cbc:Description languageID="DEU">Diese Ausschreibung dient der Auswahl einer Web- und Digital-Agentur, die die ETH Zürich bei der Weiterentwicklung ihrer Online-Kommunikationskanäle unterstützt. Dafür soll ein Rahmenvertrag abgeschlossen werden.</cbc:Description>
+            <cbc:Description languageID="FRA">Cet appel d'offres vise à sélectionner une agence web et numérique qui aidera l'ETH Zurich à développer ses canaux de communication en ligne. Un contrat-cadre sera conclu à cet effet.</cbc:Description>
+            <cbc:Description languageID="ENG">This call for tenders aims to select a web and digital agency to help ETH Zurich develop its online communication channels. A framework agreement will be concluded for this purpose.</cbc:Description>
+            <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+            <cac:MainCommodityClassification>
+                <cbc:ItemClassificationCode listName="cpv">72000000</cbc:ItemClassificationCode>
+            </cac:MainCommodityClassification>
+            <cac:RealizedLocation>
+                <cac:Address>
+                    <cbc:CityName>Zürich</cbc:CityName>
+                    <cbc:PostalZone>8092</cbc:PostalZone>
+                    <cbc:CountrySubentityCode listName="nuts">CH040</cbc:CountrySubentityCode>
+                    <cac:Country>
+                        <cbc:IdentificationCode listName="country">CHE</cbc:IdentificationCode>
+                    </cac:Country>
+                </cac:Address>
+            </cac:RealizedLocation>
+            <cac:PlannedPeriod>
+                <cbc:StartDate>2026-01-01+01:00</cbc:StartDate>
+                <cbc:EndDate>2028-12-31+01:00</cbc:EndDate>
+            </cac:PlannedPeriod>
+            <cac:ContractExtension>
+                <cbc:OptionsDescription languageID="DEU">Gemäss Pflichtenheft Kapitel 3.3.6; 3.3.7 und 9.2.3</cbc:OptionsDescription>
+                <cbc:OptionsDescription languageID="FRA">Conformément au cahier des charges, chapitres 3.3.6, 3.3.7 et 9.2.3.</cbc:OptionsDescription>
+                <cbc:OptionsDescription languageID="ENG">In accordance with the specifications in sections 3.3.6, 3.3.7, and 9.2.3.</cbc:OptionsDescription>
+                <cbc:MaximumNumberNumeric>1</cbc:MaximumNumberNumeric>
+                <cac:Renewal>
+                    <cac:Period>
+                        <cbc:Description languageID="DEU">Jährliche Verlängerung: 2 x 1 Jahr bis maximal 31.12.2030</cbc:Description>
+                        <cbc:Description languageID="FRA">Renouvellement annuel : 2 x 1 an jusqu'au 31 décembre 2030 au plus tard.</cbc:Description>
+                        <cbc:Description languageID="ENG">Annual renewal: 2 x 1 year until December 31, 2030, at the latest</cbc:Description>
+                    </cac:Period>
+                </cac:Renewal>
+            </cac:ContractExtension>
+        </cac:ProcurementProject>
+    </cac:ProcurementProjectLot>
+    <cac:TenderResult>
+        <cbc:AwardDate>2000-01-01Z</cbc:AwardDate>
+    </cac:TenderResult>
+</ContractAwardNotice>

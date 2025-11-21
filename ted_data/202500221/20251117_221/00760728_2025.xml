@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractAwardNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractAwardNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema">
+    <ext:UBLExtensions xmlns="">
+        <ext:UBLExtension>
+            <ext:ExtensionContent>
+                <efext:EformsExtension>
+                    <efac:NoticeResult>
+                        <cbc:TotalAmount currencyID="EUR">609223</cbc:TotalAmount>
+                        <efac:LotResult>
+                            <cbc:ID schemeName="result">RES-0001</cbc:ID>
+                            <cbc:TenderResultCode listName="winner-selection-status">selec-w</cbc:TenderResultCode>
+                            <efac:LotTender>
+                                <cbc:ID>TEN-0001</cbc:ID>
+                            </efac:LotTender>
+                            <efac:ReceivedSubmissionsStatistics>
+                                <efbc:StatisticsCode listName="received-submission-type">tenders</efbc:StatisticsCode>
+                                <efbc:StatisticsNumeric>1</efbc:StatisticsNumeric>
+                            </efac:ReceivedSubmissionsStatistics>
+                            <efac:SettledContract>
+                                <cbc:ID>CON-0001</cbc:ID>
+                            </efac:SettledContract>
+                            <efac:TenderLot>
+                                <cbc:ID>LOT-0001</cbc:ID>
+                            </efac:TenderLot>
+                        </efac:LotResult>
+                        <efac:LotTender>
+                            <cbc:ID schemeName="tender">TEN-0001</cbc:ID>
+                            <efbc:TenderRankedIndicator>true</efbc:TenderRankedIndicator>
+                            <cac:LegalMonetaryTotal>
+                                <cbc:PayableAmount currencyID="EUR">609223</cbc:PayableAmount>
+                            </cac:LegalMonetaryTotal>
+                            <efac:SubcontractingTerm>
+                                <efbc:TermCode listName="applicability">no</efbc:TermCode>
+                            </efac:SubcontractingTerm>
+                            <efac:TenderingParty>
+                                <cbc:ID>TPA-0001</cbc:ID>
+                            </efac:TenderingParty>
+                            <efac:TenderLot>
+                                <cbc:ID>LOT-0001</cbc:ID>
+                            </efac:TenderLot>
+                            <efac:TenderReference>
+                                <cbc:ID>000114158</cbc:ID>
+                            </efac:TenderReference>
+                        </efac:LotTender>
+                        <efac:SettledContract>
+                            <cbc:ID schemeName="contract">CON-0001</cbc:ID>
+                            <cbc:IssueDate>2025-08-28+00:00</cbc:IssueDate>
+                            <efac:ContractReference>
+                                <cbc:ID>430910</cbc:ID>
+                            </efac:ContractReference>
+                            <efac:LotTender>
+                                <cbc:ID>TEN-0001</cbc:ID>
+                            </efac:LotTender>
+                        </efac:SettledContract>
+                        <efac:TenderingParty>
+                            <cbc:ID schemeName="tendering-party">TPA-0001</cbc:ID>
+                            <efac:Tenderer>
+                                <cbc:ID>ORG-0002</cbc:ID>
+                            </efac:Tenderer>
+                        </efac:TenderingParty>
+                    </efac:NoticeResult>
+                    <efac:NoticeSubType>
+                        <cbc:SubTypeCode listName="notice-subtype">29</cbc:SubTypeCode>
+                    </efac:NoticeSubType>
+                    <efac:Organizations>
+                        <efac:Organization>
+                            <efac:Company>
+                                <cac:PartyIdentification>
+                                    <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                                </cac:PartyIdentification>
+                                <cac:PartyName>
+                                    <cbc:Name languageID="ENG">TG4</cbc:Name>
+                                </cac:PartyName>
+                                <cac:PostalAddress>
+                                    <cbc:CityName>Baile na hAbhann, Co. na Gaillimhe</cbc:CityName>
+                                    <cbc:PostalZone>H91 X4T0</cbc:PostalZone>
+                                    <cbc:CountrySubentityCode listName="nuts">IE042</cbc:CountrySubentityCode>
+                                    <cac:Country>
+                                        <cbc:IdentificationCode listName="country">IRL</cbc:IdentificationCode>
+                                    </cac:Country>
+                                </cac:PostalAddress>
+                                <cac:PartyLegalEntity>
+                                    <cbc:CompanyID>unknown</cbc:CompanyID>
+                                </cac:PartyLegalEntity>
+                                <cac:Contact>
+                                    <cbc:Telephone>091505050</cbc:Telephone>
+                                    <cbc:ElectronicMail>solathar@tg4.ie</cbc:ElectronicMail>
+                                </cac:Contact>
+                            </efac:Company>
+                        </efac:Organization>
+                        <efac:Organization>
+                            <efbc:NaturalPersonIndicator>true</efbc:NaturalPersonIndicator>
+                            <efac:Company>
+                                <efbc:CompanySizeCode listName="economic-operator-size">large</efbc:CompanySizeCode>
+                                <cac:PartyIdentification>
+                                    <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                                </cac:PartyIdentification>
+                                <cac:PartyName>
+                                    <cbc:Name languageID="ENG">Meteorological Service of New Zealand</cbc:Name>
+                                </cac:PartyName>
+                                <cac:PostalAddress>
+                                    <cbc:StreetName>L2 / 110 Featherston Street</cbc:StreetName>
+                                    <cbc:CityName>Wellington</cbc:CityName>
+                                    <cbc:PostalZone>6011</cbc:PostalZone>
+                                    <cac:Country>
+                                        <cbc:IdentificationCode listName="country">NZL</cbc:IdentificationCode>
+                                    </cac:Country>
+                                </cac:PostalAddress>
+                                <cac:PartyLegalEntity>
+                                    <cbc:CompanyID>unknown</cbc:CompanyID>
+                                </cac:PartyLegalEntity>
+                                <cac:Contact>
+                                    <cbc:Telephone>07766524689</cbc:Telephone>
+                                    <cbc:ElectronicMail>thomas.mould@metraweather.com</cbc:ElectronicMail>
+                                </cac:Contact>
+                            </efac:Company>
+                        </efac:Organization>
+                        <efac:Organization>
+                            <efac:Company>
+                                <cac:PartyIdentification>
+                                    <cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+                                </cac:PartyIdentification>
+                                <cac:PartyName>
+                                    <cbc:Name languageID="ENG">The High Court of Ireland</cbc:Name>
+                                </cac:PartyName>
+                                <cac:PostalAddress>
+                                    <cbc:StreetName>Four Courts, Inns Quay, Dublin 7</cbc:StreetName>
+                                    <cbc:Department>The High Court of Ireland</cbc:Department>
+                                    <cbc:CityName>Dublin</cbc:CityName>
+                                    <cbc:PostalZone>D07 WDX8</cbc:PostalZone>
+                                    <cbc:CountrySubentityCode listName="nuts">IE061</cbc:CountrySubentityCode>
+                                    <cac:Country>
+                                        <cbc:IdentificationCode listName="country">IRL</cbc:IdentificationCode>
+                                    </cac:Country>
+                                </cac:PostalAddress>
+                                <cac:PartyLegalEntity>
+                                    <cbc:CompanyID>The High Court of Ireland</cbc:CompanyID>
+                                </cac:PartyLegalEntity>
+                                <cac:Contact>
+                                    <cbc:Telephone>+353 1 8886000</cbc:Telephone>
+                                    <cbc:ElectronicMail>HighCourtCentralOffice@courts.ie</cbc:ElectronicMail>
+                                </cac:Contact>
+                            </efac:Company>
+                        </efac:Organization>
+                        <efac:Organization>
+                            <efac:Company>
+                                <cac:PartyIdentification>
+                                    <cbc:ID schemeName="organization">ORG-0004</cbc:ID>
+                                </cac:PartyIdentification>
+                                <cac:PartyName>
+                                    <cbc:Name languageID="ENG">European Dynamics S.A.</cbc:Name>
+                                </cac:PartyName>
+                                <cac:PostalAddress>
+                                    <cbc:Department>European Dynamics S.A.</cbc:Department>
+                                    <cbc:CityName>Athens</cbc:CityName>
+                                    <cbc:PostalZone>15125</cbc:PostalZone>
+                                    <cbc:CountrySubentityCode listName="nuts">EL301</cbc:CountrySubentityCode>
+                                    <cac:Country>
+                                        <cbc:IdentificationCode listName="country">GRC</cbc:IdentificationCode>
+                                    </cac:Country>
+                                </cac:PostalAddress>
+                                <cac:PartyLegalEntity>
+                                    <cbc:CompanyID>002024901000</cbc:CompanyID>
+                                </cac:PartyLegalEntity>
+                                <cac:Contact>
+                                    <cbc:Telephone>+30 2108094500</cbc:Telephone>
+                                    <cbc:ElectronicMail>eproc-esender@eurodyn.com</cbc:ElectronicMail>
+                                </cac:Contact>
+                            </efac:Company>
+                        </efac:Organization>
+                    </efac:Organizations>
+                <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00760728-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+            </ext:ExtensionContent>
+        </ext:UBLExtension>
+    </ext:UBLExtensions>
+    <cbc:UBLVersionID xmlns="">2.3</cbc:UBLVersionID>
+    <cbc:CustomizationID xmlns="">eforms-sdk-1.13</cbc:CustomizationID>
+    <cbc:ID xmlns="" schemeName="notice-id">b6341304-4660-4bec-bc14-a7201c0a36dd</cbc:ID>
+    <cbc:ContractFolderID xmlns="">615c2d50-7356-42af-ad47-e80cd9307816</cbc:ContractFolderID>
+    <cbc:IssueDate xmlns="">2025-11-14+00:00</cbc:IssueDate>
+    <cbc:IssueTime xmlns="">11:37:35+00:00</cbc:IssueTime>
+    <cbc:VersionID xmlns="">01</cbc:VersionID>
+    <cbc:RegulatoryDomain xmlns="">32014L0024</cbc:RegulatoryDomain>
+    <cbc:NoticeTypeCode xmlns="" listName="result">can-standard</cbc:NoticeTypeCode>
+    <cbc:NoticeLanguageCode xmlns="" listName="language">ENG</cbc:NoticeLanguageCode>
+    <cac:ContractingParty xmlns="">
+        <cbc:BuyerProfileURI>www.tg4.ie</cbc:BuyerProfileURI>
+        <cac:ContractingPartyType>
+            <cbc:PartyTypeCode listName="buyer-legal-type">body-pl</cbc:PartyTypeCode>
+        </cac:ContractingPartyType>
+        <cac:ContractingActivity>
+            <cbc:ActivityTypeCode listName="authority-activity">rcr</cbc:ActivityTypeCode>
+        </cac:ContractingActivity>
+        <cac:Party>
+            <cac:PartyIdentification>
+                <cbc:ID>ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:ServiceProviderParty>
+                <cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode>
+                <cac:Party>
+                    <cac:PartyIdentification>
+                        <cbc:ID>ORG-0004</cbc:ID>
+                    </cac:PartyIdentification>
+                </cac:Party>
+            </cac:ServiceProviderParty>
+        </cac:Party>
+    </cac:ContractingParty>
+    <cac:TenderingProcess xmlns="">
+        <cbc:ProcedureCode listName="procurement-procedure-type">open</cbc:ProcedureCode>
+        <cac:NoticeDocumentReference>
+            <cbc:ID>58e9e9c0-4e5c-4408-baa1-8c0bdfc705e1-01</cbc:ID>
+        </cac:NoticeDocumentReference>
+        <cac:ProcessJustification>
+            <cbc:ProcessReasonCode listName="accelerated-procedure">false</cbc:ProcessReasonCode>
+        </cac:ProcessJustification>
+    </cac:TenderingProcess>
+    <cac:ProcurementProject xmlns="">
+        <cbc:Name languageID="ENG">TG4 - Weather Services - Seirbhísí Aimsire</cbc:Name>
+        <cbc:Description languageID="ENG">TG4 wishes to appoint a professional company to provide a Weather Service. At present TG4 broadcasts on average 6 Daily Weather Bulletins however it may choose to broadcast a different number of bulletins of varying durations during the term of the Agreement. The weather is presented by TG4 continuity presenters, based on scripts and graphics supplied from the Weather Service Provider. We welcome suggestions in relation to bulletins and formats from tendering companies as part of this process. All weather bulletins are standard timelines, but can be enhanced, by adding optional scenes to demonstrate a particular weather story (eg Weather Alerts / Sports Events etc), or by extending or shortening the scenes within the bulletins. Seasonal graphic elements can also be imported to reflect Christmas / St Patrick’s day etc. Enhanced graphics and information are required for major weather alerts. TG4 runs a Weather Service on it’s website, www.tg4.ie and also runs a Weather X Account. TG4 would like to review its web presence which features multi-layered, multifunctional live weather updates at least on a par with those in popular use on apps and websites freely available. Provision should be made by the weather service provider for flexibility and adaptability throughout the term of the Agreement including in respect of delivery specifications. If the weather service provider develops new innovations or adds new features that enhance its weather service offering during the term of the Agreement it will provide these to TG4 at no additional cost. Tenderers are required to show that they can deliver a high quality and reliable service Is mian le TG4 comhlacht gairmiúil a cheapadh i mbun Seirbhís Aimsire a chur ar fáil. Craoltar 6 cinn ar an meán d’Fheasacháin Laethúla Aimsire ar TG4 faoi láthair ach d’fhéadfaí a roghnú líon éagsúil feasachán agus feasacháin d’achar éagsúil a chraoladh le linn théarma an Chonartha. Láithreoirí leanúnachais TG4 a chuireann tuairisc na haimsire i láthair bunaithe ar scripteanna agus ar ábhar grafaice arna gcur ar fáil ag an Soláthraí Seirbhíse Aimsire. Fáiltítear roimh mholtaí maidir le feasacháin agus formáidí ó chomhlachtaí tairisceana le linn an phróisis seo. Tráthlínte caighdeánacha a bhaineann le gach feasachán aimsire ach is féidir cur leo le radhair roghnacha mar léiriú ar scéal aimsire faoi leith (e.g. Foláireamh Aimsire / Ócáid Spóirt nó eile), nó trí shíneadh a chur le radhair nó iad a ghiorrú le linn an fheasacháin. Is féidir gnéithe grafaice séasúracha a thabhairt isteach chomh maith maidir leis an Nollaig / Lá Fhéile Padraic nó eile. Bíonn gá le hábhar forfheabhsaithe grafaice agus faisnéise sa chás go mbíonn foláireamh á thabhairt faoi dhroch-chás aimsire. Bíonn Seirbhís Aimsire á cur ar fáil ag TG4 ar an láithreán gréasáin, www.tg4.ie chomh maith le cuntas Weather X a rith. Ba mhaith le TG4 athbhreithniú a dhéanamh maidir leis an teacht i láthair ar an ngréasán lena mbaineann tuairiscí nua beo ilsraitheanna ilfheidhme ar a laghad chomh maith lena mbíonn in úsáid go coitianta ar aipeanna agus ar láithreán gréasáin atá ar fáil go fairsing. Ba cheart don soláthraí seirbhíse aimsire soláthar a dhéanamh do sholúbthacht agus do shochóiritheacht ar feadh téarma an Chonartha, i ndáil le sonraíocht soláthair agus eile. Sa chás go dtugann an soláthraí seirbhíse aimsire cora nua chun cinn nó go gcuirtear gnéithe nua leis an tseirbhís i rith théarma an Chonartha, cuirfear sin ar fáil do TG4 gan aon chostas breise. Is gá do thairgeoirí a léiriú go bhfuil siad in ann seirbhís iontaofa ar ardchaighdeán a chur ar fáil.</cbc:Description>
+        <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+        <cac:RequestedTenderTotal>
+            <cbc:EstimatedOverallContractAmount currencyID="EUR">550000</cbc:EstimatedOverallContractAmount>
+        </cac:RequestedTenderTotal>
+        <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">71351600</cbc:ItemClassificationCode>
+        </cac:MainCommodityClassification>
+        <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">71351610</cbc:ItemClassificationCode>
+        </cac:AdditionalCommodityClassification>
+        <cac:RealizedLocation>
+            <cac:Address>
+                <cbc:CountrySubentityCode listName="nuts">IE042</cbc:CountrySubentityCode>
+                <cac:Country>
+                    <cbc:IdentificationCode listName="country">IRL</cbc:IdentificationCode>
+                </cac:Country>
+            </cac:Address>
+        </cac:RealizedLocation>
+    </cac:ProcurementProject>
+    <cac:ProcurementProjectLot xmlns="">
+        <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+        <cac:TenderingTerms>
+            <ext:UBLExtensions>
+                <ext:UBLExtension>
+                    <ext:ExtensionContent>
+                        <efext:EformsExtension>
+                            <efac:StrategicProcurement>
+                                <efbc:ApplicableLegalBasis listName="cvd-scope">false</efbc:ApplicableLegalBasis>
+                            </efac:StrategicProcurement>
+                        </efext:EformsExtension>
+                    </ext:ExtensionContent>
+                </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+            <cac:AwardingTerms>
+                <cac:AwardingCriterion>
+                    <cac:SubordinateAwardingCriterion>
+                        <ext:UBLExtensions>
+                            <ext:UBLExtension>
+                                <ext:ExtensionContent>
+                                    <efext:EformsExtension>
+                                        <efac:AwardCriterionParameter>
+                                            <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                            <efbc:ParameterNumeric>20</efbc:ParameterNumeric>
+                                        </efac:AwardCriterionParameter>
+                                    </efext:EformsExtension>
+                                </ext:ExtensionContent>
+                            </ext:UBLExtension>
+                        </ext:UBLExtensions>
+                        <cbc:AwardingCriterionTypeCode listName="award-criterion-type">cost</cbc:AwardingCriterionTypeCode>
+                        <cbc:Description languageID="ENG">Ultimate Cost</cbc:Description>
+                    </cac:SubordinateAwardingCriterion>
+                    <cac:SubordinateAwardingCriterion>
+                        <ext:UBLExtensions>
+                            <ext:UBLExtension>
+                                <ext:ExtensionContent>
+                                    <efext:EformsExtension>
+                                        <efac:AwardCriterionParameter>
+                                            <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                            <efbc:ParameterNumeric>80</efbc:ParameterNumeric>
+                                        </efac:AwardCriterionParameter>
+                                    </efext:EformsExtension>
+                                </ext:ExtensionContent>
+                            </ext:UBLExtension>
+                        </ext:UBLExtensions>
+                        <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+                        <cbc:Description languageID="ENG">Qualitative Criteria</cbc:Description>
+                    </cac:SubordinateAwardingCriterion>
+                </cac:AwardingCriterion>
+            </cac:AwardingTerms>
+            <cac:DocumentProviderParty>
+                <cac:PartyIdentification>
+                    <cbc:ID>ORG-0001</cbc:ID>
+                </cac:PartyIdentification>
+            </cac:DocumentProviderParty>
+            <cac:AppealTerms>
+                <cac:AppealInformationParty>
+                    <cac:PartyIdentification>
+                        <cbc:ID>ORG-0003</cbc:ID>
+                    </cac:PartyIdentification>
+                </cac:AppealInformationParty>
+                <cac:AppealReceiverParty>
+                    <cac:PartyIdentification>
+                        <cbc:ID>ORG-0003</cbc:ID>
+                    </cac:PartyIdentification>
+                </cac:AppealReceiverParty>
+            </cac:AppealTerms>
+        </cac:TenderingTerms>
+        <cac:TenderingProcess>
+            <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+            <cac:AuctionTerms>
+                <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+            </cac:AuctionTerms>
+            <cac:ContractingSystem>
+                <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+            </cac:ContractingSystem>
+            <cac:ContractingSystem>
+                <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+            </cac:ContractingSystem>
+        </cac:TenderingProcess>
+        <cac:ProcurementProject>
+            <cbc:ID>0</cbc:ID>
+            <cbc:Name languageID="ENG">TG4 - Weather Services - Seirbhísí Aimsire</cbc:Name>
+            <cbc:Description languageID="ENG">TG4 wishes to appoint a professional company to provide a Weather Service. At present TG4 broadcasts on average 6 Daily Weather Bulletins however it may choose to broadcast a different number of bulletins of varying durations during the term of the Agreement. The weather is presented by TG4 continuity presenters, based on scripts and graphics supplied from the Weather Service Provider. We welcome suggestions in relation to bulletins and formats from tendering companies as part of this process. All weather bulletins are standard timelines, but can be enhanced, by adding optional scenes to demonstrate a particular weather story (eg Weather Alerts / Sports Events etc), or by extending or shortening the scenes within the bulletins. Seasonal graphic elements can also be imported to reflect Christmas / St Patrick’s day etc. Enhanced graphics and information are required for major weather alerts. TG4 runs a Weather Service on it’s website, www.tg4.ie and also runs a Weather X Account. TG4 would like to review its web presence which features multi-layered, multifunctional live weather updates at least on a par with those in popular use on apps and websites freely available. Provision should be made by the weather service provider for flexibility and adaptability throughout the term of the Agreement including in respect of delivery specifications. If the weather service provider develops new innovations or adds new features that enhance its weather service offering during the term of the Agreement it will provide these to TG4 at no additional cost. Tenderers are required to show that they can deliver a high quality and reliable service Is mian le TG4 comhlacht gairmiúil a cheapadh i mbun Seirbhís Aimsire a chur ar fáil. Craoltar 6 cinn ar an meán d’Fheasacháin Laethúla Aimsire ar TG4 faoi láthair ach d’fhéadfaí a roghnú líon éagsúil feasachán agus feasacháin d’achar éagsúil a chraoladh le linn théarma an Chonartha. Láithreoirí leanúnachais TG4 a chuireann tuairisc na haimsire i láthair bunaithe ar scripteanna agus ar ábhar grafaice arna gcur ar fáil ag an Soláthraí Seirbhíse Aimsire. Fáiltítear roimh mholtaí maidir le feasacháin agus formáidí ó chomhlachtaí tairisceana le linn an phróisis seo. Tráthlínte caighdeánacha a bhaineann le gach feasachán aimsire ach is féidir cur leo le radhair roghnacha mar léiriú ar scéal aimsire faoi leith (e.g. Foláireamh Aimsire / Ócáid Spóirt nó eile), nó trí shíneadh a chur le radhair nó iad a ghiorrú le linn an fheasacháin. Is féidir gnéithe grafaice séasúracha a thabhairt isteach chomh maith maidir leis an Nollaig / Lá Fhéile Padraic nó eile. Bíonn gá le hábhar forfheabhsaithe grafaice agus faisnéise sa chás go mbíonn foláireamh á thabhairt faoi dhroch-chás aimsire. Bíonn Seirbhís Aimsire á cur ar fáil ag TG4 ar an láithreán gréasáin, www.tg4.ie chomh maith le cuntas Weather X a rith. Ba mhaith le TG4 athbhreithniú a dhéanamh maidir leis an teacht i láthair ar an ngréasán lena mbaineann tuairiscí nua beo ilsraitheanna ilfheidhme ar a laghad chomh maith lena mbíonn in úsáid go coitianta ar aipeanna agus ar láithreán gréasáin atá ar fáil go fairsing. Ba cheart don soláthraí seirbhíse aimsire soláthar a dhéanamh do sholúbthacht agus do shochóiritheacht ar feadh téarma an Chonartha, i ndáil le sonraíocht soláthair agus eile. Sa chás go dtugann an soláthraí seirbhíse aimsire cora nua chun cinn nó go gcuirtear gnéithe nua leis an tseirbhís i rith théarma an Chonartha, cuirfear sin ar fáil do TG4 gan aon chostas breise. Is gá do thairgeoirí a léiriú go bhfuil siad in ann seirbhís iontaofa ar ardchaighdeán a chur ar fáil.</cbc:Description>
+            <cbc:ProcurementTypeCode listName="contract-nature">services</cbc:ProcurementTypeCode>
+            <cac:ProcurementAdditionalType>
+                <cbc:ProcurementTypeCode listName="strategic-procurement">none</cbc:ProcurementTypeCode>
+            </cac:ProcurementAdditionalType>
+            <cac:RequestedTenderTotal>
+                <cbc:EstimatedOverallContractAmount currencyID="EUR">550000</cbc:EstimatedOverallContractAmount>
+            </cac:RequestedTenderTotal>
+            <cac:MainCommodityClassification>
+                <cbc:ItemClassificationCode listName="cpv">71351600</cbc:ItemClassificationCode>
+            </cac:MainCommodityClassification>
+            <cac:AdditionalCommodityClassification>
+                <cbc:ItemClassificationCode listName="cpv">71351610</cbc:ItemClassificationCode>
+            </cac:AdditionalCommodityClassification>
+            <cac:RealizedLocation>
+                <cac:Address>
+                    <cbc:CountrySubentityCode listName="nuts">IE042</cbc:CountrySubentityCode>
+                    <cac:Country>
+                        <cbc:IdentificationCode listName="country">IRL</cbc:IdentificationCode>
+                    </cac:Country>
+                </cac:Address>
+            </cac:RealizedLocation>
+            <cac:PlannedPeriod>
+                <cbc:DurationMeasure unitCode="YEAR">5</cbc:DurationMeasure>
+            </cac:PlannedPeriod>
+        </cac:ProcurementProject>
+    </cac:ProcurementProjectLot>
+    <cac:TenderResult xmlns="">
+        <cbc:AwardDate>2025-11-14+00:00</cbc:AwardDate>
+    </cac:TenderResult>
+</ContractAwardNotice>

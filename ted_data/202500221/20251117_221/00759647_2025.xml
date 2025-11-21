@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><ContractNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+   <ext:UBLExtensions>
+      <ext:UBLExtension>
+         <ext:ExtensionContent>
+            <efext:EformsExtension>
+               <efac:NoticeSubType>
+                  <cbc:SubTypeCode listName="notice-subtype">17</cbc:SubTypeCode>
+               </efac:NoticeSubType>
+               <efac:Organizations>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>www.lw.com.pl</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Lubelski Węgiel Bogdanka S.A. w Bogdance</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>Bogdanka</cbc:StreetName>
+                           <cbc:CityName>Puchaczów</cbc:CityName>
+                           <cbc:PostalZone>21-013</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL814</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>7130005784</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Name>Paweł Fryt</cbc:Name>
+                           <cbc:Telephone>+48 814625125</cbc:Telephone>
+                           <cbc:ElectronicMail>przetargipubliczne@lw.com.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Krajowa Izba Odwoławcza</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>ul. Postępu 17 A</cbc:StreetName>
+                           <cbc:CityName>Warszawa</cbc:CityName>
+                           <cbc:PostalZone>02-676</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL911</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>5262239325</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+48 224587701</cbc:Telephone>
+                           <cbc:Telefax>+48 224587701</cbc:Telefax>
+                           <cbc:ElectronicMail>odwolania@uzp.gov.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Urząd Prokuratorii Generalnej Rzeczypospolitej Polskiej</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>ul. Hoża 76/78</cbc:StreetName>
+                           <cbc:CityName>Warszawa</cbc:CityName>
+                           <cbc:PostalZone>00-682</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">PL911</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>5262883664</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+48 (22) 392-31-09</cbc:Telephone>
+                           <cbc:ElectronicMail>kancelaria@prokuratoria.gov.pl</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://op.europa.eu</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0000</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="POL">Publications Office of the European Union</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:CityName>Luxembourg</cbc:CityName>
+                           <cbc:PostalZone>2417</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">LU000</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">LUX</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>PUBL</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+352 29291</cbc:Telephone>
+                           <cbc:ElectronicMail>ted@publications.europa.eu</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+               </efac:Organizations>
+            <efac:Publication><efbc:NoticePublicationID schemeName="ojs-notice-id">00759647-2025</efbc:NoticePublicationID><efbc:GazetteID schemeName="ojs-id">221/2025</efbc:GazetteID><efbc:PublicationDate>2025-11-17+01:00</efbc:PublicationDate></efac:Publication></efext:EformsExtension>
+         </ext:ExtensionContent>
+      </ext:UBLExtension>
+   </ext:UBLExtensions>
+   <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+   <cbc:CustomizationID>eforms-sdk-1.13</cbc:CustomizationID>
+   <cbc:ID schemeName="notice-id">0c289786-8cf6-4f45-8269-e6a6acbcda4c</cbc:ID>
+   <cbc:ContractFolderID>27bddea5-3248-4561-a1ff-8b7785f067c4</cbc:ContractFolderID>
+   <cbc:IssueDate>2025-11-14Z</cbc:IssueDate>
+   <cbc:IssueTime>13:24:03Z</cbc:IssueTime>
+   <cbc:VersionID>01</cbc:VersionID>
+   <cbc:RegulatoryDomain>32014L0025</cbc:RegulatoryDomain>
+   <cbc:NoticeTypeCode listName="competition">cn-standard</cbc:NoticeTypeCode>
+   <cbc:NoticeLanguageCode listName="language">POL</cbc:NoticeLanguageCode>
+   <cac:ContractingParty>
+      <cbc:BuyerProfileURI>http://www.lw.com.pl</cbc:BuyerProfileURI>
+      <cac:ContractingActivity>
+         <cbc:ActivityTypeCode listName="entity-activity">solid-fuel</cbc:ActivityTypeCode>
+      </cac:ContractingActivity>
+      <cac:Party>
+         <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+         </cac:PartyIdentification>
+         <cac:ServiceProviderParty>
+            <cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode>
+            <cac:Party>
+               <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0000</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:Party>
+         </cac:ServiceProviderParty>
+      </cac:Party>
+   </cac:ContractingParty>
+   <cac:TenderingTerms>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-grounds-source">epo-notice</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-grounds-source">epo-procurement-document</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-liq-admin</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="POL">art. 109 ust. 1 pkt 4</cbc:Description>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-as-susp</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="POL">art. 109 ust. 1 pkt 4</cbc:Description>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-other</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="POL">art. 109 ust. 1 pkt 4</cbc:Description>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-insolvency</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="POL">art. 109 ust. 1 pkt 4</cbc:Description>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-cred-arran</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="POL">art. 109 ust. 1 pkt 4</cbc:Description>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-natl-bre-nat-law</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="POL">Na podstawie art. 393 ust. 1 pkt 1 PZP zamawiający nie będzie stosował podstaw wykluczenia, określonych w art. 108 ust. 1 PZP. Zamawiający będzie stosował podstawy wykluczenia przewidziane w art. 7 ust. 1 ustawy z dnia 13 kwietnia 2022 r. o szczególnych rozwiązaniach w zakresie przeciwdziałania wspierania agresji na Ukrainę oraz służących ochronie bezpieczeństwa narodowego (Dz. U. z 2022 r. poz. 835 ze zm.) oraz rozporządzeniu (UE) nr 833/2014 z dnia 31 lipca 2014 r. dotyczącym środków ograniczających w związku z działaniami Rosji destabilizującymi sytuację na Ukrainie w brzmieniu nadanym Rozporządzeniem Rady (UE) 2022/576 z dnia 8 kwietnia 2022 r. w sprawie zmiany rozporządzenia (UE) nr 833/2014 dotyczącego środków ograniczających w związku z działaniami Rosji destabilizującymi sytuację na Ukrainie.</cbc:Description>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-sitn-bankr</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="POL">art. 109 ust. 1 pkt 4</cbc:Description>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">exg-mis-misrepresent</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="POL">Zamawiający przewiduje, że wykluczeniu z postępowania o udzielenie zamówienia będzie podlegać Wykonawca, który w wyniku zamierzonego działania lub rażącego niedbalstwa wprowadził Zamawiającego w błąd przy przedstawieniu informacji, że nie podlega wykluczeniu, spełnia warunki udziału w postępowaniu lub kryteria selekcji, co mogło mieć istotny wpływ na decyzje podejmowane przez Zamawiającego w postępowaniu o udzielenie zamówienia, lub który zataił te informacje lub nie jest w stanie przedstawić wymaganych podmiotowych środków dowodowych - art. 109 ust. 1 pkt 8) ustawy Pzp. 
+Zamawiający przewiduje, że wykluczeniu z postępowania o udzielenie zamówienia będzie podlegać Wykonawca, który bezprawnie wpływał lub próbował wpływać na czynności zamawiającego lub próbował pozyskać lub pozyskał informacje poufne, mogące dać mu przewagę w postępowaniu o udzielenie zamówienia - art. 109 ust. 1 pkt 9) ustawy Pzp.
+Zamawiający przewiduje, że wykluczeniu z postępowania o udzielenie zamówienia będzie podlegać Wykonawca, który w wyniku lekkomyślności lub niedbalstwa przedstawiła informacje wprowadzające w błąd, co mogło mieć istotny wpływ na decyzje podejmowane przez zamawiającego w postępowaniu o udzielenie zamówienia - art. 109 ust. 1 pkt 10) ustawy Pzp.</cbc:Description>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+   </cac:TenderingTerms>
+   <cac:TenderingProcess>
+      <cbc:ProcedureCode listName="procurement-procedure-type">open</cbc:ProcedureCode>
+      <cac:ProcessJustification>
+         <cbc:ProcessReasonCode listName="accelerated-procedure">false</cbc:ProcessReasonCode>
+      </cac:ProcessJustification>
+   </cac:TenderingProcess>
+   <cac:ProcurementProject>
+      <cbc:ID schemeName="InternalID">5682/HZK/PFR/2025</cbc:ID>
+      <cbc:Name languageID="POL">Dostawa fabrycznie nowych części zamiennych do lokomotyw podwieszanych z napędem spalinowym typu DZ 80 pracujących w podziemnych zakładach górniczych wydobywających węgiel kamienny w pomieszczeniach zagrożonych wybuchem metanu i pyłu węglowego</cbc:Name>
+      <cbc:Description languageID="POL">1.Przedmiotem zamówienia publicznego jest dostawa fabrycznie nowych części zamiennych do lokomotyw podwieszanych z napędem spalinowym typu DZ 80 pracujących w podziemnych zakładach górniczych wydobywających węgiel kamienny w pomieszczeniach zagrożonych wybuchem metanu i pyłu węglowego.
+2. Zamawiający zastrzega sobie prawo do swobodnego wyboru poszczególnych części zamiennych jakie będzie zamawiał w ramach zawartej z Wykonawcą Umowy.
+3. Zamawiający podaje symulowane ilości części zamiennych w oparciu o szacunkowe ilości planowanych do zakupu (Załącznik nr 4 do SWZ - Cennik podstawowy). W pozostałych pozycjach wstawiana będzie ilość „1 szt.” (Załącznik nr 4 do SWZ - Cennik dodatkowy). Ilości te podano tylko i wyłącznie na potrzeby dokonania oceny poszczególnych ofert. Rzeczywista ilość dostaw części, podzespołów i materiałów realizowana na podstawie przyszłej Umowy zawartej z wybranym Wykonawcą będzie wynikała z aktualnego zapotrzebowania Zamawiającego, przy czym łączna wartość netto części zamiennych, podzespołów i materiałów zamówionych przez Zamawiającego nie może przekroczyć maksymalnej wartości Umowy netto na cały okres jej trwania ani nie może być niższa, niż 30 % maksymalnej wartości Umowy netto. Maksymalna wartość umowy netto jest równa wartości netto oferty w zakresie cennika podstawowego. Umowa zostanie zawarta na czas określony, na okres 24 miesięcy od dnia zawarcia Umowy.
+4. Szczegółowy opis przedmiotu zamówienia zawiera Część III SWZ.
+5. Przedmiotowe zamówienie jest zamówieniem sektorowym w rozumieniu art. 7 pkt 35) ustawy Pzp.</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">supplies</cbc:ProcurementTypeCode>
+      <cbc:Note languageID="POL">Zamawiający odrzuci ofertę Wykonawcy w przypadku, o którym mowa w art. 393 ust. 1 pkt 4 ustawy Pzp, tj. odrzuci ofertę, w której udział produktów pochodzących z państw członkowskich Unii Europejskiej, państw z którymi Unia Europejska zwarła umowy o równym traktowaniu przedsiębiorców, lub państw, wobec których na mocy decyzji rady stosuje się przepisy dyrektywy 2014/25/UE, nie przekracza 50%.
+RODO
+Zgodnie z art. 13 ust. 1 i 2 rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych) (Dz. Urz. UE L 119 z 04.05.2016, str. 1), dalej „RODO”, informuję, że: 1) Administratorem Pani/Pana danych osobowych jest Lubelski Węgiel „Bogdanka” Spółka Akcyjna z siedzibą w Bogdance, 21-013 Puchaczów, NIP 713-000-57-84, REGON 430309210 (dalej: Administrator); 2) W sprawach przetwarzania danych osobowych Pani/Pana należy kontaktować się z Inspektorem Ochrony Danych, drogą elektroniczną na adres e-mail: iod@lw.com.pl; 3) Pani/Pana dane osobowe przetwarzane będą na podstawie art. 6 ust. 1 lit. C RODO w celu związanym z niniejszym postępowaniem prowadzonym w trybie przetargu nieograniczonego; 4) Odbiorcami Pani/Pana danych osobowych będą osoby lub podmioty, którym udostępniona zostanie dokumentacja postępowania w oparciu przepisy ustawy PZP ponadto dokumentacja postępowania może być udostępniona na żądanie podmiotów uprawnionych do kontroli projektu o dofinansowanie, w ramach którego prowadzone jest postępowanie o udzielenie zamówienia publicznego; 5) Pani/Pana dane osobowe będą przechowywane, przez okres 4 lat od dnia zakończenia postępowania o udzielenie zamówienia, a jeżeli czas trwania umowy przekracza 4 lata, okres przechowywania obejmuje cały czas trwania umowy; 6) Obowiązek podania przez Panią/Pana danych osobowych bezpośrednio Pani/Pana dotyczących jest wymogiem ustawowym określonym w przepisach ustawy PZP, związanym z udziałem w postępowaniu o udzielenie zamówienia publicznego; konsekwencje niepodania określonych danych wynikają z ustawy PZP; 7) W odniesieniu do Pani/Pana danych osobowych decyzje nie będą podejmowane w sposób zautomatyzowany, stosowanie do art. 22 RODO; 8) Posiada Pani/Pan: a) na podstawie art. 15 RODO prawo dostępu do danych osobowych Pani/Pana dotyczących, b) na podstawie art. 16 RODO prawo do sprostowania Pani/Pana danych osobowych **, c) na podstawie art. 18 RODO prawo żądania od administratora ograniczenia przetwarzania danych osobowych z zastrzeżeniem przypadków, o których mowa w art. 18 ust. 2 RODO ***, d) prawo do wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych, gdy uzna Pani/Pan, że przetwarzanie danych osobowych Pani/Pana dotyczących narusza przepisy RODO; 9) Nie przysługuje Pani/Panu: a) w związku z art. 17 ust. 3 lit. b, d lub e RODO prawo do usunięcia danych osobowych, b) prawo do przenoszenia danych osobowych, o którym mowa w art. 20 RODO, c) na podstawie art. 21 RODO prawo sprzeciwu, wobec przetwarzania danych osobowych, gdyż podstawą prawną przetwarzania Pani/Pana danych osobowych jest art. 6 ust. 1 lit. c RODO; 10) Jednocześnie zamawiający informuje, że wykonawca ubiegając się o udzielenie zamówienia publicznego jest zobowiązany do wypełnienia wszystkich obowiązków formalno-prawnych związanych z udziałem w postępowaniu. Do obowiązków tych należą m.in. Obowiązki wynikające z RODO, w szczególności obowiązek informacyjny przewidziany w art. 13 RODO względem osób fizycznych, których dane osobowe dotyczą i od których dane te wykonawca bezpośrednio pozyskał. Jednakże obowiązek informacyjny wynikający z art. 13 RODO nie będzie miał zastosowania, gdy i w zakresie, w jakim osoba fizyczna, której dane dotyczą, dysponuje już tymi informacjami; 11) Ponadto Wykonawca zobowiązany jest wypełnić obowiązek informacyjny wynikający z art. 14 RODO względem osób fizycznych, których dane przekazuje zamawiającemu i których dane pośrednio pozyskał, chyba że ma zastosowanie co najmniej jedno z wyłączeń, o których mowa w art. 14 ust. 5 RODO.</cbc:Note>
+      <cac:MainCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">43600000</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:RealizedLocation>
+         <cbc:Description languageID="POL">Magazyny położone w Bogdance, Nadrybiu i Stefanowie. </cbc:Description>
+         <cac:Address>
+            <cbc:CountrySubentityCode listName="nuts">PL814</cbc:CountrySubentityCode>
+            <cac:Country>
+               <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+            </cac:Country>
+         </cac:Address>
+      </cac:RealizedLocation>
+   </cac:ProcurementProject>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0000</cbc:ID>
+      <cac:TenderingTerms>
+         <ext:UBLExtensions>
+            <ext:UBLExtension>
+               <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-suit-reg-trade</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="POL">dot. zdolności do występowania w obrocie gospodarczym – Zamawiający wymaga, aby Wykonawcy prowadzący działalność gospodarczą lub zawodową byli wpisani do jednego z rejestrów zawodowych lub handlowych prowadzonych w kraju, w którym mają siedzibę lub miejsce zamieszkania.</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-other</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="POL">dot. sytuacji finansowej lub ekonomicznej: 
+Zamawiający wymaga, by Wykonawcy posiadali środki finansowe lub zdolność kredytową w wysokości co najmniej 500 000,00 zł (słownie: pięćset tysięcy złotych 00/100) lub więcej*. 
+* W przypadku, gdy w Wykonawca poda kwoty w walucie innej niż PLN, dla potrzeb oceny spełniania przez Wykonawcę warunku, o którym mowa w niniejszym punkcie Zamawiający przyjmie wartość w PLN wg kursu średniego NBP (tabela A) z dnia publikacji ogłoszenia o zamówieniu w Dzienniku Urzędowym Unii Europejskiej (a jeżeli w dniu publikacji ogłoszenia nie zostanie opublikowany przez NBP średni kurs walut, wówczas Zamawiający przyjmie kurs średni z ostatniej przed dniem publikacji ogłoszenia o zamówieniu tabeli kursów opublikowanej przez NBP).</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-ref-supply</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="POL">dot. zdolności technicznej lub zawodowej:  
+Zamawiający wymaga, aby w celu potwierdzenia posiadania niezbędnej zdolności technicznej lub zawodowej, Wykonawcy wykazali, że w okresie ostatnich trzech lat przed upływem terminu składania ofert (a jeżeli okres prowadzenia działalności jest krótszy - w tym okresie) zrealizowali należycie zamówienia na dostawy części zamiennych do lokomotyw podwieszanych z napędem spalinowym o łącznej wartości minimum: 1 000 000,00 PLN netto (słownie jeden milion złotych 00/100) lub więcej *.
+* W przypadku, gdy w Wykonawca poda kwoty w walucie innej niż PLN, dla potrzeb oceny spełniania przez Wykonawcę warunku, o którym mowa w niniejszym punkcie, Zamawiający przyjmie wartość w PLN wg kursu średniego NBP (tabela A) z dnia publikacji ogłoszenia o zamówieniu w Dzienniku Urzędowym Unii Europejskiej (a jeżeli w dniu publikacji ogłoszenia nie zostanie opublikowany przez NBP średni kurs walut, wówczas Zamawiający przyjmie kurs średni z ostatniej przed dniem publikacji ogłoszenia o zamówieniu tabeli kursów opublikowanej przez NBP).</cbc:Description>
+                     </efac:SelectionCriteria>
+                  </efext:EformsExtension>
+               </ext:ExtensionContent>
+            </ext:UBLExtension>
+         </ext:UBLExtensions>
+         <cbc:VariantConstraintCode listName="permission">not-allowed</cbc:VariantConstraintCode>
+         <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+         <cbc:RecurringProcurementIndicator>false</cbc:RecurringProcurementIndicator>
+         <cac:RequiredFinancialGuarantee>
+            <cbc:GuaranteeTypeCode listName="tender-guarantee-required">false</cbc:GuaranteeTypeCode>
+         </cac:RequiredFinancialGuarantee>
+         <cac:CallForTendersDocumentReference>
+            <ext:UBLExtensions>
+               <ext:UBLExtension>
+                  <ext:ExtensionContent>
+                     <efext:EformsExtension>
+                        <efac:OfficialLanguages>
+                           <cac:Language>
+                              <cbc:ID>POL</cbc:ID>
+                           </cac:Language>
+                        </efac:OfficialLanguages>
+                     </efext:EformsExtension>
+                  </ext:ExtensionContent>
+               </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:ID>5682/HZK/PFR/2025</cbc:ID>
+            <cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+            <cac:Attachment>
+               <cac:ExternalReference>
+                  <cbc:URI>https://bogdanka.eb2b.com.pl</cbc:URI>
+               </cac:ExternalReference>
+            </cac:Attachment>
+         </cac:CallForTendersDocumentReference>
+         <cac:PaymentTerms>
+            <cbc:Note languageID="POL">Główne warunki finansowe i uzgodnienia płatnicze zostały zawarte w w projekcie umowy który stanowi wraz z załącznikami cześć II do SWZ.</cbc:Note>
+         </cac:PaymentTerms>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="selection-criteria-source">epo-notice</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cbc:CompanyLegalFormCode listName="required">true</cbc:CompanyLegalFormCode>
+            <cbc:CompanyLegalForm languageID="POL">Wykonawcy mogą wspólnie ubiegać się o udzielenie zamówienia, w tym przypadku ponoszą solidarną odpowiedzialność za niewykonanie lub nienależyte wykonanie zamówienia. W takim przypadku wszyscy Wykonawcy występujący wspólnie ustanawiają pełnomocnika do reprezentowania ich w postępowaniu o udzielenie zamówienia, albo reprezentowania ich w postępowaniu i do zawarcia umowy w sprawie zamówienia. Zamawiający nie przewiduje obowiązku osobistego wykonania przez Wykonawcę kluczowych zadań ani obowiązku wykonania przez jednego z wykonawców wspólnie ubiegających się o udzielenie zamówienia kluczowych zadań. Jeżeli oferta Wykonawców wspólnie ubiegających się o udzielenie zamówienia zostanie wybrana, przed podpisaniem umowy w sprawie zamówienia publicznego Wykonawcy zobowiązani są do przedłożenia Zamawiającemu poświadczonej za zgodność z oryginałem kopii umowy regulującej współpracę tych Wykonawców (umowy konsorcjum) - w terminie pięciu dni od dnia otrzymania zawiadomienia o wyborze oferty.</cbc:CompanyLegalForm>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="reserved-procurement">none</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="reserved-execution">no</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="conditions">performance</cbc:ExecutionRequirementCode>
+            <cbc:Description languageID="POL">Zgodnie z zapisami SWZ, w szczególności części I SWZ - Instrukcja dla Wykonawcy, załącznikami do SWZ, zapisami projektu umowy (część II SWZ) oraz opisu przedmiotu zamówienia (część III SWZ)</cbc:Description>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="einvoicing">allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="ecatalog-submission">not-allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="esignature-submission">true</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:AwardingTerms>
+            <cac:AwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                  <cbc:Description languageID="POL">Cena brutto oferty - waga 100%</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+            </cac:AwardingCriterion>
+         </cac:AwardingTerms>
+         <cac:AdditionalInformationParty>
+            <cac:PartyIdentification>
+               <cbc:ID>ORG-0001</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:AdditionalInformationParty>
+         <cac:TenderRecipientParty>
+            <cbc:EndpointID>https://bogdanka.eb2b.com.pl</cbc:EndpointID>
+         </cac:TenderRecipientParty>
+         <cac:TenderValidityPeriod>
+            <cbc:DurationMeasure unitCode="DAY">90</cbc:DurationMeasure>
+         </cac:TenderValidityPeriod>
+         <cac:AppealTerms>
+            <cac:PresentationPeriod>
+               <cbc:Description languageID="POL">Wykonawcom przysługują środki ochrony prawnej określone w dziale VI ustawy Prawo zamówień publicznych oraz w części I SWZ rozdział XX - odwołanie do Prezesa Krajowej Izby Odwoławczej oraz skarga na orzeczenie Krajowej Izby Odwoławczej do Sądu Okręgowego w Lublinie.</cbc:Description>
+            </cac:PresentationPeriod>
+            <cac:AppealInformationParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealInformationParty>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+            <cac:MediationParty>
+               <cac:PartyIdentification>
+                  <cbc:ID>ORG-0003</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:MediationParty>
+         </cac:AppealTerms>
+         <cac:Language>
+            <cbc:ID>POL</cbc:ID>
+         </cac:Language>
+         <cac:PostAwardProcess>
+            <cbc:ElectronicOrderUsageIndicator>true</cbc:ElectronicOrderUsageIndicator>
+            <cbc:ElectronicPaymentUsageIndicator>true</cbc:ElectronicPaymentUsageIndicator>
+         </cac:PostAwardProcess>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <cbc:SubmissionMethodCode listName="esubmission">required</cbc:SubmissionMethodCode>
+         <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+         <cac:TenderSubmissionDeadlinePeriod>
+            <cbc:EndDate>2025-12-15+01:00</cbc:EndDate>
+            <cbc:EndTime>11:00:00+01:00</cbc:EndTime>
+         </cac:TenderSubmissionDeadlinePeriod>
+         <cac:OpenTenderEvent>
+            <cbc:OccurrenceDate>2025-12-15+01:00</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>12:00:00+01:00</cbc:OccurrenceTime>
+            <cbc:Description languageID="POL">Procedura otwarcia ofert została opisana w rozdz. XVI części I SWZ - Instrukcja dla Wykonawców.</cbc:Description>
+            <cac:OccurenceLocation>
+               <cbc:Description languageID="POL">Otwarcie ofert nastąpi za pośrednictwem Platformy Zamawiającego pod adresem https://bogdanka.eb2b.com.p - w dniu, w którym upływa termin składania ofert, o godz. 12:00.</cbc:Description>
+            </cac:OccurenceLocation>
+         </cac:OpenTenderEvent>
+         <cac:AuctionTerms>
+            <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+         </cac:AuctionTerms>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:ID schemeName="InternalID">5682/HZK/PFR/2025</cbc:ID>
+         <cbc:Name languageID="POL">Dostawa fabrycznie nowych części zamiennych do lokomotyw podwieszanych z napędem spalinowym typu DZ 80 pracujących w podziemnych zakładach górniczych wydobywających węgiel kamienny w pomieszczeniach zagrożonych wybuchem metanu i pyłu węglowego</cbc:Name>
+         <cbc:Description languageID="POL">1.Przedmiotem zamówienia publicznego jest dostawa fabrycznie nowych części zamiennych do lokomotyw podwieszanych z napędem spalinowym typu DZ 80 pracujących w podziemnych zakładach górniczych wydobywających węgiel kamienny w pomieszczeniach zagrożonych wybuchem metanu i pyłu węglowego.
+2. Zamawiający zastrzega sobie prawo do swobodnego wyboru poszczególnych części zamiennych jakie będzie zamawiał w ramach zawartej z Wykonawcą Umowy.
+3. Zamawiający podaje symulowane ilości części zamiennych w oparciu o szacunkowe ilości planowanych do zakupu (Załącznik nr 4 do SWZ - Cennik podstawowy). W pozostałych pozycjach wstawiana będzie ilość „1 szt.” (Załącznik nr 4 do SWZ - Cennik dodatkowy). Ilości te podano tylko i wyłącznie na potrzeby dokonania oceny poszczególnych ofert. Rzeczywista ilość dostaw części, podzespołów i materiałów realizowana na podstawie przyszłej Umowy zawartej z wybranym Wykonawcą będzie wynikała z aktualnego zapotrzebowania Zamawiającego, przy czym łączna wartość netto części zamiennych, podzespołów i materiałów zamówionych przez Zamawiającego nie może przekroczyć maksymalnej wartości Umowy netto na cały okres jej trwania ani nie może być niższa, niż 30 % maksymalnej wartości Umowy netto. Maksymalna wartość umowy netto jest równa wartości netto oferty w zakresie cennika podstawowego. Umowa zostanie zawarta na czas określony, na okres 24 miesięcy od dnia zawarcia Umowy.
+4. Szczegółowy opis przedmiotu zamówienia zawiera Część III SWZ.
+5. Przedmiotowe zamówienie jest zamówieniem sektorowym w rozumieniu art. 7 pkt 35) ustawy Pzp.</cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">supplies</cbc:ProcurementTypeCode>
+         <cbc:Note languageID="POL">W przypadku, gdy przed końcem terminu obowiązywania Umowy nie zostanie wykorzystana przez Strony kwota określona w ust. 2 Umowy, Strony w drodze pisemnego aneksu (pod rygorem nieważności) mogą przedłużyć termin obowiązywania niniejszej Umowy maksymalnie o kolejne 24 miesiące. W takim przypadku Umowa rozwiązuje się z chwilą wyczerpania jej maksymalnej wartości lub wraz z upływem przedłużonego okresu obowiązywania Umowy - w zależności od tego, które zdarzenie nastąpi wcześniej.
+NA POTWIERDZENIE BRAKU PODSTAW WYKLUCZENIA ORAZ SPEŁNIANIA WARUNKÓW UDZIAŁU W POSTĘPOWANIU, ZAMAWIAJĄCY ŻĄDA ZŁOŻENIA DOKUMENTÓW, O KTÓRYCH MOWA W ROZDZIALE X CZĘŚCI I SWZ</cbc:Note>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">43600000</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:RealizedLocation>
+            <cbc:Description languageID="POL">Magazyny położone w Bogdance, Nadrybiu i Stefanowie. </cbc:Description>
+            <cac:Address>
+               <cbc:CountrySubentityCode listName="nuts">PL814</cbc:CountrySubentityCode>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">POL</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+         <cac:PlannedPeriod>
+            <cbc:DurationMeasure unitCode="MONTH">24</cbc:DurationMeasure>
+         </cac:PlannedPeriod>
+         <cac:ContractExtension>
+            <cbc:MaximumNumberNumeric>0</cbc:MaximumNumberNumeric>
+         </cac:ContractExtension>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+</ContractNotice>

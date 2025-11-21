@@ -192,7 +192,7 @@ class ContractOpportunity(BaseModel):
     buyer_name: str = Field(..., description="Purchasing organization")
     
     # Dates
-    published_date: datetime = Field(..., description="Publication date")
+    published_date: Optional[datetime] = Field(None, description="Publication date")
     closing_date: Optional[datetime] = Field(None, description="Application deadline date")
     closing_time: Optional[str] = Field(None, description="Application deadline time (e.g., '12:00', '17:00')")
     start_date: Optional[datetime] = Field(None, description="Expected contract start date")
@@ -218,6 +218,10 @@ class ContractOpportunity(BaseModel):
     contact_address: Optional[str] = Field(None, description="Full contact address")
     contact_website: Optional[str] = Field(None, description="Contact website URL")
     
+    # Source & Links (ADD THIS SECTION)
+    source_url: Optional[str] = Field(None, description="Link to original opportunity posting")
+
+
     # Additional metadata
     additional_text: Optional[str] = Field(None, description="Additional context (funding sources, etc.)")
     attachments: Optional[str] = Field(None, description="Links to tender documents")
@@ -225,6 +229,10 @@ class ContractOpportunity(BaseModel):
     suitable_for_sme: Optional[bool] = Field(None, description="Suitable for SMEs")
     suitable_for_vco: Optional[bool] = Field(None, description="Suitable for VCOs")
 
+    metadata: Optional[Dict[str, Any]] = Field(
+        default_factory=dict,
+        description="Additional opportunity metadata (set_aside, psc_code, solicitation_number, etc.)"
+    )
 
 class ContractSyncResponse(BaseModel):
     """Response for contract sync operation"""
