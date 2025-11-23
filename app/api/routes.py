@@ -14,9 +14,12 @@ from app.models.schemas import (
     ContractSearchResult,
     CapabilityCreate,
     CapabilityUpdate,
+    CapabilityResponse,
     PastWinCreate,
     PastWinUpdate,
+    PastWinResponse,
     PreferencesUpdate,
+    PreferencesResponse,
     CompanyProfileResponse,
     EmailPreferencesUpdate,
     EmailPreferencesResponse
@@ -38,9 +41,25 @@ import shutil
 from app.core.auth import User, get_current_active_user
 from app.database import get_db
 from sqlalchemy.orm import Session
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, List
 import logging
 from datetime import datetime
+from pydantic import BaseModel
+
+class FederalInfoUpdate(BaseModel):
+    company_name: Optional[str] = None
+    description: Optional[str] = None
+    sba_certified: Optional[bool] = None
+    sdvosb_certified: Optional[bool] = None
+    wosb_certified: Optional[bool] = None
+    hubzone_certified: Optional[bool] = None
+    eight_a_certified: Optional[bool] = None
+    naics_codes: Optional[List[str]] = None
+    psc_codes: Optional[List[str]] = None
+    cage_code: Optional[str] = None
+    uei_number: Optional[str] = None
+    sam_registered: Optional[bool] = None
+    sam_expiration: Optional[str] = None
 
 logger = logging.getLogger(__name__)
 
@@ -422,33 +441,101 @@ async def get_company_profile_endpoint(
     current_user: User = Depends(get_current_active_user),
     db: Session = Depends(get_db)
 ):
-    """Get company profile with capabilities, past wins, and preferences"""
+    """Get company profile with all federal fields"""
     try:
         profile = get_company_profile(db, current_user.firm_id)
-        return profile
+        
+        # Safely handle preferences relationship
+        preferences_data = None
+        if profile.search_preference:
+            preferences_data = PreferencesResponse(
+                min_contract_value=profile.search_preference.min_contract_value,
+                max_contract_value=profile.search_preference.max_contract_value,
+                preferred_regions=profile.search_preference.preferred_regions or [],
+                excluded_categories=profile.search_preference.excluded_categories or [],
+                keywords=profile.search_preference.keywords or []
+            )
+        
+        # Build response with all federal fields
+        return CompanyProfileResponse(
+            firm_id=profile.firm_id,
+            company_name=profile.company_name,
+            description=profile.description,
+            size=profile.size,
+            founded_year=profile.founded_year,
+            registration_number=profile.registration_number,
+            # Federal fields with safe defaults
+            sba_certified=profile.sba_certified or False,
+            sdvosb_certified=profile.sdvosb_certified or False,
+            wosb_certified=profile.wosb_certified or False,
+            hubzone_certified=profile.hubzone_certified or False,
+            eight_a_certified=profile.eight_a_certified or False,
+            naics_codes=profile.naics_codes or [],
+            psc_codes=profile.psc_codes or [],
+            cage_code=profile.cage_code,
+            uei_number=profile.uei_number,
+            sam_registered=profile.sam_registered or False,
+            sam_expiration=profile.sam_expiration.isoformat() if profile.sam_expiration else None,
+            # Related data
+            capabilities=[CapabilityResponse.from_orm(c) for c in profile.capabilities] if profile.capabilities else [],
+            past_wins=[PastWinResponse.from_orm(w) for w in profile.past_wins] if profile.past_wins else [],
+            preferences=preferences_data,
+            created_at=profile.created_at,
+            updated_at=profile.updated_at
+        )
         
     except Exception as e:
-        logger.error(f"Failed to get company profile: {str(e)}")
+        logger.error(f"Failed to get company profile: {str(e)}", exc_info=True)
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"Failed to retrieve company profile: {str(e)}"
         )
-
 @router.put("/company/profile")
 async def update_company_profile_endpoint(
-    company_name: str = None,
-    description: str = None,
+    data: FederalInfoUpdate,  # ← This receives the JSON body!
     current_user: User = Depends(get_current_active_user),
     db: Session = Depends(get_db)
 ):
-    """Update company profile basic info"""
+    """Update company profile including federal-specific fields"""
     try:
         profile = get_company_profile(db, current_user.firm_id)
         
-        if company_name is not None:
-            profile.company_name = company_name
-        if description is not None:
-            profile.description = description
+        # Basic fields
+        if data.company_name is not None:
+            profile.company_name = data.company_name
+        if data.description is not None:
+            profile.description = data.description
+        
+        # Federal certification fields
+        if data.sba_certified is not None:
+            profile.sba_certified = data.sba_certified
+        if data.sdvosb_certified is not None:
+            profile.sdvosb_certified = data.sdvosb_certified
+        if data.wosb_certified is not None:
+            profile.wosb_certified = data.wosb_certified
+        if data.hubzone_certified is not None:
+            profile.hubzone_certified = data.hubzone_certified
+        if data.eight_a_certified is not None:
+            profile.eight_a_certified = data.eight_a_certified
+        
+        # Industry codes
+        if data.naics_codes is not None:
+            profile.naics_codes = data.naics_codes
+        if data.psc_codes is not None:
+            profile.psc_codes = data.psc_codes
+        
+        # Federal identifiers
+        if data.cage_code is not None:
+            profile.cage_code = data.cage_code
+        if data.uei_number is not None:
+            profile.uei_number = data.uei_number
+        if data.sam_registered is not None:
+            profile.sam_registered = data.sam_registered
+        if data.sam_expiration is not None:
+            from datetime import datetime
+            profile.sam_expiration = datetime.fromisoformat(data.sam_expiration.replace('Z', '+00:00')).date()
+        
+        logger.info(f"DEBUG BEFORE COMMIT: sba={profile.sba_certified}, sdvosb={profile.sdvosb_certified}")
         
         db.commit()
         db.refresh(profile)
@@ -457,14 +544,12 @@ async def update_company_profile_endpoint(
         return {"success": True, "message": "Profile updated successfully"}
         
     except Exception as e:
-        logger.error(f"Failed to update company profile: {str(e)}")
+        logger.error(f"Failed to update profile: {str(e)}")
         db.rollback()
         raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            status_code=500,
             detail=f"Failed to update profile: {str(e)}"
         )
-
-# ========== CAPABILITY ROUTES ==========
 
 @router.get("/capabilities")
 async def get_capabilities(

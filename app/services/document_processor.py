@@ -162,18 +162,26 @@ class DocumentProcessor:
         limit: int = 10
     ) -> list[dict]:
         """
-        Find contracts matching user's uploaded documents
+        Find SAM.gov contracts matching user's uploaded documents
         Uses average of all document chunk embeddings
-        Sorts by: 1) New contracts first, 2) Then similarity score
         """
         # Get all document chunks for this user
         search_result = self.qdrant.scroll(
             collection_name="user_documents",
             limit=100,
-            with_vectors=True
+            with_vectors=True,
+            scroll_filter={
+                "must": [
+                    {
+                        "key": "user_id",
+                        "match": {"value": user_id}
+                    }
+                ]
+            }
         )
         
         if not search_result[0]:
+            logger.warning(f"No documents found for user {user_id}")
             return []
         
         # Average all chunk embeddings to create user "signature"
@@ -183,46 +191,80 @@ class DocumentProcessor:
             for vectors in zip(*chunk_vectors)
         ]
         
-        # Search contracts using averaged embedding (get more to sort)
-        matches = self.qdrant.search(
-            collection_name=settings.QDRANT_COLLECTION_NAME,
-            query_vector=avg_vector,
-            limit=limit * 2
-        )
+        logger.info(f"Searching SAM contracts with averaged embedding from {len(chunk_vectors)} chunks")
         
-        # Convert to dict and check if new
-        results = []
-        for hit in matches:
-            published_date = hit.payload.get("metadata", {}).get("published_date")
-            is_new = False
+        # Search SAM contracts using averaged embedding
+        # Check if using Pinecone or Qdrant for SAM contracts
+        use_pinecone = settings.USE_PINECONE
+        
+        if use_pinecone:
+            # Use Pinecone for SAM contracts
+            from pinecone import Pinecone
+            pc = Pinecone(api_key=settings.PINECONE_API_KEY)
+            index = pc.Index(settings.PINECONE_INDEX_NAME)
             
-            if published_date:
-                try:
-                    pub_date = datetime.fromisoformat(published_date.replace('Z', '+00:00'))
-                    is_new = (datetime.now(pub_date.tzinfo) - pub_date).days <= 7
-                except:
-                    pass
+            matches = index.query(
+                vector=avg_vector,
+                top_k=limit,
+                include_metadata=True
+            )
             
-            results.append({
-                "contract_id": hit.id,
-                "notice_id": hit.payload.get("notice_id", ""),
-                "title": hit.payload.get("metadata", {}).get("title", ""),
-                "buyer": hit.payload.get("buyer_name", ""),
-                "value": hit.payload.get("value"),
-                "deadline": hit.payload.get("metadata", {}).get("closing_date"),
-                "published_date": published_date,
-                "score": round(hit.score, 3),
-                "is_new": is_new,
-                "url": f"https://www.contractsfinder.service.gov.uk/notice/{hit.payload.get('notice_id', '')}" if hit.payload.get("notice_id") else "",
-                "description": hit.payload.get("content", "")[:200] + "..." if hit.payload.get("content") else "",
-                "cpv_codes": hit.payload.get("metadata", {}).get("cpv_codes", []),
-                "region": hit.payload.get("region", "")
-            })
+            # Convert Pinecone response to standard format
+            results = []
+            for match in matches.matches:
+                metadata = match.metadata or {}
+                results.append({
+                    "contract_id": match.id,
+                    "notice_id": metadata.get("notice_id", ""),
+                    "title": metadata.get("title", ""),
+                    "buyer": metadata.get("buyer_name", ""),
+                    "buyer_name": metadata.get("buyer_name", ""),
+                    "value": metadata.get("value"),
+                    "deadline": metadata.get("closing_date"),
+                    "closing_date": metadata.get("closing_date"),
+                    "published_date": metadata.get("published_date"),
+                    "score": round(match.score, 3),
+                    "url": metadata.get("source_url", ""),
+                    "source_url": metadata.get("source_url", ""),
+                    "description": metadata.get("description", "")[:300] + "..." if metadata.get("description") else "",
+                    "region": metadata.get("region", ""),
+                    "set_aside": metadata.get("set_aside", ""),
+                    "psc_code": metadata.get("psc_code", [])
+                })
+        else:
+            # Use Qdrant for SAM contracts (fallback)
+            matches = self.qdrant.search(
+                collection_name="sam_contracts",  # SAM contracts collection
+                query_vector=avg_vector,
+                limit=limit
+            )
+            
+            # Convert Qdrant response to standard format
+            results = []
+            for hit in matches:
+                payload = hit.payload or {}
+                results.append({
+                    "contract_id": hit.id,
+                    "notice_id": payload.get("notice_id", ""),
+                    "title": payload.get("title", ""),
+                    "buyer": payload.get("buyer_name", ""),
+                    "buyer_name": payload.get("buyer_name", ""),
+                    "value": payload.get("value"),
+                    "deadline": payload.get("closing_date"),
+                    "closing_date": payload.get("closing_date"),
+                    "published_date": payload.get("published_date"),
+                    "score": round(hit.score, 3),
+                    "url": payload.get("source_url", ""),
+                    "source_url": payload.get("source_url", ""),
+                    "description": payload.get("description", "")[:300] + "..." if payload.get("description") else "",
+                    "region": payload.get("region", ""),
+                    "set_aside": payload.get("set_aside", ""),
+                    "psc_code": payload.get("psc_code", [])
+                })
         
-        # Sort: new contracts first, then by similarity
-        results.sort(key=lambda x: (not x["is_new"], -x["score"]))
+        logger.info(f"Found {len(results)} SAM contract matches for user {user_id}")
         
-        return results[:limit]
+        return results
 
 
 # Lazy initialization - only create when actually needed

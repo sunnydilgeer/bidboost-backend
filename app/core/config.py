@@ -41,6 +41,8 @@ class Settings(BaseSettings):
     FRONTEND_URL: str = "http://localhost:3000"
     PINECONE_API_KEY: Optional[str] = None
     USE_PINECONE: bool = False
+    PINECONE_INDEX_NAME: str = "contracts"
+
     
     class Config:
         env_file = ".env"

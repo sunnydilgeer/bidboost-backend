@@ -3,6 +3,7 @@ from sqlalchemy.orm import Session
 from app.models.company import CompanyProfile, CompanyCapability, PastWin, SearchPreference
 from app.models.contract import Contract
 from qdrant_client import QdrantClient
+from app.core.config import settings
 import numpy as np
 import logging
 
@@ -15,11 +16,24 @@ class ContractMatchScorer:
     - Semantic similarity between capabilities and contract requirements
     - Past win matching (similar buyers, contract values)
     - Search preference filtering (value ranges, regions, keywords)
+    
+    Supports both Qdrant (capabilities) and Pinecone (SAM contracts)
     """
     
     def __init__(self, db: Session, qdrant_client: QdrantClient):
         self.db = db
         self.qdrant = qdrant_client
+        
+        # Initialize Pinecone if enabled
+        self.use_pinecone = settings.USE_PINECONE
+        if self.use_pinecone:
+            from pinecone import Pinecone
+            pc = Pinecone(api_key=settings.PINECONE_API_KEY)
+            self.pinecone_index = pc.Index(settings.PINECONE_INDEX_NAME)
+            logger.info("ContractMatchScorer initialized with Pinecone for SAM contracts")
+        else:
+            self.pinecone_index = None
+            logger.info("ContractMatchScorer initialized with Qdrant only")
 
     def get_improvement_recommendations(
         self, 
@@ -47,13 +61,13 @@ class ContractMatchScorer:
                 "current_score": 0.0,
                 "potential_score": 30.0,
                 "priority": "high",
-                "action": "Add 1-2 similar past contract wins to demonstrate relevant experience",
+                "action": "Add 1-2 similar past federal contract wins to demonstrate relevant experience",
                 "impact": "+30% to total match score",
                 "icon": "🎯",
                 "specific_actions": [
                     "Add a past win in your main capability area",
-                    "Include contract value and buyer organization name",
-                    "Focus on government/public sector contracts"
+                    "Include contract value and federal agency name",
+                    "Focus on government/federal contracts"
                 ]
             })
         elif past_wins_count < 3:
@@ -67,7 +81,7 @@ class ContractMatchScorer:
                 "impact": f"+{potential_boost}% potential boost",
                 "icon": "📈",
                 "specific_actions": [
-                    "Add wins from different government buyers",
+                    "Add wins from different federal agencies",
                     "Include recent contracts (last 2-3 years)",
                     f"Aim for at least 3 past wins for credibility"
                 ]
@@ -86,9 +100,9 @@ class ContractMatchScorer:
                 "impact": f"+{min(15, (3 - capabilities_count) * 5)}% potential boost",
                 "icon": "💡",
                 "specific_actions": [
-                    "Use specific terminology like 'Fleet Management Systems' instead of 'IT Services'",
-                    "Add 'Digital Transformation for Government' or 'Cloud Infrastructure Migration'",
-                    "Match language from contracts you're interested in"
+                    "Use specific terminology like 'Cybersecurity Compliance (NIST)' instead of 'IT Services'",
+                    "Add 'Federal Cloud Migration (FedRAMP)' or 'Defense Systems Integration'",
+                    "Match language from SAM.gov contracts you're interested in"
                 ]
             })
         elif capabilities_count < 5:
@@ -111,9 +125,9 @@ class ContractMatchScorer:
                     "impact": "+10-15% better relevance scores",
                     "icon": "🎨",
                     "specific_actions": [
-                        "Replace 'IT Services' → 'Cybersecurity Auditing & Compliance'",
-                        "Replace 'Software Development' → 'GOV.UK Service Standard Development'",
-                        "Use exact phrases from top-scoring contracts"
+                        "Replace 'IT Services' → 'Cybersecurity Auditing & FISMA Compliance'",
+                        "Replace 'Software Development' → 'Agile Development for Federal Agencies'",
+                        "Use exact phrases from high-scoring SAM.gov contracts"
                     ]
                 })
         
@@ -133,7 +147,7 @@ class ContractMatchScorer:
                 "icon": "⚙️",
                 "specific_actions": [
                     "Set minimum/maximum contract values",
-                    "Add preferred regions (e.g., London, South East)",
+                    "Add preferred states/regions (e.g., CA, TX, VA, DC)",
                     "Add keywords for your specialization"
                 ]
             })
@@ -224,9 +238,9 @@ class ContractMatchScorer:
         
         # Calculate weighted total score
         scores["total_score"] = (
-            capability_score * 0.4 +
-            past_win_score * 0.3 +
-            preference_score * 0.3
+            capability_score * 0.5 +
+            past_win_score * 0.25 +
+            preference_score * 0.25
         )
         
         logger.info(f"Contract {contract.notice_id} scored {scores['total_score']:.2%} for firm {firm_id}")
@@ -239,44 +253,65 @@ class ContractMatchScorer:
         capabilities: List[CompanyCapability]
     ) -> float:
         """Use semantic similarity between capabilities and contract description"""
-        if not capabilities or not contract.qdrant_id:
-            logger.debug(f"Missing capabilities ({len(capabilities)}) or contract qdrant_id ({contract.qdrant_id})")
+        if not capabilities:
+            logger.debug(f"No capabilities found")
             return 0.0
         
         try:
-            # 🔧 FIX: Get contract embedding from Qdrant WITH VECTORS
-            contract_points = self.qdrant.retrieve(
-                collection_name="legal_documents",
-                ids=[contract.qdrant_id],
-                with_vectors=True  # ← CRITICAL FIX
-            )
+            # Get contract embedding from appropriate source
+            contract_vector = None
             
-            if not contract_points:
-                logger.warning(f"Contract {contract.qdrant_id} not found in Qdrant")
+            if self.use_pinecone and contract.qdrant_id:
+                # SAM contracts are in Pinecone
+                try:
+                    result = self.pinecone_index.fetch(ids=[contract.qdrant_id])
+                    if contract.qdrant_id in result.vectors:
+                        contract_vector = result.vectors[contract.qdrant_id].values
+                        logger.debug(f"Retrieved SAM contract vector from Pinecone: {contract.qdrant_id}")
+                except Exception as e:
+                    logger.error(f"Failed to fetch from Pinecone: {e}")
+            
+            if not contract_vector and contract.qdrant_id:
+                # Fallback to Qdrant for legacy contracts
+                try:
+                    contract_points = self.qdrant.retrieve(
+                        collection_name="legal_documents",
+                        ids=[contract.qdrant_id],
+                        with_vectors=True
+                    )
+                    if contract_points:
+                        contract_vector = contract_points[0].vector
+                        logger.debug(f"Retrieved contract vector from Qdrant: {contract.qdrant_id}")
+                except Exception as e:
+                    logger.error(f"Failed to fetch from Qdrant: {e}")
+            
+            if not contract_vector:
+                logger.warning(f"Contract {contract.qdrant_id} vector not found in Pinecone or Qdrant")
                 return 0.0
             
-            contract_vector = contract_points[0].vector
-            
-            # Calculate similarity with each capability and take the best matches
+            # Calculate similarity with each capability (capabilities are in Qdrant)
             similarities = []
             for cap in capabilities:
                 if cap.qdrant_id:
-                    # 🔧 FIX: Get capability embedding WITH VECTORS
-                    cap_points = self.qdrant.retrieve(
-                        collection_name="capabilities",
-                        ids=[cap.qdrant_id],
-                        with_vectors=True  # ← CRITICAL FIX
-                    )
-                    if cap_points:
-                        cap_vector = cap_points[0].vector
-                        similarity = self._cosine_similarity(contract_vector, cap_vector)
-                        similarities.append(similarity)
-                        logger.debug(f"Capability '{cap.capability_text[:50]}' similarity: {similarity:.3f}")
+                    try:
+                        cap_points = self.qdrant.retrieve(
+                            collection_name="capabilities",
+                            ids=[cap.qdrant_id],
+                            with_vectors=True
+                        )
+                        if cap_points:
+                            cap_vector = cap_points[0].vector
+                            similarity = self._cosine_similarity(contract_vector, cap_vector)
+                            similarities.append(similarity)
+                            logger.debug(f"Capability '{cap.capability_text[:50]}' similarity: {similarity:.3f}")
+                    except Exception as e:
+                        logger.error(f"Failed to retrieve capability {cap.qdrant_id}: {e}")
+                        continue
             
             if not similarities:
                 return 0.0
             
-            # 🎯 IMPROVEMENT: Use average of top 3 matches instead of just max
+            # Use average of top 3 matches instead of just max
             # This rewards having multiple relevant capabilities
             similarities.sort(reverse=True)
             top_matches = similarities[:3]
@@ -327,7 +362,7 @@ class ContractMatchScorer:
                 if value_ratio > 0.5:  # Within 2x range
                     score += 0.3
                     if value_ratio > 0.8:  # Very similar value
-                        reasons.append(f"Similar contract value to past win (£{win.contract_value:,.0f})")
+                        reasons.append(f"Similar contract value to past win (${win.contract_value:,.0f})")
         
         # Cap score at 1.0
         final_score = min(score, 1.0)
@@ -360,21 +395,22 @@ class ContractMatchScorer:
         if contract.contract_value:
             if preferences.min_contract_value and contract.contract_value < preferences.min_contract_value:
                 passes_filters = False
-                logger.debug(f"Contract value £{contract.contract_value:,.0f} below minimum £{preferences.min_contract_value:,.0f}")
+                logger.debug(f"Contract value ${contract.contract_value:,.0f} below minimum ${preferences.min_contract_value:,.0f}")
             
             if preferences.max_contract_value and contract.contract_value > preferences.max_contract_value:
                 passes_filters = False
-                logger.debug(f"Contract value £{contract.contract_value:,.0f} above maximum £{preferences.max_contract_value:,.0f}")
+                logger.debug(f"Contract value ${contract.contract_value:,.0f} above maximum ${preferences.max_contract_value:,.0f}")
             
             # Add reason if value is in range
             if passes_filters and (preferences.min_contract_value or preferences.max_contract_value):
-                reasons.append(f"Contract value (£{contract.contract_value:,.0f}) matches preferences")
+                reasons.append(f"Contract value (${contract.contract_value:,.0f}) matches preferences")
         
         # Excluded categories filter (HARD)
         if preferences.excluded_categories:
             contract_text = f"{contract.title} {contract.description or ''}".lower()
             for category in preferences.excluded_categories:
-                if category.lower() in contract_text:
+                category_lower = category.lower()
+                if category_lower in contract_text:
                     passes_filters = False
                     logger.debug(f"Contract contains excluded category: {category}")
                     break

@@ -483,15 +483,37 @@ class AwardedContract(BaseModel):
 
 class CompanyProfileResponse(BaseModel):
     """Complete company profile with all related data"""
+    # Basic info
     firm_id: str
     company_name: str
     description: Optional[str]
     size: Optional[str] = None
     founded_year: Optional[int] = None
     registration_number: Optional[str] = None
-    capabilities: List[CapabilityResponse]
-    past_wins: List[PastWinResponse]
-    preferences: PreferencesResponse
+    
+    # 🆕 FEDERAL CERTIFICATION FIELDS
+    sba_certified: bool = False
+    sdvosb_certified: bool = False
+    wosb_certified: bool = False
+    hubzone_certified: bool = False
+    eight_a_certified: bool = False
+    
+    # 🆕 INDUSTRY CLASSIFICATION
+    naics_codes: List[str] = Field(default_factory=list)
+    psc_codes: List[str] = Field(default_factory=list)
+    
+    # 🆕 FEDERAL IDENTIFIERS
+    cage_code: Optional[str] = None
+    uei_number: Optional[str] = None
+    sam_registered: bool = False
+    sam_expiration: Optional[str] = None  # ISO date string
+    
+    # Related data
+    capabilities: List[CapabilityResponse] = Field(default_factory=list)
+    past_wins: List[PastWinResponse] = Field(default_factory=list)
+    preferences: Optional[PreferencesResponse] = None
+    
+    # Timestamps
     created_at: datetime
     updated_at: datetime
     
