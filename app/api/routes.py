@@ -404,7 +404,7 @@ async def send_test_email(
             "notice_id": "test-123",
             "title": "Test Contract - IT Services",
             "buyer_name": "Test Government Department",
-            "value": "£50,000",
+            "value": "50,000",
             "deadline": "2025-11-15",
             "match_score": 87,
             "match_reason": "This is a test email to verify your notification setup"
