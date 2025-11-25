@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Contract Matches</title>
+    <title>New Federal Contract Matches</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -102,13 +102,23 @@
             color: #3b82f6;
             text-decoration: none;
         }
+        .sam-badge {
+            display: inline-block;
+            background-color: #dbeafe;
+            color: #1e40af;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-left: 8px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>🎯 New Contract Matches</h1>
-            <p style="color: #6b7280; margin: 0;">Your daily contract opportunities</p>
+            <h1>🎯 New Federal Contract Matches</h1>
+            <p style="color: #6b7280; margin: 0;">Your daily opportunities from SAM.gov</p>
         </div>
 
         <div class="greeting">
@@ -116,16 +126,19 @@
         </div>
 
         <p>
-            We found <strong>{{ total_new_contracts }} new government contracts</strong> that match your profile today. 
+            We found <strong>{{ total_new_contracts }} new federal contract opportunities</strong> that match your company profile today. 
             Here are your top matches:
         </p>
 
         {% for contract in contracts %}
         <div class="contract-card">
-            <div class="contract-title">{{ contract.title }}</div>
-            <div class="contract-buyer">👔 {{ contract.buyer_name }}</div>
+            <div class="contract-title">
+                {{ contract.title }}
+                <span class="sam-badge">SAM.gov</span>
+            </div>
+            <div class="contract-buyer">🏛️ {{ contract.buyer_name }}</div>
             {% if contract.value %}
-            <div class="contract-value">💰 {{ contract.value }}</div>
+            <div class="contract-value">💰 ${{ contract.value }}</div>
             {% endif %}
             <div class="contract-buyer">📅 Deadline: {{ contract.deadline }}</div>
             
@@ -139,14 +152,20 @@
 
         <div class="cta-section">
             <a href="{{ dashboard_url }}/contracts" class="view-button">
-                View All {{ total_new_contracts }} Contracts →
+                View All {{ total_new_contracts }} Opportunities →
             </a>
+            <p style="margin-top: 15px; color: #6b7280; font-size: 13px;">
+                Match scores based on your capabilities, past wins, and preferences
+            </p>
         </div>
 
         <div class="footer">
             <p>
                 You're receiving this because you have email notifications enabled.<br>
-                <a href="{{ unsubscribe_url }}">Manage email preferences</a>
+                <a href="{{ dashboard_url }}/settings">Manage email preferences</a>
+            </p>
+            <p style="margin-top: 10px; font-size: 11px;">
+                BidMatch · Federal Contract Discovery Platform
             </p>
         </div>
     </div>
