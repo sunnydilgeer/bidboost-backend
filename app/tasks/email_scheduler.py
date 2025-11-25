@@ -273,16 +273,6 @@ class EmailScheduler:
             # Using Qdrant scroll to get recent contracts
             scroll_result = self.vector_store.client.scroll(
                 collection_name="legal_documents",
-                scroll_filter=Filter(
-                    must=[
-                        FieldCondition(
-                            key="metadata.published_date",
-                            range=Range(
-                                gte=since_date.isoformat()
-                            )
-                        )
-                    ]
-                ),
                 limit=50,  # Get up to 50 recent contracts
                 with_payload=True
             )
