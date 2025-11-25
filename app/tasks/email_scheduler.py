@@ -1,6 +1,6 @@
 """
 Email Scheduler - US Federal Version
-Integrated with your actual User and SavedContract models
+Supports both Qdrant (localhost) and Pinecone (production)
 
 Location: app/tasks/email_scheduler.py
 """
@@ -15,7 +15,12 @@ from app.database import SessionLocal
 from app.models import User
 from app.models.company import SavedContract
 from app.services.match_scoring import ContractMatchScorer
+from app.core.config import settings
+
+# Import both vector stores
 from app.services.vector_store import VectorStoreService
+from app.services.pinecone_store import PineconeStoreService
+
 from app.services.contract_fetcher import ContractFetcherService
 from app.services.llm import LLMService
 
@@ -26,7 +31,17 @@ logger = logging.getLogger(__name__)
 class EmailScheduler:
     def __init__(self):
         self.scheduler = BackgroundScheduler()
-        self.vector_store = VectorStoreService()
+        
+        # Initialize the correct vector store based on environment
+        if settings.USE_PINECONE:
+            logger.info("🌲 Using Pinecone for vector storage")
+            self.vector_store = PineconeStoreService(api_key=settings.PINECONE_API_KEY)
+            self.use_pinecone = True
+        else:
+            logger.info("📦 Using Qdrant for vector storage")
+            self.vector_store = VectorStoreService()
+            self.use_pinecone = False
+        
         self.setup_jobs()
     
     def setup_jobs(self):
@@ -58,7 +73,8 @@ class EmailScheduler:
             replace_existing=True
         )
         
-        logger.info("✅ Email scheduler jobs configured (7am sync, 9am emails, 10am reminders EST)")
+        vector_db = "Pinecone" if self.use_pinecone else "Qdrant"
+        logger.info(f"✅ Email scheduler jobs configured (7am sync, 9am emails, 10am reminders EST) using {vector_db}")
     
     def send_daily_contract_emails(self):
         """Send daily emails with new matching contracts."""
@@ -94,9 +110,9 @@ class EmailScheduler:
                             {
                                 "notice_id": c["notice_id"],
                                 "title": c["title"],
-                                "buyer_name": c["buyer_name"],
-                                "value": self._format_value(c.get("value")),
-                                "deadline": self._format_date(c.get("deadline")),
+                                "buyer_name": c.get("agency") or c.get("buyer_name", ""),
+                                "value": self._format_value(c.get("contract_value") or c.get("value")),
+                                "deadline": self._format_date(c.get("response_deadline") or c.get("deadline")),
                                 "match_score": int(c.get("match_score", 0) * 100) if c.get("match_score") else 0,
                                 "match_reason": c.get("match_reason", "Matches your profile")
                             }
@@ -150,7 +166,6 @@ class EmailScheduler:
             ]
             
             # Query saved contracts with approaching deadlines
-            # Join with User to check notification preferences
             saved_contracts = db.query(SavedContract).join(
                 User, SavedContract.user_email == User.email
             ).filter(
@@ -225,15 +240,28 @@ class EmailScheduler:
             # Initialize contract fetcher service
             contract_service = ContractFetcherService()
             llm_service = LLMService()
-            vector_store = VectorStoreService()
             
             # Fetch contracts from API (last 7 days to catch any missed ones)
             import asyncio
             contracts = asyncio.run(contract_service.fetch_contracts(limit=100, days_back=7))
             
             if contracts:
-                # Store in vector database
-                asyncio.run(vector_store.add_contracts(contracts, llm_service))
+                # Store in the appropriate vector database
+                if self.use_pinecone:
+                    # Format for Pinecone
+                    documents = []
+                    for contract in contracts:
+                        embedding = asyncio.run(llm_service.generate_embeddings(contract.description))
+                        documents.append({
+                            "id": contract.notice_id,
+                            "embedding": embedding,
+                            "payload": contract.__dict__
+                        })
+                    self.vector_store.upsert_documents(documents)
+                else:
+                    # Use existing Qdrant method
+                    vector_store_qdrant = VectorStoreService()
+                    asyncio.run(vector_store_qdrant.add_contracts(contracts, llm_service))
                 
             logger.info(f"✅ Daily contract sync complete: {len(contracts)} contracts processed")
             
@@ -244,21 +272,18 @@ class EmailScheduler:
             
         except Exception as e:
             logger.error(f"❌ Daily contract sync failed: {str(e)}")
-            # Optional: Send alert email to admin
             
         finally:
             pass
     
     def _get_new_contracts_for_user(self, db, user: User, since_date: datetime) -> List[Dict]:
         """
-        Get new contracts that match user's profile since a given date.
-        
-        This integrates with your existing scoring system.
+        Get new contracts that match user's profile.
+        Works with both Pinecone and Qdrant.
         """
         try:
             from app.models.company import CompanyProfile
             from app.models.contract import Contract
-            from qdrant_client.models import Filter, FieldCondition, Range
             
             # Get user's company profile
             company = db.query(CompanyProfile).filter(
@@ -269,11 +294,66 @@ class EmailScheduler:
                 logger.warning(f"No company profile for user {user.email}")
                 return []
             
-            # Search for contracts published after since_date
-            # Using Qdrant scroll to get recent contracts
+            if self.use_pinecone:
+                # Use Pinecone search
+                return self._get_contracts_from_pinecone(db, user, company)
+            else:
+                # Use Qdrant search
+                return self._get_contracts_from_qdrant(db, user, company)
+            
+        except Exception as e:
+            logger.error(f"Error getting contracts for user {user.email}: {e}")
+            return []
+    
+    def _get_contracts_from_pinecone(self, db, user: User, company) -> List[Dict]:
+        """Get contracts from Pinecone"""
+        try:
+            # Get all recent contracts (Pinecone returns them sorted by relevance)
+            # We'll use a dummy query vector - in production you'd generate from user's capabilities
+            import asyncio
+            from app.services.llm import LLMService
+            
+            llm = LLMService()
+            
+            # Create search query from user's capabilities
+            capabilities_text = " ".join([cap.capability_text for cap in company.capabilities[:3]])
+            query_vector = asyncio.run(llm.generate_embeddings(capabilities_text or "federal contracts"))
+            
+            # Search Pinecone
+            results = self.vector_store.search_contracts(
+                query_vector=query_vector,
+                limit=50,
+                min_score=0.5
+            )
+            
+            # Format for email (Pinecone returns different structure)
+            matched_contracts = []
+            for result in results:
+                matched_contracts.append({
+                    "notice_id": result.get("notice_id", ""),
+                    "title": result.get("title", ""),
+                    "agency": result.get("agency", ""),
+                    "contract_value": result.get("contract_value", 0),
+                    "response_deadline": result.get("response_deadline", ""),
+                    "match_score": result.get("score", 0),
+                    "match_reason": "Matches your capabilities"
+                })
+            
+            return matched_contracts
+            
+        except Exception as e:
+            logger.error(f"Pinecone search error: {e}")
+            return []
+    
+    def _get_contracts_from_qdrant(self, db, user: User, company) -> List[Dict]:
+        """Get contracts from Qdrant"""
+        try:
+            from app.models.contract import Contract
+            
+            # Get recent contracts from Qdrant
             scroll_result = self.vector_store.client.scroll(
-                collection_name="legal_documents",
-                limit=50,  # Get up to 50 recent contracts
+                collection_name="contracts",
+                limit=50,
                 with_payload=True
             )
             
@@ -301,7 +381,7 @@ class EmailScheduler:
                 # Score contract
                 match_result = scorer.score_contract(contract, user.firm_id)
                 
-                if match_result and match_result["total_score"] >= 0.5:  # 50% minimum match
+                if match_result and match_result["total_score"] >= 0.5:
                     matched_contracts.append({
                         "notice_id": contract.notice_id,
                         "title": contract.title,
@@ -318,7 +398,7 @@ class EmailScheduler:
             return matched_contracts
             
         except Exception as e:
-            logger.error(f"Error getting contracts for user {user.email}: {e}")
+            logger.error(f"Qdrant search error: {e}")
             return []
     
     def _format_value(self, value) -> str:
@@ -326,7 +406,7 @@ class EmailScheduler:
         if value is None:
             return "Not specified"
         try:
-            return f"${float(value):,.0f}"  # ✅ Changed to dollar sign
+            return f"${float(value):,.0f}"
         except:
             return str(value)
     
