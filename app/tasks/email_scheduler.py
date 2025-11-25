@@ -1,5 +1,5 @@
 """
-Email Scheduler - Production Version
+Email Scheduler - US Federal Version
 Integrated with your actual User and SavedContract models
 
 Location: app/tasks/email_scheduler.py
@@ -31,34 +31,34 @@ class EmailScheduler:
     
     def setup_jobs(self):
         """Set up scheduled jobs."""
-        # Daily contract sync at 7:00 AM (before emails)
+        # Daily contract sync at 7:00 AM EST (before emails)
         self.scheduler.add_job(
             func=self.sync_contracts_daily,
-            trigger=CronTrigger(hour=7, minute=0),
+            trigger=CronTrigger(hour=7, minute=0, timezone='America/New_York'),
             id='sync_contracts_daily',
-            name='Sync contracts from UK Contracts Finder API',
+            name='Sync contracts from SAM.gov',
             replace_existing=True
         )
         
-        # Daily new contracts email at 8:00 AM
+        # Daily new contracts email at 9:00 AM EST
         self.scheduler.add_job(
             func=self.send_daily_contract_emails,
-            trigger=CronTrigger(hour=8, minute=0),
+            trigger=CronTrigger(hour=9, minute=0, timezone='America/New_York'),
             id='daily_contract_emails',
             name='Send daily new contract emails',
             replace_existing=True
         )
         
-        # Daily deadline reminders at 9:00 AM
+        # Daily deadline reminders at 10:00 AM EST
         self.scheduler.add_job(
             func=self.send_deadline_reminders,
-            trigger=CronTrigger(hour=9, minute=0),
+            trigger=CronTrigger(hour=10, minute=0, timezone='America/New_York'),
             id='deadline_reminders',
             name='Send deadline reminder emails',
             replace_existing=True
         )
         
-        logger.info("✅ Email scheduler jobs configured (7am sync, 8am emails, 9am reminders)")
+        logger.info("✅ Email scheduler jobs configured (7am sync, 9am emails, 10am reminders EST)")
     
     def send_daily_contract_emails(self):
         """Send daily emails with new matching contracts."""
@@ -218,7 +218,7 @@ class EmailScheduler:
             db.close()
     
     def sync_contracts_daily(self):
-        """Sync new contracts from UK Contracts Finder API every morning."""
+        """Sync new contracts from SAM.gov API every morning."""
         logger.info("🔄 Starting daily contract sync job")
         
         try:
@@ -336,7 +336,7 @@ class EmailScheduler:
         if value is None:
             return "Not specified"
         try:
-            return f"£{float(value):,.0f}"
+            return f"${float(value):,.0f}"  # ✅ Changed to dollar sign
         except:
             return str(value)
     
