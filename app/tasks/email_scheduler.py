@@ -323,7 +323,7 @@ class EmailScheduler:
             results = self.vector_store.search_contracts(
                 query_vector=query_vector,
                 limit=50,
-                min_score=0.5
+                min_score=0.2
             )
             
             # Format for email (Pinecone returns different structure)
