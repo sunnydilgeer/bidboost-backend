@@ -200,6 +200,8 @@ async def get_personalized_sam_recommendations(
     5. Return top matches sorted by total score
     """
     try:
+        from qdrant_client import QdrantClient
+        
         logger.info(f"🎯 Generating SAM recommendations for {current_user.email}")
         
         # Get company profile with capabilities
@@ -211,8 +213,12 @@ async def get_personalized_sam_recommendations(
             logger.warning(f"No capabilities found for user {current_user.email}")
             return SAMSearchResponse(query="", results=[], total_found=0)
         
-        # Initialize services
+        # Initialize services - Pinecone for contracts, Qdrant for capabilities
         pinecone_store = PineconeStoreService(api_key=settings.PINECONE_API_KEY)
+        qdrant_client = QdrantClient(
+            url=settings.QDRANT_URL,
+            api_key=settings.QDRANT_API_KEY
+        )
         
         # STEP 1: Get capability embeddings and search Pinecone
         all_contract_ids = {}  # Deduplicate by notice_id, keep highest score
@@ -224,7 +230,7 @@ async def get_personalized_sam_recommendations(
                 
             try:
                 # Retrieve capability vector from Qdrant
-                cap_points = pinecone_store.qdrant_client.retrieve(
+                cap_points = qdrant_client.retrieve(
                     collection_name="capabilities",
                     ids=[cap.qdrant_id],
                     with_vectors=True
@@ -262,7 +268,7 @@ async def get_personalized_sam_recommendations(
             return SAMSearchResponse(query="", results=[], total_found=0)
         
         # STEP 2: Score all found contracts with SAMContractMatchScorer
-        scorer = SAMContractMatchScorer(db, pinecone_store.qdrant_client)
+        scorer = SAMContractMatchScorer(db, qdrant_client)
         scored_results = []
         
         for result in all_contract_ids.values():
@@ -273,7 +279,7 @@ async def get_personalized_sam_recommendations(
                     title=result.get('title', ''),
                     buyer_name=result.get('agency', ''),
                     description=result.get('description', ''),
-                    contract_value=result.get('value'),
+                    contract_value=result.get('contract_value'),
                     region=result.get('state'),
                     qdrant_id=result.get('id')  # Pinecone ID for vector lookup
                 )
