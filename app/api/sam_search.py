@@ -11,6 +11,7 @@ from app.services.llm import LLMService
 from app.core.auth import User, get_current_active_user
 from app.database import get_db
 from app.models.contract import Contract
+from app.models.company import CompanyProfile
 from app.services.sam_match_scoring import SAMContractMatchScorer
 from app.services.pinecone_store import PineconeStoreService
 from app.core.config import settings
@@ -177,6 +178,150 @@ async def search_sam_contracts(
     except Exception as e:
         logger.error(f"SAM search failed: {str(e)}", exc_info=True)
         raise HTTPException(status_code=500, detail=f"Search failed: {str(e)}")
+
+
+@router.get("/recommended", response_model=SAMSearchResponse)
+async def get_personalized_sam_recommendations(
+    limit: int = 20,
+    current_user: User = Depends(get_current_active_user),
+    db: Session = Depends(get_db)
+):
+    """
+    Get personalized contract recommendations using semantic matching.
+    
+    This endpoint provides the single source of truth for personalized results
+    across Dashboard and Contracts-US pages.
+    
+    Process:
+    1. Load user's capability embeddings from Qdrant
+    2. Search Pinecone using each capability vector
+    3. Deduplicate and aggregate results
+    4. Score with SAMContractMatchScorer (capability + past wins + preferences)
+    5. Return top matches sorted by total score
+    """
+    try:
+        logger.info(f"🎯 Generating SAM recommendations for {current_user.email}")
+        
+        # Get company profile with capabilities
+        profile = db.query(CompanyProfile).filter(
+            CompanyProfile.firm_id == current_user.firm_id
+        ).first()
+        
+        if not profile or not profile.capabilities:
+            logger.warning(f"No capabilities found for user {current_user.email}")
+            return SAMSearchResponse(query="", results=[], total_found=0)
+        
+        # Initialize services
+        pinecone_store = PineconeStoreService(api_key=settings.PINECONE_API_KEY)
+        
+        # STEP 1: Get capability embeddings and search Pinecone
+        all_contract_ids = {}  # Deduplicate by notice_id, keep highest score
+        capabilities_used = 0
+        
+        for cap in profile.capabilities[:5]:  # Top 5 capabilities
+            if not cap.qdrant_id:
+                continue
+                
+            try:
+                # Retrieve capability vector from Qdrant
+                cap_points = pinecone_store.qdrant_client.retrieve(
+                    collection_name="capabilities",
+                    ids=[cap.qdrant_id],
+                    with_vectors=True
+                )
+                
+                if not cap_points or not cap_points[0].vector:
+                    logger.warning(f"No vector found for capability {cap.qdrant_id}")
+                    continue
+                
+                # Search Pinecone using capability vector
+                results = pinecone_store.search_contracts(
+                    query_vector=cap_points[0].vector,
+                    limit=limit,
+                    min_score=0.3  # Minimum semantic similarity threshold
+                )
+                
+                capabilities_used += 1
+                
+                # Deduplicate - keep highest scoring match per contract
+                for r in results:
+                    notice_id = r.get('notice_id')
+                    if notice_id:
+                        score = r.get('score', 0)
+                        if notice_id not in all_contract_ids or score > all_contract_ids[notice_id].get('score', 0):
+                            all_contract_ids[notice_id] = r
+                
+                logger.info(f"  ✅ Capability '{cap.capability_text[:40]}...' → {len(results)} contracts (similarity: {results[0].get('score', 0):.2%} top)")
+            
+            except Exception as e:
+                logger.error(f"Failed to process capability {cap.qdrant_id}: {e}")
+                continue
+        
+        if not all_contract_ids:
+            logger.warning(f"No contracts found for user {current_user.email}")
+            return SAMSearchResponse(query="", results=[], total_found=0)
+        
+        # STEP 2: Score all found contracts with SAMContractMatchScorer
+        scorer = SAMContractMatchScorer(db, pinecone_store.qdrant_client)
+        scored_results = []
+        
+        for result in all_contract_ids.values():
+            try:
+                # Create temporary Contract object for scoring
+                temp_contract = Contract(
+                    notice_id=result.get('notice_id', ''),
+                    title=result.get('title', ''),
+                    buyer_name=result.get('agency', ''),
+                    description=result.get('description', ''),
+                    contract_value=result.get('value'),
+                    region=result.get('state'),
+                    qdrant_id=result.get('id')  # Pinecone ID for vector lookup
+                )
+                
+                # Score with full matcher (capability + past wins + preferences + set-asides)
+                match_scores = scorer.score_contract(
+                    temp_contract,
+                    current_user.firm_id,
+                    sam_metadata={
+                        'set_aside_code': result.get('set_aside'),
+                        'naics_code': result.get('naics_code'),
+                        'department': result.get('agency')
+                    }
+                )
+                
+                # Only include if passes filters
+                if match_scores:
+                    formatted = format_sam_contract(result, match_scores)
+                    scored_results.append(SAMContractResult(**formatted))
+            
+            except Exception as e:
+                logger.error(f"Failed to score contract {result.get('notice_id')}: {e}")
+                continue
+        
+        # STEP 3: Sort by total match score
+        scored_results.sort(key=lambda x: x.total_match_score or 0, reverse=True)
+        final_results = scored_results[:limit]
+        
+        # Log summary
+        logger.info(f"🎉 Recommendations complete:")
+        logger.info(f"   Used {capabilities_used} capability embeddings")
+        logger.info(f"   Found {len(all_contract_ids)} unique contracts")
+        logger.info(f"   Scored {len(scored_results)} contracts")
+        logger.info(f"   Returning top {len(final_results)} matches")
+        if final_results:
+            logger.info(f"   Top match: '{final_results[0].title[:50]}...' ({final_results[0].total_match_score:.0%})")
+        
+        return SAMSearchResponse(
+            query="",  # No text query - pure semantic matching
+            results=final_results,
+            total_found=len(final_results)
+        )
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"SAM recommendations failed: {str(e)}", exc_info=True)
+        raise HTTPException(status_code=500, detail=f"Failed to generate recommendations: {str(e)}")
 
 
 @router.get("/contracts/{notice_id}")
