@@ -1987,3 +1987,15 @@ async def get_match_recommendations(
     except Exception as e:
         logger.error(f"Error generating match recommendations: {str(e)}", exc_info=True)
         raise HTTPException(status_code=500, detail=f"Failed to generate recommendations: {str(e)}")
+
+@router.delete("/admin/delete-old-contracts")
+async def delete_old_uk_contracts():
+    """Delete old UK contracts collection"""
+    try:
+        vector_store = get_vector_store()
+        vector_store.client.delete_collection("legal_documents")
+        logger.info("🗑️ Deleted old legal_documents collection")
+        return {"success": True, "message": "Old UK data deleted"}
+    except Exception as e:
+        logger.error(f"Delete failed: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
