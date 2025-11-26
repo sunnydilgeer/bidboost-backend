@@ -1,6 +1,7 @@
 """
 SAM.GOV Contract Match Scoring Service
 Adapted for US Federal procurement with NAICS codes, set-asides, and PSC codes
+Updated to use Pinecone for contract vectors and Qdrant for capability vectors
 """
 from typing import List, Dict, Optional
 from sqlalchemy.orm import Session
@@ -198,6 +199,8 @@ class SAMContractMatchScorer:
         
         US Federal specific: NAICS codes are critical for determining eligibility
         and past performance relevance.
+        
+        Contract vectors retrieved from Pinecone, capability vectors from Qdrant.
         """
         if not capabilities:
             return 0.0, ["⚠️ Add company capabilities to improve matching"]
@@ -207,19 +210,23 @@ class SAMContractMatchScorer:
         naics_bonus = 0.0
         psc_bonus = 0.0
         
-        # 1. SEMANTIC SIMILARITY (same as UK logic)
+        # 1. SEMANTIC SIMILARITY - Fetch contract from Pinecone, capabilities from Qdrant
         if contract.qdrant_id:
             try:
-                contract_points = self.qdrant.retrieve(
-                    collection_name="contracts",  # SAM contracts collection
-                    ids=[contract.qdrant_id],
-                    with_vectors=True
-                )
+                from app.services.pinecone_store import PineconeStoreService
+                from app.core.config import settings
                 
-                if contract_points:
-                    contract_vector = contract_points[0].vector
+                # Initialize Pinecone
+                pinecone = PineconeStoreService(api_key=settings.PINECONE_API_KEY)
+                
+                # Fetch contract vector from Pinecone
+                result = pinecone.index.fetch(ids=[contract.qdrant_id])
+                
+                if result and result.vectors and contract.qdrant_id in result.vectors:
+                    contract_vector = result.vectors[contract.qdrant_id].values
                     similarities = []
                     
+                    # Compare against each capability from Qdrant
                     for cap in capabilities:
                         if cap.qdrant_id:
                             cap_points = self.qdrant.retrieve(
@@ -244,9 +251,11 @@ class SAMContractMatchScorer:
                             reasons.append(f"Strong capability match: '{best_match[1][:50]}' ({best_match[0]:.0%})")
                         elif best_match[0] > 0.4:
                             reasons.append(f"Good capability match: '{best_match[1][:50]}' ({best_match[0]:.0%})")
+                else:
+                    logger.warning(f"Contract vector not found in Pinecone: {contract.qdrant_id}")
             
             except Exception as e:
-                logger.error(f"Capability semantic scoring error: {str(e)}")
+                logger.error(f"Capability semantic scoring error: {str(e)}", exc_info=True)
         
         # 2. NAICS CODE ALIGNMENT (US Federal specific)
         if naics_code and hasattr(profile, 'naics_codes') and profile.naics_codes:
