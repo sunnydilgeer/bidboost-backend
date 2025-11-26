@@ -1201,7 +1201,6 @@ async def get_recommended_contracts(
 
 
 # ========== CONTRACT SEARCH ROUTE WITH PERSONALIZED MATCH SCORING ==========
-
 @router.post("/contracts/search", response_model=ContractSearchResponse)
 async def search_contracts(
     search_request: ContractSearchRequest,
@@ -1209,126 +1208,94 @@ async def search_contracts(
     current_user: User = Depends(get_current_active_user),
     db: Session = Depends(get_db)
 ) -> ContractSearchResponse:
-    """
-    Search contract opportunities using semantic search with personalized match scoring.
-    
-    Query Parameters:
-    - include_match_scores: Enable personalized scoring based on company profile (default: True)
-    
-    Returns contracts ranked by relevance, with optional personalized match scores
-    based on company capabilities, past wins, and search preferences.
-    """
+    """Search SAM.gov contracts using Pinecone semantic search"""
     try:
-        vector_store = get_vector_store()
+        from app.services.pinecone_store import PineconeStoreService
+        
         llm_service = get_llm_service()
         
-        logger.info(f"Contract search by {current_user.email}: '{search_request.query}' (match_scoring={include_match_scores})")
+        logger.info(f"Contract search: '{search_request.query}'")
         
-        # Get more results if scoring enabled (some may be filtered out by preferences)
+        # Generate query embedding
+        query_vector = await llm_service.generate_embeddings(search_request.query)
+        
+        # Initialize Pinecone
+        pinecone = PineconeStoreService(api_key=settings.PINECONE_API_KEY)
+        
+        # Build Pinecone filters
+        filters = {}
+        if search_request.min_value or search_request.max_value:
+            value_filter = {}
+            if search_request.min_value:
+                value_filter["$gte"] = float(search_request.min_value)
+            if search_request.max_value:
+                value_filter["$lte"] = float(search_request.max_value)
+            filters["contract_value"] = value_filter
+        
+        if search_request.region:
+            filters["state"] = {"$eq": search_request.region}
+        
+        # Search Pinecone
         search_limit = search_request.limit * 2 if include_match_scores else search_request.limit
-        
-        # Search contracts using vector store semantic search
-        results = await vector_store.search_contracts(
-            query_text=search_request.query,
-            llm_service=llm_service,
+        results = pinecone.search_contracts(
+            query_vector=query_vector,
             limit=search_limit,
-            min_value=search_request.min_value,
-            max_value=search_request.max_value,
-            region=search_request.region
+            min_score=0.3,
+            filter_dict=filters if filters else None
         )
         
-        # Initialize match scorer if personalized scoring enabled
+        # Initialize scorer
+        vector_store = get_vector_store()
         scorer = ContractMatchScorer(db, vector_store.client) if include_match_scores else None
         
-        # Convert to response format with optional personalized scoring
+        # Convert results
         search_results = []
         for result in results:
-            metadata = result.get("metadata", {})
-            
-            # Create base contract result with semantic score
             contract_result = ContractSearchResult(
                 notice_id=result.get("notice_id", ""),
-                title=metadata.get("title", ""),
-                buyer_name=result.get("buyer_name", ""),
-                description=metadata.get("description", metadata.get("title", "")),
-                value=result.get("value"),
-                region=result.get("region"),
-                closing_date=metadata.get("closing_date"),
-                score=result.get("score", 0.0),
-
-                closing_time=metadata.get("closing_time"),
-                start_date=metadata.get("start_date"),
-                end_date=metadata.get("end_date"),
-                value_low=metadata.get("value_low"),
-                value_high=metadata.get("value_high"),
-                postcode=metadata.get("postcode"),
-                notice_type=metadata.get("notice_type"),
-                contact_name=metadata.get("contact_name"),
-                contact_email=metadata.get("contact_email"),
-                contact_phone=metadata.get("contact_phone"),
-                contact_address=metadata.get("contact_address"),
-                contact_website=metadata.get("contact_website"),
-                additional_text=metadata.get("additional_text"),
-                attachments=metadata.get("attachments"),
-                links=metadata.get("links"),
-                suitable_for_sme=metadata.get("suitable_for_sme"),
-                suitable_for_vco=metadata.get("suitable_for_vco")
+                title=result.get("title", ""),
+                buyer_name=result.get("agency", ""),
+                description=result.get("description", ""),
+                value=result.get("contract_value"),
+                region=result.get("state"),
+                closing_date=result.get("response_deadline"),
+                score=result.get("score", 0.0)
             )
             
-            # Add personalized match scoring
             if scorer:
-                # Create Contract object from Qdrant result for scoring
                 temp_contract = Contract(
                     notice_id=result.get("notice_id", ""),
-                    title=metadata.get("title", ""),
-                    buyer_name=result.get("buyer_name", ""),
-                    description=metadata.get("description", ""),
-                    contract_value=result.get("value"),
-                    region=result.get("region"),
-                    qdrant_id=result.get("id")  # Qdrant point ID for embedding lookup
+                    title=result.get("title", ""),
+                    buyer_name=result.get("agency", ""),
+                    description=result.get("description", ""),
+                    contract_value=result.get("contract_value"),
+                    region=result.get("state"),
+                    qdrant_id=result.get("id")  # Pinecone ID for vector retrieval
                 )
-
-                # DEBUG: Log to see if ID is being passed
-                logger.info(f"DEBUG: Contract {temp_contract.notice_id} has qdrant_id: {temp_contract.qdrant_id}")
                 
-                # Calculate match scores against company profile
                 match_scores = scorer.score_contract(temp_contract, current_user.firm_id)
-                
-                # Only include contracts that pass preference filters
                 if match_scores:
                     contract_result.match_scores = match_scores
                     contract_result.total_match_score = match_scores["total_score"]
-                    contract_result.match_reasons = match_scores.get("match_reasons", [])  
+                    contract_result.match_reasons = match_scores.get("match_reasons", [])
                     search_results.append(contract_result)
-                else:
-                    # Contract filtered out by hard filters (value range, excluded keywords)
-                    logger.debug(f"Contract {temp_contract.notice_id} filtered out by preferences")
             else:
-                # No personalized scoring - include all results
                 search_results.append(contract_result)
         
-        # Sort by match score if available, otherwise by semantic score
-        if include_match_scores and search_results:
+        if include_match_scores:
             search_results.sort(key=lambda x: x.total_match_score or 0, reverse=True)
-            logger.info(f"Ranked {len(search_results)} contracts by personalized match score")
         
-        # Limit to requested amount after filtering and sorting
         search_results = search_results[:search_request.limit]
         
         return ContractSearchResponse(
             query=search_request.query,
             results=search_results,
-            total_found=len(search_results),
-            message=f"Found {len(search_results)} matching contracts" + 
-                   (f" (personalized for {current_user.firm_id})" if include_match_scores else "")
+            total_found=len(search_results)
         )
         
     except Exception as e:
-        logger.error(f"Contract search failed: {str(e)}", exc_info=True)
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Contract search failed: {str(e)}"
-        )
+        logger.error(f"Search failed: {str(e)}", exc_info=True)
+        raise HTTPException(status_code=500, detail=f"Search failed: {str(e)}")
 
 # ========== CONTRACT DETAILS ROUTE ==========
 
@@ -2019,3 +1986,101 @@ async def check_pinecone_status():
     except Exception as e:
         logger.error(f"Pinecone status check failed: {str(e)}")
         return {"pinecone_connected": False, "error": str(e)}
+
+@router.post("/admin/cleanup-uk-contracts")
+async def cleanup_uk_contracts_from_pinecone():
+    """
+    Remove UK contracts from Pinecone, keep only US SAM.gov contracts.
+    
+    Identifies UK contracts by:
+    - Missing US federal agency names
+    - UK-specific keywords in descriptions
+    - Empty buyer_name or agency fields
+    """
+    try:
+        from app.services.pinecone_store import PineconeStoreService
+        from app.core.config import settings
+        
+        pinecone = PineconeStoreService(api_key=settings.PINECONE_API_KEY)
+        
+        # US Federal agency keywords (must contain at least one)
+        us_agencies = [
+            "department of", "dept of", "dod", "dhs", "gsa", "nasa", 
+            "usda", "va ", "hhs", "dot ", "doe ", "treasury", 
+            "justice", "interior", "commerce", "labor", "hud",
+            "defense", "homeland security", "veterans affairs",
+            "health and human services", "transportation",
+            "energy", "education", "state department"
+        ]
+        
+        # UK-specific keywords (if found, it's UK)
+        uk_keywords = [
+            "uk ", "united kingdom", "england", "scotland", "wales",
+            "hmrc", "nhs", "crown", "procurement", "finder",
+            "£", "gbp", "utility skills", "skills group"
+        ]
+        
+        # Get all vectors with metadata (Pinecone limitation: fetch in batches)
+        # Since we can't list all IDs easily, we'll use query with a dummy vector
+        import numpy as np
+        dummy_vector = np.random.rand(768).tolist()
+        
+        # Query to get many results
+        results = pinecone.index.query(
+            vector=dummy_vector,
+            top_k=10000,  # Get as many as possible
+            include_metadata=True
+        )
+        
+        uk_contract_ids = []
+        us_contract_count = 0
+        
+        for match in results.matches:
+            metadata = match.metadata
+            
+            # Check if it's a US federal contract
+            agency = (metadata.get("agency") or "").lower()
+            title = (metadata.get("title") or "").lower()
+            description = (metadata.get("description") or "").lower()
+            
+            combined_text = f"{agency} {title} {description}"
+            
+            # Identify UK contracts
+            is_uk = False
+            
+            # Check 1: Contains UK keywords
+            if any(uk_kw in combined_text for uk_kw in uk_keywords):
+                is_uk = True
+            
+            # Check 2: Missing US agency name AND no federal keywords
+            has_us_agency = any(us_kw in combined_text for us_kw in us_agencies)
+            
+            if not has_us_agency and not agency:
+                # No US agency and empty agency field = likely UK
+                is_uk = True
+            
+            if is_uk:
+                uk_contract_ids.append(match.id)
+            else:
+                us_contract_count += 1
+        
+        # Delete UK contracts in batches
+        if uk_contract_ids:
+            batch_size = 100
+            for i in range(0, len(uk_contract_ids), batch_size):
+                batch = uk_contract_ids[i:i + batch_size]
+                pinecone.index.delete(ids=batch)
+                logger.info(f"Deleted batch {i//batch_size + 1}: {len(batch)} UK contracts")
+        
+        logger.info(f"✅ Cleanup complete: Deleted {len(uk_contract_ids)} UK contracts, kept {us_contract_count} US contracts")
+        
+        return {
+            "success": True,
+            "uk_contracts_deleted": len(uk_contract_ids),
+            "us_contracts_remaining": us_contract_count,
+            "message": f"Cleaned up {len(uk_contract_ids)} UK contracts from Pinecone"
+        }
+        
+    except Exception as e:
+        logger.error(f"Cleanup failed: {str(e)}", exc_info=True)
+        raise HTTPException(status_code=500, detail=f"Cleanup failed: {str(e)}")
