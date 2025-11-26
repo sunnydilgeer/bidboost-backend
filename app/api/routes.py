@@ -1999,3 +1999,23 @@ async def delete_old_uk_contracts():
     except Exception as e:
         logger.error(f"Delete failed: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
+
+@router.get("/admin/pinecone-status")
+async def check_pinecone_status():
+    """Check if Pinecone has SAM.gov contracts"""
+    try:
+        from app.services.pinecone_store import PineconeStoreService
+        from app.core.config import settings
+        
+        pinecone = PineconeStoreService(api_key=settings.PINECONE_API_KEY)
+        count = pinecone.get_document_count()
+        
+        return {
+            "pinecone_connected": True,
+            "index_name": "contracts",
+            "total_vectors": count,
+            "status": "✅ Pinecone operational" if count > 0 else "⚠️ No vectors found"
+        }
+    except Exception as e:
+        logger.error(f"Pinecone status check failed: {str(e)}")
+        return {"pinecone_connected": False, "error": str(e)}
