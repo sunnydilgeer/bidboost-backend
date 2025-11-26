@@ -2,6 +2,7 @@
 SAM.GOV Contract Match Scoring Service
 Adapted for US Federal procurement with NAICS codes, set-asides, and PSC codes
 Updated to use Pinecone for contract vectors and Qdrant for capability vectors
+Optimized with capability vector caching for performance
 """
 from typing import List, Dict, Optional
 from sqlalchemy.orm import Session
@@ -23,11 +24,17 @@ class SAMContractMatchScorer:
     - 35% Past performance (federal experience, similar buyers, contract size)
     - 15% Set-aside eligibility (critical for small businesses)
     - 10% Preferences (location, value range, keywords)
+    
+    Performance optimizations:
+    - Caches capability vectors to avoid repeated Qdrant fetches
+    - Reuses Pinecone connection across multiple contracts
     """
     
     def __init__(self, db: Session, qdrant_client: QdrantClient):
         self.db = db
         self.qdrant = qdrant_client
+        self._capability_vector_cache = {}  # Cache capability vectors
+        self._pinecone_service = None  # Reuse Pinecone connection
     
     def score_contract(
         self, 
@@ -201,14 +208,13 @@ class SAMContractMatchScorer:
         and past performance relevance.
         
         Contract vectors retrieved from Pinecone, capability vectors from Qdrant.
+        Uses caching to avoid repeated fetches of the same capability vectors.
         """
         if not capabilities:
             return 0.0, ["⚠️ Add company capabilities to improve matching"]
         
         reasons = []
         semantic_score = 0.0
-        naics_bonus = 0.0
-        psc_bonus = 0.0
         
         # 1. SEMANTIC SIMILARITY - Fetch contract from Pinecone, capabilities from Qdrant
         if contract.qdrant_id:
@@ -216,26 +222,34 @@ class SAMContractMatchScorer:
                 from app.services.pinecone_store import PineconeStoreService
                 from app.core.config import settings
                 
-                # Initialize Pinecone
-                pinecone = PineconeStoreService(api_key=settings.PINECONE_API_KEY)
+                # Reuse Pinecone connection across multiple contracts
+                if not self._pinecone_service:
+                    self._pinecone_service = PineconeStoreService(api_key=settings.PINECONE_API_KEY)
                 
                 # Fetch contract vector from Pinecone
-                result = pinecone.index.fetch(ids=[contract.qdrant_id])
+                result = self._pinecone_service.index.fetch(ids=[contract.qdrant_id])
                 
                 if result and result.vectors and contract.qdrant_id in result.vectors:
                     contract_vector = result.vectors[contract.qdrant_id].values
                     similarities = []
                     
-                    # Compare against each capability from Qdrant
+                    # Compare against each capability (with caching)
                     for cap in capabilities:
                         if cap.qdrant_id:
-                            cap_points = self.qdrant.retrieve(
-                                collection_name="capabilities",
-                                ids=[cap.qdrant_id],
-                                with_vectors=True
-                            )
-                            if cap_points:
-                                cap_vector = cap_points[0].vector
+                            # Check cache first to avoid repeated Qdrant fetches
+                            if cap.qdrant_id not in self._capability_vector_cache:
+                                # Fetch and cache capability vector
+                                cap_points = self.qdrant.retrieve(
+                                    collection_name="capabilities",
+                                    ids=[cap.qdrant_id],
+                                    with_vectors=True
+                                )
+                                if cap_points:
+                                    self._capability_vector_cache[cap.qdrant_id] = cap_points[0].vector
+                            
+                            # Use cached capability vector
+                            if cap.qdrant_id in self._capability_vector_cache:
+                                cap_vector = self._capability_vector_cache[cap.qdrant_id]
                                 similarity = self._cosine_similarity(contract_vector, cap_vector)
                                 similarities.append((similarity, cap.capability_text))
                     
@@ -258,6 +272,7 @@ class SAMContractMatchScorer:
                 logger.error(f"Capability semantic scoring error: {str(e)}", exc_info=True)
         
         # 2. NAICS CODE ALIGNMENT (US Federal specific)
+        naics_bonus = 0.0
         if naics_code and hasattr(profile, 'naics_codes') and profile.naics_codes:
             # Check if company's NAICS codes match contract
             matching_naics = [code for code in profile.naics_codes if code.startswith(naics_code[:2])]
@@ -266,6 +281,7 @@ class SAMContractMatchScorer:
                 reasons.append(f"✓ NAICS code match ({naics_code})")
         
         # 3. PSC CODE ALIGNMENT (Product Service Code)
+        psc_bonus = 0.0
         if psc_code and hasattr(profile, 'psc_codes') and profile.psc_codes:
             if psc_code in profile.psc_codes:
                 psc_bonus = 0.15  # 15% bonus for PSC match
