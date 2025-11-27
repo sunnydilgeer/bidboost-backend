@@ -8,6 +8,7 @@ Create Date: 2025-11-20 10:19:39.141437
 from alembic import op
 import sqlalchemy as sa
 from sqlalchemy.dialects import postgresql
+from sqlalchemy import inspect
 
 # revision identifiers, used by Alembic.
 revision = 'f71a60d1b71c'
@@ -16,44 +17,73 @@ branch_labels = None
 depends_on = None
 
 
+def column_exists(table_name, column_name):
+    """Check if a column exists in a table"""
+    conn = op.get_bind()
+    inspector = inspect(conn)
+    columns = [col['name'] for col in inspector.get_columns(table_name)]
+    return column_name in columns
+
+
 def upgrade() -> None:
     # Capability fields
-    op.add_column('company_capabilities', sa.Column('naics_code', sa.String(length=10), nullable=True))
-    op.add_column('company_capabilities', sa.Column('security_clearance', sa.String(length=50), nullable=True))
+    if not column_exists('company_capabilities', 'naics_code'):
+        op.add_column('company_capabilities', sa.Column('naics_code', sa.String(length=10), nullable=True))
+    if not column_exists('company_capabilities', 'security_clearance'):
+        op.add_column('company_capabilities', sa.Column('security_clearance', sa.String(length=50), nullable=True))
     
     # Company profile - certifications
-    op.add_column('company_profiles', sa.Column('sba_certified', sa.Boolean(), nullable=False, server_default='false'))
-    op.add_column('company_profiles', sa.Column('sdvosb_certified', sa.Boolean(), nullable=False, server_default='false'))
-    op.add_column('company_profiles', sa.Column('wosb_certified', sa.Boolean(), nullable=False, server_default='false'))
-    op.add_column('company_profiles', sa.Column('hubzone_certified', sa.Boolean(), nullable=False, server_default='false'))
-    op.add_column('company_profiles', sa.Column('eight_a_certified', sa.Boolean(), nullable=False, server_default='false'))
+    if not column_exists('company_profiles', 'sba_certified'):
+        op.add_column('company_profiles', sa.Column('sba_certified', sa.Boolean(), nullable=False, server_default='false'))
+    if not column_exists('company_profiles', 'sdvosb_certified'):
+        op.add_column('company_profiles', sa.Column('sdvosb_certified', sa.Boolean(), nullable=False, server_default='false'))
+    if not column_exists('company_profiles', 'wosb_certified'):
+        op.add_column('company_profiles', sa.Column('wosb_certified', sa.Boolean(), nullable=False, server_default='false'))
+    if not column_exists('company_profiles', 'hubzone_certified'):
+        op.add_column('company_profiles', sa.Column('hubzone_certified', sa.Boolean(), nullable=False, server_default='false'))
+    if not column_exists('company_profiles', 'eight_a_certified'):
+        op.add_column('company_profiles', sa.Column('eight_a_certified', sa.Boolean(), nullable=False, server_default='false'))
     
     # Company profile - codes
-    op.add_column('company_profiles', sa.Column('naics_codes', postgresql.JSON(astext_type=sa.Text()), nullable=True))
-    op.add_column('company_profiles', sa.Column('psc_codes', postgresql.JSON(astext_type=sa.Text()), nullable=True))
+    if not column_exists('company_profiles', 'naics_codes'):
+        op.add_column('company_profiles', sa.Column('naics_codes', postgresql.JSON(astext_type=sa.Text()), nullable=True))
+    if not column_exists('company_profiles', 'psc_codes'):
+        op.add_column('company_profiles', sa.Column('psc_codes', postgresql.JSON(astext_type=sa.Text()), nullable=True))
     
     # Company profile - identifiers
-    op.add_column('company_profiles', sa.Column('cage_code', sa.String(length=50), nullable=True))
-    op.add_column('company_profiles', sa.Column('uei_number', sa.String(length=50), nullable=True))
-    op.add_column('company_profiles', sa.Column('sam_registered', sa.Boolean(), nullable=False, server_default='false'))
-    op.add_column('company_profiles', sa.Column('sam_expiration', sa.Date(), nullable=True))
+    if not column_exists('company_profiles', 'cage_code'):
+        op.add_column('company_profiles', sa.Column('cage_code', sa.String(length=50), nullable=True))
+    if not column_exists('company_profiles', 'uei_number'):
+        op.add_column('company_profiles', sa.Column('uei_number', sa.String(length=50), nullable=True))
+    if not column_exists('company_profiles', 'sam_registered'):
+        op.add_column('company_profiles', sa.Column('sam_registered', sa.Boolean(), nullable=False, server_default='false'))
+    if not column_exists('company_profiles', 'sam_expiration'):
+        op.add_column('company_profiles', sa.Column('sam_expiration', sa.Date(), nullable=True))
     
     # Company profile - experience
-    op.add_column('company_profiles', sa.Column('federal_experience', sa.Boolean(), nullable=False, server_default='false'))
-    op.add_column('company_profiles', sa.Column('federal_contracts_count', sa.Integer(), nullable=True, server_default='0'))
+    if not column_exists('company_profiles', 'federal_experience'):
+        op.add_column('company_profiles', sa.Column('federal_experience', sa.Boolean(), nullable=False, server_default='false'))
+    if not column_exists('company_profiles', 'federal_contracts_count'):
+        op.add_column('company_profiles', sa.Column('federal_contracts_count', sa.Integer(), nullable=True, server_default='0'))
     
     # Past wins
-    op.add_column('past_wins', sa.Column('contract_number', sa.String(length=100), nullable=True))
-    op.add_column('past_wins', sa.Column('naics_code', sa.String(length=10), nullable=True))
-    op.add_column('past_wins', sa.Column('federal_contract', sa.Boolean(), nullable=True, server_default='false'))
-    op.add_column('past_wins', sa.Column('agency_name', sa.String(length=255), nullable=True))
+    if not column_exists('past_wins', 'contract_number'):
+        op.add_column('past_wins', sa.Column('contract_number', sa.String(length=100), nullable=True))
+    if not column_exists('past_wins', 'naics_code'):
+        op.add_column('past_wins', sa.Column('naics_code', sa.String(length=10), nullable=True))
+    if not column_exists('past_wins', 'federal_contract'):
+        op.add_column('past_wins', sa.Column('federal_contract', sa.Boolean(), nullable=True, server_default='false'))
+    if not column_exists('past_wins', 'agency_name'):
+        op.add_column('past_wins', sa.Column('agency_name', sa.String(length=255), nullable=True))
     
     # Search preferences
-    op.add_column('search_preferences', sa.Column('preferred_agencies', postgresql.JSON(astext_type=sa.Text()), nullable=True))
-    op.add_column('search_preferences', sa.Column('preferred_set_asides', postgresql.JSON(astext_type=sa.Text()), nullable=True))
-    op.add_column('search_preferences', sa.Column('excluded_naics', postgresql.JSON(astext_type=sa.Text()), nullable=True))
-    
-    # The rest will be auto-generated changes for indexes...
+    if not column_exists('search_preferences', 'preferred_agencies'):
+        op.add_column('search_preferences', sa.Column('preferred_agencies', postgresql.JSON(astext_type=sa.Text()), nullable=True))
+    if not column_exists('search_preferences', 'preferred_set_asides'):
+        op.add_column('search_preferences', sa.Column('preferred_set_asides', postgresql.JSON(astext_type=sa.Text()), nullable=True))
+    if not column_exists('search_preferences', 'excluded_naics'):
+        op.add_column('search_preferences', sa.Column('excluded_naics', postgresql.JSON(astext_type=sa.Text()), nullable=True))
+
 
 def downgrade() -> None:
     # ### commands auto generated by Alembic - please adjust! ###
