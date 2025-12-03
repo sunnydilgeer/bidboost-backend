@@ -1,5 +1,6 @@
 import asyncio
 from fastapi import BackgroundTasks
+from app.core.config import settings
 from app.services.contract_fetcher import ContractFetcherService
 from app.services.match_scoring import ContractMatchScorer
 from app.services.capability_store import CapabilityStoreService 
