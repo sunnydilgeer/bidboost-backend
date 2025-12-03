@@ -276,46 +276,73 @@ class ContractMatchScorer:
         return scores
     
     def _calculate_capability_score(
-        self, 
-        contract: Contract, 
-        capabilities: List[CompanyCapability]
-    ) -> float:
-        """Use semantic similarity between capabilities and contract description"""
-        if not capabilities:
-            logger.debug(f"No capabilities found")
+    self, 
+    contract: Contract, 
+    capabilities: List[CompanyCapability]
+) -> float:
+    """Use semantic similarity between capabilities and contract description"""
+    if not capabilities:
+        logger.debug(f"No capabilities found")
+        return 0.0
+    
+    try:
+        from app.services.capability_store_pinecone import get_capability_store
+        
+        # Get contract embedding from Pinecone
+        contract_vector = None
+        
+        if contract.qdrant_id:
+            try:
+                # SAM contracts are in Pinecone (default namespace)
+                result = self.pinecone_index.fetch(ids=[contract.qdrant_id])
+                if contract.qdrant_id in result.vectors:
+                    contract_vector = result.vectors[contract.qdrant_id].values
+                    logger.debug(f"Retrieved SAM contract vector from Pinecone: {contract.qdrant_id}")
+            except Exception as e:
+                logger.error(f"Failed to fetch contract from Pinecone: {e}")
+        
+        if not contract_vector:
+            logger.warning(f"Contract {contract.qdrant_id} vector not found in Pinecone")
             return 0.0
         
-        try:
-            # Get contract embedding from appropriate source
-            contract_vector = None
-            
-            if self.use_pinecone and contract.qdrant_id:
-                # SAM contracts are in Pinecone
-                try:
-                    result = self.pinecone_index.fetch(ids=[contract.qdrant_id])
-                    if contract.qdrant_id in result.vectors:
-                        contract_vector = result.vectors[contract.qdrant_id].values
-                        logger.debug(f"Retrieved SAM contract vector from Pinecone: {contract.qdrant_id}")
-                except Exception as e:
-                    logger.error(f"Failed to fetch from Pinecone: {e}")
-            
-            if not contract_vector and contract.qdrant_id:
-                # Fallback to Qdrant for legacy contracts
-                try:
-                    contract_points = self.qdrant.retrieve(
-                        collection_name="legal_documents",
-                        ids=[contract.qdrant_id],
-                        with_vectors=True
-                    )
-                    if contract_points:
-                        contract_vector = contract_points[0].vector
-                        logger.debug(f"Retrieved contract vector from Qdrant: {contract.qdrant_id}")
-                except Exception as e:
-                    logger.error(f"Failed to fetch from Qdrant: {e}")
-            
-            if not contract_vector:
-                logger.warning(f"Contract {contract.qdrant_id} vector not found in Pinecone or Qdrant")
-                return 0.0
+        # Get capabilities from Pinecone (capabilities namespace)
+        cap_store = get_capability_store()
+        
+        # Batch fetch all capabilities
+        capability_ids = [cap.qdrant_id for cap in capabilities if cap.qdrant_id]
+        
+        if not capability_ids:
+            logger.warning("No capabilities have Pinecone IDs")
+            return 0.0
+        
+        capabilities_data = cap_store.get_capabilities_batch(capability_ids)
+        
+        # Calculate similarity with each capability
+        similarities = []
+        for cap in capabilities:
+            if cap.qdrant_id and cap.qdrant_id in capabilities_data:
+                cap_data = capabilities_data[cap.qdrant_id]
+                cap_vector = cap_data["vector"]
+                
+                similarity = self._cosine_similarity(contract_vector, cap_vector)
+                similarities.append(similarity)
+                logger.debug(f"Capability '{cap.capability_text[:50]}' similarity: {similarity:.3f}")
+        
+        if not similarities:
+            logger.warning("No similarities calculated")
+            return 0.0
+        
+        # Use average of top 3 matches
+        similarities.sort(reverse=True)
+        top_matches = similarities[:3]
+        avg_score = sum(top_matches) / len(top_matches)
+        
+        logger.info(f"Capability score: {avg_score:.3f} (from {len(similarities)} capabilities)")
+        return avg_score
+    
+    except Exception as e:
+        logger.error(f"Capability scoring error: {str(e)}", exc_info=True)
+        return 0.0
             
             # Calculate similarity with each capability (capabilities are in Qdrant)
             similarities = []
