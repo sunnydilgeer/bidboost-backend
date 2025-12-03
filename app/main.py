@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from app.api.leads import router as leads_router
 from fastapi.middleware.cors import CORSMiddleware
 from app.middleware.audit import AuditMiddleware
 from slowapi import Limiter, _rate_limit_exceeded_handler
@@ -12,6 +13,7 @@ from app.auth.register import router as register_router
 from app.auth.login import router as login_router
 from app.database import init_db, engine
 from app.routers import company
+from app.api.quickstart_url import router as quickstart_url_router  # Fixed path
 from contextlib import asynccontextmanager
 import logging
 
@@ -139,6 +141,8 @@ app.include_router(login_router, prefix="/api/auth")
 app.include_router(company.router)
 app.include_router(debug_router)
 app.include_router(sam_search.router, prefix="/api")
+app.include_router(quickstart_url_router)  # Added
+app.include_router(leads_router)  # Add this line with other routers
 
 logger.info("✓ All routes registered")
 

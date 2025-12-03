@@ -16,6 +16,7 @@ class ContractMatchScorer:
     - Semantic similarity between capabilities and contract requirements
     - Past win matching (similar buyers, contract values)
     - Search preference filtering (value ranges, regions, keywords)
+    - Set-aside certification matching (SDVOSB, WOSB, HUBZone, 8(a), SBA)
     
     Supports both Qdrant (capabilities) and Pinecone (SAM contracts)
     """
@@ -176,6 +177,32 @@ class ContractMatchScorer:
                     "specific_actions": [f"Add {pref}" for pref in missing_prefs]
                 })
         
+        # 4. CERTIFICATION RECOMMENDATIONS (15% boost per matching set-aside)
+        cert_recommendations = []
+        
+        if not profile.sba_certified:
+            cert_recommendations.append("SBA Small Business certification")
+        if not profile.sdvosb_certified:
+            cert_recommendations.append("SDVOSB (Service-Disabled Veteran-Owned)")
+        if not profile.wosb_certified:
+            cert_recommendations.append("WOSB (Women-Owned Small Business)")
+        if not profile.hubzone_certified:
+            cert_recommendations.append("HUBZone certification")
+        if not profile.eight_a_certified:
+            cert_recommendations.append("8(a) Business Development certification")
+        
+        if cert_recommendations:
+            recommendations.append({
+                "category": "certifications",
+                "current_score": 0.0,
+                "potential_score": 15.0,
+                "priority": "medium",
+                "action": "Consider obtaining relevant federal certifications",
+                "impact": "+15% boost for each matching set-aside contract",
+                "icon": "🏅",
+                "specific_actions": cert_recommendations[:3]  # Show top 3
+            })
+        
         # Sort by priority: high → medium → low
         priority_order = {"high": 0, "medium": 1, "low": 2}
         recommendations.sort(key=lambda x: priority_order[x["priority"]])
@@ -224,9 +251,10 @@ class ContractMatchScorer:
         scores["past_win_score"] = past_win_score
         scores["match_reasons"].extend(win_reasons)
         
-        # 3. Search Preference Filtering (30% weight)
+        # 3. Search Preference Filtering + Certification Matching (30% weight)
+        # FIXED: Now passes profile to enable set-aside certification matching
         preference_score, passes_filters, pref_reasons = self._calculate_preference_score(
-            contract, profile.search_preference
+            contract, profile, profile.search_preference
         )
         scores["preference_score"] = preference_score
         scores["match_reasons"].extend(pref_reasons)
@@ -371,27 +399,55 @@ class ContractMatchScorer:
     
     def _calculate_preference_score(
         self, 
-        contract: Contract, 
+        contract: Contract,
+        profile: CompanyProfile,  # FIXED: Added profile parameter for certification matching
         preferences: Optional[SearchPreference]
     ) -> tuple[float, bool, List[str]]:
         """
-        Apply search preferences as filters and scoring.
+        Apply search preferences and certification matching as filters and scoring.
         
         Returns:
-            - score (float): Preference match score 0-1
+            - score (float): Preference match score 0-1.5 (allows for bonuses)
             - passes_filters (bool): Whether contract passes hard filters
             - reasons (List[str]): Match reasons for display
         """
-        if not preferences:
-            return 1.0, True, []  # No preferences = pass all
-        
         passes_filters = True
         score = 1.0
         reasons = []
         
-        # ===== HARD FILTERS (fail contract if not met) =====
+        # ===== SET-ASIDE CERTIFICATION MATCHING (15% BONUS) =====
+        # This is the KEY FIX - checks if company certifications match contract set-asides
         
-        # Value range filter
+        if hasattr(contract, 'set_aside') and contract.set_aside:
+            set_aside_lower = contract.set_aside.lower()
+            
+            # Check each certification type and award 15% bonus for matches
+            if profile.sba_certified and any(kw in set_aside_lower for kw in ['small business', 'sba', 'total small business']):
+                score += 0.15
+                reasons.append("✓ Matches your Small Business certification")
+            
+            if profile.sdvosb_certified and ('sdvosb' in set_aside_lower or 'service-disabled' in set_aside_lower):
+                score += 0.15
+                reasons.append("✓ Matches your SDVOSB certification")
+            
+            if profile.wosb_certified and ('wosb' in set_aside_lower or 'women-owned' in set_aside_lower):
+                score += 0.15
+                reasons.append("✓ Matches your WOSB certification")
+            
+            if profile.hubzone_certified and 'hubzone' in set_aside_lower:
+                score += 0.15
+                reasons.append("✓ Matches your HUBZone certification")
+            
+            if profile.eight_a_certified and ('8(a)' in set_aside_lower or '8a' in set_aside_lower):
+                score += 0.15
+                reasons.append("✓ Matches your 8(a) certification")
+        
+        # ===== EXISTING PREFERENCE FILTERS BELOW =====
+        
+        if not preferences:
+            return score, True, reasons  # No preferences = pass all with certification bonus
+        
+        # Value range filter (HARD)
         if contract.contract_value:
             if preferences.min_contract_value and contract.contract_value < preferences.min_contract_value:
                 passes_filters = False
@@ -415,8 +471,6 @@ class ContractMatchScorer:
                     logger.debug(f"Contract contains excluded category: {category}")
                     break
         
-        # ===== SOFT FILTERS (reduce/boost score) =====
-        
         # Region preference (SOFT - reduce score if no match)
         if preferences.preferred_regions and contract.region:
             if contract.region in preferences.preferred_regions:
@@ -435,8 +489,8 @@ class ContractMatchScorer:
                 score += keyword_boost
                 reasons.append(f"Matches keywords: {', '.join(matched_keywords[:3])}")
         
-        # Cap final score at 1.0
-        final_score = min(score, 1.0)
+        # Cap final score at 1.5 (to allow for certification and keyword bonuses)
+        final_score = min(score, 1.5)
         
         return final_score, passes_filters, reasons
     

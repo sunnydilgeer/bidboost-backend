@@ -62,6 +62,7 @@ class FederalInfoUpdate(BaseModel):
     sam_expiration: Optional[str] = None
 
 logger = logging.getLogger(__name__)
+capability_embedding_cache = {}
 
 router = APIRouter(prefix="/api", tags=["Contracts"])
 
@@ -615,6 +616,12 @@ async def add_capability(
         db.commit()
         db.refresh(new_cap)
         
+        # INVALIDATE CACHE
+        keys_to_delete = [k for k in capability_embedding_cache.keys() if k.startswith(f"{current_user.firm_id}:")]
+        for key in keys_to_delete:
+            del capability_embedding_cache[key]
+        logger.info(f"Cleared capability cache for firm {current_user.firm_id}")
+        
         logger.info(f"Added capability for firm {current_user.firm_id}: {capability.capability_text[:50]}")
         
         return {
@@ -676,6 +683,12 @@ async def update_capability(
         
         db.commit()
         
+        # INVALIDATE CACHE
+        keys_to_delete = [k for k in capability_embedding_cache.keys() if k.startswith(f"{current_user.firm_id}:")]
+        for key in keys_to_delete:
+            del capability_embedding_cache[key]
+        logger.info(f"Cleared capability cache for firm {current_user.firm_id}")
+        
         logger.info(f"Updated capability {capability_id} for firm {current_user.firm_id}")
         
         return {
@@ -726,6 +739,12 @@ async def delete_capability(
         db.delete(existing_cap)
         db.commit()
         
+        # INVALIDATE CACHE
+        keys_to_delete = [k for k in capability_embedding_cache.keys() if k.startswith(f"{current_user.firm_id}:")]
+        for key in keys_to_delete:
+            del capability_embedding_cache[key]
+        logger.info(f"Cleared capability cache for firm {current_user.firm_id}")
+        
         logger.info(f"Deleted capability {capability_id} for firm {current_user.firm_id}")
         
         return {
@@ -742,7 +761,6 @@ async def delete_capability(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"Failed to delete capability: {str(e)}"
         )
-
 # ========== PAST WINS ROUTES ==========
 
 @router.get("/past-wins")
@@ -1073,132 +1091,143 @@ async def get_recommended_contracts(
     current_user: User = Depends(get_current_active_user),
     db: Session = Depends(get_db)
 ) -> ContractSearchResponse:
-    """
-    Get personalized contract recommendations based on company profile.
-    
-    This endpoint automatically returns contracts matched to the user's:
-    - Company capabilities
-    - Past wins
-    - Search preferences
-    
-    Use this for the default contracts page view (no search query needed).
-    """
+    """Get personalized contract recommendations with match scoring"""
     try:
-        vector_store = get_vector_store()
+        from app.services.pinecone_store import PineconeStoreService
+        from app.core.config import settings
+        from app.services.code_lookup import get_code_lookup_service, clean_naics_code        
         llm_service = get_llm_service()
-        
-        logger.info(f"Fetching recommended contracts for {current_user.email}")
-        
-        # Get company profile to use capabilities as search basis
+        code_service = get_code_lookup_service()
+
+        # Get company profile
         company = db.query(CompanyProfile).filter(
             CompanyProfile.firm_id == current_user.firm_id
         ).first()
         
         if not company:
-            raise HTTPException(
-                status_code=status.HTTP_404_NOT_FOUND,
-                detail="Company profile not found"
-            )
+            raise HTTPException(status_code=404, detail="Company profile not found")
         
-        # Get company capabilities to use as search query
+        # Get capabilities
         capabilities = db.query(CompanyCapability).filter(
             CompanyCapability.company_id == company.id
         ).all()
         
         if not capabilities:
-            # No capabilities - return empty results with helpful message
             return ContractSearchResponse(
                 query="",
                 results=[],
                 total_found=0,
-                message="No capabilities set. Add capabilities to your profile to see personalized matches."
+                message="Add capabilities to see personalized matches"
             )
         
-        # Create a search query from capabilities
-        # Use the first few capabilities as the search basis
+        # Create query from capabilities
         capability_texts = [cap.capability_text for cap in capabilities[:3]]
         combined_query = " ".join(capability_texts)
+
+        # Check cache first
+        capability_ids = sorted([c.id for c in capabilities])
+        cache_key = f"{current_user.firm_id}:{'-'.join(map(str, capability_ids))}"
+
+        if cache_key in capability_embedding_cache:
+            query_vector = capability_embedding_cache[cache_key]
+            logger.info(f"Using cached embedding for {current_user.firm_id}")
+        else:
+            # Generate embedding and cache it
+            query_vector = await llm_service.generate_embeddings(combined_query)
+            capability_embedding_cache[cache_key] = query_vector
+            logger.info(f"Generated and cached new embedding for {current_user.firm_id}")
         
-        logger.info(f"Using capabilities as search query: {combined_query[:100]}...")
-        
-        # Search contracts using combined capability query
-        # Get more results for filtering
-        search_limit = limit * 2
-        
-        results = await vector_store.search_contracts(
-            query_text=combined_query,
-            llm_service=llm_service,
-            limit=search_limit,
-            min_value=None,
-            max_value=None,
-            region=None
+        # Search Pinecone (get more for filtering)
+        pinecone = PineconeStoreService(api_key=settings.PINECONE_API_KEY)
+        results = pinecone.search_contracts(
+            query_vector=query_vector,
+            limit=limit + 5,
+            min_score=0.3
         )
         
-        # Initialize match scorer for personalized ranking
+        # Initialize scorer
+        vector_store = get_vector_store()
         scorer = ContractMatchScorer(db, vector_store.client)
         
-        # Convert to response format with personalized scoring
+        # Convert with scoring
         search_results = []
         for result in results:
-            metadata = result.get("metadata", {})
+            # Enrich with code names
+            enriched_result = code_service.enrich_contract(result)
             
-            # Create base contract result
-            contract_result = ContractSearchResult(
-                notice_id=result.get("notice_id", ""),
-                title=metadata.get("title", ""),
-                buyer_name=result.get("buyer_name", ""),
-                description=metadata.get("description", metadata.get("title", "")),
-                value=result.get("value"),
-                region=result.get("region"),
-                closing_date=metadata.get("closing_date"),
-                score=result.get("score", 0.0)
-            )
-            
-            # Create Contract object for scoring
+            # Create Contract for scoring
             temp_contract = Contract(
-                notice_id=result.get("notice_id", ""),
-                title=metadata.get("title", ""),
-                buyer_name=result.get("buyer_name", ""),
-                description=metadata.get("description", ""),
-                contract_value=result.get("value"),
-                region=result.get("region"),
-                qdrant_id=result.get("id")
+                notice_id=enriched_result.get("notice_id", ""),
+                title=enriched_result.get("title", ""),
+                buyer_name=enriched_result.get("agency", ""),
+                description=enriched_result.get("description", ""),
+                contract_value=enriched_result.get("contract_value"),
+                region=enriched_result.get("state"),
+                qdrant_id=enriched_result.get("id")
             )
             
-            # Calculate match scores
+            # Score it
             match_scores = scorer.score_contract(temp_contract, current_user.firm_id)
             
-            if match_scores:
-                contract_result.match_scores = match_scores
-                contract_result.total_match_score = match_scores["total_score"]
-                contract_result.match_reasons = match_scores.get("match_reasons", [])
-                search_results.append(contract_result)
+            # Skip if filtered out
+            if not match_scores:
+                continue
+            
+            # Build result using enriched_result throughout
+            search_results.append(ContractSearchResult(
+                notice_id=enriched_result.get("notice_id", ""),
+                title=enriched_result.get("title", ""),
+                buyer_name=enriched_result.get("agency", ""),
+                description=enriched_result.get("description", ""),
+                value=float(enriched_result.get("contract_value", 0)) if enriched_result.get("contract_value") else None,
+                region=enriched_result.get("state", ""),
+                closing_date=enriched_result.get("response_deadline", ""),
+                score=enriched_result.get("score", 0.0),
+                office=enriched_result.get("office"),
+                naics_code=clean_naics_code(enriched_result.get("naics_code")),  # ✅ Clean code
+                naics_name=enriched_result.get("naics_name"),                     # ✅ Add name
+                psc_code=enriched_result.get("psc_code"),
+                psc_name=enriched_result.get("psc_name"),
+                set_aside=enriched_result.get("set_aside"),
+                city=enriched_result.get("city"),
+                posted_date=enriched_result.get("posted_date"),
+                source_url=enriched_result.get("url"),
+                contact_name=enriched_result.get("contact_name"),
+                contact_email=enriched_result.get("contact_email"),
+                contact_phone=enriched_result.get("contact_phone"),
+                closing_time=None,
+                start_date=None,
+                end_date=None,
+                value_low=None,
+                value_high=None,
+                postcode=None,
+                notice_type=None,
+                contact_address=None,
+                contact_website=None,
+                additional_text=None,
+                attachments=None,
+                links=None,
+                suitable_for_sme=None,
+                suitable_for_vco=None,
+                match_scores=match_scores,
+                total_match_score=match_scores["total_score"],
+                match_reasons=match_scores.get("match_reasons", [])
+            ))
         
         # Sort by match score
         search_results.sort(key=lambda x: x.total_match_score or 0, reverse=True)
-        
-        # Limit to requested amount
         search_results = search_results[:limit]
-        
-        logger.info(f"Returning {len(search_results)} recommended contracts for {current_user.firm_id}")
         
         return ContractSearchResponse(
             query="",
             results=search_results,
             total_found=len(search_results),
-            message=f"Found {len(search_results)} contracts matched to your profile"
+            message=f"Found {len(search_results)} personalized matches"
         )
         
-    except HTTPException:
-        raise
     except Exception as e:
-        logger.error(f"Failed to get recommended contracts: {str(e)}", exc_info=True)
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Failed to get recommendations: {str(e)}"
-        )
-
-
+        logger.error(f"Recommendations failed: {str(e)}", exc_info=True)
+        raise HTTPException(status_code=500, detail=str(e))
 
 # ========== CONTRACT SEARCH ROUTE WITH PERSONALIZED MATCH SCORING ==========
 @router.post("/contracts/search", response_model=ContractSearchResponse)
@@ -1211,8 +1240,11 @@ async def search_contracts(
     """Search SAM.gov contracts using Pinecone semantic search"""
     try:
         from app.services.pinecone_store import PineconeStoreService
-        
+        from app.core.config import settings 
+        from app.services.code_lookup import get_code_lookup_service, clean_naics_code
+
         llm_service = get_llm_service()
+        code_service = get_code_lookup_service()
         
         logger.info(f"Contract search: '{search_request.query}'")
         
@@ -1251,26 +1283,57 @@ async def search_contracts(
         # Convert results
         search_results = []
         for result in results:
+            # Enrich with code names
+            enriched_result = code_service.enrich_contract(result)
+            
+            # Build contract result using enriched_result throughout
             contract_result = ContractSearchResult(
-                notice_id=result.get("notice_id", ""),
-                title=result.get("title", ""),
-                buyer_name=result.get("agency", ""),
-                description=result.get("description", ""),
-                value=result.get("contract_value"),
-                region=result.get("state"),
-                closing_date=result.get("response_deadline"),
-                score=result.get("score", 0.0)
+                notice_id=enriched_result.get("notice_id", ""),
+                title=enriched_result.get("title", ""),
+                buyer_name=enriched_result.get("agency", ""),
+                description=enriched_result.get("description", ""),
+                value=enriched_result.get("contract_value"),
+                region=enriched_result.get("state"),
+                closing_date=enriched_result.get("response_deadline"),
+                score=enriched_result.get("score", 0.0),
+                office=enriched_result.get("office"),
+                naics_code=clean_naics_code(enriched_result.get("naics_code")),  # ✅ CLEAN HERE
+                psc_code=enriched_result.get("psc_code"),
+                naics_name=enriched_result.get("naics_name"),
+                psc_name=enriched_result.get("psc_name"),
+                set_aside=enriched_result.get("set_aside"),
+                city=enriched_result.get("city"),
+                posted_date=enriched_result.get("posted_date"),
+                source_url=enriched_result.get("url"),
+                contact_name=enriched_result.get("contact_name"),
+                contact_email=enriched_result.get("contact_email"),
+                contact_phone=enriched_result.get("contact_phone"),
+                closing_time=None,
+                start_date=None,
+                end_date=None,
+                value_low=None,
+                value_high=None,
+                postcode=None,
+                notice_type=None,
+                contact_address=None,
+                contact_website=None,
+                additional_text=None,
+                attachments=None,
+                links=None,
+                suitable_for_sme=None,
+                suitable_for_vco=None
             )
             
+            # Add match scoring if enabled
             if scorer:
                 temp_contract = Contract(
-                    notice_id=result.get("notice_id", ""),
-                    title=result.get("title", ""),
-                    buyer_name=result.get("agency", ""),
-                    description=result.get("description", ""),
-                    contract_value=result.get("contract_value"),
-                    region=result.get("state"),
-                    qdrant_id=result.get("id")  # Pinecone ID for vector retrieval
+                    notice_id=enriched_result.get("notice_id", ""),
+                    title=enriched_result.get("title", ""),
+                    buyer_name=enriched_result.get("agency", ""),
+                    description=enriched_result.get("description", ""),
+                    contract_value=enriched_result.get("contract_value"),
+                    region=enriched_result.get("state"),
+                    qdrant_id=enriched_result.get("id")
                 )
                 
                 match_scores = scorer.score_contract(temp_contract, current_user.firm_id)
@@ -1282,6 +1345,7 @@ async def search_contracts(
             else:
                 search_results.append(contract_result)
         
+        # Sort by match score if enabled
         if include_match_scores:
             search_results.sort(key=lambda x: x.total_match_score or 0, reverse=True)
         
@@ -1290,7 +1354,8 @@ async def search_contracts(
         return ContractSearchResponse(
             query=search_request.query,
             results=search_results,
-            total_found=len(search_results)
+            total_found=len(search_results),
+            message=f"Found {len(search_results)} contracts matching '{search_request.query}'"
         )
         
     except Exception as e:

@@ -272,7 +272,20 @@ class ContractSearchResult(BaseModel):
     closing_date: Optional[str]
     score: float
     
-    # NEW FIELDS - Add these
+    # SAM.gov specific fields - ADD THESE
+    office: Optional[str] = None
+    naics_code: Optional[str] = None
+    psc_code: Optional[str] = None
+
+    naics_name: Optional[str] = None  # Human-readable NAICS description
+    psc_name: Optional[str] = None    # Human-readable PSC description
+
+    set_aside: Optional[str] = None
+    city: Optional[str] = None
+    posted_date: Optional[str] = None
+    source_url: Optional[str] = None  # The "url" field from Pinecone
+    
+    # UK fields (legacy, keep for compatibility)
     closing_time: Optional[str] = None
     start_date: Optional[str] = None
     end_date: Optional[str] = None

@@ -1,18 +1,23 @@
+"""
+Models package - All SQLAlchemy models
+"""
 from sqlalchemy import Column, Integer, String, DateTime, Text, Boolean, Index, ForeignKey
 from sqlalchemy.dialects.postgresql import JSONB
 from sqlalchemy.orm import relationship
 from datetime import datetime
 from app.database import Base
 
+# ========== USER MODELS (defined here) ==========
+
 class User(Base):
     __tablename__ = "users"
     
-    id = Column(String(36), primary_key=True, index=True)  # Changed to String for UUID
+    id = Column(String(36), primary_key=True, index=True)
     email = Column(String(255), unique=True, index=True, nullable=False)
     hashed_password = Column(String(255), nullable=False)
     full_name = Column(String(255), nullable=False)
-    firm_id = Column(String(255), nullable=False, index=True)  # Changed to String
-    firm_name = Column(String(255), nullable=True)  # Made nullable
+    firm_id = Column(String(255), nullable=False, index=True)
+    firm_name = Column(String(255), nullable=True)
     role = Column(String(50), default="user")
     is_active = Column(Boolean, default=True)
     created_at = Column(DateTime, default=datetime.utcnow)
@@ -21,18 +26,17 @@ class User(Base):
     notification_frequency = Column(String(20), default="daily", nullable=False)
     last_email_sent_at = Column(DateTime, nullable=True)
 
-
-
     # Relationships
     audit_logs = relationship("AuditLog", back_populates="user")
     conversations = relationship("Conversation", back_populates="user", cascade="all, delete-orphan")
+
 
 class AuditLog(Base):
     __tablename__ = "audit_logs"
     
     id = Column(Integer, primary_key=True, index=True)
-    user_id = Column(String(36), ForeignKey("users.id", ondelete="SET NULL"), nullable=True)  # Changed to String
-    firm_id = Column(String(255), nullable=True, index=True)  # Changed to String
+    user_id = Column(String(36), ForeignKey("users.id", ondelete="SET NULL"), nullable=True)
+    firm_id = Column(String(255), nullable=True, index=True)
     action = Column(String(100), nullable=False)
     resource_type = Column(String(50), index=True)
     resource_id = Column(String(100))
@@ -48,12 +52,13 @@ class AuditLog(Base):
         Index('idx_audit_user_action', 'user_id', 'action'),
     )
 
+
 class Conversation(Base):
     __tablename__ = "conversations"
     
-    id = Column(String(36), primary_key=True)  # Changed to String for UUID
-    user_id = Column(String(36), ForeignKey("users.id", ondelete="CASCADE"), nullable=False)  # Changed to String
-    firm_id = Column(String(255), nullable=False, index=True)  # Changed to String
+    id = Column(String(36), primary_key=True)
+    user_id = Column(String(36), ForeignKey("users.id", ondelete="CASCADE"), nullable=False)
+    firm_id = Column(String(255), nullable=False, index=True)
     title = Column(String(500))
     meta = Column(JSONB)
     created_at = Column(DateTime, default=datetime.utcnow, index=True)
@@ -66,11 +71,12 @@ class Conversation(Base):
         Index('idx_conv_firm_updated', 'firm_id', 'updated_at'),
     )
 
+
 class Message(Base):
     __tablename__ = "messages"
     
-    id = Column(String(36), primary_key=True)  # Changed to String for UUID
-    conversation_id = Column(String(36), ForeignKey("conversations.id", ondelete="CASCADE"), nullable=False)  # Changed to String
+    id = Column(String(36), primary_key=True)
+    conversation_id = Column(String(36), ForeignKey("conversations.id", ondelete="CASCADE"), nullable=False)
     role = Column(String(20), nullable=False)
     content = Column(Text, nullable=False)
     sources = Column(JSONB)
@@ -83,3 +89,36 @@ class Message(Base):
     __table_args__ = (
         Index('idx_msg_conversation_timestamp', 'conversation_id', 'timestamp'),
     )
+
+
+# ========== IMPORT MODELS FROM OTHER FILES ==========
+
+from app.models.company import (
+    CompanyProfile,
+    CompanyCapability,
+    PastWin,
+    SearchPreference,
+    SavedContract
+)
+
+from app.models.lead import PreSignupLead
+
+# ========== EXPORT ALL MODELS ==========
+
+__all__ = [
+    # User models (defined above)
+    "User",
+    "AuditLog",
+    "Conversation",
+    "Message",
+    
+    # Company models (imported from company.py)
+    "CompanyProfile",
+    "CompanyCapability",
+    "PastWin",
+    "SearchPreference",
+    "SavedContract",
+    
+    # Lead capture (imported from lead.py)
+    "PreSignupLead"
+]

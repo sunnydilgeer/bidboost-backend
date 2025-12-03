@@ -1,6 +1,6 @@
 """
 Pinecone Vector Store Service for SAM.GOV contracts
-Drop-in replacement for Qdrant with identical interface
+Maps new JSON schema to existing API schema for backward compatibility
 """
 from typing import List, Dict, Any, Optional
 from pinecone import Pinecone
@@ -22,6 +22,7 @@ class PineconeStoreService:
     ) -> int:
         """
         Upsert documents to Pinecone
+        Maps new schema fields to existing API schema
         
         Args:
             documents: List of dicts with 'id', 'embedding', and metadata
@@ -34,21 +35,37 @@ class PineconeStoreService:
             vectors = []
             for doc in documents:
                 payload = doc.get("payload", {})
+                
+                # Helper function to ensure no None values
+                def safe_str(value, default=""):
+                    """Convert None to empty string"""
+                    return value if value is not None else default
+                
+                # Map new schema → existing schema for backward compatibility
                 vectors.append({
                     "id": doc["id"],
                     "values": doc["embedding"],
                     "metadata": {
-                        "notice_id": payload.get("notice_id") or "",
-                        "title": payload.get("title") or "",
-                        "agency": payload.get("agency") or "",
-                        "description": (payload.get("description") or "")[:1000],
-                        "posted_date": payload.get("published_date") or "",
-                        "response_deadline": payload.get("closing_date") or "",
-                        "naics_code": str(payload.get("cpv_codes") or []),
-                        "set_aside": payload.get("metadata", {}).get("set_aside") or "",
-                        "contract_value": float(payload.get("value") or 0.0),
-                        "state": payload.get("region") or "",
-                        "url": payload.get("source_url") or "",
+                        "notice_id": safe_str(payload.get("notice_id")),
+                        "title": safe_str(payload.get("title")),
+                        "agency": safe_str(payload.get("agency")),
+                        "office": safe_str(payload.get("office")),
+                        "description": safe_str(payload.get("description"))[:1000],
+                        # MAP: naics → naics_code (existing code expects naics_code)
+                        "naics_code": safe_str(payload.get("naics")),
+                        # MAP: psc → psc_code (existing code expects psc_code)
+                        "psc_code": safe_str(payload.get("psc")),
+                        "set_aside": safe_str(payload.get("set_aside")),
+                        "state": safe_str(payload.get("state")),
+                        "city": safe_str(payload.get("city")),
+                        "posted_date": safe_str(payload.get("posted_date")),
+                        "response_deadline": safe_str(payload.get("response_deadline")),
+                        # MAP: source_url → url (existing code expects url)
+                        "url": safe_str(payload.get("source_url")),
+                        "contact_email": safe_str(payload.get("contact_email")),
+                        "contact_name": safe_str(payload.get("contact_name")),
+                        # Solicitations don't have contract values yet (TBD after award)
+                        "contract_value": 0.0,
                     }
                 })
             
@@ -73,6 +90,7 @@ class PineconeStoreService:
     ) -> List[Dict[str, Any]]:
         """
         Search contracts by semantic similarity
+        Returns data in existing API schema format
         
         Args:
             query_vector: 768-dim embedding
@@ -88,7 +106,7 @@ class PineconeStoreService:
                 vector=query_vector,
                 top_k=limit,
                 include_metadata=True,
-                filter=filter_dict  # e.g., {"agency": {"$eq": "DHS"}}
+                filter=filter_dict
             )
             
             contracts = []
@@ -100,14 +118,19 @@ class PineconeStoreService:
                         "notice_id": match.metadata.get("notice_id"),
                         "title": match.metadata.get("title"),
                         "agency": match.metadata.get("agency"),
+                        "office": match.metadata.get("office"),
                         "description": match.metadata.get("description"),
+                        "naics_code": match.metadata.get("naics_code"),
+                        "psc_code": match.metadata.get("psc_code"),
+                        "set_aside": match.metadata.get("set_aside"),
+                        "state": match.metadata.get("state"),
+                        "city": match.metadata.get("city"),
                         "posted_date": match.metadata.get("posted_date"),
                         "response_deadline": match.metadata.get("response_deadline"),
-                        "naics_code": match.metadata.get("naics_code"),
-                        "set_aside": match.metadata.get("set_aside"),
-                        "contract_value": match.metadata.get("contract_value"),
-                        "state": match.metadata.get("state"),
                         "url": match.metadata.get("url"),
+                        "contact_email": match.metadata.get("contact_email"),
+                        "contact_name": match.metadata.get("contact_name"),
+                        "contract_value": match.metadata.get("contract_value"),
                     })
             
             logger.info(f"🔍 Found {len(contracts)} contracts (score >= {min_score})")

@@ -120,6 +120,62 @@ class EmailService:
             print(f"Error sending deadline reminder to {to_email}: {e}")
             return False
     
+    def send_quickstart_report(
+        self,
+        to_email: str,
+        company_name: str,
+        website_url: str,
+        capabilities_preview: str,
+        pages_scraped: int,
+        total_matches: int,
+        contracts: List[dict]
+    ) -> bool:
+        """
+        Send quickstart report email with top contract matches.
+        
+        Args:
+            to_email: Recipient email
+            company_name: Extracted company name
+            website_url: Company website analyzed
+            capabilities_preview: Preview of capabilities (500 chars)
+            pages_scraped: Number of pages analyzed
+            total_matches: Total contracts found
+            contracts: Top 3 contracts with match scores
+        
+        Returns:
+            True if sent successfully
+        """
+        try:
+            # Render email template
+            template = self.env.get_template("email_quickstart_report.html")
+            html_content = template.render(
+                company_name=company_name,
+                website_url=website_url,
+                capabilities_preview=capabilities_preview,
+                pages_scraped=pages_scraped,
+                total_matches=total_matches,
+                contracts=contracts,
+                signup_url=f"{os.getenv('FRONTEND_URL')}/signup?from=email_report",
+                frontend_url=os.getenv('FRONTEND_URL', 'http://localhost:3000')
+            )
+            
+            # Create email
+            message = Mail(
+                from_email=Email(self.from_email, "BidMatch"),
+                to_emails=To(to_email),
+                subject=f"Your BidMatch Contract Report - {total_matches} Matches Found",
+                html_content=Content("text/html", html_content)
+            )
+            
+            # Send
+            response = self.client.send(message)
+            return response.status_code == 202
+            
+        except Exception as e:
+            print(f"Error sending quickstart report to {to_email}: {e}")
+            return False
+    
+    
     def test_connection(self) -> bool:
         """Test SendGrid connection."""
         try:
