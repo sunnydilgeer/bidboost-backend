@@ -590,11 +590,11 @@ async def add_capability(
     current_user: User = Depends(get_current_active_user),
     db: Session = Depends(get_db)
 ):
-    """Add a new capability and sync to Qdrant vector store"""
+    """Add a new capability and sync to Pinecone"""
     try:
-        vector_store = get_vector_store()
-        llm_service = get_llm_service()
+        from app.services.capability_store_pinecone import get_capability_store
         
+        llm_service = get_llm_service()
         profile = get_company_profile(db, current_user.firm_id)
         
         # Create capability in database first
@@ -605,15 +605,15 @@ async def add_capability(
         )
         
         db.add(new_cap)
-        db.flush()  # Get ID without committing
-        db.refresh(new_cap)  # Load relationships including company
+        db.flush()
+        db.refresh(new_cap)
         
-        # Sync to Qdrant
-        cap_store = CapabilityStoreService(vector_store.client)
-        qdrant_id = await cap_store.add_capability(new_cap, llm_service)
+        # Add to Pinecone
+        cap_store = get_capability_store()
+        pinecone_id = await cap_store.add_capability(new_cap, llm_service)
         
-        # Update with qdrant_id
-        new_cap.qdrant_id = qdrant_id
+        # Update with pinecone_id
+        new_cap.qdrant_id = pinecone_id  # Reusing same DB field
         db.commit()
         db.refresh(new_cap)
         
@@ -629,7 +629,7 @@ async def add_capability(
             "success": True,
             "id": new_cap.id,
             "qdrant_id": new_cap.qdrant_id,
-            "message": "Capability added and synced to vector store"
+            "message": "Capability added and synced to Pinecone"
         }
         
     except Exception as e:
@@ -647,11 +647,11 @@ async def update_capability(
     current_user: User = Depends(get_current_active_user),
     db: Session = Depends(get_db)
 ):
-    """Update an existing capability and re-sync to Qdrant"""
+    """Update an existing capability and re-sync to Pinecone"""
     try:
-        vector_store = get_vector_store()
-        llm_service = get_llm_service()
+        from app.services.capability_store_pinecone import get_capability_store
         
+        llm_service = get_llm_service()
         profile = get_company_profile(db, current_user.firm_id)
         
         # Verify capability belongs to this company
@@ -673,14 +673,14 @@ async def update_capability(
         
         db.flush()
         
-        # Re-sync to Qdrant (delete old, add new)
-        cap_store = CapabilityStoreService(vector_store.client)
+        # Re-sync to Pinecone (delete old, add new)
+        cap_store = get_capability_store()
         
         if existing_cap.qdrant_id:
             cap_store.delete_capability(existing_cap.qdrant_id)
         
-        qdrant_id = await cap_store.add_capability(existing_cap, llm_service)
-        existing_cap.qdrant_id = qdrant_id
+        pinecone_id = await cap_store.add_capability(existing_cap, llm_service)
+        existing_cap.qdrant_id = pinecone_id
         
         db.commit()
         
@@ -694,7 +694,7 @@ async def update_capability(
         
         return {
             "success": True,
-            "message": "Capability updated and re-synced to vector store"
+            "message": "Capability updated and re-synced to Pinecone"
         }
         
     except HTTPException:
@@ -713,9 +713,9 @@ async def delete_capability(
     current_user: User = Depends(get_current_active_user),
     db: Session = Depends(get_db)
 ):
-    """Delete a capability and remove from Qdrant"""
+    """Delete a capability and remove from Pinecone"""
     try:
-        vector_store = get_vector_store()
+        from app.services.capability_store_pinecone import get_capability_store
         
         profile = get_company_profile(db, current_user.firm_id)
         
@@ -731,9 +731,9 @@ async def delete_capability(
                 detail="Capability not found or does not belong to your company"
             )
         
-        # Delete from Qdrant first
+        # Delete from Pinecone first
         if existing_cap.qdrant_id:
-            cap_store = CapabilityStoreService(vector_store.client)
+            cap_store = get_capability_store()
             cap_store.delete_capability(existing_cap.qdrant_id)
         
         # Delete from database
@@ -750,7 +750,7 @@ async def delete_capability(
         
         return {
             "success": True,
-            "message": "Capability deleted and removed from vector store"
+            "message": "Capability deleted and removed from Pinecone"
         }
         
     except HTTPException:
@@ -762,6 +762,7 @@ async def delete_capability(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"Failed to delete capability: {str(e)}"
         )
+
 # ========== PAST WINS ROUTES ==========
 
 @router.get("/past-wins")
