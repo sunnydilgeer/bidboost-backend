@@ -2314,3 +2314,51 @@ async def resync_my_capabilities(
         "synced": synced,
         "errors": errors
     }
+
+@router.post("/admin/migrate-past-wins-pinecone")
+async def migrate_past_wins_pinecone(db: Session = Depends(get_db)):
+    """
+    Admin endpoint: Add pinecone_id column to past_wins table
+    Run this once after deploying the updated code
+    """
+    try:
+        from sqlalchemy import text
+        
+        # Check if column already exists
+        check_query = text("""
+            SELECT column_name 
+            FROM information_schema.columns 
+            WHERE table_name = 'past_wins' 
+            AND column_name = 'pinecone_id';
+        """)
+        
+        result = db.execute(check_query).fetchone()
+        
+        if result:
+            return {
+                "success": True,
+                "message": "✅ Column 'pinecone_id' already exists",
+                "already_migrated": True
+            }
+        
+        logger.info("🚀 Running migration: Adding pinecone_id to past_wins")
+        
+        # Add column
+        db.execute(text("ALTER TABLE past_wins ADD COLUMN pinecone_id VARCHAR(100);"))
+        db.commit()
+        
+        # Create index
+        db.execute(text("CREATE INDEX idx_past_wins_pinecone_id ON past_wins(pinecone_id);"))
+        db.commit()
+        
+        logger.info("✅ Migration completed!")
+        
+        return {
+            "success": True,
+            "message": "✅ Migration completed successfully!"
+        }
+        
+    except Exception as e:
+        logger.error(f"❌ Migration failed: {str(e)}")
+        db.rollback()
+        raise HTTPException(status_code=500, detail=str(e))

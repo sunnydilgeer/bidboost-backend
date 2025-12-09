@@ -88,7 +88,9 @@ class PastWin(Base):
     contract_value = Column(Numeric(15, 2), nullable=True)
     award_date = Column(Date, nullable=False)
     contract_duration_months = Column(Integer, nullable=True)
-    description = Column(Text, nullable=True)
+    description = Column(Text, nullable=True
+    pinecone_id = Column(String(100), nullable=True, index=True)  # Vector DB reference
+
     
     # 🆕 US Federal-specific
     contract_number = Column(String(100), nullable=True)  # Federal contract number

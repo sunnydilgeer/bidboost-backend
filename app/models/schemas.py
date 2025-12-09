@@ -424,6 +424,8 @@ class PastWinResponse(BaseModel):
     award_date: date
     description: Optional[str]
     created_at: datetime
+    pinecone_id: Optional[str] = None  # Pinecone vector reference
+
     
     class Config:
         from_attributes = True
