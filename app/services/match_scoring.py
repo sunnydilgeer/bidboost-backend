@@ -1,509 +1,470 @@
-from typing import List, Dict, Optional
+import logging
+from typing import Dict, List, Optional
 from sqlalchemy.orm import Session
 from app.models.company import CompanyProfile, CompanyCapability, PastWin, SearchPreference
 from app.models.contract import Contract
-from qdrant_client import QdrantClient
-from app.core.config import settings
 import numpy as np
-import logging
 
 logger = logging.getLogger(__name__)
 
-
 class ContractMatchScorer:
     """
-    Scores contract opportunities against company profiles using:
-    - Semantic similarity between capabilities and contract requirements
-    - Past win matching (similar buyers, contract values)
-    - Search preference filtering (value ranges, regions, keywords)
-    - Set-aside certification matching (SDVOSB, WOSB, HUBZone, 8(a), SBA)
-    
-    Supports both Qdrant (capabilities) and Pinecone (SAM contracts)
+    Calculate personalized match scores for contracts based on:
+    - Capability similarity (semantic matching)
+    - Past win patterns (agency/value matching)
+    - Search preferences (filters and keywords)
     """
     
-    def __init__(self, db: Session, qdrant_client: QdrantClient):
+    def __init__(self, db: Session, vector_client):
         self.db = db
-        self.qdrant = qdrant_client
         
-        # Initialize Pinecone if enabled
-        self.use_pinecone = settings.USE_PINECONE
-        if self.use_pinecone:
-            from pinecone import Pinecone
-            pc = Pinecone(api_key=settings.PINECONE_API_KEY)
-            self.pinecone_index = pc.Index(settings.PINECONE_INDEX_NAME)
-            logger.info("ContractMatchScorer initialized with Pinecone for SAM contracts")
-        else:
+        # Auto-detect client type (Pinecone or Qdrant)
+        if hasattr(vector_client, 'fetch'):  # Pinecone Index
+            self.pinecone_index = vector_client
+            self.qdrant_client = None
+            self.using_pinecone = True
+            logger.info("ContractMatchScorer initialized with Pinecone")
+        else:  # Qdrant Client
+            self.qdrant_client = vector_client
             self.pinecone_index = None
-            logger.info("ContractMatchScorer initialized with Qdrant only")
-
-    def get_improvement_recommendations(
-        self, 
-        firm_id: str
-    ) -> List[Dict[str, any]]:
-        """Generate actionable recommendations to improve match scores."""
-        
-        # Load company profile with all relationships
-        profile = self.db.query(CompanyProfile).filter(
-            CompanyProfile.firm_id == firm_id
-        ).first()
-        
-        if not profile:
-            logger.warning(f"No profile found for firm {firm_id}")
-            return []
-        
-        recommendations = []
-        
-        # 1. PAST WINS ANALYSIS (30% weight potential)
-        past_wins_count = len(profile.past_wins) if profile.past_wins else 0
-        
-        if past_wins_count == 0:
-            recommendations.append({
-                "category": "past_wins",
-                "current_score": 0.0,
-                "potential_score": 30.0,
-                "priority": "high",
-                "action": "Add 1-2 similar past federal contract wins to demonstrate relevant experience",
-                "impact": "+30% to total match score",
-                "icon": "🎯",
-                "specific_actions": [
-                    "Add a past win in your main capability area",
-                    "Include contract value and federal agency name",
-                    "Focus on government/federal contracts"
-                ]
-            })
-        elif past_wins_count < 3:
-            potential_boost = (3 - past_wins_count) * 10
-            recommendations.append({
-                "category": "past_wins",
-                "current_score": past_wins_count * 10.0,
-                "potential_score": 30.0,
-                "priority": "medium",
-                "action": f"Add {3 - past_wins_count} more past wins to strengthen your track record",
-                "impact": f"+{potential_boost}% potential boost",
-                "icon": "📈",
-                "specific_actions": [
-                    "Add wins from different federal agencies",
-                    "Include recent contracts (last 2-3 years)",
-                    f"Aim for at least 3 past wins for credibility"
-                ]
-            })
-        
-        # 2. CAPABILITIES ANALYSIS (40% weight potential)
-        capabilities_count = len(profile.capabilities) if profile.capabilities else 0
-        
-        if capabilities_count < 3:
-            recommendations.append({
-                "category": "capabilities",
-                "current_score": capabilities_count * 10.0,
-                "potential_score": 40.0,
-                "priority": "high" if capabilities_count < 2 else "medium",
-                "action": f"Add {max(3 - capabilities_count, 1)} domain-specific capabilities",
-                "impact": f"+{min(15, (3 - capabilities_count) * 5)}% potential boost",
-                "icon": "💡",
-                "specific_actions": [
-                    "Use specific terminology like 'Cybersecurity Compliance (NIST)' instead of 'IT Services'",
-                    "Add 'Federal Cloud Migration (FedRAMP)' or 'Defense Systems Integration'",
-                    "Match language from SAM.gov contracts you're interested in"
-                ]
-            })
-        elif capabilities_count < 5:
-            # Check if capabilities are too generic
-            generic_keywords = ["it", "software", "services", "solutions", "general", "consulting"]
-            generic_count = 0
-            
-            for cap in profile.capabilities:
-                cap_text_lower = cap.capability_text.lower()
-                if any(keyword in cap_text_lower for keyword in generic_keywords):
-                    generic_count += 1
-            
-            if generic_count > capabilities_count / 2:
-                recommendations.append({
-                    "category": "capabilities",
-                    "current_score": capabilities_count * 8.0,
-                    "potential_score": 40.0,
-                    "priority": "medium",
-                    "action": "Make capabilities more specific to improve semantic matching",
-                    "impact": "+10-15% better relevance scores",
-                    "icon": "🎨",
-                    "specific_actions": [
-                        "Replace 'IT Services' → 'Cybersecurity Auditing & FISMA Compliance'",
-                        "Replace 'Software Development' → 'Agile Development for Federal Agencies'",
-                        "Use exact phrases from high-scoring SAM.gov contracts"
-                    ]
-                })
-        
-        # 3. SEARCH PREFERENCES ANALYSIS (30% weight optimization)
-        prefs = profile.search_preference
-        missing_prefs = []
-        potential_impact = 0
-        
-        if not prefs:
-            recommendations.append({
-                "category": "preferences",
-                "current_score": 0.0,
-                "potential_score": 30.0,
-                "priority": "low",
-                "action": "Set search preferences to filter and focus results",
-                "impact": "+30% better targeted results",
-                "icon": "⚙️",
-                "specific_actions": [
-                    "Set minimum/maximum contract values",
-                    "Add preferred states/regions (e.g., CA, TX, VA, DC)",
-                    "Add keywords for your specialization"
-                ]
-            })
-        else:
-            if not prefs.min_contract_value and not prefs.max_contract_value:
-                missing_prefs.append("contract value range")
-                potential_impact += 8
-            
-            if not prefs.preferred_regions or len(prefs.preferred_regions) == 0:
-                missing_prefs.append("preferred regions")
-                potential_impact += 10
-            
-            if not prefs.keywords or len(prefs.keywords) == 0:
-                missing_prefs.append("target keywords")
-                potential_impact += 7
-            
-            if missing_prefs:
-                recommendations.append({
-                    "category": "preferences",
-                    "current_score": 30.0 - potential_impact,
-                    "potential_score": 30.0,
-                    "priority": "low",
-                    "action": f"Complete your search preferences: {', '.join(missing_prefs)}",
-                    "impact": f"+{potential_impact}% optimization",
-                    "icon": "🎯",
-                    "specific_actions": [f"Add {pref}" for pref in missing_prefs]
-                })
-        
-        # 4. CERTIFICATION RECOMMENDATIONS (15% boost per matching set-aside)
-        cert_recommendations = []
-        
-        if not profile.sba_certified:
-            cert_recommendations.append("SBA Small Business certification")
-        if not profile.sdvosb_certified:
-            cert_recommendations.append("SDVOSB (Service-Disabled Veteran-Owned)")
-        if not profile.wosb_certified:
-            cert_recommendations.append("WOSB (Women-Owned Small Business)")
-        if not profile.hubzone_certified:
-            cert_recommendations.append("HUBZone certification")
-        if not profile.eight_a_certified:
-            cert_recommendations.append("8(a) Business Development certification")
-        
-        if cert_recommendations:
-            recommendations.append({
-                "category": "certifications",
-                "current_score": 0.0,
-                "potential_score": 15.0,
-                "priority": "medium",
-                "action": "Consider obtaining relevant federal certifications",
-                "impact": "+15% boost for each matching set-aside contract",
-                "icon": "🏅",
-                "specific_actions": cert_recommendations[:3]  # Show top 3
-            })
-        
-        # Sort by priority: high → medium → low
-        priority_order = {"high": 0, "medium": 1, "low": 2}
-        recommendations.sort(key=lambda x: priority_order[x["priority"]])
-        
-        logger.info(f"Generated {len(recommendations)} recommendations for firm {firm_id}")
-        return recommendations
+            self.using_pinecone = False
+            logger.info("ContractMatchScorer initialized with Qdrant")
     
-    def score_contract(self, contract: Contract, firm_id: str, capability_vectors: Optional[Dict] = None) -> Optional[Dict]:
+    def score_contract(
+        self, 
+        contract: Contract, 
+        firm_id: str, 
+        capability_vectors: Optional[Dict] = None,
+        contract_vectors: Optional[Dict] = None  # NEW: Pre-fetched contract vectors
+    ) -> Optional[Dict]:
         """
-        Calculate relevance score for a contract against company profile.
+        Calculate comprehensive match score for a contract.
         
         Args:
             contract: Contract to score
-            firm_id: Company firm ID
-            capability_vectors: Optional pre-fetched capability vectors {qdrant_id: {"vector": [...], "text": "..."}}
+            firm_id: Company identifier
+            capability_vectors: Pre-fetched capability vectors {capability_id: vector}
+            contract_vectors: Pre-fetched contract vectors {contract_id: vector}
         
-        Returns None if contract fails hard filters (excluded categories, value range).
-        Returns dict with scores and match reasons if contract passes filters.
+        Returns:
+            Dict with scores and reasons, or None if filtered out
         """
-        
-        # Load company profile with relationships
-        profile = self.db.query(CompanyProfile).filter(
-            CompanyProfile.firm_id == firm_id
-        ).first()
-        
-        if not profile:
-            logger.debug(f"No company profile found for firm {firm_id}")
+        try:
+            # Get company profile
+            profile = self.db.query(CompanyProfile).filter(
+                CompanyProfile.firm_id == firm_id
+            ).first()
+            
+            if not profile:
+                logger.warning(f"No profile found for firm {firm_id}")
+                return None
+            
+            # Apply preference filters first (quick elimination)
+            if not self._passes_preference_filters(contract, profile):
+                return None
+            
+            # Calculate component scores
+            capability_score = self._calculate_capability_score(
+                contract, 
+                profile,
+                capability_vectors,
+                contract_vectors  # NEW: Pass pre-fetched contract vectors
+            )
+            past_win_score = self._calculate_past_win_score(contract, profile)
+            preference_score = self._calculate_preference_score(contract, profile)
+            
+            # Weighted average: Capability (50%), Past Wins (25%), Preferences (25%)
+            total_score = (
+                capability_score * 0.5 +
+                past_win_score * 0.25 +
+                preference_score * 0.25
+            )
+            
+            # Generate match reasons
+            match_reasons = self._generate_match_reasons(
+                capability_score, 
+                past_win_score, 
+                preference_score,
+                contract,
+                profile
+            )
+            
+            return {
+                "total_score": round(total_score, 2),
+                "capability_score": round(capability_score, 2),
+                "past_win_score": round(past_win_score, 2),
+                "preference_score": round(preference_score, 2),
+                "match_reasons": match_reasons
+            }
+            
+        except Exception as e:
+            logger.error(f"Error scoring contract {contract.notice_id}: {str(e)}", exc_info=True)
             return None
-        
-        # Initialize score structure
-        scores = {
-            "capability_score": 0.0,
-            "past_win_score": 0.0,
-            "preference_score": 0.0,
-            "total_score": 0.0,
-            "match_reasons": []
-        }
-        
-        # 1. Capability Matching (40% weight) - Semantic similarity
-        capability_score = self._calculate_capability_score(contract, profile.capabilities, capability_vectors)
-        scores["capability_score"] = capability_score
-        if capability_score > 0.6:
-            scores["match_reasons"].append(f"Strong capability match ({capability_score:.0%})")
-        elif capability_score > 0.4:
-            scores["match_reasons"].append(f"Good capability match ({capability_score:.0%})")
-        elif capability_score > 0.25:
-            scores["match_reasons"].append(f"Moderate capability match ({capability_score:.0%})")
-        
-        # 2. Past Win Matching (30% weight) - Similar contracts won
-        past_win_score, win_reasons = self._calculate_past_win_score(contract, profile.past_wins)
-        scores["past_win_score"] = past_win_score
-        scores["match_reasons"].extend(win_reasons)
-        
-        # 3. Search Preference Filtering + Certification Matching (30% weight)
-        preference_score, passes_filters, pref_reasons = self._calculate_preference_score(
-            contract, profile, profile.search_preference
-        )
-        scores["preference_score"] = preference_score
-        scores["match_reasons"].extend(pref_reasons)
-        
-        # Don't return contracts that fail hard filters
-        if not passes_filters:
-            logger.debug(f"Contract {contract.notice_id} failed preference filters")
-            return None
-        
-        # Calculate weighted total score
-        scores["total_score"] = (
-            capability_score * 0.5 +
-            past_win_score * 0.25 +
-            preference_score * 0.25
-        )
-        
-        logger.info(f"Contract {contract.notice_id} scored {scores['total_score']:.2%} for firm {firm_id}")
-        
-        return scores
     
     def _calculate_capability_score(
         self, 
         contract: Contract, 
-        capabilities: List[CompanyCapability],
-        capability_vectors: Optional[Dict] = None
+        profile: CompanyProfile,
+        capability_vectors: Optional[Dict] = None,
+        contract_vectors: Optional[Dict] = None  # NEW: Pre-fetched contract vectors
     ) -> float:
-        """Use semantic similarity between capabilities and contract description"""
-        if not capabilities:
-            logger.debug(f"No capabilities found")
-            return 0.0
-        
+        """
+        Calculate semantic similarity between contract and company capabilities.
+        Uses pre-fetched vectors when available for performance.
+        """
         try:
-            # Get contract embedding from Pinecone
-            contract_vector = None
+            capabilities = profile.capabilities
             
-            if contract.qdrant_id:
-                try:
-                    # SAM contracts are in Pinecone (default namespace)
-                    result = self.pinecone_index.fetch(ids=[contract.qdrant_id], namespace="contracts")
-                    if contract.qdrant_id in result.vectors:
-                        contract_vector = result.vectors[contract.qdrant_id].values
-                        logger.debug(f"Retrieved SAM contract vector from Pinecone: {contract.qdrant_id}")
-                except Exception as e:
-                    logger.error(f"Failed to fetch contract from Pinecone: {e}")
-            
-            if not contract_vector:
-                logger.warning(f"Contract {contract.qdrant_id} vector not found in Pinecone")
+            if not capabilities:
+                logger.debug(f"No capabilities for firm {profile.firm_id}")
                 return 0.0
             
-            # Use pre-fetched capabilities if provided, otherwise fetch them
-            if capability_vectors:
-                logger.debug(f"Using pre-fetched capability vectors ({len(capability_vectors)} available)")
+            # Get contract vector (use pre-fetched if available)
+            contract_vector = None
+            
+            if contract_vectors is not None and contract.qdrant_id in contract_vectors:
+                # Use pre-fetched contract vector
+                contract_vector = contract_vectors[contract.qdrant_id]
+                logger.debug(f"Using pre-fetched contract vector: {contract.qdrant_id}")
+            elif contract.qdrant_id:
+                # Fallback: Fetch individually
+                if self.using_pinecone:
+                    result = self.pinecone_index.fetch(ids=[contract.qdrant_id], namespace="contracts")
+                    if result.vectors and contract.qdrant_id in result.vectors:
+                        contract_vector = result.vectors[contract.qdrant_id].values
+                        logger.debug(f"Fetched contract vector individually: {contract.qdrant_id}")
+                else:
+                    # Qdrant fallback
+                    points = self.qdrant_client.retrieve(
+                        collection_name="legal_documents",
+                        ids=[contract.qdrant_id],
+                        with_vectors=True
+                    )
+                    if points:
+                        contract_vector = points[0].vector
+                        logger.debug(f"Fetched contract vector from Qdrant: {contract.qdrant_id}")
+            
+            if contract_vector is None:
+                logger.warning(f"No vector found for contract {contract.qdrant_id}")
+                return 0.0
+            
+            # Get capability vectors (use pre-fetched if available)
+            # FIXED: Check if capability_vectors is not None instead of truthiness
+            if capability_vectors is not None:
                 capabilities_data = capability_vectors
+                logger.debug(f"Using pre-fetched capability vectors: {len(capabilities_data)} capabilities")
             else:
-                logger.debug("No pre-fetched vectors, fetching from Pinecone...")
-                from app.services.capability_store_pinecone import get_capability_store
-                
-                cap_store = get_capability_store()
-                
-                # Batch fetch all capabilities
+                # Fallback: Fetch capabilities individually
                 capability_ids = [cap.qdrant_id for cap in capabilities if cap.qdrant_id]
                 
                 if not capability_ids:
-                    logger.warning("No capabilities have Pinecone IDs")
+                    logger.warning(f"No capability IDs found for firm {profile.firm_id}")
                     return 0.0
                 
-                capabilities_data = cap_store.get_capabilities_batch(capability_ids)
+                if self.using_pinecone:
+                    from app.services.capability_store_pinecone import get_capability_store
+                    cap_store = get_capability_store()
+                    capabilities_data = cap_store.get_capabilities_batch(capability_ids)
+                    logger.debug(f"Fetched {len(capabilities_data)} capabilities from Pinecone")
+                else:
+                    # Qdrant fallback
+                    points = self.qdrant_client.retrieve(
+                        collection_name="capabilities",
+                        ids=capability_ids,
+                        with_vectors=True
+                    )
+                    capabilities_data = {p.id: p.vector for p in points}
+                    logger.debug(f"Fetched {len(capabilities_data)} capabilities from Qdrant")
             
-            # Calculate similarity with each capability
-            similarities = []
-            for cap in capabilities:
-                if cap.qdrant_id and cap.qdrant_id in capabilities_data:
-                    cap_data = capabilities_data[cap.qdrant_id]
-                    cap_vector = cap_data["vector"]
-                    
-                    similarity = self._cosine_similarity(contract_vector, cap_vector)
-                    similarities.append(similarity)
-                    logger.debug(f"Capability '{cap.capability_text[:50]}' similarity: {similarity:.3f}")
-            
-            if not similarities:
-                logger.warning("No similarities calculated")
+            if not capabilities_data:
+                logger.warning(f"No capability vectors retrieved for firm {profile.firm_id}")
                 return 0.0
             
-            # Use average of top 3 matches
-            similarities.sort(reverse=True)
-            top_matches = similarities[:3]
-            avg_score = sum(top_matches) / len(top_matches)
+            # Calculate similarities
+            similarities = []
+            for cap in capabilities:
+                if cap.qdrant_id in capabilities_data:
+                    cap_vector = capabilities_data[cap.qdrant_id]
+                    similarity = self._cosine_similarity(contract_vector, cap_vector)
+                    similarities.append(similarity)
             
-            logger.info(f"Capability score: {avg_score:.3f} (from {len(similarities)} capabilities)")
-            return avg_score
-        
+            if not similarities:
+                logger.warning(f"No similarity scores calculated for contract {contract.notice_id}")
+                return 0.0
+            
+            # Average similarity across all capabilities
+            avg_similarity = float(np.mean(similarities))
+            
+            logger.debug(f"Capability score: {avg_similarity:.3f} (from {len(similarities)} capabilities)")
+            
+            return avg_similarity
+            
         except Exception as e:
-            logger.error(f"Capability scoring error: {str(e)}", exc_info=True)
+            logger.error(f"Error calculating capability score: {str(e)}", exc_info=True)
             return 0.0
     
-    def _calculate_past_win_score(
-        self, 
-        contract: Contract, 
-        past_wins: List[PastWin]
-    ) -> tuple[float, List[str]]:
+    def _calculate_past_win_score(self, contract: Contract, profile: CompanyProfile) -> float:
         """
-        Score based on similar past wins.
-        Returns (score, list of match reasons).
+        Score based on similarity to past contract wins.
+        Higher score if contract is from same agency or similar value range.
         """
-        if not past_wins:
-            return 0.0, []
-        
-        score = 0.0
-        reasons = []
-        
-        for win in past_wins:
-            # Match by buyer organization (exact or partial match)
-            if contract.buyer_name and win.buyer_name:
-                buyer_lower = contract.buyer_name.lower()
-                win_buyer_lower = win.buyer_name.lower()
+        try:
+            past_wins = profile.past_wins
+            
+            if not past_wins:
+                return 0.5  # Neutral score if no past wins
+            
+            score = 0.0
+            
+            # Check for agency matches
+            matching_agencies = [
+                win for win in past_wins 
+                if win.buyer_name and contract.buyer_name and 
+                win.buyer_name.lower() in contract.buyer_name.lower()
+            ]
+            
+            if matching_agencies:
+                score += 0.6  # Strong signal
+            
+            # Check for value range matches
+            if contract.contract_value:
+                value_matches = [
+                    win for win in past_wins
+                    if win.contract_value and 
+                    0.5 <= (win.contract_value / contract.contract_value) <= 2.0
+                ]
                 
-                if win_buyer_lower == buyer_lower:
-                    score += 0.6
-                    reasons.append(f"Previously won contract with {win.buyer_name}")
-                elif win_buyer_lower in buyer_lower or buyer_lower in win_buyer_lower:
+                if value_matches:
                     score += 0.4
-                    reasons.append(f"Previously worked with similar buyer ({win.buyer_name})")
             
-            # Match by contract value range (within 2x)
-            if contract.contract_value and win.contract_value:
-                # Convert to float to avoid Decimal/float mixing
-                contract_val = float(contract.contract_value)
-                win_val = float(win.contract_value)
-                
-                value_ratio = min(contract_val, win_val) / max(contract_val, win_val)
-                if value_ratio > 0.5:  # Within 2x range
-                    score += 0.3
-                    if value_ratio > 0.8:  # Very similar value
-                        reasons.append(f"Similar contract value to past win (${win.contract_value:,.0f})")
-        
-        # Cap score at 1.0
-        final_score = min(score, 1.0)
-        
-        return final_score, reasons
+            return min(score, 1.0)  # Cap at 1.0
+            
+        except Exception as e:
+            logger.error(f"Error calculating past win score: {str(e)}")
+            return 0.5
     
-    def _calculate_preference_score(
+    def _calculate_preference_score(self, contract: Contract, profile: CompanyProfile) -> float:
+        """
+        Score based on how well contract matches search preferences.
+        Higher score for preferred regions and keyword matches.
+        """
+        try:
+            prefs = profile.search_preference
+            
+            if not prefs:
+                return 0.5  # Neutral if no preferences set
+            
+            score = 0.5  # Start neutral
+            
+            # Region preference
+            if prefs.preferred_regions and contract.region:
+                if contract.region in prefs.preferred_regions:
+                    score += 0.3
+            
+            # Keyword matches in title/description
+            if prefs.keywords:
+                text = f"{contract.title} {contract.description}".lower()
+                matched_keywords = [kw for kw in prefs.keywords if kw.lower() in text]
+                
+                if matched_keywords:
+                    score += 0.2 * (len(matched_keywords) / len(prefs.keywords))
+            
+            return min(score, 1.0)
+            
+        except Exception as e:
+            logger.error(f"Error calculating preference score: {str(e)}")
+            return 0.5
+    
+    def _passes_preference_filters(self, contract: Contract, profile: CompanyProfile) -> bool:
+        """
+        Apply hard filters based on search preferences.
+        Returns False if contract should be excluded.
+        """
+        try:
+            prefs = profile.search_preference
+            
+            if not prefs:
+                return True  # No filters set
+            
+            # Value range filters
+            if contract.contract_value:
+                if prefs.min_contract_value and contract.contract_value < prefs.min_contract_value:
+                    return False
+                if prefs.max_contract_value and contract.contract_value > prefs.max_contract_value:
+                    return False
+            
+            # Excluded categories (if implemented)
+            # This would need category field on contracts
+            
+            return True
+            
+        except Exception as e:
+            logger.error(f"Error applying preference filters: {str(e)}")
+            return True  # On error, don't filter out
+    
+    def _generate_match_reasons(
         self, 
+        capability_score: float,
+        past_win_score: float,
+        preference_score: float,
         contract: Contract,
-        profile: CompanyProfile,
-        preferences: Optional[SearchPreference]
-    ) -> tuple[float, bool, List[str]]:
-        """
-        Apply search preferences and certification matching as filters and scoring.
-        
-        Returns:
-            - score (float): Preference match score 0-1.5 (allows for bonuses)
-            - passes_filters (bool): Whether contract passes hard filters
-            - reasons (List[str]): Match reasons for display
-        """
-        passes_filters = True
-        score = 1.0
+        profile: CompanyProfile
+    ) -> List[str]:
+        """Generate human-readable reasons for the match score."""
         reasons = []
         
-        # ===== SET-ASIDE CERTIFICATION MATCHING (15% BONUS) =====
-        if hasattr(contract, 'set_aside') and contract.set_aside:
-            set_aside_lower = contract.set_aside.lower()
+        try:
+            # Capability matches
+            if capability_score > 0.7:
+                reasons.append("Strong capability match - your expertise aligns well with this contract")
+            elif capability_score > 0.5:
+                reasons.append("Good capability match - relevant to your services")
             
-            # Check each certification type and award 15% bonus for matches
-            if profile.sba_certified and any(kw in set_aside_lower for kw in ['small business', 'sba', 'total small business']):
-                score += 0.15
-                reasons.append("✓ Matches your Small Business certification")
+            # Past win patterns
+            if past_win_score > 0.7:
+                past_wins = profile.past_wins
+                matching_agency = any(
+                    win.buyer_name and contract.buyer_name and 
+                    win.buyer_name.lower() in contract.buyer_name.lower()
+                    for win in past_wins
+                )
+                
+                if matching_agency:
+                    reasons.append(f"You've won contracts from {contract.buyer_name} before")
+                else:
+                    reasons.append("Contract value matches your past wins")
             
-            if profile.sdvosb_certified and ('sdvosb' in set_aside_lower or 'service-disabled' in set_aside_lower):
-                score += 0.15
-                reasons.append("✓ Matches your SDVOSB certification")
+            # Preference matches
+            if preference_score > 0.7 and profile.search_preference:
+                prefs = profile.search_preference
+                
+                if prefs.preferred_regions and contract.region in prefs.preferred_regions:
+                    reasons.append(f"In your preferred region: {contract.region}")
+                
+                if prefs.keywords:
+                    text = f"{contract.title} {contract.description}".lower()
+                    matched = [kw for kw in prefs.keywords if kw.lower() in text]
+                    if matched:
+                        reasons.append(f"Matches keywords: {', '.join(matched[:3])}")
             
-            if profile.wosb_certified and ('wosb' in set_aside_lower or 'women-owned' in set_aside_lower):
-                score += 0.15
-                reasons.append("✓ Matches your WOSB certification")
+            # Default reason if no specific matches
+            if not reasons:
+                reasons.append("Relevant to your profile")
             
-            if profile.hubzone_certified and 'hubzone' in set_aside_lower:
-                score += 0.15
-                reasons.append("✓ Matches your HUBZone certification")
+            return reasons
             
-            if profile.eight_a_certified and ('8(a)' in set_aside_lower or '8a' in set_aside_lower):
-                score += 0.15
-                reasons.append("✓ Matches your 8(a) certification")
-        
-        # ===== EXISTING PREFERENCE FILTERS BELOW =====
-        
-        if not preferences:
-            return score, True, reasons  # No preferences = pass all with certification bonus
-        
-        # Value range filter (HARD)
-        if contract.contract_value:
-            if preferences.min_contract_value and contract.contract_value < preferences.min_contract_value:
-                passes_filters = False
-                logger.debug(f"Contract value ${contract.contract_value:,.0f} below minimum ${preferences.min_contract_value:,.0f}")
-            
-            if preferences.max_contract_value and contract.contract_value > preferences.max_contract_value:
-                passes_filters = False
-                logger.debug(f"Contract value ${contract.contract_value:,.0f} above maximum ${preferences.max_contract_value:,.0f}")
-            
-            # Add reason if value is in range
-            if passes_filters and (preferences.min_contract_value or preferences.max_contract_value):
-                reasons.append(f"Contract value (${contract.contract_value:,.0f}) matches preferences")
-        
-        # Excluded categories filter (HARD)
-        if preferences.excluded_categories:
-            contract_text = f"{contract.title} {contract.description or ''}".lower()
-            for category in preferences.excluded_categories:
-                category_lower = category.lower()
-                if category_lower in contract_text:
-                    passes_filters = False
-                    logger.debug(f"Contract contains excluded category: {category}")
-                    break
-        
-        # Region preference (SOFT - reduce score if no match)
-        if preferences.preferred_regions and contract.region:
-            if contract.region in preferences.preferred_regions:
-                score += 0.2  # Boost for preferred region
-                reasons.append(f"Located in preferred region ({contract.region})")
-            else:
-                score *= 0.6  # Penalty for non-preferred region
-        
-        # Keyword matching (SOFT - boost score for matches)
-        if preferences.keywords:
-            contract_text = f"{contract.title} {contract.description or ''}".lower()
-            matched_keywords = [kw for kw in preferences.keywords if kw.lower() in contract_text]
-            
-            if matched_keywords:
-                keyword_boost = len(matched_keywords) * 0.15
-                score += keyword_boost
-                reasons.append(f"Matches keywords: {', '.join(matched_keywords[:3])}")
-        
-        # Cap final score at 1.5 (to allow for certification and keyword bonuses)
-        final_score = min(score, 1.5)
-        
-        return final_score, passes_filters, reasons
+        except Exception as e:
+            logger.error(f"Error generating match reasons: {str(e)}")
+            return ["Match based on profile analysis"]
     
-    @staticmethod
-    def _cosine_similarity(vec1: List[float], vec2: List[float]) -> float:
-        """Calculate cosine similarity between two vectors (0-1 range)"""
-        vec1_arr = np.array(vec1)
-        vec2_arr = np.array(vec2)
-        
-        dot_product = np.dot(vec1_arr, vec2_arr)
-        norm_product = np.linalg.norm(vec1_arr) * np.linalg.norm(vec2_arr)
-        
-        if norm_product == 0:
+    def _cosine_similarity(self, vec1: List[float], vec2: List[float]) -> float:
+        """Calculate cosine similarity between two vectors."""
+        try:
+            vec1_np = np.array(vec1)
+            vec2_np = np.array(vec2)
+            
+            dot_product = np.dot(vec1_np, vec2_np)
+            norm1 = np.linalg.norm(vec1_np)
+            norm2 = np.linalg.norm(vec2_np)
+            
+            if norm1 == 0 or norm2 == 0:
+                return 0.0
+            
+            return float(dot_product / (norm1 * norm2))
+            
+        except Exception as e:
+            logger.error(f"Error calculating cosine similarity: {str(e)}")
             return 0.0
+    
+    def get_improvement_recommendations(self, firm_id: str) -> List[Dict]:
+        """
+        Analyze profile and suggest improvements to increase match scores.
         
-        return float(dot_product / norm_product)
+        Returns list of recommendations with:
+        - category: What to improve
+        - priority: high/medium/low
+        - message: What action to take
+        - impact: Expected score improvement
+        """
+        try:
+            profile = self.db.query(CompanyProfile).filter(
+                CompanyProfile.firm_id == firm_id
+            ).first()
+            
+            if not profile:
+                return []
+            
+            recommendations = []
+            
+            # Check capabilities
+            capabilities_count = len(profile.capabilities) if profile.capabilities else 0
+            
+            if capabilities_count == 0:
+                recommendations.append({
+                    "category": "capabilities",
+                    "priority": "high",
+                    "message": "Add capabilities to start getting personalized matches",
+                    "impact": "Enables capability scoring (50% of match score)"
+                })
+            elif capabilities_count < 3:
+                recommendations.append({
+                    "category": "capabilities",
+                    "priority": "medium",
+                    "message": f"Add {3 - capabilities_count} more capabilities for better matches",
+                    "impact": "Improves capability coverage and matching accuracy"
+                })
+            
+            # Check past wins
+            past_wins_count = len(profile.past_wins) if profile.past_wins else 0
+            
+            if past_wins_count == 0:
+                recommendations.append({
+                    "category": "past_wins",
+                    "priority": "medium",
+                    "message": "Add past contract wins to improve agency and value matching",
+                    "impact": "Enhances past win scoring (25% of match score)"
+                })
+            elif past_wins_count < 3:
+                recommendations.append({
+                    "category": "past_wins",
+                    "priority": "low",
+                    "message": "Add more past wins to identify patterns in your successful contracts",
+                    "impact": "Better prediction of suitable opportunities"
+                })
+            
+            # Check preferences
+            if not profile.search_preference:
+                recommendations.append({
+                    "category": "preferences",
+                    "priority": "medium",
+                    "message": "Set search preferences to filter out irrelevant contracts",
+                    "impact": "Reduces noise and focuses on relevant opportunities"
+                })
+            else:
+                prefs = profile.search_preference
+                
+                if not prefs.preferred_regions:
+                    recommendations.append({
+                        "category": "preferences",
+                        "priority": "low",
+                        "message": "Add preferred regions to prioritize local opportunities",
+                        "impact": "Improves preference scoring (25% of match score)"
+                    })
+                
+                if not prefs.keywords:
+                    recommendations.append({
+                        "category": "preferences",
+                        "priority": "low",
+                        "message": "Add keywords to highlight contracts with specific terms",
+                        "impact": "Better filtering and relevance scoring"
+                    })
+            
+            # Sort by priority
+            priority_order = {"high": 0, "medium": 1, "low": 2}
+            recommendations.sort(key=lambda x: priority_order.get(x["priority"], 3))
+            
+            return recommendations
+            
+        except Exception as e:
+            logger.error(f"Error generating recommendations: {str(e)}", exc_info=True)
+            return []
