@@ -2253,3 +2253,59 @@ async def cleanup_uk_contracts_from_pinecone():
     except Exception as e:
         logger.error(f"Cleanup failed: {str(e)}", exc_info=True)
         raise HTTPException(status_code=500, detail=f"Cleanup failed: {str(e)}")
+
+
+@router.post("/admin/resync-my-capabilities")
+async def resync_my_capabilities(
+    current_user: User = Depends(get_current_active_user),
+    db: Session = Depends(get_db)
+):
+    """Re-sync all capabilities for current user to Pinecone"""
+    from app.services.capability_store_pinecone import get_capability_store
+    from app.services.llm import LLMService
+    
+    llm_service = LLMService()
+    cap_store = get_capability_store()
+    
+    # Get company
+    company = db.query(CompanyProfile).filter(
+        CompanyProfile.firm_id == current_user.firm_id
+    ).first()
+    
+    if not company:
+        raise HTTPException(status_code=404, detail="Company not found")
+    
+    # Get all capabilities
+    capabilities = db.query(CompanyCapability).filter(
+        CompanyCapability.company_id == company.id
+    ).all()
+    
+    synced = 0
+    errors = []
+    
+    for cap in capabilities:
+        try:
+            # Delete old vector if exists
+            if cap.qdrant_id:
+                cap_store.delete_capability(cap.qdrant_id)
+            
+            # Add to Pinecone with new vector
+            pinecone_id = await cap_store.add_capability(cap, llm_service)
+            cap.qdrant_id = pinecone_id
+            synced += 1
+            
+        except Exception as e:
+            logger.error(f"Failed to sync capability {cap.id}: {e}")
+            errors.append({"id": cap.id, "error": str(e)})
+    
+    db.commit()
+    
+    # Clear cache
+    capability_embedding_cache.clear()
+    
+    return {
+        "success": True,
+        "total_capabilities": len(capabilities),
+        "synced": synced,
+        "errors": errors
+    }
