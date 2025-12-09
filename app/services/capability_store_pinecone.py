@@ -88,7 +88,7 @@ class CapabilityStorePinecone:
                 vec = result.vectors[vector_id]
                 return {
                     "id": vector_id,
-                    "vector": vec.values,
+                    "vector": list(vec.values), 
                     "metadata": vec.metadata
                 }
             
@@ -117,11 +117,8 @@ class CapabilityStorePinecone:
             
             capabilities = {}
             for vec_id, vec_data in result.vectors.items():
-                capabilities[vec_id] = {
-                    "id": vec_id,
-                    "vector": vec_data.values,
-                    "metadata": vec_data.metadata
-                }
+                capabilities[vec_id] = list(vec_data.values) 
+
             
             logger.info(f"✅ Fetched {len(capabilities)}/{len(vector_ids)} capabilities from Pinecone")
             return capabilities
