@@ -18,7 +18,8 @@ class PineconeStoreService:
     def upsert_documents(
         self,
         documents: List[Dict[str, Any]],
-        batch_size: int = 100
+        batch_size: int = 100,
+        namespace: str = "contracts"
     ) -> int:
         """
         Upsert documents to Pinecone
@@ -27,6 +28,7 @@ class PineconeStoreService:
         Args:
             documents: List of dicts with 'id', 'embedding', and metadata
             batch_size: Vectors per batch (Pinecone max: 100)
+            namespace: Pinecone namespace (default: "contracts")
         
         Returns:
             Number of documents upserted
@@ -69,12 +71,12 @@ class PineconeStoreService:
                     }
                 })
             
-            # Batch upsert
+            # Batch upsert with namespace
             for i in range(0, len(vectors), batch_size):
                 batch = vectors[i:i + batch_size]
-                self.index.upsert(vectors=batch)
+                self.index.upsert(vectors=batch, namespace=namespace)
             
-            logger.info(f"✅ Upserted {len(vectors)} vectors to Pinecone")
+            logger.info(f"✅ Upserted {len(vectors)} vectors to Pinecone (namespace: {namespace})")
             return len(vectors)
             
         except Exception as e:
@@ -86,7 +88,8 @@ class PineconeStoreService:
         query_vector: List[float],
         limit: int = 10,
         min_score: float = 0.0,
-        filter_dict: Optional[Dict[str, Any]] = None
+        filter_dict: Optional[Dict[str, Any]] = None,
+        namespace: str = "contracts"
     ) -> List[Dict[str, Any]]:
         """
         Search contracts by semantic similarity
@@ -97,6 +100,7 @@ class PineconeStoreService:
             limit: Max results
             min_score: Minimum similarity score (0-1)
             filter_dict: Pinecone metadata filters (optional)
+            namespace: Pinecone namespace (default: "contracts")
         
         Returns:
             List of matching contracts with scores
@@ -106,7 +110,8 @@ class PineconeStoreService:
                 vector=query_vector,
                 top_k=limit,
                 include_metadata=True,
-                filter=filter_dict
+                filter=filter_dict,
+                namespace=namespace
             )
             
             contracts = []
@@ -133,37 +138,61 @@ class PineconeStoreService:
                         "contract_value": match.metadata.get("contract_value"),
                     })
             
-            logger.info(f"🔍 Found {len(contracts)} contracts (score >= {min_score})")
+            logger.info(f"🔍 Found {len(contracts)} contracts (score >= {min_score}, namespace: {namespace})")
             return contracts
             
         except Exception as e:
             logger.error(f"❌ Pinecone search failed: {e}")
             raise
     
-    def get_document_count(self) -> int:
-        """Get total number of vectors in index"""
+    def get_document_count(self, namespace: Optional[str] = None) -> int:
+        """
+        Get total number of vectors in index
+        
+        Args:
+            namespace: Specific namespace to count (None = all namespaces)
+        """
         try:
             stats = self.index.describe_index_stats()
-            total = stats.total_vector_count
-            logger.info(f"📊 Pinecone index has {total} vectors")
-            return total
+            
+            if namespace:
+                # Count specific namespace
+                count = stats.namespaces.get(namespace, {}).get('vector_count', 0)
+                logger.info(f"📊 Namespace '{namespace}' has {count} vectors")
+                return count
+            else:
+                # Total across all namespaces
+                total = stats.total_vector_count
+                logger.info(f"📊 Pinecone index has {total} total vectors")
+                return total
         except Exception as e:
             logger.error(f"❌ Failed to get count: {e}")
             return 0
     
-    def delete_all(self):
-        """Delete all vectors (use with caution!)"""
+    def delete_all(self, namespace: str = "contracts"):
+        """
+        Delete all vectors from a namespace (use with caution!)
+        
+        Args:
+            namespace: Namespace to clear (default: "contracts")
+        """
         try:
-            self.index.delete(delete_all=True)
-            logger.warning("⚠️ Deleted all vectors from Pinecone")
+            self.index.delete(delete_all=True, namespace=namespace)
+            logger.warning(f"⚠️ Deleted all vectors from namespace: {namespace}")
         except Exception as e:
             logger.error(f"❌ Delete failed: {e}")
             raise
     
-    def get_by_id(self, notice_id: str) -> Optional[Dict[str, Any]]:
-        """Fetch a contract by notice_id"""
+    def get_by_id(self, notice_id: str, namespace: str = "contracts") -> Optional[Dict[str, Any]]:
+        """
+        Fetch a contract by notice_id
+        
+        Args:
+            notice_id: Contract notice ID
+            namespace: Pinecone namespace (default: "contracts")
+        """
         try:
-            result = self.index.fetch(ids=[notice_id])
+            result = self.index.fetch(ids=[notice_id], namespace=namespace)
             if notice_id in result.vectors:
                 vec = result.vectors[notice_id]
                 return {

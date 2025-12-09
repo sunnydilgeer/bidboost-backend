@@ -3,7 +3,6 @@ from fastapi import BackgroundTasks
 from app.core.config import settings
 from app.services.contract_fetcher import ContractFetcherService
 from app.services.match_scoring import ContractMatchScorer
-from app.services.capability_store import CapabilityStoreService 
 from app.models.contract import Contract
 from app.models import User as DBUser
 from app.api.debug_routes import debug_router  # Import the real one
@@ -1144,7 +1143,9 @@ async def get_recommended_contracts(
         results = pinecone.search_contracts(
             query_vector=query_vector,
             limit=limit + 5,
-            min_score=0.3
+            min_score=0.3,
+            namespace="contracts"  # ← ADD THIS
+
         )
         
         # Initialize scorer
@@ -1275,6 +1276,8 @@ async def search_contracts(
             query_vector=query_vector,
             limit=search_limit,
             min_score=0.3,
+            namespace="contracts", 
+
             filter_dict=filters if filters else None
         )
         

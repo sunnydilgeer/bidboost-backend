@@ -293,7 +293,7 @@ class ContractMatchScorer:
             if contract.qdrant_id:
                 try:
                     # SAM contracts are in Pinecone (default namespace)
-                    result = self.pinecone_index.fetch(ids=[contract.qdrant_id])
+                    result = self.pinecone_index.fetch(ids=[contract.qdrant_id], namespace="contracts")
                     if contract.qdrant_id in result.vectors:
                         contract_vector = result.vectors[contract.qdrant_id].values
                         logger.debug(f"Retrieved SAM contract vector from Pinecone: {contract.qdrant_id}")

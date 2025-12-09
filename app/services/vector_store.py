@@ -11,7 +11,7 @@ from app.core.config import settings
 logger = logging.getLogger(__name__)
 
 class VectorStoreService:
-    """Vector store service for contract opportunities - Qdrant/Pinecone ready"""
+    """Vector store service for contracçt opportunities - Qdrant/Pinecone ready"""
     
     def __init__(self):
         self.settings = settings

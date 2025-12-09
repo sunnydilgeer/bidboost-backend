@@ -12,7 +12,7 @@ from app.models.schemas import (
 )
 from app.models.company import CompanyProfile, CompanyCapability, PastWin, SearchPreference, CompanySize
 from app.core.auth import get_current_user
-from app.services.capability_store import CapabilityStoreService
+from app.services.capability_store_pinecone import get_capability_store
 from app.services.llm import LLMService
 from app.core.config import settings
 from qdrant_client import QdrantClient
