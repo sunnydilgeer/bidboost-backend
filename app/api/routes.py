@@ -1190,7 +1190,6 @@ async def get_recommended_contracts(
                 logger.error(f"Failed to batch fetch contract vectors: {e}")
         
         # Initialize scorer
-        pinecone = PineconeStoreService(api_key=settings.PINECONE_API_KEY)
         scorer = ContractMatchScorer(db, pinecone.index)
         
         # Convert with scoring
@@ -1287,9 +1286,8 @@ async def get_recommended_contracts(
 # ========== CONTRACT SEARCH ROUTE WITH PERSONALIZED MATCH SCORING ==========
 
 # ==========================================
-# COMPLETE OPTIMIZED FUNCTION #2
-# Replace the entire @router.post("/contracts/search") function
-# Location: Around line 1000-1180 in routes.py
+# COMPLETE FIXED SEARCH FUNCTION - MAIN FIX
+# This removes the duplicate Pinecone initialization
 # ==========================================
 
 @router.post("/contracts/search", response_model=ContractSearchResponse)
@@ -1313,7 +1311,7 @@ async def search_contracts(
         # Generate query embedding
         query_vector = await llm_service.generate_embeddings(search_request.query)
         
-        # Initialize Pinecone
+        # ✅ FIX: Initialize Pinecone ONCE at the top
         pinecone = PineconeStoreService(api_key=settings.PINECONE_API_KEY)
         
         # Build Pinecone filters
@@ -1339,9 +1337,8 @@ async def search_contracts(
             filter_dict=filters if filters else None
         )
         
-        # Initialize scorer
-        pinecone = PineconeStoreService(api_key=settings.PINECONE_API_KEY)
-        scorer = ContractMatchScorer(db, vector_store.client) if include_match_scores else None
+        # ✅ FIX: Removed duplicate Pinecone initialization - use existing pinecone instance
+        scorer = ContractMatchScorer(db, pinecone.index) if include_match_scores else None
         
         # PERFORMANCE OPTIMIZATION: Pre-fetch capability vectors AND contract vectors if scoring is enabled
         capabilities_data = {}
@@ -1517,44 +1514,49 @@ async def get_contract_details(
 ) -> Dict:
     """Get full details for a specific contract opportunity"""
     try:
-        vector_store = get_vector_store()
+        # ✅ FIXED: Query Pinecone instead of Qdrant for SAM.gov contracts
+        from app.services.pinecone_store import PineconeStoreService
+        from app.core.config import settings
         
-        # Query Qdrant for this specific contract
-        scroll_result = vector_store.client.scroll(
-            collection_name=vector_store.collection_name,
-            scroll_filter=Filter(
-                must=[
-                    FieldCondition(
-                        key="notice_id",
-                        match=MatchValue(value=notice_id)
-                    )
-                ]
-            ),
-            limit=1,
-            with_payload=True,
-            with_vectors=False
+        pinecone = PineconeStoreService(api_key=settings.PINECONE_API_KEY)
+        
+        # Search for contract by notice_id in metadata
+        import numpy as np
+        dummy_vector = np.random.rand(768).tolist()
+        
+        results = pinecone.index.query(
+            vector=dummy_vector,
+            filter={"notice_id": {"$eq": notice_id}},
+            top_k=1,
+            include_metadata=True,
+            namespace="contracts"
         )
         
-        if not scroll_result[0]:
+        if not results.matches:
             raise HTTPException(
                 status_code=status.HTTP_404_NOT_FOUND,
                 detail="Contract not found"
             )
         
-        point = scroll_result[0][0]
-        metadata = point.payload.get("metadata", {})
+        metadata = results.matches[0].metadata
         
         return {
             "notice_id": notice_id,
             "title": metadata.get("title"),
-            "buyer_name": point.payload.get("buyer_name"),
+            "buyer_name": metadata.get("agency"),
             "description": metadata.get("description"),
-            "value": point.payload.get("value"),
-            "region": point.payload.get("region"),
-            "closing_date": metadata.get("closing_date"),
-            "published_date": metadata.get("published_date"),
-            "cpv_codes": metadata.get("cpv_codes", []),
-            "contact_details": metadata.get("contact_details", {})
+            "value": metadata.get("contract_value"),
+            "region": metadata.get("state"),
+            "closing_date": metadata.get("response_deadline"),
+            "published_date": metadata.get("posted_date"),
+            "naics_code": metadata.get("naics_code"),
+            "psc_code": metadata.get("psc_code"),
+            "set_aside": metadata.get("set_aside"),
+            "contact_details": {
+                "name": metadata.get("contact_name"),
+                "email": metadata.get("contact_email"),
+                "phone": metadata.get("contact_phone")
+            }
         }
         
     except HTTPException:
@@ -2091,11 +2093,14 @@ async def get_match_recommendations(
 ):
     """Get personalized recommendations to improve match scores."""
     try:
-        # Use the same pattern as other endpoints
-        vector_store = get_vector_store()  # ← Get VectorStoreService
+        # ✅ FIXED: Use Pinecone instead of Qdrant for match recommendations
+        from app.services.pinecone_store import PineconeStoreService
+        from app.core.config import settings
         
-        # Initialize scorer with db and qdrant client
-        scorer = ContractMatchScorer(db, vector_store.client)  # ← Use .client property
+        pinecone = PineconeStoreService(api_key=settings.PINECONE_API_KEY)
+        
+        # Initialize scorer with db and pinecone index
+        scorer = ContractMatchScorer(db, pinecone.index)
         
         # Generate recommendations
         recommendations = scorer.get_improvement_recommendations(current_user.firm_id)
