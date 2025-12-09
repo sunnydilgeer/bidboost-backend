@@ -3,6 +3,7 @@ from fastapi import BackgroundTasks
 from app.core.config import settings
 from app.services.contract_fetcher import ContractFetcherService
 from app.services.match_scoring import ContractMatchScorer
+from app.services.past_win_store_pinecone import get_past_win_store
 from app.models.contract import Contract
 from app.models import User as DBUser
 from app.api.debug_routes import debug_router  # Import the real one
@@ -803,10 +804,14 @@ async def add_past_win(
     current_user: User = Depends(get_current_active_user),
     db: Session = Depends(get_db)
 ):
-    """Add a new past contract win"""
+    """Add a new past contract win and embed in Pinecone"""
     try:
+        from app.services.past_win_store_pinecone import get_past_win_store
+        
+        llm_service = get_llm_service()
         profile = get_company_profile(db, current_user.firm_id)
         
+        # Create past win in database first
         new_win = PastWin(
             company_id=profile.id,
             contract_title=win.contract_title,
@@ -817,24 +822,35 @@ async def add_past_win(
         )
         
         db.add(new_win)
+        db.flush()  # Get the ID without committing
+        db.refresh(new_win)
+        
+        # ✅ NEW: Add to Pinecone
+        win_store = get_past_win_store()
+        pinecone_id = await win_store.add_past_win(new_win, llm_service)
+        
+        # Update with pinecone_id
+        new_win.pinecone_id = pinecone_id
         db.commit()
         db.refresh(new_win)
         
-        logger.info(f"Added past win for firm {current_user.firm_id}: {win.contract_title}")
+        logger.info(f"Added past win for firm {current_user.firm_id}: {win.contract_title} (Pinecone ID: {pinecone_id})")
         
         return {
             "success": True,
             "id": new_win.id,
-            "message": "Past win added successfully"
+            "pinecone_id": new_win.pinecone_id,
+            "message": "Past win added and embedded in Pinecone"
         }
         
     except Exception as e:
-        logger.error(f"Failed to add past win: {str(e)}")
+        logger.error(f"Failed to add past win: {str(e)}", exc_info=True)
         db.rollback()
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"Failed to add past win: {str(e)}"
         )
+
 
 @router.put("/past-wins/{win_id}")
 async def update_past_win(
@@ -843,10 +859,14 @@ async def update_past_win(
     current_user: User = Depends(get_current_active_user),
     db: Session = Depends(get_db)
 ):
-    """Update an existing past contract win"""
+    """Update an existing past contract win and re-embed in Pinecone"""
     try:
+        from app.services.past_win_store_pinecone import get_past_win_store
+        
+        llm_service = get_llm_service()
         profile = get_company_profile(db, current_user.firm_id)
         
+        # Verify past win belongs to this company
         existing_win = db.query(PastWin).filter(
             PastWin.id == win_id,
             PastWin.company_id == profile.id
@@ -870,19 +890,30 @@ async def update_past_win(
         if win.description is not None:
             existing_win.description = win.description
         
+        db.flush()
+        
+        # ✅ NEW: Re-sync to Pinecone (delete old, add new)
+        win_store = get_past_win_store()
+        
+        if existing_win.pinecone_id:
+            win_store.delete_past_win(existing_win.pinecone_id)
+        
+        pinecone_id = await win_store.add_past_win(existing_win, llm_service)
+        existing_win.pinecone_id = pinecone_id
+        
         db.commit()
         
-        logger.info(f"Updated past win {win_id} for firm {current_user.firm_id}")
+        logger.info(f"Updated past win {win_id} for firm {current_user.firm_id} (Pinecone ID: {pinecone_id})")
         
         return {
             "success": True,
-            "message": "Past win updated successfully"
+            "message": "Past win updated and re-embedded in Pinecone"
         }
         
     except HTTPException:
         raise
     except Exception as e:
-        logger.error(f"Failed to update past win: {str(e)}")
+        logger.error(f"Failed to update past win: {str(e)}", exc_info=True)
         db.rollback()
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
@@ -895,10 +926,13 @@ async def delete_past_win(
     current_user: User = Depends(get_current_active_user),
     db: Session = Depends(get_db)
 ):
-    """Delete a past contract win"""
+    """Delete a past contract win and remove from Pinecone"""
     try:
+        from app.services.past_win_store_pinecone import get_past_win_store
+        
         profile = get_company_profile(db, current_user.firm_id)
         
+        # Verify past win belongs to this company
         win = db.query(PastWin).filter(
             PastWin.id == win_id,
             PastWin.company_id == profile.id
@@ -910,6 +944,12 @@ async def delete_past_win(
                 detail="Past win not found or does not belong to your company"
             )
         
+        # ✅ NEW: Delete from Pinecone first
+        if win.pinecone_id:
+            win_store = get_past_win_store()
+            win_store.delete_past_win(win.pinecone_id)
+        
+        # Delete from database
         db.delete(win)
         db.commit()
         
@@ -917,13 +957,13 @@ async def delete_past_win(
         
         return {
             "success": True,
-            "message": "Past win deleted successfully"
+            "message": "Past win deleted and removed from Pinecone"
         }
         
     except HTTPException:
         raise
     except Exception as e:
-        logger.error(f"Failed to delete past win: {str(e)}")
+        logger.error(f"Failed to delete past win: {str(e)}", exc_info=True)
         db.rollback()
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
@@ -1104,6 +1144,7 @@ async def get_recommended_contracts(
         from app.core.config import settings
         from app.services.code_lookup import get_code_lookup_service, clean_naics_code
         from app.services.capability_store_pinecone import get_capability_store
+        from app.services.past_win_store_pinecone import get_past_win_store  # ✅ NEW
         
         llm_service = get_llm_service()
         code_service = get_code_lookup_service()
@@ -1173,6 +1214,17 @@ async def get_recommended_contracts(
             capabilities_data = cap_store.get_capabilities_batch(capability_ids_to_fetch)
             logger.info(f"Pre-fetched {len(capabilities_data)} capability vectors")
         
+        # ✅ NEW: Pre-fetch past win vectors
+        past_wins_data = {}
+        past_wins = company.past_wins if company.past_wins else []
+        if past_wins:
+            win_store = get_past_win_store()
+            past_win_ids = [win.pinecone_id for win in past_wins if win.pinecone_id]
+            
+            if past_win_ids:
+                past_wins_data = win_store.get_past_wins_batch(past_win_ids)
+                logger.info(f"Pre-fetched {len(past_wins_data)} past win vectors")
+        
         # PERFORMANCE OPTIMIZATION: Pre-fetch ALL contract vectors in one batch
         contract_ids = [r.get("id") for r in results if r.get("id")]
         contract_vectors = {}
@@ -1209,12 +1261,13 @@ async def get_recommended_contracts(
                 qdrant_id=enriched_result.get("id")
             )
             
-            # Score it - pass BOTH pre-fetched vectors to avoid ALL redundant fetches
+            # Score it - pass ALL THREE pre-fetched vectors
             match_scores = scorer.score_contract(
                 temp_contract, 
                 current_user.firm_id, 
                 capability_vectors=capabilities_data,
-                contract_vectors=contract_vectors
+                contract_vectors=contract_vectors,
+                past_win_vectors=past_wins_data  # ✅ NEW: Pass past win vectors
             )
             
             # Skip if filtered out
@@ -1311,7 +1364,7 @@ async def search_contracts(
         # Generate query embedding
         query_vector = await llm_service.generate_embeddings(search_request.query)
         
-        # ✅ FIX: Initialize Pinecone ONCE at the top
+        # ✅ Initialize Pinecone ONCE at the top
         pinecone = PineconeStoreService(api_key=settings.PINECONE_API_KEY)
         
         # Build Pinecone filters
@@ -1337,15 +1390,17 @@ async def search_contracts(
             filter_dict=filters if filters else None
         )
         
-        # ✅ FIX: Removed duplicate Pinecone initialization - use existing pinecone instance
+        # Initialize scorer if match scores are requested
         scorer = ContractMatchScorer(db, pinecone.index) if include_match_scores else None
         
         # PERFORMANCE OPTIMIZATION: Pre-fetch capability vectors AND contract vectors if scoring is enabled
         capabilities_data = {}
         contract_vectors = {}
+        past_wins_data = {}  # ✅ NEW
         
         if scorer:
             from app.services.capability_store_pinecone import get_capability_store
+            from app.services.past_win_store_pinecone import get_past_win_store  # ✅ NEW
             
             # Get company capabilities
             company = db.query(CompanyProfile).filter(
@@ -1359,6 +1414,15 @@ async def search_contracts(
                 if capability_ids:
                     capabilities_data = cap_store.get_capabilities_batch(capability_ids)
                     logger.info(f"[/search] Pre-fetched {len(capabilities_data)} capability vectors")
+            
+            # ✅ NEW: Pre-fetch past win vectors
+            if company and company.past_wins:
+                win_store = get_past_win_store()
+                past_win_ids = [win.pinecone_id for win in company.past_wins if win.pinecone_id]
+                
+                if past_win_ids:
+                    past_wins_data = win_store.get_past_wins_batch(past_win_ids)
+                    logger.info(f"[/search] Pre-fetched {len(past_wins_data)} past win vectors")
             
             # ALSO pre-fetch all contract vectors in one batch
             contract_ids = [r.get("id") for r in results if r.get("id")]
@@ -1430,12 +1494,13 @@ async def search_contracts(
                     qdrant_id=enriched_result.get("id")
                 )
                 
-                # Score with BOTH pre-fetched vectors
+                # Score with ALL THREE pre-fetched vectors
                 match_scores = scorer.score_contract(
                     temp_contract, 
                     current_user.firm_id, 
                     capability_vectors=capabilities_data,
-                    contract_vectors=contract_vectors
+                    contract_vectors=contract_vectors,
+                    past_win_vectors=past_wins_data  # ✅ NEW: Pass past win vectors
                 )
                 
                 if match_scores:
@@ -1462,7 +1527,6 @@ async def search_contracts(
     except Exception as e:
         logger.error(f"Search failed: {str(e)}", exc_info=True)
         raise HTTPException(status_code=500, detail=f"Search failed: {str(e)}")
-
 # ========== CONTRACT DETAILS ROUTE ==========
 
 @router.get("/contracts/saved", response_model=SavedContractsListResponse)
