@@ -210,9 +210,14 @@ class ContractMatchScorer:
         logger.info(f"Generated {len(recommendations)} recommendations for firm {firm_id}")
         return recommendations
     
-    def score_contract(self, contract: Contract, firm_id: str) -> Optional[Dict]:
+    def score_contract(self, contract: Contract, firm_id: str, capability_vectors: Optional[Dict] = None) -> Optional[Dict]:
         """
         Calculate relevance score for a contract against company profile.
+        
+        Args:
+            contract: Contract to score
+            firm_id: Company firm ID
+            capability_vectors: Optional pre-fetched capability vectors {qdrant_id: {"vector": [...], "text": "..."}}
         
         Returns None if contract fails hard filters (excluded categories, value range).
         Returns dict with scores and match reasons if contract passes filters.
@@ -237,7 +242,7 @@ class ContractMatchScorer:
         }
         
         # 1. Capability Matching (40% weight) - Semantic similarity
-        capability_score = self._calculate_capability_score(contract, profile.capabilities)
+        capability_score = self._calculate_capability_score(contract, profile.capabilities, capability_vectors)
         scores["capability_score"] = capability_score
         if capability_score > 0.6:
             scores["match_reasons"].append(f"Strong capability match ({capability_score:.0%})")
@@ -277,7 +282,8 @@ class ContractMatchScorer:
     def _calculate_capability_score(
         self, 
         contract: Contract, 
-        capabilities: List[CompanyCapability]
+        capabilities: List[CompanyCapability],
+        capability_vectors: Optional[Dict] = None
     ) -> float:
         """Use semantic similarity between capabilities and contract description"""
         if not capabilities:
@@ -285,8 +291,6 @@ class ContractMatchScorer:
             return 0.0
         
         try:
-            from app.services.capability_store_pinecone import get_capability_store
-            
             # Get contract embedding from Pinecone
             contract_vector = None
             
@@ -304,17 +308,24 @@ class ContractMatchScorer:
                 logger.warning(f"Contract {contract.qdrant_id} vector not found in Pinecone")
                 return 0.0
             
-            # Get capabilities from Pinecone (capabilities namespace)
-            cap_store = get_capability_store()
-            
-            # Batch fetch all capabilities
-            capability_ids = [cap.qdrant_id for cap in capabilities if cap.qdrant_id]
-            
-            if not capability_ids:
-                logger.warning("No capabilities have Pinecone IDs")
-                return 0.0
-            
-            capabilities_data = cap_store.get_capabilities_batch(capability_ids)
+            # Use pre-fetched capabilities if provided, otherwise fetch them
+            if capability_vectors:
+                logger.debug(f"Using pre-fetched capability vectors ({len(capability_vectors)} available)")
+                capabilities_data = capability_vectors
+            else:
+                logger.debug("No pre-fetched vectors, fetching from Pinecone...")
+                from app.services.capability_store_pinecone import get_capability_store
+                
+                cap_store = get_capability_store()
+                
+                # Batch fetch all capabilities
+                capability_ids = [cap.qdrant_id for cap in capabilities if cap.qdrant_id]
+                
+                if not capability_ids:
+                    logger.warning("No capabilities have Pinecone IDs")
+                    return 0.0
+                
+                capabilities_data = cap_store.get_capabilities_batch(capability_ids)
             
             # Calculate similarity with each capability
             similarities = []

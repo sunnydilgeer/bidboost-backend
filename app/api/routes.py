@@ -1193,7 +1193,8 @@ async def get_recommended_contracts(
             )
             
             # Score it
-            match_scores = scorer.score_contract(temp_contract, current_user.firm_id)
+            match_scores = scorer.score_contract(temp_contract, current_user.firm_id, capability_vectors=capabilities_data)
+
             
             # Skip if filtered out
             if not match_scores:
@@ -1314,6 +1315,25 @@ async def search_contracts(
         vector_store = get_vector_store()
         scorer = ContractMatchScorer(db, vector_store.client) if include_match_scores else None
         
+        # PERFORMANCE OPTIMIZATION: Pre-fetch capability vectors if scoring is enabled
+        capabilities_data = {}
+        if scorer:
+            from app.services.capability_store_pinecone import get_capability_store
+            
+            # Get company capabilities
+            company = db.query(CompanyProfile).filter(
+                CompanyProfile.firm_id == current_user.firm_id
+            ).first()
+            
+            if company and company.capabilities:
+                cap_store = get_capability_store()
+                capability_ids = [cap.qdrant_id for cap in company.capabilities if cap.qdrant_id]
+                
+                if capability_ids:
+                    capabilities_data = cap_store.get_capabilities_batch(capability_ids)
+                    logger.info(f"[/search] Pre-fetched {len(capabilities_data)} capability vectors")
+
+
         # Convert results
         search_results = []
         for result in results:
@@ -1370,7 +1390,7 @@ async def search_contracts(
                     qdrant_id=enriched_result.get("id")
                 )
                 
-                match_scores = scorer.score_contract(temp_contract, current_user.firm_id)
+                match_scores = scorer.score_contract(temp_contract, current_user.firm_id, capability_vectors=capabilities_data)
                 if match_scores:
                     contract_result.match_scores = match_scores
                     contract_result.total_match_score = match_scores["total_score"]
