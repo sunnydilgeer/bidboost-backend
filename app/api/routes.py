@@ -41,7 +41,7 @@ import shutil
 from app.core.auth import User, get_current_active_user
 from app.database import get_db
 from sqlalchemy.orm import Session
-from typing import Dict, List, Optional, List
+from typing import Dict, Optional, List
 import logging
 from datetime import datetime
 from pydantic import BaseModel
@@ -1086,6 +1086,12 @@ async def sync_contracts(
     finally:
         await contract_service.close()
 
+# ==========================================
+# COMPLETE OPTIMIZED FUNCTION #1
+# Replace the entire @router.get("/contracts/recommended") function
+# Location: Around line 820-950 in routes.py
+# ==========================================
+
 @router.get("/contracts/recommended", response_model=ContractSearchResponse)
 async def get_recommended_contracts(
     limit: int = 20,
@@ -1167,13 +1173,25 @@ async def get_recommended_contracts(
             capabilities_data = cap_store.get_capabilities_batch(capability_ids_to_fetch)
             logger.info(f"Pre-fetched {len(capabilities_data)} capability vectors")
         
-        # Initialize scorer with pre-fetched capability vectors
-        vector_store = get_vector_store()
-        scorer = ContractMatchScorer(db, vector_store.client)
+        # PERFORMANCE OPTIMIZATION: Pre-fetch ALL contract vectors in one batch
+        contract_ids = [r.get("id") for r in results if r.get("id")]
+        contract_vectors = {}
         
-        # OPTIMIZATION: Cache capability vectors in scorer to avoid re-fetching
-        if hasattr(scorer, '_capability_vector_cache'):
-            scorer._capability_vector_cache.update(capabilities_data)
+        if contract_ids:
+            try:
+                # Batch fetch all contract vectors from Pinecone
+                fetch_result = pinecone.index.fetch(ids=contract_ids, namespace="contracts")
+                
+                for vec_id, vec_data in fetch_result.vectors.items():
+                    contract_vectors[vec_id] = vec_data.values
+                
+                logger.info(f"✅ Pre-fetched {len(contract_vectors)} contract vectors in one batch")
+            except Exception as e:
+                logger.error(f"Failed to batch fetch contract vectors: {e}")
+        
+        # Initialize scorer
+        pinecone = PineconeStoreService(api_key=settings.PINECONE_API_KEY)
+        scorer = ContractMatchScorer(db, pinecone.index)
         
         # Convert with scoring
         search_results = []
@@ -1192,9 +1210,13 @@ async def get_recommended_contracts(
                 qdrant_id=enriched_result.get("id")
             )
             
-            # Score it
-            match_scores = scorer.score_contract(temp_contract, current_user.firm_id, capability_vectors=capabilities_data)
-
+            # Score it - pass BOTH pre-fetched vectors to avoid ALL redundant fetches
+            match_scores = scorer.score_contract(
+                temp_contract, 
+                current_user.firm_id, 
+                capability_vectors=capabilities_data,
+                contract_vectors=contract_vectors
+            )
             
             # Skip if filtered out
             if not match_scores:
@@ -1263,6 +1285,13 @@ async def get_recommended_contracts(
         raise HTTPException(status_code=500, detail=str(e))
 
 # ========== CONTRACT SEARCH ROUTE WITH PERSONALIZED MATCH SCORING ==========
+
+# ==========================================
+# COMPLETE OPTIMIZED FUNCTION #2
+# Replace the entire @router.post("/contracts/search") function
+# Location: Around line 1000-1180 in routes.py
+# ==========================================
+
 @router.post("/contracts/search", response_model=ContractSearchResponse)
 async def search_contracts(
     search_request: ContractSearchRequest,
@@ -1306,17 +1335,18 @@ async def search_contracts(
             query_vector=query_vector,
             limit=search_limit,
             min_score=0.3,
-            namespace="contracts", 
-
+            namespace="contracts",
             filter_dict=filters if filters else None
         )
         
         # Initialize scorer
-        vector_store = get_vector_store()
+        pinecone = PineconeStoreService(api_key=settings.PINECONE_API_KEY)
         scorer = ContractMatchScorer(db, vector_store.client) if include_match_scores else None
         
-        # PERFORMANCE OPTIMIZATION: Pre-fetch capability vectors if scoring is enabled
+        # PERFORMANCE OPTIMIZATION: Pre-fetch capability vectors AND contract vectors if scoring is enabled
         capabilities_data = {}
+        contract_vectors = {}
+        
         if scorer:
             from app.services.capability_store_pinecone import get_capability_store
             
@@ -1332,8 +1362,21 @@ async def search_contracts(
                 if capability_ids:
                     capabilities_data = cap_store.get_capabilities_batch(capability_ids)
                     logger.info(f"[/search] Pre-fetched {len(capabilities_data)} capability vectors")
-
-
+            
+            # ALSO pre-fetch all contract vectors in one batch
+            contract_ids = [r.get("id") for r in results if r.get("id")]
+            
+            if contract_ids:
+                try:
+                    fetch_result = pinecone.index.fetch(ids=contract_ids, namespace="contracts")
+                    
+                    for vec_id, vec_data in fetch_result.vectors.items():
+                        contract_vectors[vec_id] = vec_data.values
+                    
+                    logger.info(f"[/search] Pre-fetched {len(contract_vectors)} contract vectors")
+                except Exception as e:
+                    logger.error(f"[/search] Failed to batch fetch contracts: {e}")
+        
         # Convert results
         search_results = []
         for result in results:
@@ -1351,7 +1394,7 @@ async def search_contracts(
                 closing_date=enriched_result.get("response_deadline"),
                 score=enriched_result.get("score", 0.0),
                 office=enriched_result.get("office"),
-                naics_code=clean_naics_code(enriched_result.get("naics_code")),  # ✅ CLEAN HERE
+                naics_code=clean_naics_code(enriched_result.get("naics_code")),
                 psc_code=enriched_result.get("psc_code"),
                 naics_name=enriched_result.get("naics_name"),
                 psc_name=enriched_result.get("psc_name"),
@@ -1390,7 +1433,14 @@ async def search_contracts(
                     qdrant_id=enriched_result.get("id")
                 )
                 
-                match_scores = scorer.score_contract(temp_contract, current_user.firm_id, capability_vectors=capabilities_data)
+                # Score with BOTH pre-fetched vectors
+                match_scores = scorer.score_contract(
+                    temp_contract, 
+                    current_user.firm_id, 
+                    capability_vectors=capabilities_data,
+                    contract_vectors=contract_vectors
+                )
+                
                 if match_scores:
                     contract_result.match_scores = match_scores
                     contract_result.total_match_score = match_scores["total_score"]
