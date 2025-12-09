@@ -1183,7 +1183,7 @@ async def get_recommended_contracts(
                 fetch_result = pinecone.index.fetch(ids=contract_ids, namespace="contracts")
                 
                 for vec_id, vec_data in fetch_result.vectors.items():
-                    contract_vectors[vec_id] = vec_data.values
+                    contract_vectors[vec_id] = list(vec_data.values)  # ✅ Convert to list
                 
                 logger.info(f"✅ Pre-fetched {len(contract_vectors)} contract vectors in one batch")
             except Exception as e:
@@ -1371,7 +1371,7 @@ async def search_contracts(
                     fetch_result = pinecone.index.fetch(ids=contract_ids, namespace="contracts")
                     
                     for vec_id, vec_data in fetch_result.vectors.items():
-                        contract_vectors[vec_id] = vec_data.values
+                        contract_vectors[vec_id] = list(vec_data.values)  # ✅ Convert to list
                     
                     logger.info(f"[/search] Pre-fetched {len(contract_vectors)} contract vectors")
                 except Exception as e:
