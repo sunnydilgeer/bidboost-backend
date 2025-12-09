@@ -1096,7 +1096,9 @@ async def get_recommended_contracts(
     try:
         from app.services.pinecone_store import PineconeStoreService
         from app.core.config import settings
-        from app.services.code_lookup import get_code_lookup_service, clean_naics_code        
+        from app.services.code_lookup import get_code_lookup_service, clean_naics_code
+        from app.services.capability_store_pinecone import get_capability_store
+        
         llm_service = get_llm_service()
         code_service = get_code_lookup_service()
 
@@ -1138,19 +1140,40 @@ async def get_recommended_contracts(
             capability_embedding_cache[cache_key] = query_vector
             logger.info(f"Generated and cached new embedding for {current_user.firm_id}")
         
-        # Search Pinecone (get more for filtering)
+        # Search Pinecone - REDUCED LIMIT for faster scoring
         pinecone = PineconeStoreService(api_key=settings.PINECONE_API_KEY)
         results = pinecone.search_contracts(
             query_vector=query_vector,
-            limit=limit + 5,
-            min_score=0.3,
-            namespace="contracts"  # ← ADD THIS
-
+            limit=min(limit * 2, 30),  # Cap at 30 to avoid over-fetching
+            min_score=0.35,  # Higher threshold = fewer contracts to score
+            namespace="contracts"
         )
         
-        # Initialize scorer
+        if not results:
+            return ContractSearchResponse(
+                query="",
+                results=[],
+                total_found=0,
+                message="No matching contracts found"
+            )
+        
+        # PERFORMANCE OPTIMIZATION: Pre-fetch all capability vectors once
+        cap_store = get_capability_store()
+        capability_ids_to_fetch = [cap.qdrant_id for cap in capabilities if cap.qdrant_id]
+        
+        # Batch fetch all capabilities from Pinecone
+        capabilities_data = {}
+        if capability_ids_to_fetch:
+            capabilities_data = cap_store.get_capabilities_batch(capability_ids_to_fetch)
+            logger.info(f"Pre-fetched {len(capabilities_data)} capability vectors")
+        
+        # Initialize scorer with pre-fetched capability vectors
         vector_store = get_vector_store()
         scorer = ContractMatchScorer(db, vector_store.client)
+        
+        # OPTIMIZATION: Cache capability vectors in scorer to avoid re-fetching
+        if hasattr(scorer, '_capability_vector_cache'):
+            scorer._capability_vector_cache.update(capabilities_data)
         
         # Convert with scoring
         search_results = []
@@ -1187,8 +1210,8 @@ async def get_recommended_contracts(
                 closing_date=enriched_result.get("response_deadline", ""),
                 score=enriched_result.get("score", 0.0),
                 office=enriched_result.get("office"),
-                naics_code=clean_naics_code(enriched_result.get("naics_code")),  # ✅ Clean code
-                naics_name=enriched_result.get("naics_name"),                     # ✅ Add name
+                naics_code=clean_naics_code(enriched_result.get("naics_code")),
+                naics_name=enriched_result.get("naics_name"),
                 psc_code=enriched_result.get("psc_code"),
                 psc_name=enriched_result.get("psc_name"),
                 set_aside=enriched_result.get("set_aside"),
@@ -1216,10 +1239,16 @@ async def get_recommended_contracts(
                 total_match_score=match_scores["total_score"],
                 match_reasons=match_scores.get("match_reasons", [])
             ))
+            
+            # Early exit if we have enough results
+            if len(search_results) >= limit:
+                break
         
         # Sort by match score
         search_results.sort(key=lambda x: x.total_match_score or 0, reverse=True)
         search_results = search_results[:limit]
+        
+        logger.info(f"✅ Recommendations complete: Returning {len(search_results)} matches")
         
         return ContractSearchResponse(
             query="",
