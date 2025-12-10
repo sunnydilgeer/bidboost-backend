@@ -1,4 +1,5 @@
 import httpx
+import json
 from typing import List
 from app.core.config import settings
 
@@ -42,6 +43,79 @@ class LLMService:
                 )
                 response.raise_for_status()
                 return response.json()["embedding"]
+    
+    async def extract_capabilities(self, website_text: str) -> List[dict]:
+        """
+        Extract 3-5 capabilities from website text.
+        Returns structured list ready for database insertion.
+        """
+        
+        # Use OpenAI for better structured output
+        if settings.USE_OPENAI_EMBEDDINGS and settings.OPENAI_API_KEY:
+            from openai import AsyncOpenAI
+            
+            client = AsyncOpenAI(api_key=settings.OPENAI_API_KEY)
+            
+            prompt = f"""Analyze this company website content and extract 3-5 specific capabilities for federal government contracting.
+
+Each capability should be:
+- 1-2 sentences describing what they deliver
+- Focused on services relevant to federal agencies
+- Specific (not generic)
+
+Website content:
+{website_text[:4000]}
+
+Return ONLY a JSON array like this:
+[
+  {{"capability_text": "Cybersecurity consulting with FedRAMP compliance expertise", "category": "IT Services"}},
+  {{"capability_text": "Cloud migration for DoD systems", "category": "Defense"}}
+]
+
+JSON array:"""
+
+            response = await client.chat.completions.create(
+                model="gpt-4o-mini",  # Fast and cheap
+                messages=[
+                    {"role": "system", "content": "You are a federal contracting expert. Extract capabilities in JSON format only."},
+                    {"role": "user", "content": prompt}
+                ],
+                temperature=0.3,
+                max_tokens=800
+            )
+            
+            result_text = response.choices[0].message.content.strip()
+            
+            # Parse JSON (handle markdown fences if present)
+            if "```json" in result_text:
+                result_text = result_text.split("```json")[1].split("```")[0].strip()
+            elif "```" in result_text:
+                result_text = result_text.split("```")[1].split("```")[0].strip()
+            
+            capabilities = json.loads(result_text)
+            
+            # Validate structure
+            if not isinstance(capabilities, list):
+                capabilities = [capabilities]
+            
+            return capabilities[:5]  # Max 5
+        
+        else:
+            # Fallback to Ollama (less reliable for structured output)
+            async with httpx.AsyncClient(timeout=60.0) as client:
+                response = await client.post(
+                    f"{self.base_url}/api/generate",
+                    json={
+                        "model": self.model,
+                        "prompt": f"Extract 3 key business capabilities from this text. Be specific:\n\n{website_text[:2000]}",
+                        "stream": False
+                    }
+                )
+                response.raise_for_status()
+                text = response.json()["response"]
+                
+                # Parse as best we can
+                return [{"capability_text": text.strip(), "category": "General"}]
     
     async def generate_response(
         self, 

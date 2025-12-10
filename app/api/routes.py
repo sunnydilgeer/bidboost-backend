@@ -2489,3 +2489,32 @@ async def embed_existing_past_wins(db: Session = Depends(get_db)):
         logger.error(f"Data migration failed: {str(e)}", exc_info=True)
         db.rollback()
         raise HTTPException(status_code=500, detail=str(e))
+
+@router.post("/capabilities/extract-from-url")
+async def extract_capabilities_from_url(
+    company_url: str,
+    current_user: User = Depends(get_current_active_user),
+    db: Session = Depends(get_db)
+):
+    """Extract capabilities from URL for review (doesn't save yet)"""
+    from app.services.web_scraper import WebScraperService
+    
+    scraper = WebScraperService()
+    llm_service = get_llm_service()
+    
+    # Scrape
+    scrape_result = await scraper.scrape_company_website(company_url)
+    if not scrape_result["success"]:
+        raise HTTPException(400, detail="Failed to scrape website")
+    
+    # Extract capabilities
+    capabilities = await llm_service.extract_capabilities(
+        scrape_result["capabilities_text"]
+    )
+    
+    return {
+        "success": True,
+        "capabilities": capabilities,
+        "company_name": scrape_result["company_name"],
+        "pages_scraped": scrape_result["pages_scraped"]
+    }
