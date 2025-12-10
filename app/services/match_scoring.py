@@ -35,7 +35,9 @@ class ContractMatchScorer:
         contract: Contract, 
         firm_id: str, 
         capability_vectors: Optional[Dict] = None,
-        contract_vectors: Optional[Dict] = None  # NEW: Pre-fetched contract vectors
+        contract_vectors: Optional[Dict] = None,
+        past_win_vectors: Optional[Dict[str, List[float]]] = None  # ✅ ADD THIS
+
     ) -> Optional[Dict]:
         """
         Calculate comprehensive match score for a contract.
@@ -70,7 +72,8 @@ class ContractMatchScorer:
                 capability_vectors,
                 contract_vectors  # NEW: Pass pre-fetched contract vectors
             )
-            past_win_score = self._calculate_past_win_score(contract, profile)
+            past_win_score = self._calculate_past_win_score(contract, profile, past_win_vectors)
+
             preference_score = self._calculate_preference_score(contract, profile)
             
             # Weighted average: Capability (50%), Past Wins (25%), Preferences (25%)
@@ -203,124 +206,108 @@ class ContractMatchScorer:
             logger.error(f"Error calculating capability score: {str(e)}", exc_info=True)
             return 0.0
     
-    def _calculate_past_win_score(self, contract: Contract, profile: CompanyProfile) -> float:
+    
+    # ========== UPDATED _calculate_past_win_score METHOD ==========
+# In app/services/match_scoring.py
+# Replace the entire _calculate_past_win_score method (around lines 195-320) with this:
+
+    def _calculate_past_win_score(
+        self, 
+        contract: Contract, 
+        profile: CompanyProfile,
+        past_win_vectors: Optional[Dict[str, List[float]]] = None
+    ) -> float:
         """
-        Calculate past win similarity score using keyword and contextual matching.
+        Calculate semantic similarity between contract and past wins.
+        Uses Pinecone embeddings for accurate matching instead of keywords.
         
-        Improved implementation using:
-        - Keyword category matching (cloud, security, infrastructure, etc.)
-        - Agency/department matching with partial matches
-        - Contract value similarity with flexible ranges
-        - Description text overlap analysis
+        Args:
+            contract: Contract to score
+            profile: CompanyProfile with past_wins relationship
+            past_win_vectors: Optional pre-fetched vectors {pinecone_id: vector}
         
-        Returns score between 0.0 and 1.0
+        Returns:
+            Score from 0.0 to 1.0 representing best past win match
         """
         try:
             past_wins = profile.past_wins
             
             if not past_wins:
-                return 0.0  # No past wins = no score
+                logger.debug(f"No past wins for firm {profile.firm_id}")
+                return 0.0
             
-            # Prepare contract text for comparison
-            contract_text = f"{contract.title or ''} {contract.description or ''}".lower()
-            contract_buyer = (contract.buyer_name or '').lower()
+            # Get contract vector (use pre-fetched if available)
+            contract_vector = None
             
-            # Federal contracting domain keywords grouped by category
-            keyword_categories = {
-                'cloud': ['cloud', 'aws', 'azure', 'gcp', 'govcloud', 'saas', 'iaas', 'paas'],
-                'devops': ['devops', 'ci/cd', 'cicd', 'jenkins', 'gitlab', 'automation', 'terraform', 'ansible'],
-                'security': ['security', 'fedramp', 'nist', 'ato', 'fisma', 'compliance', 'cybersecurity', 'penetration'],
-                'migration': ['migration', 'modernization', 'consolidation', 'transformation', 'legacy'],
-                'infrastructure': ['infrastructure', 'data center', 'virtualization', 'network', 'server', 'storage'],
-                'development': ['software', 'development', 'application', 'api', 'integration', 'coding', 'programming'],
-                'support': ['support', 'help desk', 'helpdesk', 'noc', 'itil', 'service desk', 'maintenance'],
-                'database': ['database', 'sql', 'oracle', 'postgresql', 'mysql', 'data warehouse']
-            }
+            if contract.qdrant_id:
+                if self.using_pinecone:
+                    result = self.pinecone_index.fetch(ids=[contract.qdrant_id], namespace="contracts")
+                    if result.vectors and contract.qdrant_id in result.vectors:
+                        contract_vector = list(result.vectors[contract.qdrant_id].values)
+                        logger.debug(f"Fetched contract vector for past win scoring: {contract.qdrant_id}")
+                else:
+                    # Qdrant fallback
+                    points = self.qdrant_client.retrieve(
+                        collection_name="legal_documents",
+                        ids=[contract.qdrant_id],
+                        with_vectors=True
+                    )
+                    if points:
+                        contract_vector = points[0].vector
             
-            max_similarity = 0.0
-            best_win_title = None
+            if contract_vector is None:
+                logger.warning(f"No contract vector found for past win scoring: {contract.qdrant_id}")
+                return 0.0
             
+            # Get past win vectors (use pre-fetched if available)
+            if past_win_vectors is not None:
+                wins_data = past_win_vectors
+                logger.debug(f"Using pre-fetched past win vectors: {len(wins_data)} wins")
+            else:
+                # Fallback: Fetch past wins individually
+                pinecone_ids = [win.pinecone_id for win in past_wins if win.pinecone_id]
+                
+                if not pinecone_ids:
+                    logger.warning(f"No pinecone_ids found for past wins (firm {profile.firm_id})")
+                    return 0.0
+                
+                if self.using_pinecone:
+                    from app.services.past_win_store_pinecone import get_past_win_store
+                    win_store = get_past_win_store()
+                    wins_data = win_store.get_past_wins_batch(pinecone_ids)
+                    logger.debug(f"Fetched {len(wins_data)} past win vectors from Pinecone")
+                else:
+                    # Qdrant fallback (if you have past wins in Qdrant)
+                    wins_data = {}
+                    logger.warning("Qdrant fallback not implemented for past wins")
+            
+            if not wins_data:
+                logger.warning(f"No past win vectors retrieved for firm {profile.firm_id}")
+                return 0.0
+            
+            # Calculate similarities with each past win
+            similarities = []
             for win in past_wins:
-                # Prepare past win text
-                win_text = f"{win.contract_title or ''} {win.description or ''}".lower()
-                win_buyer = (win.buyer_name or '').lower()
-                
-                score_components = []
-                
-                # 1. Keyword Category Matching (0.0 to 0.5)
-                category_matches = 0
-                total_categories = len(keyword_categories)
-                
-                for category, terms in keyword_categories.items():
-                    # Check if any term from this category appears in both texts
-                    contract_has = any(term in contract_text for term in terms)
-                    win_has = any(term in win_text for term in terms)
+                if win.pinecone_id and win.pinecone_id in wins_data:
+                    win_vector = wins_data[win.pinecone_id]
                     
-                    if contract_has and win_has:
-                        category_matches += 1
-                
-                keyword_score = (category_matches / total_categories) * 0.5 if total_categories > 0 else 0.0
-                score_components.append(keyword_score)
-                
-                # 2. Agency/Department Matching (0.0 to 0.3)
-                agency_score = 0.0
-                
-                if win_buyer and contract_buyer:
-                    # Exact department match
-                    departments = ['defense', 'veterans', 'health', 'navy', 'air force', 'army', 
-                                 'homeland', 'interior', 'commerce', 'energy', 'treasury', 'justice']
+                    # Cosine similarity
+                    similarity = self._cosine_similarity(contract_vector, win_vector)
+                    similarities.append(similarity)
                     
-                    for dept in departments:
-                        if dept in win_buyer and dept in contract_buyer:
-                            agency_score = 0.3
-                            break
-                    
-                    # Partial agency name match
-                    if agency_score == 0.0 and (win_buyer in contract_buyer or contract_buyer in win_buyer):
-                        agency_score = 0.2
-                
-                score_components.append(agency_score)
-                
-                # 3. Contract Value Similarity (0.0 to 0.2)
-                value_score = 0.0
-                
-                if win.contract_value and contract.contract_value:
-                    try:
-                        win_val = float(win.contract_value)
-                        contract_val = float(contract.contract_value)
-                        
-                        if win_val > 0 and contract_val > 0:
-                            ratio = max(win_val, contract_val) / min(win_val, contract_val)
-                            
-                            # Score based on how close the values are
-                            if ratio <= 2:  # Within 2x
-                                value_score = 0.2
-                            elif ratio <= 5:  # Within 5x
-                                value_score = 0.1
-                            elif ratio <= 10:  # Within 10x
-                                value_score = 0.05
-                    except (ValueError, TypeError, ZeroDivisionError):
-                        pass
-                
-                score_components.append(value_score)
-                
-                # Calculate total similarity for this past win
-                similarity = sum(score_components)
-                
-                # Track best match
-                if similarity > max_similarity:
-                    max_similarity = similarity
-                    best_win_title = win.contract_title
+                    if similarity > 0.6:  # Log high matches
+                        logger.debug(f"Strong past win match: '{win.contract_title[:50]}...' -> {similarity:.2%}")
             
-            # Cap at 1.0 and log if we found a good match
-            final_score = min(max_similarity, 1.0)
+            if not similarities:
+                logger.warning(f"No similarity scores calculated for contract {contract.notice_id}")
+                return 0.0
             
-            if final_score > 0.3 and best_win_title:
-                logger.info(f"Past win match found: '{best_win_title[:50]}...' -> {final_score:.2%} similarity")
-            elif final_score > 0:
-                logger.debug(f"Weak past win match: {final_score:.2%}")
+            # Return best match (highest similarity)
+            best_match = max(similarities)
             
-            return final_score
+            logger.debug(f"Past win score: {best_match:.3f} (from {len(similarities)} past wins)")
+            
+            return float(best_match)
             
         except Exception as e:
             logger.error(f"Error calculating past win score: {str(e)}", exc_info=True)
