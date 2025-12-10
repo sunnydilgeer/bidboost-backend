@@ -1191,8 +1191,8 @@ async def get_recommended_contracts(
         pinecone = PineconeStoreService(api_key=settings.PINECONE_API_KEY)
         results = pinecone.search_contracts(
             query_vector=query_vector,
-            limit=min(limit * 2, 30),  # Cap at 30 to avoid over-fetching
-            min_score=0.35,  # Higher threshold = fewer contracts to score
+            limit=min(limit * 2, 20),  # Cap at 30 to avoid over-fetching
+            min_score=0.42,  # Higher threshold = fewer contracts to score
             namespace="contracts"
         )
         
