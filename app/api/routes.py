@@ -2426,3 +2426,66 @@ async def migrate_past_wins_pinecone(db: Session = Depends(get_db)):
         logger.error(f"❌ Migration failed: {str(e)}")
         db.rollback()
         raise HTTPException(status_code=500, detail=str(e))
+
+@router.post("/admin/embed-existing-past-wins")
+async def embed_existing_past_wins(db: Session = Depends(get_db)):
+    """
+    Admin endpoint: Embed all existing past wins that don't have pinecone_id
+    """
+    try:
+        from app.services.past_win_store_pinecone import get_past_win_store
+        
+        llm_service = get_llm_service()
+        win_store = get_past_win_store()
+        
+        # Get all past wins without pinecone_id
+        past_wins = db.query(PastWin).filter(
+            PastWin.pinecone_id == None
+        ).all()
+        
+        if not past_wins:
+            return {
+                "success": True,
+                "message": "✅ All past wins already embedded",
+                "migrated": 0
+            }
+        
+        logger.info(f"Found {len(past_wins)} past wins to embed")
+        
+        migrated = 0
+        errors = []
+        
+        for win in past_wins:
+            try:
+                logger.info(f"Embedding past win {win.id}: {win.contract_title[:50]}...")
+                
+                # Generate embedding and store in Pinecone
+                pinecone_id = await win_store.add_past_win(win, llm_service)
+                
+                # Update database
+                win.pinecone_id = pinecone_id
+                db.flush()
+                
+                logger.info(f"✅ Success! Pinecone ID: {pinecone_id}")
+                migrated += 1
+                
+            except Exception as e:
+                error_msg = f"Failed win {win.id}: {str(e)}"
+                logger.error(error_msg)
+                errors.append(error_msg)
+        
+        # Commit all changes
+        db.commit()
+        
+        return {
+            "success": True,
+            "migrated": migrated,
+            "total": len(past_wins),
+            "errors": errors if errors else None,
+            "message": f"✅ Embedded {migrated}/{len(past_wins)} past wins"
+        }
+        
+    except Exception as e:
+        logger.error(f"Data migration failed: {str(e)}", exc_info=True)
+        db.rollback()
+        raise HTTPException(status_code=500, detail=str(e))
