@@ -46,8 +46,11 @@ class LLMService:
     
     async def extract_capabilities(self, website_text: str) -> List[dict]:
         """
-        Extract 3-5 capabilities from website text.
-        Returns structured list ready for database insertion.
+        Extract 5-8 specific, concrete service capabilities from website text.
+        Focuses on WHAT they deliver, not mission statements or generic descriptions.
+        
+        Returns: List of dicts with structure:
+            [{"capability_text": "Service description", "category": "Category name"}, ...]
         """
         
         # Use OpenAI for better structured output
@@ -56,49 +59,95 @@ class LLMService:
             
             client = AsyncOpenAI(api_key=settings.OPENAI_API_KEY)
             
-            prompt = f"""Analyze this company website content and extract 3-5 specific capabilities for federal government contracting.
+            prompt = f"""Analyze this company website content and extract 5-8 SPECIFIC service capabilities for federal government contracting.
 
-Each capability should be:
-- 1-2 sentences describing what they deliver
-- Focused on services relevant to federal agencies
-- Specific (not generic)
+CRITICAL EXTRACTION RULES:
+1. Extract CONCRETE SERVICES AND OFFERINGS, not mission statements or generic descriptions
+2. Focus on what appears in:
+   - Services pages and menus
+   - Solutions sections
+   - Products listings
+   - Technology platforms mentioned
+   - Industry expertise areas
+3. Look for:
+   - Specific technology services (e.g., "Cloud migration for AWS/Azure/GCP")
+   - Named products or platforms (e.g., "Workday implementation services")
+   - Industry specializations (e.g., "Healthcare data analytics with HIPAA compliance")
+   - Technical capabilities (e.g., "DevOps automation and CI/CD pipelines")
+   - Consulting services (e.g., "Digital transformation advisory for financial services")
+4. Each capability should be 1-2 sentences describing WHAT they deliver, not WHY
+5. AVOID:
+   - Mission statements ("We're on a mission to...")
+   - Generic values ("True partners change the world...")
+   - Calls to action ("Explore our services...")
+   - Vague descriptions without specifics
 
 Website content:
-{website_text[:4000]}
+{website_text[:6000]}
 
-Return ONLY a JSON array like this:
+Return ONLY a valid JSON array with NO additional text, markdown, or explanation:
 [
-  {{"capability_text": "Cybersecurity consulting with FedRAMP compliance expertise", "category": "IT Services"}},
-  {{"capability_text": "Cloud migration for DoD systems", "category": "Defense"}}
-]
-
-JSON array:"""
+  {{"capability_text": "Cloud migration and modernization services for AWS, Azure, and GCP with containerization and microservices architecture", "category": "Cloud Services"}},
+  {{"capability_text": "Workday implementation and deployment including integration with existing enterprise systems", "category": "Enterprise Software"}},
+  {{"capability_text": "Data analytics and AI/ML solutions for healthcare sector with HIPAA compliance expertise", "category": "Data & AI"}},
+  {{"capability_text": "Cybersecurity consulting and FedRAMP authorization support for federal agencies", "category": "Cybersecurity"}},
+  {{"capability_text": "Digital transformation advisory services for payment systems and fintech platforms", "category": "Financial Services"}},
+  {{"capability_text": "User-centered design and UX services for government digital services", "category": "Design"}},
+  {{"capability_text": "Managed IT services and application support for enterprise applications", "category": "IT Services"}}
+]"""
 
             response = await client.chat.completions.create(
-                model="gpt-4o-mini",  # Fast and cheap
+                model="gpt-4o-mini",
                 messages=[
-                    {"role": "system", "content": "You are a federal contracting expert. Extract capabilities in JSON format only."},
+                    {
+                        "role": "system", 
+                        "content": "You are an expert at analyzing company websites and extracting specific, concrete service capabilities. Your job is to identify WHAT THEY DO (services, products, platforms) NOT WHY they do it (mission, values). Focus on technical services, named products, industry expertise, and consulting offerings. Return ONLY valid JSON with no markdown formatting."
+                    },
                     {"role": "user", "content": prompt}
                 ],
-                temperature=0.3,
-                max_tokens=800
+                temperature=0.2,  # Lower for more focused, consistent extraction
+                max_tokens=1200
             )
             
             result_text = response.choices[0].message.content.strip()
             
-            # Parse JSON (handle markdown fences if present)
+            # Handle various JSON formatting issues
+            # Remove markdown code fences if present
             if "```json" in result_text:
                 result_text = result_text.split("```json")[1].split("```")[0].strip()
             elif "```" in result_text:
                 result_text = result_text.split("```")[1].split("```")[0].strip()
             
-            capabilities = json.loads(result_text)
+            # Parse JSON
+            try:
+                capabilities = json.loads(result_text)
+            except json.JSONDecodeError as e:
+                # Log error and return fallback
+                print(f"❌ JSON parsing error: {e}")
+                print(f"Raw response: {result_text[:200]}")
+                return [{
+                    "capability_text": "Digital services and technology consulting",
+                    "category": "IT Services"
+                }]
             
             # Validate structure
             if not isinstance(capabilities, list):
                 capabilities = [capabilities]
             
-            return capabilities[:5]  # Max 5
+            # Ensure each item has required fields
+            validated_capabilities = []
+            for cap in capabilities:
+                if isinstance(cap, dict) and "capability_text" in cap:
+                    validated_capabilities.append({
+                        "capability_text": cap["capability_text"],
+                        "category": cap.get("category", "General")
+                    })
+            
+            # Return 5-8 capabilities
+            return validated_capabilities[:8] if validated_capabilities else [{
+                "capability_text": "Digital services and technology consulting",
+                "category": "IT Services"
+            }]
         
         else:
             # Fallback to Ollama (less reliable for structured output)
@@ -107,15 +156,29 @@ JSON array:"""
                     f"{self.base_url}/api/generate",
                     json={
                         "model": self.model,
-                        "prompt": f"Extract 3 key business capabilities from this text. Be specific:\n\n{website_text[:2000]}",
+                        "prompt": f"Extract 3-5 specific service capabilities from this company website. Focus on concrete services they offer:\n\n{website_text[:2000]}",
                         "stream": False
                     }
                 )
                 response.raise_for_status()
                 text = response.json()["response"]
                 
-                # Parse as best we can
-                return [{"capability_text": text.strip(), "category": "General"}]
+                # Parse as best we can - Ollama output is less structured
+                lines = [line.strip() for line in text.split('\n') if line.strip() and len(line.strip()) > 20]
+                capabilities = []
+                for line in lines[:5]:
+                    # Remove bullet points and numbering
+                    cleaned = line.lstrip('•-*123456789. ')
+                    if cleaned:
+                        capabilities.append({
+                            "capability_text": cleaned,
+                            "category": "General"
+                        })
+                
+                return capabilities if capabilities else [{
+                    "capability_text": text.strip()[:200],
+                    "category": "General"
+                }]
     
     async def generate_response(
         self, 
