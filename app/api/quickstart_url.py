@@ -1,10 +1,10 @@
 """
 Quick-start URL endpoint for onboarding via company website
-Scrapes website → extracts capabilities → matches contracts
+Scrapes website → extracts capabilities with LLM → matches contracts
 """
-from fastapi import APIRouter, HTTPException, Depends
+from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel, Field, validator
-from typing import List, Dict, Any
+from typing import List
 import logging
 import uuid
 
@@ -65,9 +65,9 @@ class QuickStartContract(BaseModel):
 class URLQuickStartResponse(BaseModel):
     """Response for URL quick-start"""
     success: bool
-    quickstart_id: str  # ✅ ADD THIS
+    quickstart_id: str
     company_name: str
-    capabilities_extracted: str  # Preview of extracted text
+    capabilities_extracted: str  # Formatted capabilities text
     pages_scraped: int
     contracts: List[QuickStartContract]
     total_matches: int
@@ -82,18 +82,21 @@ async def quickstart_from_url(request: URLQuickStartRequest):
     
     Flow:
     1. Scrape company website (homepage + key pages)
-    2. Extract capabilities text
-    3. Generate embedding vector
+    2. Extract structured capabilities using GPT-4o-mini
+    3. Generate embedding vector from full text
     4. Query Pinecone for top 20 matches
     5. Return contracts ranked by similarity
     
-    This provides instant value without requiring PDF upload or manual data entry.
     Target: <10 seconds from URL to results
     """
     try:
         logger.info(f"🚀 Quick-start URL onboarding: {request.company_url}")
         
+        # ============================================================
         # STEP 1: Scrape website
+        # ============================================================
+        logger.info("📡 STEP 1: Scraping website...")
+        
         scraper = WebScraperService()
         scrape_result = await scraper.scrape_company_website(request.company_url)
         
@@ -113,15 +116,45 @@ async def quickstart_from_url(request: URLQuickStartRequest):
                 detail="Could not extract enough information from website. Please try uploading a PDF instead."
             )
         
-        logger.info(f"✅ Scraped {pages_scraped} pages, {len(capabilities_text)} chars")
+        logger.info(f"✅ Scraped {pages_scraped} pages, {len(capabilities_text):,} chars")
         
-        # STEP 2: Generate embedding
+        # ============================================================
+        # STEP 2: Extract structured capabilities using LLM
+        # ============================================================
+        logger.info("🤖 STEP 2: Extracting capabilities with GPT-4o-mini...")
+        
         llm_service = LLMService()
+        capabilities_list = await llm_service.extract_capabilities(capabilities_text)
+        
+        if not capabilities_list or len(capabilities_list) == 0:
+            logger.warning("⚠️ LLM extraction returned no capabilities, using raw text fallback")
+            capabilities_formatted = capabilities_text[:500] + "..."
+        else:
+            logger.info(f"✅ Extracted {len(capabilities_list)} structured capabilities")
+            
+            # Format as bullet points for display
+            capabilities_formatted = "\n".join([
+                f"• {cap['capability_text']}" 
+                for cap in capabilities_list
+            ])
+            
+            logger.info(f"📝 Capabilities preview: {capabilities_formatted[:200]}...")
+        
+        # ============================================================
+        # STEP 3: Generate embedding vector
+        # ============================================================
+        logger.info("🔢 STEP 3: Generating embedding vector...")
+        
+        # Use full text for embedding (better semantic matching)
         embedding_vector = await llm_service.generate_embeddings(capabilities_text)
         
         logger.info(f"✅ Generated {len(embedding_vector)}-dim embedding")
         
-        # STEP 3: Query Pinecone for matches
+        # ============================================================
+        # STEP 4: Query Pinecone for contract matches
+        # ============================================================
+        logger.info("🔍 STEP 4: Searching for contract matches...")
+        
         pinecone_service = PineconeStoreService(api_key=settings.PINECONE_API_KEY)
         
         matches = pinecone_service.search_contracts(
@@ -132,7 +165,11 @@ async def quickstart_from_url(request: URLQuickStartRequest):
         
         logger.info(f"✅ Found {len(matches)} initial contract matches")
         
-        # STEP 3.5: Enhanced multi-factor scoring with realistic distribution
+        # ============================================================
+        # STEP 5: Enhanced multi-factor scoring
+        # ============================================================
+        logger.info("📊 STEP 5: Enhancing match scores...")
+        
         enhanced_matches = []
         capabilities_words = set(capabilities_text.lower().split())
         
@@ -140,23 +177,22 @@ async def quickstart_from_url(request: URLQuickStartRequest):
             base_score = match["score"]
             boost_reasons = []
             
-            # BOOST 1: Keyword overlap between capabilities and contract (up to +12%)
+            # BOOST 1: Keyword overlap (up to +12%)
             contract_text = f"{match['title']} {match.get('description', '')}".lower()
             contract_words = set(contract_text.split())
             common_words = capabilities_words & contract_words
             
-            # Filter out common stopwords
+            # Filter stopwords
             stopwords = {'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by'}
             meaningful_overlap = common_words - stopwords
             
             keyword_boost = min(0.12, len(meaningful_overlap) / 80)
             if keyword_boost > 0.08:
-                boost_reasons.append(f"Strong keyword overlap")
+                boost_reasons.append("Strong keyword overlap")
             
-            # BOOST 2: NAICS/PSC code relevance (+8%)
+            # BOOST 2: Industry/tech relevance (+8%)
             naics_psc_boost = 0.0
             if match.get("naics_code") or match.get("psc_code"):
-                # Industry-specific keyword detection
                 tech_keywords = {'software', 'technology', 'it', 'cyber', 'data', 'cloud', 'ai', 'digital'}
                 defense_keywords = {'defense', 'aerospace', 'military', 'security', 'surveillance'}
                 engineering_keywords = {'engineering', 'construction', 'infrastructure', 'systems'}
@@ -166,44 +202,44 @@ async def quickstart_from_url(request: URLQuickStartRequest):
                 
                 if any(kw in cap_lower for kw in tech_keywords):
                     naics_psc_boost = 0.08
-                    boost_reasons.append("Tech/IT specialization match")
+                    boost_reasons.append("Tech/IT specialization")
                 elif any(kw in cap_lower for kw in defense_keywords):
                     naics_psc_boost = 0.08
-                    boost_reasons.append("Defense/Aerospace match")
+                    boost_reasons.append("Defense/Aerospace")
                 elif any(kw in cap_lower for kw in engineering_keywords):
                     naics_psc_boost = 0.06
-                    boost_reasons.append("Engineering capability match")
+                    boost_reasons.append("Engineering capability")
                 elif any(kw in cap_lower for kw in consulting_keywords):
                     naics_psc_boost = 0.05
-                    boost_reasons.append("Consulting services match")
+                    boost_reasons.append("Consulting services")
             
-            # BOOST 3: Title prominence - key terms in contract title (+6%)
+            # BOOST 3: Title prominence (+6%)
             title_boost = 0.0
             title_lower = match.get("title", "").lower()
-            # Check if any capability keywords appear in title (high signal)
-            important_cap_words = [w for w in capabilities_words if len(w) > 6]  # Longer words are more meaningful
+            important_cap_words = [w for w in capabilities_words if len(w) > 6]
             title_matches = sum(1 for word in important_cap_words if word in title_lower)
             if title_matches >= 2:
                 title_boost = 0.06
                 boost_reasons.append("Key terms in title")
             
-            # Calculate enhanced score with gentle boost and realistic cap
-            # Base multiplier: 1.05 (gentle boost)
-            # Max final score: 82% (prevents unrealistic 100% matches)
+            # Calculate enhanced score (cap at 82%)
             enhanced_score = min(0.82, (base_score * 1.05) + keyword_boost + naics_psc_boost + title_boost)
             
-            # Update match with enhanced score
             match["score"] = enhanced_score
             match["boost_reasons"] = boost_reasons
             enhanced_matches.append(match)
         
-        # Sort by enhanced score and take top 20
+        # Sort and take top 20
         enhanced_matches.sort(key=lambda x: x["score"], reverse=True)
         final_matches = enhanced_matches[:20]
         
         logger.info(f"✅ Enhanced scoring complete, returning top 20 matches")
         
-        # STEP 4: Enrich with NAICS/PSC descriptions and format results
+        # ============================================================
+        # STEP 6: Enrich with NAICS/PSC metadata
+        # ============================================================
+        logger.info("🏷️ STEP 6: Enriching with industry codes...")
+        
         code_service = get_code_lookup_service()
         
         contracts = [
@@ -213,7 +249,7 @@ async def quickstart_from_url(request: URLQuickStartRequest):
                 agency=match["agency"],
                 description=match["description"][:500] if match["description"] else "",
                 score=match["score"],
-                naics_code=clean_naics_code(match.get("naics_code")),  # ✅ CLEAN HERE
+                naics_code=clean_naics_code(match.get("naics_code")),
                 naics_name=code_service.get_naics_name(match.get("naics_code")),
                 psc_code=match.get("psc_code"),
                 psc_name=code_service.get_psc_name(match.get("psc_code")),
@@ -225,15 +261,18 @@ async def quickstart_from_url(request: URLQuickStartRequest):
             for match in final_matches
         ]
         
-        # Return preview of capabilities (first 500 chars)
-        capabilities_preview = capabilities_text[:500] + "..." if len(capabilities_text) > 500 else capabilities_text
+        # ============================================================
+        # STEP 7: Return results
+        # ============================================================
         quickstart_id = f"qs_{uuid.uuid4().hex[:12]}"
+        
+        logger.info(f"✅ COMPLETE: {len(contracts)} contracts, {len(capabilities_list)} capabilities")
 
         return URLQuickStartResponse(
             success=True,
             quickstart_id=quickstart_id,
             company_name=company_name,
-            capabilities_extracted=capabilities_preview,
+            capabilities_extracted=capabilities_formatted,
             pages_scraped=pages_scraped,
             contracts=contracts,
             total_matches=len(contracts),
@@ -243,7 +282,7 @@ async def quickstart_from_url(request: URLQuickStartRequest):
     except HTTPException:
         raise
     except Exception as e:
-        logger.error(f"❌ Quick-start URL failed: {e}")
+        logger.error(f"❌ Quick-start URL failed: {e}", exc_info=True)
         raise HTTPException(
             status_code=500,
             detail=f"Quick-start failed: {str(e)}"
@@ -257,6 +296,6 @@ async def url_quickstart_health():
     return {
         "status": "healthy",
         "feature": "URL Quick-Start",
-        "max_pages_scraped": 5,
-        "timeout_seconds": 10
+        "max_pages_scraped": 12,
+        "timeout_seconds": 15
     }
