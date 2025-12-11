@@ -110,6 +110,11 @@ Return ONLY a valid JSON array with NO additional text, markdown, or explanation
             )
             
             result_text = response.choices[0].message.content.strip()
+            print(f"🤖 GPT-4o-mini raw response:")
+            print(f"{'='*70}")
+            print(result_text)
+            print(f"{'='*70}")
+
             
             # Handle various JSON formatting issues
             # Remove markdown code fences if present
