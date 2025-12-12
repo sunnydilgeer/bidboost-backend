@@ -67,6 +67,25 @@ capability_embedding_cache = {}
 
 router = APIRouter(prefix="/api", tags=["Contracts"])
 
+
+def trigger_cache_refresh(firm_id: str, db: Session):
+    """Trigger immediate cache refresh for a firm in background"""
+    from app.services.match_cache_service import MatchCacheService
+    import threading
+    
+    def refresh_in_background():
+        try:
+            service = MatchCacheService()
+            service.run_cache_update(firm_ids=[firm_id])
+            logger.info(f"✅ Cache refreshed for {firm_id}")
+        except Exception as e:
+            logger.error(f"Cache refresh failed for {firm_id}: {e}")
+    
+    # Run in background thread
+    thread = threading.Thread(target=refresh_in_background)
+    thread.start()
+    logger.info(f"🔄 Triggered cache refresh for {firm_id}")
+
 # Lazy initialization functions - only connect when called
 def get_vector_store():
     """Get VectorStoreService instance - connects to Qdrant on first call"""
@@ -607,6 +626,8 @@ async def add_capability(
         db.add(new_cap)
         db.flush()
         db.refresh(new_cap)
+        trigger_cache_refresh(current_user.firm_id)
+
         
         # Add to Pinecone
         cap_store = get_capability_store()
@@ -615,7 +636,10 @@ async def add_capability(
         # Update with pinecone_id
         new_cap.qdrant_id = pinecone_id  # Reusing same DB field
         db.commit()
+        trigger_cache_refresh(current_user.firm_id, db)
         db.refresh(new_cap)
+
+
         
         # INVALIDATE CACHE
         keys_to_delete = [k for k in capability_embedding_cache.keys() if k.startswith(f"{current_user.firm_id}:")]
@@ -683,6 +707,9 @@ async def update_capability(
         existing_cap.qdrant_id = pinecone_id
         
         db.commit()
+        trigger_cache_refresh(current_user.firm_id)
+
+
         
         # INVALIDATE CACHE
         keys_to_delete = [k for k in capability_embedding_cache.keys() if k.startswith(f"{current_user.firm_id}:")]
@@ -739,7 +766,8 @@ async def delete_capability(
         # Delete from database
         db.delete(existing_cap)
         db.commit()
-        
+        trigger_cache_refresh(current_user.firm_id)
+
         # INVALIDATE CACHE
         keys_to_delete = [k for k in capability_embedding_cache.keys() if k.startswith(f"{current_user.firm_id}:")]
         for key in keys_to_delete:
@@ -832,6 +860,8 @@ async def add_past_win(
         # Update with pinecone_id
         new_win.pinecone_id = pinecone_id
         db.commit()
+        trigger_cache_refresh(current_user.firm_id)
+
         db.refresh(new_win)
         
         logger.info(f"Added past win for firm {current_user.firm_id}: {win.contract_title} (Pinecone ID: {pinecone_id})")
@@ -902,6 +932,8 @@ async def update_past_win(
         existing_win.pinecone_id = pinecone_id
         
         db.commit()
+        trigger_cache_refresh(current_user.firm_id)
+
         
         logger.info(f"Updated past win {win_id} for firm {current_user.firm_id} (Pinecone ID: {pinecone_id})")
         
@@ -952,6 +984,8 @@ async def delete_past_win(
         # Delete from database
         db.delete(win)
         db.commit()
+        trigger_cache_refresh(current_user.firm_id)
+
         
         logger.info(f"Deleted past win {win_id} for firm {current_user.firm_id}")
         
@@ -1046,7 +1080,8 @@ async def update_preferences(
             existing_prefs.keywords = prefs.keywords
         
         db.commit()
-        
+        trigger_cache_refresh(current_user.firm_id)
+
         logger.info(f"Updated preferences for firm {current_user.firm_id}")
         
         return {
