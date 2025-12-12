@@ -154,3 +154,26 @@ class SavedContract(Base):
     __table_args__ = (
         Index('idx_user_contract', 'user_email', 'notice_id', unique=True),
     )
+
+class CachedContractMatch(Base):
+    """Pre-computed contract matches for fast recommendations"""
+    __tablename__ = "cached_contract_matches"
+    
+    id = Column(Integer, primary_key=True)
+    firm_id = Column(String(255), nullable=False, index=True)
+    notice_id = Column(String(255), nullable=False)
+    
+    # Denormalized contract data (no need to join!)
+    title = Column(String(500), nullable=False)
+    buyer_name = Column(String(255), nullable=False)
+    # ... (see file for complete schema)
+    
+    # Pre-computed scores (THE KEY!)
+    total_score = Column(Numeric(5, 2), nullable=False, index=True)
+    capability_score = Column(Numeric(5, 2), nullable=False)
+    past_win_score = Column(Numeric(5, 2), nullable=False)
+    preference_score = Column(Numeric(5, 2), nullable=False)
+    match_reasons = Column(JSON, default=list)
+    
+    rank = Column(Integer, nullable=False)  # 1-100 ranking
+    cached_at = Column(DateTime(timezone=True), server_default=func.now())
