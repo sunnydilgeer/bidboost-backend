@@ -112,9 +112,8 @@ class MatchCacheService:
             combined_query = " ".join(capability_texts)
             
             # Generate embedding (you'll need to import your LLM service)
-            from app.services.ollama_service import get_llm_service
-            llm_service = get_llm_service()
-            query_vector = llm_service.generate_embeddings_sync(combined_query)  # Sync version
+            from app.services.llm import generate_embeddings_sync
+            query_vector = generate_embeddings_sync(combined_query)
             
             # STEP 2: Search Pinecone for candidate contracts
             results = self.pinecone.search_contracts(

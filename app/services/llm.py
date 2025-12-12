@@ -1,5 +1,6 @@
 import httpx
 import json
+import asyncio
 from typing import List
 from app.core.config import settings
 
@@ -224,3 +225,29 @@ Answer:"""
             )
             response.raise_for_status()
             return response.json()["response"]
+
+
+# ============================================================================
+# Singleton and Helper Functions (ADD THESE AT THE END)
+# ============================================================================
+
+# Singleton instance
+_llm_service_instance = None
+
+def get_llm_service() -> LLMService:
+    """Get singleton LLM service instance"""
+    global _llm_service_instance
+    if _llm_service_instance is None:
+        _llm_service_instance = LLMService()
+    return _llm_service_instance
+
+
+def generate_embeddings_sync(text: str) -> List[float]:
+    """Synchronous wrapper for embeddings (for background jobs)"""
+    llm_service = get_llm_service()
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+    try:
+        return loop.run_until_complete(llm_service.generate_embeddings(text))
+    finally:
+        loop.close()

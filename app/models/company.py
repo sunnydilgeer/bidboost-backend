@@ -156,24 +156,55 @@ class SavedContract(Base):
     )
 
 class CachedContractMatch(Base):
-    """Pre-computed contract matches for fast recommendations"""
+    """
+    Pre-computed contract matches for fast recommendations.
+    Updated nightly by background job.
+    """
     __tablename__ = "cached_contract_matches"
     
-    id = Column(Integer, primary_key=True)
+    id = Column(Integer, primary_key=True, index=True)
     firm_id = Column(String(255), nullable=False, index=True)
-    notice_id = Column(String(255), nullable=False)
     
-    # Denormalized contract data (no need to join!)
+    # Contract reference
+    notice_id = Column(String(255), nullable=False, index=True)
+    pinecone_id = Column(String(100), nullable=False)  # For fetching full details if needed
+    
+    # Pre-computed contract data (denormalized for speed)
     title = Column(String(500), nullable=False)
     buyer_name = Column(String(255), nullable=False)
-    # ... (see file for complete schema)
+    description = Column(Text, nullable=True)
+    contract_value = Column(Numeric(15, 2), nullable=True)
+    region = Column(String(50), nullable=True)
+    closing_date = Column(String(100), nullable=True)
+    posted_date = Column(String(100), nullable=True)
     
-    # Pre-computed scores (THE KEY!)
-    total_score = Column(Numeric(5, 2), nullable=False, index=True)
+    # Enriched data
+    office = Column(String(255), nullable=True)
+    naics_code = Column(String(255), nullable=True)
+    naics_name = Column(String(255), nullable=True)
+    psc_code = Column(String(255), nullable=True)
+    psc_name = Column(String(255), nullable=True)
+    set_aside = Column(String(255), nullable=True)
+    city = Column(String(100), nullable=True)
+    source_url = Column(Text, nullable=True)
+    contact_name = Column(String(255), nullable=True)
+    contact_email = Column(String(255), nullable=True)
+    contact_phone = Column(String(50), nullable=True)
+    
+    # Pre-computed scores (THIS IS THE KEY!)
+    total_score = Column(Numeric(5, 2), nullable=False, index=True)  # Index for sorting
     capability_score = Column(Numeric(5, 2), nullable=False)
     past_win_score = Column(Numeric(5, 2), nullable=False)
     preference_score = Column(Numeric(5, 2), nullable=False)
-    match_reasons = Column(JSON, default=list)
+    match_reasons = Column(JSON, default=list)  # ["Strong capability match", ...]
     
-    rank = Column(Integer, nullable=False)  # 1-100 ranking
-    cached_at = Column(DateTime(timezone=True), server_default=func.now())
+    # Cache metadata
+    rank = Column(Integer, nullable=False)  # 1-100 ranking for this company
+    cached_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    
+    # Composite indexes for fast queries
+    __table_args__ = (
+        Index('idx_firm_score', 'firm_id', 'total_score'),  # Sort by score
+        Index('idx_firm_rank', 'firm_id', 'rank'),  # Sort by rank
+        Index('idx_firm_cached', 'firm_id', 'cached_at'),  # Cache freshness check
+    )
