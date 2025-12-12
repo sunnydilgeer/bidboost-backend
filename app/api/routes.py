@@ -7,7 +7,7 @@ from app.services.past_win_store_pinecone import get_past_win_store
 from app.models.contract import Contract
 from app.models import User as DBUser
 from app.api.debug_routes import debug_router  # Import the real one
-from app.models.company import CompanyProfile, CompanyCapability, PastWin, SearchPreference
+from app.models.company import CompanyProfile, CompanyCapability, PastWin, SearchPreference, CachedContractMatch
 from app.models.schemas import (
     ContractSyncResponse, 
     ContractSearchRequest, 
@@ -1140,6 +1140,32 @@ async def get_recommended_contracts(
 ) -> ContractSearchResponse:
     """Get personalized contract recommendations with match scoring"""
     try:
+
+        cached_matches = db.query(CachedContractMatch)\
+            .filter(CachedContractMatch.firm_id == current_user.firm_id)\
+            .order_by(CachedContractMatch.rank)\
+            .limit(limit)\
+            .all()
+        
+        if cached_matches:
+            logger.info(f"⚡ CACHE HIT: Serving {len(cached_matches)} contracts from cache for {current_user.firm_id}")
+            
+            # Convert cached matches to API format
+            results = []
+            for match in cached_matches:
+                match_dict = match.to_dict()
+                results.append(ContractSearchResult(**match_dict))
+            
+            return ContractSearchResponse(
+                query="",
+                results=results,
+                total_found=len(results),
+                message=f"Found {len(results)} personalized matches (cached)"
+            )
+        
+        # ❌ CACHE MISS - Fall back to real-time scoring
+        logger.warning(f"⚠️ Cache MISS for {current_user.firm_id} - using real-time scoring")
+        
         from app.services.pinecone_store import PineconeStoreService
         from app.core.config import settings
         from app.services.code_lookup import get_code_lookup_service, clean_naics_code

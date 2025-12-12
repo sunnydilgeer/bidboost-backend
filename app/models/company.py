@@ -202,6 +202,40 @@ class CachedContractMatch(Base):
     rank = Column(Integer, nullable=False)  # 1-100 ranking for this company
     cached_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
     
+    def to_dict(self):
+        """Convert cached match to API response format"""
+        return {
+            "notice_id": self.notice_id,
+            "title": self.title,
+            "buyer_name": self.buyer_name,
+            "description": self.description,
+            "value": float(self.contract_value) if self.contract_value else None,
+            "region": self.region,
+            "closing_date": self.closing_date,
+            "posted_date": self.posted_date,
+            "office": self.office,
+            "naics_code": self.naics_code,
+            "naics_name": self.naics_name,
+            "psc_code": self.psc_code,
+            "psc_name": self.psc_name,
+            "set_aside": self.set_aside,
+            "city": self.city,
+            "source_url": self.source_url,
+            "contact_name": self.contact_name,
+            "contact_email": self.contact_email,
+            "contact_phone": self.contact_phone,
+            "match_scores": {
+                "total_score": float(self.total_score),
+                "capability_score": float(self.capability_score),
+                "past_win_score": float(self.past_win_score),
+                "preference_score": float(self.preference_score)
+            },
+            "total_match_score": float(self.total_score),
+            "match_reasons": self.match_reasons or [],
+            "rank": self.rank,
+            "score": 0.5  # Placeholder for compatibility
+        }
+
     # Composite indexes for fast queries
     __table_args__ = (
         Index('idx_firm_score', 'firm_id', 'total_score'),  # Sort by score
