@@ -68,7 +68,7 @@ capability_embedding_cache = {}
 router = APIRouter(prefix="/api", tags=["Contracts"])
 
 
-def trigger_cache_refresh(firm_id: str, db: Session):
+def trigger_cache_refresh(firm_id: str):
     """Trigger immediate cache refresh for a firm in background"""
     from app.services.match_cache_service import MatchCacheService
     import threading
@@ -83,6 +83,7 @@ def trigger_cache_refresh(firm_id: str, db: Session):
     
     # Run in background thread
     thread = threading.Thread(target=refresh_in_background)
+    thread.daemon = True  # Don't block app shutdown
     thread.start()
     logger.info(f"🔄 Triggered cache refresh for {firm_id}")
 
@@ -626,17 +627,13 @@ async def add_capability(
         db.add(new_cap)
         db.flush()
         db.refresh(new_cap)
-        trigger_cache_refresh(current_user.firm_id)
-
-        
-        # Add to Pinecone
         cap_store = get_capability_store()
         pinecone_id = await cap_store.add_capability(new_cap, llm_service)
         
         # Update with pinecone_id
         new_cap.qdrant_id = pinecone_id  # Reusing same DB field
         db.commit()
-        trigger_cache_refresh(current_user.firm_id, db)
+        trigger_cache_refresh(current_user.firm_id)
         db.refresh(new_cap)
 
 
