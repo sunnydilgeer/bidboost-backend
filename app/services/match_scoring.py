@@ -437,48 +437,48 @@ class ContractMatchScorer:
             return ["Match based on profile analysis"]
     
     def _cosine_similarity(self, vec1: List[float], vec2: List[float]) -> float:
-    """Calculate cosine similarity between two vectors."""
-    try:
-        # ✅ EMERGENCY DIAGNOSTICS
-        logger.info(f"🔍 cosine_similarity called - vec1 type: {type(vec1)}, len: {len(vec1) if vec1 else 'None'}")
-        logger.info(f"🔍 cosine_similarity called - vec2 type: {type(vec2)}, len: {len(vec2) if vec2 else 'None'}")
-        
-        # ✅ VALIDATE INPUTS
-        if vec1 is None or vec2 is None:
-            logger.warning("❌ None vector passed to cosine_similarity")
-            return 0.0
+        """Calculate cosine similarity between two vectors."""
+        try:
+            # ✅ EMERGENCY DIAGNOSTICS
+            logger.info(f"🔍 cosine_similarity called - vec1 type: {type(vec1)}, len: {len(vec1) if vec1 else 'None'}")
+            logger.info(f"🔍 cosine_similarity called - vec2 type: {type(vec2)}, len: {len(vec2) if vec2 else 'None'}")
             
-        if len(vec1) == 0 or len(vec2) == 0:
-            logger.warning(f"❌ Empty vector passed to cosine_similarity: vec1={len(vec1)}, vec2={len(vec2)}")
+            # ✅ VALIDATE INPUTS
+            if vec1 is None or vec2 is None:
+                logger.warning("❌ None vector passed to cosine_similarity")
+                return 0.0
+                
+            if len(vec1) == 0 or len(vec2) == 0:
+                logger.warning(f"❌ Empty vector passed to cosine_similarity: vec1={len(vec1)}, vec2={len(vec2)}")
+                return 0.0
+            
+            if len(vec1) != len(vec2):
+                logger.error(f"❌ Vector length mismatch: {len(vec1)} vs {len(vec2)}")
+                return 0.0
+            
+            vec1_np = np.array(vec1)
+            vec2_np = np.array(vec2)
+            
+            # ✅ CHECK SHAPES MATCH
+            if vec1_np.shape != vec2_np.shape or len(vec1_np.shape) == 0:
+                logger.error(f"❌ Vector shape mismatch: {vec1_np.shape} vs {vec2_np.shape}")
+                return 0.0
+            
+            dot_product = np.dot(vec1_np, vec2_np)
+            norm1 = np.linalg.norm(vec1_np)
+            norm2 = np.linalg.norm(vec2_np)
+            
+            if norm1 == 0 or norm2 == 0:
+                logger.warning("❌ Zero norm vector")
+                return 0.0
+            
+            similarity = float(dot_product / (norm1 * norm2))
+            logger.info(f"✅ Similarity calculated: {similarity:.3f}")
+            return similarity
+            
+        except Exception as e:
+            logger.error(f"❌ CRASH in cosine_similarity: {str(e)}", exc_info=True)
             return 0.0
-        
-        if len(vec1) != len(vec2):
-            logger.error(f"❌ Vector length mismatch: {len(vec1)} vs {len(vec2)}")
-            return 0.0
-        
-        vec1_np = np.array(vec1)
-        vec2_np = np.array(vec2)
-        
-        # ✅ CHECK SHAPES MATCH
-        if vec1_np.shape != vec2_np.shape or len(vec1_np.shape) == 0:
-            logger.error(f"❌ Vector shape mismatch: {vec1_np.shape} vs {vec2_np.shape}")
-            return 0.0
-        
-        dot_product = np.dot(vec1_np, vec2_np)
-        norm1 = np.linalg.norm(vec1_np)
-        norm2 = np.linalg.norm(vec2_np)
-        
-        if norm1 == 0 or norm2 == 0:
-            logger.warning("❌ Zero norm vector")
-            return 0.0
-        
-        similarity = float(dot_product / (norm1 * norm2))
-        logger.info(f"✅ Similarity calculated: {similarity:.3f}")
-        return similarity
-        
-    except Exception as e:
-        logger.error(f"❌ CRASH in cosine_similarity: {str(e)}", exc_info=True)
-        return 0.0
     
     def get_improvement_recommendations(self, firm_id: str) -> List[Dict]:
         """
