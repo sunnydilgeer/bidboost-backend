@@ -110,8 +110,12 @@ async def quick_start_from_url(request: QuickStartURLRequest):
         logger.info(f"🧬 STEP 3: Generating capability embedding")
         
         # Combine capabilities into single text for embedding
-        combined_capabilities = " ".join(capabilities[:5])  # Use top 5
-        
+        if capabilities and isinstance(capabilities[0], dict):
+            capability_texts = [cap.get("text", cap.get("capability_text", "")) for cap in capabilities[:5]]
+        else:
+            capability_texts = capabilities[:5]
+
+        combined_capabilities = " ".join(capability_texts)  # Use top 5        
         query_vector = await llm.generate_embeddings(combined_capabilities)
         
         logger.info(f"✅ Generated {len(query_vector)}-dimensional embedding")
