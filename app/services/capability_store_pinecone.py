@@ -109,22 +109,38 @@ class CapabilityStorePinecone:
         Returns:
             Dict mapping vector_id -> {id, vector, metadata}
         """
+        if not vector_ids:
+            logger.warning("⚠️ get_capabilities_batch called with empty vector_ids list")
+            return {}
+        
         try:
+            logger.info(f"🔍 Fetching {len(vector_ids)} capabilities from Pinecone: {vector_ids}")
+            
             result = self.index.fetch(
                 ids=vector_ids,
                 namespace=self.NAMESPACE
             )
             
+            # ✅ FIX: Return proper dict structure, not just vector values
             capabilities = {}
             for vec_id, vec_data in result.vectors.items():
-                capabilities[vec_id] = list(vec_data.values) 
-
+                capabilities[vec_id] = {
+                    "id": vec_id,
+                    "vector": list(vec_data.values),
+                    "metadata": vec_data.metadata
+                }
+            
+            # Log missing vectors
+            missing = set(vector_ids) - set(capabilities.keys())
+            if missing:
+                logger.error(f"❌ Missing {len(missing)} capabilities from Pinecone: {missing}")
             
             logger.info(f"✅ Fetched {len(capabilities)}/{len(vector_ids)} capabilities from Pinecone")
+            
             return capabilities
         
         except Exception as e:
-            logger.error(f"Failed to fetch capabilities batch: {e}")
+            logger.error(f"❌ Failed to fetch capabilities batch: {e}")
             return {}
     
     def delete_capability(self, vector_id: str):
