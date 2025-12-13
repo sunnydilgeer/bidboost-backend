@@ -124,11 +124,8 @@ class CapabilityStorePinecone:
             # ✅ FIX: Return proper dict structure, not just vector values
             capabilities = {}
             for vec_id, vec_data in result.vectors.items():
-                capabilities[vec_id] = {
-                    "id": vec_id,
-                    "vector": list(vec_data.values),
-                    "metadata": vec_data.metadata
-                }
+                capabilities[vec_id] = list(vec_data.values)  # Just the vector array
+
             
             # Log missing vectors
             missing = set(vector_ids) - set(capabilities.keys())
