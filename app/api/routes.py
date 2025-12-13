@@ -1351,7 +1351,7 @@ async def get_recommended_contracts(
                 value=float(enriched_result.get("contract_value", 0)) if enriched_result.get("contract_value") else None,
                 region=enriched_result.get("state", ""),
                 closing_date=enriched_result.get("response_deadline", ""),
-                score=enriched_result.get("score", 0.0),
+    score=match_scores["match_score"],
                 office=enriched_result.get("office"),
                 naics_code=clean_naics_code(enriched_result.get("naics_code")),
                 naics_name=enriched_result.get("naics_name"),
