@@ -38,13 +38,14 @@ class QuickStartURLRequest(BaseModel):
 class QuickStartURLResponse(BaseModel):
     """Response from URL-based quick start"""
     success: bool
+    quickstart_id: str
     company_name: str
-    capabilities_text: str
-    capabilities: List[str]  # List of strings, not dicts
-    matches: List[dict]
-    avg_score: float
+    capabilities_extracted: str
+    capabilities: List[str]
     pages_scraped: int
-    session_id: str
+    contracts: List[dict]
+    total_matches: int
+    message: str
 
 @router.post("/url", response_model=QuickStartURLResponse)
 async def quick_start_from_url(request: QuickStartURLRequest):
@@ -157,13 +158,14 @@ async def quick_start_from_url(request: QuickStartURLRequest):
             logger.warning(f"No matching contracts found")
             return QuickStartURLResponse(
                 success=True,
+                quickstart_id=session_id,
                 company_name=company_name,
-                capabilities_text=capabilities_text,
-                capabilities=capabilities,  # Now a list of strings
-                matches=[],
-                avg_score=0,
+                capabilities_extracted=capabilities_text,
+                capabilities=capabilities,
                 pages_scraped=pages_scraped,
-                session_id=session_id
+                contracts=[],  # ✅ Empty list
+                total_matches=0,  # ✅ Zero
+                message="No matching contracts found"
             )
         
         logger.info(f"✅ Found {len(results)} matching contracts")
@@ -188,11 +190,11 @@ async def quick_start_from_url(request: QuickStartURLRequest):
             matches.append({
                 "notice_id": enriched_result.get("notice_id", ""),
                 "title": enriched_result.get("title", ""),
-                "buyer_name": enriched_result.get("agency", ""),
+                "agency": enriched_result.get("agency", ""),  # ✅ Changed from buyer_name
                 "description": enriched_result.get("description", ""),
                 "contract_value": enriched_result.get("contract_value"),
                 "region": enriched_result.get("state"),
-                "closing_date": enriched_result.get("response_deadline"),
+                "response_deadline": enriched_result.get("response_deadline"),  # ✅ Changed from closing_date
                 "naics_code": enriched_result.get("naics_code"),
                 "naics_name": enriched_result.get("naics_name"),
                 "psc_code": enriched_result.get("psc_code"),
@@ -201,10 +203,10 @@ async def quick_start_from_url(request: QuickStartURLRequest):
                 "office": enriched_result.get("office"),
                 "city": enriched_result.get("city"),
                 "posted_date": enriched_result.get("posted_date"),
-                "source_url": enriched_result.get("url"),
+                "url": enriched_result.get("url"),  # ✅ Changed from source_url
                 
                 # Scores
-                "score": display_score,  # 0-100 for display
+                "score": raw_score,  # ✅ 0-1 for frontend (it will multiply by 100)
                 "match_score": raw_score,  # 0-1 raw score
             })
         
@@ -215,24 +217,25 @@ async def quick_start_from_url(request: QuickStartURLRequest):
         final_matches = matches[:20]
         
         # Calculate average score
-        avg_score = round(sum(m["score"] for m in final_matches) / len(final_matches)) if final_matches else 0
+        avg_score = round(sum(m["score"] for m in final_matches) / len(final_matches), 2) if final_matches else 0
         
         logger.info(f"✅ Returning top 20 matches (pure capability scoring)")
-        logger.info(f"📊 Average match score: {avg_score}%")
-        logger.info(f"   Top 3 scores: {[m['score'] for m in final_matches[:3]]}")
+        logger.info(f"📊 Average match score: {round(avg_score * 100)}%")
+        logger.info(f"   Top 3 scores: {[round(m['score'] * 100) for m in final_matches[:3]]}")
         
         # ============================================================
         # Return results
         # ============================================================
         return QuickStartURLResponse(
             success=True,
+            quickstart_id=session_id,
             company_name=company_name,
-            capabilities_text=capabilities_text,
-            capabilities=capabilities,  # Now a clean list of strings
-            matches=final_matches,
-            avg_score=avg_score,
+            capabilities_extracted=capabilities_text,
+            capabilities=capabilities,
             pages_scraped=pages_scraped,
-            session_id=session_id
+            contracts=final_matches,
+            total_matches=len(final_matches),
+            message=f"Found {len(final_matches)} matching contracts"
         )
         
     except HTTPException:
