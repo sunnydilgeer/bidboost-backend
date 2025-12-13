@@ -122,6 +122,9 @@ class MatchCacheService:
         # Score each contract
         scored_matches = []
         for result in search_results.matches:
+            if not result.values or len(result.values) != 768:
+                logger.warning(f"Skipping contract {result.id} - invalid vector (length: {len(result.values) if result.values else 0})")
+                continue
             # Convert Pinecone result to Contract object
             metadata = result.metadata
             contract = Contract(
