@@ -1173,7 +1173,8 @@ async def get_recommended_contracts(
     """Get personalized contract recommendations with match scoring"""
     try:
         USE_CACHE = False  # ← ADD THIS LINE
-    
+        cached_matches = None  # ✅ Initialize it!
+
         if USE_CACHE:  # ← CHANGE THIS
             cached_matches = db.query(CachedContractMatch)\
                 .filter(CachedContractMatch.firm_id == current_user.firm_id)\
