@@ -168,7 +168,7 @@ class MatchCacheService:
                     })
             
             # STEP 5: Sort by total_score and take top 100
-            scored_matches.sort(key=lambda x: x["scores"]["total_score"], reverse=True)
+            scored_matches.sort(key=lambda x: x["scores"]["match_score"], reverse=True)
             top_matches = scored_matches[:100]
             
             logger.info(f"💯 Top match score for {firm_id}: {top_matches[0]['scores']['total_score']}")
@@ -214,7 +214,7 @@ class MatchCacheService:
                     contact_phone=enriched.get("contact_phone"),
                     
                     # Pre-computed scores
-                    total_score=scores["total_score"],
+                    total_score=scores["match_score"],
                     capability_score=scores["capability_score"],
                     past_win_score=scores["past_win_score"],
                     preference_score=scores["preference_score"],
