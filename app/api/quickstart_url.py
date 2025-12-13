@@ -4,9 +4,9 @@ Quick-start URL endpoint for onboarding via company website
 Scrapes website → extracts capabilities with LLM → matches contracts
 
 OPUS PURE CAPABILITY APPROACH:
-- Uses raw Pinecone semantic similarity scores
-- No boosts, no enhancements
-- Same scoring logic as dashboard
+- Uses ContractMatchScorer (same as dashboard)
+- Pure capability similarity (no boosts, no enhancements)
+- Consistent scoring across quick-start and dashboard
 """
 
 from fastapi import APIRouter, HTTPException
@@ -14,12 +14,16 @@ from pydantic import BaseModel, Field, validator
 from typing import List
 import logging
 import uuid
+import numpy as np
 
 from app.services.web_scraper import WebScraperService
 from app.services.llm import LLMService
 from app.services.pinecone_store import PineconeStoreService
 from app.core.config import settings
 from app.services.code_lookup import get_code_lookup_service
+from app.services.match_scoring import ContractMatchScorer
+from app.models.contract import Contract
+from app.database import SessionLocal
 
 logger = logging.getLogger(__name__)
 
@@ -55,8 +59,8 @@ async def quick_start_from_url(request: QuickStartURLRequest):
     OPUS PURE CAPABILITY APPROACH:
     - Scrapes website
     - Extracts capabilities with LLM
-    - Uses pure Pinecone semantic similarity (no boosts)
-    - Same scoring as dashboard
+    - Uses ContractMatchScorer (same as dashboard)
+    - Pure capability similarity (no boosts)
     
     Returns:
         - Extracted capabilities (as list of strings)
@@ -128,7 +132,7 @@ async def quick_start_from_url(request: QuickStartURLRequest):
             logger.info(f"  {i}. {cap[:60]}...")
         
         # ============================================================
-        # STEP 3: Generate embedding
+        # STEP 3: Generate embedding for initial search
         # ============================================================
         logger.info(f"🧬 STEP 3: Generating capability embedding")
         
@@ -149,8 +153,8 @@ async def quick_start_from_url(request: QuickStartURLRequest):
         
         results = pinecone.search_contracts(
             query_vector=query_vector,
-            limit=20,  # Top 20 matches
-            min_score=0.40,  # Only show 40%+ matches
+            limit=40,  # Get more candidates for scoring
+            min_score=0.35,  # Lower threshold, will re-score
             namespace="contracts"
         )
         
@@ -163,65 +167,110 @@ async def quick_start_from_url(request: QuickStartURLRequest):
                 capabilities_extracted=capabilities_text,
                 capabilities=capabilities,
                 pages_scraped=pages_scraped,
-                contracts=[],  # ✅ Empty list
-                total_matches=0,  # ✅ Zero
+                contracts=[],
+                total_matches=0,
                 message="No matching contracts found"
             )
         
-        logger.info(f"✅ Found {len(results)} matching contracts")
+        logger.info(f"✅ Found {len(results)} candidate contracts")
         
         # ============================================================
-        # STEP 5: Sort by pure semantic similarity
+        # STEP 5: Score contracts using ContractMatchScorer (same as dashboard)
         # ============================================================
-        logger.info("📊 STEP 5: Sorting matches by capability similarity...")
+        logger.info("📊 STEP 5: Scoring matches with ContractMatchScorer...")
         
-        # ✅ OPUS APPROACH: Use raw Pinecone scores (pure semantic similarity)
-        # Same logic as dashboard - no boosts, no enhancements
-        matches = []
+        # Create temporary database session
+        db = SessionLocal()
         
-        for result in results:
-            # Enrich with code names
-            enriched_result = code_service.enrich_contract(result)
+        try:
+            # Pre-fetch contract vectors in batch
+            contract_ids = [r.get("id") for r in results if r.get("id")]
+            contract_vectors = {}
             
-            # ✅ PURE CAPABILITY SCORE (0-100%)
-            raw_score = enriched_result.get("score", 0)  # Pinecone score (0-1)
-            display_score = round(raw_score * 100)  # Convert to 0-100
+            if contract_ids:
+                fetch_result = pinecone.index.fetch(ids=contract_ids, namespace="contracts")
+                for vec_id, vec_data in fetch_result.vectors.items():
+                    contract_vectors[vec_id] = list(vec_data.values)
+                logger.info(f"Pre-fetched {len(contract_vectors)} contract vectors")
             
-            matches.append({
-                "notice_id": enriched_result.get("notice_id", ""),
-                "title": enriched_result.get("title", ""),
-                "agency": enriched_result.get("agency", ""),  # ✅ Changed from buyer_name
-                "description": enriched_result.get("description", ""),
-                "contract_value": enriched_result.get("contract_value"),
-                "region": enriched_result.get("state"),
-                "response_deadline": enriched_result.get("response_deadline"),  # ✅ Changed from closing_date
-                "naics_code": enriched_result.get("naics_code"),
-                "naics_name": enriched_result.get("naics_name"),
-                "psc_code": enriched_result.get("psc_code"),
-                "psc_name": enriched_result.get("psc_name"),
-                "set_aside": enriched_result.get("set_aside"),
-                "office": enriched_result.get("office"),
-                "city": enriched_result.get("city"),
-                "posted_date": enriched_result.get("posted_date"),
-                "url": enriched_result.get("url"),  # ✅ Changed from source_url
+            # Generate temporary capability vectors from extracted capabilities
+            temp_capability_vectors = {}
+            for i, cap_text in enumerate(capabilities[:7]):  # Use top 7 like dashboard
+                cap_vector = await llm.generate_embeddings(cap_text)
+                temp_capability_vectors[f"temp_{i}"] = cap_vector
+            
+            logger.info(f"Generated {len(temp_capability_vectors)} capability vectors")
+            
+            # Initialize scorer
+            scorer = ContractMatchScorer(db, pinecone.index)
+            
+            matches = []
+            for result in results:
+                enriched_result = code_service.enrich_contract(result)
                 
-                # Scores
-                "score": raw_score,  # ✅ 0-1 for frontend (it will multiply by 100)
-                "match_score": raw_score,  # 0-1 raw score
-            })
-        
-        # Sort by score descending
-        matches.sort(key=lambda x: x["score"], reverse=True)
-        
-        # Take top 20
-        final_matches = matches[:20]
-        
-        # Calculate average score
-        avg_score = round(sum(m["score"] for m in final_matches) / len(final_matches), 2) if final_matches else 0
-        
-        logger.info(f"✅ Returning top 20 matches (pure capability scoring)")
-        logger.info(f"📊 Average match score: {round(avg_score * 100)}%")
-        logger.info(f"   Top 3 scores: {[round(m['score'] * 100) for m in final_matches[:3]]}")
+                # Get contract vector
+                contract_id = enriched_result.get("id")
+                contract_vector = contract_vectors.get(contract_id)
+                
+                if not contract_vector:
+                    logger.warning(f"No vector for contract {contract_id}")
+                    continue
+                
+                # Calculate similarities with all capabilities
+                similarities = []
+                for cap_vector in temp_capability_vectors.values():
+                    similarity = scorer._cosine_similarity(contract_vector, cap_vector)
+                    similarities.append(similarity)
+                
+                if not similarities:
+                    continue
+                
+                # ✅ Use BEST match (Opus approach - same as dashboard)
+                capability_score = float(np.max(similarities))
+                
+                # Only include if score >= 40%
+                if capability_score < 0.40:
+                    continue
+                
+                matches.append({
+                    "notice_id": enriched_result.get("notice_id", ""),
+                    "title": enriched_result.get("title", ""),
+                    "agency": enriched_result.get("agency", ""),
+                    "description": enriched_result.get("description", ""),
+                    "contract_value": enriched_result.get("contract_value"),
+                    "region": enriched_result.get("state"),
+                    "response_deadline": enriched_result.get("response_deadline"),
+                    "naics_code": enriched_result.get("naics_code"),
+                    "naics_name": enriched_result.get("naics_name"),
+                    "psc_code": enriched_result.get("psc_code"),
+                    "psc_name": enriched_result.get("psc_name"),
+                    "set_aside": enriched_result.get("set_aside"),
+                    "office": enriched_result.get("office"),
+                    "city": enriched_result.get("city"),
+                    "posted_date": enriched_result.get("posted_date"),
+                    "url": enriched_result.get("url"),
+                    
+                    # ✅ Use calculated capability score (same as dashboard)
+                    "score": capability_score,
+                    "match_score": capability_score,
+                })
+            
+            # Sort by score descending
+            matches.sort(key=lambda x: x["score"], reverse=True)
+            
+            # Take top 20
+            final_matches = matches[:20]
+            
+            if final_matches:
+                # Calculate average score
+                avg_score = round(sum(m["score"] for m in final_matches) / len(final_matches), 2)
+                
+                logger.info(f"✅ Returning top {len(final_matches)} matches (pure capability scoring)")
+                logger.info(f"📊 Average match score: {round(avg_score * 100)}%")
+                logger.info(f"   Top 3 scores: {[round(m['score'] * 100) for m in final_matches[:3]]}%")
+            
+        finally:
+            db.close()
         
         # ============================================================
         # Return results
@@ -254,6 +303,6 @@ async def health_check():
     return {
         "status": "healthy",
         "feature": "URL Quick-Start",
-        "scoring_approach": "Pure capability similarity (Opus approach)",
-        "version": "2.0"
+        "scoring_approach": "Pure capability similarity (Opus approach) - matches dashboard",
+        "version": "2.1"
     }
