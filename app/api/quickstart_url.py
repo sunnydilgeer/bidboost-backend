@@ -40,7 +40,7 @@ class QuickStartURLResponse(BaseModel):
     success: bool
     company_name: str
     capabilities_text: str
-    capabilities: List[str]
+    capabilities: List[str]  # List of strings, not dicts
     matches: List[dict]
     avg_score: float
     pages_scraped: int
@@ -58,7 +58,7 @@ async def quick_start_from_url(request: QuickStartURLRequest):
     - Same scoring as dashboard
     
     Returns:
-        - Extracted capabilities
+        - Extracted capabilities (as list of strings)
         - Top 20 matching contracts
         - Pure semantic similarity scores (0-100%)
     """
@@ -94,28 +94,46 @@ async def quick_start_from_url(request: QuickStartURLRequest):
         logger.info(f"🤖 STEP 2: Extracting capabilities with LLM")
         
         llm = LLMService()
-        capabilities = await llm.extract_capabilities(capabilities_text)
+        capabilities_raw = await llm.extract_capabilities(capabilities_text)
         
-        if not capabilities:
+        if not capabilities_raw:
             raise HTTPException(
                 status_code=400,
                 detail="Could not extract capabilities from website content"
             )
         
+        # ✅ Convert to list of strings (LLM returns list of dicts)
+        # Handle both dict format: {"capability_text": "...", "category": "..."}
+        # and plain string format (for backwards compatibility)
+        capabilities = []
+        for cap in capabilities_raw:
+            if isinstance(cap, dict):
+                # Extract text from dict
+                text = cap.get("capability_text") or cap.get("text") or ""
+                if text:
+                    capabilities.append(text)
+            elif isinstance(cap, str):
+                # Already a string
+                capabilities.append(cap)
+        
+        if not capabilities:
+            raise HTTPException(
+                status_code=400,
+                detail="Could not extract valid capabilities from website content"
+            )
+        
         logger.info(f"✅ Extracted {len(capabilities)} capabilities")
+        for i, cap in enumerate(capabilities[:5], 1):
+            logger.info(f"  {i}. {cap[:60]}...")
         
         # ============================================================
         # STEP 3: Generate embedding
         # ============================================================
         logger.info(f"🧬 STEP 3: Generating capability embedding")
         
-        # Combine capabilities into single text for embedding
-        if capabilities and isinstance(capabilities[0], dict):
-            capability_texts = [cap.get("text", cap.get("capability_text", "")) for cap in capabilities[:5]]
-        else:
-            capability_texts = capabilities[:5]
-
-        combined_capabilities = " ".join(capability_texts)  # Use top 5        
+        # Combine top 5 capabilities into single text for embedding
+        combined_capabilities = " ".join(capabilities[:5])
+        
         query_vector = await llm.generate_embeddings(combined_capabilities)
         
         logger.info(f"✅ Generated {len(query_vector)}-dimensional embedding")
@@ -141,7 +159,7 @@ async def quick_start_from_url(request: QuickStartURLRequest):
                 success=True,
                 company_name=company_name,
                 capabilities_text=capabilities_text,
-                capabilities=capabilities,
+                capabilities=capabilities,  # Now a list of strings
                 matches=[],
                 avg_score=0,
                 pages_scraped=pages_scraped,
@@ -163,6 +181,10 @@ async def quick_start_from_url(request: QuickStartURLRequest):
             # Enrich with code names
             enriched_result = code_service.enrich_contract(result)
             
+            # ✅ PURE CAPABILITY SCORE (0-100%)
+            raw_score = enriched_result.get("score", 0)  # Pinecone score (0-1)
+            display_score = round(raw_score * 100)  # Convert to 0-100
+            
             matches.append({
                 "notice_id": enriched_result.get("notice_id", ""),
                 "title": enriched_result.get("title", ""),
@@ -181,9 +203,9 @@ async def quick_start_from_url(request: QuickStartURLRequest):
                 "posted_date": enriched_result.get("posted_date"),
                 "source_url": enriched_result.get("url"),
                 
-                # ✅ PURE CAPABILITY SCORE (0-100%)
-                "score": round(enriched_result.get("score", 0) * 100),  # Convert 0-1 to 0-100
-                "match_score": enriched_result.get("score", 0),  # Keep raw for consistency
+                # Scores
+                "score": display_score,  # 0-100 for display
+                "match_score": raw_score,  # 0-1 raw score
             })
         
         # Sort by score descending
@@ -197,6 +219,7 @@ async def quick_start_from_url(request: QuickStartURLRequest):
         
         logger.info(f"✅ Returning top 20 matches (pure capability scoring)")
         logger.info(f"📊 Average match score: {avg_score}%")
+        logger.info(f"   Top 3 scores: {[m['score'] for m in final_matches[:3]]}")
         
         # ============================================================
         # Return results
@@ -205,7 +228,7 @@ async def quick_start_from_url(request: QuickStartURLRequest):
             success=True,
             company_name=company_name,
             capabilities_text=capabilities_text,
-            capabilities=capabilities,
+            capabilities=capabilities,  # Now a clean list of strings
             matches=final_matches,
             avg_score=avg_score,
             pages_scraped=pages_scraped,
@@ -228,5 +251,6 @@ async def health_check():
     return {
         "status": "healthy",
         "feature": "URL Quick-Start",
-        "scoring_approach": "Pure capability similarity (Opus approach)"
+        "scoring_approach": "Pure capability similarity (Opus approach)",
+        "version": "2.0"
     }
