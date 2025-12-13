@@ -10,9 +10,14 @@ logger = logging.getLogger(__name__)
 class ContractMatchScorer:
     """
     Calculate personalized match scores for contracts based on:
-    - Capability similarity (semantic matching)
-    - Past win patterns (agency/value matching)
-    - Search preferences (filters and keywords)
+    - Capability similarity (semantic matching) - PRIMARY SCORE
+    - Past win patterns (for intelligence badges, not scoring)
+    - Search preferences (filters and context)
+    
+    OPUS PURE CAPABILITY APPROACH:
+    - match_score = capability_similarity (no weighted average)
+    - Missing data (past wins, prefs) = no penalty
+    - Win intelligence computed separately for badges
     """
     
     def __init__(self, db: Session, vector_client):
@@ -36,17 +41,22 @@ class ContractMatchScorer:
         firm_id: str, 
         capability_vectors: Optional[Dict] = None,
         contract_vectors: Optional[Dict] = None,
-        past_win_vectors: Optional[Dict[str, List[float]]] = None  # ✅ ADD THIS
-
+        past_win_vectors: Optional[Dict[str, List[float]]] = None
     ) -> Optional[Dict]:
         """
         Calculate comprehensive match score for a contract.
+        
+        PURE CAPABILITY SCORING (Opus approach):
+        - match_score = capability_similarity only
+        - No weighted average, no penalties for missing data
+        - Past wins and preferences computed separately for context
         
         Args:
             contract: Contract to score
             firm_id: Company identifier
             capability_vectors: Pre-fetched capability vectors {capability_id: vector}
             contract_vectors: Pre-fetched contract vectors {contract_id: vector}
+            past_win_vectors: Pre-fetched past win vectors {pinecone_id: vector}
         
         Returns:
             Dict with scores and reasons, or None if filtered out
@@ -70,11 +80,14 @@ class ContractMatchScorer:
                 contract, 
                 profile,
                 capability_vectors,
-                contract_vectors  # NEW: Pass pre-fetched contract vectors
+                contract_vectors
             )
             past_win_score = self._calculate_past_win_score(contract, profile, past_win_vectors)
             preference_score = self._calculate_preference_score(contract, profile)
             
+            # ✅ PURE CAPABILITY SCORING (Opus approach)
+            # Match score = capability similarity ONLY
+            # Missing data (past wins, prefs) = no penalty
             match_score = capability_score
             
             # Generate match reasons
@@ -87,7 +100,7 @@ class ContractMatchScorer:
             )
             
             return {
-                # New fields
+                # New fields (pure capability)
                 "match_score": round(match_score, 2),           # 0.0 - 1.0
                 "display_score": round(match_score * 100),      # 0 - 100 for UI
                 
@@ -110,11 +123,13 @@ class ContractMatchScorer:
         contract: Contract, 
         profile: CompanyProfile,
         capability_vectors: Optional[Dict] = None,
-        contract_vectors: Optional[Dict] = None  # NEW: Pre-fetched contract vectors
+        contract_vectors: Optional[Dict] = None
     ) -> float:
         """
         Calculate semantic similarity between contract and company capabilities.
         Uses pre-fetched vectors when available for performance.
+        
+        OPUS APPROACH: Use BEST capability match (not average)
         """
         try:
             capabilities = profile.capabilities
@@ -153,7 +168,6 @@ class ContractMatchScorer:
                 return 0.0
             
             # Get capability vectors (use pre-fetched if available)
-            # FIXED: Check if capability_vectors is not None instead of truthiness
             if capability_vectors is not None:
                 capabilities_data = capability_vectors
                 logger.debug(f"Using pre-fetched capability vectors: {len(capabilities_data)} capabilities")
@@ -196,22 +210,18 @@ class ContractMatchScorer:
                 logger.warning(f"No similarity scores calculated for contract {contract.notice_id}")
                 return 0.0
             
-            # Average similarity across all capabilities
-            avg_similarity = float(np.mean(similarities))
+            # ✅ OPUS APPROACH: Use BEST capability match (not average)
+            # Rationale: Show contracts that match ANY strong capability
+            best_similarity = float(np.max(similarities))
             
-            logger.debug(f"Capability score: {avg_similarity:.3f} (from {len(similarities)} capabilities)")
+            logger.debug(f"Capability score: {best_similarity:.3f} (best of {len(similarities)} capabilities)")
             
-            return avg_similarity
+            return best_similarity
             
         except Exception as e:
             logger.error(f"Error calculating capability score: {str(e)}", exc_info=True)
             return 0.0
     
-    
-    # ========== UPDATED _calculate_past_win_score METHOD ==========
-# In app/services/match_scoring.py
-# Replace the entire _calculate_past_win_score method (around lines 195-320) with this:
-
     def _calculate_past_win_score(
         self, 
         contract: Contract, 
@@ -222,13 +232,7 @@ class ContractMatchScorer:
         Calculate semantic similarity between contract and past wins.
         Uses Pinecone embeddings for accurate matching instead of keywords.
         
-        Args:
-            contract: Contract to score
-            profile: CompanyProfile with past_wins relationship
-            past_win_vectors: Optional pre-fetched vectors {pinecone_id: vector}
-        
-        Returns:
-            Score from 0.0 to 1.0 representing best past win match
+        NOTE: This is for intelligence badges, NOT for the match score.
         """
         try:
             past_wins = profile.past_wins
@@ -318,6 +322,8 @@ class ContractMatchScorer:
         """
         Score based on how well contract matches search preferences.
         Higher score for preferred regions and keyword matches.
+        
+        NOTE: This is for intelligence badges, NOT for the match score.
         """
         try:
             prefs = profile.search_preference
@@ -385,13 +391,13 @@ class ContractMatchScorer:
         reasons = []
         
         try:
-            # Capability matches
+            # Capability matches (PRIMARY)
             if capability_score > 0.7:
                 reasons.append("Strong capability match - your expertise aligns well with this contract")
             elif capability_score > 0.5:
                 reasons.append("Good capability match - relevant to your services")
             
-            # Past win patterns
+            # Past win patterns (CONTEXT ONLY)
             if past_win_score > 0.7:
                 past_wins = profile.past_wins
                 matching_agency = any(
@@ -407,7 +413,7 @@ class ContractMatchScorer:
             elif past_win_score > 0.4:
                 reasons.append("Similar to your past contract wins")
             
-            # Preference matches
+            # Preference matches (CONTEXT ONLY)
             if preference_score > 0.7 and profile.search_preference:
                 prefs = profile.search_preference
                 
@@ -477,7 +483,7 @@ class ContractMatchScorer:
                     "category": "capabilities",
                     "priority": "high",
                     "message": "Add capabilities to start getting personalized matches",
-                    "impact": "Enables capability scoring (50% of match score)"
+                    "impact": "Enables capability scoring (100% of match score)"
                 })
             elif capabilities_count < 3:
                 recommendations.append({
@@ -487,25 +493,18 @@ class ContractMatchScorer:
                     "impact": "Improves capability coverage and matching accuracy"
                 })
             
-            # Check past wins
+            # Check past wins (for intelligence badges, not scoring)
             past_wins_count = len(profile.past_wins) if profile.past_wins else 0
             
             if past_wins_count == 0:
                 recommendations.append({
                     "category": "past_wins",
-                    "priority": "medium",
-                    "message": "Add past contract wins to improve agency and value matching",
-                    "impact": "Enhances past win scoring (25% of match score)"
-                })
-            elif past_wins_count < 3:
-                recommendations.append({
-                    "category": "past_wins",
                     "priority": "low",
-                    "message": "Add more past wins to identify patterns in your successful contracts",
-                    "impact": "Better prediction of suitable opportunities"
+                    "message": "Add past contract wins to see agency relationship badges",
+                    "impact": "Shows which agencies you've worked with (doesn't affect match score)"
                 })
             
-            # Check preferences
+            # Check preferences (for filtering, not scoring)
             if not profile.search_preference:
                 recommendations.append({
                     "category": "preferences",
@@ -513,24 +512,6 @@ class ContractMatchScorer:
                     "message": "Set search preferences to filter out irrelevant contracts",
                     "impact": "Reduces noise and focuses on relevant opportunities"
                 })
-            else:
-                prefs = profile.search_preference
-                
-                if not prefs.preferred_regions:
-                    recommendations.append({
-                        "category": "preferences",
-                        "priority": "low",
-                        "message": "Add preferred regions to prioritize local opportunities",
-                        "impact": "Improves preference scoring (25% of match score)"
-                    })
-                
-                if not prefs.keywords:
-                    recommendations.append({
-                        "category": "preferences",
-                        "priority": "low",
-                        "message": "Add keywords to highlight contracts with specific terms",
-                        "impact": "Better filtering and relevance scoring"
-                    })
             
             # Sort by priority
             priority_order = {"high": 0, "medium": 1, "low": 2}

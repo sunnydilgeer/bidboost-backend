@@ -1170,12 +1170,19 @@ async def get_recommended_contracts(
     current_user: User = Depends(get_current_active_user),
     db: Session = Depends(get_db)
 ) -> ContractSearchResponse:
-    """Get personalized contract recommendations with match scoring"""
+    """
+    Get personalized contract recommendations with match scoring.
+    
+    OPUS PURE CAPABILITY APPROACH:
+    - match_score = capability similarity only
+    - No weighted average, no penalties for missing data
+    - Checks cache first, falls back to real-time scoring
+    """
     try:
-        USE_CACHE = False  # ← ADD THIS LINE
+        USE_CACHE = False  # ← Set to True after testing
         cached_matches = None  # ✅ Initialize it!
-
-        if USE_CACHE:  # ← CHANGE THIS
+        
+        if USE_CACHE:
             cached_matches = db.query(CachedContractMatch)\
                 .filter(CachedContractMatch.firm_id == current_user.firm_id)\
                 .order_by(CachedContractMatch.rank)\
@@ -1205,7 +1212,7 @@ async def get_recommended_contracts(
         from app.core.config import settings
         from app.services.code_lookup import get_code_lookup_service, clean_naics_code
         from app.services.capability_store_pinecone import get_capability_store
-        from app.services.past_win_store_pinecone import get_past_win_store  # ✅ NEW
+        from app.services.past_win_store_pinecone import get_past_win_store
         
         llm_service = get_llm_service()
         code_service = get_code_lookup_service()
@@ -1252,7 +1259,7 @@ async def get_recommended_contracts(
         pinecone = PineconeStoreService(api_key=settings.PINECONE_API_KEY)
         results = pinecone.search_contracts(
             query_vector=query_vector,
-            limit=min(limit * 2, 20),  # Cap at 30 to avoid over-fetching
+            limit=min(limit * 2, 40),  # Cap at 40 to avoid over-fetching
             min_score=0.42,  # Higher threshold = fewer contracts to score
             namespace="contracts"
         )
@@ -1275,7 +1282,7 @@ async def get_recommended_contracts(
             capabilities_data = cap_store.get_capabilities_batch(capability_ids_to_fetch)
             logger.info(f"Pre-fetched {len(capabilities_data)} capability vectors")
         
-        # ✅ NEW: Pre-fetch past win vectors
+        # Pre-fetch past win vectors
         past_wins_data = {}
         past_wins = company.past_wins if company.past_wins else []
         if past_wins:
@@ -1296,7 +1303,7 @@ async def get_recommended_contracts(
                 fetch_result = pinecone.index.fetch(ids=contract_ids, namespace="contracts")
                 
                 for vec_id, vec_data in fetch_result.vectors.items():
-                    contract_vectors[vec_id] = list(vec_data.values)  # ✅ Convert to list
+                    contract_vectors[vec_id] = list(vec_data.values)
                 
                 logger.info(f"✅ Pre-fetched {len(contract_vectors)} contract vectors in one batch")
             except Exception as e:
@@ -1328,7 +1335,7 @@ async def get_recommended_contracts(
                 current_user.firm_id, 
                 capability_vectors=capabilities_data,
                 contract_vectors=contract_vectors,
-                past_win_vectors=past_wins_data  # ✅ NEW: Pass past win vectors
+                past_win_vectors=past_wins_data
             )
             
             # Skip if filtered out
@@ -1372,7 +1379,7 @@ async def get_recommended_contracts(
                 suitable_for_sme=None,
                 suitable_for_vco=None,
                 match_scores=match_scores,
-                total_match_score=match_scores["match_score"],
+                total_match_score=match_scores["match_score"],  # ✅ PURE CAPABILITY SCORE
                 match_reasons=match_scores.get("match_reasons", [])
             ))
             
@@ -1380,7 +1387,7 @@ async def get_recommended_contracts(
             if len(search_results) >= limit:
                 break
         
-        # Sort by match score
+        # Sort by match score (PURE CAPABILITY)
         search_results.sort(key=lambda x: x.total_match_score or 0, reverse=True)
         search_results = search_results[:limit]
         
@@ -1411,7 +1418,14 @@ async def search_contracts(
     current_user: User = Depends(get_current_active_user),
     db: Session = Depends(get_db)
 ) -> ContractSearchResponse:
-    """Search SAM.gov contracts using Pinecone semantic search"""
+    """
+    Search SAM.gov contracts using Pinecone semantic search.
+    
+    OPUS PURE CAPABILITY APPROACH:
+    - match_score = capability similarity only
+    - No weighted average, no boosts
+    - Same scoring as dashboard and quick-start
+    """
     try:
         from app.services.pinecone_store import PineconeStoreService
         from app.core.config import settings 
@@ -1425,7 +1439,7 @@ async def search_contracts(
         # Generate query embedding
         query_vector = await llm_service.generate_embeddings(search_request.query)
         
-        # ✅ Initialize Pinecone ONCE at the top
+        # Initialize Pinecone ONCE at the top
         pinecone = PineconeStoreService(api_key=settings.PINECONE_API_KEY)
         
         # Build Pinecone filters
@@ -1457,11 +1471,11 @@ async def search_contracts(
         # PERFORMANCE OPTIMIZATION: Pre-fetch capability vectors AND contract vectors if scoring is enabled
         capabilities_data = {}
         contract_vectors = {}
-        past_wins_data = {}  # ✅ NEW
+        past_wins_data = {}
         
         if scorer:
             from app.services.capability_store_pinecone import get_capability_store
-            from app.services.past_win_store_pinecone import get_past_win_store  # ✅ NEW
+            from app.services.past_win_store_pinecone import get_past_win_store
             
             # Get company capabilities
             company = db.query(CompanyProfile).filter(
@@ -1476,7 +1490,7 @@ async def search_contracts(
                     capabilities_data = cap_store.get_capabilities_batch(capability_ids)
                     logger.info(f"[/search] Pre-fetched {len(capabilities_data)} capability vectors")
             
-            # ✅ NEW: Pre-fetch past win vectors
+            # Pre-fetch past win vectors
             if company and company.past_wins:
                 win_store = get_past_win_store()
                 past_win_ids = [win.pinecone_id for win in company.past_wins if win.pinecone_id]
@@ -1485,7 +1499,7 @@ async def search_contracts(
                     past_wins_data = win_store.get_past_wins_batch(past_win_ids)
                     logger.info(f"[/search] Pre-fetched {len(past_wins_data)} past win vectors")
             
-            # ALSO pre-fetch all contract vectors in one batch
+            # Pre-fetch all contract vectors in one batch
             contract_ids = [r.get("id") for r in results if r.get("id")]
             
             if contract_ids:
@@ -1493,7 +1507,7 @@ async def search_contracts(
                     fetch_result = pinecone.index.fetch(ids=contract_ids, namespace="contracts")
                     
                     for vec_id, vec_data in fetch_result.vectors.items():
-                        contract_vectors[vec_id] = list(vec_data.values)  # ✅ Convert to list
+                        contract_vectors[vec_id] = list(vec_data.values)
                     
                     logger.info(f"[/search] Pre-fetched {len(contract_vectors)} contract vectors")
                 except Exception as e:
@@ -1561,18 +1575,18 @@ async def search_contracts(
                     current_user.firm_id, 
                     capability_vectors=capabilities_data,
                     contract_vectors=contract_vectors,
-                    past_win_vectors=past_wins_data  # ✅ NEW: Pass past win vectors
+                    past_win_vectors=past_wins_data
                 )
                 
                 if match_scores:
                     contract_result.match_scores = match_scores
-                    contract_result.total_match_score = match_scores["match_score"]
+                    contract_result.total_match_score = match_scores["match_score"]  # ✅ PURE CAPABILITY SCORE
                     contract_result.match_reasons = match_scores.get("match_reasons", [])
                     search_results.append(contract_result)
             else:
                 search_results.append(contract_result)
         
-        # Sort by match score if enabled
+        # Sort by match score if enabled (PURE CAPABILITY)
         if include_match_scores:
             search_results.sort(key=lambda x: x.total_match_score or 0, reverse=True)
         
@@ -1588,6 +1602,7 @@ async def search_contracts(
     except Exception as e:
         logger.error(f"Search failed: {str(e)}", exc_info=True)
         raise HTTPException(status_code=500, detail=f"Search failed: {str(e)}")
+
 # ========== CONTRACT DETAILS ROUTE ==========
 
 @router.get("/contracts/saved", response_model=SavedContractsListResponse)
