@@ -1369,7 +1369,7 @@ async def get_recommended_contracts(
                 suitable_for_sme=None,
                 suitable_for_vco=None,
                 match_scores=match_scores,
-                total_match_score=match_scores["total_score"],
+                total_match_score=match_scores["match_score"],
                 match_reasons=match_scores.get("match_reasons", [])
             ))
             
@@ -1563,7 +1563,7 @@ async def search_contracts(
                 
                 if match_scores:
                     contract_result.match_scores = match_scores
-                    contract_result.total_match_score = match_scores["total_score"]
+                    contract_result.total_match_score = match_scores["match_score"]
                     contract_result.match_reasons = match_scores.get("match_reasons", [])
                     search_results.append(contract_result)
             else:

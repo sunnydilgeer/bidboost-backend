@@ -73,15 +73,9 @@ class ContractMatchScorer:
                 contract_vectors  # NEW: Pass pre-fetched contract vectors
             )
             past_win_score = self._calculate_past_win_score(contract, profile, past_win_vectors)
-
             preference_score = self._calculate_preference_score(contract, profile)
             
-            # Weighted average: Capability (50%), Past Wins (25%), Preferences (25%)
-            total_score = (
-                capability_score * 0.5 +
-                past_win_score * 0.25 +
-                preference_score * 0.25
-            )
+            match_score = capability_score
             
             # Generate match reasons
             match_reasons = self._generate_match_reasons(
@@ -93,11 +87,18 @@ class ContractMatchScorer:
             )
             
             return {
-                "total_score": round(total_score, 2),
+                # New fields
+                "match_score": round(match_score, 2),           # 0.0 - 1.0
+                "display_score": round(match_score * 100),      # 0 - 100 for UI
+                
+                # Component scores (keep for analytics/debugging)
                 "capability_score": round(capability_score, 2),
                 "past_win_score": round(past_win_score, 2),
                 "preference_score": round(preference_score, 2),
-                "match_reasons": match_reasons
+                "match_reasons": match_reasons,
+                
+                # Legacy field for backward compatibility
+                "total_score": round(match_score, 2),
             }
             
         except Exception as e:
