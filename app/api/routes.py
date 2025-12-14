@@ -1179,7 +1179,7 @@ async def get_recommended_contracts(
     - Checks cache first, falls back to real-time scoring
     """
     try:
-        USE_CACHE = False  # ← Set to True after testing
+        USE_CACHE = True  # ← Set to True after testing
         cached_matches = None  # ✅ Initialize it!
         
         if USE_CACHE:
@@ -2594,3 +2594,26 @@ async def extract_capabilities_from_url(
         "company_name": scrape_result["company_name"],
         "pages_scraped": scrape_result["pages_scraped"]
     }
+
+@router.post("/admin/refresh-match-cache")
+async def refresh_match_cache(
+    firm_id: str = None,
+    current_user: User = Depends(get_current_active_user)
+):
+    """Manually refresh contract match cache (sync, not background)"""
+    from app.services.match_cache_service import MatchCacheService
+    
+    try:
+        service = MatchCacheService()
+        
+        if firm_id:
+            service.run_cache_update(firm_ids=[firm_id])
+            return {"success": True, "message": f"Cache refreshed for {firm_id}"}
+        else:
+            # Refresh for current user's firm
+            service.run_cache_update(firm_ids=[current_user.firm_id])
+            return {"success": True, "message": f"Cache refreshed for {current_user.firm_id}"}
+            
+    except Exception as e:
+        logger.error(f"Cache refresh failed: {e}", exc_info=True)
+        raise HTTPException(status_code=500, detail=str(e))
