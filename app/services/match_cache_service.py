@@ -176,6 +176,7 @@ class MatchCacheService:
             cached_match = CachedContractMatch(
                 firm_id=firm.firm_id,
                 notice_id=contract.notice_id,
+                pinecone_id=result.id,
                 title=contract.title,
                 buyer_name=contract.buyer_name,
                 description=contract.description,
