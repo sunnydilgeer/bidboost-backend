@@ -1,6 +1,9 @@
 """
 Pinecone Vector Store Service for SAM.GOV contracts
 Maps new JSON schema to existing API schema for backward compatibility
+
+UPDATES:
+- Added naics_name field support
 """
 from typing import List, Dict, Any, Optional
 from pinecone import Pinecone
@@ -53,20 +56,20 @@ class PineconeStoreService:
                         "agency": safe_str(payload.get("agency")),
                         "office": safe_str(payload.get("office")),
                         "description": safe_str(payload.get("description"))[:1000],
-                        # MAP: naics → naics_code (existing code expects naics_code)
-                        "naics_code": safe_str(payload.get("naics")),
-                        # MAP: psc → psc_code (existing code expects psc_code)
-                        "psc_code": safe_str(payload.get("psc")),
+                        # NAICS: now supports both code and name
+                        "naics_code": safe_str(payload.get("naics_code") or payload.get("naics")),
+                        "naics_name": safe_str(payload.get("naics_name")),
+                        # PSC
+                        "psc_code": safe_str(payload.get("psc_code") or payload.get("psc")),
+                        "psc_name": safe_str(payload.get("psc_name")),
                         "set_aside": safe_str(payload.get("set_aside")),
                         "state": safe_str(payload.get("state")),
                         "city": safe_str(payload.get("city")),
                         "posted_date": safe_str(payload.get("posted_date")),
                         "response_deadline": safe_str(payload.get("response_deadline")),
-                        # MAP: source_url → url (existing code expects url)
-                        "url": safe_str(payload.get("source_url")),
+                        "url": safe_str(payload.get("url") or payload.get("source_url")),
                         "contact_email": safe_str(payload.get("contact_email")),
                         "contact_name": safe_str(payload.get("contact_name")),
-                        # Solicitations don't have contract values yet (TBD after award)
                         "contract_value": 0.0,
                     }
                 })
@@ -125,8 +128,12 @@ class PineconeStoreService:
                         "agency": match.metadata.get("agency"),
                         "office": match.metadata.get("office"),
                         "description": match.metadata.get("description"),
+                        # NAICS: return both code and name
                         "naics_code": match.metadata.get("naics_code"),
+                        "naics_name": match.metadata.get("naics_name"),
+                        # PSC
                         "psc_code": match.metadata.get("psc_code"),
+                        "psc_name": match.metadata.get("psc_name"),
                         "set_aside": match.metadata.get("set_aside"),
                         "state": match.metadata.get("state"),
                         "city": match.metadata.get("city"),
@@ -156,12 +163,10 @@ class PineconeStoreService:
             stats = self.index.describe_index_stats()
             
             if namespace:
-                # Count specific namespace
                 count = stats.namespaces.get(namespace, {}).get('vector_count', 0)
                 logger.info(f"📊 Namespace '{namespace}' has {count} vectors")
                 return count
             else:
-                # Total across all namespaces
                 total = stats.total_vector_count
                 logger.info(f"📊 Pinecone index has {total} total vectors")
                 return total

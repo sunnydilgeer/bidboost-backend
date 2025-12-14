@@ -2,6 +2,11 @@
 SAM.gov Contract Notice Details Ingestion Script
 Ingests opportunities from Contract_Notice_Details.csv into Pinecone
 
+UPDATES:
+- Added NAICS reverse lookup (description → 6-digit code)
+- Fixed SAM.gov URLs to use search instead of broken direct links
+- Stores both naics_code and naics_name
+
 Usage:
     python ingest_contract_notice_details.py Contract_Notice_Details.csv [--clear-existing]
 """
@@ -13,7 +18,10 @@ import hashlib
 import argparse
 from datetime import datetime
 from typing import Generator
+from pathlib import Path
 import re
+import json
+import urllib.parse
 
 from dotenv import load_dotenv
 from pinecone import Pinecone
@@ -25,25 +33,110 @@ load_dotenv()
 
 # Configuration
 PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
-PINECONE_INDEX_NAME = os.getenv("PINECONE_INDEX_NAME", "contracts")  # Update with your index name
+PINECONE_INDEX_NAME = os.getenv("PINECONE_INDEX_NAME", "contracts")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 EMBEDDING_MODEL = "text-embedding-3-small"  # 768 dimensions
 EMBEDDING_DIMENSIONS = 768
 BATCH_SIZE = 100  # Vectors to upsert per batch
 EMBEDDING_BATCH_SIZE = 50  # Texts to embed per API call
 
-# Biddable opportunity types (from your analyzer)
+# Biddable opportunity types
 BIDDABLE_TYPES = {
     "Combined Synopsis/Solicitation",
     "Solicitation",
 }
 
-# Pipeline types (optional - include if you want presolicitations)
+# Pipeline types (optional)
 PIPELINE_TYPES = {
     "Presolicitation",
     "Sources Sought",
 }
 
+
+# ============================================================
+# NAICS REVERSE LOOKUP
+# ============================================================
+
+def load_naics_reverse_lookup() -> dict:
+    """
+    Load NAICS codes from naics_codes.json and create description → code mapping.
+    This allows us to get the 6-digit code from the description in the CSV.
+    """
+    # Try multiple possible paths for naics_codes.json
+    possible_paths = [
+        Path(__file__).parent / "app" / "data" / "naics_codes.json",
+        Path(__file__).parent / "data" / "naics_codes.json",
+        Path(__file__).parent / "naics_codes.json",
+        Path("app/data/naics_codes.json"),
+        Path("data/naics_codes.json"),
+    ]
+    
+    naics_path = None
+    for path in possible_paths:
+        if path.exists():
+            naics_path = path
+            break
+    
+    if not naics_path:
+        print("⚠️  naics_codes.json not found, NAICS codes will not be resolved")
+        print("   Searched paths:", [str(p) for p in possible_paths])
+        return {}
+    
+    try:
+        with open(naics_path, 'r') as f:
+            naics_codes = json.load(f)  # {"541519": "Other Computer Related Services", ...}
+        
+        # Create reverse lookup: description (lowercase) → code
+        reverse = {}
+        for code, description in naics_codes.items():
+            if description:
+                reverse[description.lower().strip()] = code
+        
+        print(f"✅ Loaded {len(reverse)} NAICS codes from {naics_path}")
+        return reverse
+        
+    except Exception as e:
+        print(f"⚠️  Failed to load naics_codes.json: {e}")
+        return {}
+
+
+def get_naics_code_from_description(description: str, reverse_lookup: dict) -> str:
+    """
+    Look up NAICS 6-digit code from description.
+    
+    Args:
+        description: NAICS description from CSV (e.g., "Other Computer Related Services")
+        reverse_lookup: Dict mapping lowercase descriptions to codes
+        
+    Returns:
+        6-digit NAICS code (e.g., "541519") or empty string if not found
+    """
+    if not description or not reverse_lookup:
+        return ""
+    
+    desc_lower = description.lower().strip()
+    
+    # Exact match
+    if desc_lower in reverse_lookup:
+        return reverse_lookup[desc_lower]
+    
+    # Partial match (CSV descriptions might be truncated)
+    for full_desc, code in reverse_lookup.items():
+        # Check if one contains the other
+        if desc_lower in full_desc or full_desc in desc_lower:
+            return code
+        
+        # Check if first 50 chars match (handles truncation)
+        if len(desc_lower) > 20 and len(full_desc) > 20:
+            if desc_lower[:50] == full_desc[:50]:
+                return code
+    
+    return ""  # No match found
+
+
+# ============================================================
+# HELPER FUNCTIONS
+# ============================================================
 
 def clean_html(text: str) -> str:
     """Remove HTML tags and clean up text."""
@@ -64,13 +157,12 @@ def parse_date(date_str: str) -> str:
     if not date_str:
         return ""
     
-    # Try common formats
     formats = [
-        "%b %d, %Y %I:%M %p UTC",  # "Jan 31, 2025 12:00 PM UTC"
+        "%b %d, %Y %I:%M %p UTC",
         "%b %d, %Y %H:%M %p UTC",
-        "%Y-%m-%d %H:%M:%S.%f%z",  # "2025-12-03 23:19:52.723-05"
-        "%Y-%m-%dT%H:%M:%S%z",     # ISO format with timezone
-        "%Y-%m-%d",                 # Simple date
+        "%Y-%m-%d %H:%M:%S.%f%z",
+        "%Y-%m-%dT%H:%M:%S%z",
+        "%Y-%m-%d",
     ]
     
     for fmt in formats:
@@ -80,13 +172,30 @@ def parse_date(date_str: str) -> str:
         except ValueError:
             continue
     
-    # Return original if parsing fails
     return date_str
 
 
 def generate_notice_hash(notice_id: str) -> str:
     """Generate a consistent hash for a notice ID (for Pinecone vector ID)."""
     return hashlib.md5(notice_id.encode()).hexdigest()
+
+
+def create_sam_gov_url(notice_id: str) -> str:
+    """
+    Create a working SAM.gov URL for a contract.
+    
+    Direct links like sam.gov/opp/{notice_id}/view don't work because
+    SAM.gov uses internal UUIDs, not Notice IDs. Instead, we create
+    a search URL that finds the contract by its Notice ID.
+    """
+    if not notice_id:
+        return ""
+    
+    # URL-encode the notice ID for safety
+    encoded_id = urllib.parse.quote(notice_id, safe='')
+    
+    # Use SAM.gov search with the notice ID as keyword
+    return f"https://sam.gov/search/?keywords={encoded_id}&sort=-modifiedDate&index=opp&is_active=true"
 
 
 def create_embedding_text(row: dict) -> str:
@@ -99,7 +208,6 @@ def create_embedding_text(row: dict) -> str:
     
     description = clean_html(row.get("Description", ""))
     if description:
-        # Truncate very long descriptions
         if len(description) > 2000:
             description = description[:2000] + "..."
         parts.append(f"Description: {description}")
@@ -129,17 +237,40 @@ def create_embedding_text(row: dict) -> str:
     return "\n".join(parts)
 
 
-def create_metadata(row: dict) -> dict:
-    """Create Pinecone metadata from CSV row."""
+def create_metadata(row: dict, naics_reverse_lookup: dict) -> dict:
+    """
+    Create Pinecone metadata from CSV row.
+    
+    Args:
+        row: CSV row dict
+        naics_reverse_lookup: Dict for looking up NAICS codes from descriptions
+    """
     notice_id = row.get("Notice ID", "").strip()
+    
+    # Get NAICS description from CSV
+    naics_description = row.get("NAICS", "").strip()
+    
+    # Look up the 6-digit code from the description
+    naics_code = get_naics_code_from_description(naics_description, naics_reverse_lookup)
+    
+    # Log if we couldn't find a code (helps identify missing mappings)
+    if naics_description and not naics_code:
+        # Only log unique missing codes (avoid spam)
+        pass  # Could add logging here if needed
     
     return {
         "notice_id": notice_id,
         "title": row.get("Opportunity Title", "").strip(),
         "agency": row.get("Sub Tier Name", "").strip(),
         "office": row.get("Contracting Office", "").strip(),
-        "naics_code": row.get("NAICS", "").strip(),
+        
+        # NAICS: Now stores both code and name
+        "naics_code": naics_code,  # 6-digit code like "541519"
+        "naics_name": naics_description,  # Full description
+        
+        # PSC code (keeping as-is since PSC column has descriptions too)
         "psc_code": row.get("PSC", "").strip(),
+        
         "set_aside": row.get("Current Set Aside", "").strip(),
         "state": row.get("Place of Performance - State", "").strip(),
         "city": row.get("Place of Performance - City", "").strip(),
@@ -147,9 +278,12 @@ def create_metadata(row: dict) -> dict:
         "posted_date": parse_date(row.get("Last Published Date", "")),
         "contact_name": row.get("POC Name", "").strip(),
         "contact_email": row.get("POC Email", "").strip(),
-        "contract_value": 0,  # Not in new CSV, default to 0
-        "description": clean_html(row.get("Description", ""))[:1000],  # Truncate for metadata
-        "url": f"https://sam.gov/opp/{notice_id}/view" if notice_id else "",
+        "contract_value": 0,
+        "description": clean_html(row.get("Description", ""))[:1000],
+        
+        # URL: Now uses search URL that actually works
+        "url": create_sam_gov_url(notice_id),
+        
         "opportunity_type": row.get("Contract Opportunity Type", "").strip(),
         "status": row.get("Status", "").strip(),
     }
@@ -173,15 +307,12 @@ def read_csv_opportunities(
             status = row.get("Status", "").strip().lower()
             notice_id = row.get("Notice ID", "").strip()
             
-            # Skip if no notice ID
             if not notice_id:
                 continue
             
-            # Filter by opportunity type
             if opp_type not in allowed_types:
                 continue
             
-            # Only include active opportunities
             if status != "active":
                 continue
             
@@ -208,7 +339,6 @@ def clear_index(index, namespace: str = "") -> int:
     """Clear all vectors from the specified namespace."""
     stats = index.describe_index_stats()
     
-    # Get count for specific namespace
     if namespace and namespace in stats.namespaces:
         total = stats.namespaces[namespace].vector_count
     elif not namespace:
@@ -222,10 +352,7 @@ def clear_index(index, namespace: str = "") -> int:
         return 0
     
     print(f"Clearing {total} vectors from namespace '{namespace}'...")
-    
-    # Delete all vectors in specified namespace
     index.delete(delete_all=True, namespace=namespace)
-    
     print(f"✅ Cleared {total} vectors")
     return total
 
@@ -282,6 +409,11 @@ def main():
     print(f"🔧 Embedding Model: {EMBEDDING_MODEL} ({EMBEDDING_DIMENSIONS} dims)")
     print()
     
+    # Load NAICS reverse lookup
+    print("📖 Loading NAICS code mappings...")
+    naics_reverse_lookup = load_naics_reverse_lookup()
+    print()
+    
     # Initialize clients
     print("🔌 Connecting to Pinecone and OpenAI...")
     pc = Pinecone(api_key=PINECONE_API_KEY)
@@ -313,11 +445,22 @@ def main():
     # Prepare data
     print("🔨 Preparing embedding texts and metadata...")
     records = []
+    naics_found = 0
+    naics_missing = 0
+    missing_naics_descriptions = set()
+    
     for row in tqdm(opportunities, desc="Preparing"):
         notice_id = row.get("Notice ID", "").strip()
         vector_id = generate_notice_hash(notice_id)
         embedding_text = create_embedding_text(row)
-        metadata = create_metadata(row)
+        metadata = create_metadata(row, naics_reverse_lookup)
+        
+        # Track NAICS lookup success
+        if metadata["naics_code"]:
+            naics_found += 1
+        elif metadata["naics_name"]:
+            naics_missing += 1
+            missing_naics_descriptions.add(metadata["naics_name"])
         
         records.append({
             "id": vector_id,
@@ -326,6 +469,13 @@ def main():
         })
     
     print(f"   Prepared {len(records)} records")
+    print(f"   NAICS codes found: {naics_found}")
+    print(f"   NAICS codes missing: {naics_missing}")
+    
+    if missing_naics_descriptions and len(missing_naics_descriptions) <= 10:
+        print(f"   Missing NAICS mappings for:")
+        for desc in list(missing_naics_descriptions)[:10]:
+            print(f"      - {desc[:60]}...")
     print()
     
     if args.dry_run:
@@ -333,7 +483,9 @@ def main():
         print("\nSample record:")
         print(f"  ID: {records[0]['id']}")
         print(f"  Text preview: {records[0]['text'][:200]}...")
-        print(f"  Metadata: {records[0]['metadata']}")
+        print(f"  Metadata:")
+        for key, value in records[0]['metadata'].items():
+            print(f"    {key}: {value}")
         return
     
     # Generate embeddings and upsert in batches
@@ -344,16 +496,13 @@ def main():
         list(batch_generator(records, BATCH_SIZE)), 
         desc="Uploading batches"
     ):
-        # Get embeddings for this batch
         texts = [r["text"] for r in batch]
         
-        # Process embeddings in smaller sub-batches
         all_embeddings = []
         for text_batch in batch_generator(texts, EMBEDDING_BATCH_SIZE):
             embeddings = get_embeddings(text_batch, openai_client)
             all_embeddings.extend(embeddings)
         
-        # Prepare vectors for upsert
         vectors = [
             {
                 "id": batch[i]["id"],
@@ -363,7 +512,6 @@ def main():
             for i in range(len(batch))
         ]
         
-        # Upsert to Pinecone
         index.upsert(vectors=vectors, namespace=args.namespace)
         total_uploaded += len(vectors)
     
@@ -372,8 +520,8 @@ def main():
     print("✅ INGESTION COMPLETE")
     print("=" * 70)
     print(f"   Total uploaded: {total_uploaded} vectors")
+    print(f"   NAICS codes resolved: {naics_found}/{naics_found + naics_missing}")
     
-    # Show final stats
     stats = index.describe_index_stats()
     print(f"   Index total: {stats.total_vector_count} vectors")
     if args.namespace and args.namespace in stats.namespaces:
