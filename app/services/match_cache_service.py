@@ -116,7 +116,8 @@ class MatchCacheService:
             vector=first_cap_vector,
             namespace="contracts",
             top_k=500,
-            include_metadata=True
+            include_metadata=True,
+            include_values=True
         )
         
         # Score each contract
