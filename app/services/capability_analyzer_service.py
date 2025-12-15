@@ -367,9 +367,8 @@ Focus on: technical specificity, federal frameworks, concrete deliverables."""
     ) -> str:
         """Build the prompt for OpenAI capability analysis"""
         
-        frameworks_list = ", ".join(patterns.get("frameworks", {}).keys()[:8])
-        agencies_list = ", ".join(patterns.get("agencies", {}).keys()[:5])
-        
+        frameworks_list = ", ".join(list(patterns.get("frameworks", {}).keys())[:8])
+        agencies_list = ", ".join(list(patterns.get("agencies", {}).keys())[:5])
         return f"""Analyze this company's capabilities against federal contract patterns and generate 3-5 improvement recommendations.
 
 CURRENT CAPABILITIES:
