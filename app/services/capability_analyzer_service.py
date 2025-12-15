@@ -313,9 +313,9 @@ class CapabilityAnalyzerService:
                 patterns
             )
             
-            # Call OpenAI
+            # Call OpenAI GPT-5.2 Thinking
             response = await self.openai_client.chat.completions.create(
-                model="gpt-4o",
+                model="gpt-5.2-thinking",  # Latest GPT-5.2 for complex reasoning
                 messages=[
                     {
                         "role": "system",
@@ -369,6 +369,7 @@ Focus on: technical specificity, federal frameworks, concrete deliverables."""
         
         frameworks_list = ", ".join(list(patterns.get("frameworks", {}).keys())[:8])
         agencies_list = ", ".join(list(patterns.get("agencies", {}).keys())[:5])
+        
         return f"""Analyze this company's capabilities against federal contract patterns and generate 3-5 improvement recommendations.
 
 CURRENT CAPABILITIES:
