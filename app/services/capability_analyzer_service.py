@@ -445,8 +445,9 @@ CRITICAL INSTRUCTIONS:
    - keywords: Array of key terms (e.g., ["continuous monitoring", "control evidence", "ATO"])
    
 2. EXTRACT EVIDENCE SNIPPETS:
-   - For each recommendation, include 1-2 SHORT phrases (10-20 words) from typical solicitations
-   - Format: {{"snippet_text": "...", "context": "DoD cloud security"}}
+   - For each recommendation, include 1-2 SHORT phrases (10-15 words MAXIMUM) from typical solicitations
+   - Focus on DELIVERABLE language (e.g., "develop and maintain SSPs, POA&Ms, and control evidence")
+   - Format: {{"snippet_text": "short phrase under 15 words", "context": "DoD cloud security"}}
    
 3. PRIORITIZATION:
    - high: Missing critical federal frameworks/deliverables
@@ -458,15 +459,16 @@ CRITICAL INSTRUCTIONS:
    - If adding: set related_existing_capability_index to null
 
 5. DIAGNOSIS (choose one):
-   - "missing_delivery_artifacts": Strong in concepts, weak in deliverables/outputs
-   - "missing_federal_frameworks": Lacks NIST/RMF/FedRAMP terminology
-   - "too_generic": Broad statements without technical specificity
-   - "strong_but_narrow": Good depth but limited coverage
+   - "missing_delivery_artifacts": Strong strategic positioning with opportunities to strengthen federal delivery language and compliance artifacts
+   - "missing_federal_language": Strong strategic positioning with opportunities to strengthen federal delivery language and compliance artifacts
+   - "too_generic": Clear positioning with opportunities to add specificity and operational deliverables
+   - "strong_but_narrow": Strong alignment in core areas with opportunities to expand coverage across adjacent requirements
+   - "well_aligned": Well-aligned positioning for federal opportunities
    
 6. Return JSON in this EXACT format:
 {{
   "diagnosis": "missing_delivery_artifacts",
-  "diagnosis_detail": "Strong in strategy language, weak in delivery artifacts and compliance deliverables",
+  "diagnosis_detail": "Strong strategic positioning with opportunities to strengthen federal delivery language and compliance artifacts",
   "recommendations": [
     {{
       "capability_statement": "One clear sentence describing the capability",
@@ -566,7 +568,7 @@ Remember:
                 "related_existing_capabilities": [],
                 "recommended_action": action,
                 "ui_hints": {
-                    "primary_cta": "I offer this → Add capability" if action == "add" else "Enhance capability",
+                    "primary_cta": "I offer this → Add capability" if action == "add" else "Update my capability",
                     "secondary_cta": "Not relevant"  # NEW: Dismissal option
                 }
             }
