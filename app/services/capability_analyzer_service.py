@@ -81,13 +81,17 @@ class CapabilityAnalyzerService:
             # Classify profile state
             profile_state = await self._classify_profile_state(profile, capability_patterns)
             
-            # Generate recommendations
-            recommendations = await self._generate_recommendations(
+            # Generate recommendations (returns dict with diagnosis and recommendations)
+            result = await self._generate_recommendations(
                 profile,
                 near_miss_contracts,
                 capability_patterns,
                 max_recommendations
             )
+            
+            recommendations = result.get("recommendations", [])
+            diagnosis = result.get("diagnosis", profile_state)
+            diagnosis_detail = result.get("diagnosis_detail", profile_state)
             
             return {
                 "analysis_context": {
@@ -95,7 +99,8 @@ class CapabilityAnalyzerService:
                     "capabilities_analyzed": len(profile.capabilities or []),
                     "contracts_analyzed": len(near_miss_contracts),
                     "analysis_basis": "near_match_contracts",
-                    "profile_diagnosis": profile_state
+                    "profile_diagnosis": diagnosis,
+                    "profile_diagnosis_detail": diagnosis_detail
                 },
                 "recommendations": recommendations[:max_recommendations]
             }
@@ -313,12 +318,14 @@ class CapabilityAnalyzerService:
                 patterns
             )
             
-            response = await self.openai_client.chat.completions.create(
-                model="gpt-5.2",  
-                messages=[
-                    {
-                        "role": "system",
-                        "content": """You are a federal contracting expert analyzing capability gaps.
+            # Call OpenAI with GPT-5.2, fallback to GPT-4o if not available
+            try:
+                response = await self.openai_client.chat.completions.create(
+                    model="gpt-5.2-instant",  # Try GPT-5.2 Instant first
+                    messages=[
+                        {
+                            "role": "system",
+                            "content": """You are a federal contracting expert analyzing capability gaps.
 
 CRITICAL RULES:
 1. Generate SAVE-READY capability statements (complete sentences, grammatically correct)
@@ -330,12 +337,41 @@ CRITICAL RULES:
 7. Return ONLY valid JSON with no markdown formatting
 
 Focus on: technical specificity, federal frameworks, concrete deliverables."""
-                    },
-                    {"role": "user", "content": prompt}
-                ],
-                temperature=0.3,
-                response_format={"type": "json_object"}
-            )
+                        },
+                        {"role": "user", "content": prompt}
+                    ],
+                    temperature=0.3,
+                    response_format={"type": "json_object"}
+                )
+            except Exception as e:
+                if "model_not_found" in str(e) or "does not exist" in str(e):
+                    logger.warning(f"GPT-5.2 not available, falling back to GPT-4o: {e}")
+                    # Fallback to GPT-4o
+                    response = await self.openai_client.chat.completions.create(
+                        model="gpt-4o",  # Fallback to GPT-4o
+                        messages=[
+                            {
+                                "role": "system",
+                                "content": """You are a federal contracting expert analyzing capability gaps.
+
+CRITICAL RULES:
+1. Generate SAVE-READY capability statements (complete sentences, grammatically correct)
+2. Ground every recommendation in actual contract language patterns
+3. Prefer ENHANCING existing capabilities over adding new ones
+4. Use federal terminology (frameworks, standards, agencies)
+5. Write in professional capability statement format
+6. NO marketing fluff or buzzwords
+7. Return ONLY valid JSON with no markdown formatting
+
+Focus on: technical specificity, federal frameworks, concrete deliverables."""
+                            },
+                            {"role": "user", "content": prompt}
+                        ],
+                        temperature=0.3,
+                        response_format={"type": "json_object"}
+                    )
+                else:
+                    raise  # Re-raise if it's a different error
             
             result_text = response.choices[0].message.content.strip()
             
@@ -343,6 +379,9 @@ Focus on: technical specificity, federal frameworks, concrete deliverables."""
             import json
             result = json.loads(result_text)
             
+            # Extract diagnosis information
+            diagnosis = result.get("diagnosis", "analyzed")
+            diagnosis_detail = result.get("diagnosis_detail", "Analysis complete")
             recommendations = result.get("recommendations", [])
             
             # Validate and enrich each recommendation
@@ -352,11 +391,19 @@ Focus on: technical specificity, federal frameworks, concrete deliverables."""
                 if validated_rec:
                     validated_recs.append(validated_rec)
             
-            return validated_recs
+            return {
+                "diagnosis": diagnosis,
+                "diagnosis_detail": diagnosis_detail,
+                "recommendations": validated_recs
+            }
         
         except Exception as e:
             logger.error(f"Error generating recommendations: {e}", exc_info=True)
-            return []
+            return {
+                "diagnosis": "error",
+                "diagnosis_detail": "Unable to complete analysis",
+                "recommendations": []
+            }
     
     def _build_analysis_prompt(
         self,
@@ -369,6 +416,13 @@ Focus on: technical specificity, federal frameworks, concrete deliverables."""
         frameworks_list = ", ".join(list(patterns.get("frameworks", {}).keys())[:8])
         agencies_list = ", ".join(list(patterns.get("agencies", {}).keys())[:5])
         
+        # Get sample contract snippets for evidence
+        sample_snippets = []
+        for contract in contracts[:5]:
+            title = contract.get('title', '')[:100]
+            agency = contract.get('agency', 'Federal Agency')
+            sample_snippets.append(f"[{agency}] {title}")
+        
         return f"""Analyze this company's capabilities against federal contract patterns and generate 3-5 improvement recommendations.
 
 CURRENT CAPABILITIES:
@@ -379,39 +433,67 @@ CONTRACT PATTERNS:
 - Top agencies: {agencies_list}
 - Total contracts analyzed: {patterns.get('total_contracts', 0)}
 
-SAMPLE CONTRACTS (titles):
-{chr(10).join(f"- {c['title'][:150]}" for c in contracts[:10])}
+SAMPLE CONTRACT TITLES (for evidence):
+{chr(10).join(sample_snippets)}
 
-INSTRUCTIONS:
-1. Identify 3-5 specific capability gaps or enhancement opportunities
-2. For each recommendation:
-   - Write a COMPLETE, SAVE-READY capability statement (1-2 sentences)
-   - Identify if this enhances an existing capability or adds a new one
-   - Provide qualitative evidence (e.g., "Common in DoD cybersecurity solicitations")
-   - Assign priority (high/medium/low) based on frequency in contracts
-   - Suggest appropriate category
+CRITICAL INSTRUCTIONS:
 
-3. Prioritize:
-   - Missing federal frameworks/standards over generic terms
-   - Enhancement of existing capabilities over new additions
-   - Specific technical language over broad descriptions
+1. STRUCTURE EACH RECOMMENDATION:
+   - capability_statement: ONE clear sentence (15-25 words max)
+   - deliverables: Array of concrete outputs (e.g., ["SSP", "POA&M", "SAR", "ISBP"])
+   - frameworks_standards: Array of federal frameworks (e.g., ["RMF", "NIST 800-53", "FedRAMP"])
+   - keywords: Array of key terms (e.g., ["continuous monitoring", "control evidence", "ATO"])
+   
+2. EXTRACT EVIDENCE SNIPPETS:
+   - For each recommendation, include 1-2 SHORT phrases (10-20 words) from typical solicitations
+   - Format: {{"snippet_text": "...", "context": "DoD cloud security"}}
+   
+3. PRIORITIZATION:
+   - high: Missing critical federal frameworks/deliverables
+   - medium: Under-specified or needs more technical detail
+   - low: Optional coverage expansion
 
-4. Return JSON in this EXACT format:
+4. ENHANCE vs ADD:
+   - If enhancing: identify which existing capability (by index 0-based)
+   - If adding: set related_existing_capability_index to null
+
+5. DIAGNOSIS (choose one):
+   - "missing_delivery_artifacts": Strong in concepts, weak in deliverables/outputs
+   - "missing_federal_frameworks": Lacks NIST/RMF/FedRAMP terminology
+   - "too_generic": Broad statements without technical specificity
+   - "strong_but_narrow": Good depth but limited coverage
+   
+6. Return JSON in this EXACT format:
 {{
+  "diagnosis": "missing_delivery_artifacts",
+  "diagnosis_detail": "Strong in strategy language, weak in delivery artifacts and compliance deliverables",
   "recommendations": [
     {{
-      "suggested_capability_text": "Complete capability statement here",
+      "capability_statement": "One clear sentence describing the capability",
+      "deliverables": ["SSP", "POA&M", "SAR"],
+      "frameworks_standards": ["RMF", "NIST 800-53"],
+      "keywords": ["continuous monitoring", "control evidence"],
       "category": "Category name",
       "recommendation_type": "missing_capability" or "under_specified_capability" or "overly_generic_capability",
       "priority": "high" or "medium" or "low",
-      "evidence_summary": "Brief qualitative evidence (no numbers)",
-      "related_existing_capability_index": null or index number (0-based),
+      "evidence_snippets": [
+        {{
+          "snippet_text": "Short 10-20 word phrase from typical solicitation",
+          "context": "DoD cloud security solicitations"
+        }}
+      ],
+      "related_existing_capability_index": null or 0,
       "action": "add" or "enhance"
     }}
   ]
 }}
 
-Remember: These must be SAVE-READY - grammatically correct, professionally written capability statements."""
+Remember: 
+- Capability statements must be SAVE-READY (grammatically correct, professional)
+- Deliverables = tangible outputs (documents, reports, plans)
+- Frameworks = standards/methodologies (RMF, NIST, FedRAMP, CMMC)
+- Keywords = key technical terms that appear in solicitations
+- Evidence snippets = actual language from contracts (10-20 words max each)"""
     
     def _validate_recommendation(
         self,
@@ -423,41 +505,69 @@ Remember: These must be SAVE-READY - grammatically correct, professionally writt
         """Validate and enrich a recommendation to match the required schema"""
         
         try:
-            # Extract fields
-            capability_text = rec.get("suggested_capability_text", "")
+            # Extract fields from new chip-based format
+            statement = rec.get('capability_statement', '')
+            deliverables = rec.get('deliverables', [])
+            frameworks = rec.get('frameworks_standards', [])
+            keywords = rec.get('keywords', [])
+            snippets = rec.get('evidence_snippets', [])
             category = rec.get("category", "General")
             rec_type = rec.get("recommendation_type", "missing_capability")
             priority = rec.get("priority", "medium")
-            evidence = rec.get("evidence_summary", "Appears in analyzed contracts")
             related_idx = rec.get("related_existing_capability_index")
             action = rec.get("action", "add")
             
-            # Validate capability text
-            if not capability_text or len(capability_text) < 20:
-                logger.warning(f"Recommendation {rec_index} has invalid capability text")
+            # Validate capability statement
+            if not statement or len(statement) < 20:
+                logger.warning(f"Recommendation {rec_index} has invalid capability statement")
                 return None
+            
+            # Build full capability text for backward compatibility (used in "Add" action)
+            # Format: statement only (chips displayed separately in UI)
+            capability_text = statement
+            
+            # Build evidence from snippets
+            evidence_list = []
+            for snippet in snippets:
+                snippet_text = snippet.get('snippet_text', '')
+                context = snippet.get('context', '')
+                if snippet_text:
+                    # Format: snippet (context)
+                    evidence_list.append(f"{snippet_text} ({context})" if context else snippet_text)
+            
+            # Fallback evidence if no snippets provided
+            if not evidence_list:
+                if frameworks:
+                    evidence_list.append(f"Common in federal solicitations requiring {', '.join(frameworks[:2])}")
+                else:
+                    evidence_list.append("Common in federal contracting solicitations")
             
             # Build recommendation following the schema
             recommendation = {
                 "id": f"cap_rec_{rec_index}",
                 "type": "capability_gap",
                 "priority": priority,
-                "confidence": 0.8,  # Fixed confidence for now
+                "confidence": 0.8,
                 "recommendation_category": rec_type,
                 "suggested_capability": {
-                    "capability_text": capability_text,
+                    "capability_text": capability_text,  # Full text for adding
+                    "capability_statement": statement,  # NEW: Just the core sentence
+                    "deliverables": deliverables,  # NEW: Chip array
+                    "frameworks_standards": frameworks,  # NEW: Chip array
+                    "keywords": keywords,  # NEW: Chip array
                     "category": category,
-                    "naics_code": None  # Could be derived but optional
+                    "naics_code": None
                 },
                 "why_this_matters": {
-                    "summary": evidence,
-                    "evidence": [evidence]  # Qualitative evidence in words
+                    "summary": evidence_list[0] if evidence_list else "Improves federal contract alignment",
+                    "evidence": evidence_list,
+                    "snippets": snippets  # NEW: Raw snippet objects for detailed view
                 },
                 "related_existing_capabilities": [],
                 "recommended_action": action,
                 "ui_hints": {
-                    "primary_cta": "Enhance capability" if action == "enhance" else "Add capability",
-                    "secondary_cta": "Edit existing" if related_idx is not None else None
+                    "primary_cta": "I offer this → Add capability" if action == "add" else "Enhance capability",
+                    "secondary_cta": "Not relevant"  # NEW: Dismissal option
                 }
             }
             
