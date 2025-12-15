@@ -315,7 +315,7 @@ class CapabilityAnalyzerService:
             
             # Call OpenAI GPT-5.2 Thinking
             response = await self.openai_client.chat.completions.create(
-                model="gpt-5.2-thinking",  # Latest GPT-5.2 for complex reasoning
+                model="gpt-5.2-instant",  # Latest GPT-5.2 for complex reasoning
                 messages=[
                     {
                         "role": "system",
