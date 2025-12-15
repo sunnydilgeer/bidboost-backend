@@ -12,6 +12,7 @@ from app.auth.register import router as register_router
 from app.auth.login import router as login_router
 from app.database import init_db, engine
 from app.routers import company
+from app.routers import capability_recommendations
 from app.services.sam_link_resolver import router as sam_link_router
 from app.api.quickstart_url import router as quickstart_url_router  # Fixed path
 from contextlib import asynccontextmanager
@@ -143,6 +144,8 @@ app.include_router(debug_router)
 app.include_router(quickstart_url_router)  # Added
 app.include_router(leads_router)  # Add this line with other routers
 app.include_router(sam_link_router, prefix="/api")
+app.include_router(capability_recommendations.router)
+
 
 logger.info("✓ All routes registered")
 
