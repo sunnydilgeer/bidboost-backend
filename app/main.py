@@ -1,4 +1,12 @@
 from fastapi import FastAPI
+from app.api import stripe_billing
+from app.api.session import router as session_router
+from fastapi import Request
+from fastapi import status
+from fastapi.responses import JSONResponse
+from app.core.paywall import UpgradeRequired
+from app.api.stripe_billing import router as stripe_billing_router
+from app.models.subscription import FirmSubscription
 from app.api.leads import router as leads_router
 from fastapi.middleware.cors import CORSMiddleware
 from app.middleware.audit import AuditMiddleware
@@ -145,6 +153,9 @@ app.include_router(quickstart_url_router)  # Added
 app.include_router(leads_router)  # Add this line with other routers
 app.include_router(sam_link_router, prefix="/api")
 app.include_router(capability_recommendations.router)
+app.include_router(stripe_billing_router)
+app.include_router(session_router, prefix="/api")
+
 
 
 logger.info("✓ All routes registered")
@@ -413,6 +424,20 @@ async def get_sync_status():
             "message": "Failed to get sync status"
         }
 
+@app.exception_handler(UpgradeRequired)
+async def upgrade_required_handler(request: Request, exc: UpgradeRequired):
+    """
+    Standard paywall response.
+    Raised by routes when a firm/user needs to upgrade for a feature.
+    """
+    return JSONResponse(
+        status_code=status.HTTP_403_FORBIDDEN,
+        content={
+            "error": "upgrade_required",
+            "feature": getattr(exc, "feature", None),
+            "message": str(exc) if str(exc) else "Upgrade required to access this feature",
+        },
+    )
 
 @app.get("/admin/scheduler-status", tags=["Admin"])
 async def get_scheduler_status():

@@ -4,6 +4,7 @@ Models package - All SQLAlchemy models
 from sqlalchemy import Column, Integer, String, DateTime, Text, Boolean, Index, ForeignKey
 from sqlalchemy.dialects.postgresql import JSONB
 from sqlalchemy.orm import relationship
+from app.models.subscription import FirmSubscription
 from datetime import datetime
 from app.database import Base
 
@@ -118,6 +119,7 @@ __all__ = [
     "PastWin",
     "SearchPreference",
     "SavedContract",
+    "FirmSubscription",
     
     # Lead capture (imported from lead.py)
     "PreSignupLead"

@@ -32,7 +32,11 @@ def get_db():
         db.close()
 
 def init_db():
-    """Create all database tables"""
-    # Import all models here so SQLAlchemy knows about them
-    import app.models  # This registers the models with Base
+    """Create all database tables (dev only; prod uses Alembic)"""
+    import app.models  # register models
+
+    env = os.getenv("ENVIRONMENT", "development").lower()
+    if env in ("prod", "production"):
+        return  # Don't create tables in prod
+
     Base.metadata.create_all(bind=engine)

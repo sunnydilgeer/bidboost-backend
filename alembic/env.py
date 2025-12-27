@@ -5,6 +5,7 @@ from alembic import context
 import os
 import sys
 from dotenv import load_dotenv
+from app.models.subscription import FirmSubscription
 
 # Add your app directory to the path
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
@@ -14,14 +15,7 @@ load_dotenv()
 
 # Import your models
 from app.database import Base
-from app.models.company import (
-    CompanyProfile, 
-    CompanyCapability, 
-    PastWin, 
-    SearchPreference, 
-    SavedContract
-)
-from app.models import User
+import app.models  
 
 # Alembic Config object
 config = context.config

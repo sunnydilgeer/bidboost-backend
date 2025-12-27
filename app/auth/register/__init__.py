@@ -2,16 +2,16 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from pydantic import BaseModel, EmailStr, Field
 from app.core.auth import create_user, create_access_token
+from app.core.entitlements import get_or_create_subscription  # ✅ ADDED
 from app.database import get_db
 
 router = APIRouter(tags=["Authentication"])
 
-# Updated UserCreate model to accept firm_name
 class UserCreate(BaseModel):
     email: EmailStr
     password: str = Field(..., min_length=8)
     full_name: str
-    firm_name: str  # User-friendly firm name instead of firm_id
+    firm_name: str
 
 @router.post("/register")
 async def register(user_data: UserCreate, db: Session = Depends(get_db)):
@@ -25,23 +25,27 @@ async def register(user_data: UserCreate, db: Session = Depends(get_db)):
             db=db,
             email=user_data.email,
             password=user_data.password,
-            firm_id=firm_id,  # Auto-generated ID
+            firm_id=firm_id,
             full_name=user_data.full_name
         )
         
-        # Store the user-friendly firm name in the database
+        # Store the user-friendly firm name
         db_user.firm_name = user_data.firm_name
         db.commit()
         db.refresh(db_user)
         
-        # Create JWT token
+        # ✅ ADDED: Create subscription (defaults to starter)
+        subscription = get_or_create_subscription(db, db_user.firm_id)
+        
+        # Create JWT token with plan included
         access_token = create_access_token(
             data={
                 "sub": db_user.email,
                 "user_id": db_user.id,
                 "firm_id": db_user.firm_id,
                 "role": db_user.role,
-                "name": db_user.full_name
+                "name": db_user.full_name,
+                "plan": subscription.plan  # ✅ ADDED
             }
         )
         

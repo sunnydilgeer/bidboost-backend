@@ -1,10 +1,14 @@
 import asyncio
 from fastapi import BackgroundTasks
 from app.core.config import settings
+from app.core.entitlements import get_entitlements
+from app.core.paywall import UpgradeRequired, require_entitlement
+from app.models.subscription import FirmSubscription
 from app.services.contract_fetcher import ContractFetcherService
 from app.services.match_scoring import ContractMatchScorer
 from app.services.past_win_store_pinecone import get_past_win_store
 from app.models.contract import Contract
+from app.routers import capability_recommendations
 from app.models import User as DBUser
 from app.api.debug_routes import debug_router  # Import the real one
 from app.models.company import CompanyProfile, CompanyCapability, PastWin, SearchPreference, CachedContractMatch
@@ -318,6 +322,35 @@ async def check_qdrant_status():
             "status": "❌ Qdrant connection failed"
         }
 
+@router.get("/billing/entitlements", tags=["Billing"])
+async def billing_entitlements(
+    current_user: User = Depends(get_current_active_user),
+    db: Session = Depends(get_db)
+):
+    """Return server-authoritative plan + entitlements for this firm."""
+    
+    # ✅ ADD LOGGING
+    import logging
+    logger = logging.getLogger(__name__)
+    
+    logger.info(f"🔍 Entitlements requested for user: {current_user.email}")
+    logger.info(f"🔍 User's firm_id: {current_user.firm_id}")
+    
+    # Check what's in the database
+    from app.models.subscription import FirmSubscription
+    sub = db.query(FirmSubscription).filter(
+        FirmSubscription.firm_id == current_user.firm_id
+    ).first()
+    
+    if sub:
+        logger.info(f"🔍 Database shows: firm_id={sub.firm_id}, plan={sub.plan}")
+    else:
+        logger.info(f"⚠️ No subscription found in database!")
+    
+    result = get_entitlements(db, current_user.firm_id)
+    logger.info(f"🔍 Returning entitlements: {result}")
+    
+    return result
 
 # ========== USER INFO ROUTE ==========
 
@@ -456,6 +489,8 @@ async def send_test_email(
 
 
 
+
+
 # ========== COMPANY PROFILE ROUTES ==========
 
 @router.get("/company/profile", response_model=CompanyProfileResponse)
@@ -573,7 +608,7 @@ async def update_company_profile_endpoint(
             detail=f"Failed to update profile: {str(e)}"
         )
 
-@router.get("/capabilities")
+@router.get("/capabilities", dependencies=[Depends(require_entitlement("capability_management"))])
 async def get_capabilities(
     current_user: User = Depends(get_current_active_user),
     db: Session = Depends(get_db)
@@ -604,7 +639,7 @@ async def get_capabilities(
             detail=f"Failed to retrieve capabilities: {str(e)}"
         )
 
-@router.post("/capabilities")
+@router.post("/capabilities", dependencies=[Depends(require_entitlement("capability_management"))])
 async def add_capability(
     capability: CapabilityCreate,
     current_user: User = Depends(get_current_active_user),
@@ -661,7 +696,7 @@ async def add_capability(
             detail=f"Failed to add capability: {str(e)}"
         )
 
-@router.put("/capabilities/{capability_id}")
+@router.put("/capabilities/{capability_id}", dependencies=[Depends(require_entitlement("capability_management"))])
 async def update_capability(
     capability_id: int,
     capability: CapabilityUpdate,
@@ -731,7 +766,7 @@ async def update_capability(
             detail=f"Failed to update capability: {str(e)}"
         )
 
-@router.delete("/capabilities/{capability_id}")
+@router.delete("/capabilities/{capability_id}", dependencies=[Depends(require_entitlement("capability_management"))])
 async def delete_capability(
     capability_id: int,
     current_user: User = Depends(get_current_active_user),
@@ -1614,7 +1649,7 @@ async def get_saved_contracts(
     """Get all saved contracts for the current user, optionally filtered by status"""
     try:
         query = db.query(SavedContract).filter(
-            SavedContract.user_email == current_user.email
+            SavedContract.firm_id == current_user.firm_id
         )
         
         # Apply status filter if provided
@@ -1883,21 +1918,35 @@ async def save_contract(
     current_user: User = Depends(get_current_active_user),
     db: Session = Depends(get_db)
 ):
-    """Save a contract to user's saved list"""
+    """Save a contract to user's saved list (Starter capped, Pro unlimited)."""
     try:
-        # Check if already saved
+        # ✅ Paywall: firm-level saved contract cap for Starter
+        ent = get_entitlements(db, current_user.firm_id)
+        limit = ent.get("saved_contract_limit")
+
+        if limit is not None:
+            firm_count = db.query(SavedContract).filter(
+                SavedContract.firm_id == current_user.firm_id
+            ).count()
+            if firm_count >= limit:
+                # Standard paywall error (handled by main.py exception handler)
+                raise UpgradeRequired(
+                    feature="saved_contract_limit",
+                    message="Upgrade to Pro for unlimited saved contracts."
+                )
+
+        # Check if already saved (per-user unique constraint in your DB)
         existing = db.query(SavedContract).filter(
             SavedContract.user_email == current_user.email,
             SavedContract.notice_id == request.notice_id
         ).first()
-        
+
         if existing:
             raise HTTPException(
                 status_code=status.HTTP_400_BAD_REQUEST,
                 detail="Contract already saved"
             )
-        
-        # Create new saved contract
+
         saved_contract = SavedContract(
             user_email=current_user.email,
             firm_id=current_user.firm_id,
@@ -1906,22 +1955,25 @@ async def save_contract(
             buyer_name=request.buyer_name,
             contract_value=request.contract_value,
             deadline=request.deadline,
-            status="interested"  # Just hardcode it
+            status="interested"
         )
-        
+
         db.add(saved_contract)
         db.commit()
         db.refresh(saved_contract)
-        
+
         logger.info(f"User {current_user.email} saved contract {request.notice_id}")
-        
+
         return {
             "success": True,
             "message": "Contract saved successfully",
             "id": saved_contract.id
         }
-        
+
     except HTTPException:
+        raise
+    except UpgradeRequired:
+        # let the global handler format the JSON
         raise
     except Exception as e:
         logger.error(f"Failed to save contract: {str(e)}")
@@ -1930,7 +1982,6 @@ async def save_contract(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"Failed to save contract: {str(e)}"
         )
-
 
 @router.delete("/contracts/save/{notice_id:path}")  # ✅ Added :path to accept slashes
 async def unsave_contract(
@@ -2029,7 +2080,10 @@ async def setup_qdrant_indexes():
         }
 
 
-@router.put("/contracts/save/{notice_id:path}/status")  # ✅ Added :path
+@router.put(
+    "/contracts/save/{notice_id:path}/status",
+    dependencies=[Depends(require_entitlement("pipeline_tracking"))]
+)
 async def update_contract_status(
     notice_id: str,
     request: UpdateContractStatusRequest,
@@ -2226,7 +2280,10 @@ async def sync_fts_manually(
     result = await sync_fts_contracts()
     return result
 
-@router.get("/user/match-improvement-recommendations")
+@router.get(
+    "/user/match-improvement-recommendations",
+    dependencies=[Depends(require_entitlement("capability_management"))]
+)
 async def get_match_recommendations(
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_active_user)
@@ -2566,7 +2623,7 @@ async def embed_existing_past_wins(db: Session = Depends(get_db)):
         db.rollback()
         raise HTTPException(status_code=500, detail=str(e))
 
-@router.post("/capabilities/extract-from-url")
+@router.post("/capabilities/extract-from-url", dependencies=[Depends(require_entitlement("capability_management"))])
 async def extract_capabilities_from_url(
     company_url: str,
     current_user: User = Depends(get_current_active_user),
@@ -2617,3 +2674,30 @@ async def refresh_match_cache(
     except Exception as e:
         logger.error(f"Cache refresh failed: {e}", exc_info=True)
         raise HTTPException(status_code=500, detail=str(e))
+
+class PlanUpdate(BaseModel):
+    plan: str  # "starter" | "pro"
+
+@router.post("/admin/firms/{firm_id}/plan", tags=["Admin"])
+async def admin_set_plan(
+    firm_id: str,
+    payload: PlanUpdate,
+    current_user: User = Depends(get_current_active_user),
+    db: Session = Depends(get_db)
+):
+    """Admin-only: flip firm plan between starter/pro for testing."""
+    if current_user.role != "admin":
+        raise HTTPException(status_code=403, detail="Admin only")
+
+    if payload.plan not in ("starter", "pro"):
+        raise HTTPException(status_code=400, detail="Invalid plan")
+
+    sub = db.query(FirmSubscription).filter(FirmSubscription.firm_id == firm_id).first()
+    if not sub:
+        sub = FirmSubscription(firm_id=firm_id, plan=payload.plan)
+        db.add(sub)
+    else:
+        sub.plan = payload.plan
+
+    db.commit()
+    return {"success": True, "firm_id": firm_id, "plan": payload.plan}

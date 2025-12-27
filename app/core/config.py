@@ -42,7 +42,10 @@ class Settings(BaseSettings):
     PINECONE_API_KEY: Optional[str] = None
     USE_PINECONE: bool = False
     PINECONE_INDEX_NAME: str = "contracts"
-
+    SAM_API_KEY: Optional[str] = None  
+    STRIPE_SECRET_KEY: str
+    STRIPE_WEBHOOK_SECRET: str = ""  # Can be empty initially
+    STRIPE_PRO_PRICE_ID: str
     
     class Config:
         env_file = ".env"

@@ -7,83 +7,98 @@ import logging
 
 logger = logging.getLogger(__name__)
 
+
 class AuditMiddleware(BaseHTTPMiddleware):
     async def dispatch(self, request: Request, call_next):
-        print(f"🔍 Audit middleware triggered: {request.method} {request.url.path}")
+        path = request.url.path
+        method = request.method
+
+        # ✅ IMPORTANT: Skip Stripe webhooks entirely.
+        # Stripe signature verification requires the raw body bytes to be untouched.
+        if path.startswith("/api/api/billing/webhook") or path.startswith("/api/billing/webhook"):
+            return await call_next(request)
+
+        print(f"🔍 Audit middleware triggered: {method} {path}")
         start_time = time.time()
-        
+
         # Get user info from request state (set by auth middleware)
         user_id = getattr(request.state, "user_id", None)
         firm_id = getattr(request.state, "firm_id", None)
-        
+
         print(f"   User ID: {user_id}, Firm ID: {firm_id}")
-        
+
         # Skip audit logging for health/docs endpoints
         skip_paths = ["/health", "/ready", "/docs", "/redoc", "/openapi.json", "/favicon.ico"]
-        if any(request.url.path.startswith(path) for path in skip_paths):
+        if any(path.startswith(p) for p in skip_paths):
             return await call_next(request)
-        
+
         # Process request
         response = await call_next(request)
-        
-        # Log ALL requests (not just authenticated ones)
+
         latency_ms = int((time.time() - start_time) * 1000)
-        action = self._determine_action(request.method, request.url.path)
-        
+        action = self._determine_action(method, path)
+
         print(f"   Logging action: {action}, Status: {response.status_code}")
-        
-        # Log to database
+
+        db = None
         try:
             db = SessionLocal()
             audit_entry = AuditLog(
-                user_id=user_id if user_id else None,  # Changed: allow NULL
-                firm_id=firm_id if firm_id else None,  # Changed: allow NULL
+                user_id=user_id if user_id else None,
+                firm_id=firm_id if firm_id else None,
                 action=action,
-                resource_type=self._extract_resource_type(request.url.path),
+                resource_type=self._extract_resource_type(path),
                 details={
-                    "method": request.method,
-                    "path": request.url.path,
+                    "method": method,
+                    "path": path,
                     "status_code": response.status_code,
                     "latency_ms": latency_ms,
-                    "user_email": user_id  # user_id is actually the email
+                    "user_email": user_id,  # user_id is actually the email
                 },
                 ip_address=request.client.host if request.client else "unknown",
-                user_agent=request.headers.get("user-agent", "")
+                user_agent=request.headers.get("user-agent", ""),
             )
             db.add(audit_entry)
             db.commit()
-            print(f"   ✅ Audit log saved successfully")
+            print("   ✅ Audit log saved successfully")
         except Exception as e:
-            logger.error(f"❌ Audit logging failed: {e}")
+            logger.exception(f"❌ Audit logging failed: {e}")
             print(f"   ❌ Audit logging failed: {e}")
+            if db:
+                db.rollback()
         finally:
-            db.close()
-        
+            if db:
+                db.close()
+
         return response
-    
+
     def _determine_action(self, method: str, path: str) -> str:
         """Map HTTP method + path to action name"""
         if "/auth/login" in path:
             return "user_login"
-        elif "/auth/register" in path:
+        if "/auth/register" in path:
             return "user_register"
-        elif "/documents/upload" in path:
+        if "/documents/upload" in path:
             return "document_upload"
-        elif "/documents" in path and method == "DELETE":
+        if "/documents" in path and method == "DELETE":
             return "document_delete"
-        elif "/query" in path:
+        if "/query" in path:
             return "query_executed"
-        else:
-            return f"{method.lower()}_{path.split('/')[-1]}"
-    
+
+        # Default: method + last segment
+        last = path.rstrip("/").split("/")[-1] or "root"
+        return f"{method.lower()}_{last}"
+
     def _extract_resource_type(self, path: str) -> str:
         """Extract resource type from path"""
         if "/auth" in path:
             return "auth"
-        elif "/documents" in path:
+        if "/documents" in path:
             return "document"
-        elif "/query" in path:
+        if "/query" in path:
             return "query"
-        elif "/conversations" in path:
+        if "/conversations" in path:
             return "conversation"
+        if "/billing" in path:
+            return "billing"
         return "unknown"

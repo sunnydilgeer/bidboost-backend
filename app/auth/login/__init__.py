@@ -3,6 +3,7 @@ from sqlalchemy.orm import Session
 from pydantic import BaseModel, EmailStr
 from datetime import timedelta
 from app.core.auth import authenticate_user, create_access_token, ACCESS_TOKEN_EXPIRE_MINUTES
+from app.core.entitlements import get_or_create_subscription  # ✅ ADDED
 from app.database import get_db
 
 router = APIRouter(tags=["Authentication"])
@@ -23,14 +24,18 @@ async def login(credentials: LoginRequest, db: Session = Depends(get_db)):
             headers={"WWW-Authenticate": "Bearer"},
         )
     
-    # Create JWT token
+    # ✅ ADDED: Get user's current plan
+    subscription = get_or_create_subscription(db, user.firm_id)
+    
+    # Create JWT token with plan included
     access_token = create_access_token(
         data={
             "sub": user.email,
             "user_id": user.id,
             "firm_id": user.firm_id,
             "role": user.role,
-            "name": user.full_name
+            "name": user.full_name,
+            "plan": subscription.plan  # ✅ ADDED
         },
         expires_delta=timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
     )

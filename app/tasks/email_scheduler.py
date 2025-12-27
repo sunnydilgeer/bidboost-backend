@@ -1,6 +1,6 @@
 """
-Email Scheduler - US Federal Version
-Supports both Qdrant (localhost) and Pinecone (production)
+Email Scheduler - US Federal Version with Distributed Locking
+Prevents duplicate job execution across multiple Railway instances
 
 Location: app/tasks/email_scheduler.py
 """
@@ -9,6 +9,8 @@ from apscheduler.triggers.cron import CronTrigger
 from datetime import datetime, timedelta
 from typing import List, Dict
 import logging
+import redis
+import os
 
 from app.services.email_service import email_service
 from app.database import SessionLocal
@@ -32,6 +34,10 @@ class EmailScheduler:
     def __init__(self):
         self.scheduler = BackgroundScheduler()
         
+        # Initialize Redis for distributed locking
+        redis_url = os.getenv("REDIS_URL", "redis://localhost:6379")
+        self.redis_client = redis.from_url(redis_url, decode_responses=True)
+        
         # Initialize the correct vector store based on environment
         if settings.USE_PINECONE:
             logger.info("🌲 Using Pinecone for vector storage")
@@ -44,11 +50,43 @@ class EmailScheduler:
         
         self.setup_jobs()
     
+    def _with_lock(self, func, lock_name: str, timeout: int = 300):
+        """
+        Execute function with distributed lock to prevent duplicate runs.
+        
+        Args:
+            func: Function to execute
+            lock_name: Unique lock identifier
+            timeout: Lock timeout in seconds (default 5 minutes)
+        """
+        lock = self.redis_client.lock(
+            f"scheduler_lock:{lock_name}",
+            timeout=timeout,
+            blocking_timeout=1  # Don't wait if lock is taken
+        )
+        
+        try:
+            if lock.acquire(blocking=False):
+                logger.info(f"🔒 Acquired lock for {lock_name}")
+                return func()
+            else:
+                logger.info(f"⏭️  Lock already held for {lock_name}, skipping (another instance running)")
+                return None
+        except redis.exceptions.LockError:
+            logger.warning(f"⚠️  Could not acquire lock for {lock_name}")
+            return None
+        finally:
+            try:
+                lock.release()
+                logger.info(f"🔓 Released lock for {lock_name}")
+            except:
+                pass  # Lock already released or expired
+    
     def setup_jobs(self):
         """Set up scheduled jobs."""
         # Daily contract sync at 7:00 AM EST (before emails)
         self.scheduler.add_job(
-            func=self.sync_contracts_daily,
+            func=lambda: self._with_lock(self.sync_contracts_daily, "sync_contracts"),
             trigger=CronTrigger(hour=7, minute=0, timezone='America/New_York'),
             id='sync_contracts_daily',
             name='Sync contracts from SAM.gov',
@@ -57,7 +95,7 @@ class EmailScheduler:
         
         # Daily new contracts email at 9:00 AM EST
         self.scheduler.add_job(
-            func=self.send_daily_contract_emails,
+            func=lambda: self._with_lock(self.send_daily_contract_emails, "daily_emails"),
             trigger=CronTrigger(hour=9, minute=0, timezone='America/New_York'),
             id='daily_contract_emails',
             name='Send daily new contract emails',
@@ -66,7 +104,7 @@ class EmailScheduler:
         
         # Daily deadline reminders at 10:00 AM EST
         self.scheduler.add_job(
-            func=self.send_deadline_reminders,
+            func=lambda: self._with_lock(self.send_deadline_reminders, "deadline_reminders"),
             trigger=CronTrigger(hour=10, minute=0, timezone='America/New_York'),
             id='deadline_reminders',
             name='Send deadline reminder emails',
@@ -75,6 +113,7 @@ class EmailScheduler:
         
         vector_db = "Pinecone" if self.use_pinecone else "Qdrant"
         logger.info(f"✅ Email scheduler jobs configured (7am sync, 9am emails, 10am reminders EST) using {vector_db}")
+        logger.info("🔒 Distributed locking enabled via Redis")
     
     def send_daily_contract_emails(self):
         """Send daily emails with new matching contracts."""

@@ -8,15 +8,17 @@ ADVANTAGES OVER CSV:
 - Automated - no manual CSV download
 - Can run daily via cron
 
-RATE LIMITING:
-- Uses 1000 records per request (API max)
-- 2-second delay between requests
-- Retry with exponential backoff on rate limit errors
-- 20k contracts = ~20 API calls = ~1 minute
+FAILSAFES:
+- Checkpoint saving on rate limits and errors
+- Resume from checkpoint with --resume flag
+- Exponential backoff on rate limits (up to 4 minutes)
+- Conservative rate limiting (100 per page, 5s delay)
+- 5 retries per request
 
 Usage:
     python ingest_sam_api.py --days-back 365 --namespace contracts
-    python ingest_sam_api.py --days-back 30 --namespace contracts --dry-run
+    python ingest_sam_api.py --resume                                  # Resume from checkpoint
+    python ingest_sam_api.py --days-back 30 --limit 100 --dry-run
 """
 
 import os
@@ -28,6 +30,7 @@ import re
 from datetime import datetime, timedelta
 from typing import Generator, Optional
 import json
+from pathlib import Path
 
 import requests
 from dotenv import load_dotenv
@@ -47,9 +50,14 @@ EMBEDDING_MODEL = "text-embedding-3-small"
 EMBEDDING_DIMENSIONS = 768
 BATCH_SIZE = 100  # Vectors per Pinecone upsert
 EMBEDDING_BATCH_SIZE = 50  # Texts per OpenAI call
-API_PAGE_SIZE = 1000  # Max allowed by SAM.gov API
-API_DELAY_SECONDS = 2  # Delay between API calls
-MAX_RETRIES = 3
+
+# CONSERVATIVE RATE LIMIT SETTINGS (to avoid 429 errors)
+API_PAGE_SIZE = 100  # Reduced from 1000 to be safer
+API_DELAY_SECONDS = 5  # Increased from 2 to be safer
+MAX_RETRIES = 5  # Increased from 3
+
+# Checkpoint settings
+CHECKPOINT_FILE = "sam_ingestion_checkpoint.json"
 
 # Biddable opportunity types
 BIDDABLE_TYPES = {
@@ -76,6 +84,42 @@ TYPE_CODES = {
 }
 
 
+# =============================================================================
+# CHECKPOINT FUNCTIONS
+# =============================================================================
+
+def save_checkpoint(data: dict):
+    """Save progress to checkpoint file."""
+    data["timestamp"] = datetime.now().isoformat()
+    with open(CHECKPOINT_FILE, 'w') as f:
+        json.dump(data, f, indent=2, default=str)
+    print(f"   💾 Checkpoint saved: offset={data.get('offset', 0)}, fetched={data.get('total_fetched', 0)}")
+
+
+def load_checkpoint() -> Optional[dict]:
+    """Load checkpoint if exists."""
+    if Path(CHECKPOINT_FILE).exists():
+        with open(CHECKPOINT_FILE, 'r') as f:
+            data = json.load(f)
+            print(f"📂 Found checkpoint from {data.get('timestamp', 'unknown')}")
+            print(f"   Offset: {data.get('offset', 0)}")
+            print(f"   Fetched: {data.get('total_fetched', 0)}")
+            print(f"   Uploaded: {data.get('total_uploaded', 0)}")
+            return data
+    return None
+
+
+def clear_checkpoint():
+    """Remove checkpoint file after successful completion."""
+    if Path(CHECKPOINT_FILE).exists():
+        os.remove(CHECKPOINT_FILE)
+        print("   🗑️  Checkpoint file removed")
+
+
+# =============================================================================
+# UTILITY FUNCTIONS
+# =============================================================================
+
 def clean_html(text: str) -> str:
     """Remove HTML tags and clean up text."""
     if not text:
@@ -90,6 +134,13 @@ def clean_html(text: str) -> str:
 def generate_vector_id(notice_id: str) -> str:
     """Generate consistent hash for Pinecone vector ID."""
     return hashlib.md5(notice_id.encode()).hexdigest()
+
+
+def safe_str(value) -> str:
+    """Convert any value to string, None becomes empty string."""
+    if value is None:
+        return ""
+    return str(value)
 
 
 def fetch_description(description_url: str, api_key: str) -> str:
@@ -116,17 +167,23 @@ def fetch_description(description_url: str, api_key: str) -> str:
     return ""
 
 
+# =============================================================================
+# API FETCHING WITH FAILSAFES
+# =============================================================================
+
 def fetch_contracts_from_api(
     api_key: str,
     posted_from: datetime,
     posted_to: datetime,
     include_pipeline: bool = False,
-    limit: Optional[int] = None
+    limit: Optional[int] = None,
+    start_offset: int = 0
 ) -> Generator[dict, None, None]:
     """
-    Fetch contracts from SAM.gov API with pagination.
+    Fetch contracts from SAM.gov API with pagination and rate limit handling.
     
     Yields individual contract records.
+    Supports resuming from a specific offset.
     """
     base_url = "https://api.sam.gov/opportunities/v2/search"
     
@@ -139,11 +196,14 @@ def fetch_contracts_from_api(
     from_str = posted_from.strftime("%m/%d/%Y")
     to_str = posted_to.strftime("%m/%d/%Y")
     
-    offset = 0
+    offset = start_offset
     total_fetched = 0
     total_records = None
+    consecutive_failures = 0
     
     print(f"📅 Fetching contracts from {from_str} to {to_str}")
+    if start_offset > 0:
+        print(f"📍 Resuming from offset {start_offset}")
     
     while True:
         params = {
@@ -152,40 +212,89 @@ def fetch_contracts_from_api(
             "postedTo": to_str,
             "limit": API_PAGE_SIZE,
             "offset": offset,
-            "ptype": ",".join(allowed_types),  # Filter by opportunity type
+            "ptype": ",".join(allowed_types),
         }
         
         # Retry logic with exponential backoff
+        success = False
+        response_data = None
+        
         for attempt in range(MAX_RETRIES):
             try:
-                response = requests.get(base_url, params=params, timeout=30)
+                response = requests.get(base_url, params=params, timeout=60)
                 
                 if response.status_code == 429:
-                    # Rate limited - wait and retry
-                    wait_time = (2 ** attempt) * 5  # 5s, 10s, 20s
-                    print(f"⚠️  Rate limited. Waiting {wait_time}s...")
+                    # Rate limited - wait longer with each retry
+                    wait_time = (2 ** attempt) * 30  # 30s, 60s, 120s, 240s, 480s
+                    print(f"\n⚠️  Rate limited (429). Waiting {wait_time}s before retry {attempt + 1}/{MAX_RETRIES}...")
+                    
+                    # Save checkpoint before waiting
+                    save_checkpoint({
+                        "offset": offset,
+                        "total_fetched": total_fetched,
+                        "posted_from": from_str,
+                        "posted_to": to_str,
+                        "status": "rate_limited"
+                    })
+                    
+                    time.sleep(wait_time)
+                    continue
+                
+                if response.status_code == 503:
+                    # Service unavailable
+                    wait_time = (2 ** attempt) * 30
+                    print(f"\n⚠️  Service unavailable (503). Waiting {wait_time}s...")
                     time.sleep(wait_time)
                     continue
                 
                 response.raise_for_status()
+                response_data = response.json()
+                success = True
+                consecutive_failures = 0
                 break
                 
+            except requests.exceptions.Timeout:
+                wait_time = (2 ** attempt) * 15
+                print(f"\n⚠️  Timeout. Waiting {wait_time}s before retry {attempt + 1}/{MAX_RETRIES}...")
+                time.sleep(wait_time)
+                
             except requests.exceptions.RequestException as e:
-                if attempt == MAX_RETRIES - 1:
-                    print(f"❌ API request failed after {MAX_RETRIES} attempts: {e}")
-                    return
-                time.sleep(2 ** attempt)
+                wait_time = (2 ** attempt) * 15
+                print(f"\n⚠️  Request error: {e}. Waiting {wait_time}s...")
+                time.sleep(wait_time)
         
-        data = response.json()
+        if not success:
+            consecutive_failures += 1
+            print(f"\n❌ Failed after {MAX_RETRIES} attempts at offset {offset}")
+            
+            # Save checkpoint
+            save_checkpoint({
+                "offset": offset,
+                "total_fetched": total_fetched,
+                "posted_from": from_str,
+                "posted_to": to_str,
+                "status": "failed"
+            })
+            
+            if consecutive_failures >= 3:
+                print(f"❌ Too many consecutive failures. Stopping.")
+                print(f"💡 Run with --resume to continue from offset {offset}")
+                return
+            
+            # Skip this batch and try next
+            offset += API_PAGE_SIZE
+            time.sleep(60)
+            continue
         
         # Get total on first request
         if total_records is None:
-            total_records = data.get("totalRecords", 0)
+            total_records = response_data.get("totalRecords", 0)
             print(f"📊 Total records available: {total_records}")
         
-        opportunities = data.get("opportunitiesData", [])
+        opportunities = response_data.get("opportunitiesData", [])
         
         if not opportunities:
+            print(f"   No more opportunities at offset {offset}")
             break
         
         for opp in opportunities:
@@ -204,7 +313,8 @@ def fetch_contracts_from_api(
         offset += len(opportunities)
         
         # Progress update
-        print(f"   Fetched {offset}/{total_records} records...")
+        pct = (offset / total_records * 100) if total_records else 0
+        print(f"   Fetched {offset}/{total_records} ({pct:.1f}%) - {total_fetched} active contracts")
         
         # Check if we've got all records
         if offset >= total_records:
@@ -213,8 +323,12 @@ def fetch_contracts_from_api(
         # Rate limit delay
         time.sleep(API_DELAY_SECONDS)
     
-    print(f"✅ Fetched {total_fetched} active contracts")
+    print(f"✅ Finished fetching {total_fetched} active contracts")
 
+
+# =============================================================================
+# EMBEDDING & METADATA (UNCHANGED FROM ORIGINAL)
+# =============================================================================
 
 def create_embedding_text(opp: dict, full_description: str = "") -> str:
     """Create text for embedding from API response."""
@@ -250,10 +364,12 @@ def create_embedding_text(opp: dict, full_description: str = "") -> str:
     if set_aside:
         parts.append(f"Set-Aside: {set_aside}")
     
-    # Location
-    pop = opp.get("placeOfPerformance", {})
-    state = pop.get("state", {}).get("code", "")
-    city = pop.get("city", {}).get("name", "")
+    # Location - handle None values
+    pop = opp.get("placeOfPerformance") or {}
+    state_obj = pop.get("state") if pop else None
+    city_obj = pop.get("city") if pop else None
+    state = state_obj.get("code", "") if isinstance(state_obj, dict) else ""
+    city = city_obj.get("name", "") if isinstance(city_obj, dict) else ""
     if state or city:
         location = ", ".join(filter(None, [city, state]))
         parts.append(f"Location: {location}")
@@ -265,72 +381,77 @@ def create_metadata(opp: dict, full_description: str = "") -> dict:
     """Create Pinecone metadata from API response."""
     
     # Extract agency name from path
-    agency_path = opp.get("fullParentPathName", "")
+    agency_path = opp.get("fullParentPathName") or ""
     agency = agency_path.split(".")[0] if agency_path else ""
     
     # Get office from path
     path_parts = agency_path.split(".") if agency_path else []
     office = path_parts[-1] if len(path_parts) > 1 else ""
     
-    # Place of performance
-    pop = opp.get("placeOfPerformance", {})
-    state = pop.get("state", {}).get("code", "") if isinstance(pop.get("state"), dict) else ""
-    city = pop.get("city", {}).get("name", "") if isinstance(pop.get("city"), dict) else ""
+    # Place of performance - handle None values safely
+    pop = opp.get("placeOfPerformance") or {}
+    state_obj = pop.get("state") if pop else None
+    city_obj = pop.get("city") if pop else None
+    state = state_obj.get("code", "") if isinstance(state_obj, dict) else ""
+    city = city_obj.get("name", "") if isinstance(city_obj, dict) else ""
     
     # Office address as fallback for location
-    office_addr = opp.get("officeAddress", {})
+    office_addr = opp.get("officeAddress") or {}
     if not state:
-        state = office_addr.get("state", "")
+        state = office_addr.get("state", "") if office_addr else ""
     if not city:
-        city = office_addr.get("city", "")
+        city = office_addr.get("city", "") if office_addr else ""
     
     # Point of contact
-    contacts = opp.get("pointOfContact", [])
+    contacts = opp.get("pointOfContact") or []
     primary_contact = next((c for c in contacts if c.get("type") == "primary"), contacts[0] if contacts else {})
+    if primary_contact is None:
+        primary_contact = {}
     
     # Description - use full if fetched, otherwise truncate URL
     description = full_description
     if not description:
-        desc_field = opp.get("description", "")
+        desc_field = opp.get("description") or ""
         if not desc_field.startswith("http"):
             description = clean_html(desc_field)[:1000]
     
+    # Build metadata with safe_str to prevent any None values
     return {
         # IDs
-        "notice_id": opp.get("solicitationNumber", ""),  # Human-readable ID
-        "opportunity_id": opp.get("noticeId", ""),  # UUID for direct link
+        "notice_id": safe_str(opp.get("solicitationNumber")),
+        "opportunity_id": safe_str(opp.get("noticeId")),
         
         # Core fields
-        "title": opp.get("title", ""),
-        "agency": agency,
-        "office": office,
-        "description": description[:1000] if description else "",
+        "title": safe_str(opp.get("title")),
+        "agency": safe_str(agency),
+        "office": safe_str(office),
+        "description": safe_str(description)[:1000] if description else "",
         
         # Codes - API gives us actual codes!
-        "naics_code": opp.get("naicsCode", ""),
-        "psc_code": opp.get("classificationCode", ""),
+        "naics_code": safe_str(opp.get("naicsCode")),
+        "psc_code": safe_str(opp.get("classificationCode")),
         
         # Set-aside
-        "set_aside": opp.get("typeOfSetAsideDescription", "") or opp.get("typeOfSetAside", "") or "",
+        "set_aside": safe_str(opp.get("typeOfSetAsideDescription") or opp.get("typeOfSetAside")),
         
         # Location
-        "state": state,
-        "city": city,
+        "state": safe_str(state),
+        "city": safe_str(city),
         
         # Dates
-        "posted_date": opp.get("postedDate", ""),
-        "response_deadline": opp.get("responseDeadLine", ""),
+        "posted_date": safe_str(opp.get("postedDate")),
+        "response_deadline": safe_str(opp.get("responseDeadLine")),
         
-        # Contact
-        "contact_name": primary_contact.get("fullName", ""),
-        "contact_email": primary_contact.get("email", ""),
-        "contact_phone": primary_contact.get("phone", ""),
+        # Contact - ensure no None values
+        "contact_name": safe_str(primary_contact.get("fullName")),
+        "contact_email": safe_str(primary_contact.get("email")),
+        "contact_phone": safe_str(primary_contact.get("phone")),
         
         # Direct link - this is the key advantage of API!
-        "url": opp.get("uiLink", ""),
+        "url": safe_str(opp.get("uiLink")),
         
         # Additional
-        "opportunity_type": TYPE_CODES.get(opp.get("type", ""), opp.get("type", "")),
+        "opportunity_type": safe_str(TYPE_CODES.get(opp.get("type", ""), opp.get("type", ""))),
         "contract_value": 0,  # Not available in solicitation phase
     }
 
@@ -350,6 +471,10 @@ def batch_generator(items: list, batch_size: int) -> Generator[list, None, None]
     for i in range(0, len(items), batch_size):
         yield items[i:i + batch_size]
 
+
+# =============================================================================
+# MAIN
+# =============================================================================
 
 def main():
     parser = argparse.ArgumentParser(
@@ -393,6 +518,11 @@ def main():
         default="contracts",
         help="Pinecone namespace (default: contracts)"
     )
+    parser.add_argument(
+        "--resume",
+        action="store_true",
+        help="Resume from last checkpoint"
+    )
     
     args = parser.parse_args()
     
@@ -409,13 +539,26 @@ def main():
         sys.exit(1)
     
     print("=" * 70)
-    print("SAM.gov API Contract Ingestion")
+    print("SAM.gov API Contract Ingestion (with Failsafes)")
     print("=" * 70)
     print(f"📅 Date range: Last {args.days_back} days")
     print(f"📦 Index: {PINECONE_INDEX_NAME}")
     print(f"🏷️  Namespace: {args.namespace}")
     print(f"🔧 Embedding Model: {EMBEDDING_MODEL}")
+    print(f"⏱️  API delay: {API_DELAY_SECONDS}s between calls")
+    print(f"📄 Page size: {API_PAGE_SIZE} records per request")
     print()
+    
+    # Check for checkpoint
+    start_offset = 0
+    if args.resume:
+        checkpoint = load_checkpoint()
+        if checkpoint:
+            start_offset = checkpoint.get("offset", 0)
+            print(f"   Resuming from offset {start_offset}")
+        else:
+            print("   No checkpoint found, starting fresh")
+        print()
     
     # Calculate date range
     posted_to = datetime.now()
@@ -427,8 +570,8 @@ def main():
     index = pc.Index(PINECONE_INDEX_NAME)
     openai_client = OpenAI(api_key=OPENAI_API_KEY)
     
-    # Clear existing if requested
-    if args.clear_existing and not args.dry_run:
+    # Clear existing if requested (but not when resuming)
+    if args.clear_existing and not args.dry_run and not args.resume:
         print(f"🗑️  Clearing namespace '{args.namespace}'...")
         index.delete(delete_all=True, namespace=args.namespace)
         print("   Done")
@@ -443,11 +586,13 @@ def main():
         posted_from=posted_from,
         posted_to=posted_to,
         include_pipeline=args.include_pipeline,
-        limit=args.limit
+        limit=args.limit,
+        start_offset=start_offset
     ))
     
     if not contracts:
         print("❌ No contracts fetched")
+        print("💡 If rate limited, wait a few minutes and run with --resume")
         sys.exit(1)
     
     print()
@@ -535,6 +680,9 @@ def main():
     if args.namespace in stats.namespaces:
         ns_count = stats.namespaces[args.namespace].vector_count
         print(f"   Namespace '{args.namespace}': {ns_count} vectors")
+    
+    # Clear checkpoint on success
+    clear_checkpoint()
     
     print()
     print("🎉 Done! Your contracts now have:")
