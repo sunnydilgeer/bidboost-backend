@@ -1540,9 +1540,9 @@ async def get_pipeline_summary(
         return PipelineResponse(pipeline=pipeline_summary)
         
     except Exception as e:
-    logger.error(f"Pipeline summary failed for {firm_id}: {str(e)}", exc_info=True)
-    import traceback
-    traceback.print_exc()  # ← Add this line
+        logger.error(f"Pipeline summary failed for {firm_id}: {str(e)}", exc_info=True)
+        import traceback
+        traceback.print_exc()  # ← Add this line
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail="Failed to retrieve pipeline summary"
