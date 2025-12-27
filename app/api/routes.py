@@ -66,19 +66,6 @@ class FederalInfoUpdate(BaseModel):
     sam_registered: Optional[bool] = None
     sam_expiration: Optional[str] = None
 
-
-class PipelineSummary(BaseModel):
-    """Pipeline-wide aggregate statistics from cached matches"""
-    total_opportunities: int
-    high_relevance_count: int
-    avg_match_score: int
-    closing_7d_count: int
-
-
-class PipelineResponse(BaseModel):
-    """API response wrapper"""
-    pipeline: PipelineSummary
-
 logger = logging.getLogger(__name__)
 capability_embedding_cache = {}
 
@@ -1451,104 +1438,6 @@ async def get_recommended_contracts(
     except Exception as e:
         logger.error(f"Recommendations failed: {str(e)}", exc_info=True)
         raise HTTPException(status_code=500, detail=str(e))
-
-
-@router.get("/contracts/pipeline-summary", response_model=PipelineResponse)
-async def get_pipeline_summary(
-    current_user: User = Depends(get_current_active_user),
-    db: Session = Depends(get_db)
-):
-    """
-    Get pipeline-wide aggregate statistics from match cache.
-    
-    ⚡ FAST: Queries CachedContractMatch table (PostgreSQL)
-    🎯 ACCURATE: Uses same pre-computed scores as /recommended
-    📊 SCALABLE: Aggregates only, no row data
-    
-    Performance: < 50ms (cached in PostgreSQL)
-    """
-    
-    try:
-        from sqlalchemy import func, and_, case
-        from datetime import datetime, timedelta
-        
-        firm_id = current_user.firm_id
-        now = datetime.utcnow()
-        seven_days_from_now = now + timedelta(days=7)
-        
-        # Single aggregate query on CachedContractMatch
-        stats = db.query(
-            # Total cached opportunities
-            func.count(CachedContractMatch.id).label('total_opportunities'),
-            
-            # High relevance count (score >= 60%)
-            func.sum(
-                case(
-                    (CachedContractMatch.total_match_score >= 0.6, 1),
-                    else_=0
-                )
-            ).label('high_relevance_count'),
-            
-            # Average match score (convert 0-1 to 0-100)
-            (func.avg(CachedContractMatch.total_match_score) * 100).label('avg_match_score'),
-            
-            # Closing within 7 days
-            func.sum(
-                case(
-                    (
-                        and_(
-                            CachedContractMatch.closing_date.isnot(None),
-                            CachedContractMatch.closing_date >= now,
-                            CachedContractMatch.closing_date <= seven_days_from_now
-                        ), 1
-                    ),
-                    else_=0
-                )
-            ).label('closing_7d_count')
-            
-        ).filter(
-            CachedContractMatch.firm_id == firm_id
-        ).first()
-        
-        # Handle empty cache
-        if not stats or stats.total_opportunities == 0:
-            logger.warning(f"No cached matches for firm {firm_id} - cache may need refresh")
-            return PipelineResponse(
-                pipeline=PipelineSummary(
-                    total_opportunities=0,
-                    high_relevance_count=0,
-                    avg_match_score=0,
-                    closing_7d_count=0
-                )
-            )
-        
-        # Build response
-        pipeline_summary = PipelineSummary(
-            total_opportunities=int(stats.total_opportunities or 0),
-            high_relevance_count=int(stats.high_relevance_count or 0),
-            avg_match_score=round(float(stats.avg_match_score or 0)),
-            closing_7d_count=int(stats.closing_7d_count or 0)
-        )
-        
-        logger.info(
-            f"Pipeline summary for {firm_id}: "
-            f"{pipeline_summary.total_opportunities} total, "
-            f"{pipeline_summary.high_relevance_count} high-relevance, "
-            f"{pipeline_summary.avg_match_score}% avg score"
-        )
-        
-        return PipelineResponse(pipeline=pipeline_summary)
-        
-    except Exception as e:
-        logger.error(f"Pipeline summary failed for {firm_id}: {str(e)}", exc_info=True)
-        import traceback
-        traceback.print_exc()  # ← Add this line
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Failed to retrieve pipeline summary"
-        )
-
-
 
 # ========== CONTRACT SEARCH ROUTE WITH PERSONALIZED MATCH SCORING ==========
 
