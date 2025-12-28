@@ -6,8 +6,13 @@ from app.database import get_db
 from app.models import User
 from app.core.auth import hash_password
 import secrets
+import resend
+import os
 
 router = APIRouter(tags=["Password Reset"])
+
+# Configure Resend
+resend.api_key = os.getenv("RESEND_API_KEY")
 
 class ForgotPasswordRequest(BaseModel):
     email: EmailStr
@@ -31,10 +36,42 @@ async def forgot_password(request: ForgotPasswordRequest, db: Session = Depends(
     user.reset_token_expires = datetime.utcnow() + timedelta(hours=1)
     db.commit()
     
-    # TODO: Send email with reset link
-    # For now, print for testing
-    reset_url = f"https://bidmatch.co/reset-password?token={reset_token}"    
-    print(f"🔐 Password Reset URL: {reset_url}")
+    # Send email via Resend
+    reset_url = f"https://bidmatch.co/reset-password?token={reset_token}"
+    
+    try:
+        resend.Emails.send({
+            "from": "BidMatch <onboarding@resend.dev>",  # Use Resend's test domain for now
+            "to": request.email,
+            "subject": "Reset Your BidMatch Password",
+            "html": f"""
+                <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+                    <h2 style="color: #2563eb;">Reset Your Password</h2>
+                    <p>Hi {user.full_name},</p>
+                    <p>We received a request to reset your password for your BidMatch account.</p>
+                    <p>Click the button below to reset your password:</p>
+                    <a href="{reset_url}" 
+                       style="display: inline-block; background-color: #2563eb; color: white; 
+                              padding: 12px 24px; text-decoration: none; border-radius: 8px; 
+                              margin: 20px 0;">
+                        Reset Password
+                    </a>
+                    <p>Or copy and paste this link into your browser:</p>
+                    <p style="color: #666; word-break: break-all;">{reset_url}</p>
+                    <p style="color: #666; font-size: 14px; margin-top: 30px;">
+                        This link will expire in 1 hour.<br>
+                        If you didn't request this, you can safely ignore this email.
+                    </p>
+                    <p style="color: #666; font-size: 12px; margin-top: 20px; border-top: 1px solid #eee; padding-top: 20px;">
+                        BidMatch - Government Contract Discovery Platform
+                    </p>
+                </div>
+            """
+        })
+        print(f"✅ Password reset email sent to {request.email}")
+    except Exception as e:
+        print(f"❌ Failed to send email: {e}")
+        # Still return success to prevent email enumeration
     
     return {"message": "If that email exists, we've sent reset instructions"}
 
