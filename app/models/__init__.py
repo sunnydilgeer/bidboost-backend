@@ -26,6 +26,9 @@ class User(Base):
     email_notifications_enabled = Column(Boolean, default=True, nullable=False)
     notification_frequency = Column(String(20), default="daily", nullable=False)
     last_email_sent_at = Column(DateTime, nullable=True)
+    reset_token = Column(String(255), nullable=True)
+    reset_token_expires = Column(DateTime, nullable=True)
+
 
     # Relationships
     audit_logs = relationship("AuditLog", back_populates="user")
