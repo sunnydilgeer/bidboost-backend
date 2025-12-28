@@ -1,5 +1,6 @@
 from fastapi import APIRouter, Request, Depends, HTTPException
 from sqlalchemy.orm import Session
+from pydantic import BaseModel
 import stripe
 import logging
 from datetime import datetime
@@ -15,13 +16,27 @@ stripe.api_key = settings.STRIPE_SECRET_KEY
 router = APIRouter(prefix="/api/billing", tags=["Billing"])
 
 
+# ✅ NEW: Request model to accept plan type
+class CheckoutRequest(BaseModel):
+    plan_type: str  # "starter" or "pro"
+
+
 # ==================== CREATE CHECKOUT SESSION ====================
 @router.post("/create-checkout-session")
 async def create_checkout_session(
+    request: CheckoutRequest,  # ✅ NEW: Accept plan type
     current_user: User = Depends(get_current_active_user),
     db: Session = Depends(get_db)
 ):
-    """Create a Stripe checkout session for Pro plan upgrade."""
+    """Create a Stripe checkout session for plan upgrade."""
+    
+    # ✅ NEW: Validate and select price based on plan type
+    if request.plan_type == "starter":
+        price_id = settings.STRIPE_STARTER_PRICE_ID
+    elif request.plan_type == "pro":
+        price_id = settings.STRIPE_PRO_PRICE_ID
+    else:
+        raise HTTPException(status_code=400, detail="Invalid plan type. Must be 'starter' or 'pro'.")
     
     # Get or create subscription record
     subscription = db.query(FirmSubscription).filter(
@@ -29,14 +44,14 @@ async def create_checkout_session(
     ).first()
     
     if not subscription:
-        subscription = FirmSubscription(firm_id=current_user.firm_id, plan="starter")
+        subscription = FirmSubscription(firm_id=current_user.firm_id, plan="trial")
         db.add(subscription)
         db.commit()
         db.refresh(subscription)
     
-    # Check if already Pro
-    if subscription.plan == "pro":
-        raise HTTPException(status_code=400, detail="Already on Pro plan")
+    # Check if already on requested plan
+    if subscription.plan == request.plan_type:
+        raise HTTPException(status_code=400, detail=f"Already on {request.plan_type.capitalize()} plan")
     
     # Get or create Stripe customer
     if subscription.stripe_customer_id:
@@ -56,7 +71,7 @@ async def create_checkout_session(
             customer=customer_id,
             payment_method_types=['card'],
             line_items=[{
-                'price': settings.STRIPE_PRO_PRICE_ID,
+                'price': price_id,  # ✅ Dynamic based on plan_type
                 'quantity': 1,
             }],
             mode='subscription',
@@ -64,7 +79,8 @@ async def create_checkout_session(
             cancel_url=f"{settings.FRONTEND_URL}/billing",
             metadata={
                 "firm_id": current_user.firm_id,
-                "user_email": current_user.email
+                "user_email": current_user.email,
+                "plan_type": request.plan_type  # ✅ NEW: Track plan type
             }
         )
         
@@ -87,7 +103,7 @@ async def get_subscription(
     ).first()
     
     if not subscription:
-        subscription = FirmSubscription(firm_id=current_user.firm_id, plan="starter")
+        subscription = FirmSubscription(firm_id=current_user.firm_id, plan="trial")
         db.add(subscription)
         db.commit()
         db.refresh(subscription)
@@ -134,20 +150,35 @@ async def stripe_webhook(request: Request, db: Session = Depends(get_db)):
             logger.error(f"No firm_id in session metadata: {session['id']}")
             return {"received": True}
         
-        # Upgrade to Pro
-        subscription = db.query(FirmSubscription).filter(
-            FirmSubscription.firm_id == firm_id
-        ).first()
-        
-        if subscription:
-            subscription.plan = 'pro'
-            subscription.stripe_subscription_id = session.get('subscription')
-            subscription.plan_started_at = datetime.utcnow()
-            subscription.plan_expires_at = None
-            db.commit()
-            logger.info(f"✅ Upgraded {firm_id} to Pro via checkout.session.completed")
-        else:
-            logger.error(f"Subscription not found for firm_id: {firm_id}")
+        # ✅ NEW: Get the price_id from the subscription to determine plan
+        subscription_id = session.get('subscription')
+        if subscription_id:
+            stripe_subscription = stripe.Subscription.retrieve(subscription_id)
+            price_id = stripe_subscription["items"]["data"][0]["price"]["id"]
+            
+            # ✅ NEW: Map price_id to plan
+            if price_id == settings.STRIPE_STARTER_PRICE_ID:
+                plan = "starter"
+            elif price_id == settings.STRIPE_PRO_PRICE_ID:
+                plan = "pro"
+            else:
+                logger.error(f"Unknown price_id: {price_id}")
+                return {"received": True}
+            
+            # Update subscription
+            subscription = db.query(FirmSubscription).filter(
+                FirmSubscription.firm_id == firm_id
+            ).first()
+            
+            if subscription:
+                subscription.plan = plan  # ✅ Dynamic plan assignment
+                subscription.stripe_subscription_id = subscription_id
+                subscription.plan_started_at = datetime.utcnow()
+                subscription.plan_expires_at = None  # ✅ Paid plans don't expire
+                db.commit()
+                logger.info(f"✅ Upgraded {firm_id} to {plan.capitalize()} via checkout.session.completed")
+            else:
+                logger.error(f"Subscription not found for firm_id: {firm_id}")
     
     elif event['type'] == 'invoice.paid':
         invoice = event['data']['object']
@@ -160,16 +191,43 @@ async def stripe_webhook(request: Request, db: Session = Depends(get_db)):
             ).first()
             
             if subscription:
-                subscription.plan = 'pro'
+                # Keep existing plan, just ensure no expiration
                 subscription.plan_expires_at = None
                 db.commit()
-                logger.info(f"✅ Confirmed Pro for {subscription.firm_id} via invoice.paid")
+                logger.info(f"✅ Confirmed {subscription.plan.capitalize()} for {subscription.firm_id} via invoice.paid")
+    
+    # ✅ NEW: Handle plan changes (upgrades/downgrades)
+    elif event['type'] == 'customer.subscription.updated':
+        stripe_subscription = event['data']['object']
+        customer_id = stripe_subscription['customer']
+        
+        # Find firm by customer_id
+        subscription = db.query(FirmSubscription).filter(
+            FirmSubscription.stripe_customer_id == customer_id
+        ).first()
+        
+        if subscription:
+            price_id = stripe_subscription["items"]["data"][0]["price"]["id"]
+            
+            # Map price_id to plan
+            if price_id == settings.STRIPE_STARTER_PRICE_ID:
+                new_plan = "starter"
+            elif price_id == settings.STRIPE_PRO_PRICE_ID:
+                new_plan = "pro"
+            else:
+                logger.error(f"Unknown price_id in subscription.updated: {price_id}")
+                return {"received": True}
+            
+            subscription.plan = new_plan
+            subscription.plan_expires_at = None  # Active subscriptions don't expire
+            db.commit()
+            logger.info(f"✅ Updated {subscription.firm_id} to {new_plan.capitalize()} via subscription.updated")
     
     elif event['type'] == 'customer.subscription.deleted':
         stripe_subscription = event['data']['object']
         subscription_id = stripe_subscription['id']
         
-        # Downgrade to Starter
+        # Downgrade to Starter when subscription cancelled
         subscription = db.query(FirmSubscription).filter(
             FirmSubscription.stripe_subscription_id == subscription_id
         ).first()

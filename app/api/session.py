@@ -4,6 +4,7 @@ from app.core.auth import get_current_active_user, User
 from app.core.entitlements import get_entitlements
 from app.database import get_db
 from app.models import CompanyCapability, CompanyProfile
+from app.core.entitlements import get_or_create_subscription  # ✅ NEW import
 
 router = APIRouter(tags=["Session"])
 
@@ -18,8 +19,10 @@ async def get_session(
     """
     entitlements = get_entitlements(db, current_user.firm_id)
     
+    # ✅ NEW: Get subscription to include expiration date
+    subscription = get_or_create_subscription(db, current_user.firm_id)
+    
     # Calculate profile completion based on capabilities
-    # Join through CompanyProfile to get firm_id
     capability_count = db.query(CompanyCapability).join(
         CompanyProfile, CompanyCapability.company_id == CompanyProfile.id
     ).filter(
@@ -35,10 +38,11 @@ async def get_session(
             "email": current_user.email,
             "firm_id": current_user.firm_id,
             "full_name": current_user.full_name,
-            "profile_completion": profile_completion
+            "profile_completion": profile_completion,
+            "plan_expires_at": subscription.plan_expires_at.isoformat() if subscription.plan_expires_at else None  # ✅ NEW
         },
         "subscription": {
-            "plan": entitlements.get("plan", "starter"),
+            "plan": entitlements.get("plan", "trial"),
             "entitlements": entitlements
         }
     }

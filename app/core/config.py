@@ -43,9 +43,14 @@ class Settings(BaseSettings):
     USE_PINECONE: bool = False
     PINECONE_INDEX_NAME: str = "contracts"
     SAM_API_KEY: Optional[str] = None  
+    
+    # Stripe Configuration
     STRIPE_SECRET_KEY: str
-    STRIPE_WEBHOOK_SECRET: str = ""  # Can be empty initially
+    STRIPE_WEBHOOK_SECRET: str = ""
     STRIPE_PRO_PRICE_ID: str
+    STRIPE_STARTER_PRICE_ID: str  # ✅ NEW - Add this line
+    RESEND_API_KEY: Optional[str] = None  # ← Add this
+
     
     class Config:
         env_file = ".env"
