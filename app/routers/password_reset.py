@@ -41,7 +41,7 @@ async def forgot_password(request: ForgotPasswordRequest, db: Session = Depends(
     
     try:
         resend.Emails.send({
-            "from": "BidMatch <onboarding@resend.dev>",  # Use Resend's test domain for now
+            "from": "BidMatch <noreply@bidmatch.co>",  # Use Resend's test domain for now
             "to": request.email,
             "subject": "Reset Your BidMatch Password",
             "html": f"""
