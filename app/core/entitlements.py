@@ -1,6 +1,6 @@
 from typing import Dict, Any
 from sqlalchemy.orm import Session
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone  # ✅ Added timezone
 from app.models.subscription import FirmSubscription
 
 # ✅ NEW: Trial entitlements (full Pro features)
@@ -66,7 +66,7 @@ def get_or_create_subscription(db: Session, firm_id: str) -> FirmSubscription:
     
     if not sub:
         # ✅ NEW: Start all users on 14-day trial
-        now = datetime.utcnow()
+        now = datetime.now(timezone.utc)  # ✅ FIXED: timezone-aware
         sub = FirmSubscription(
             firm_id=firm_id,
             plan="trial",  # Changed from "starter"
@@ -85,7 +85,7 @@ def get_entitlements(db: Session, firm_id: str) -> Dict[str, Any]:
     
     # ✅ NEW: Check if trial expired
     if sub.plan == "trial" and sub.plan_expires_at:
-        if datetime.utcnow() > sub.plan_expires_at:
+        if datetime.now(timezone.utc) > sub.plan_expires_at:  # ✅ FIXED: timezone-aware
             # Trial expired - lock everything
             return {**EXPIRED, "plan": "expired"}
     
