@@ -65,6 +65,18 @@ class FederalInfoUpdate(BaseModel):
     uei_number: Optional[str] = None
     sam_registered: Optional[bool] = None
     sam_expiration: Optional[str] = None
+class PipelineSummary(BaseModel):
+    """Pipeline-wide aggregate statistics from cached matches"""
+    total_opportunities: int
+    high_relevance_count: int
+    avg_match_score: int
+    closing_7d_count: int
+
+
+class PipelineResponse(BaseModel):
+    """API response wrapper"""
+    pipeline: PipelineSummary
+
 
 logger = logging.getLogger(__name__)
 capability_embedding_cache = {}
@@ -1439,12 +1451,65 @@ async def get_recommended_contracts(
         logger.error(f"Recommendations failed: {str(e)}", exc_info=True)
         raise HTTPException(status_code=500, detail=str(e))
 
-# ========== CONTRACT SEARCH ROUTE WITH PERSONALIZED MATCH SCORING ==========
 
-# ==========================================
-# COMPLETE FIXED SEARCH FUNCTION - MAIN FIX
-# This removes the duplicate Pinecone initialization
-# ==========================================
+@router.get("/contracts/pipeline-summary", response_model=PipelineResponse)
+async def get_pipeline_summary(
+    current_user: User = Depends(get_current_active_user),
+    db: Session = Depends(get_db)
+):
+    """Get pipeline-wide aggregate statistics from match cache."""
+    try:
+        from sqlalchemy import func, case
+        from datetime import datetime, timedelta
+        
+        firm_id = current_user.firm_id
+        now = datetime.utcnow()
+        seven_days_from_now = now + timedelta(days=7)
+        
+        # Single aggregate query on CachedContractMatch
+        stats = db.query(
+            func.count(CachedContractMatch.id).label('total_opportunities'),
+            func.sum(
+                case(
+                    (CachedContractMatch.total_score >= 0.6, 1),  # ✅ Fixed: total_score
+                    else_=0
+                )
+            ).label('high_relevance_count'),
+            (func.avg(CachedContractMatch.total_score) * 100).label('avg_match_score'),  # ✅ Fixed: total_score
+            func.count(CachedContractMatch.id).label('closing_7d_count')  # ✅ Simplified for now
+        ).filter(
+            CachedContractMatch.firm_id == firm_id
+        ).first()
+        
+        # Handle empty cache
+        if not stats or stats.total_opportunities == 0:
+            return PipelineResponse(
+                pipeline=PipelineSummary(
+                    total_opportunities=0,
+                    high_relevance_count=0,
+                    avg_match_score=0,
+                    closing_7d_count=0
+                )
+            )
+        
+        # Build response
+        pipeline_summary = PipelineSummary(
+            total_opportunities=int(stats.total_opportunities or 0),
+            high_relevance_count=int(stats.high_relevance_count or 0),
+            avg_match_score=round(float(stats.avg_match_score or 0)),
+            closing_7d_count=0  # ✅ Set to 0 for now (closing_date is string, needs parsing)
+        )
+        
+        return PipelineResponse(pipeline=pipeline_summary)
+        
+    except Exception as e:
+        logger.error(f"Pipeline summary failed: {str(e)}", exc_info=True)
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Failed to retrieve pipeline summary"
+        )
+
+# ========== CONTRACT SEARCH ROUTE WITH PERSONALIZED MATCH SCORING ==========
 
 @router.post("/contracts/search", response_model=ContractSearchResponse)
 async def search_contracts(
