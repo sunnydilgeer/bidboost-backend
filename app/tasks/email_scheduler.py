@@ -317,44 +317,44 @@ class EmailScheduler:
             pass
     
     def _get_new_contracts_for_user(self, db, user: User, since_date: datetime) -> List[Dict]:
-    """
-    Get new contracts that match user's profile.
-    Works with both Pinecone and Qdrant.
-    ✅ NEW: Respects plan tier entitlements
-    """
-    try:
-        from app.models.company import CompanyProfile
-        from app.models.contract import Contract
-        
-        # Get user's company profile
-        company = db.query(CompanyProfile).filter(
-            CompanyProfile.firm_id == user.firm_id
-        ).first()
-        
-        if not company:
-            logger.warning(f"No company profile for user {user.email}")
+        """
+        Get new contracts that match user's profile.
+        Works with both Pinecone and Qdrant.
+        ✅ NEW: Respects plan tier entitlements
+        """
+        try:
+            from app.models.company import CompanyProfile
+            from app.models.contract import Contract
+            
+            # Get user's company profile
+            company = db.query(CompanyProfile).filter(
+                CompanyProfile.firm_id == user.firm_id
+            ).first()
+            
+            if not company:
+                logger.warning(f"No company profile for user {user.email}")
+                return []
+            
+            # ✅ NEW: Get entitlements to determine digest type
+            entitlements = get_entitlements(db, user.firm_id)
+            has_priority_alerts = entitlements.get('priority_alerts', False)
+            
+            if self.use_pinecone:
+                contracts = self._get_contracts_from_pinecone(db, user, company)
+            else:
+                contracts = self._get_contracts_from_qdrant(db, user, company)
+            
+            # ✅ NEW: Apply tier-based filtering
+            if has_priority_alerts:
+                # PRO: Smart prioritization
+                return self._generate_pro_digest(contracts)
+            else:
+                # STARTER: Simple top 20 by score
+                return self._generate_starter_digest(contracts)
+            
+        except Exception as e:
+            logger.error(f"Error getting contracts for user {user.email}: {e}")
             return []
-        
-        # ✅ NEW: Get entitlements to determine digest type
-        entitlements = get_entitlements(db, user.firm_id)
-        has_priority_alerts = entitlements.get('priority_alerts', False)
-        
-        if self.use_pinecone:
-            contracts = self._get_contracts_from_pinecone(db, user, company)
-        else:
-            contracts = self._get_contracts_from_qdrant(db, user, company)
-        
-        # ✅ NEW: Apply tier-based filtering
-        if has_priority_alerts:
-            # PRO: Smart prioritization
-            return self._generate_pro_digest(contracts)
-        else:
-            # STARTER: Simple top 20 by score
-            return self._generate_starter_digest(contracts)
-        
-    except Exception as e:
-        logger.error(f"Error getting contracts for user {user.email}: {e}")
-        return []
 
     def _get_contracts_from_pinecone(self, db, user: User, company) -> List[Dict]:
         """Get contracts from Pinecone"""
@@ -453,66 +453,65 @@ class EmailScheduler:
             return []
 
     def _generate_pro_digest(self, contracts: List[Dict]) -> List[Dict]:
-    """
-    PRO: Priority-ranked digest with smart grouping.
-    
-    Prioritizes:
-    1. High-scoring (70%+) opportunities closing <7 days
-    2. High-scoring opportunities (70%+)
-    3. Medium-scoring (50-69%) closing <7 days
-    4. Medium-scoring (50-69%)
-    """
-    from datetime import datetime, timedelta
-    
-    today = datetime.utcnow()
-    urgent_threshold = today + timedelta(days=7)
-    
-    # Categorize contracts
-    high_score_urgent = []
-    high_score = []
-    medium_score_urgent = []
-    medium_score = []
-    
-    for contract in contracts:
-        score = contract.get('match_score', 0)
-        deadline_str = contract.get('deadline') or contract.get('response_deadline')
+        """
+        PRO: Priority-ranked digest with smart grouping.
         
-        # Parse deadline
-        is_urgent = False
-        if deadline_str:
-            try:
-                if isinstance(deadline_str, str):
-                    deadline = datetime.fromisoformat(deadline_str.replace('Z', '+00:00'))
+        Prioritizes:
+        1. High-scoring (70%+) opportunities closing <7 days
+        2. High-scoring opportunities (70%+)
+        3. Medium-scoring (50-69%) closing <7 days
+        4. Medium-scoring (50-69%)
+        """
+        from datetime import datetime, timedelta
+        
+        today = datetime.utcnow()
+        urgent_threshold = today + timedelta(days=7)
+        
+        # Categorize contracts
+        high_score_urgent = []
+        high_score = []
+        medium_score_urgent = []
+        medium_score = []
+        
+        for contract in contracts:
+            score = contract.get('match_score', 0)
+            deadline_str = contract.get('deadline') or contract.get('response_deadline')
+            
+            # Parse deadline
+            is_urgent = False
+            if deadline_str:
+                try:
+                    if isinstance(deadline_str, str):
+                        deadline = datetime.fromisoformat(deadline_str.replace('Z', '+00:00'))
+                    else:
+                        deadline = deadline_str
+                    is_urgent = deadline <= urgent_threshold
+                except:
+                    pass
+            
+            # Categorize
+            if score >= 0.7:
+                if is_urgent:
+                    high_score_urgent.append(contract)
                 else:
-                    deadline = deadline_str
-                is_urgent = deadline <= urgent_threshold
-            except:
-                pass
+                    high_score.append(contract)
+            elif score >= 0.5:
+                if is_urgent:
+                    medium_score_urgent.append(contract)
+                else:
+                    medium_score.append(contract)
         
-        # Categorize
-        if score >= 0.7:
-            if is_urgent:
-                high_score_urgent.append(contract)
-            else:
-                high_score.append(contract)
-        elif score >= 0.5:
-            if is_urgent:
-                medium_score_urgent.append(contract)
-            else:
-                medium_score.append(contract)
-    
-    # Combine in priority order (limit to 20 total)
-    prioritized = (
-        high_score_urgent[:5] +
-        high_score[:10] +
-        medium_score_urgent[:3] +
-        medium_score[:2]
-    )[:20]
-    
-    logger.info(f"📊 Pro digest: {len(high_score_urgent)} high/urgent, {len(high_score)} high, {len(medium_score_urgent)} med/urgent")
-    
-    return prioritized
-
+        # Combine in priority order (limit to 20 total)
+        prioritized = (
+            high_score_urgent[:5] +
+            high_score[:10] +
+            medium_score_urgent[:3] +
+            medium_score[:2]
+        )[:20]
+        
+        logger.info(f"📊 Pro digest: {len(high_score_urgent)} high/urgent, {len(high_score)} high, {len(medium_score_urgent)} med/urgent")
+        
+        return prioritized
 
     def _generate_starter_digest(self, contracts: List[Dict]) -> List[Dict]:
         """
