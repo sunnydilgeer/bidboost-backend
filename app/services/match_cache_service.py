@@ -8,7 +8,7 @@ import logging
 from typing import List, Dict
 from sqlalchemy.orm import Session
 from sqlalchemy import delete
-from datetime import datetime
+from datetime import datetime, timezone  # ✅ Added timezone import
 
 from app.database import SessionLocal
 from app.models.company import CompanyProfile, CachedContractMatch
@@ -198,7 +198,7 @@ class MatchCacheService:
                 
                 # Ranking
                 rank=rank,
-                cached_at=datetime.utcnow()
+                cached_at=datetime.now(timezone.utc)  # ✅ FIXED: timezone-aware
             )
             
             self.db.add(cached_match)
