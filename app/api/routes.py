@@ -1556,7 +1556,7 @@ async def search_contracts(
             filters["state"] = {"$eq": search_request.region}
         
         # Search Pinecone
-        search_limit = search_request.limit * 2 if include_match_scores else search_request.limit
+        search_limit = search_request.limit if include_match_scores else search_request.limit
         results = pinecone.search_contracts(
             query_vector=query_vector,
             limit=search_limit,
