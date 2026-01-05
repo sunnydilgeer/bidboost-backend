@@ -2766,3 +2766,59 @@ async def admin_set_plan(
 
     db.commit()
     return {"success": True, "firm_id": firm_id, "plan": payload.plan}
+
+# Add this debug endpoint to routes.py (in the debug section with other /admin routes)
+
+@router.get("/admin/test-embedding-speed")
+async def test_embedding_speed(
+    query: str = "construction services",
+    current_user: User = Depends(get_current_active_user)
+):
+    """
+    Test embedding generation speed and verify which service is being used.
+    
+    Example: GET /api/admin/test-embedding-speed?query=construction
+    """
+    import time
+    from app.core.config import settings
+    
+    llm_service = get_llm_service()
+    
+    # Test 1: Check configuration
+    config_status = {
+        "USE_OPENAI_EMBEDDINGS": settings.USE_OPENAI_EMBEDDINGS,
+        "OPENAI_API_KEY_SET": bool(settings.OPENAI_API_KEY and len(settings.OPENAI_API_KEY) > 10),
+        "OPENAI_API_KEY_PREFIX": settings.OPENAI_API_KEY[:10] + "..." if settings.OPENAI_API_KEY else "NOT SET"
+    }
+    
+    # Test 2: Time the embedding generation
+    start_time = time.time()
+    try:
+        embedding = await llm_service.generate_embeddings(query)
+        elapsed_time = time.time() - start_time
+        
+        return {
+            "success": True,
+            "query": query,
+            "embedding_dimensions": len(embedding),
+            "generation_time_seconds": round(elapsed_time, 3),
+            "service_used": "OpenAI" if settings.USE_OPENAI_EMBEDDINGS else "Ollama",
+            "configuration": config_status,
+            "performance_rating": (
+                "🚀 EXCELLENT (<0.5s)" if elapsed_time < 0.5 else
+                "✅ GOOD (0.5-1s)" if elapsed_time < 1.0 else
+                "⚠️ SLOW (1-2s)" if elapsed_time < 2.0 else
+                "🐌 VERY SLOW (>2s) - Check if using Ollama instead of OpenAI"
+            ),
+            "recommendation": (
+                "Perfect! Using OpenAI embeddings." if settings.USE_OPENAI_EMBEDDINGS and elapsed_time < 1.0 else
+                "Set USE_OPENAI_EMBEDDINGS=true in Railway to speed up search 5-10x"
+            )
+        }
+    except Exception as e:
+        return {
+            "success": False,
+            "error": str(e),
+            "configuration": config_status,
+            "recommendation": "Check OPENAI_API_KEY is set correctly in Railway"
+        }
