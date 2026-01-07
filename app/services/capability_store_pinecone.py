@@ -174,8 +174,7 @@ class CapabilityStorePinecone:
         try:
             result = self.index.fetch(
                 ids=[vector_id],
-                namespace=self.NAMESPACE,
-                timeout=self.TIMEOUT
+                namespace=self.NAMESPACE
             )
             
             if vector_id in result.vectors:
@@ -213,8 +212,7 @@ class CapabilityStorePinecone:
             
             result = self.index.fetch(
                 ids=vector_ids,
-                namespace=self.NAMESPACE,
-                timeout=self.TIMEOUT * 2  # Extra time for batch operations
+                namespace=self.NAMESPACE
             )
             
             # Extract just the vector values (embeddings)
