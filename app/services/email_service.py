@@ -1,5 +1,6 @@
 """
 Email service for sending contract notifications using SendGrid.
+✅ REFACTORED: Fixed FRONTEND_URL handling, improved testability
 """
 from datetime import datetime
 from typing import List, Optional
@@ -11,115 +12,144 @@ from sendgrid.helpers.mail import Mail, Email, To, Content
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from pathlib import Path
 
-os.environ['SSL_CERT_FILE'] = certifi.where()
-
+os.environ["SSL_CERT_FILE"] = certifi.where()
 
 
 class EmailService:
-    def __init__(self):
+    def __init__(
+        self,
+        *,
+        client: Optional[SendGridAPIClient] = None,   # 🔧 TESTABILITY
+        env: Optional[Environment] = None,            # 🔧 TESTABILITY
+        template_dir: Optional[Path] = None,          # 🔧 TESTABILITY
+    ):
         self.api_key = os.getenv("SENDGRID_API_KEY")
         self.from_email = os.getenv("EMAIL_FROM", "noreply@contractdiscovery.com")
-        self.client = SendGridAPIClient(self.api_key)
+
+        # 🔧 TESTABILITY: inject SendGrid client
+        self.client = client or SendGridAPIClient(self.api_key)
+
+        # 🔧 TESTABILITY: inject Jinja env
+        if env:
+            self.env = env
+        else:
+            template_dir = template_dir or (Path(__file__).parent.parent / "templates")
+            self.env = Environment(
+                loader=FileSystemLoader(template_dir),
+                autoescape=select_autoescape(["html", "xml"]),
+            )
+
+    @staticmethod
+    def _frontend_url() -> str:
+        """
+        Get frontend URL with proper fallback handling.
+        ✅ FIXED: No more "None/settings" bug
+        """
+        url = os.getenv("FRONTEND_URL", "http://localhost:3000")
         
-        # Set up Jinja2 for email templates
-        template_dir = Path(__file__).parent.parent / "templates"
-        self.env = Environment(
-            loader=FileSystemLoader(template_dir),
-            autoescape=select_autoescape(['html', 'xml'])
-        )
-    
+        # Handle None/empty/invalid values
+        if url == "None" or not url or url.strip() == "":
+            return "http://localhost:3000"
+        
+        # Remove trailing slash for consistency
+        return url.rstrip("/")
+
     def send_new_contracts_email(
         self,
         to_email: str,
         user_name: str,
         contracts: List[dict],
-        total_new_contracts: int
+        total_new_contracts: int,
     ) -> bool:
         """
-        Send daily email with new matching contracts.
+        Send daily digest email with new matching contracts.
         
         Args:
-            to_email: Recipient email
-            user_name: User's name for personalization
-            contracts: List of top 3-5 matching contracts with scores
+            to_email: Recipient email address
+            user_name: User's full name
+            contracts: List of contract dicts (top 5 for email)
             total_new_contracts: Total count of new matches
-        
+            
         Returns:
-            True if sent successfully
+            bool: True if email sent successfully
         """
         try:
-            # Render email template
+            frontend_url = self._frontend_url()
+
             template = self.env.get_template("email_new_contracts.html")
             html_content = template.render(
                 user_name=user_name,
                 contracts=contracts,
                 total_new_contracts=total_new_contracts,
-                dashboard_url=os.getenv("FRONTEND_URL", "http://localhost:3000"),
-                unsubscribe_url=f"{os.getenv('FRONTEND_URL')}/settings"
+                dashboard_url=frontend_url,
+                unsubscribe_url=f"{frontend_url}/settings",
             )
-            
-            # Create email
+
             message = Mail(
                 from_email=Email(self.from_email, "Contract Discovery"),
                 to_emails=To(to_email),
                 subject=f"🎯 {total_new_contracts} new contracts match your profile",
-                html_content=Content("text/html", html_content)
+                html_content=Content("text/html", html_content),
             )
-            
-            # Send
+
             response = self.client.send(message)
             return response.status_code == 202
-            
+
         except Exception as e:
             print(f"Error sending new contracts email to {to_email}: {e}")
             return False
-    
+
     def send_deadline_reminder_email(
         self,
         to_email: str,
         user_name: str,
         contract: dict,
-        days_until_deadline: int
+        days_until_deadline: int,
     ) -> bool:
         """
-        Send deadline reminder for a saved contract.
+        Send deadline reminder for saved contracts.
         
         Args:
-            to_email: Recipient email
-            user_name: User's name
-            contract: Contract details (title, deadline, notice_id, etc.)
-            days_until_deadline: 7, 3, or 1 days
-        
+            to_email: Recipient email address
+            user_name: User's full name
+            contract: Contract dict with notice_id, title, etc.
+            days_until_deadline: Days remaining (7, 3, or 1)
+            
         Returns:
-            True if sent successfully
+            bool: True if email sent successfully
         """
         try:
+            frontend_url = self._frontend_url()
+
             template = self.env.get_template("email_deadline_reminder.html")
             html_content = template.render(
                 user_name=user_name,
                 contract=contract,
                 days_until_deadline=days_until_deadline,
-                contract_url=f"{os.getenv('FRONTEND_URL')}/contracts/{contract['notice_id']}",
-                unsubscribe_url=f"{os.getenv('FRONTEND_URL')}/settings"
+                contract_url=f"{frontend_url}/contracts/{contract['notice_id']}",
+                unsubscribe_url=f"{frontend_url}/settings",
             )
-            
-            # Set urgency based on days remaining
+
             urgency = "🚨" if days_until_deadline == 1 else "⏰"
-            
+
             message = Mail(
                 from_email=Email(self.from_email, "Contract Discovery"),
                 to_emails=To(to_email),
-                subject=f"{urgency} Deadline in {days_until_deadline} day{'s' if days_until_deadline > 1 else ''}: {contract['title'][:50]}...",
-                html_content=Content("text/html", html_content)
+                subject=(
+                    f"{urgency} Deadline in {days_until_deadline} "
+                    f"day{'s' if days_until_deadline > 1 else ''}: "
+                    f"{contract['title'][:50]}..."
+                ),
+                html_content=Content("text/html", html_content),
             )
-            
+
             response = self.client.send(message)
             return response.status_code == 202
-            
+
         except Exception as e:
             print(f"Error sending deadline reminder to {to_email}: {e}")
             return False
-    
+
     def send_quickstart_report(
         self,
         to_email: str,
@@ -128,25 +158,26 @@ class EmailService:
         capabilities_preview: str,
         pages_scraped: int,
         total_matches: int,
-        contracts: List[dict]
+        contracts: List[dict],
     ) -> bool:
         """
-        Send quickstart report email with top contract matches.
+        Send quickstart report for new users (website scraping results).
         
         Args:
-            to_email: Recipient email
-            company_name: Extracted company name
-            website_url: Company website analyzed
-            capabilities_preview: Preview of capabilities (500 chars)
+            to_email: Recipient email address
+            company_name: Company name
+            website_url: Website that was scraped
+            capabilities_preview: Preview of detected capabilities
             pages_scraped: Number of pages analyzed
-            total_matches: Total contracts found
-            contracts: Top 3 contracts with match scores
-        
+            total_matches: Total contracts matched
+            contracts: List of top matching contracts
+            
         Returns:
-            True if sent successfully
+            bool: True if email sent successfully
         """
         try:
-            # Render email template
+            frontend_url = self._frontend_url()
+
             template = self.env.get_template("email_quickstart_report.html")
             html_content = template.render(
                 company_name=company_name,
@@ -155,36 +186,28 @@ class EmailService:
                 pages_scraped=pages_scraped,
                 total_matches=total_matches,
                 contracts=contracts,
-                signup_url=f"{os.getenv('FRONTEND_URL')}/signup?from=email_report",
-                frontend_url=os.getenv('FRONTEND_URL', 'http://localhost:3000')
+                signup_url=f"{frontend_url}/signup?from=email_report",
+                frontend_url=frontend_url,
             )
-            
-            # Create email
+
             message = Mail(
                 from_email=Email(self.from_email, "BidMatch"),
                 to_emails=To(to_email),
                 subject=f"Your BidMatch Contract Report - {total_matches} Matches Found",
-                html_content=Content("text/html", html_content)
+                html_content=Content("text/html", html_content),
             )
-            
-            # Send
+
             response = self.client.send(message)
             return response.status_code == 202
-            
+
         except Exception as e:
             print(f"Error sending quickstart report to {to_email}: {e}")
             return False
-    
-    
+
     def test_connection(self) -> bool:
-        """Test SendGrid connection."""
-        try:
-            # Send a test email to verify setup
-            return self.api_key is not None and len(self.api_key) > 0
-        except Exception as e:
-            print(f"SendGrid connection test failed: {e}")
-            return False
+        """Test if SendGrid is properly configured."""
+        return bool(self.api_key)
 
 
-# Singleton instance
+# ✅ Production singleton preserved
 email_service = EmailService()

@@ -5,7 +5,7 @@ from sqlalchemy import Column, Integer, String, DateTime, Text, Boolean, Index, 
 from sqlalchemy.dialects.postgresql import JSONB
 from sqlalchemy.orm import relationship
 from app.models.subscription import FirmSubscription
-from datetime import datetime
+from datetime import datetime, UTC
 from app.database import Base
 
 # ========== USER MODELS (defined here) ==========
@@ -21,8 +21,8 @@ class User(Base):
     firm_name = Column(String(255), nullable=True)
     role = Column(String(50), default="user")
     is_active = Column(Boolean, default=True)
-    created_at = Column(DateTime, default=datetime.utcnow)
-    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    created_at = Column(DateTime, default=lambda: datetime.now(UTC))
+    updated_at = Column(DateTime, default=lambda: datetime.now(UTC), onupdate=datetime.utcnow)
     email_notifications_enabled = Column(Boolean, default=True, nullable=False)
     notification_frequency = Column(String(20), default="daily", nullable=False)
     last_email_sent_at = Column(DateTime, nullable=True)
@@ -47,7 +47,7 @@ class AuditLog(Base):
     details = Column(JSONB)
     ip_address = Column(String(45))
     user_agent = Column(Text)
-    timestamp = Column(DateTime, default=datetime.utcnow, index=True)
+    timestamp = Column(DateTime, default=lambda: datetime.now(UTC), index=True)
     
     user = relationship("User", back_populates="audit_logs")
     
@@ -65,8 +65,8 @@ class Conversation(Base):
     firm_id = Column(String(255), nullable=False, index=True)
     title = Column(String(500))
     meta = Column(JSONB)
-    created_at = Column(DateTime, default=datetime.utcnow, index=True)
-    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    created_at = Column(DateTime, default=lambda: datetime.now(UTC), index=True)
+    updated_at = Column(DateTime, default=lambda: datetime.now(UTC), onupdate=datetime.utcnow)
     
     user = relationship("User", back_populates="conversations")
     messages = relationship("Message", back_populates="conversation", cascade="all, delete-orphan")
@@ -86,7 +86,7 @@ class Message(Base):
     sources = Column(JSONB)
     tokens_used = Column(Integer)
     latency_ms = Column(Integer)
-    timestamp = Column(DateTime, default=datetime.utcnow, index=True)
+    timestamp = Column(DateTime, default=lambda: datetime.now(UTC), index=True)
     
     conversation = relationship("Conversation", back_populates="messages")
     

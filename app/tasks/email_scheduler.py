@@ -1,5 +1,8 @@
 """
 Email Scheduler - US Federal Version with Distributed Locking
+✅ REFACTORED: Dependency injection for testability
+✅ FIXED: All timezone-aware datetime handling
+✅ FIXED: SQLite/PostgreSQL timezone compatibility
 Prevents duplicate job execution across multiple Railway instances
 
 Location: app/tasks/email_scheduler.py
@@ -7,13 +10,13 @@ Location: app/tasks/email_scheduler.py
 from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.triggers.cron import CronTrigger
 from app.core.entitlements import get_entitlements
-from datetime import datetime, timedelta
-from typing import List, Dict
+from datetime import datetime, timedelta, UTC  # ✅ ADDED UTC
+from typing import List, Dict, Optional, Callable
 import logging
 import redis
 import os
 
-from app.services.email_service import email_service
+from app.services.email_service import email_service as email_service_singleton
 from app.database import SessionLocal
 from app.models import User
 from app.models.company import SavedContract
@@ -31,25 +34,72 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
+# ✅ NEW: Timezone compatibility helper for SQLite/PostgreSQL
+def ensure_timezone_aware(dt):
+    """
+    Convert naive datetime to UTC timezone-aware datetime.
+    
+    This handles compatibility between:
+    - SQLite (tests): stores datetimes as naive even if passed as aware
+    - PostgreSQL (production): can store both naive and aware datetimes
+    
+    Args:
+        dt: datetime object (naive or aware) or None
+        
+    Returns:
+        Timezone-aware datetime in UTC, or None
+    """
+    if dt is None:
+        return None
+    if dt.tzinfo is None:
+        # Naive datetime - assume it's UTC and make it aware
+        return dt.replace(tzinfo=UTC)
+    return dt
+
+
 class EmailScheduler:
-    def __init__(self):
+    def __init__(
+        self,
+        *,
+        email_service=None,           # 🔧 TESTABILITY: inject email service
+        session_factory=None,         # 🔧 TESTABILITY: inject DB session factory
+        redis_client=None,            # 🔧 TESTABILITY: inject Redis client
+        vector_store=None,            # 🔧 TESTABILITY: inject vector store
+        use_pinecone: Optional[bool] = None,  # 🔧 TESTABILITY: override vector store type
+        setup_jobs: bool = True       # 🔧 TESTABILITY: skip job scheduling in tests
+    ):
         self.scheduler = BackgroundScheduler()
         
+        # 🔧 TESTABILITY: Inject dependencies with production defaults
+        self.email_service = email_service or email_service_singleton
+        self.session_factory = session_factory or SessionLocal
+        
         # Initialize Redis for distributed locking
-        redis_url = os.getenv("REDIS_URL", "redis://localhost:6379")
-        self.redis_client = redis.from_url(redis_url, decode_responses=True)
+        if redis_client is not None:
+            self.redis_client = redis_client
+        else:
+            redis_url = os.getenv("REDIS_URL", "redis://localhost:6379")
+            self.redis_client = redis.from_url(redis_url, decode_responses=True)
         
         # Initialize the correct vector store based on environment
-        if settings.USE_PINECONE:
-            logger.info("🌲 Using Pinecone for vector storage")
-            self.vector_store = PineconeStoreService(api_key=settings.PINECONE_API_KEY)
-            self.use_pinecone = True
+        if vector_store is not None:
+            # Explicitly provided vector store (for testing)
+            self.vector_store = vector_store
+            self.use_pinecone = use_pinecone if use_pinecone is not None else False
         else:
-            logger.info("📦 Using Qdrant for vector storage")
-            self.vector_store = VectorStoreService()
-            self.use_pinecone = False
+            # Production initialization
+            if settings.USE_PINECONE:
+                logger.info("🌲 Using Pinecone for vector storage")
+                self.vector_store = PineconeStoreService(api_key=settings.PINECONE_API_KEY)
+                self.use_pinecone = True
+            else:
+                logger.info("📦 Using Qdrant for vector storage")
+                self.vector_store = VectorStoreService()
+                self.use_pinecone = False
         
-        self.setup_jobs()
+        # Setup jobs only if requested (tests can skip this)
+        if setup_jobs:
+            self.setup_jobs()
     
     def _with_lock(self, func, lock_name: str, timeout: int = 300):
         """
@@ -117,10 +167,14 @@ class EmailScheduler:
         logger.info("🔒 Distributed locking enabled via Redis")
     
     def send_daily_contract_emails(self):
-        """Send daily emails with new matching contracts."""
+        """
+        Send daily emails with new matching contracts.
+        ✅ REFACTORED: Uses self.session_factory and self.email_service
+        ✅ FIXED: SQLite/PostgreSQL timezone compatibility
+        """
         logger.info("🚀 Starting daily contract email job")
         
-        db = SessionLocal()
+        db = self.session_factory()  # 🔧 Use injected session factory
         try:
             # Get users with daily notifications enabled
             users = db.query(User).filter(
@@ -134,8 +188,9 @@ class EmailScheduler:
             sent_count = 0
             for user in users:
                 try:
-                    # Calculate time range for new contracts
-                    since_date = user.last_email_sent_at or datetime.utcnow() - timedelta(days=1)
+                    # ✅ FIXED: Use timezone-aware datetime with compatibility helper
+                    last_email = ensure_timezone_aware(user.last_email_sent_at)
+                    since_date = last_email or datetime.now(UTC) - timedelta(days=1)
                     
                     # Get new contracts matched to this user's profile
                     new_contracts = self._get_new_contracts_for_user(
@@ -159,8 +214,8 @@ class EmailScheduler:
                             for c in new_contracts[:5]  # Top 5 only
                         ]
                         
-                        # Send email
-                        success = email_service.send_new_contracts_email(
+                        # 🔧 Use injected email service
+                        success = self.email_service.send_new_contracts_email(
                             to_email=user.email,
                             user_name=user.full_name,
                             contracts=formatted_contracts,
@@ -168,8 +223,8 @@ class EmailScheduler:
                         )
                         
                         if success:
-                            # Update last_email_sent_at
-                            user.last_email_sent_at = datetime.utcnow()
+                            # ✅ FIXED: Use timezone-aware datetime
+                            user.last_email_sent_at = datetime.now(UTC)
                             db.commit()
                             sent_count += 1
                             logger.info(f"✅ Sent to {user.email} ({len(new_contracts)} contracts)")
@@ -191,12 +246,16 @@ class EmailScheduler:
             db.close()
     
     def send_deadline_reminders(self):
-        """Send deadline reminder emails for saved contracts."""
+        """
+        Send deadline reminder emails for saved contracts.
+        ✅ REFACTORED: Uses self.session_factory and self.email_service
+        """
         logger.info("🚀 Starting deadline reminder job")
         
-        db = SessionLocal()
+        db = self.session_factory()  # 🔧 Use injected session factory
         try:
-            today = datetime.utcnow().date()
+            # ✅ FIXED: Use timezone-aware datetime
+            today = datetime.now(UTC).date()
             
             # Target dates for reminders (7, 3, 1 days before)
             target_dates = [
@@ -247,8 +306,8 @@ class EmailScheduler:
                         "status": saved_contract.status.title()
                     }
                     
-                    # Send reminder
-                    success = email_service.send_deadline_reminder_email(
+                    # 🔧 Use injected email service
+                    success = self.email_service.send_deadline_reminder_email(
                         to_email=user.email,
                         user_name=user.full_name,
                         contract=contract_data,
@@ -302,7 +361,7 @@ class EmailScheduler:
                     # Use existing Qdrant method
                     vector_store_qdrant = VectorStoreService()
                     asyncio.run(vector_store_qdrant.add_contracts(contracts, llm_service))
-                
+            
             logger.info(f"✅ Daily contract sync complete: {len(contracts)} contracts processed")
             
             # Close the service
@@ -320,7 +379,7 @@ class EmailScheduler:
         """
         Get new contracts that match user's profile.
         Works with both Pinecone and Qdrant.
-        ✅ NEW: Respects plan tier entitlements
+        ✅ Respects plan tier entitlements
         """
         try:
             from app.models.company import CompanyProfile
@@ -335,7 +394,7 @@ class EmailScheduler:
                 logger.warning(f"No company profile for user {user.email}")
                 return []
             
-            # ✅ NEW: Get entitlements to determine digest type
+            # Get entitlements to determine digest type
             entitlements = get_entitlements(db, user.firm_id)
             has_priority_alerts = entitlements.get('priority_alerts', False)
             
@@ -344,7 +403,7 @@ class EmailScheduler:
             else:
                 contracts = self._get_contracts_from_qdrant(db, user, company)
             
-            # ✅ NEW: Apply tier-based filtering
+            # Apply tier-based filtering
             if has_priority_alerts:
                 # PRO: Smart prioritization
                 return self._generate_pro_digest(contracts)
@@ -462,10 +521,9 @@ class EmailScheduler:
         3. Medium-scoring (50-69%) closing <7 days
         4. Medium-scoring (50-69%)
         """
-        from datetime import datetime, timedelta
-        
-        today = datetime.utcnow()
-        urgent_threshold = today + timedelta(days=7)
+        # ✅ FIXED: Use timezone-aware datetime
+        today = ensure_timezone_aware(datetime.now(UTC))
+        urgent_threshold = ensure_timezone_aware(today + timedelta(days=7))
         
         # Categorize contracts
         high_score_urgent = []
@@ -485,6 +543,7 @@ class EmailScheduler:
                         deadline = datetime.fromisoformat(deadline_str.replace('Z', '+00:00'))
                     else:
                         deadline = deadline_str
+                    deadline = ensure_timezone_aware(deadline)
                     is_urgent = deadline <= urgent_threshold
                 except:
                     pass
@@ -567,11 +626,13 @@ class EmailScheduler:
         """Manually trigger a job (useful for testing)."""
         job = self.scheduler.get_job(job_id)
         if job:
-            job.modify(next_run_time=datetime.utcnow())
+            # ✅ FIXED: Use timezone-aware datetime
+            job.modify(next_run_time=datetime.now(UTC))
             logger.info(f"⚡ Job '{job_id}' scheduled to run immediately")
         else:
             logger.error(f"❌ Job '{job_id}' not found")
 
 
-# Singleton instance
+# Singleton instance (production use)
+# ✅ Tests should create their own instances with injected dependencies
 email_scheduler = EmailScheduler()
