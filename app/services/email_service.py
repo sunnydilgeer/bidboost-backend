@@ -1,33 +1,27 @@
 """
-Email service for sending contract notifications using SendGrid.
-✅ REFACTORED: Fixed FRONTEND_URL handling, improved testability
+Email service for sending contract notifications using Resend.
+✅ REFACTORED: Switched from SendGrid to Resend
+✅ FIXED: FRONTEND_URL handling, improved testability
 """
 from datetime import datetime
 from typing import List, Optional
-import ssl
-import certifi
 import os
-from sendgrid import SendGridAPIClient
-from sendgrid.helpers.mail import Mail, Email, To, Content
+import resend
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from pathlib import Path
 
-os.environ["SSL_CERT_FILE"] = certifi.where()
+# Configure Resend
+resend.api_key = os.getenv("RESEND_API_KEY")
 
 
 class EmailService:
     def __init__(
         self,
         *,
-        client: Optional[SendGridAPIClient] = None,   # 🔧 TESTABILITY
         env: Optional[Environment] = None,            # 🔧 TESTABILITY
         template_dir: Optional[Path] = None,          # 🔧 TESTABILITY
     ):
-        self.api_key = os.getenv("SENDGRID_API_KEY")
-        self.from_email = os.getenv("EMAIL_FROM", "noreply@contractdiscovery.com")
-
-        # 🔧 TESTABILITY: inject SendGrid client
-        self.client = client or SendGridAPIClient(self.api_key)
+        self.from_email = os.getenv("EMAIL_FROM", "noreply@bidmatch.co")
 
         # 🔧 TESTABILITY: inject Jinja env
         if env:
@@ -85,15 +79,14 @@ class EmailService:
                 unsubscribe_url=f"{frontend_url}/settings",
             )
 
-            message = Mail(
-                from_email=Email(self.from_email, "Contract Discovery"),
-                to_emails=To(to_email),
-                subject=f"🎯 {total_new_contracts} new contracts match your profile",
-                html_content=Content("text/html", html_content),
-            )
+            resend.Emails.send({
+                "from": f"BidMatch <{self.from_email}>",
+                "to": to_email,
+                "subject": f"🎯 {total_new_contracts} new contracts match your profile",
+                "html": html_content
+            })
 
-            response = self.client.send(message)
-            return response.status_code == 202
+            return True
 
         except Exception as e:
             print(f"Error sending new contracts email to {to_email}: {e}")
@@ -127,24 +120,24 @@ class EmailService:
                 contract=contract,
                 days_until_deadline=days_until_deadline,
                 contract_url=f"{frontend_url}/contracts/{contract['notice_id']}",
+                dashboard_url=frontend_url,
                 unsubscribe_url=f"{frontend_url}/settings",
             )
 
             urgency = "🚨" if days_until_deadline == 1 else "⏰"
 
-            message = Mail(
-                from_email=Email(self.from_email, "Contract Discovery"),
-                to_emails=To(to_email),
-                subject=(
+            resend.Emails.send({
+                "from": f"BidMatch <{self.from_email}>",
+                "to": to_email,
+                "subject": (
                     f"{urgency} Deadline in {days_until_deadline} "
                     f"day{'s' if days_until_deadline > 1 else ''}: "
                     f"{contract['title'][:50]}..."
                 ),
-                html_content=Content("text/html", html_content),
-            )
+                "html": html_content
+            })
 
-            response = self.client.send(message)
-            return response.status_code == 202
+            return True
 
         except Exception as e:
             print(f"Error sending deadline reminder to {to_email}: {e}")
@@ -190,23 +183,22 @@ class EmailService:
                 frontend_url=frontend_url,
             )
 
-            message = Mail(
-                from_email=Email(self.from_email, "BidMatch"),
-                to_emails=To(to_email),
-                subject=f"Your BidMatch Contract Report - {total_matches} Matches Found",
-                html_content=Content("text/html", html_content),
-            )
+            resend.Emails.send({
+                "from": f"BidMatch <{self.from_email}>",
+                "to": to_email,
+                "subject": f"Your BidMatch Contract Report - {total_matches} Matches Found",
+                "html": html_content
+            })
 
-            response = self.client.send(message)
-            return response.status_code == 202
+            return True
 
         except Exception as e:
             print(f"Error sending quickstart report to {to_email}: {e}")
             return False
 
     def test_connection(self) -> bool:
-        """Test if SendGrid is properly configured."""
-        return bool(self.api_key)
+        """Test if Resend is properly configured."""
+        return bool(os.getenv("RESEND_API_KEY"))
 
 
 # ✅ Production singleton preserved
