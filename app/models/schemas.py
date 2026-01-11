@@ -246,7 +246,7 @@ class ContractSyncResponse(BaseModel):
 class ContractSearchRequest(BaseModel):
     """Request model for contract search"""
     query: str = Field(..., min_length=3, description="Search query for contracts")
-    limit: int = Field(default=10, ge=1, le=50, description="Max results to return")
+    limit: int = Field(default=10, ge=1, le=200, description="Max results to return")
     min_value: Optional[float] = Field(None, ge=0, description="Minimum contract value")
     max_value: Optional[float] = Field(None, ge=0, description="Maximum contract value")
     region: Optional[str] = Field(None, description="Filter by region")

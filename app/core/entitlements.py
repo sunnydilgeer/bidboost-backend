@@ -5,56 +5,72 @@ from app.models.subscription import FirmSubscription
 
 # ✅ Trial entitlements (full Pro features)
 TRIAL: Dict[str, Any] = {
+    "search_contracts": True,
+    "save_contracts": True,
     "saved_contract_limit": None,  # Unlimited during trial
+    "capability_management": True,
+    "capability_wizard": True,  # AI feature
     "dashboard_kpis": True,
     "deadline_prioritization": True,
     "pipeline_tracking": True,
     "opportunity_notes": True,
-    "capability_management": True,
     "positioning_insights": True,
     "priority_alerts": True,
 }
 
+# ✅ FIXED: Starter now has search, save, and basic capabilities
 STARTER: Dict[str, Any] = {
+    "search_contracts": True,           # ← FIXED: Starter can search!
+    "save_contracts": True,             # ← FIXED: Starter can save!
     "saved_contract_limit": 50,
+    "capability_management": True,      # ← FIXED: Starter has basic capabilities
+    "capability_wizard": False,         # ← NEW: No AI wizard for Starter
     "dashboard_kpis": False,
     "deadline_prioritization": False,
     "pipeline_tracking": False,
     "opportunity_notes": False,
-    "capability_management": False,
     "positioning_insights": False,
     "priority_alerts": False,
 }
 
 PRO: Dict[str, Any] = {
+    "search_contracts": True,
+    "save_contracts": True,
     "saved_contract_limit": None,  # Unlimited
+    "capability_management": True,
+    "capability_wizard": True,  # AI feature
     "dashboard_kpis": True,
     "deadline_prioritization": True,
     "pipeline_tracking": True,
     "opportunity_notes": True,
-    "capability_management": True,
     "positioning_insights": True,
     "priority_alerts": True,
 }
 
-# ✅ Free entitlements (post-trial limited access; no hard lock)
+# ✅ Free entitlements (post-trial limited access)
 FREE: Dict[str, Any] = {
+    "search_contracts": False,          # ← NEW: Free can't search
+    "save_contracts": False,            # ← NEW: Free can't save
     "saved_contract_limit": 0,
+    "capability_management": False,
+    "capability_wizard": False,
     "dashboard_kpis": False,
     "deadline_prioritization": False,
     "pipeline_tracking": False,
     "opportunity_notes": False,
-    "capability_management": False,
     "positioning_insights": False,
     "priority_alerts": False,
 }
 
 UPGRADE_MESSAGES: Dict[str, str] = {
+    "search_contracts": "Upgrade to Starter to search contracts.",
+    "save_contracts": "Upgrade to Starter to save contracts.",
     "dashboard_kpis": "Upgrade to Pro to unlock dashboard insights & KPIs.",
     "deadline_prioritization": "Upgrade to Pro to unlock deadline prioritization.",
     "pipeline_tracking": "Upgrade to Pro to manage your contract pipeline.",
     "opportunity_notes": "Upgrade to Pro to add notes on opportunities.",
-    "capability_management": "Upgrade to Pro to manage and refine capabilities.",
+    "capability_management": "Upgrade to Starter to manage capabilities.",
+    "capability_wizard": "Upgrade to Pro to unlock the AI Capability Wizard.",
     "positioning_insights": "Upgrade to Pro to unlock Federal Positioning Insights.",
     "priority_alerts": "Upgrade to Pro for priority-aware alerts and digests.",
     "saved_contract_limit": "Upgrade to Pro for unlimited saved contracts.",

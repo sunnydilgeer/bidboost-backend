@@ -3,6 +3,7 @@ Email Scheduler - US Federal Version with Distributed Locking
 ✅ REFACTORED: Dependency injection for testability
 ✅ FIXED: All timezone-aware datetime handling
 ✅ FIXED: SQLite/PostgreSQL timezone compatibility
+✅ FIXED: Deadline reminders now Pro-only (checks priority_alerts entitlement)
 Prevents duplicate job execution across multiple Railway instances
 
 Location: app/tasks/email_scheduler.py
@@ -249,6 +250,7 @@ class EmailScheduler:
         """
         Send deadline reminder emails for saved contracts.
         ✅ REFACTORED: Uses self.session_factory and self.email_service
+        ✅ FIXED: Only send to Pro users with priority_alerts entitlement
         """
         logger.info("🚀 Starting deadline reminder job")
         
@@ -283,6 +285,7 @@ class EmailScheduler:
             logger.info(f"📅 Found {len(contracts_to_remind)} contracts with approaching deadlines")
             
             sent_count = 0
+            skipped_count = 0
             for saved_contract in contracts_to_remind:
                 try:
                     days_until = (saved_contract.deadline.date() - today).days
@@ -294,6 +297,15 @@ class EmailScheduler:
                     # Get user
                     user = db.query(User).filter(User.email == saved_contract.user_email).first()
                     if not user:
+                        continue
+                    
+                    # ✅ CRITICAL FIX: Check if user has Pro entitlement for deadline reminders
+                    entitlements = get_entitlements(db, user.firm_id)
+                    has_priority_alerts = entitlements.get('priority_alerts', False)
+                    
+                    if not has_priority_alerts:
+                        logger.info(f"⏭️  Skipped {user.email} - no priority_alerts entitlement (Starter/Free plan)")
+                        skipped_count += 1
                         continue
                     
                     # Prepare contract data
@@ -324,7 +336,7 @@ class EmailScheduler:
                     logger.error(f"❌ Error processing contract {saved_contract.notice_id}: {e}")
                     continue
             
-            logger.info(f"✅ Deadline reminder job completed: {sent_count} reminders sent")
+            logger.info(f"✅ Deadline reminder job completed: {sent_count} reminders sent, {skipped_count} skipped (non-Pro users)")
         
         except Exception as e:
             logger.error(f"❌ Critical error in deadline reminder job: {e}")
