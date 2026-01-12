@@ -1745,7 +1745,142 @@ async def get_saved_contracts(
             detail=f"Failed to retrieve saved contracts: {str(e)}"
         )
 
-
+@router.get("/contracts/saved/enriched")
+async def get_saved_contracts_enriched(
+    current_user: User = Depends(get_current_active_user),
+    db: Session = Depends(get_db)
+):
+    """Get saved contracts with full enriched data from Pinecone"""
+    try:
+        from app.services.pinecone_store import PineconeStoreService
+        from app.core.config import settings
+        from app.services.code_lookup import get_code_lookup_service, clean_naics_code
+        
+        pinecone = PineconeStoreService(api_key=settings.PINECONE_API_KEY)
+        code_service = get_code_lookup_service()
+        
+        # Get saved contracts from database
+        saved_contracts = db.query(SavedContract).filter(
+            SavedContract.firm_id == current_user.firm_id
+        ).order_by(SavedContract.saved_at.desc()).all()
+        
+        if not saved_contracts:
+            return {"total": 0, "contracts": []}
+        
+        # Batch fetch all contract vectors from Pinecone
+        notice_ids = [sc.notice_id for sc in saved_contracts]
+        
+        enriched = []
+        
+        for saved in saved_contracts:
+            try:
+                # Query Pinecone for this specific contract
+                import numpy as np
+                dummy_vector = np.random.rand(768).tolist()
+                
+                results = pinecone.index.query(
+                    vector=dummy_vector,
+                    filter={"notice_id": {"$eq": saved.notice_id}},
+                    top_k=1,
+                    include_metadata=True,
+                    namespace="contracts"
+                )
+                
+                if results.matches and len(results.matches) > 0:
+                    metadata = results.matches[0].metadata
+                    enriched_data = code_service.enrich_contract(metadata)
+                    
+                    # Merge saved metadata with Pinecone data
+                    contract_dict = {
+                        "id": saved.id,
+                        "notice_id": saved.notice_id,
+                        "contract_title": saved.contract_title,
+                        "title": enriched_data.get("title", saved.contract_title),
+                        "buyer_name": enriched_data.get("agency", saved.buyer_name),
+                        "description": enriched_data.get("description"),
+                        "contract_value": saved.contract_value,
+                        "value": enriched_data.get("contract_value"),
+                        "deadline": saved.deadline.isoformat() if saved.deadline else None,
+                        "closing_date": enriched_data.get("response_deadline"),
+                        "region": enriched_data.get("state"),
+                        "naics_code": clean_naics_code(enriched_data.get("naics_code")),
+                        "naics_name": enriched_data.get("naics_name"),
+                        "psc_code": enriched_data.get("psc_code"),
+                        "psc_name": enriched_data.get("psc_name"),
+                        "set_aside": enriched_data.get("set_aside"),
+                        "city": enriched_data.get("city"),
+                        "posted_date": enriched_data.get("posted_date"),
+                        "source_url": enriched_data.get("url"),
+                        "contact_name": enriched_data.get("contact_name"),
+                        "contact_email": enriched_data.get("contact_email"),
+                        "contact_phone": enriched_data.get("contact_phone"),
+                        "office": enriched_data.get("office"),
+                        "status": saved.status,
+                        "notes": saved.notes,
+                        "saved_at": saved.saved_at.isoformat(),
+                        "updated_at": saved.updated_at.isoformat(),
+                        # Match score (from saved data or default to 0)
+                        "total_match_score": float(saved.contract_value) / 1000000 if saved.contract_value else 0.0,
+                        "score": 0.5,
+                    }
+                    enriched.append(contract_dict)
+                else:
+                    # Contract not in Pinecone - use saved data only
+                    contract_dict = {
+                        "id": saved.id,
+                        "notice_id": saved.notice_id,
+                        "contract_title": saved.contract_title,
+                        "title": saved.contract_title,
+                        "buyer_name": saved.buyer_name,
+                        "description": None,
+                        "contract_value": saved.contract_value,
+                        "value": saved.contract_value,
+                        "deadline": saved.deadline.isoformat() if saved.deadline else None,
+                        "closing_date": saved.deadline.isoformat() if saved.deadline else None,
+                        "region": None,
+                        "status": saved.status,
+                        "notes": saved.notes,
+                        "saved_at": saved.saved_at.isoformat(),
+                        "updated_at": saved.updated_at.isoformat(),
+                        "total_match_score": 0.0,
+                        "score": 0.0,
+                    }
+                    enriched.append(contract_dict)
+                    logger.warning(f"Contract {saved.notice_id} not found in Pinecone")
+                    
+            except Exception as e:
+                logger.error(f"Failed to enrich {saved.notice_id}: {e}")
+                # Add basic saved data on error
+                contract_dict = {
+                    "id": saved.id,
+                    "notice_id": saved.notice_id,
+                    "contract_title": saved.contract_title,
+                    "title": saved.contract_title,
+                    "buyer_name": saved.buyer_name,
+                    "description": None,
+                    "contract_value": saved.contract_value,
+                    "value": saved.contract_value,
+                    "deadline": saved.deadline.isoformat() if saved.deadline else None,
+                    "status": saved.status,
+                    "notes": saved.notes,
+                    "saved_at": saved.saved_at.isoformat(),
+                    "updated_at": saved.updated_at.isoformat(),
+                    "total_match_score": 0.0,
+                    "score": 0.0,
+                }
+                enriched.append(contract_dict)
+        
+        return {
+            "total": len(enriched),
+            "contracts": enriched
+        }
+        
+    except Exception as e:
+        logger.error(f"Failed to get enriched saved contracts: {str(e)}", exc_info=True)
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Failed to retrieve saved contracts: {str(e)}"
+        )
 
 @router.get("/contracts/{notice_id}")
 async def get_contract_details(
