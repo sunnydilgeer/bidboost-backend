@@ -144,6 +144,8 @@ class SavedContract(Base):
     buyer_name = Column(String(255), nullable=False)
     contract_value = Column(Numeric(15, 2), nullable=True)
     deadline = Column(DateTime(timezone=True), nullable=True)
+    match_score = Column(Numeric(5, 2), nullable=True)
+
     
     # Saved contract metadata
     status = Column(String(50), default="interested", nullable=False)

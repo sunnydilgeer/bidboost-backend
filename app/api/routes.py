@@ -1903,8 +1903,8 @@ async def get_saved_contracts_enriched(
                         "notes": saved.notes,
                         "saved_at": saved.saved_at.isoformat(),
                         "updated_at": saved.updated_at.isoformat(),
-                        "total_match_score": 0.0,  # Not in cache, no score available
-                        "score": 0.0,
+                        "total_match_score": float(saved.match_score) if saved.match_score else 0.0,
+                        "score": float(saved.match_score) if saved.match_score else 0.0,
                     }
                     enriched.append(contract_dict)
                     
@@ -1926,8 +1926,8 @@ async def get_saved_contracts_enriched(
                         "notes": saved.notes,
                         "saved_at": saved.saved_at.isoformat(),
                         "updated_at": saved.updated_at.isoformat(),
-                        "total_match_score": 0.0,
-                        "score": 0.0,
+                        "total_match_score": float(saved.match_score) if saved.match_score else 0.0,
+                        "score": float(saved.match_score) if saved.match_score else 0.0,
                     }
                     enriched.append(contract_dict)
                     logger.warning(f"Contract {saved.notice_id} not found in cache or Pinecone")
@@ -2363,6 +2363,7 @@ async def save_contract(
             buyer_name=request.buyer_name,
             contract_value=request.contract_value,
             deadline=request.deadline,
+            match_score=request.total_match_score,
             status="interested"
         )
 
