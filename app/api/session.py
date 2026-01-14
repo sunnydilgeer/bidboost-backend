@@ -55,5 +55,11 @@ async def get_session(
         "subscription": {
             "plan": plan,
             "entitlements": entitlements,
+            "billing_price": subscription.billing_price,  # ✅ Actual price variant
+            "founder": {  # ✅ Founder context for UI
+                "eligible": bool(subscription.founder_eligible),
+                "revoked": subscription.founder_revoked_at is not None,
+                "active": subscription.billing_price == "pro_founder" and plan == "pro",
+            },
         },
     }
