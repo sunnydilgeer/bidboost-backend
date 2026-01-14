@@ -587,6 +587,8 @@ class SaveContractRequest(BaseModel):
     buyer_name: str = Field(..., max_length=255)
     contract_value: Optional[float] = None
     deadline: Optional[datetime] = None
+    total_match_score: Optional[float] = None 
+
     
     class Config:
         json_schema_extra = {
