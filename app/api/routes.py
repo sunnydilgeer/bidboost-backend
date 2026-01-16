@@ -1927,13 +1927,25 @@ async def get_saved_contracts_enriched(
                         "value": saved.contract_value,
                         "deadline": saved.deadline.isoformat() if saved.deadline else None,
                         "closing_date": saved.deadline.isoformat() if saved.deadline else None,
-                        "region": None,
+                        "region": saved.region if hasattr(saved, 'region') else None,
+                        "naics_code": saved.naics_code if hasattr(saved, 'naics_code') else None,
+                        "naics_name": None,  # Not stored in SavedContract table
+                        "psc_code": None,
+                        "psc_name": None,
+                        "set_aside": None,
+                        "city": None,
+                        "posted_date": None,
+                        "source_url": None,
+                        "contact_name": None,
+                        "contact_email": None,
+                        "contact_phone": None,
+                        "office": None,
                         "status": saved.status,
                         "notes": saved.notes,
                         "saved_at": saved.saved_at.isoformat(),
                         "updated_at": saved.updated_at.isoformat(),
                         "total_match_score": float(saved.match_score) if saved.match_score else 0.0,
-                        "score": float(saved.match_score) if saved.match_score else 0.0,
+                        "score": float(saved.match_score) if saved.match_score else 0.0
                     }
                     enriched.append(contract_dict)
                     logger.warning(f"Contract {saved.notice_id} not found in cache or Pinecone")
