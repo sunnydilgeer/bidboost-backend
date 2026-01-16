@@ -8,7 +8,7 @@ import logging
 from typing import List, Dict
 from sqlalchemy.orm import Session
 from sqlalchemy import delete
-from datetime import datetime, timezone  # ✅ Added timezone import
+from datetime import datetime, timezone
 
 from app.database import SessionLocal
 from app.models.company import CompanyProfile, CachedContractMatch
@@ -82,9 +82,6 @@ class MatchCacheService:
             logger.warning(f"Firm {firm.firm_id} has no capabilities - skipping")
             return
         
-        # Get active contracts (simplified - you might query differently)
-        # For now, we'll score top 500 contracts from Pinecone
-        
         # Pre-fetch capability vectors
         from app.services.capability_store_pinecone import get_capability_store
         cap_store = get_capability_store()
@@ -106,7 +103,6 @@ class MatchCacheService:
                 past_win_vectors = win_store.get_past_wins_batch(past_win_ids)
         
         # Get contracts from Pinecone (top 500 by semantic similarity)
-        # Use first capability as query vector
         first_cap_vector = capability_vectors.get(capability_ids[0])
         if not first_cap_vector:
             logger.warning(f"No vector for first capability - skipping firm {firm.firm_id}")
@@ -126,6 +122,7 @@ class MatchCacheService:
             if not result.values or len(result.values) != 768:
                 logger.warning(f"Skipping contract {result.id} - invalid vector (length: {len(result.values) if result.values else 0})")
                 continue
+            
             # Convert Pinecone result to Contract object
             metadata = result.metadata
             contract = Contract(
@@ -143,7 +140,7 @@ class MatchCacheService:
                 contract=contract,
                 firm_id=firm.firm_id,
                 capability_vectors=capability_vectors,
-                contract_vectors={result.id: result.values},  # Pass pre-fetched vector
+                contract_vectors={result.id: result.values},
                 past_win_vectors=past_win_vectors
             )
             
@@ -167,7 +164,7 @@ class MatchCacheService:
             )
         )
         
-        # Insert new cache entries
+        # Insert new cache entries with ALL fields
         for rank, match in enumerate(top_matches, start=1):
             contract = match["contract"]
             scores = match["scores"]
@@ -176,29 +173,43 @@ class MatchCacheService:
             cached_match = CachedContractMatch(
                 firm_id=firm.firm_id,
                 notice_id=contract.notice_id,
-                pinecone_id=result.id,
+                pinecone_id=contract.qdrant_id,
                 title=contract.title,
                 buyer_name=contract.buyer_name,
                 description=contract.description,
                 
                 # Pre-computed scores (PURE CAPABILITY)
-                total_score=scores["match_score"],  # ✅ Using pure capability score
+                total_score=scores["match_score"],
                 capability_score=scores["capability_score"],
                 past_win_score=scores["past_win_score"],
                 preference_score=scores["preference_score"],
                 
-                # Metadata
+                # Core Metadata
                 contract_value=metadata.get("contract_value"),
                 region=metadata.get("state"),
+                city=metadata.get("city"),
                 closing_date=metadata.get("response_deadline"),
+                posted_date=metadata.get("posted_date"),
+                
+                # Classification
                 naics_code=metadata.get("naics_code"),
                 psc_code=metadata.get("psc_code"),
                 set_aside=metadata.get("set_aside"),
+                
+                # Agency Info
+                office=metadata.get("office"),
+                
+                # Contact Information
+                contact_name=metadata.get("contact_name"),
+                contact_email=metadata.get("contact_email"),
+                contact_phone=metadata.get("contact_phone"),
+                
+                # Links
                 source_url=metadata.get("url"),
                 
                 # Ranking
                 rank=rank,
-                cached_at=datetime.now(timezone.utc)  # ✅ FIXED: timezone-aware
+                cached_at=datetime.now(timezone.utc)
             )
             
             self.db.add(cached_match)

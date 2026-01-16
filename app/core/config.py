@@ -42,6 +42,7 @@ class Settings(BaseSettings):
     PINECONE_API_KEY: Optional[str] = None
     USE_PINECONE: bool = False
     PINECONE_INDEX_NAME: str = "contracts"
+    PINECONE_NAMESPACE: str = "contracts"  # ← ADD THIS (with default)
     SAM_API_KEY: Optional[str] = None  
     
     # Stripe Configuration

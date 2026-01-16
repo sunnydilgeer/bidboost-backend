@@ -1239,10 +1239,16 @@ async def get_recommended_contracts(
         if cached_matches:
             logger.info(f"⚡ CACHE HIT: Serving {len(cached_matches)} contracts from cache for {current_user.firm_id}")
             
+
+            from app.services.code_lookup import get_code_lookup_service
+            code_service = get_code_lookup_service()
             # Convert cached matches to API format
             results = []
             for match in cached_matches:
                 match_dict = match.to_dict()
+                enriched = code_service.enrich_contract(match_dict)
+                match_dict.update(enriched) 
+
                 results.append(ContractSearchResult(**match_dict))
             
             return ContractSearchResponse(
@@ -1308,7 +1314,7 @@ async def get_recommended_contracts(
             query_vector=query_vector,
             limit=min(limit * 2, 200),  # Cap at 200 to avoid over-fetching
             min_score=0.25,  # Higher threshold = fewer contracts to score
-            namespace="contracts"
+            namespace=settings.PINECONE_NAMESPACE
         )
         
         if not results:
@@ -1347,7 +1353,7 @@ async def get_recommended_contracts(
         if contract_ids:
             try:
                 # Batch fetch all contract vectors from Pinecone
-                fetch_result = pinecone.index.fetch(ids=contract_ids, namespace="contracts")
+                fetch_result = pinecone.index.fetch(ids=contract_ids, namespace=settings.PINECONE_NAMESPACE)
                 
                 for vec_id, vec_data in fetch_result.vectors.items():
                     contract_vectors[vec_id] = list(vec_data.values)
@@ -1561,7 +1567,7 @@ async def search_contracts(
             query_vector=query_vector,
             limit=search_limit,
             min_score=0.3,
-            namespace="contracts",
+            namespace=settings.PINECONE_NAMESPACE,
             filter_dict=filters if filters else None
         )
         
@@ -1604,7 +1610,7 @@ async def search_contracts(
             
             if contract_ids:
                 try:
-                    fetch_result = pinecone.index.fetch(ids=contract_ids, namespace="contracts")
+                    fetch_result = pinecone.index.fetch(ids=contract_ids, namespace=settings.PINECONE_NAMESPACE)
                     
                     for vec_id, vec_data in fetch_result.vectors.items():
                         contract_vectors[vec_id] = list(vec_data.values)
@@ -1803,7 +1809,7 @@ async def get_saved_contracts_enriched(
                         filter={"notice_id": {"$eq": notice_id}},
                         top_k=1,
                         include_metadata=True,
-                        namespace="contracts"
+                        namespace=settings.PINECONE_NAMESPACE
                     )
                     
                     if results.matches and len(results.matches) > 0:
@@ -1991,7 +1997,7 @@ async def get_saved_contracts_enriched(
                     filter={"notice_id": {"$eq": notice_id}},
                     top_k=1,
                     include_metadata=True,
-                    namespace="contracts"
+                    namespace=settings.PINECONE_NAMESPACE
                 )
                 
                 if results.matches and len(results.matches) > 0:
@@ -2112,7 +2118,7 @@ async def get_contract_details(
             filter={"notice_id": {"$eq": notice_id}},
             top_k=1,
             include_metadata=True,
-            namespace="contracts"
+            namespace=settings.PINECONE_NAMESPACE
         )
         
         if not results.matches:
