@@ -160,3 +160,35 @@ async def verify_capabilities_endpoint():
         raise HTTPException(status_code=500, detail=str(e))
     finally:
         db.close()
+
+@router.post("/rebuild-cache-single-firm")
+async def rebuild_cache_single_firm(firm_id: str):
+    """TEMPORARY: Rebuild cache for a single firm"""
+    from app.services.match_cache_service import MatchCacheService
+    
+    try:
+        db: Session = SessionLocal()
+        
+        # Get the firm
+        firm = db.query(CompanyProfile).filter(CompanyProfile.firm_id == firm_id).first()
+        
+        if not firm:
+            raise HTTPException(status_code=404, detail=f"Firm not found: {firm_id}")
+        
+        # Rebuild cache for this firm only
+        service = MatchCacheService(db=db)
+        service._update_firm_cache(firm)
+        
+        return {
+            "status": "success",
+            "firm_id": firm_id,
+            "company_name": firm.company_name,
+            "message": f"Cache rebuilt successfully for {firm.company_name}"
+        }
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+    finally:
+        db.close()
