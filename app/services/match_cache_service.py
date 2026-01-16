@@ -270,3 +270,8 @@ def refresh_cache_for_firm(firm_id: str):
     """
     service = MatchCacheService()
     service.run_cache_update(firm_ids=[firm_id])
+
+if __name__ == "__main__":
+    """Entry point for Railway cron job"""
+    service = MatchCacheService()
+    service.run_cache_update()
