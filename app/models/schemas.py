@@ -581,13 +581,27 @@ class ContractStatusEnum(str, Enum):
     LOST = "lost"
 
 class SaveContractRequest(BaseModel):
-    """Request to save a contract"""
-    notice_id: str = Field(..., description="Contract notice ID")
-    contract_title: str = Field(..., max_length=500)
-    buyer_name: str = Field(..., max_length=255)
+    notice_id: str
+    contract_title: str
+    buyer_name: str
     contract_value: Optional[float] = None
-    deadline: Optional[datetime] = None
-    total_match_score: Optional[float] = None 
+    deadline: Optional[str] = None
+    region: Optional[str] = None
+    naics_code: Optional[str] = None
+    total_match_score: Optional[float] = None
+    # ✅ NEW: Enriched fields
+    description: Optional[str] = None
+    naics_name: Optional[str] = None
+    psc_code: Optional[str] = None
+    psc_name: Optional[str] = None
+    set_aside: Optional[str] = None
+    city: Optional[str] = None
+    office: Optional[str] = None
+    contact_name: Optional[str] = None
+    contact_email: Optional[str] = None
+    contact_phone: Optional[str] = None
+    posted_date: Optional[str] = None
+    source_url: Optional[str] = None 
 
     
     class Config:

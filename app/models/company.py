@@ -3,6 +3,7 @@ from sqlalchemy import Column, Integer, String, Text, DateTime, Enum as SQLEnum,
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
 from app.database import Base
+from datetime import datetime
 import enum
 
 class CompanySize(enum.Enum):
@@ -150,8 +151,22 @@ class SavedContract(Base):
     # Saved contract metadata
     status = Column(String(50), default="interested", nullable=False)
     notes = Column(Text, nullable=True)
-    saved_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
-    updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
+    description = Column(Text, nullable=True)
+    naics_code = Column(String(10), nullable=True)
+    naics_name = Column(Text, nullable=True)
+    psc_code = Column(String(10), nullable=True)
+    psc_name = Column(Text, nullable=True)
+    set_aside = Column(String(100), nullable=True)
+    city = Column(String(100), nullable=True)
+    region = Column(String(100), nullable=True)
+    office = Column(Text, nullable=True)
+    contact_name = Column(String(200), nullable=True)
+    contact_email = Column(String(200), nullable=True)
+    contact_phone = Column(String(50), nullable=True)
+    posted_date = Column(DateTime, nullable=True)
+    source_url = Column(Text, nullable=True)
+    saved_at = Column(DateTime, default=datetime.utcnow)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
     
     __table_args__ = (
         Index('idx_user_contract', 'user_email', 'notice_id', unique=True),
