@@ -78,6 +78,22 @@ async def restore_capabilities_endpoint():
     finally:
         db.close()
 
+@router.post("/rebuild-cache")
+async def rebuild_cache_endpoint():
+    """TEMPORARY: Rebuild contract match cache"""
+    from app.services.match_cache_service import MatchCacheService
+    
+    try:
+        service = MatchCacheService()
+        result = service.run_cache_update()
+        return {
+            "status": "success",
+            "message": "Cache rebuilt successfully",
+            "details": result
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
 @router.get("/verify-capabilities")
 async def verify_capabilities_endpoint():
     """TEMPORARY: Verify capability restoration"""
