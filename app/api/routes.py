@@ -1756,6 +1756,52 @@ async def get_saved_contracts_enriched(
     current_user: User = Depends(get_current_active_user),
     db: Session = Depends(get_db)
 ):
+    """Get saved contracts with enriched data from database"""
+    try:
+        saved_contracts = db.query(SavedContract).filter(
+            SavedContract.firm_id == current_user.firm_id
+        ).order_by(SavedContract.saved_at.desc()).all()
+        
+        enriched = []
+        for saved in saved_contracts:
+            contract_dict = {
+                "id": saved.id,
+                "notice_id": saved.notice_id,
+                "contract_title": saved.contract_title,
+                "title": saved.contract_title,
+                "buyer_name": saved.buyer_name,
+                "description": saved.description,
+                "contract_value": saved.contract_value,
+                "value": saved.contract_value,
+                "deadline": saved.deadline.isoformat() if saved.deadline else None,
+                "closing_date": saved.deadline.isoformat() if saved.deadline else None,
+                "region": saved.region,
+                "naics_code": saved.naics_code,
+                "naics_name": saved.naics_name,
+                "psc_code": saved.psc_code,
+                "psc_name": saved.psc_name,
+                "set_aside": saved.set_aside,
+                "city": saved.city,
+                "posted_date": saved.posted_date.isoformat() if saved.posted_date else None,
+                "source_url": saved.source_url,
+                "contact_name": saved.contact_name,
+                "contact_email": saved.contact_email,
+                "contact_phone": saved.contact_phone,
+                "office": saved.office,
+                "status": saved.status,
+                "notes": saved.notes,
+                "saved_at": saved.saved_at.isoformat(),
+                "updated_at": saved.updated_at.isoformat(),
+                "total_match_score": float(saved.match_score) if saved.match_score else 0.0,
+                "score": float(saved.match_score) if saved.match_score else 0.0,
+            }
+            enriched.append(contract_dict)
+        
+        return {"total": len(enriched), "contracts": enriched}
+        
+    except Exception as e:
+        logger.error(f"Failed to get saved contracts: {str(e)}", exc_info=True)
+        raise HTTPException(status_code=500, detail=str(e))
     """Get saved contracts with full enriched data (CACHE-FIRST approach)"""
     try:
         from app.services.pinecone_store import PineconeStoreService
