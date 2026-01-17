@@ -147,7 +147,7 @@ class MatchCacheService:
         search_results = self.pinecone.index.query(
             vector=first_cap_vector,
             namespace="contracts",
-            top_k=500,
+            top_k=1000,
             include_metadata=True,
             include_values=True
         )
@@ -191,7 +191,7 @@ class MatchCacheService:
         scored_matches.sort(key=lambda x: x["scores"]["match_score"], reverse=True)
         
         # Keep top 100
-        top_matches = scored_matches[:100]
+        top_matches = scored_matches[:500]
         
         # Delete old cache entries for this firm
         self.db.execute(
