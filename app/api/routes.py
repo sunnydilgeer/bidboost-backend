@@ -1768,57 +1768,14 @@ async def get_saved_contracts_enriched(
     current_user: User = Depends(get_current_active_user),
     db: Session = Depends(get_db)
 ):
-    """Get saved contracts with enriched data from database"""
-    try:
-        saved_contracts = db.query(SavedContract).filter(
-            SavedContract.firm_id == current_user.firm_id
-        ).order_by(SavedContract.saved_at.desc()).all()
-        
-        enriched = []
-        for saved in saved_contracts:
-            contract_dict = {
-                "id": saved.id,
-                "notice_id": saved.notice_id,
-                "contract_title": saved.contract_title,
-                "title": saved.contract_title,
-                "buyer_name": saved.buyer_name,
-                "description": saved.description,
-                "contract_value": saved.contract_value,
-                "value": saved.contract_value,
-                "deadline": saved.deadline.isoformat() if saved.deadline else None,
-                "closing_date": saved.deadline.isoformat() if saved.deadline else None,
-                "region": saved.region,
-                "naics_code": saved.naics_code,
-                "naics_name": saved.naics_name,
-                "psc_code": saved.psc_code,
-                "psc_name": saved.psc_name,
-                "set_aside": saved.set_aside,
-                "city": saved.city,
-                "posted_date": saved.posted_date.isoformat() if saved.posted_date else None,
-                "source_url": saved.source_url,
-                "contact_name": saved.contact_name,
-                "contact_email": saved.contact_email,
-                "contact_phone": saved.contact_phone,
-                "office": saved.office,
-                "status": saved.status,
-                "notes": saved.notes,
-                "saved_at": saved.saved_at.isoformat(),
-                "updated_at": saved.updated_at.isoformat(),
-                "total_match_score": float(saved.match_score) if saved.match_score else 0.0,
-                "score": float(saved.match_score) if saved.match_score else 0.0,
-            }
-            enriched.append(contract_dict)
-        
-        return {"total": len(enriched), "contracts": enriched}
-        
-    except Exception as e:
-        logger.error(f"Failed to get saved contracts: {str(e)}", exc_info=True)
-        raise HTTPException(status_code=500, detail=str(e))
-    """Get saved contracts with full enriched data (CACHE-FIRST approach)"""
+    """Get saved contracts with FULL enriched data (same quality as dashboard)"""
     try:
         from app.services.pinecone_store import PineconeStoreService
         from app.core.config import settings
         from app.services.code_lookup import get_code_lookup_service, clean_naics_code
+        from app.services.match_scoring import ContractMatchScorer
+        from app.services.capability_store_pinecone import get_capability_store
+        from app.services.past_win_store_pinecone import get_past_win_store
         import asyncio
         
         # Get saved contracts from database
@@ -1833,31 +1790,53 @@ async def get_saved_contracts_enriched(
         
         notice_ids = [sc.notice_id for sc in saved_contracts]
         
-        # ✅ STEP 1: Check cache first (CachedContractMatch table)
+        # ✅ STEP 1: Check cache first
         cached_matches = db.query(CachedContractMatch).filter(
             CachedContractMatch.firm_id == current_user.firm_id,
             CachedContractMatch.notice_id.in_(notice_ids)
         ).all()
         
-        # Build lookup dictionary from cache
         cached_data = {match.notice_id: match for match in cached_matches}
-        
         logger.info(f"✅ Found {len(cached_data)}/{len(notice_ids)} contracts in cache")
         
         # ✅ STEP 2: Identify contracts NOT in cache
         uncached_notice_ids = [nid for nid in notice_ids if nid not in cached_data]
         
-        # ✅ STEP 3: Fetch uncached contracts from Pinecone (parallel)
+        # ✅ STEP 3: Initialize services for uncached contracts
         pinecone_data = {}
         
         if uncached_notice_ids:
-            logger.info(f"🔍 Fetching {len(uncached_notice_ids)} contracts from Pinecone")
+            logger.info(f"🔍 Fetching {len(uncached_notice_ids)} contracts from Pinecone with FULL scoring")
             
             pinecone = PineconeStoreService(api_key=settings.PINECONE_API_KEY)
             code_service = get_code_lookup_service()
+            scorer = ContractMatchScorer(db, pinecone.index)
             
-            async def fetch_single_contract(notice_id: str):
-                """Fetch a single contract from Pinecone"""
+            # Pre-fetch capability vectors
+            company = db.query(CompanyProfile).filter(
+                CompanyProfile.firm_id == current_user.firm_id
+            ).first()
+            
+            capabilities_data = {}
+            past_wins_data = {}
+            
+            if company and company.capabilities:
+                cap_store = get_capability_store()
+                capability_ids = [cap.qdrant_id for cap in company.capabilities if cap.qdrant_id]
+                if capability_ids:
+                    capabilities_data = cap_store.get_capabilities_batch(capability_ids)
+                    logger.info(f"Pre-fetched {len(capabilities_data)} capability vectors")
+            
+            if company and company.past_wins:
+                win_store = get_past_win_store()
+                past_win_ids = [win.pinecone_id for win in company.past_wins if win.pinecone_id]
+                if past_win_ids:
+                    past_wins_data = win_store.get_past_wins_batch(past_win_ids)
+                    logger.info(f"Pre-fetched {len(past_wins_data)} past win vectors")
+            
+            # Fetch contracts from Pinecone in parallel
+            async def fetch_and_score_contract(notice_id: str):
+                """Fetch contract from Pinecone AND calculate match scores"""
                 try:
                     import numpy as np
                     dummy_vector = np.random.rand(768).tolist()
@@ -1871,40 +1850,68 @@ async def get_saved_contracts_enriched(
                     )
                     
                     if results.matches and len(results.matches) > 0:
-                        return (notice_id, results.matches[0].metadata)
+                        metadata = results.matches[0].metadata
+                        enriched_data = code_service.enrich_contract(metadata)
+                        
+                        # ✅ CRITICAL: Calculate match scores (same as dashboard)
+                        temp_contract = Contract(
+                            notice_id=notice_id,
+                            title=enriched_data.get("title", ""),
+                            buyer_name=enriched_data.get("agency", ""),
+                            description=enriched_data.get("description", ""),
+                            contract_value=enriched_data.get("contract_value"),
+                            region=enriched_data.get("state"),
+                            qdrant_id=results.matches[0].id
+                        )
+                        
+                        # Get contract vector
+                        contract_vectors = {results.matches[0].id: results.matches[0].values}
+                        
+                        # Score with all three components
+                        match_scores = scorer.score_contract(
+                            temp_contract,
+                            current_user.firm_id,
+                            capability_vectors=capabilities_data,
+                            contract_vectors=contract_vectors,
+                            past_win_vectors=past_wins_data
+                        )
+                        
+                        return (notice_id, {
+                            "metadata": enriched_data,
+                            "match_scores": match_scores
+                        })
                     return (notice_id, None)
                     
                 except Exception as e:
-                    logger.error(f"Failed to fetch {notice_id} from Pinecone: {e}")
+                    logger.error(f"Failed to fetch/score {notice_id}: {e}")
                     return (notice_id, None)
             
             # Fetch all uncached contracts in parallel
-            tasks = [fetch_single_contract(nid) for nid in uncached_notice_ids]
+            tasks = [fetch_and_score_contract(nid) for nid in uncached_notice_ids]
             results = await asyncio.gather(*tasks)
             
-            # Build lookup dictionary for Pinecone results
-            for notice_id, metadata in results:
-                if metadata:
-                    pinecone_data[notice_id] = code_service.enrich_contract(metadata)
+            for notice_id, data in results:
+                if data:
+                    pinecone_data[notice_id] = data
         
-        # ✅ STEP 4: Merge saved + cached + Pinecone data
+        # ✅ STEP 4: Merge saved + cached + Pinecone data (ALWAYS PREFER FULL DATA)
         enriched = []
         
         for saved in saved_contracts:
             try:
-                # Priority 1: Use cached data (fastest)
+                # Priority 1: Use cached data (fastest, has full match scores)
                 if saved.notice_id in cached_data:
                     cached = cached_data[saved.notice_id]
                     contract_dict = {
                         "id": saved.id,
                         "notice_id": saved.notice_id,
-                        "contract_title": saved.contract_title,
+                        "contract_title": cached.title,
                         "title": cached.title,
                         "buyer_name": cached.buyer_name,
                         "description": cached.description,
-                        "contract_value": saved.contract_value,
+                        "contract_value": float(cached.contract_value) if cached.contract_value else None,
                         "value": float(cached.contract_value) if cached.contract_value else None,
-                        "deadline": saved.deadline.isoformat() if saved.deadline else None,
+                        "deadline": cached.closing_date,
                         "closing_date": cached.closing_date,
                         "region": cached.region,
                         "naics_code": cached.naics_code,
@@ -1923,56 +1930,69 @@ async def get_saved_contracts_enriched(
                         "notes": saved.notes,
                         "saved_at": saved.saved_at.isoformat(),
                         "updated_at": saved.updated_at.isoformat(),
-                        # Use cached match scores
+                        # ✅ Full match score breakdown
                         "total_match_score": float(cached.total_score),
                         "score": float(cached.total_score),
                         "match_scores": {
                             "capability_score": float(cached.capability_score),
                             "past_win_score": float(cached.past_win_score),
                             "preference_score": float(cached.preference_score),
-                            "total_score": float(cached.total_score)
+                            "total_score": float(cached.total_score),
+                            "match_score": float(cached.total_score)
                         },
                         "match_reasons": cached.match_reasons or [],
                     }
                     enriched.append(contract_dict)
                     
-                # Priority 2: Use Pinecone data (slower)
+                # Priority 2: Use Pinecone data WITH match scores (real-time scoring)
                 elif saved.notice_id in pinecone_data:
-                    enriched_data = pinecone_data[saved.notice_id]
+                    data = pinecone_data[saved.notice_id]
+                    enriched_metadata = data["metadata"]
+                    match_scores = data.get("match_scores")
+                    
                     contract_dict = {
                         "id": saved.id,
                         "notice_id": saved.notice_id,
-                        "contract_title": saved.contract_title,
-                        "title": enriched_data.get("title", saved.contract_title),
-                        "buyer_name": enriched_data.get("agency", saved.buyer_name),
-                        "description": enriched_data.get("description"),
-                        "contract_value": saved.contract_value,
-                        "value": enriched_data.get("contract_value"),
-                        "deadline": saved.deadline.isoformat() if saved.deadline else None,
-                        "closing_date": enriched_data.get("response_deadline"),
-                        "region": enriched_data.get("state"),
-                        "naics_code": clean_naics_code(enriched_data.get("naics_code")),
-                        "naics_name": enriched_data.get("naics_name"),
-                        "psc_code": enriched_data.get("psc_code"),
-                        "psc_name": enriched_data.get("psc_name"),
-                        "set_aside": enriched_data.get("set_aside"),
-                        "city": enriched_data.get("city"),
-                        "posted_date": enriched_data.get("posted_date"),
-                        "source_url": enriched_data.get("url"),
-                        "contact_name": enriched_data.get("contact_name"),
-                        "contact_email": enriched_data.get("contact_email"),
-                        "contact_phone": enriched_data.get("contact_phone"),
-                        "office": enriched_data.get("office"),
+                        "contract_title": enriched_metadata.get("title", saved.contract_title),
+                        "title": enriched_metadata.get("title", saved.contract_title),
+                        "buyer_name": enriched_metadata.get("agency", saved.buyer_name),
+                        "description": enriched_metadata.get("description"),
+                        "contract_value": enriched_metadata.get("contract_value"),
+                        "value": enriched_metadata.get("contract_value"),
+                        "deadline": enriched_metadata.get("response_deadline"),
+                        "closing_date": enriched_metadata.get("response_deadline"),
+                        "region": enriched_metadata.get("state"),
+                        "naics_code": clean_naics_code(enriched_metadata.get("naics_code")),
+                        "naics_name": enriched_metadata.get("naics_name"),
+                        "psc_code": enriched_metadata.get("psc_code"),
+                        "psc_name": enriched_metadata.get("psc_name"),
+                        "set_aside": enriched_metadata.get("set_aside"),
+                        "city": enriched_metadata.get("city"),
+                        "posted_date": enriched_metadata.get("posted_date"),
+                        "source_url": enriched_metadata.get("url"),
+                        "contact_name": enriched_metadata.get("contact_name"),
+                        "contact_email": enriched_metadata.get("contact_email"),
+                        "contact_phone": enriched_metadata.get("contact_phone"),
+                        "office": enriched_metadata.get("office"),
                         "status": saved.status,
                         "notes": saved.notes,
                         "saved_at": saved.saved_at.isoformat(),
                         "updated_at": saved.updated_at.isoformat(),
-                        "total_match_score": float(saved.match_score) if saved.match_score else 0.0,
-                        "score": float(saved.match_score) if saved.match_score else 0.0,
+                        # ✅ Full match score breakdown from real-time scoring
+                        "total_match_score": float(match_scores["match_score"]) if match_scores else 0.0,
+                        "score": float(match_scores["match_score"]) if match_scores else 0.0,
+                        "match_scores": match_scores if match_scores else {
+                            "capability_score": 0.0,
+                            "past_win_score": 0.0,
+                            "preference_score": 0.0,
+                            "total_score": 0.0,
+                            "match_score": 0.0
+                        },
+                        "match_reasons": match_scores.get("match_reasons", []) if match_scores else [],
                     }
                     enriched.append(contract_dict)
                     
-                # Priority 3: Use basic saved data only (contract not found)
+                # Priority 3: Contract not found anywhere - use minimal saved data
                 else:
                     contract_dict = {
                         "id": saved.id,
@@ -2004,13 +2024,15 @@ async def get_saved_contracts_enriched(
                         "updated_at": saved.updated_at.isoformat(),
                         "total_match_score": float(saved.match_score) if saved.match_score else 0.0,
                         "score": float(saved.match_score) if saved.match_score else 0.0,
+                        "match_scores": None,  # Indicate no detailed scores available
+                        "match_reasons": [],
                     }
                     enriched.append(contract_dict)
-                    logger.warning(f"Contract {saved.notice_id} not found in cache or Pinecone")
+                    logger.warning(f"⚠️ Contract {saved.notice_id} not found in cache or Pinecone - using saved data only")
                     
             except Exception as e:
                 logger.error(f"Failed to process {saved.notice_id}: {e}")
-                # Add minimal data on error
+                # Add minimal error fallback
                 enriched.append({
                     "id": saved.id,
                     "notice_id": saved.notice_id,
@@ -2020,139 +2042,7 @@ async def get_saved_contracts_enriched(
                     "saved_at": saved.saved_at.isoformat(),
                 })
         
-        logger.info(f"✅ Returned {len(enriched)} enriched contracts")
-        
-        return {
-            "total": len(enriched),
-            "contracts": enriched
-        }
-        
-    except Exception as e:
-        logger.error(f"Failed to get enriched saved contracts: {str(e)}", exc_info=True)
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Failed to retrieve saved contracts: {str(e)}"
-        )
-    """Get saved contracts with full enriched data from Pinecone (OPTIMIZED)"""
-    try:
-        from app.services.pinecone_store import PineconeStoreService
-        from app.core.config import settings
-        from app.services.code_lookup import get_code_lookup_service, clean_naics_code
-        import asyncio
-        
-        pinecone = PineconeStoreService(api_key=settings.PINECONE_API_KEY)
-        code_service = get_code_lookup_service()
-        
-        # Get saved contracts from database
-        saved_contracts = db.query(SavedContract).filter(
-            SavedContract.firm_id == current_user.firm_id
-        ).order_by(SavedContract.saved_at.desc()).all()
-        
-        if not saved_contracts:
-            return {"total": 0, "contracts": []}
-        
-        logger.info(f"📦 Fetching {len(saved_contracts)} saved contracts for {current_user.firm_id}")
-        
-        # ✅ OPTIMIZATION: Parallel fetch all contracts at once
-        notice_ids = [sc.notice_id for sc in saved_contracts]
-        
-        async def fetch_single_contract(notice_id: str):
-            """Fetch a single contract from Pinecone"""
-            try:
-                import numpy as np
-                dummy_vector = np.random.rand(768).tolist()
-                
-                results = pinecone.index.query(
-                    vector=dummy_vector,
-                    filter={"notice_id": {"$eq": notice_id}},
-                    top_k=1,
-                    include_metadata=True,
-                    namespace=settings.PINECONE_NAMESPACE
-                )
-                
-                if results.matches and len(results.matches) > 0:
-                    return (notice_id, results.matches[0].metadata)
-                return (notice_id, None)
-                
-            except Exception as e:
-                logger.error(f"Failed to fetch {notice_id}: {e}")
-                return (notice_id, None)
-        
-        # ✅ Fetch all contracts in parallel (10-20x faster)
-        tasks = [fetch_single_contract(nid) for nid in notice_ids]
-        results = await asyncio.gather(*tasks)
-        
-        # Build lookup dictionary
-        pinecone_data = {notice_id: metadata for notice_id, metadata in results if metadata}
-        
-        logger.info(f"✅ Found {len(pinecone_data)}/{len(notice_ids)} contracts in Pinecone")
-        
-        # Merge saved + Pinecone data
-        enriched = []
-        
-        for saved in saved_contracts:
-            metadata = pinecone_data.get(saved.notice_id)
-            
-            if metadata:
-                # Contract found in Pinecone - use enriched data
-                enriched_data = code_service.enrich_contract(metadata)
-                
-                contract_dict = {
-                    "id": saved.id,
-                    "notice_id": saved.notice_id,
-                    "contract_title": saved.contract_title,
-                    "title": enriched_data.get("title", saved.contract_title),
-                    "buyer_name": enriched_data.get("agency", saved.buyer_name),
-                    "description": enriched_data.get("description"),
-                    "contract_value": saved.contract_value,
-                    "value": enriched_data.get("contract_value"),
-                    "deadline": saved.deadline.isoformat() if saved.deadline else None,
-                    "closing_date": enriched_data.get("response_deadline"),
-                    "region": enriched_data.get("state"),
-                    "naics_code": clean_naics_code(enriched_data.get("naics_code")),
-                    "naics_name": enriched_data.get("naics_name"),
-                    "psc_code": enriched_data.get("psc_code"),
-                    "psc_name": enriched_data.get("psc_name"),
-                    "set_aside": enriched_data.get("set_aside"),
-                    "city": enriched_data.get("city"),
-                    "posted_date": enriched_data.get("posted_date"),
-                    "source_url": enriched_data.get("url"),
-                    "contact_name": enriched_data.get("contact_name"),
-                    "contact_email": enriched_data.get("contact_email"),
-                    "contact_phone": enriched_data.get("contact_phone"),
-                    "office": enriched_data.get("office"),
-                    "status": saved.status,
-                    "notes": saved.notes,
-                    "saved_at": saved.saved_at.isoformat(),
-                    "updated_at": saved.updated_at.isoformat(),
-                    # Match score (from saved data or default)
-                    "total_match_score": float(saved.contract_value) / 1000000 if saved.contract_value else 0.0,
-                    "score": 0.5,
-                }
-                enriched.append(contract_dict)
-            else:
-                # Contract not in Pinecone - use basic saved data
-                contract_dict = {
-                    "id": saved.id,
-                    "notice_id": saved.notice_id,
-                    "contract_title": saved.contract_title,
-                    "title": saved.contract_title,
-                    "buyer_name": saved.buyer_name,
-                    "description": None,
-                    "contract_value": saved.contract_value,
-                    "value": saved.contract_value,
-                    "deadline": saved.deadline.isoformat() if saved.deadline else None,
-                    "closing_date": saved.deadline.isoformat() if saved.deadline else None,
-                    "region": None,
-                    "status": saved.status,
-                    "notes": saved.notes,
-                    "saved_at": saved.saved_at.isoformat(),
-                    "updated_at": saved.updated_at.isoformat(),
-                    "total_match_score": 0.0,
-                    "score": 0.0,
-                }
-                enriched.append(contract_dict)
-                logger.warning(f"Contract {saved.notice_id} not found in Pinecone")
+        logger.info(f"✅ Returned {len(enriched)} enriched contracts with FULL data")
         
         return {
             "total": len(enriched),
