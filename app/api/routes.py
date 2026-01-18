@@ -3148,3 +3148,85 @@ async def inspect_contract_fields(
             if "date" in field.lower()
         ))
     }
+
+
+@router.post("/capabilities/sync-all", dependencies=[Depends(require_entitlement("capability_management"))])
+async def sync_all_capabilities(
+    current_user: User = Depends(get_current_active_user),
+    db: Session = Depends(get_db)
+):
+    """Manually sync all capabilities to Pinecone (for missing qdrant_id)"""
+    try:
+        from app.services.capability_store_pinecone import get_capability_store
+        
+        llm_service = get_llm_service()
+        cap_store = get_capability_store()
+        
+        # Get company profile
+        profile = get_company_profile(db, current_user.firm_id)
+        
+        # Get all capabilities for this company
+        capabilities = db.query(CompanyCapability).filter(
+            CompanyCapability.company_id == profile.id
+        ).all()
+        
+        if not capabilities:
+            return {
+                "success": True,
+                "synced": 0,
+                "total": 0,
+                "message": "No capabilities to sync"
+            }
+        
+        synced_count = 0
+        errors = []
+        
+        for cap in capabilities:
+            # Only sync if missing qdrant_id (not yet in Pinecone)
+            if not cap.qdrant_id:
+                try:
+                    logger.info(f"Syncing capability {cap.id}: {cap.capability_text[:50]}...")
+                    
+                    # Add to Pinecone
+                    pinecone_id = await cap_store.add_capability(cap, llm_service)
+                    
+                    # Update database with pinecone_id
+                    cap.qdrant_id = pinecone_id
+                    db.flush()
+                    
+                    synced_count += 1
+                    logger.info(f"✅ Synced capability {cap.id} -> Pinecone ID: {pinecone_id}")
+                    
+                except Exception as e:
+                    error_msg = f"Failed to sync capability {cap.id}: {str(e)}"
+                    logger.error(error_msg)
+                    errors.append(error_msg)
+        
+        # Commit all changes
+        db.commit()
+        
+        # Clear capability cache after sync
+        keys_to_delete = [k for k in capability_embedding_cache.keys() if k.startswith(f"{current_user.firm_id}:")]
+        for key in keys_to_delete:
+            del capability_embedding_cache[key]
+        logger.info(f"Cleared capability cache for firm {current_user.firm_id}")
+        
+        # Trigger cache refresh for match scoring
+        trigger_cache_refresh(current_user.firm_id)
+        
+        return {
+            "success": True,
+            "synced": synced_count,
+            "total": len(capabilities),
+            "already_synced": len(capabilities) - synced_count,
+            "errors": errors if errors else None,
+            "message": f"✅ Synced {synced_count}/{len(capabilities)} capabilities to Pinecone"
+        }
+        
+    except Exception as e:
+        logger.error(f"Failed to sync capabilities: {str(e)}", exc_info=True)
+        db.rollback()
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Failed to sync capabilities: {str(e)}"
+        )
