@@ -2846,13 +2846,23 @@ async def check_pinecone_status():
         from app.core.config import settings
         
         pinecone = PineconeStoreService(api_key=settings.PINECONE_API_KEY)
-        count = pinecone.get_document_count()
+        stats = pinecone.index.describe_index_stats()
+        
+        # ✅ FIXED: Get namespace-specific count, not total
+        namespace = settings.PINECONE_NAMESPACE
+        namespace_count = 0
+        
+        if namespace in stats.namespaces:
+            namespace_count = stats.namespaces[namespace].vector_count
+        
+        logger.info(f"📊 Pinecone namespace '{namespace}' has {namespace_count} vectors")
         
         return {
             "pinecone_connected": True,
             "index_name": "contracts",
-            "total_vectors": count,
-            "status": "✅ Pinecone operational" if count > 0 else "⚠️ No vectors found"
+            "namespace": namespace,
+            "total_vectors": namespace_count,  # ✅ Changed from total_vector_count
+            "status": "✅ Pinecone operational" if namespace_count > 0 else "⚠️ No vectors found"
         }
     except Exception as e:
         logger.error(f"Pinecone status check failed: {str(e)}")
