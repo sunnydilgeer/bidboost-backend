@@ -321,7 +321,7 @@ class CapabilityAnalyzerService:
             # Call OpenAI with GPT-5.2, fallback to GPT-4o if not available
             try:
                 response = await self.openai_client.chat.completions.create(
-                    model="gpt-5.2",  # Try GPT-5.2  first
+                    model="gpt-4o-mini",  # Try GPT-5.2  first
                     messages=[
                         {
                             "role": "system",
@@ -348,7 +348,7 @@ Focus on: technical specificity, federal frameworks, concrete deliverables."""
                     logger.warning(f"GPT-5.2 not available, falling back to GPT-4o: {e}")
                     # Fallback to GPT-4o
                     response = await self.openai_client.chat.completions.create(
-                        model="gpt-4o",  # Fallback to GPT-4o
+                        model="gpt-4o-mini",  # Fallback to GPT-4o
                         messages=[
                             {
                                 "role": "system",
