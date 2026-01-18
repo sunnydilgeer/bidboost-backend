@@ -109,7 +109,7 @@ class EmailService:
             days_until_deadline: Days remaining (7, 3, or 1)
             
         Returns:
-            bool: True if email sent successfully
+            bool:  True if email sent successfully
         """
         try:
             frontend_url = self._frontend_url()
@@ -197,56 +197,58 @@ class EmailService:
             return False
 
     def send_welcome_email(
-    self,
-    to_email: str,
-    user_name: str,
-    from_quickstart: bool = False,
-) -> bool:
-    """
-    Send a basic welcome email after successful signup.
+        self,
+        to_email: str,
+        user_name: str,
+        from_quickstart: bool = False,
+    ) -> bool:
+        """
+        Send a basic welcome email after successful signup.
 
-    Args:
-        to_email: Recipient email
-        user_name: Full name or company name
-        from_quickstart: If user came from quickstart flow
+        Args:
+            to_email: Recipient email
+            user_name: Full name or company name
+            from_quickstart: If user came from quickstart flow
 
-    Returns:
-        bool: True if email sent successfully
-    """
-    try:
-        frontend_url = self._frontend_url()
+        Returns:
+            bool: True if email sent successfully
+        """
+        try:
+            frontend_url = self._frontend_url()
 
-        cta_url = (
-            f"{frontend_url}/welcome" if from_quickstart else f"{frontend_url}/profile?from=signup"
-        )
+            cta_url = (
+                f"{frontend_url}/welcome"
+                if from_quickstart
+                else f"{frontend_url}/profile?from=signup"
+            )
 
-        subject = (
-            "Your BidMatch account is ready — save your matches"
-            if from_quickstart
-            else "Welcome to BidMatch — set up your profile"
-        )
+            subject = (
+                "Your BidMatch account is ready — save your matches"
+                if from_quickstart
+                else "Welcome to BidMatch — set up your profile"
+            )
 
-        template = self.env.get_template("email_welcome.html")
-        html_content = template.render(
-            user_name=user_name or "there",
-            from_quickstart=from_quickstart,
-            cta_url=cta_url,
-            frontend_url=frontend_url,
-            support_email="support@bidmatch.co",
-        )
+            template = self.env.get_template("email_welcome.html")
+            html_content = template.render(
+                user_name=user_name or "there",
+                from_quickstart=from_quickstart,
+                cta_url=cta_url,
+                frontend_url=frontend_url,
+                support_email="support@bidmatch.co",
+            )
 
-        resend.Emails.send({
-            "from": f"BidMatch <{self.from_email}>",
-            "to": to_email,
-            "subject": subject,
-            "html": html_content
-        })
+            resend.Emails.send({
+                "from": f"BidMatch <{self.from_email}>",
+                "to": to_email,
+                "subject": subject,
+                "html": html_content
+            })
 
-        return True
+            return True
 
-    except Exception as e:
-        print(f"Error sending welcome email to {to_email}: {e}")
-        return False
+        except Exception as e:
+            print(f"Error sending welcome email to {to_email}: {e}")
+            return False
 
     def test_connection(self) -> bool:
         """Test if Resend is properly configured."""
