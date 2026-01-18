@@ -3214,56 +3214,47 @@ async def admin_set_plan(
 
 # Add this debug endpoint to routes.py (in the debug section with other /admin routes)
 
-@router.get("/admin/test-embedding-speed")
-async def test_embedding_speed(
-    query: str = "construction services",
+@router.get("/admin/inspect-contract-fields")
+async def inspect_contract_fields(
+    limit: int = 5,
     current_user: User = Depends(get_current_active_user)
 ):
-    """
-    Test embedding generation speed and verify which service is being used.
-    
-    Example: GET /api/admin/test-embedding-speed?query=construction
-    """
-    import time
+    """Debug: Show what fields SAM.gov contracts actually have"""
+    from app.services.pinecone_store import PineconeStoreService
     from app.core.config import settings
+    import numpy as np
     
-    llm_service = get_llm_service()
+    pinecone = PineconeStoreService(api_key=settings.PINECONE_API_KEY)
     
-    # Test 1: Check configuration
-    config_status = {
-        "USE_OPENAI_EMBEDDINGS": settings.USE_OPENAI_EMBEDDINGS,
-        "OPENAI_API_KEY_SET": bool(settings.OPENAI_API_KEY and len(settings.OPENAI_API_KEY) > 10),
-        "OPENAI_API_KEY_PREFIX": settings.OPENAI_API_KEY[:10] + "..." if settings.OPENAI_API_KEY else "NOT SET"
+    # Query for a few random contracts
+    dummy_vector = np.random.rand(768).tolist()
+    results = pinecone.index.query(
+        vector=dummy_vector,
+        top_k=limit,
+        include_metadata=True,
+        namespace=settings.PINECONE_NAMESPACE
+    )
+    
+    contracts_sample = []
+    for match in results.matches:
+        metadata = match.metadata
+        contracts_sample.append({
+            "notice_id": metadata.get("notice_id"),
+            "title": metadata.get("title", "")[:60] + "...",
+            "has_posted_date": "posted_date" in metadata,
+            "posted_date_value": metadata.get("posted_date"),
+            "has_response_deadline": "response_deadline" in metadata,
+            "response_deadline_value": metadata.get("response_deadline"),
+            "all_date_fields": {k: v for k, v in metadata.items() if "date" in k.lower()},
+            "all_fields": list(metadata.keys())  # Show all available fields
+        })
+    
+    return {
+        "total_checked": len(contracts_sample),
+        "contracts": contracts_sample,
+        "common_date_fields": list(set(
+            field for contract in contracts_sample 
+            for field in contract["all_fields"] 
+            if "date" in field.lower()
+        ))
     }
-    
-    # Test 2: Time the embedding generation
-    start_time = time.time()
-    try:
-        embedding = await llm_service.generate_embeddings(query)
-        elapsed_time = time.time() - start_time
-        
-        return {
-            "success": True,
-            "query": query,
-            "embedding_dimensions": len(embedding),
-            "generation_time_seconds": round(elapsed_time, 3),
-            "service_used": "OpenAI" if settings.USE_OPENAI_EMBEDDINGS else "Ollama",
-            "configuration": config_status,
-            "performance_rating": (
-                "🚀 EXCELLENT (<0.5s)" if elapsed_time < 0.5 else
-                "✅ GOOD (0.5-1s)" if elapsed_time < 1.0 else
-                "⚠️ SLOW (1-2s)" if elapsed_time < 2.0 else
-                "🐌 VERY SLOW (>2s) - Check if using Ollama instead of OpenAI"
-            ),
-            "recommendation": (
-                "Perfect! Using OpenAI embeddings." if settings.USE_OPENAI_EMBEDDINGS and elapsed_time < 1.0 else
-                "Set USE_OPENAI_EMBEDDINGS=true in Railway to speed up search 5-10x"
-            )
-        }
-    except Exception as e:
-        return {
-            "success": False,
-            "error": str(e),
-            "configuration": config_status,
-            "recommendation": "Check OPENAI_API_KEY is set correctly in Railway"
-        }
