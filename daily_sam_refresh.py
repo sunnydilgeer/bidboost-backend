@@ -105,9 +105,7 @@ def main():
         [
             "python", "ingest_contract_opportunities.py",
             str(CONTRACT_OPPS_CSV),
-            clear edxisting= "true",
-            "--namespace", PINECONE_NAMESPACE,
-            "--clear-existing"
+            "--namespace", PINECONE_NAMESPACE
         ],
         "Step 2: Ingest Contract Opportunities"
     )
