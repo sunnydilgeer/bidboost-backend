@@ -308,6 +308,11 @@ class ContractSearchResult(BaseModel):
     match_scores: Optional[Dict[str, Any]] = None
     total_match_score: Optional[float] = None
     match_reasons: Optional[List[str]] = None
+    matched_capabilities: List[str] = []
+    why_this_matches: List[str] = []
+
+
+
     
     class Config:
         from_attributes = True

@@ -220,6 +220,10 @@ class MatchCacheService:
                 "capability_score": scores["capability_score"],
                 "past_win_score": scores["past_win_score"],
                 "preference_score": scores["preference_score"],
+
+                "matched_capabilities": scores.get("matched_capabilities", []),
+                "why_this_matches": scores.get("why_this_matches", []),
+
                 
                 # Core Metadata
                 "contract_value": metadata.get("contract_value"),

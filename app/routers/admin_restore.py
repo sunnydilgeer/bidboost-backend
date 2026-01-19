@@ -78,21 +78,6 @@ async def restore_capabilities_endpoint():
     finally:
         db.close()
 
-@router.post("/rebuild-cache")
-async def rebuild_cache_endpoint():
-    """TEMPORARY: Rebuild contract match cache"""
-    from app.services.match_cache_service import MatchCacheService
-    
-    try:
-        service = MatchCacheService()
-        result = service.run_cache_update()
-        return {
-            "status": "success",
-            "message": "Cache rebuilt successfully",
-            "details": result
-        }
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
 
 @router.get("/verify-capabilities")
 async def verify_capabilities_endpoint():
@@ -161,34 +146,35 @@ async def verify_capabilities_endpoint():
     finally:
         db.close()
 
+@router.post("/rebuild-cache")
+async def rebuild_cache_endpoint():
+    """TEMPORARY: Rebuild contract match cache"""
+    from app.services.match_cache_service import MatchCacheService  # ✅ Fixed import
+    
+    try:
+        service = MatchCacheService()
+        service.run_cache_update()  # ✅ Returns None, doesn't return result
+        return {
+            "status": "success",
+            "message": "Cache rebuilt successfully for all firms"
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
 @router.post("/rebuild-cache-single-firm")
 async def rebuild_cache_single_firm(firm_id: str):
     """TEMPORARY: Rebuild cache for a single firm"""
-    from app.services.match_cache_service import MatchCacheService
+    from app.services.match_cache_service import MatchCacheService  # ✅ Fixed import
     
     try:
-        db: Session = SessionLocal()
-        
-        # Get the firm
-        firm = db.query(CompanyProfile).filter(CompanyProfile.firm_id == firm_id).first()
-        
-        if not firm:
-            raise HTTPException(status_code=404, detail=f"Firm not found: {firm_id}")
-        
-        # Rebuild cache for this firm only
-        service = MatchCacheService(db=db)
-        service._update_firm_cache(firm)
+        service = MatchCacheService()
+        service.run_cache_update(firm_ids=[firm_id])  # ✅ Pass firm_ids as list
         
         return {
             "status": "success",
             "firm_id": firm_id,
-            "company_name": firm.company_name,
-            "message": f"Cache rebuilt successfully for {firm.company_name}"
+            "message": f"Cache rebuilt successfully for {firm_id}"
         }
         
-    except HTTPException:
-        raise
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
-    finally:
-        db.close()

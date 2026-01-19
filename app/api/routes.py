@@ -1250,6 +1250,13 @@ async def get_recommended_contracts(
                 enriched = code_service.enrich_contract(match_dict)
                 match_dict.update(enriched) 
 
+                # ✅ Ensure new fields are present (will be empty if cache predates feature)
+                if 'matched_capabilities' not in match_dict:
+                    match_dict['matched_capabilities'] = []
+                if 'why_this_matches' not in match_dict:
+                    match_dict['why_this_matches'] = []
+
+
                 results.append(ContractSearchResult(**match_dict))
             
             return ContractSearchResponse(
@@ -1406,7 +1413,7 @@ async def get_recommended_contracts(
                 value=float(enriched_result.get("contract_value", 0)) if enriched_result.get("contract_value") else None,
                 region=enriched_result.get("state", ""),
                 closing_date=enriched_result.get("response_deadline", ""),
-    score=match_scores["match_score"],
+                score=match_scores["match_score"],
                 office=enriched_result.get("office"),
                 naics_code=clean_naics_code(enriched_result.get("naics_code")),
                 naics_name=enriched_result.get("naics_name"),
@@ -1434,8 +1441,12 @@ async def get_recommended_contracts(
                 suitable_for_sme=None,
                 suitable_for_vco=None,
                 match_scores=match_scores,
-                total_match_score=match_scores["match_score"],  # ✅ PURE CAPABILITY SCORE
-                match_reasons=match_scores.get("match_reasons", [])
+                total_match_score=match_scores["match_score"], 
+                match_reasons=match_scores.get("match_reasons", []),
+                matched_capabilities=match_scores.get("matched_capabilities", []),
+                why_this_matches=match_scores.get("why_this_matches", [])
+
+
             ))
             
             # Early exit if we have enough results
@@ -1941,6 +1952,10 @@ async def get_saved_contracts_enriched(
                             "match_score": float(cached.total_score)
                         },
                         "match_reasons": cached.match_reasons or [],
+                        "matched_capabilities": getattr(cached, 'matched_capabilities', []) or [],
+                        "why_this_matches": getattr(cached, 'why_this_matches', []) or [],
+
+
                     }
                     enriched.append(contract_dict)
                     
@@ -1988,7 +2003,11 @@ async def get_saved_contracts_enriched(
                             "total_score": 0.0,
                             "match_score": 0.0
                         },
-                        "match_reasons": match_scores.get("match_reasons", []) if match_scores else [],
+                       "match_reasons": match_scores.get("match_reasons", []) if match_scores else [],
+                       "matched_capabilities": match_scores.get("matched_capabilities", []) if match_scores else [],  # ✅ FIXED
+                       "why_this_matches": match_scores.get("why_this_matches", []) if match_scores else [],  # ✅ FIXED
+
+
                     }
                     enriched.append(contract_dict)
                     
@@ -2026,6 +2045,9 @@ async def get_saved_contracts_enriched(
                         "score": float(saved.match_score) if saved.match_score else 0.0,
                         "match_scores": None,  # Indicate no detailed scores available
                         "match_reasons": [],
+                        "matched_capabilities": [],  # ✅ FIXED - just empty array
+                        "why_this_matches": [], 
+                        
                     }
                     enriched.append(contract_dict)
                     logger.warning(f"⚠️ Contract {saved.notice_id} not found in cache or Pinecone - using saved data only")

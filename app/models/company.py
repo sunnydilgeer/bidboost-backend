@@ -215,6 +215,10 @@ class CachedContractMatch(Base):
     preference_score = Column(Numeric(5, 2), nullable=False)
     match_reasons = Column(JSON, default=list)  # ["Strong capability match", ...]
     
+    matched_capabilities = Column(JSON, default=list)  # Top 1-3 capability texts
+    why_this_matches = Column(JSON, default=list)      # 4-5 explanation bullets
+    
+
     # Cache metadata
     rank = Column(Integer, nullable=False)  # 1-100 ranking for this company
     cached_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
@@ -249,6 +253,8 @@ class CachedContractMatch(Base):
             },
             "total_match_score": float(self.total_score),
             "match_reasons": self.match_reasons or [],
+            "matched_capabilities": self.matched_capabilities or [],
+            "why_this_matches": self.why_this_matches or [],
             "rank": self.rank,
             "score": 0.5  # Placeholder for compatibility
         }
