@@ -19,5 +19,11 @@ class Contract(BaseModel):
     closing_date: Optional[datetime] = None
     cpv_codes: Optional[list[str]] = None
     
+    # ADD THESE FIELDS FOR DOMAIN FILTERING:
+    naics_code: Optional[str] = None  # ← ADD THIS
+    naics_name: Optional[str] = None  # Optional: for display
+    psc_code: Optional[str] = None    # Optional: Product Service Code
+    set_aside: Optional[str] = None   # Optional: for preferences
+    
     class Config:
         from_attributes = True

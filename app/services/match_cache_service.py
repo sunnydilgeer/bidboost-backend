@@ -168,7 +168,11 @@ class MatchCacheService:
                 description=metadata.get("description", ""),
                 contract_value=metadata.get("contract_value"),
                 region=metadata.get("state"),
-                qdrant_id=result.id
+                qdrant_id=result.id,
+                naics_code=metadata.get("naics_code"),
+                naics_name=metadata.get("naics_name"),
+                psc_code=metadata.get("psc_code"),
+                set_aside=metadata.get("set_aside")
             )
             
             # Score the contract

@@ -265,3 +265,87 @@ class CachedContractMatch(Base):
         Index('idx_firm_rank', 'firm_id', 'rank'),  # Sort by rank
         Index('idx_firm_cached', 'firm_id', 'cached_at'),  # Cache freshness check
     )
+
+
+class OpportunityChain(Base):
+    """
+    Contract Truth Layer: Groups amendment notices into canonical opportunities.
+    Each solicitation number gets ONE chain with ONE base notice.
+    """
+    __tablename__ = "opportunity_chains"
+    
+    id = Column(Integer, primary_key=True, index=True)
+    
+    # Solicitation tracking
+    solicitation_number = Column(String(255), unique=True, nullable=False, index=True)
+    
+    # Base notice (the "truth")
+    base_notice_id = Column(String(255), nullable=False)  # The OPP_ID from CSV
+    base_sol_number = Column(String(255), nullable=False)  # The Sol# from CSV
+    base_description = Column(Text, nullable=True)
+    base_posted_date = Column(DateTime(timezone=True), nullable=True)
+    base_type = Column(String(100), nullable=True)  # e.g., "Solicitation"
+    base_agency = Column(String(255), nullable=True)
+    base_office = Column(Text, nullable=True)
+    base_naics = Column(String(10), nullable=True)
+    base_psc = Column(String(10), nullable=True)
+    base_set_aside = Column(String(100), nullable=True)
+    base_state = Column(String(50), nullable=True)
+    base_city = Column(String(100), nullable=True)
+    base_contact_name = Column(String(200), nullable=True)
+    base_contact_email = Column(String(200), nullable=True)
+    base_contact_phone = Column(String(50), nullable=True)
+    
+    # Chain metadata
+    notice_count = Column(Integer, default=1, nullable=False)
+    has_amendments = Column(Boolean, default=False, nullable=False)
+    latest_closing_date = Column(DateTime(timezone=True), nullable=True)
+    
+    # Attachment tracking
+    has_attachments = Column(Boolean, default=False, nullable=False)
+    attachment_count = Column(Integer, default=0, nullable=False)
+    attachments_fetched_at = Column(DateTime(timezone=True), nullable=True)
+    
+    # Quality indicators
+    base_description_quality = Column(String(20), nullable=True)  # "GOOD", "POOR", "MISSING"
+    needs_sow_extraction = Column(Boolean, default=False, nullable=False)
+    
+    # Timestamps
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
+    
+    __table_args__ = (
+        Index('idx_sol_number', 'solicitation_number'),
+        Index('idx_base_notice', 'base_notice_id'),
+        Index('idx_quality', 'base_description_quality'),
+    )
+
+
+class OpportunityAttachment(Base):
+    """
+    Attachments linked to opportunity base notices.
+    Fetched from SAM.gov API.
+    """
+    __tablename__ = "opportunity_attachments"
+    
+    id = Column(Integer, primary_key=True, index=True)
+    chain_id = Column(Integer, ForeignKey("opportunity_chains.id", ondelete="CASCADE"), nullable=False, index=True)
+    
+    # Attachment metadata
+    filename = Column(String(500), nullable=False)
+    file_type = Column(String(50), nullable=True)  # e.g., "PDF", "DOCX"
+    file_size_bytes = Column(Integer, nullable=True)
+    download_url = Column(Text, nullable=True)
+    
+    # Classification
+    is_sow = Column(Boolean, default=False, nullable=False)  # Likely Statement of Work
+    is_amendment = Column(Boolean, default=False, nullable=False)
+    
+    # Processing status
+    downloaded = Column(Boolean, default=False, nullable=False)
+    extracted = Column(Boolean, default=False, nullable=False)
+    
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+
+
+

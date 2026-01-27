@@ -1388,7 +1388,11 @@ async def get_recommended_contracts(
                 description=enriched_result.get("description", ""),
                 contract_value=enriched_result.get("contract_value"),
                 region=enriched_result.get("state"),
-                qdrant_id=enriched_result.get("id")
+                qdrant_id=enriched_result.get("id"),
+                naics_code=enriched_result.get("naics_code"),  # ← ADD THIS
+                naics_name=enriched_result.get("naics_name"),  # ← ADD THIS
+                psc_code=enriched_result.get("psc_code"),      # ← ADD THIS
+                set_aside=enriched_result.get("set_aside")    # ← ADD THIS  
             )
             
             # Score it - pass ALL THREE pre-fetched vectors
@@ -1695,7 +1699,11 @@ async def search_contracts(
                     description=enriched_result.get("description", ""),
                     contract_value=enriched_result.get("contract_value"),
                     region=enriched_result.get("state"),
-                    qdrant_id=enriched_result.get("id")
+                    qdrant_id=enriched_result.get("id"),
+                    naics_code=enriched_result.get("naics_code"),  # ← ADD THIS
+                    naics_name=enriched_result.get("naics_name"),  # ← ADD THIS
+                    psc_code=enriched_result.get("psc_code"),      # ← ADD THIS
+                    set_aside=enriched_result.get("set_aside") 
                 )
                 
                 # Score with ALL THREE pre-fetched vectors

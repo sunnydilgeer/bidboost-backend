@@ -1,31 +1,24 @@
 """
-SAM.gov Contract Opportunities Ingestion Script
-Ingests opportunities from ContractOpportunitiesFullCSV.csv into Pinecone
-
-Filters for truly biddable opportunities:
-- BaseType: Solicitation or Combined Synopsis/Solicitation
-- Active: Yes
-- ResponseDeadLine: Present and future
-- Type: NOT Award Notice
+SAM.gov Contract Opportunities Ingestion Script (TRUTH LAYER VERSION)
+Embeds opportunities from opportunity_chains table (deduplicated, GOOD quality)
 
 Usage:
-    python ingest_contract_opportunities.py ContractOpportunitiesFullCSV.csv [--clear-existing] [--include-pipeline]
+    python ingest_contract_opportunities.py ContractOpportunitiesFullCSV.csv [--clear-existing] [--namespace contracts]
 """
 
 import os
 import sys
-import csv
-import hashlib
+import subprocess
 import argparse
-from datetime import datetime
-from typing import Generator
-from pathlib import Path
-import re
+from datetime import datetime, timezone
 
 from dotenv import load_dotenv
 from pinecone import Pinecone
 from openai import OpenAI
 from tqdm import tqdm
+
+from app.database import SessionLocal
+from app.models.company import OpportunityChain
 
 # Load environment variables
 load_dotenv()
@@ -39,191 +32,103 @@ EMBEDDING_DIMENSIONS = 768
 BATCH_SIZE = 100  # Vectors to upsert per batch
 EMBEDDING_BATCH_SIZE = 50  # Texts to embed per API call
 
-# Biddable opportunity types
-BIDDABLE_TYPES = {
-    "Combined Synopsis/Solicitation",
-    "Solicitation",
-}
-
-# Pipeline types (optional)
-PIPELINE_TYPES = {
-    "Presolicitation",
-    "Sources Sought",
-}
-
 
 # ============================================================
-# HELPER FUNCTIONS
+# TRUTH LAYER HELPER FUNCTIONS
 # ============================================================
 
-def clean_html(text: str) -> str:
-    """Remove HTML tags and clean up text."""
-    if not text:
-        return ""
-    # Remove HTML tags
-    text = re.sub(r'<[^>]+>', ' ', text)
-    # Decode common HTML entities
-    text = text.replace('&amp;', '&').replace('&lt;', '<').replace('&gt;', '>')
-    text = text.replace('&quot;', '"').replace('&#39;', "'").replace('&nbsp;', ' ')
-    # Clean up whitespace
-    text = re.sub(r'\s+', ' ', text).strip()
-    return text
-
-
-def parse_date(date_str: str) -> str:
-    """Parse date and return ISO format."""
-    if not date_str:
-        return ""
-    
-    try:
-        # Simple YYYY-MM-DD format
-        dt = datetime.strptime(date_str.strip()[:10], "%Y-%m-%d")
-        return dt.isoformat()
-    except ValueError:
-        return date_str
-
-
-def parse_deadline(date_str: str):
-    """Parse deadline to datetime object."""
-    if not date_str:
-        return None
-    
-    try:
-        return datetime.strptime(date_str.strip()[:10], "%Y-%m-%d")
-    except ValueError:
-        return None
-
-
-def generate_notice_hash(notice_id: str) -> str:
-    """Generate a consistent hash for a notice ID (for Pinecone vector ID)."""
-    return hashlib.md5(notice_id.encode()).hexdigest()
-
-
-def create_sam_gov_url(opp_id: str) -> str:
-    """Create direct SAM.gov URL using OPP_ID."""
-    if not opp_id:
-        return ""
-    return f"https://sam.gov/opp/{opp_id}/view"
-
-
-def create_embedding_text(row: dict) -> str:
-    """Create text for embedding from opportunity data."""
+def create_truth_layer_embedding_text(chain: OpportunityChain) -> str:
+    """Create embedding text from Truth Layer OpportunityChain."""
     parts = []
     
-    title = row.get("Title", "").strip()
-    if title:
-        parts.append(f"Title: {title}")
+    # Title
+    if chain.base_sol_number:
+        parts.append(f"Title: {chain.base_sol_number}")
     
-    description = clean_html(row.get("Description", ""))
-    if description:
-        if len(description) > 2000:
-            description = description[:2000] + "..."
-        parts.append(f"Description: {description}")
+    # Clean description (THIS IS THE GOLD - 76% GOOD quality)
+    if chain.base_description:
+        desc = chain.base_description[:2000]  # Truncate if needed
+        parts.append(f"Description: {desc}")
     
-    agency = row.get("Sub-Tier", "").strip()
-    if agency:
-        parts.append(f"Agency: {agency}")
+    # Agency
+    if chain.base_agency:
+        parts.append(f"Agency: {chain.base_agency}")
     
-    naics = row.get("NaicsCode", "").strip()
-    if naics:
-        parts.append(f"NAICS: {naics}")
+    # NAICS
+    if chain.base_naics:
+        parts.append(f"NAICS: {chain.base_naics}")
     
-    psc = row.get("ClassificationCode", "").strip()
-    if psc:
-        parts.append(f"PSC: {psc}")
+    # PSC
+    if chain.base_psc:
+        parts.append(f"PSC: {chain.base_psc}")
     
-    set_aside = row.get("SetASide", "").strip()
-    if set_aside:
-        parts.append(f"Set-Aside: {set_aside}")
+    # Set-aside
+    if chain.base_set_aside:
+        parts.append(f"Set-Aside: {chain.base_set_aside}")
     
-    state = row.get("PopState", "").strip()
-    city = row.get("PopCity", "").strip()
-    if state or city:
-        location = ", ".join(filter(None, [city, state]))
+    # Location
+    if chain.base_city or chain.base_state:
+        location = ", ".join(filter(None, [chain.base_city, chain.base_state]))
         parts.append(f"Location: {location}")
+    
+    # Type
+    if chain.base_type:
+        parts.append(f"Type: {chain.base_type}")
     
     return "\n".join(parts)
 
 
-def create_metadata(row: dict) -> dict:
-    """Create Pinecone metadata from CSV row."""
-    notice_id = row.get("Sol#", "").strip()
-    opp_id = row.get("NoticeId", "").strip()
-    
+def create_truth_layer_metadata(chain: OpportunityChain) -> dict:
+    """Create Pinecone metadata from Truth Layer OpportunityChain."""
     return {
-        "notice_id": notice_id,
-        "opp_id": opp_id,
-        "title": row.get("Title", "").strip(),
-        "agency": row.get("Sub-Tier", "").strip(),
-        "office": row.get("Office", "").strip(),
+        # IDs
+        "notice_id": chain.solicitation_number,
+        "opp_id": chain.base_notice_id,
         
-        # NAICS & PSC
-        "naics_code": row.get("NaicsCode", "").strip(),
-        "psc_code": row.get("ClassificationCode", "").strip(),
+        # Content
+        "title": chain.base_sol_number[:200] if chain.base_sol_number else "",
+        "description": chain.base_description[:1000] if chain.base_description else "",
         
-        "set_aside": row.get("SetASide", "").strip(),
-        "state": row.get("PopState", "").strip(),
-        "city": row.get("PopCity", "").strip(),
-        "response_deadline": parse_date(row.get("ResponseDeadLine", "")),
-        "posted_date": parse_date(row.get("PostedDate", "")),
-        "contact_name": row.get("PrimaryContactFullname", "").strip(),
-        "contact_email": row.get("PrimaryContactEmail", "").strip(),
-        "contract_value": 0,  # Not typically in solicitations
-        "description": clean_html(row.get("Description", ""))[:1000],
+        # Dates
+        "response_deadline": chain.latest_closing_date.isoformat() if chain.latest_closing_date else "",
+        "posted_date": chain.base_posted_date.isoformat() if chain.base_posted_date else "",
         
-        # Direct SAM.gov URL
-        "url": create_sam_gov_url(opp_id),
+        # Organization
+        "agency": chain.base_agency or "",
+        "office": chain.base_office or "",
         
-        "opportunity_type": row.get("Type", "").strip(),
+        # Classification codes
+        "naics_code": chain.base_naics or "",
+        "psc_code": chain.base_psc or "",
+        
+        # Set-aside
+        "set_aside": chain.base_set_aside or "",
+        
+        # Location
+        "state": chain.base_state or "",
+        "city": chain.base_city or "",
+        
+        # Contact
+        "contact_name": chain.base_contact_name or "",
+        "contact_email": chain.base_contact_email or "",
+        "contact_phone": chain.base_contact_phone or "",
+        
+        # Type
+        "opportunity_type": chain.base_type or "",
+        
+        # Truth Layer metadata
+        "quality": chain.base_description_quality or "UNKNOWN",
+        "notice_count": chain.notice_count,
+        "has_amendments": chain.has_amendments,
+        "source": "truth_layer",  # ← Flag as Truth Layer
+        
+        # URL
+        "url": f"https://sam.gov/opp/{chain.base_notice_id}/view",
         "status": "active",
-    }
-
-
-def read_csv_opportunities(
-    filepath: str, 
-    include_pipeline: bool = False
-) -> Generator[dict, None, None]:
-    """Read and filter opportunities from CSV."""
-    
-    allowed_base_types = BIDDABLE_TYPES.copy()
-    if include_pipeline:
-        allowed_base_types.update(PIPELINE_TYPES)
-    
-    now = datetime.now()
-    
-    with open(filepath, 'r', encoding='utf-8', errors='replace') as f:
-        reader = csv.DictReader(f)
         
-        for row in reader:
-            # Extract key fields
-            base_type = row.get("BaseType", "").strip()
-            opp_type = row.get("Type", "").strip()
-            active = row.get("Active", "").strip().lower()
-            notice_id = row.get("Sol#", "").strip()
-            deadline_str = row.get("ResponseDeadLine", "").strip()
-            
-            # Filter 1: Must have notice ID
-            if not notice_id:
-                continue
-            
-            # Filter 2: Must be biddable base type
-            if base_type not in allowed_base_types:
-                continue
-            
-            # Filter 3: Must be active
-            if active != "yes":
-                continue
-            
-            # Filter 4: NOT an award notice
-            if opp_type == "Award Notice":
-                continue
-            
-            # Filter 5: Must have open deadline (future)
-            deadline = parse_deadline(deadline_str)
-            if not deadline or deadline <= now:
-                continue
-            
-            yield row
+        # Contract value (not in chains yet, default to 0)
+        "contract_value": 0,
+    }
 
 
 def get_embeddings(texts: list[str], client: OpenAI) -> list[list[float]]:
@@ -236,7 +141,7 @@ def get_embeddings(texts: list[str], client: OpenAI) -> list[list[float]]:
     return [item.embedding for item in response.data]
 
 
-def batch_generator(items: list, batch_size: int) -> Generator[list, None, None]:
+def batch_generator(items: list, batch_size: int):
     """Yield batches of items."""
     for i in range(0, len(items), batch_size):
         yield items[i:i + batch_size]
@@ -266,7 +171,7 @@ def clear_index(index, namespace: str = "") -> int:
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Ingest SAM.gov Contract Opportunities into Pinecone"
+        description="Ingest SAM.gov Contract Opportunities into Pinecone (TRUTH LAYER)"
     )
     parser.add_argument("csv_file", help="Path to ContractOpportunitiesFullCSV.csv")
     parser.add_argument(
@@ -275,9 +180,10 @@ def main():
         help="Clear existing vectors before ingesting"
     )
     parser.add_argument(
-        "--include-pipeline",
-        action="store_true",
-        help="Include presolicitations and sources sought"
+        "--namespace",
+        type=str,
+        default="contracts",
+        help="Pinecone namespace to use (default: contracts)"
     )
     parser.add_argument(
         "--dry-run",
@@ -285,16 +191,9 @@ def main():
         help="Process data but don't upload to Pinecone"
     )
     parser.add_argument(
-        "--limit",
-        type=int,
-        default=None,
-        help="Limit number of opportunities to process"
-    )
-    parser.add_argument(
-        "--namespace",
-        type=str,
-        default="contracts",
-        help="Pinecone namespace to use (default: contracts)"
+        "--skip-build",
+        action="store_true",
+        help="Skip building Truth Layer (assume it's already built)"
     )
     
     args = parser.parse_args()
@@ -308,54 +207,76 @@ def main():
         sys.exit(1)
     
     print("=" * 70)
-    print("SAM.gov Contract Opportunities Ingestion")
+    print("SAM.gov Contract Opportunities Ingestion (TRUTH LAYER)")
     print("=" * 70)
     print(f"📂 Input: {args.csv_file}")
     print(f"📦 Index: {PINECONE_INDEX_NAME}")
     print(f"🏷️  Namespace: {args.namespace}")
-    print(f"🔧 Embedding Model: {EMBEDDING_MODEL} ({EMBEDDING_DIMENSIONS} dims)")
     print()
     
-    # Initialize clients
+    # ============================================================
+    # STEP 1: BUILD TRUTH LAYER FROM CSV (unless --skip-build)
+    # ============================================================
+    if not args.skip_build:
+        print("🔨 Step 1: Building Truth Layer from CSV...")
+        result = subprocess.run(
+            ["python", "build_contract_truth.py", str(args.csv_file)],
+                   )
+        
+        if result.returncode != 0:
+            print(f"❌ Truth Layer build failed:\n{result.stderr}")
+            sys.exit(1)
+        
+        print("✅ Truth Layer built successfully")
+        print()
+    else:
+        print("⏭️  Skipping Truth Layer build (--skip-build)")
+        print()
+    
+    # ============================================================
+    # STEP 2: QUERY GOOD QUALITY CONTRACTS FROM TRUTH LAYER
+    # ============================================================
+    print("📊 Step 2: Fetching GOOD quality contracts from Truth Layer...")
+    db = SessionLocal()
+    
+    contracts = db.query(OpportunityChain).filter(
+        OpportunityChain.base_description_quality == 'GOOD',
+        OpportunityChain.latest_closing_date >= datetime.now(timezone.utc)
+    ).all()
+    
+    print(f"   Found {len(contracts)} GOOD quality contracts with open deadlines")
+    print()
+    
+    if len(contracts) == 0:
+        print("❌ No GOOD quality contracts to embed")
+        db.close()
+        sys.exit(1)
+    
+    # ============================================================
+    # STEP 3: CLEAR OLD EMBEDDINGS (IF REQUESTED)
+    # ============================================================
     print("🔌 Connecting to Pinecone and OpenAI...")
     pc = Pinecone(api_key=PINECONE_API_KEY)
     index = pc.Index(PINECONE_INDEX_NAME)
     openai_client = OpenAI(api_key=OPENAI_API_KEY)
     
-    # Clear existing if requested
     if args.clear_existing and not args.dry_run:
         clear_index(index, namespace=args.namespace)
         print()
     
-    # Read opportunities
-    print("📖 Reading opportunities from CSV...")
-    opportunities = list(read_csv_opportunities(
-        args.csv_file, 
-        include_pipeline=args.include_pipeline
-    ))
-    
-    if args.limit:
-        opportunities = opportunities[:args.limit]
-    
-    print(f"   Found {len(opportunities)} open biddable opportunities")
-    print()
-    
-    if len(opportunities) == 0:
-        print("❌ No opportunities to process")
-        sys.exit(1)
-    
-    # Prepare data
-    print("🔨 Preparing embedding texts and metadata...")
+    # ============================================================
+    # STEP 4: PREPARE EMBEDDINGS FROM TRUTH LAYER
+    # ============================================================
+    print("🔨 Preparing embedding texts from Truth Layer...")
     records = []
     
-    for row in tqdm(opportunities, desc="Preparing"):
-        notice_id = row.get("Sol#", "").strip()
-        vector_id = generate_notice_hash(notice_id)
-        embedding_text = create_embedding_text(row)
-        metadata = create_metadata(row)
+    for chain in tqdm(contracts, desc="Preparing"):
+        # Create embedding text from clean Truth Layer data
+        embedding_text = create_truth_layer_embedding_text(chain)
+        metadata = create_truth_layer_metadata(chain)
         
         records.append({
-            "id": vector_id,
+            "id": chain.base_notice_id,  # ← USE base_notice_id as Pinecone ID
             "text": embedding_text,
             "metadata": metadata
         })
@@ -371,9 +292,12 @@ def main():
         print(f"  Metadata:")
         for key, value in records[0]['metadata'].items():
             print(f"    {key}: {value}")
+        db.close()
         return
     
-    # Generate embeddings and upsert in batches
+    # ============================================================
+    # STEP 5: GENERATE EMBEDDINGS AND UPSERT
+    # ============================================================
     print("🚀 Generating embeddings and uploading to Pinecone...")
     
     total_uploaded = 0
@@ -383,11 +307,13 @@ def main():
     ):
         texts = [r["text"] for r in batch]
         
+        # Get embeddings in sub-batches
         all_embeddings = []
         for text_batch in batch_generator(texts, EMBEDDING_BATCH_SIZE):
             embeddings = get_embeddings(text_batch, openai_client)
             all_embeddings.extend(embeddings)
         
+        # Prepare vectors
         vectors = [
             {
                 "id": batch[i]["id"],
@@ -397,20 +323,24 @@ def main():
             for i in range(len(batch))
         ]
         
+        # Upsert to Pinecone
         index.upsert(vectors=vectors, namespace=args.namespace)
         total_uploaded += len(vectors)
     
     print()
     print("=" * 70)
-    print("✅ INGESTION COMPLETE")
+    print("✅ INGESTION COMPLETE (TRUTH LAYER)")
     print("=" * 70)
     print(f"   Total uploaded: {total_uploaded} vectors")
+    print(f"   Source: opportunity_chains (GOOD quality only)")
     
     stats = index.describe_index_stats()
     print(f"   Index total: {stats.total_vector_count} vectors")
     if args.namespace and args.namespace in stats.namespaces:
         namespace_count = stats.namespaces[args.namespace].vector_count
         print(f"   Namespace '{args.namespace}': {namespace_count} vectors")
+    
+    db.close()
 
 
 if __name__ == "__main__":

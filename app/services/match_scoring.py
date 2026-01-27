@@ -18,6 +18,7 @@ from typing import Dict, List, Optional, Tuple
 from sqlalchemy.orm import Session
 from app.models.company import CompanyProfile
 from app.models.contract import Contract
+from app.services.domain_filter import get_domain_filter
 import numpy as np
 
 logger = logging.getLogger(__name__)
@@ -41,6 +42,8 @@ class ContractMatchScorer:
 
     def __init__(self, db: Session, vector_client):
         self.db = db
+        self.domain_filter = get_domain_filter()  
+        logger.info("🔧 Domain filter initialized successfully")
 
         # Auto-detect client type (Pinecone or Qdrant)
         if hasattr(vector_client, "fetch"):
@@ -62,16 +65,8 @@ class ContractMatchScorer:
     ) -> Optional[Dict]:
         """
         Calculate match score for a contract.
-
-        Args:
-            contract: Contract to score
-            firm_id: Company identifier
-            capability_vectors: Pre-fetched capability vectors {id: vector}
-            contract_vectors: Pre-fetched contract vectors {id: vector}
-            past_win_vectors: Pre-fetched past win vectors {id: vector}
-
-        Returns:
-            Dict with scores and context, or None if filtered out
+        
+        NOW WITH DOMAIN FILTERING to prevent cross-domain false positives.
         """
         try:
             # Get company profile
@@ -85,11 +80,19 @@ class ContractMatchScorer:
                 logger.warning(f"No profile found for firm {firm_id}")
                 return None
 
-            # Apply preference filters (quick elimination)
+            # STEP 1: Apply preference filters (existing)
             if not self._passes_preference_filters(contract, profile):
                 return None
+            
+            # STEP 2: NEW - Apply domain filter before expensive semantic scoring
+            if not self.domain_filter.passes_domain_filter(contract, profile):
+                logger.debug(
+                    f"Filtered out {contract.notice_id}: domain mismatch "
+                    f"({contract.title[:60]}...)"
+                )
+                return None  # Block cross-domain matches early
 
-            # Calculate raw capability score + matched cap examples
+            # STEP 3: Calculate semantic scores (existing logic)
             raw_capability_score, matched_capabilities = self._calculate_capability_score(
                 contract,
                 profile,
@@ -133,9 +136,12 @@ class ContractMatchScorer:
                 # NEW: matched capability examples (top 1–3)
                 "matched_capabilities": matched_capabilities,
 
+                # ✅ UPDATED: Pass profile and raw_capability_score
                 "why_this_matches": self._generate_why_this_matches(
-                matched_capabilities=matched_capabilities,
-                contract=contract,
+                    matched_capabilities=matched_capabilities,
+                    contract=contract,
+                    profile=profile,
+                    raw_capability_score=raw_capability_score
                 ),
 
                 # Context
@@ -146,6 +152,7 @@ class ContractMatchScorer:
             }
 
         except Exception as e:
+            self.db.rollback()
             logger.error(
                 f"Error scoring contract {getattr(contract, 'notice_id', '')}: {str(e)}",
                 exc_info=True,
@@ -215,7 +222,6 @@ class ContractMatchScorer:
                 if cap.qdrant_id and cap.qdrant_id in capabilities_data:
                     cap_vector = capabilities_data[cap.qdrant_id]
                     similarity = self._cosine_similarity(contract_vector, cap_vector)
-                    # cap.capability_text is assumed to exist on CompanyCapability model
                     scored_caps.append((similarity, getattr(cap, "capability_text", "")))
 
             if not scored_caps:
@@ -449,69 +455,120 @@ class ContractMatchScorer:
             logger.error(f"Error applying preference filters: {str(e)}", exc_info=True)
             return True
 
-
     def _generate_why_this_matches(
         self,
         matched_capabilities: List[str],
         contract: Contract,
+        profile: CompanyProfile,
+        raw_capability_score: float
     ) -> List[str]:
         """
-        Generate 'Why this matches' bullets (scannable, non-technical).
-        4–6 bullets max. No hype, no guarantees.
+        Generate specific, evidence-based match explanations.
+        Each bullet should be VERIFIABLE and SPECIFIC.
         """
         bullets: List[str] = []
 
-        # 1) Matched Capabilities (always include)
-        if matched_capabilities:
-            examples = ", ".join(matched_capabilities[:3])
-            bullets.append(f"Matches your core capabilities, including {examples}")
+        # 1) CAPABILITY MATCH - Show actual matched capability text
+        if matched_capabilities and raw_capability_score >= 0.40:
+            # Take first matched capability (highest scoring)
+            top_capability = matched_capabilities[0]
+            
+            # Extract key phrase from contract description (first 80 chars)
+            contract_excerpt = ""
+            if contract.description:
+                # Find first sentence or take first 80 chars
+                first_sentence = contract.description.split('.')[0][:80]
+                contract_excerpt = first_sentence.strip()
+            
+            if contract_excerpt:
+                bullets.append(
+                    f"Contract requires '{contract_excerpt}...' - matches your capability: '{top_capability[:80]}'"
+                )
+            else:
+                bullets.append(f"Matches your core capability: {top_capability[:100]}")
+        elif matched_capabilities:
+            bullets.append(f"Matches your capability: {matched_capabilities[0][:100]}")
         else:
-            bullets.append("Matches your core capabilities and typical services")
+            bullets.append("Matches your core capabilities and services")
 
-        # 2) NAICS / Service Alignment (only if present on contract)
-        naics_code = getattr(contract, "naics_code", None) or getattr(contract, "naics", None)
-        if naics_code:
-            bullets.append(
-                f"Solicitation NAICS {naics_code} aligns with your primary service areas"
-            )
+        # 2) NAICS ALIGNMENT - Check if exact match with company codes
+        if contract.naics_code:
+            if contract.naics_code in (profile.naics_codes or []):
+                bullets.append(
+                    f"NAICS {contract.naics_code} (your primary code) - you're pre-qualified"
+                )
+            else:
+                bullets.append(
+                    f"NAICS {contract.naics_code} aligns with your service areas"
+                )
 
-        # 3) Scope Similarity (simple keyword detection)
-        text = f"{contract.title} {contract.description or ''}".lower()
+        # 3) PAST PERFORMANCE - Show similar wins
+        if profile.past_wins:
+            # Find similar past wins (same agency)
+            similar_wins = []
+            for win in profile.past_wins[:5]:
+                if (contract.buyer_name and win.buyer_name and 
+                    win.buyer_name.lower() in contract.buyer_name.lower()):
+                    similar_wins.append(win)
+            
+            if similar_wins:
+                win_names = [w.contract_title[:60] for w in similar_wins[:2]]
+                bullets.append(
+                    f"You've won similar work: {', '.join(win_names)}"
+                )
 
-        scope_map = [
-            ("assessment", ["assessment", "audit", "evaluation", "review"]),
-            ("implementation", ["implementation", "deploy", "deployment", "integration", "install"]),
-            ("support", ["support", "maintenance", "operations", "help desk", "sustainment"]),
-            ("modernization", ["modernization", "upgrade", "migration", "transition", "refresh"]),
-            ("compliance", ["compliance", "fedramp", "rmf", "nist", "cmmc", "iso 27001"]),
-        ]
+        # 4) SET-ASIDE ELIGIBILITY - Check actual certifications
+        if contract.set_aside:
+            set_aside_lower = contract.set_aside.lower()
+            
+            # Check certifications
+            is_eligible = False
+            cert_type = ""
+            
+            if "sdvosb" in set_aside_lower and profile.sdvosb_certified:
+                is_eligible = True
+                cert_type = "SDVOSB"
+            elif "8(a)" in set_aside_lower and profile.eight_a_certified:
+                is_eligible = True
+                cert_type = "8(a)"
+            elif "wosb" in set_aside_lower and profile.wosb_certified:
+                is_eligible = True
+                cert_type = "WOSB"
+            elif "hubzone" in set_aside_lower and profile.hubzone_certified:
+                is_eligible = True
+                cert_type = "HUBZone"
+            elif "small business" in set_aside_lower and profile.sba_certified:
+                is_eligible = True
+                cert_type = "Small Business"
+            
+            if is_eligible:
+                bullets.append(
+                    f"Set-aside: {cert_type} (you're certified) - limited competition"
+                )
 
-        matched_scope = None
-        for label, words in scope_map:
-            if any(w in text for w in words):
-                matched_scope = label
-                break
+        # 5) TIMELINE - Only mention if reasonable
+        if contract.closing_date:
+            try:
+                from datetime import datetime
+                if isinstance(contract.closing_date, str):
+                    closing = datetime.fromisoformat(contract.closing_date.replace('Z', '+00:00'))
+                else:
+                    closing = contract.closing_date
+                
+                days_left = (closing - datetime.now(closing.tzinfo if hasattr(closing, 'tzinfo') else None)).days
+                
+                if 14 <= days_left <= 45:
+                    bullets.append(
+                        f"Closes in {days_left} days - enough time to prepare a quality response"
+                    )
+                elif 0 < days_left < 14:
+                    bullets.append(
+                        f"⚠️ Closes in {days_left} days - tight timeline, prioritize if highly relevant"
+                    )
+            except:
+                pass  # Skip if date parsing fails
 
-        if matched_scope:
-            bullets.append(
-                f"Scope includes {matched_scope}, which matches your typical project work"
-            )
-
-        # 4) Agency / Buyer Relevance (safe phrasing)
-        buyer_name = getattr(contract, "buyer_name", None)
-        if buyer_name:
-            bullets.append(
-                f"Issued by {buyer_name}, which frequently procures services like yours"
-            )
-
-        # 5) Set-aside fit (future-safe wording)
-        set_aside = getattr(contract, "set_aside", None)
-        if set_aside:
-            bullets.append(
-                "Set-aside and contract type appear compatible with small business vendors"
-            )
-
-        # Keep it tight
+        # Keep it tight - max 5 bullets
         return bullets[:5]
         
     def _generate_match_reasons(

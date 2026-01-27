@@ -709,6 +709,65 @@ class EmailPreferencesResponse(BaseModel):
             }
         }
 
+class SOWExtractionRequest(BaseModel):
+    """Request to extract SOW for a specific contract"""
+    notice_id: str = Field(..., description="Contract notice ID")
+    priority: Literal["HIGH", "MEDIUM", "LOW"] = Field(default="MEDIUM")
+    
+    class Config:
+        json_schema_extra = {
+            "example": {
+                "notice_id": "140D0423R0036-01",
+                "priority": "HIGH"
+            }
+        }
+
+class SOWResponse(BaseModel):
+    """Response model for extracted SOW"""
+    notice_id: str
+    sow_text: str
+    confidence: str
+    source_filename: Optional[str]
+    word_count: int
+    has_deliverables: bool
+    has_tasks: bool
+    extraction_method: str
+    extracted_at: datetime
+    
+    class Config:
+        from_attributes = True
+        json_schema_extra = {
+            "example": {
+                "notice_id": "140D0423R0036-01",
+                "sow_text": "The contractor shall provide cloud migration services...",
+                "confidence": "HIGH",
+                "source_filename": "SOW_CloudMigration.pdf",
+                "word_count": 1234,
+                "has_deliverables": True,
+                "has_tasks": True,
+                "extraction_method": "pdf_text",
+                "extracted_at": "2024-01-15T10:30:00Z"
+            }
+        }
+
+class SOWQueueStatus(BaseModel):
+    """Status of SOW extraction queue"""
+    total_queued: int
+    pending: int
+    processing: int
+    completed: int
+    failed: int
+    
+class SOWExtractionStats(BaseModel):
+    """Statistics for SOW extraction system"""
+    total_contracts: int
+    contracts_with_sow: int
+    high_confidence: int
+    medium_confidence: int
+    low_confidence: int
+    queue_status: SOWQueueStatus
+    avg_word_count: Optional[float]
+
 
 
 # Backward compatibility aliases for old router

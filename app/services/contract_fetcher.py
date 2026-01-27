@@ -17,6 +17,32 @@ class ContractFetcherService:
         """Close the HTTP client"""
         await self.client.aclose()
     
+    def _extract_attachments(self, tender: Dict[str, Any]) -> List[Dict[str, str]]:
+        """
+        Extract attachment URLs from SAM.gov tender data.
+        
+        SAM.gov uses OCDS format where documents are in tender.documents array.
+        
+        Returns:
+            List of attachment dicts with 'url' and 'title'
+        """
+        attachments = []
+        documents = tender.get("documents", [])
+        
+        for doc in documents:
+            url = doc.get("url")
+            title = doc.get("title", "Unknown")
+            
+            if url:
+                attachments.append({
+                    "url": url,
+                    "title": title,
+                    "format": doc.get("format", ""),
+                })
+        
+        logger.debug(f"Found {len(attachments)} attachments")
+        return attachments
+    
     async def fetch_contracts_with_cursor(
         self,
         published_from: Optional[datetime] = None,
@@ -65,6 +91,7 @@ class ContractFetcherService:
         """
         Parse API response into ContractOpportunity objects.
         FILTERS: tender.status="active" + closing_date > now
+        🆕 NOW EXTRACTS ATTACHMENTS for SOW extraction
         """
         contracts = []
         releases = api_data.get("releases", [])
@@ -127,6 +154,15 @@ class ContractFetcherService:
                 if delivery_addresses:
                     region = delivery_addresses[0].get("region")
                 
+                # 🆕 EXTRACT ATTACHMENTS
+                attachments = self._extract_attachments(tender)
+                
+                # Store attachments as JSON string (for backward compatibility)
+                attachments_json = None
+                if attachments:
+                    import json
+                    attachments_json = json.dumps(attachments)
+                
                 # Create contract object
                 contract = ContractOpportunity(
                     notice_id=release.get("id", ""),
@@ -137,7 +173,8 @@ class ContractFetcherService:
                     closing_date=closing_date,
                     value=value,
                     cpv_codes=cpv_codes,
-                    region=region
+                    region=region,
+                    attachments=attachments_json,  # 🆕 Store attachments
                 )
                 
                 contracts.append(contract)

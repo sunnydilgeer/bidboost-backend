@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from app.api import sow_routes
 from app.routers import admin_restore
 from app.api import stripe_billing
 from app.api.session import router as session_router
@@ -159,6 +160,7 @@ app.include_router(stripe_billing_router)
 app.include_router(session_router, prefix="/api")
 app.include_router(password_reset.router, prefix="/api/auth")
 app.include_router(admin_restore.router)
+app.include_router(sow_routes.router)
 
 
 
