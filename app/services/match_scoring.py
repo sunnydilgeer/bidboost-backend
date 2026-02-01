@@ -1,9 +1,9 @@
 """
 Contract Match Scoring Service
 
-PURE CAPABILITY SCORING APPROACH:
+PURE CAPABILITY SCORING APPROACH WITH STRATEGIC INTELLIGENCE:
 - match_score = capability similarity only (rescaled for display)
-- No weighted average, no penalties for missing data
+- Strategic intelligence (incumbent, pricing, competition) added as context
 - Past wins and preferences computed separately for context/badges
 - Identical scoring in quick-start and dashboard
 
@@ -16,9 +16,10 @@ SCORE RESCALING:
 import logging
 from typing import Dict, List, Optional, Tuple
 from sqlalchemy.orm import Session
-from app.models.company import CompanyProfile
+from app.models.company import CompanyProfile, OpportunityChain
 from app.models.contract import Contract
 from app.services.domain_filter import get_domain_filter
+from app.services.incumbent_matcher import IncumbentMatcher
 import numpy as np
 
 logger = logging.getLogger(__name__)
@@ -26,11 +27,12 @@ logger = logging.getLogger(__name__)
 
 class ContractMatchScorer:
     """
-    Calculate personalized match scores for contracts.
+    Calculate personalized match scores for contracts with strategic intelligence.
 
     Scoring Philosophy:
     - match_score = capability similarity ONLY (rescaled)
     - Missing data (past wins, prefs) = no penalty to score
+    - Strategic intelligence (incumbent/pricing/competition) provides context
     - Past wins and preferences provide context badges, not score impact
     """
 
@@ -54,6 +56,10 @@ class ContractMatchScorer:
             self.qdrant_client = vector_client
             self.pinecone_index = None
             self.using_pinecone = False
+        
+        # Initialize incumbent matcher for strategic intelligence
+        self.incumbent_matcher = IncumbentMatcher(db, vector_client)
+        logger.info("🎯 Incumbent matcher initialized successfully")
 
     def score_contract(
         self,
@@ -62,11 +68,21 @@ class ContractMatchScorer:
         capability_vectors: Optional[Dict] = None,
         contract_vectors: Optional[Dict] = None,
         past_win_vectors: Optional[Dict[str, List[float]]] = None,
+        skip_strategic_intel: bool = False,  # ← NEW PARAMETER
     ) -> Optional[Dict]:
         """
-        Calculate match score for a contract.
+        Calculate match score for a contract with optional strategic intelligence.
         
-        NOW WITH DOMAIN FILTERING to prevent cross-domain false positives.
+        Args:
+            skip_strategic_intel: If True, skip incumbent/pricing/competition queries.
+                                 Used in Phase 1 cache updates for speed (2-5 min).
+                                 Phase 2 enrichment adds strategic intel later.
+        
+        NOW WITH:
+        - Domain filtering to prevent cross-domain false positives
+        - Incumbent detection (who currently holds similar contracts)
+        - Pricing benchmarks (typical award amounts)
+        - Competition analysis (avg number of bidders)
         """
         try:
             # Get company profile
@@ -84,13 +100,13 @@ class ContractMatchScorer:
             if not self._passes_preference_filters(contract, profile):
                 return None
             
-            # STEP 2: NEW - Apply domain filter before expensive semantic scoring
+            # STEP 2: Apply domain filter before expensive semantic scoring
             if not self.domain_filter.passes_domain_filter(contract, profile):
                 logger.debug(
                     f"Filtered out {contract.notice_id}: domain mismatch "
                     f"({contract.title[:60]}...)"
                 )
-                return None  # Block cross-domain matches early
+                return None
 
             # STEP 3: Calculate semantic scores (existing logic)
             raw_capability_score, matched_capabilities = self._calculate_capability_score(
@@ -113,7 +129,60 @@ class ContractMatchScorer:
             )
             preference_score = self._calculate_preference_score(contract, profile)
 
-            # Keep legacy match_reasons for now (unchanged)
+            # ✅ STEP 4: CONDITIONAL strategic intelligence
+            incumbent_data = None
+            pricing_benchmarks = None
+            competition_stats = None
+            
+            if not skip_strategic_intel:
+                # FULL STRATEGIC INTELLIGENCE (Phase 2 enrichment)
+                logger.debug(f"Including strategic intelligence for {contract.notice_id}")
+                
+                # Try to get incumbent data (requires OpportunityChain match)
+                opp_chain = self._contract_to_opportunity_chain(contract)
+                if opp_chain:
+                    try:
+                        incumbent_data = self.incumbent_matcher.find_incumbent(opp_chain)
+                        if incumbent_data:
+                            logger.debug(f"Found incumbent for {contract.notice_id}: {incumbent_data.get('incumbent_name')}")
+                    except Exception as e:
+                        logger.error(f"Error finding incumbent for {contract.notice_id}: {e}")
+                
+                # Get pricing benchmarks and competition stats (works for ALL contracts with NAICS)
+                if contract.naics_code and contract.buyer_name:
+                    try:
+                        pricing_benchmarks = self.incumbent_matcher.get_pricing_benchmarks(
+                            contract.naics_code, 
+                            contract.buyer_name
+                        )
+                        if pricing_benchmarks and pricing_benchmarks.get("sample_size", 0) > 0:
+                            logger.debug(
+                                f"Pricing benchmarks for {contract.notice_id}: "
+                                f"${pricing_benchmarks.get('avg_award', 0)/1_000_000:.1f}M avg "
+                                f"(n={pricing_benchmarks.get('sample_size')})"
+                            )
+                    except Exception as e:
+                        logger.error(f"Error getting pricing benchmarks for {contract.notice_id}: {e}")
+                    
+                    try:
+                        competition_stats = self.incumbent_matcher.get_competition_stats(
+                            contract.naics_code,
+                            contract.buyer_name
+                        )
+                        if competition_stats and competition_stats.get("avg_offers"):
+                            logger.debug(
+                                f"Competition stats for {contract.notice_id}: "
+                                f"avg {competition_stats.get('avg_offers'):.1f} bidders"
+                            )
+                    except Exception as e:
+                        logger.error(f"Error getting competition stats for {contract.notice_id}: {e}")
+                elif not contract.naics_code:
+                    logger.debug(f"⚠️ NO NAICS DATA - Skipping strategic intel for: {contract.notice_id}")
+            else:
+                # SKIP STRATEGIC INTELLIGENCE (Phase 1 fast caching)
+                logger.debug(f"⚡ Skipping strategic intelligence for {contract.notice_id} (fast mode)")
+
+            # Generate match explanations with strategic intelligence
             match_reasons = self._generate_match_reasons(
                 raw_capability_score,
                 past_win_score,
@@ -133,15 +202,23 @@ class ContractMatchScorer:
                 "past_win_score": round(past_win_score, 3),
                 "preference_score": round(preference_score, 3),
 
-                # NEW: matched capability examples (top 1–3)
+                # Matched capability examples (top 1–3)
                 "matched_capabilities": matched_capabilities,
 
-                # ✅ UPDATED: Pass profile and raw_capability_score
+                # NEW: Strategic intelligence (None if skipped)
+                "incumbent_data": incumbent_data,
+                "pricing_benchmarks": pricing_benchmarks,
+                "competition_stats": competition_stats,
+
+                # Enhanced match explanation with strategic intel
                 "why_this_matches": self._generate_why_this_matches(
                     matched_capabilities=matched_capabilities,
                     contract=contract,
                     profile=profile,
-                    raw_capability_score=raw_capability_score
+                    raw_capability_score=raw_capability_score,
+                    incumbent_data=incumbent_data,
+                    pricing_benchmarks=pricing_benchmarks,
+                    competition_stats=competition_stats
                 ),
 
                 # Context
@@ -157,6 +234,28 @@ class ContractMatchScorer:
                 f"Error scoring contract {getattr(contract, 'notice_id', '')}: {str(e)}",
                 exc_info=True,
             )
+            return None
+
+    def _contract_to_opportunity_chain(self, contract: Contract) -> Optional[OpportunityChain]:
+        """
+        Convert Contract to OpportunityChain for incumbent matching.
+        
+        Returns existing OpportunityChain if found in database, None otherwise.
+        This is normal - not all Pinecone contracts have OpportunityChain records.
+        """
+        try:
+            # Try to find existing opportunity chain by notice_id
+            opp = self.db.query(OpportunityChain).filter(
+                OpportunityChain.base_notice_id == contract.notice_id
+            ).first()
+            
+            if opp:
+                logger.debug(f"Found OpportunityChain for {contract.notice_id}")
+            
+            return opp  # Returns None if not found
+            
+        except Exception as e:
+            logger.error(f"Error converting contract to opportunity chain: {e}")
             return None
 
     def _rescale_score(self, raw_score: float) -> float:
@@ -460,15 +559,62 @@ class ContractMatchScorer:
         matched_capabilities: List[str],
         contract: Contract,
         profile: CompanyProfile,
-        raw_capability_score: float
+        raw_capability_score: float,
+        incumbent_data: Optional[Dict] = None,
+        pricing_benchmarks: Optional[Dict] = None,
+        competition_stats: Optional[Dict] = None
     ) -> List[str]:
         """
-        Generate specific, evidence-based match explanations.
+        Generate specific, evidence-based match explanations with strategic intelligence.
         Each bullet should be VERIFIABLE and SPECIFIC.
+        
+        NEW: Includes incumbent warnings, pricing context, and competition analysis.
         """
         bullets: List[str] = []
 
-        # 1) CAPABILITY MATCH - Show actual matched capability text
+        # 1) INCUMBENT WARNING (if high/medium confidence)
+        if incumbent_data and incumbent_data.get("confidence") in ["high", "medium"]:
+            incumbent_name = incumbent_data["incumbent_name"]
+            amount = incumbent_data.get("award_amount")
+            ends = incumbent_data.get("contract_end")
+            
+            if incumbent_data.get("is_recompete"):
+                warning = f"⚠️ RECOMPETE: {incumbent_name} incumbent"
+                if amount:
+                    warning += f" (${amount/1_000_000:.1f}M)"
+                if ends:
+                    warning += f", expires {ends[:7]}"
+                bullets.append(warning)
+            else:
+                info = f"ℹ️ {incumbent_name} holds similar contract"
+                if amount:
+                    info += f" (${amount/1_000_000:.1f}M)"
+                bullets.append(info)
+        
+        # 2) PRICING CONTEXT (if available with good sample size)
+        if pricing_benchmarks and pricing_benchmarks.get("sample_size", 0) >= 3:
+            avg = pricing_benchmarks.get("avg_award")
+            min_val = pricing_benchmarks.get("min_award")
+            max_val = pricing_benchmarks.get("max_award")
+            n = pricing_benchmarks["sample_size"]
+            
+            if avg and min_val and max_val:
+                bullets.append(
+                    f"💰 Typical awards: ${min_val/1_000_000:.1f}M-${max_val/1_000_000:.1f}M "
+                    f"(avg ${avg/1_000_000:.1f}M, n={n})"
+                )
+        
+        # 3) COMPETITION LEVEL
+        if competition_stats and competition_stats.get("avg_offers"):
+            avg_offers = competition_stats["avg_offers"]
+            if avg_offers >= 8:
+                bullets.append(f"🔥 High competition (avg {avg_offers:.0f} bidders)")
+            elif avg_offers >= 5:
+                bullets.append(f"🎯 Moderate competition (avg {avg_offers:.0f} bidders)")
+            else:
+                bullets.append(f"✅ Lower competition (avg {avg_offers:.0f} bidders)")
+
+        # 4) CAPABILITY MATCH - Show actual matched capability text
         if matched_capabilities and raw_capability_score >= 0.40:
             # Take first matched capability (highest scoring)
             top_capability = matched_capabilities[0]
@@ -491,7 +637,7 @@ class ContractMatchScorer:
         else:
             bullets.append("Matches your core capabilities and services")
 
-        # 2) NAICS ALIGNMENT - Check if exact match with company codes
+        # 5) NAICS ALIGNMENT - Check if exact match with company codes
         if contract.naics_code:
             if contract.naics_code in (profile.naics_codes or []):
                 bullets.append(
@@ -502,22 +648,22 @@ class ContractMatchScorer:
                     f"NAICS {contract.naics_code} aligns with your service areas"
                 )
 
-        # 3) PAST PERFORMANCE - Show similar wins
+        # 6) PAST PERFORMANCE - Show similar wins
         if profile.past_wins:
             # Find similar past wins (same agency)
             similar_wins = []
             for win in profile.past_wins[:5]:
-                if (contract.buyer_name and win.buyer_name and 
+                if (contract.buyer_name and getattr(win, "buyer_name", None) and 
                     win.buyer_name.lower() in contract.buyer_name.lower()):
                     similar_wins.append(win)
             
             if similar_wins:
-                win_names = [w.contract_title[:60] for w in similar_wins[:2]]
+                win_names = [getattr(w, "contract_title", "")[:60] for w in similar_wins[:2]]
                 bullets.append(
                     f"You've won similar work: {', '.join(win_names)}"
                 )
 
-        # 4) SET-ASIDE ELIGIBILITY - Check actual certifications
+        # 7) SET-ASIDE ELIGIBILITY - Check actual certifications
         if contract.set_aside:
             set_aside_lower = contract.set_aside.lower()
             
@@ -546,7 +692,7 @@ class ContractMatchScorer:
                     f"Set-aside: {cert_type} (you're certified) - limited competition"
                 )
 
-        # 5) TIMELINE - Only mention if reasonable
+        # 8) TIMELINE - Only mention if reasonable
         if contract.closing_date:
             try:
                 from datetime import datetime

@@ -5,6 +5,7 @@ from sqlalchemy.sql import func
 from app.database import Base
 from datetime import datetime
 import enum
+import json
 
 class CompanySize(enum.Enum):
     MICRO = "micro"  # < 10 employees
@@ -176,6 +177,7 @@ class CachedContractMatch(Base):
     """
     Pre-computed contract matches for fast recommendations.
     Updated nightly by background job.
+    NOW WITH STRATEGIC INTELLIGENCE: incumbent detection, pricing benchmarks, competition stats.
     """
     __tablename__ = "cached_contract_matches"
     
@@ -218,13 +220,45 @@ class CachedContractMatch(Base):
     matched_capabilities = Column(JSON, default=list)  # Top 1-3 capability texts
     why_this_matches = Column(JSON, default=list)      # 4-5 explanation bullets
     
+    # 🎯 NEW: Strategic Intelligence (JSON stored as Text)
+    incumbent_data = Column(Text, nullable=True)  # JSON: incumbent contractor info
+    pricing_benchmarks = Column(Text, nullable=True)  # JSON: pricing benchmarks
+    competition_stats = Column(Text, nullable=True)  # JSON: competition statistics
+    # ✅ NEW: Enrichment tracking columns
+    enrichment_status = Column(String(20), default='pending', nullable=False)
+    enriched_at = Column(DateTime(timezone=True), nullable=True)
+    
 
     # Cache metadata
-    rank = Column(Integer, nullable=False)  # 1-100 ranking for this company
+    rank = Column(Integer, nullable=False)  # 1-500 ranking for this company
     cached_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
     
     def to_dict(self):
-        """Convert cached match to API response format"""
+        """Convert cached match to API response format with strategic intelligence"""
+        
+        # Deserialize strategic intelligence from JSON strings
+        incumbent_data = None
+        pricing_benchmarks = None
+        competition_stats = None
+        
+        try:
+            if self.incumbent_data:
+                incumbent_data = json.loads(self.incumbent_data)
+        except (json.JSONDecodeError, TypeError):
+            pass
+        
+        try:
+            if self.pricing_benchmarks:
+                pricing_benchmarks = json.loads(self.pricing_benchmarks)
+        except (json.JSONDecodeError, TypeError):
+            pass
+        
+        try:
+            if self.competition_stats:
+                competition_stats = json.loads(self.competition_stats)
+        except (json.JSONDecodeError, TypeError):
+            pass
+        
         return {
             "notice_id": self.notice_id,
             "title": self.title,
@@ -255,6 +289,12 @@ class CachedContractMatch(Base):
             "match_reasons": self.match_reasons or [],
             "matched_capabilities": self.matched_capabilities or [],
             "why_this_matches": self.why_this_matches or [],
+            
+            # NEW: Strategic intelligence
+            "incumbent_data": incumbent_data,
+            "pricing_benchmarks": pricing_benchmarks,
+            "competition_stats": competition_stats,
+            
             "rank": self.rank,
             "score": 0.5  # Placeholder for compatibility
         }
@@ -346,6 +386,3 @@ class OpportunityAttachment(Base):
     extracted = Column(Boolean, default=False, nullable=False)
     
     created_at = Column(DateTime(timezone=True), server_default=func.now())
-
-
-

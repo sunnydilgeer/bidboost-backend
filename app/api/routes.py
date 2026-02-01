@@ -1221,16 +1221,17 @@ async def get_recommended_contracts(
     """
     Get personalized contract recommendations with match scoring.
     
-    OPUS PURE CAPABILITY APPROACH:
-    - match_score = capability similarity only
-    - No weighted average, no penalties for missing data
-    - Checks cache first, falls back to real-time scoring
+    TWO-PHASE ENRICHMENT SUPPORT:
+    - Returns matches immediately (even if enrichment_status='pending')
+    - Strategic intelligence fields may be None during Phase 1
+    - Frontend can poll to get updated data as enrichment completes
     """
     try:
-        USE_CACHE = True  # ← Set to True after testing
-        cached_matches = None  # ✅ Initialize it!
+        USE_CACHE = True
+        cached_matches = None
         
         if USE_CACHE:
+            # Get cached matches (including pending enrichments)
             cached_matches = db.query(CachedContractMatch)\
                 .filter(CachedContractMatch.firm_id == current_user.firm_id)\
                 .order_by(CachedContractMatch.rank)\
@@ -1238,32 +1239,61 @@ async def get_recommended_contracts(
                 .all()
         
         if cached_matches:
-            logger.info(f"⚡ CACHE HIT: Serving {len(cached_matches)} contracts from cache for {current_user.firm_id}")
+            # Count pending enrichments for logging
+            pending_count = sum(1 for m in cached_matches if m.enrichment_status == 'pending')
+            complete_count = sum(1 for m in cached_matches if m.enrichment_status == 'complete')
             
-
+            logger.info(
+                f"⚡ CACHE HIT: Serving {len(cached_matches)} contracts for {current_user.firm_id} "
+                f"({complete_count} enriched, {pending_count} pending)"
+            )
+            
             from app.services.code_lookup import get_code_lookup_service
             code_service = get_code_lookup_service()
+            
             # Convert cached matches to API format
             results = []
             for match in cached_matches:
                 match_dict = match.to_dict()
+                
+                # Enrich with code names
                 enriched = code_service.enrich_contract(match_dict)
-                match_dict.update(enriched) 
-
-                # ✅ Ensure new fields are present (will be empty if cache predates feature)
+                match_dict.update(enriched)
+                
+                # ✅ Ensure all fields are present (backward compatibility)
                 if 'matched_capabilities' not in match_dict:
                     match_dict['matched_capabilities'] = []
                 if 'why_this_matches' not in match_dict:
                     match_dict['why_this_matches'] = []
-
-
+                
+                # ✅ Ensure strategic intelligence fields exist (may be None if pending)
+                if 'incumbent_data' not in match_dict:
+                    match_dict['incumbent_data'] = None
+                if 'pricing_benchmarks' not in match_dict:
+                    match_dict['pricing_benchmarks'] = None
+                if 'competition_stats' not in match_dict:
+                    match_dict['competition_stats'] = None
+                
+                # ✅ Add enrichment status to response
+                match_dict['enrichment_status'] = match.enrichment_status
+                match_dict['enriched_at'] = match.enriched_at.isoformat() if match.enriched_at else None
+                
                 results.append(ContractSearchResult(**match_dict))
+            
+            # Build response message
+            if pending_count > 0:
+                message = (
+                    f"Found {len(results)} personalized matches "
+                    f"({pending_count} enriching in background)"
+                )
+            else:
+                message = f"Found {len(results)} personalized matches (fully enriched)"
             
             return ContractSearchResponse(
                 query="",
                 results=results,
                 total_found=len(results),
-                message=f"Found {len(results)} personalized matches (cached)"
+                message=message
             )
         
         # ❌ CACHE MISS - Fall back to real-time scoring
@@ -1321,8 +1351,8 @@ async def get_recommended_contracts(
         pinecone = PineconeStoreService(api_key=settings.PINECONE_API_KEY)
         results = pinecone.search_contracts(
             query_vector=query_vector,
-            limit=min(limit * 2, 200),  # Cap at 200 to avoid over-fetching
-            min_score=0.25,  # Higher threshold = fewer contracts to score
+            limit=min(limit * 2, 200),
+            min_score=0.25,
             namespace=settings.PINECONE_NAMESPACE
         )
         
@@ -1334,11 +1364,10 @@ async def get_recommended_contracts(
                 message="No matching contracts found"
             )
         
-        # PERFORMANCE OPTIMIZATION: Pre-fetch all capability vectors once
+        # Pre-fetch all capability vectors once
         cap_store = get_capability_store()
         capability_ids_to_fetch = [cap.qdrant_id for cap in capabilities if cap.qdrant_id]
         
-        # Batch fetch all capabilities from Pinecone
         capabilities_data = {}
         if capability_ids_to_fetch:
             capabilities_data = cap_store.get_capabilities_batch(capability_ids_to_fetch)
@@ -1355,13 +1384,12 @@ async def get_recommended_contracts(
                 past_wins_data = win_store.get_past_wins_batch(past_win_ids)
                 logger.info(f"Pre-fetched {len(past_wins_data)} past win vectors")
         
-        # PERFORMANCE OPTIMIZATION: Pre-fetch ALL contract vectors in one batch
+        # Pre-fetch ALL contract vectors in one batch
         contract_ids = [r.get("id") for r in results if r.get("id")]
         contract_vectors = {}
         
         if contract_ids:
             try:
-                # Batch fetch all contract vectors from Pinecone
                 fetch_result = pinecone.index.fetch(ids=contract_ids, namespace=settings.PINECONE_NAMESPACE)
                 
                 for vec_id, vec_data in fetch_result.vectors.items():
@@ -1389,26 +1417,27 @@ async def get_recommended_contracts(
                 contract_value=enriched_result.get("contract_value"),
                 region=enriched_result.get("state"),
                 qdrant_id=enriched_result.get("id"),
-                naics_code=enriched_result.get("naics_code"),  # ← ADD THIS
-                naics_name=enriched_result.get("naics_name"),  # ← ADD THIS
-                psc_code=enriched_result.get("psc_code"),      # ← ADD THIS
-                set_aside=enriched_result.get("set_aside")    # ← ADD THIS  
+                naics_code=enriched_result.get("naics_code"),
+                naics_name=enriched_result.get("naics_name"),
+                psc_code=enriched_result.get("psc_code"),
+                set_aside=enriched_result.get("set_aside")
             )
             
-            # Score it - pass ALL THREE pre-fetched vectors
+            # ✅ Real-time scoring includes FULL strategic intelligence
             match_scores = scorer.score_contract(
                 temp_contract, 
                 current_user.firm_id, 
                 capability_vectors=capabilities_data,
                 contract_vectors=contract_vectors,
-                past_win_vectors=past_wins_data
+                past_win_vectors=past_wins_data,
+                skip_strategic_intel=False  # Include strategic intel in real-time mode
             )
             
             # Skip if filtered out
             if not match_scores:
                 continue
             
-            # Build result using enriched_result throughout
+            # Build result with strategic intelligence
             search_results.append(ContractSearchResult(
                 notice_id=enriched_result.get("notice_id", ""),
                 title=enriched_result.get("title", ""),
@@ -1445,35 +1474,39 @@ async def get_recommended_contracts(
                 suitable_for_sme=None,
                 suitable_for_vco=None,
                 match_scores=match_scores,
-                total_match_score=match_scores["match_score"], 
+                total_match_score=match_scores["match_score"],
                 match_reasons=match_scores.get("match_reasons", []),
                 matched_capabilities=match_scores.get("matched_capabilities", []),
-                why_this_matches=match_scores.get("why_this_matches", [])
-
-
+                why_this_matches=match_scores.get("why_this_matches", []),
+                # ✅ Strategic intelligence (fully populated in real-time mode)
+                incumbent_data=match_scores.get("incumbent_data"),
+                pricing_benchmarks=match_scores.get("pricing_benchmarks"),
+                competition_stats=match_scores.get("competition_stats"),
+                # ✅ Enrichment status (real-time = always complete)
+                enrichment_status="complete",
+                enriched_at=datetime.now(timezone.utc).isoformat()
             ))
             
             # Early exit if we have enough results
             if len(search_results) >= limit:
                 break
         
-        # Sort by match score (PURE CAPABILITY)
+        # Sort by match score
         search_results.sort(key=lambda x: x.total_match_score or 0, reverse=True)
         search_results = search_results[:limit]
         
-        logger.info(f"✅ Recommendations complete: Returning {len(search_results)} matches")
+        logger.info(f"✅ Recommendations complete: Returning {len(search_results)} matches (real-time)")
         
         return ContractSearchResponse(
             query="",
             results=search_results,
             total_found=len(search_results),
-            message=f"Found {len(search_results)} personalized matches"
+            message=f"Found {len(search_results)} personalized matches (real-time scoring)"
         )
         
     except Exception as e:
         logger.error(f"Recommendations failed: {str(e)}", exc_info=True)
         raise HTTPException(status_code=500, detail=str(e))
-
 
 @router.get("/contracts/pipeline-summary", response_model=PipelineResponse)
 async def get_pipeline_summary(
@@ -1719,7 +1752,14 @@ async def search_contracts(
                     contract_result.match_scores = match_scores
                     contract_result.total_match_score = match_scores["match_score"]  # ✅ PURE CAPABILITY SCORE
                     contract_result.match_reasons = match_scores.get("match_reasons", [])
+                    contract_result.matched_capabilities = match_scores.get("matched_capabilities", [])
+                    contract_result.why_this_matches = match_scores.get("why_this_matches", [])
+                    contract_result.incumbent_data = match_scores.get("incumbent_data")
+                    contract_result.pricing_benchmarks = match_scores.get("pricing_benchmarks")
+                    contract_result.competition_stats = match_scores.get("competition_stats")
+                    
                     search_results.append(contract_result)
+                    
             else:
                 search_results.append(contract_result)
         
@@ -1921,6 +1961,7 @@ async def get_saved_contracts_enriched(
                 # Priority 1: Use cached data (fastest, has full match scores)
                 if saved.notice_id in cached_data:
                     cached = cached_data[saved.notice_id]
+                    match_dict = cached.to_dict()
                     contract_dict = {
                         "id": saved.id,
                         "notice_id": saved.notice_id,
@@ -1962,8 +2003,11 @@ async def get_saved_contracts_enriched(
                         "match_reasons": cached.match_reasons or [],
                         "matched_capabilities": getattr(cached, 'matched_capabilities', []) or [],
                         "why_this_matches": getattr(cached, 'why_this_matches', []) or [],
-
-
+                        "incumbent_data": match_dict.get('incumbent_data') or getattr(cached, 'incumbent_data', None),
+                        "pricing_benchmarks": match_dict.get('pricing_benchmarks') or getattr(cached, 'pricing_benchmarks', None),
+                        "competition_stats": match_dict.get('competition_stats') or getattr(cached, 'competition_stats', None),
+                        "enrichment_status": match_dict.get('enrichment_status') or getattr(cached, 'enrichment_status', 'complete'),
+                        "enriched_at": cached.enriched_at.isoformat() if getattr(cached, 'enriched_at', None) else None,
                     }
                     enriched.append(contract_dict)
                     
@@ -2014,9 +2058,16 @@ async def get_saved_contracts_enriched(
                        "match_reasons": match_scores.get("match_reasons", []) if match_scores else [],
                        "matched_capabilities": match_scores.get("matched_capabilities", []) if match_scores else [],  # ✅ FIXED
                        "why_this_matches": match_scores.get("why_this_matches", []) if match_scores else [],  # ✅ FIXED
+                       "incumbent_data": match_scores.get("incumbent_data") if match_scores else None,
+                       "pricing_benchmarks": match_scores.get("pricing_benchmarks") if match_scores else None,
+                       "competition_stats": match_scores.get("competition_stats") if match_scores else None,
+                       "enrichment_status": "complete" if match_scores else "pending",
+                       "enriched_at": datetime.now(timezone.utc).isoformat() if match_scores else None,
+    }
 
 
-                    }
+
+                    
                     enriched.append(contract_dict)
                     
                 # Priority 3: Contract not found anywhere - use minimal saved data
@@ -2055,6 +2106,11 @@ async def get_saved_contracts_enriched(
                         "match_reasons": [],
                         "matched_capabilities": [],  # ✅ FIXED - just empty array
                         "why_this_matches": [], 
+                        "incumbent_data": None,
+                        "pricing_benchmarks": None,
+                        "competition_stats": None,
+                        "enrichment_status": "pending",
+                        "enriched_at": None,
                         
                     }
                     enriched.append(contract_dict)

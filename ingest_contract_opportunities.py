@@ -236,19 +236,24 @@ def main():
     # ============================================================
     # STEP 2: QUERY GOOD QUALITY CONTRACTS FROM TRUTH LAYER
     # ============================================================
-    print("📊 Step 2: Fetching GOOD quality contracts from Truth Layer...")
+    print("📊 Step 2: Fetching LIVE, BIDDABLE, GOOD quality contracts from Truth Layer...")
     db = SessionLocal()
-    
+
+    # Filter for:
+    # 1. GOOD quality descriptions
+    # 2. Deadline in the future (still open)
+    # 3. NOT Award Notices or Justifications (those aren't biddable)
     contracts = db.query(OpportunityChain).filter(
         OpportunityChain.base_description_quality == 'GOOD',
-        OpportunityChain.latest_closing_date >= datetime.now(timezone.utc)
+        OpportunityChain.latest_closing_date >= datetime.now(timezone.utc),
+        OpportunityChain.base_type.notin_(['Award Notice', 'Justification', 'Justification and Approval (J&A)'])
     ).all()
-    
-    print(f"   Found {len(contracts)} GOOD quality contracts with open deadlines")
+
+    print(f"   Found {len(contracts)} LIVE, BIDDABLE, GOOD quality contracts")
     print()
-    
+
     if len(contracts) == 0:
-        print("❌ No GOOD quality contracts to embed")
+        print("❌ No LIVE, BIDDABLE, GOOD quality contracts to embed")
         db.close()
         sys.exit(1)
     

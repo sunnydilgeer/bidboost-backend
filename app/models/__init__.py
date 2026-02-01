@@ -29,7 +29,6 @@ class User(Base):
     reset_token = Column(String(255), nullable=True)
     reset_token_expires = Column(DateTime, nullable=True)
 
-
     # Relationships
     audit_logs = relationship("AuditLog", back_populates="user")
     conversations = relationship("Conversation", back_populates="user", cascade="all, delete-orphan")
@@ -102,8 +101,13 @@ from app.models.company import (
     CompanyCapability,
     PastWin,
     SearchPreference,
-    SavedContract
+    SavedContract,
+    CachedContractMatch,
+    OpportunityChain,
+    OpportunityAttachment
 )
+
+from app.models.contract_awards import ContractAward
 
 from app.models.lead import PreSignupLead
 
@@ -122,6 +126,14 @@ __all__ = [
     "PastWin",
     "SearchPreference",
     "SavedContract",
+    "CachedContractMatch",
+    "OpportunityChain",
+    "OpportunityAttachment",
+    
+    # Historical awards (imported from contract_awards.py)
+    "ContractAward",
+    
+    # Subscription
     "FirmSubscription",
     
     # Lead capture (imported from lead.py)

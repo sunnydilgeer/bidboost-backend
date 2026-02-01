@@ -311,7 +311,14 @@ class ContractSearchResult(BaseModel):
     matched_capabilities: List[str] = []
     why_this_matches: List[str] = []
 
+    # ✅ NEW: Strategic Intelligence fields
+    incumbent_data: Optional[Dict] = None
+    pricing_benchmarks: Optional[Dict] = None
+    competition_stats: Optional[Dict] = None
 
+    # ✅ NEW: Enrichment tracking fields
+    enrichment_status: Optional[str] = "complete"  # "pending" | "complete"
+    enriched_at: Optional[str] = None  # ISO timestamp when enrichment completed
 
     
     class Config:
