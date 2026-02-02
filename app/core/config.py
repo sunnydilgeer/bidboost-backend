@@ -50,8 +50,10 @@ class Settings(BaseSettings):
     STRIPE_WEBHOOK_SECRET: str = ""
     STRIPE_PRO_PRICE_ID: str
     STRIPE_PRO_FOUNDER_PRICE_ID: str
-    STRIPE_STARTER_PRICE_ID: str  # ✅ NEW - Add this line
-    RESEND_API_KEY: Optional[str] = None  # ← Add this
+    STRIPE_PRO_LEGACY_149_PRICE_ID: str  # ✅ NEW: old Pro price ($149)
+    STRIPE_STARTER_PRICE_ID: str
+    RESEND_API_KEY: Optional[str] = None
+    
 
     
     class Config:
