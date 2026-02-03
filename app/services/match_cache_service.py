@@ -1,7 +1,8 @@
 """
-Background Job: Pre-compute Contract Matches - TWO-PHASE STRATEGY
+Background Job: Pre-compute Contract Matches - THREE-PHASE STRATEGY
 
-Phase 1: Fast semantic matching (2-5 min)
+Phase 1: Multi-query semantic matching (3-7 min)
+Phase 1.5: LLM re-ranking for quality (2-4 min) 
 Phase 2: Batched strategic intelligence enrichment (5-10 min, async)
 
 Runs nightly to cache top 500 matches per company in PostgreSQL
@@ -28,8 +29,9 @@ class MatchCacheService:
     Service for pre-computing and caching contract matches.
     Runs as a background job to speed up dashboard loading.
     
-    TWO-PHASE CACHING STRATEGY:
-    Phase 1: Semantic matching only (fast, 2-5 min)
+    THREE-PHASE CACHING STRATEGY:
+    Phase 1: Multi-query semantic matching (3-7 min)
+    Phase 1.5: LLM re-ranking for better judgment (2-4 min)
     Phase 2: Strategic intelligence via batched queries (5-10 min)
     """
     
@@ -62,7 +64,7 @@ class MatchCacheService:
             
             for firm in firms:
                 try:
-                    # PHASE 1: Fast matching (2-5 min)
+                    # PHASE 1: Multi-query semantic matching (3-7 min)
                     self._update_firm_cache(firm)
                     
                     # PHASE 2: Strategic intelligence enrichment (5-10 min)
@@ -136,12 +138,16 @@ class MatchCacheService:
     
     def _update_firm_cache(self, firm: CompanyProfile):
         """
-        PHASE 1: Fast semantic matching only (2-5 min).
+        PHASE 1: Multi-query semantic matching + LLM re-ranking (5-10 min).
         
-        Skips strategic intelligence queries to maximize speed.
-        Matches are saved with enrichment_status='pending' for Phase 2.
+        NEW APPROACH:
+        1. Query Pinecone with ALL capability vectors (not just first)
+        2. Merge and dedupe results by contract_id
+        3. Score top 1000 candidates
+        4. LLM re-rank top 500 with nuanced judgment
+        5. Save with enrichment_status='pending' for Phase 2
         """
-        logger.info(f"⚡ PHASE 1: Fast matching for {firm.company_name} (firm_id: {firm.firm_id})")
+        logger.info(f"⚡ PHASE 1: Multi-query matching for {firm.company_name} (firm_id: {firm.firm_id})")
         
         # Check if firm has capabilities
         if not firm.capabilities:
@@ -168,23 +174,65 @@ class MatchCacheService:
             if past_win_ids:
                 past_win_vectors = win_store.get_past_wins_batch(past_win_ids)
         
-        # Get contracts from Pinecone (top 1000 by semantic similarity)
-        first_cap_vector = capability_vectors.get(capability_ids[0])
-        if not first_cap_vector:
-            logger.warning(f"No vector for first capability - skipping firm {firm.firm_id}")
-            return
+        # ✅ NEW: MULTI-QUERY PINECONE (fixes recall bug)
+        merged_results = {}  # contract_id -> {score, metadata, values, matched_cap_index}
         
-        search_results = self.pinecone.index.query(
-            vector=first_cap_vector,
-            namespace="contracts",
-            top_k=1000,
-            include_metadata=True,
-            include_values=True
-        )
+        logger.info(f"🔍 Querying Pinecone with {len(capability_ids)} capability vectors...")
         
-        # Score each contract WITHOUT strategic intelligence
+        for idx, cap_id in enumerate(capability_ids):
+            cap_vector = capability_vectors.get(cap_id)
+            if not cap_vector:
+                logger.warning(f"No vector for capability {cap_id}, skipping")
+                continue
+            
+            # Query with this capability
+            search_results = self.pinecone.index.query(
+                vector=cap_vector,
+                namespace="contracts",
+                top_k=200,  # 200 per capability (tunable)
+                include_metadata=True,
+                include_values=True
+            )
+            
+            # Merge results - keep max similarity per contract
+            for result in search_results.matches:
+                contract_id = result.id
+                
+                if contract_id not in merged_results:
+                    merged_results[contract_id] = {
+                        'score': result.score,
+                        'metadata': result.metadata,
+                        'values': result.values,
+                        'matched_cap_index': idx
+                    }
+                else:
+                    # Keep highest similarity score across all capabilities
+                    if result.score > merged_results[contract_id]['score']:
+                        merged_results[contract_id]['score'] = result.score
+                        merged_results[contract_id]['matched_cap_index'] = idx
+        
+        logger.info(f"✅ Found {len(merged_results)} unique contracts across {len(capability_ids)} capabilities")
+        
+        # Convert to sorted list
+        all_results = sorted(
+            merged_results.items(),
+            key=lambda x: x[1]['score'],
+            reverse=True
+        )[:1000]  # Keep top 1000 for scoring
+        
+        # Convert back to Pinecone-style result format
+        class PineconeMatch:
+            def __init__(self, contract_id, data):
+                self.id = contract_id
+                self.score = data['score']
+                self.metadata = data['metadata']
+                self.values = data['values']
+        
+        pinecone_matches = [PineconeMatch(cid, data) for cid, data in all_results]
+        
+        # Score each contract WITHOUT strategic intelligence (Phase 1 = fast)
         scored_matches = []
-        for result in search_results.matches:
+        for result in pinecone_matches:
             if not result.values or len(result.values) != 768:
                 logger.warning(f"Skipping contract {result.id} - invalid vector (length: {len(result.values) if result.values else 0})")
                 continue
@@ -223,13 +271,52 @@ class MatchCacheService:
                     "metadata": metadata
                 })
         
-        # Sort by match_score (PURE CAPABILITY)
+        # Sort by match_score (PURE SEMANTIC)
         scored_matches.sort(key=lambda x: x["scores"]["match_score"], reverse=True)
         
-        # Keep top 500
+        # Keep top 500 for LLM re-ranking
         top_matches = scored_matches[:500]
         
-        logger.info(f"Found {len(top_matches)} matches (50%+ score) for {firm.company_name}")
+        logger.info(f"📊 Found {len(top_matches)} matches (50%+ score) for {firm.company_name}")
+        
+        # ✅ NEW: PHASE 1.5 - LLM RE-RANKING
+        llm_results = {}
+        try:
+            logger.info(f"🤖 PHASE 1.5: LLM re-ranking {len(top_matches)} contracts...")
+            from app.services.llm_rerank_service import LLMReranker
+            
+            reranker = LLMReranker()
+            llm_results = reranker.rerank_contracts_for_firm(firm, top_matches)
+            
+            logger.info(f"✅ LLM re-ranked {len(llm_results)}/{len(top_matches)} contracts")
+        except Exception as e:
+            logger.error(f"⚠️ LLM re-ranking failed, using semantic scores only: {e}")
+            # Continue with empty llm_results - will use fallback scores
+        
+        # Update matches with LLM data and calculate final scores
+        for match in top_matches:
+            contract_id = match['contract'].notice_id
+            
+            if contract_id in llm_results:
+                match['llm_data'] = llm_results[contract_id]
+            else:
+                # Fallback if LLM failed for this contract
+                match['llm_data'] = {
+                    'llm_score': 50,
+                    'llm_verdict': 'monitor',
+                    'llm_reasons': ['Semantic match only'],
+                    'llm_flags': []
+                }
+            
+            # Calculate blended final score
+            semantic_score = match['scores']['match_score']
+            llm_score = match['llm_data']['llm_score'] / 100
+            match['final_score'] = 0.6 * semantic_score + 0.4 * llm_score
+        
+        # Re-sort by blended score
+        top_matches.sort(key=lambda x: x['final_score'], reverse=True)
+        
+        logger.info(f"🎯 Final ranking complete - top match has score {top_matches[0]['final_score']:.2f}")
         
         # Delete old cache entries for this firm
         self.db.execute(
@@ -243,6 +330,7 @@ class MatchCacheService:
             contract = match["contract"]
             scores = match["scores"]
             metadata = match["metadata"]
+            llm_data = match["llm_data"]
             
             # Prepare metadata dict
             cache_metadata = {
@@ -253,11 +341,17 @@ class MatchCacheService:
                 "buyer_name": contract.buyer_name,
                 "description": contract.description,
                 
-                # Pre-computed scores (PURE CAPABILITY - Phase 1)
-                "total_score": scores["match_score"],
+                # Pre-computed scores
+                "total_score": match['final_score'],  # ✅ NEW: Blended score
                 "capability_score": scores["capability_score"],
                 "past_win_score": scores["past_win_score"],
                 "preference_score": scores["preference_score"],
+                
+                # ✅ NEW: LLM Re-Rank Results (Phase 1.5)
+                "llm_score": llm_data['llm_score'],
+                "llm_verdict": llm_data['llm_verdict'],
+                "llm_reasons": json.dumps(llm_data['llm_reasons']),
+                "llm_flags": json.dumps(llm_data['llm_flags']),
 
                 # Match context
                 "matched_capabilities": scores.get("matched_capabilities", []),
@@ -315,7 +409,7 @@ class MatchCacheService:
         # Commit all cached matches for this firm
         try:
             self.db.commit()
-            logger.info(f"✅ PHASE 1 COMPLETE: Cached {len(top_matches)} matches for {firm.company_name}")
+            logger.info(f"✅ PHASE 1 & 1.5 COMPLETE: Cached {len(top_matches)} matches for {firm.company_name}")
             logger.info(f"⏳ Strategic intelligence will be enriched in Phase 2...")
         except Exception as e:
             logger.error(f"Error committing cached matches for firm {firm.firm_id}: {e}")
@@ -401,7 +495,10 @@ def refresh_cache_for_firm(firm_id: str):
     Manually refresh cache for a single firm.
     Called after capability/past win changes.
     
-    Runs both Phase 1 (fast matching) and Phase 2 (enrichment).
+    Runs all three phases:
+    - Phase 1: Multi-query semantic matching
+    - Phase 1.5: LLM re-ranking
+    - Phase 2: Strategic intelligence enrichment
     """
     service = MatchCacheService()
     service.run_cache_update(firm_ids=[firm_id])

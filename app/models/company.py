@@ -216,6 +216,12 @@ class CachedContractMatch(Base):
     past_win_score = Column(Numeric(5, 2), nullable=False)
     preference_score = Column(Numeric(5, 2), nullable=False)
     match_reasons = Column(JSON, default=list)  # ["Strong capability match", ...]
+
+    llm_score = Column(Integer, default=50)
+    llm_verdict = Column(String(20), default='monitor')  
+    llm_reasons = Column(Text)  # JSON string
+    llm_flags = Column(Text)  # JSON string
+
     
     matched_capabilities = Column(JSON, default=list)  # Top 1-3 capability texts
     why_this_matches = Column(JSON, default=list)      # 4-5 explanation bullets
@@ -349,6 +355,11 @@ class OpportunityChain(Base):
     # Quality indicators
     base_description_quality = Column(String(20), nullable=True)  # "GOOD", "POOR", "MISSING"
     needs_sow_extraction = Column(Boolean, default=False, nullable=False)
+
+    # Tracking fields
+    pinecone_id = Column(String(255), nullable=True, index=True)  # Pinecone vector ID
+    embedded_at = Column(DateTime(timezone=True), nullable=True)   # When embedded
+    scraped_at = Column(DateTime(timezone=True), nullable=True)    # When scraped
     
     # Timestamps
     created_at = Column(DateTime(timezone=True), server_default=func.now())
