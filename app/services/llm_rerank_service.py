@@ -1,7 +1,7 @@
 """
 LLM Re-Ranking Service - Phase 1.5
 
-Batch re-ranks semantic candidates using GPT-4 for better judgment.
+Batch re-ranks semantic candidates using GPT-4o-mini for better judgment.
 Scores contracts on capability fit, eligibility, and practicality.
 """
 
@@ -210,14 +210,26 @@ Core Capabilities:
         # Truncate description
         desc = (contract.description or "")[:200]
         
+        # Format contract value safely
+        if contract.contract_value:
+            try:
+                value_str = f"${contract.contract_value:,.0f}"
+            except (ValueError, TypeError):
+                value_str = "N/A"
+        else:
+            value_str = "N/A"
+        
+        # Format closing date safely
+        closes_str = str(contract.closing_date) if contract.closing_date else "N/A"
+        
         return f"""## Contract {idx + 1}
 ID: {contract.notice_id}
-Title: {contract.title[:160]}
-Agency: {contract.buyer_name}
+Title: {contract.title[:160] if contract.title else 'N/A'}
+Agency: {contract.buyer_name or 'N/A'}
 Description: {desc}...
 NAICS: {contract.naics_code or 'N/A'}
 Set-Aside: {contract.set_aside or 'Full & Open'}
 Region: {contract.region or 'N/A'}
-Value: ${contract.contract_value:,.0f if contract.contract_value else 'N/A'}
-Closes: {contract.closing_date if contract.closing_date else 'N/A'}
+Value: {value_str}
+Closes: {closes_str}
 ---"""
