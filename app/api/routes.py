@@ -1958,7 +1958,7 @@ async def get_saved_contracts_enriched(
         
         for saved in saved_contracts:
             try:
-                # Priority 1: Use cached data (fastest, has full match scores)
+                # Priority 1: Use cached data (fastest, has full match scores + LLM data)
                 if saved.notice_id in cached_data:
                     cached = cached_data[saved.notice_id]
                     match_dict = cached.to_dict()
@@ -2003,15 +2003,23 @@ async def get_saved_contracts_enriched(
                         "match_reasons": cached.match_reasons or [],
                         "matched_capabilities": getattr(cached, 'matched_capabilities', []) or [],
                         "why_this_matches": getattr(cached, 'why_this_matches', []) or [],
-                        "incumbent_data": match_dict.get('incumbent_data') or getattr(cached, 'incumbent_data', None),
-                        "pricing_benchmarks": match_dict.get('pricing_benchmarks') or getattr(cached, 'pricing_benchmarks', None),
-                        "competition_stats": match_dict.get('competition_stats') or getattr(cached, 'competition_stats', None),
-                        "enrichment_status": match_dict.get('enrichment_status') or getattr(cached, 'enrichment_status', 'complete'),
+                        
+                        # ✅ Strategic Intelligence
+                        "incumbent_data": match_dict.get('incumbent_data'),
+                        "pricing_benchmarks": match_dict.get('pricing_benchmarks'),
+                        "competition_stats": match_dict.get('competition_stats'),
+                        "enrichment_status": match_dict.get('enrichment_status', 'complete'),
                         "enriched_at": cached.enriched_at.isoformat() if getattr(cached, 'enriched_at', None) else None,
+                        
+                        # ✨ LLM Re-Ranking (from cache)
+                        "llm_score": match_dict.get('llm_score'),
+                        "llm_verdict": match_dict.get('llm_verdict'),
+                        "llm_reasons": match_dict.get('llm_reasons', []),
+                        "llm_flags": match_dict.get('llm_flags', []),
                     }
                     enriched.append(contract_dict)
                     
-                # Priority 2: Use Pinecone data WITH match scores (real-time scoring)
+                # Priority 2: Use Pinecone data WITH match scores (real-time scoring, no LLM data)
                 elif saved.notice_id in pinecone_data:
                     data = pinecone_data[saved.notice_id]
                     enriched_metadata = data["metadata"]
@@ -2055,18 +2063,23 @@ async def get_saved_contracts_enriched(
                             "total_score": 0.0,
                             "match_score": 0.0
                         },
-                       "match_reasons": match_scores.get("match_reasons", []) if match_scores else [],
-                       "matched_capabilities": match_scores.get("matched_capabilities", []) if match_scores else [],  # ✅ FIXED
-                       "why_this_matches": match_scores.get("why_this_matches", []) if match_scores else [],  # ✅ FIXED
-                       "incumbent_data": match_scores.get("incumbent_data") if match_scores else None,
-                       "pricing_benchmarks": match_scores.get("pricing_benchmarks") if match_scores else None,
-                       "competition_stats": match_scores.get("competition_stats") if match_scores else None,
-                       "enrichment_status": "complete" if match_scores else "pending",
-                       "enriched_at": datetime.now(timezone.utc).isoformat() if match_scores else None,
-    }
-
-
-
+                        "match_reasons": match_scores.get("match_reasons", []) if match_scores else [],
+                        "matched_capabilities": match_scores.get("matched_capabilities", []) if match_scores else [],
+                        "why_this_matches": match_scores.get("why_this_matches", []) if match_scores else [],
+                        
+                        # ✅ Strategic Intelligence
+                        "incumbent_data": match_scores.get("incumbent_data") if match_scores else None,
+                        "pricing_benchmarks": match_scores.get("pricing_benchmarks") if match_scores else None,
+                        "competition_stats": match_scores.get("competition_stats") if match_scores else None,
+                        "enrichment_status": "complete" if match_scores else "pending",
+                        "enriched_at": datetime.now(timezone.utc).isoformat() if match_scores else None,
+                        
+                        # ✨ LLM Re-Ranking (not available for uncached contracts)
+                        "llm_score": None,
+                        "llm_verdict": None,
+                        "llm_reasons": [],
+                        "llm_flags": [],
+                    }
                     
                     enriched.append(contract_dict)
                     
@@ -2102,16 +2115,23 @@ async def get_saved_contracts_enriched(
                         "updated_at": saved.updated_at.isoformat(),
                         "total_match_score": float(saved.match_score) if saved.match_score else 0.0,
                         "score": float(saved.match_score) if saved.match_score else 0.0,
-                        "match_scores": None,  # Indicate no detailed scores available
+                        "match_scores": None,
                         "match_reasons": [],
-                        "matched_capabilities": [],  # ✅ FIXED - just empty array
+                        "matched_capabilities": [],
                         "why_this_matches": [], 
+                        
+                        # ✅ Strategic Intelligence (not available)
                         "incumbent_data": None,
                         "pricing_benchmarks": None,
                         "competition_stats": None,
                         "enrichment_status": "pending",
                         "enriched_at": None,
                         
+                        # ✨ LLM Re-Ranking (not available)
+                        "llm_score": None,
+                        "llm_verdict": None,
+                        "llm_reasons": [],
+                        "llm_flags": [],
                     }
                     enriched.append(contract_dict)
                     logger.warning(f"⚠️ Contract {saved.notice_id} not found in cache or Pinecone - using saved data only")
@@ -2126,9 +2146,14 @@ async def get_saved_contracts_enriched(
                     "buyer_name": saved.buyer_name,
                     "status": saved.status,
                     "saved_at": saved.saved_at.isoformat(),
+                    # LLM fields for error fallback
+                    "llm_score": None,
+                    "llm_verdict": None,
+                    "llm_reasons": [],
+                    "llm_flags": [],
                 })
         
-        logger.info(f"✅ Returned {len(enriched)} enriched contracts with FULL data")
+        logger.info(f"✅ Returned {len(enriched)} enriched contracts with FULL data + LLM")
         
         return {
             "total": len(enriched),

@@ -84,8 +84,8 @@ def main():
     contracts = db.query(OpportunityChain).filter(
         and_(
             OpportunityChain.base_description_quality == 'GOOD',
-            OpportunityChain.attachments_fetched_at.isnot(None),  # ONLY SCRAPED
-            OpportunityChain.updated_at >= cutoff,
+            OpportunityChain.scraped_at.isnot(None),  # ONLY SCRAPED
+            OpportunityChain.scraped_at >= cutoff,  # Changed in last N hours
             OpportunityChain.latest_closing_date >= datetime.now(timezone.utc)
         )
     ).all()

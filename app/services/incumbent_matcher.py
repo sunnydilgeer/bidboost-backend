@@ -3,8 +3,13 @@ Incumbent Matcher Service
 
 Identifies incumbent contractors and provides strategic intelligence:
 - Who currently holds similar contracts (incumbent detection)
-- Typical award amounts (pricing benchmarks)
-- Competition levels (average number of bidders)
+- Typical award amounts (pricing benchmarks) - NOW WITH PSC GRANULARITY
+- Competition levels (average number of bidders) - NOW WITH PSC GRANULARITY
+
+✨ NEW: PSC + NAICS + Agency grouping for contract-specific data
+Fallback hierarchy:
+1. PSC + NAICS + Agency (most specific) - e.g., 47 similar contracts
+2. NAICS + Agency (broad fallback) - e.g., 9,472 agency-wide contracts
 """
 
 import logging
@@ -249,24 +254,88 @@ class IncumbentMatcher:
         
         return results
     
-    def get_pricing_benchmarks(self, naics_code: str, agency_name: str) -> Dict:
+    def get_pricing_benchmarks(
+        self, 
+        naics_code: str, 
+        agency_name: str,
+        psc_code: Optional[str] = None,
+        min_samples: int = 10
+    ) -> Dict:
         """
-        Get pricing benchmarks for similar contracts.
+        Get pricing benchmarks with PSC-aware fallback hierarchy.
+        
+        ✨ NEW: Now uses PSC + NAICS + Agency for contract-specific data
+        
+        Fallback Strategy:
+        1. Try PSC + NAICS + Agency (most specific) - e.g., 47 similar cloud migration contracts
+        2. Fall back to NAICS + Agency (broad) - e.g., 9,472 all Air Force IT contracts
+        
+        Args:
+            naics_code: NAICS classification code
+            agency_name: Agency name (will be normalized to parent agency)
+            psc_code: Product/Service Code (optional, for contract-level specificity)
+            min_samples: Minimum sample size for confidence (default: 10 for PSC, 3 for fallback)
         
         Returns:
-        - avg_award: float
-        - min_award: float
-        - max_award: float
-        - median_award: float (optional)
-        - sample_size: int
+            Dict with:
+            - avg_award: Average contract value
+            - min_award: Minimum contract value
+            - max_award: Maximum contract value
+            - sample_size: Number of historical contracts analyzed
+            - granularity: "psc_specific" or "naics_agency" (tracks specificity level)
+        
+        Example:
+            Before: get_pricing_benchmarks("541715", "DEPT OF THE AIR FORCE")
+                → Returns: {"avg_award": 5800000, "sample_size": 9472, "granularity": "naics_agency"}
+            
+            After: get_pricing_benchmarks("541715", "DEPT OF THE AIR FORCE", "R425")
+                → Returns: {"avg_award": 2300000, "sample_size": 47, "granularity": "psc_specific"}
         """
         
-        from sqlalchemy import func
-        
-        # ✅ Normalize both agency AND NAICS
         normalized_agency = self._normalize_agency_name(agency_name)
         normalized_naics = self._normalize_naics_code(naics_code)
         
+        # ✅ PHASE 1: Try PSC + NAICS + Agency (CONTRACT-SPECIFIC)
+        if psc_code and psc_code.strip():
+            psc_clean = psc_code.strip()
+            
+            awards = self.db.query(
+                func.avg(ContractAward.award_amount).label('avg'),
+                func.min(ContractAward.award_amount).label('min'),
+                func.max(ContractAward.award_amount).label('max'),
+                func.count().label('count')
+            ).filter(
+                and_(
+                    ContractAward.naics_code == normalized_naics,
+                    ContractAward.agency_name == normalized_agency,
+                    ContractAward.psc_code == psc_clean,
+                    ContractAward.award_amount.isnot(None),
+                    ContractAward.award_amount > 0
+                )
+            ).first()
+            
+            # If we have enough samples, return PSC-specific data
+            if awards and awards.count >= min_samples:
+                logger.debug(
+                    f"✅ PSC-specific pricing: {awards.count} samples for "
+                    f"PSC={psc_clean}, NAICS={naics_code}, Agency={normalized_agency[:30]}... "
+                    f"Avg: ${float(awards.avg):,.0f}"
+                )
+                return {
+                    "avg_award": float(awards.avg) if awards.avg else None,
+                    "min_award": float(awards.min) if awards.min else None,
+                    "max_award": float(awards.max) if awards.max else None,
+                    "sample_size": awards.count,
+                    "granularity": "psc_specific"  # ← CONTRACT-LEVEL DATA
+                }
+            else:
+                sample_count = awards.count if awards else 0
+                logger.debug(
+                    f"⚠️ Insufficient PSC samples ({sample_count} < {min_samples}), "
+                    f"falling back to NAICS+Agency for PSC={psc_clean}, NAICS={naics_code}"
+                )
+        
+        # ✅ PHASE 2: Fall back to NAICS + Agency (AGENCY-WIDE AGGREGATION)
         awards = self.db.query(
             func.avg(ContractAward.award_amount).label('avg'),
             func.min(ContractAward.award_amount).label('min'),
@@ -281,34 +350,122 @@ class IncumbentMatcher:
             )
         ).first()
         
-        # Require minimum 3 samples for reliability
+        # Require minimum 3 samples for reliability (lower threshold for fallback)
         if not awards or awards.count < 3:
+            logger.debug(
+                f"❌ No pricing data found for NAICS={naics_code}, Agency={normalized_agency[:30]}"
+            )
             return {}
+        
+        logger.debug(
+            f"📊 NAICS+Agency pricing: {awards.count} samples for "
+            f"NAICS={naics_code}, Agency={normalized_agency[:30]}... "
+            f"Avg: ${float(awards.avg):,.0f}"
+        )
         
         return {
             "avg_award": float(awards.avg) if awards.avg else None,
             "min_award": float(awards.min) if awards.min else None,
             "max_award": float(awards.max) if awards.max else None,
-            "median_award": None,  # Would need percentile_cont function
-            "sample_size": awards.count
+            "sample_size": awards.count,
+            "granularity": "naics_agency"  # ← AGENCY-LEVEL DATA (BROAD)
         }
     
-    def get_competition_stats(self, naics_code: str, agency_name: str) -> Dict:
+    def get_competition_stats(
+        self, 
+        naics_code: str, 
+        agency_name: str,
+        psc_code: Optional[str] = None,
+        min_samples: int = 10
+    ) -> Dict:
         """
-        Get competition statistics for similar contracts.
+        Get competition statistics with PSC-aware fallback hierarchy.
+        
+        ✨ NEW: Now uses PSC + NAICS + Agency for contract-specific data
+        
+        Same fallback strategy as get_pricing_benchmarks():
+        1. Try PSC + NAICS + Agency (most specific)
+        2. Fall back to NAICS + Agency (broad)
+        
+        Args:
+            naics_code: NAICS classification code
+            agency_name: Agency name (will be normalized)
+            psc_code: Product/Service Code (optional, for specificity)
+            min_samples: Minimum sample size for confidence (default: 10)
         
         Returns:
-        - avg_offers: float (average number of bidders)
-        - max_offers: int
-        - set_aside_distribution: dict
+            Dict with:
+            - avg_offers: Average number of bidders
+            - max_offers: Maximum number of bidders seen
+            - set_aside_distribution: Dict of set-aside types and counts
+            - granularity: "psc_specific" or "naics_agency"
+        
+        Example:
+            Before: get_competition_stats("541715", "DEPT OF THE AIR FORCE")
+                → Returns: {"avg_offers": 136.1, "granularity": "naics_agency"}
+            
+            After: get_competition_stats("541715", "DEPT OF THE AIR FORCE", "R425")
+                → Returns: {"avg_offers": 5.2, "granularity": "psc_specific"}
         """
         
-        from sqlalchemy import func
-        
-        # ✅ Normalize both agency AND NAICS
         normalized_agency = self._normalize_agency_name(agency_name)
         normalized_naics = self._normalize_naics_code(naics_code)
         
+        # ✅ PHASE 1: Try PSC + NAICS + Agency (CONTRACT-SPECIFIC)
+        if psc_code and psc_code.strip():
+            psc_clean = psc_code.strip()
+            
+            competition = self.db.query(
+                func.avg(ContractAward.number_of_offers).label('avg_offers'),
+                func.max(ContractAward.number_of_offers).label('max_offers'),
+                func.count().label('count')
+            ).filter(
+                and_(
+                    ContractAward.naics_code == normalized_naics,
+                    ContractAward.agency_name == normalized_agency,
+                    ContractAward.psc_code == psc_clean,
+                    ContractAward.number_of_offers.isnot(None)
+                )
+            ).first()
+            
+            # If we have enough samples, return PSC-specific data
+            if competition and competition.count >= min_samples:
+                # Get set-aside distribution for PSC-specific
+                set_asides = self.db.query(
+                    ContractAward.set_aside_type,
+                    func.count().label('count')
+                ).filter(
+                    and_(
+                        ContractAward.naics_code == normalized_naics,
+                        ContractAward.agency_name == normalized_agency,
+                        ContractAward.psc_code == psc_clean,
+                        ContractAward.set_aside_type.isnot(None)
+                    )
+                ).group_by(ContractAward.set_aside_type).all()
+                
+                set_aside_dist = {sa.set_aside_type: sa.count for sa in set_asides}
+                
+                avg_offers_val = float(competition.avg_offers) if competition.avg_offers else None
+                logger.debug(
+                    f"✅ PSC-specific competition: {competition.count} samples for "
+                    f"PSC={psc_clean}, NAICS={naics_code}, Agency={normalized_agency[:30]}... "
+                    f"Avg offers: {avg_offers_val:.1f}" if avg_offers_val else "No offer data"
+                )
+                
+                return {
+                    "avg_offers": avg_offers_val,
+                    "max_offers": competition.max_offers,
+                    "set_aside_distribution": set_aside_dist,
+                    "granularity": "psc_specific"  # ← CONTRACT-LEVEL DATA
+                }
+            else:
+                sample_count = competition.count if competition else 0
+                logger.debug(
+                    f"⚠️ Insufficient PSC samples ({sample_count} < {min_samples}), "
+                    f"falling back to NAICS+Agency for PSC={psc_clean}"
+                )
+        
+        # ✅ PHASE 2: Fall back to NAICS + Agency (AGENCY-WIDE AGGREGATION)
         competition = self.db.query(
             func.avg(ContractAward.number_of_offers).label('avg_offers'),
             func.max(ContractAward.number_of_offers).label('max_offers')
@@ -334,8 +491,15 @@ class IncumbentMatcher:
         
         set_aside_dist = {sa.set_aside_type: sa.count for sa in set_asides}
         
+        avg_offers_val = float(competition.avg_offers) if competition and competition.avg_offers else None
+        logger.debug(
+            f"📊 NAICS+Agency competition for NAICS={naics_code}, Agency={normalized_agency[:30]}... "
+            f"Avg offers: {avg_offers_val:.1f}" if avg_offers_val else "No offer data"
+        )
+        
         return {
-            "avg_offers": float(competition.avg_offers) if competition and competition.avg_offers else None,
+            "avg_offers": avg_offers_val,
             "max_offers": competition.max_offers if competition else None,
-            "set_aside_distribution": set_aside_dist
+            "set_aside_distribution": set_aside_dist,
+            "granularity": "naics_agency"  # ← AGENCY-LEVEL DATA (BROAD)
         }

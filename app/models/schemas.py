@@ -320,6 +320,10 @@ class ContractSearchResult(BaseModel):
     enrichment_status: Optional[str] = "complete"  # "pending" | "complete"
     enriched_at: Optional[str] = None  # ISO timestamp when enrichment completed
 
+    llm_score: Optional[int] = None  # 0-100 confidence score
+    llm_verdict: Optional[Literal["pursue", "monitor", "pass"]] = None
+    llm_reasons: Optional[List[str]] = None  # AI reasoning bullets
+    llm_flags: Optional[List[str]] = None  # Warning flags
     
     class Config:
         from_attributes = True

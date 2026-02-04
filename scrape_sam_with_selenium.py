@@ -1,9 +1,9 @@
 """
-Selenium-based SAM.gov scraper - DAY 2 VERSION
+Selenium-based SAM.gov scraper - Updated for scraped_at tracking
 Scrapes LIVE opportunities only with rate limiting and deduplication.
 
 Usage:
-    python scrape_sam_with_selenium.py --limit 200
+    python scrape_sam_with_selenium.py --limit 190
 """
 
 import argparse
@@ -32,7 +32,7 @@ from app.database import SessionLocal
 from app.models.company import OpportunityChain
 
 
-def get_contracts_to_scrape(session: Session, limit: int = 200) -> List[OpportunityChain]:
+def get_contracts_to_scrape(session: Session, limit: int = 190) -> List[OpportunityChain]:
     """
     Get POOR/MISSING contracts that match LIVE ingestion filters.
     
@@ -40,7 +40,7 @@ def get_contracts_to_scrape(session: Session, limit: int = 200) -> List[Opportun
     - Quality: POOR or MISSING
     - Closing date: Future (LIVE opportunities only)
     - BaseType: Solicitation or Combined Synopsis/Solicitation
-    - Never scraped: attachments_fetched_at IS NULL
+    - Never scraped: scraped_at IS NULL
     """
     now = datetime.now(timezone.utc)
     
@@ -56,7 +56,7 @@ def get_contracts_to_scrape(session: Session, limit: int = 200) -> List[Opportun
             OpportunityChain.base_type.in_(['Solicitation', 'Combined Synopsis/Solicitation']),
             
             # Deduplication - never scraped before
-            OpportunityChain.attachments_fetched_at == None
+            OpportunityChain.scraped_at == None
         )
     ).limit(limit)
     
@@ -302,7 +302,7 @@ def assess_quality(description: str) -> str:
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--limit', type=int, default=200, help="Number of contracts to process")
+    parser.add_argument('--limit', type=int, default=190, help="Number of contracts to process")
     parser.add_argument('--debug', action='store_true', help="Save screenshots and HTML")
     args = parser.parse_args()
     
@@ -314,7 +314,7 @@ def main():
     db = SessionLocal()
     
     print("=" * 70)
-    print("SELENIUM-BASED SAM.GOV SCRAPER - DAY 2 VERSION")
+    print("SELENIUM-BASED SAM.GOV SCRAPER")
     print("=" * 70)
     print()
     
@@ -341,8 +341,8 @@ def main():
         print(f"   Notice: {contract.base_notice_id}")
         print(f"   Closing: {contract.latest_closing_date.strftime('%Y-%m-%d')}")
         
-        # Mark that we attempted to fetch attachments
-        contract.attachments_fetched_at = datetime.now(timezone.utc)
+        # ✅ CRITICAL: Mark as scraped (even if no attachments)
+        contract.scraped_at = datetime.now(timezone.utc)
         
         # Extract download links with Selenium
         attachments = extract_download_links(contract.base_notice_id, debug=args.debug)
@@ -350,7 +350,7 @@ def main():
         if not attachments:
             no_attachments_count += 1
             print(f"   ❌ No attachments")
-            db.commit()  # Save the fetch timestamp
+            db.commit()  # Save the scraped_at timestamp
             
             # CRITICAL: Rate limiting
             if idx < len(contracts):

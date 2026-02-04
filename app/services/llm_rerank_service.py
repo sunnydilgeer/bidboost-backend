@@ -3,6 +3,12 @@ LLM Re-Ranking Service - Phase 1.5
 
 Batch re-ranks semantic candidates using GPT-4o-mini for better judgment.
 Scores contracts on capability fit, eligibility, and practicality.
+
+FIXES APPLIED:
+- Use qdrant_id (not notice_id) as contract identifier
+- Include matched_capabilities in prompt for better context
+- Validation + repair pass for missing contracts
+- Remove formatting typos
 """
 
 import logging
@@ -31,7 +37,7 @@ class LLMReranker:
         """
         Re-rank contracts using LLM batch processing.
         
-        Returns: dict[contract_id] -> {
+        Returns: dict[qdrant_id] -> {
             'llm_score': 0-100,
             'llm_verdict': 'pursue|monitor|pass',
             'llm_reasons': ['...'],
@@ -54,7 +60,7 @@ class LLMReranker:
                 logger.error(f"Batch {i//self.BATCH_SIZE + 1} failed: {e}")
                 # Fallback: assign neutral scores
                 for item in batch:
-                    contract_id = item['contract'].notice_id
+                    contract_id = item['contract'].qdrant_id  # ✅ USE QDRANT_ID
                     results[contract_id] = {
                         'llm_score': 50,
                         'llm_verdict': 'monitor',
@@ -69,14 +75,17 @@ class LLMReranker:
         firm: CompanyProfile,
         batch: List[Dict]
     ) -> Dict[str, Dict]:
-        """Process one batch of contracts."""
+        """Process one batch of contracts with validation + repair."""
         
         # Build prompt
         prompt = self._build_prompt(firm, batch)
         
+        # Get expected IDs for validation
+        expected_ids = [item['contract'].qdrant_id for item in batch]
+        
         # Call OpenAI
         response = self.client.chat.completions.create(
-            model="gpt-4o-mini",  # Fast and cheap
+            model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": self._get_system_prompt()},
                 {"role": "user", "content": prompt}
@@ -89,10 +98,10 @@ class LLMReranker:
         raw_json = response.choices[0].message.content
         parsed = json.loads(raw_json)
         
-        # Convert to dict keyed by contract_id
+        # Convert to dict keyed by qdrant_id
         results = {}
         for item in parsed.get('results', []):
-            contract_id = item['contract_id']
+            contract_id = item['contract_id']  # Should be qdrant_id now
             results[contract_id] = {
                 'llm_score': item['score'],
                 'llm_verdict': item['verdict'],
@@ -100,7 +109,88 @@ class LLMReranker:
                 'llm_flags': item.get('flags', [])
             }
         
+        # ✅ VALIDATION: Check for missing contracts
+        missing_ids = set(expected_ids) - set(results.keys())
+        
+        if missing_ids:
+            logger.warning(f"LLM omitted {len(missing_ids)} contracts, attempting repair...")
+            repair_results = self._repair_missing_contracts(firm, batch, missing_ids)
+            results.update(repair_results)
+        
         return results
+    
+    def _repair_missing_contracts(
+        self,
+        firm: CompanyProfile,
+        batch: List[Dict],
+        missing_ids: set
+    ) -> Dict[str, Dict]:
+        """
+        Repair pass for contracts the LLM omitted.
+        Single cheap call to score just the missing ones.
+        """
+        missing_contracts = [
+            item for item in batch 
+            if item['contract'].qdrant_id in missing_ids
+        ]
+        
+        if not missing_contracts:
+            return {}
+        
+        try:
+            # Build minimal repair prompt
+            repair_prompt = f"""You previously omitted these contracts. Score them now.
+
+Firm: {firm.company_name}
+
+Missing Contracts:
+{chr(10).join([f"ID: {item['contract'].qdrant_id}, Title: {item['contract'].title[:100]}" for item in missing_contracts])}
+
+Return JSON with ONLY these {len(missing_contracts)} contracts:
+{{
+  "results": [
+    {{"contract_id": "...", "score": 0-100, "verdict": "pursue|monitor|pass", "reasons": ["..."], "flags": []}}
+  ]
+}}"""
+            
+            response = self.client.chat.completions.create(
+                model="gpt-4o-mini",
+                messages=[
+                    {"role": "system", "content": "Score the missing contracts in JSON."},
+                    {"role": "user", "content": repair_prompt}
+                ],
+                temperature=0.1,
+                response_format={"type": "json_object"}
+            )
+            
+            raw_json = response.choices[0].message.content
+            parsed = json.loads(raw_json)
+            
+            repair_results = {}
+            for item in parsed.get('results', []):
+                contract_id = item['contract_id']
+                repair_results[contract_id] = {
+                    'llm_score': item['score'],
+                    'llm_verdict': item['verdict'],
+                    'llm_reasons': item['reasons'],
+                    'llm_flags': item.get('flags', [])
+                }
+            
+            logger.info(f"Repair recovered {len(repair_results)}/{len(missing_ids)} contracts")
+            return repair_results
+            
+        except Exception as e:
+            logger.error(f"Repair failed: {e}")
+            # Return fallback for all missing
+            return {
+                mid: {
+                    'llm_score': 50,
+                    'llm_verdict': 'monitor',
+                    'llm_reasons': ['LLM scoring unavailable - repair failed'],
+                    'llm_flags': ['repair_error']
+                }
+                for mid in missing_ids
+            }
     
     def _get_system_prompt(self) -> str:
         return """You are a government contracting bid analyst. Score contracts based on fit and win-likelihood.
@@ -118,7 +208,7 @@ Downgrade for:
 - Set-aside certification mismatch
 - Unrealistic timelines
 
-Output strict JSON only."""
+Output strict JSON only. Include ALL contracts in results."""
     
     def _build_prompt(self, firm: CompanyProfile, batch: List[Dict]) -> str:
         """Build the user prompt with firm + contracts."""
@@ -126,15 +216,22 @@ Output strict JSON only."""
         # Firm summary (truncated to 300 words)
         firm_summary = self._build_firm_summary(firm)
         
+        # Get all batch IDs upfront (helps model compliance)
+        batch_ids = [item['contract'].qdrant_id for item in batch]
+        
         # Contract list
         contract_list = []
         for idx, item in enumerate(batch):
             contract = item['contract']
-            contract_list.append(self._format_contract(contract, idx))
+            matched_cap = item['scores'].get('matched_capabilities', [None])[0]  # ✅ TOP MATCHED CAP
+            contract_list.append(self._format_contract(contract, idx, matched_cap))
         
         prompt = f"""# Firm Profile
 
 {firm_summary}
+
+# Batch IDs (you must score ALL of these):
+{', '.join(batch_ids)}
 
 # Contracts to Score ({len(batch)} total)
 
@@ -157,7 +254,7 @@ Output JSON:
   ]
 }}
 
-Include all {len(batch)} contracts in results."""
+CRITICAL: Include all {len(batch)} contracts in results. Use the exact IDs from the Batch IDs list above."""
         
         return prompt
     
@@ -204,7 +301,7 @@ Core Capabilities:
         
         return summary[:800]  # Hard limit
     
-    def _format_contract(self, contract: Contract, idx: int) -> str:
+    def _format_contract(self, contract: Contract, idx: int, matched_capability: Optional[str] = None) -> str:
         """Format single contract for prompt (truncated)."""
         
         # Truncate description
@@ -222,11 +319,16 @@ Core Capabilities:
         # Format closing date safely
         closes_str = str(contract.closing_date) if contract.closing_date else "N/A"
         
+        # ✅ INCLUDE MATCHED CAPABILITY
+        matched_cap_line = f"Top Matched Capability: {matched_capability[:150]}" if matched_capability else ""
+        
         return f"""## Contract {idx + 1}
-ID: {contract.notice_id}
+ID: {contract.qdrant_id}
+Notice ID: {contract.notice_id}
 Title: {contract.title[:160] if contract.title else 'N/A'}
 Agency: {contract.buyer_name or 'N/A'}
 Description: {desc}...
+{matched_cap_line}
 NAICS: {contract.naics_code or 'N/A'}
 Set-Aside: {contract.set_aside or 'Full & Open'}
 Region: {contract.region or 'N/A'}

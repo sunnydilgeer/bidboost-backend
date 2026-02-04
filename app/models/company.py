@@ -92,7 +92,6 @@ class PastWin(Base):
     contract_duration_months = Column(Integer, nullable=True)
     description = Column(Text, nullable=True)
     pinecone_id = Column(String(100), nullable=True, index=True)  # Vector DB reference
-
     
     # 🆕 US Federal-specific
     contract_number = Column(String(100), nullable=True)  # Federal contract number
@@ -147,7 +146,6 @@ class SavedContract(Base):
     contract_value = Column(Numeric(15, 2), nullable=True)
     deadline = Column(DateTime(timezone=True), nullable=True)
     match_score = Column(Numeric(5, 2), nullable=True)
-
     
     # Saved contract metadata
     status = Column(String(50), default="interested", nullable=False)
@@ -172,6 +170,7 @@ class SavedContract(Base):
     __table_args__ = (
         Index('idx_user_contract', 'user_email', 'notice_id', unique=True),
     )
+
 
 class CachedContractMatch(Base):
     """
@@ -221,7 +220,6 @@ class CachedContractMatch(Base):
     llm_verdict = Column(String(20), default='monitor')  
     llm_reasons = Column(Text)  # JSON string
     llm_flags = Column(Text)  # JSON string
-
     
     matched_capabilities = Column(JSON, default=list)  # Top 1-3 capability texts
     why_this_matches = Column(JSON, default=list)      # 4-5 explanation bullets
@@ -234,18 +232,19 @@ class CachedContractMatch(Base):
     enrichment_status = Column(String(20), default='pending', nullable=False)
     enriched_at = Column(DateTime(timezone=True), nullable=True)
     
-
     # Cache metadata
     rank = Column(Integer, nullable=False)  # 1-500 ranking for this company
     cached_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
     
     def to_dict(self):
-        """Convert cached match to API response format with strategic intelligence"""
+        """Convert cached match to API response format with strategic intelligence + LLM re-ranking"""
         
         # Deserialize strategic intelligence from JSON strings
         incumbent_data = None
         pricing_benchmarks = None
         competition_stats = None
+        llm_reasons = None
+        llm_flags = None
         
         try:
             if self.incumbent_data:
@@ -262,6 +261,19 @@ class CachedContractMatch(Base):
         try:
             if self.competition_stats:
                 competition_stats = json.loads(self.competition_stats)
+        except (json.JSONDecodeError, TypeError):
+            pass
+        
+        # ✨ NEW: Deserialize LLM data
+        try:
+            if self.llm_reasons:
+                llm_reasons = json.loads(self.llm_reasons)
+        except (json.JSONDecodeError, TypeError):
+            pass
+
+        try:
+            if self.llm_flags:
+                llm_flags = json.loads(self.llm_flags)
         except (json.JSONDecodeError, TypeError):
             pass
         
@@ -296,10 +308,20 @@ class CachedContractMatch(Base):
             "matched_capabilities": self.matched_capabilities or [],
             "why_this_matches": self.why_this_matches or [],
             
-            # NEW: Strategic intelligence
+            # Strategic intelligence
             "incumbent_data": incumbent_data,
             "pricing_benchmarks": pricing_benchmarks,
             "competition_stats": competition_stats,
+            
+            # Enrichment tracking
+            "enrichment_status": self.enrichment_status or "complete",
+            "enriched_at": self.enriched_at.isoformat() if self.enriched_at else None,
+            
+            # ✨ NEW: LLM Re-Ranking
+            "llm_score": self.llm_score,
+            "llm_verdict": self.llm_verdict,
+            "llm_reasons": llm_reasons or [],
+            "llm_flags": llm_flags or [],
             
             "rank": self.rank,
             "score": 0.5  # Placeholder for compatibility
