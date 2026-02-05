@@ -193,6 +193,7 @@ class ContractMatchScorer:
 
             return {
                 # Primary score (rescaled capability)
+                "final_score": round(display_score, 3),      # ✅ ADD THIS - Canonical score
                 "match_score": round(display_score, 3),
                 "display_score": round(display_score * 100),
 

@@ -210,7 +210,9 @@ class CachedContractMatch(Base):
     contact_phone = Column(String(50), nullable=True)
     
     # Pre-computed scores (THIS IS THE KEY!)
-    total_score = Column(Numeric(5, 2), nullable=False, index=True)  # Index for sorting
+
+    final_score = Column(Numeric(5, 2), nullable=False, index=True)  # ✅ NEW: Canonical score
+    total_score = Column(Numeric(5, 2), nullable=False, index=True)  # Legacy compatibility
     capability_score = Column(Numeric(5, 2), nullable=False)
     past_win_score = Column(Numeric(5, 2), nullable=False)
     preference_score = Column(Numeric(5, 2), nullable=False)
@@ -231,6 +233,8 @@ class CachedContractMatch(Base):
     # ✅ NEW: Enrichment tracking columns
     enrichment_status = Column(String(20), default='pending', nullable=False)
     enriched_at = Column(DateTime(timezone=True), nullable=True)
+
+
     
     # Cache metadata
     rank = Column(Integer, nullable=False)  # 1-500 ranking for this company
@@ -297,6 +301,8 @@ class CachedContractMatch(Base):
             "contact_name": self.contact_name,
             "contact_email": self.contact_email,
             "contact_phone": self.contact_phone,
+            "final_score": float(self.final_score),
+
             "match_scores": {
                 "total_score": float(self.total_score),
                 "capability_score": float(self.capability_score),
