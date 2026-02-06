@@ -2,6 +2,11 @@
 Contract Truth Layer Builder
 Groups SAM.gov notices by solicitation number and identifies base notices.
 
+✅ CRITICAL FIX: Preserves scraped improvements to prevent quality regression
+   - Never overwrites base_description if scraped_at is set
+   - Never overwrites base_description_quality if scraped_at is set
+   - This ensures GOOD quality % only goes UP, never DOWN
+
 Usage:
     python build_contract_truth.py data/ContractOpportunitiesFullCSV.csv
     python build_contract_truth.py data/ContractOpportunitiesFullCSV.csv --limit 100
@@ -237,6 +242,7 @@ def build_truth_table(csv_filepath: str, db: Session, verbose: bool = True, limi
     
     created_count = 0
     updated_count = 0
+    preserved_scraped_count = 0  # ✅ NEW: Track how many scraped records we preserved
     needs_sow_count = 0
     
     for idx, (sol_num, notices) in enumerate(grouped_notices.items(), 1):
@@ -259,16 +265,15 @@ def build_truth_table(csv_filepath: str, db: Session, verbose: bool = True, limi
         valid_dates = [d for d in closing_dates if d is not None]
         latest_closing = max(valid_dates) if valid_dates else None
         
-        # ✅ NEW: Extract metadata from base notice
-        # ✅ FIXED: Extract metadata from base notice with truncation
+        # Extract metadata from base notice with truncation
         base_agency = (base.get('Sub-Tier', '') or '')[:255]
-        base_office = (base.get('Office', '') or '')[:500]  # TEXT type, can be longer
+        base_office = (base.get('Office', '') or '')[:500]
         base_naics = (base.get('NaicsCode', '') or '')[:10]
         base_psc = (base.get('ClassificationCode', '') or '')[:10]
         base_set_aside = (base.get('SetASide', '') or '')[:100]
         base_state = (base.get('PopState', '') or '')[:50]
         base_city = (base.get('PopCity', '') or '')[:100]
-        base_contact_name = (base.get('PrimaryContactFullname', '') or '')[:200]  # ✅ TRUNCATE
+        base_contact_name = (base.get('PrimaryContactFullname', '') or '')[:200]
         base_contact_email = (base.get('PrimaryContactEmail', '') or '')[:200]
         base_contact_phone = (base.get('PrimaryContactPhone', '') or '')[:50]
 
@@ -276,14 +281,20 @@ def build_truth_table(csv_filepath: str, db: Session, verbose: bool = True, limi
         existing = db.query(OpportunityChain).filter_by(solicitation_number=sol_num).first()
         
         if existing:
-            # Update existing chain
+            # ========================================================================
+            # ✅ CRITICAL FIX: PRESERVE SCRAPED IMPROVEMENTS
+            # ========================================================================
+            # If scraped_at is set, DO NOT overwrite description/quality
+            # This ensures quality only goes UP, never DOWN
+            # ========================================================================
+            
+            # Update structural fields (always safe to update)
             existing.base_notice_id = base.get('NoticeId', '')
             existing.base_sol_number = base.get('Sol#', '')
-            existing.base_description = description
             existing.base_posted_date = parse_date(base.get('PostedDate', ''))
             existing.base_type = base.get('BaseType', '')
             
-            # ✅ NEW: Update metadata fields
+            # Update metadata fields (always safe to update)
             existing.base_agency = base_agency
             existing.base_office = base_office
             existing.base_naics = base_naics
@@ -295,12 +306,28 @@ def build_truth_table(csv_filepath: str, db: Session, verbose: bool = True, limi
             existing.base_contact_email = base_contact_email
             existing.base_contact_phone = base_contact_phone
             
+            # Update chain metadata
             existing.notice_count = len(notices)
             existing.has_amendments = len(notices) > 1
             existing.latest_closing_date = latest_closing
-            existing.base_description_quality = quality
-            existing.needs_sow_extraction = needs_sow
             existing.updated_at = datetime.now(timezone.utc)
+            
+            # ✅ CRITICAL: Only update description/quality if NOT yet scraped
+            if existing.scraped_at is None:
+                # Safe to update - hasn't been scraped yet
+                existing.base_description = description
+                existing.base_description_quality = quality
+                existing.needs_sow_extraction = needs_sow
+            else:
+                # Already scraped - PRESERVE the enriched description
+                # The scraped version is higher quality than CSV
+                preserved_scraped_count += 1
+                # Don't touch: base_description, base_description_quality, needs_sow_extraction
+            
+            # NEVER touch these fields (they track scraping/embedding status):
+            # - scraped_at
+            # - pinecone_id
+            # - embedded_at
             
             updated_count += 1
         else:
@@ -313,7 +340,7 @@ def build_truth_table(csv_filepath: str, db: Session, verbose: bool = True, limi
                 base_posted_date=parse_date(base.get('PostedDate', '')),
                 base_type=base.get('BaseType', ''),
                 
-                # ✅ NEW: Add metadata fields
+                # Metadata fields
                 base_agency=base_agency,
                 base_office=base_office,
                 base_naics=base_naics,
@@ -351,6 +378,8 @@ def build_truth_table(csv_filepath: str, db: Session, verbose: bool = True, limi
         print("=" * 70)
         print(f"   Created: {created_count} new chains")
         print(f"   Updated: {updated_count} existing chains")
+        if preserved_scraped_count > 0:
+            print(f"   🔒 Preserved scraped: {preserved_scraped_count} contracts (quality protected)")
         print(f"   Total opportunities: {created_count + updated_count}")
         print()
         print(f"📊 Description Quality (this run):")
@@ -374,25 +403,29 @@ def build_truth_table(csv_filepath: str, db: Session, verbose: bool = True, limi
         needs_pct = (needs_sow_count / total_processed * 100) if total_processed > 0 else 0
         print(f"🔍 Needs SOW extraction: {needs_sow_count} contracts ({needs_pct:.1f}%)")
         
-        # ✅ NEW: Show metadata capture stats
-        print()
-        print(f"📋 Metadata Capture Stats:")
-        
-        # Count how many records have each field
-        metadata_stats = db.query(
-            func.sum(func.case((OpportunityChain.base_agency != None, 1), else_=0)).label('has_agency'),
-            func.sum(func.case((OpportunityChain.base_naics != None, 1), else_=0)).label('has_naics'),
-            func.sum(func.case((OpportunityChain.base_state != None, 1), else_=0)).label('has_state'),
-            func.sum(func.case((OpportunityChain.base_contact_email != None, 1), else_=0)).label('has_contact')
-        ).filter(
-            OpportunityChain.solicitation_number.in_(processed_sols)
-        ).first()
-        
-        if metadata_stats:
-            print(f"   Agency: {metadata_stats.has_agency}/{total_processed} ({metadata_stats.has_agency/total_processed*100:.1f}%)")
-            print(f"   NAICS: {metadata_stats.has_naics}/{total_processed} ({metadata_stats.has_naics/total_processed*100:.1f}%)")
-            print(f"   State: {metadata_stats.has_state}/{total_processed} ({metadata_stats.has_state/total_processed*100:.1f}%)")
-            print(f"   Contact: {metadata_stats.has_contact}/{total_processed} ({metadata_stats.has_contact/total_processed*100:.1f}%)")
+        # Show metadata capture stats (wrap in try/except to avoid crashing)
+        try:
+            print()
+            print(f"📋 Metadata Capture Stats:")
+            
+            # Count how many records have each field (using proper SQLAlchemy syntax)
+            from sqlalchemy import case
+            metadata_stats = db.query(
+                func.sum(case((OpportunityChain.base_agency.isnot(None), 1), else_=0)).label('has_agency'),
+                func.sum(case((OpportunityChain.base_naics.isnot(None), 1), else_=0)).label('has_naics'),
+                func.sum(case((OpportunityChain.base_state.isnot(None), 1), else_=0)).label('has_state'),
+                func.sum(case((OpportunityChain.base_contact_email.isnot(None), 1), else_=0)).label('has_contact')
+            ).filter(
+                OpportunityChain.solicitation_number.in_(processed_sols)
+            ).first()
+            
+            if metadata_stats and total_processed > 0:
+                print(f"   Agency: {metadata_stats.has_agency}/{total_processed} ({metadata_stats.has_agency/total_processed*100:.1f}%)")
+                print(f"   NAICS: {metadata_stats.has_naics}/{total_processed} ({metadata_stats.has_naics/total_processed*100:.1f}%)")
+                print(f"   State: {metadata_stats.has_state}/{total_processed} ({metadata_stats.has_state/total_processed*100:.1f}%)")
+                print(f"   Contact: {metadata_stats.has_contact}/{total_processed} ({metadata_stats.has_contact/total_processed*100:.1f}%)")
+        except Exception as e:
+            print(f"   ⚠️  Metadata stats failed (non-critical): {e}")
 
 
 def main():
