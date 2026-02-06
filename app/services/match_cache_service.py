@@ -1,16 +1,24 @@
 """
 Background Job: Pre-compute Contract Matches - THREE-PHASE STRATEGY
 
-Phase 1: Multi-query semantic matching (3-7 min)
+Phase 1: Multi-query semantic matching with diversity boost (3-7 min)
 Phase 1.5: LLM re-ranking for quality (2-4 min) 
-Phase 2: Batched strategic intelligence enrichment (15-20 min) ← NOW WITH PSC GRANULARITY
+Phase 2: Batched strategic intelligence enrichment (15-20 min)
 
 Runs nightly to cache top 500 matches per company in PostgreSQL
+
+✨ NEW: DIVERSITY SCORING
+- Contracts matching multiple capabilities get boosted
+- Prevents single capability from dominating results
+- 5% boost per additional capability (max 15%)
 
 FIXES APPLIED:
 - Use qdrant_id (Pinecone vector ID) for LLM result keying, not notice_id
 - Fixed score normalization: equal weight semantic + LLM (both 0-100 scale)
-- ✨ NEW: PSC-aware strategic intelligence for contract-specific data
+- PSC-aware strategic intelligence for contract-specific data
+- Multi-capability diversity boost
+- Comprehensive logging with progress tracking
+- Batched Pinecone vector fetching (100 at a time to avoid URI length errors)
 """
 
 import logging
@@ -18,7 +26,10 @@ from typing import List, Dict
 from sqlalchemy.orm import Session
 from sqlalchemy import delete
 from datetime import datetime, timezone
+from collections import defaultdict
 import json
+import time
+import sys
 
 from app.database import SessionLocal
 from app.models.company import CompanyProfile, CachedContractMatch
@@ -35,9 +46,9 @@ class MatchCacheService:
     Runs as a background job to speed up dashboard loading.
     
     THREE-PHASE CACHING STRATEGY:
-    Phase 1: Multi-query semantic matching (3-7 min)
+    Phase 1: Multi-query semantic matching with diversity boost (3-7 min)
     Phase 1.5: LLM re-ranking for better judgment (2-4 min)
-    Phase 2: Strategic intelligence via PSC-aware batched queries (15-20 min) ← UPDATED
+    Phase 2: Strategic intelligence via PSC-aware batched queries (15-20 min)
     """
     
     def __init__(self):
@@ -66,10 +77,11 @@ class MatchCacheService:
                 firms = self.db.query(CompanyProfile).all()
             
             logger.info(f"🔄 Starting cache update for {len(firms)} firms...")
+            sys.stdout.flush()
             
             for firm in firms:
                 try:
-                    # PHASE 1: Multi-query semantic matching (3-7 min)
+                    # PHASE 1: Multi-query semantic matching with diversity boost (3-7 min)
                     self._update_firm_cache(firm)
                     
                     # PHASE 2: Strategic intelligence enrichment (15-20 min)
@@ -80,6 +92,7 @@ class MatchCacheService:
                     continue
             
             logger.info(f"✅ Cache update complete for {len(firms)} firms")
+            sys.stdout.flush()
             
         except Exception as e:
             logger.error(f"Cache update failed: {e}", exc_info=True)
@@ -143,16 +156,24 @@ class MatchCacheService:
     
     def _update_firm_cache(self, firm: CompanyProfile):
         """
-        PHASE 1: Multi-query semantic matching + LLM re-ranking (5-10 min).
+        PHASE 1: Multi-query semantic matching with diversity boost + LLM re-ranking (5-10 min).
         
-        NEW APPROACH:
+        ✨ NEW DIVERSITY SCORING:
         1. Query Pinecone with ALL capability vectors (not just first)
-        2. Merge and dedupe results by contract_id
-        3. Score top 1000 candidates
-        4. LLM re-rank top 500 with nuanced judgment
-        5. Save with enrichment_status='pending' for Phase 2
+        2. Track ALL capabilities that match each contract
+        3. Apply diversity boost: +5% per additional capability (max +15%)
+        4. Merge and dedupe results by contract_id
+        5. Score top 1000 candidates
+        6. LLM re-rank top 500 with nuanced judgment
+        7. Save with enrichment_status='pending' for Phase 2
         """
+        phase1_start = time.time()
+        
+        logger.info(f"")
+        logger.info(f"{'='*80}")
         logger.info(f"⚡ PHASE 1: Multi-query matching for {firm.company_name} (firm_id: {firm.firm_id})")
+        logger.info(f"{'='*80}")
+        sys.stdout.flush()
         
         # Check if firm has capabilities
         if not firm.capabilities:
@@ -168,7 +189,12 @@ class MatchCacheService:
             logger.warning(f"Firm {firm.firm_id} has no capability vectors - skipping")
             return
         
+        logger.info(f"📋 Fetching {len(capability_ids)} capability vectors...")
+        sys.stdout.flush()
+        
         capability_vectors = cap_store.get_capabilities_batch(capability_ids)
+        logger.info(f"✅ Retrieved {len(capability_vectors)} capability vectors")
+        sys.stdout.flush()
         
         # Pre-fetch past win vectors (if any)
         past_win_vectors = {}
@@ -177,18 +203,27 @@ class MatchCacheService:
             win_store = get_past_win_store()
             past_win_ids = [win.pinecone_id for win in firm.past_wins if win.pinecone_id]
             if past_win_ids:
+                logger.info(f"📋 Fetching {len(past_win_ids)} past win vectors...")
+                sys.stdout.flush()
                 past_win_vectors = win_store.get_past_wins_batch(past_win_ids)
+                logger.info(f"✅ Retrieved {len(past_win_vectors)} past win vectors")
+                sys.stdout.flush()
         
-        # ✅ NEW: MULTI-QUERY PINECONE (fixes recall bug)
-        merged_results = {}  # contract_id -> {score, metadata, values, matched_cap_index}
+        # ✅ MULTI-QUERY PINECONE WITH DIVERSITY TRACKING
+        merged_results = {}  # contract_id -> {score, metadata, values, matched_capabilities, capability_scores}
         
+        logger.info(f"")
         logger.info(f"🔍 Querying Pinecone with {len(capability_ids)} capability vectors...")
+        sys.stdout.flush()
         
         for idx, cap_id in enumerate(capability_ids):
             cap_vector = capability_vectors.get(cap_id)
             if not cap_vector:
                 logger.warning(f"No vector for capability {cap_id}, skipping")
                 continue
+            
+            logger.info(f"   📡 Querying capability {idx+1}/{len(capability_ids)}...")
+            sys.stdout.flush()
             
             # Query with this capability
             search_results = self.pinecone.index.query(
@@ -199,7 +234,7 @@ class MatchCacheService:
                 include_values=True
             )
             
-            # Merge results - keep max similarity per contract
+            # ✅ NEW: Track ALL capabilities that match each contract
             for result in search_results.matches:
                 contract_id = result.id
                 
@@ -208,20 +243,51 @@ class MatchCacheService:
                         'score': result.score,
                         'metadata': result.metadata,
                         'values': result.values,
-                        'matched_cap_index': idx
+                        'matched_capabilities': [idx],  # ✅ Track which capabilities matched
+                        'capability_scores': [result.score]  # ✅ Track all scores
                     }
                 else:
-                    # Keep highest similarity score across all capabilities
+                    # Already seen this contract - add this capability match
+                    merged_results[contract_id]['matched_capabilities'].append(idx)
+                    merged_results[contract_id]['capability_scores'].append(result.score)
+                    
+                    # Update max score if this one is higher
                     if result.score > merged_results[contract_id]['score']:
                         merged_results[contract_id]['score'] = result.score
-                        merged_results[contract_id]['matched_cap_index'] = idx
         
         logger.info(f"✅ Found {len(merged_results)} unique contracts across {len(capability_ids)} capabilities")
+        sys.stdout.flush()
         
-        # Convert to sorted list
+        # ✅ APPLY DIVERSITY BOOST: Contracts matching multiple capabilities get bonus
+        multi_cap_count = 0
+        for contract_id, data in merged_results.items():
+            num_capabilities_matched = len(data['matched_capabilities'])
+            base_score = data['score']
+            
+            # 5% boost per additional capability (capped at 15% total)
+            diversity_boost = min((num_capabilities_matched - 1) * 0.05, 0.15)
+            boosted_score = min(base_score + diversity_boost, 1.0)
+            
+            # Store both for transparency
+            data['base_score'] = base_score
+            data['diversity_boost'] = diversity_boost
+            data['boosted_score'] = boosted_score
+            data['num_capabilities_matched'] = num_capabilities_matched
+            
+            if num_capabilities_matched > 1:
+                multi_cap_count += 1
+        
+        logger.info(
+            f"📊 Diversity stats: "
+            f"{multi_cap_count}/{len(merged_results)} contracts match 2+ capabilities "
+            f"({multi_cap_count/len(merged_results)*100:.1f}%)"
+        )
+        sys.stdout.flush()
+        
+        # Convert to sorted list by BOOSTED score
         all_results = sorted(
             merged_results.items(),
-            key=lambda x: x[1]['score'],
+            key=lambda x: x[1]['boosted_score'],  # ✅ Sort by boosted score
             reverse=True
         )[:1000]  # Keep top 1000 for scoring
         
@@ -229,14 +295,65 @@ class MatchCacheService:
         class PineconeMatch:
             def __init__(self, contract_id, data):
                 self.id = contract_id
-                self.score = data['score']
+                self.score = data['boosted_score']  # ✅ Use boosted score
                 self.metadata = data['metadata']
                 self.values = data['values']
+                self.num_capabilities_matched = data['num_capabilities_matched']
+                self.diversity_boost = data['diversity_boost']
         
         pinecone_matches = [PineconeMatch(cid, data) for cid, data in all_results]
         
-        # Score each contract WITHOUT strategic intelligence (Phase 1 = fast)
+        logger.info(f"🎯 Selected top {len(pinecone_matches)} contracts for scoring")
+        sys.stdout.flush()
+        
+        # Pre-fetch contract vectors in BATCHES (Pinecone has URL length limits)
+        contract_ids = [r.id for r in pinecone_matches if r.id]
+        contract_vectors = {}
+        
+        if contract_ids:
+            try:
+                FETCH_BATCH_SIZE = 100  # Fetch 100 vectors at a time
+                total_batches = (len(contract_ids) + FETCH_BATCH_SIZE - 1) // FETCH_BATCH_SIZE
+                
+                logger.info(f"📋 Pre-fetching {len(contract_ids)} contract vectors in {total_batches} batches...")
+                sys.stdout.flush()
+                
+                for i in range(0, len(contract_ids), FETCH_BATCH_SIZE):
+                    batch_ids = contract_ids[i:i + FETCH_BATCH_SIZE]
+                    batch_num = i // FETCH_BATCH_SIZE + 1
+                    
+                    try:
+                        fetch_result = self.pinecone.index.fetch(
+                            ids=batch_ids, 
+                            namespace=settings.PINECONE_NAMESPACE
+                        )
+                        
+                        for vec_id, vec_data in fetch_result.vectors.items():
+                            contract_vectors[vec_id] = list(vec_data.values)
+                        
+                        if batch_num % 5 == 0:  # Log every 5 batches
+                            logger.info(f"   ⚡ Fetched {len(contract_vectors)}/{len(contract_ids)} vectors...")
+                            sys.stdout.flush()
+                    except Exception as e:
+                        logger.error(f"Failed to fetch batch {batch_num}: {e}")
+                
+                logger.info(f"✅ Pre-fetched {len(contract_vectors)} contract vectors")
+                sys.stdout.flush()
+            except Exception as e:
+                logger.error(f"Failed to batch fetch contract vectors: {e}")
+        
+        # ✅ SCORE CONTRACTS WITH PROGRESS LOGGING
+        logger.info(f"")
+        logger.info(f"📊 Scoring {len(pinecone_matches)} contracts...")
+        logger.info(f"   💾 Capability vectors: {len(capability_vectors)}")
+        logger.info(f"   💾 Contract vectors: {len(contract_vectors)}")
+        logger.info(f"   💾 Past win vectors: {len(past_win_vectors)}")
+        sys.stdout.flush()
+        
+        scoring_start = time.time()
+        processed_count = 0
         scored_matches = []
+        
         for result in pinecone_matches:
             if not result.values or len(result.values) != 768:
                 logger.warning(f"Skipping contract {result.id} - invalid vector (length: {len(result.values) if result.values else 0})")
@@ -273,27 +390,43 @@ class MatchCacheService:
                 scored_matches.append({
                     "contract": contract,
                     "scores": scores,
-                    "metadata": metadata
+                    "metadata": metadata,
+                    "num_capabilities_matched": result.num_capabilities_matched,
+                    "diversity_boost": result.diversity_boost
                 })
+            
+            # ✅ LOG PROGRESS EVERY 100 CONTRACTS
+            processed_count += 1
+            if processed_count % 100 == 0:
+                elapsed = time.time() - scoring_start
+                rate = processed_count / elapsed if elapsed > 0 else 0
+                remaining = len(pinecone_matches) - processed_count
+                eta = remaining / rate if rate > 0 else 0
+                
+                logger.info(f"   ⚡ Scored {processed_count}/{len(pinecone_matches)} ({rate:.1f}/sec, ETA: {eta:.0f}s)")
+                sys.stdout.flush()
         
-        # Sort by match_score (PURE SEMANTIC)
+        scoring_duration = time.time() - scoring_start
+        logger.info(f"✅ Scoring complete: {len(scored_matches)} matches (≥50% score) in {scoring_duration:.1f}s ({len(pinecone_matches)/scoring_duration:.1f} contracts/sec)")
+        sys.stdout.flush()
+        
+        # Sort by match_score (already includes diversity boost from Pinecone scoring)
         scored_matches.sort(key=lambda x: x["scores"]["match_score"], reverse=True)
         
         # Keep top 500 for LLM re-ranking
         top_matches = scored_matches[:500]
         
-        logger.info(f"📊 Found {len(top_matches)} matches (50%+ score) for {firm.company_name}")
+        logger.info(f"🎯 Selected top {len(top_matches)} matches for LLM re-ranking")
+        sys.stdout.flush()
         
-        # ✅ NEW: PHASE 1.5 - LLM RE-RANKING
+        # ✅ PHASE 1.5 - LLM RE-RANKING
         llm_results = {}
         try:
-            logger.info(f"🤖 PHASE 1.5: LLM re-ranking {len(top_matches)} contracts...")
             from app.services.llm_rerank_service import LLMReranker
             
             reranker = LLMReranker()
             llm_results = reranker.rerank_contracts_for_firm(firm, top_matches)
             
-            logger.info(f"✅ LLM re-ranked {len(llm_results)}/{len(top_matches)} contracts")
         except Exception as e:
             logger.error(f"⚠️ LLM re-ranking failed, using semantic scores only: {e}")
             # Continue with empty llm_results - will use fallback scores
@@ -314,7 +447,7 @@ class MatchCacheService:
                     'llm_flags': []
                 }
             
-            # ✅ FIXED SCORE NORMALIZATION (Option B from feedback)
+            # ✅ FIXED SCORE NORMALIZATION
             # Both scores now on 0-100 scale for fair blending
             semantic_100 = match['scores']['match_score'] * 100  # 0.50-0.92 → 50-92
             llm_100 = match['llm_data']['llm_score']  # Already 0-100
@@ -326,9 +459,19 @@ class MatchCacheService:
         # Re-sort by blended score
         top_matches.sort(key=lambda x: x['final_score'], reverse=True)
         
-        logger.info(f"🎯 Final ranking complete - top match has score {top_matches[0]['final_score']:.2f}")
+        phase1_duration = time.time() - phase1_start
+        
+        logger.info(f"")
+        logger.info(f"🎯 Phase 1 Complete:")
+        logger.info(f"   ⏱️  Total time: {phase1_duration/60:.1f} minutes")
+        logger.info(f"   📊 Top match score: {top_matches[0]['final_score']:.2f}")
+        logger.info(f"   📊 Contracts to cache: {len(top_matches)}")
+        sys.stdout.flush()
         
         # Delete old cache entries for this firm
+        logger.info(f"🗑️  Clearing old cache entries...")
+        sys.stdout.flush()
+        
         self.db.execute(
             delete(CachedContractMatch).where(
                 CachedContractMatch.firm_id == firm.firm_id
@@ -336,6 +479,9 @@ class MatchCacheService:
         )
         
         # Insert new cache entries with enrichment_status='pending'
+        logger.info(f"💾 Saving {len(top_matches)} matches to cache...")
+        sys.stdout.flush()
+        
         for rank, match in enumerate(top_matches, start=1):
             contract = match["contract"]
             scores = match["scores"]
@@ -352,12 +498,13 @@ class MatchCacheService:
                 "description": contract.description,
                 
                 # Pre-computed scores
-                "total_score": match['final_score'],  # ✅ NEW: Blended score (50/50)
+                "total_score": match['final_score'],  # ✅ Blended score (50/50)
+                "final_score": match['final_score'],  # ✅ Required by database
                 "capability_score": scores["capability_score"],
                 "past_win_score": scores["past_win_score"],
                 "preference_score": scores["preference_score"],
                 
-                # ✅ NEW: LLM Re-Rank Results (Phase 1.5)
+                # ✅ LLM Re-Rank Results (Phase 1.5)
                 "llm_score": llm_data['llm_score'],
                 "llm_verdict": llm_data['llm_verdict'],
                 "llm_reasons": json.dumps(llm_data['llm_reasons']),
@@ -421,6 +568,7 @@ class MatchCacheService:
             self.db.commit()
             logger.info(f"✅ PHASE 1 & 1.5 COMPLETE: Cached {len(top_matches)} matches for {firm.company_name}")
             logger.info(f"⏳ Strategic intelligence will be enriched in Phase 2...")
+            sys.stdout.flush()
         except Exception as e:
             logger.error(f"Error committing cached matches for firm {firm.firm_id}: {e}")
             self.db.rollback()
@@ -449,7 +597,11 @@ class MatchCacheService:
         - Fallback groups return "naics_agency" granularity (agency-level)
         - Frontend can show confidence indicators based on granularity
         """
+        logger.info(f"")
+        logger.info(f"{'='*80}")
         logger.info(f"🎯 PHASE 2: Enriching strategic intelligence for {firm_id}")
+        logger.info(f"{'='*80}")
+        sys.stdout.flush()
         
         # Get all pending matches
         matches = self.db.query(CachedContractMatch).filter(
@@ -461,9 +613,10 @@ class MatchCacheService:
             logger.info(f"No pending matches to enrich for {firm_id}")
             return
         
-        logger.info(f"Enriching {len(matches)} contracts...")
+        logger.info(f"📊 Enriching {len(matches)} contracts...")
+        sys.stdout.flush()
         
-        # ✅ NEW BATCHING: Separate contracts by PSC availability
+        # ✅ BATCHING: Separate contracts by PSC availability
         psc_groups = {}      # Contracts WITH PSC codes → contract-specific data
         fallback_groups = {}  # Contracts WITHOUT PSC codes → agency-wide data
         
@@ -495,8 +648,9 @@ class MatchCacheService:
         logger.info(
             f"📊 Grouped into {len(psc_groups)} PSC-specific + "
             f"{len(fallback_groups)} NAICS-only groups "
-            f"(total: {total_groups} queries, was 194 before)"
+            f"(total: {total_groups} queries)"
         )
+        sys.stdout.flush()
         
         enriched_count = 0
         psc_specific_count = 0
@@ -504,7 +658,13 @@ class MatchCacheService:
         
         # ✅ ENRICH PSC-SPECIFIC GROUPS (CONTRACT-LEVEL DATA)
         logger.info(f"🔍 Processing {len(psc_groups)} PSC-specific groups...")
-        for (psc, naics, agency), contract_list in psc_groups.items():
+        sys.stdout.flush()
+        
+        for idx, ((psc, naics, agency), contract_list) in enumerate(psc_groups.items()):
+            if (idx + 1) % 50 == 0:
+                logger.info(f"   ⚡ Processed {idx + 1}/{len(psc_groups)} PSC groups...")
+                sys.stdout.flush()
+            
             try:
                 # Query with PSC for contract-level specificity
                 pricing = self.scorer.incumbent_matcher.get_pricing_benchmarks(
@@ -532,17 +692,8 @@ class MatchCacheService:
                 # Track granularity for reporting
                 if pricing and pricing.get('granularity') == 'psc_specific':
                     psc_specific_count += len(contract_list)
-                    logger.debug(
-                        f"✅ PSC-specific: {len(contract_list)} contracts, "
-                        f"PSC={psc}, NAICS={naics}, Agency={agency[:30]}..., "
-                        f"{pricing.get('sample_size')} samples"
-                    )
                 else:
                     broad_fallback_count += len(contract_list)
-                    logger.debug(
-                        f"⚠️ Fell back to broad: {len(contract_list)} contracts, "
-                        f"PSC={psc} had insufficient samples (<10)"
-                    )
                 
             except Exception as e:
                 logger.error(f"Failed to enrich PSC group (PSC={psc}, NAICS={naics}, Agency={agency[:30]}): {e}")
@@ -553,14 +704,20 @@ class MatchCacheService:
         
         # ✅ ENRICH FALLBACK GROUPS (AGENCY-LEVEL DATA)
         logger.info(f"📊 Processing {len(fallback_groups)} NAICS-only groups...")
-        for (naics, agency), contract_list in fallback_groups.items():
+        sys.stdout.flush()
+        
+        for idx, ((naics, agency), contract_list) in enumerate(fallback_groups.items()):
+            if (idx + 1) % 50 == 0:
+                logger.info(f"   ⚡ Processed {idx + 1}/{len(fallback_groups)} NAICS groups...")
+                sys.stdout.flush()
+            
             try:
                 # Query without PSC (agency-wide aggregation)
                 pricing = self.scorer.incumbent_matcher.get_pricing_benchmarks(
                     naics_code=naics,
                     agency_name=agency,
                     psc_code=None,  # ← No PSC available
-                    min_samples=3   # ← Lower threshold for fallback (agency data usually has more samples)
+                    min_samples=3   # ← Lower threshold for fallback
                 )
                 
                 competition = self.scorer.incumbent_matcher.get_competition_stats(
@@ -580,12 +737,6 @@ class MatchCacheService:
                 
                 broad_fallback_count += len(contract_list)
                 
-                logger.debug(
-                    f"📊 Broad query: {len(contract_list)} contracts, "
-                    f"NAICS={naics}, Agency={agency[:30]}... "
-                    f"(no PSC code available)"
-                )
-                
             except Exception as e:
                 logger.error(f"Failed to enrich NAICS group (NAICS={naics}, Agency={agency[:30]}): {e}")
                 for match in contract_list:
@@ -600,6 +751,7 @@ class MatchCacheService:
             psc_pct = (psc_specific_count / enriched_count * 100) if enriched_count > 0 else 0
             broad_pct = (broad_fallback_count / enriched_count * 100) if enriched_count > 0 else 0
             
+            logger.info(f"")
             logger.info(
                 f"✅ PHASE 2 COMPLETE: Enriched {enriched_count}/{len(matches)} contracts for {firm_id}\n"
                 f"   📊 Data Quality Breakdown:\n"
@@ -608,8 +760,9 @@ class MatchCacheService:
                 f"   🔍 Query Efficiency:\n"
                 f"      - {len(psc_groups)} PSC-specific queries\n"
                 f"      - {len(fallback_groups)} NAICS-only queries\n"
-                f"      - Total: {total_groups} queries (was ~194 before)"
+                f"      - Total: {total_groups} queries"
             )
+            sys.stdout.flush()
         except Exception as e:
             logger.error(f"Failed to commit enrichments: {e}")
             self.db.rollback()
@@ -622,9 +775,9 @@ def refresh_cache_for_firm(firm_id: str):
     Called after capability/past win changes.
     
     Runs all three phases:
-    - Phase 1: Multi-query semantic matching
+    - Phase 1: Multi-query semantic matching with diversity boost
     - Phase 1.5: LLM re-ranking
-    - Phase 2: PSC-aware strategic intelligence enrichment ← NOW MORE GRANULAR
+    - Phase 2: PSC-aware strategic intelligence enrichment
     """
     service = MatchCacheService()
     service.run_cache_update(firm_ids=[firm_id])

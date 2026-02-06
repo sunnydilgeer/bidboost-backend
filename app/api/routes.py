@@ -49,7 +49,7 @@ from app.database import get_db
 from sqlalchemy.orm import Session
 from typing import Dict, Optional, List
 import logging
-from datetime import datetime
+from datetime import datetime, timezone
 from pydantic import BaseModel
 
 class FederalInfoUpdate(BaseModel):
@@ -1331,30 +1331,58 @@ async def get_recommended_contracts(
             )
         
         # Create query from capabilities
-        capability_texts = [cap.capability_text for cap in capabilities[:3]]
-        combined_query = " ".join(capability_texts)
+        # ✅ Multi-capability diverse search
+        from collections import defaultdict
 
-        # Check cache first
-        capability_ids = sorted([c.id for c in capabilities])
-        cache_key = f"{current_user.firm_id}:{'-'.join(map(str, capability_ids))}"
-
-        if cache_key in capability_embedding_cache:
-            query_vector = capability_embedding_cache[cache_key]
-            logger.info(f"Using cached embedding for {current_user.firm_id}")
-        else:
-            # Generate embedding and cache it
-            query_vector = await llm_service.generate_embeddings(combined_query)
-            capability_embedding_cache[cache_key] = query_vector
-            logger.info(f"Generated and cached new embedding for {current_user.firm_id}")
-        
-        # Search Pinecone - REDUCED LIMIT for faster scoring
         pinecone = PineconeStoreService(api_key=settings.PINECONE_API_KEY)
-        results = pinecone.search_contracts(
-            query_vector=query_vector,
-            limit=min(limit * 2, 200),
-            min_score=0.25,
-            namespace=settings.PINECONE_NAMESPACE
-        )
+        capability_results = defaultdict(list)
+
+        logger.info(f"🎯 Querying {len(capabilities)} capabilities separately for diversity")
+
+        for cap in capabilities:
+            # Generate embedding for this specific capability
+            cap_vector = await llm_service.generate_embeddings(cap.capability_text)
+            
+            # Search with this capability
+            cap_results = pinecone.search_contracts(
+                query_vector=cap_vector,
+                limit=10,  # Get top 10 per capability
+                min_score=0.30,
+                namespace=settings.PINECONE_NAMESPACE
+            )
+            
+            # Track which capability matched which contracts
+            for result in cap_results:
+                notice_id = result.get("notice_id")
+                if notice_id:
+                    capability_results[notice_id].append({
+                        "capability": cap.capability_text[:50],
+                        "score": result.get("score", 0),
+                        "result": result
+                    })
+
+        logger.info(f"📊 Found {len(capability_results)} unique contracts across {len(capabilities)} capabilities")
+
+        # Build diverse result set with multi-capability scoring
+        results = []
+        for notice_id, cap_matches in capability_results.items():
+            # Use the BEST score from any capability
+            best_match = max(cap_matches, key=lambda x: x["score"])
+            result = best_match["result"]
+            
+            # ✨ BOOST: Contracts matching multiple capabilities get a bonus
+            multi_cap_bonus = len(cap_matches) * 0.05  # 5% boost per additional capability
+            result["score"] = min(result.get("score", 0) + multi_cap_bonus, 1.0)
+            result["matched_capability_count"] = len(cap_matches)
+            result["matched_capabilities_list"] = [m["capability"] for m in cap_matches]
+            
+            results.append(result)
+
+        # Sort by boosted score
+        results.sort(key=lambda x: x.get("score", 0), reverse=True)
+        results = results[:min(limit * 2, 200)]  # Limit for scoring
+
+        logger.info(f"✅ Diverse results: {len(results)} contracts (multi-cap matches prioritized)")
         
         if not results:
             return ContractSearchResponse(
