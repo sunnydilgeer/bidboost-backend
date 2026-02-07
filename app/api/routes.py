@@ -185,7 +185,7 @@ async def debug_match_scoring(
         temp_contract = Contract(
             notice_id=contract_id,
             title=metadata.get("title", ""),
-            buyer_name=contract_point.payload.get("buyer_name", ""),
+            buyer_name=contract_point.payload.get("buyer_name") or metadata.get("agency") or "Unknown Agency",  # ✅ FIXED
             description=metadata.get("description", ""),
             contract_value=contract_point.payload.get("value"),
             region=contract_point.payload.get("region"),
@@ -1469,7 +1469,7 @@ async def get_recommended_contracts(
             search_results.append(ContractSearchResult(
                 notice_id=enriched_result.get("notice_id", ""),
                 title=enriched_result.get("title", ""),
-                buyer_name=enriched_result.get("agency", ""),
+                buyer_name=enriched_result.get("agency") or "Unknown Agency",  # ✅ FIXED
                 description=enriched_result.get("description", ""),
                 value=float(enriched_result.get("contract_value", 0)) if enriched_result.get("contract_value") else None,
                 region=enriched_result.get("state", ""),
