@@ -334,6 +334,8 @@ class ContractSearchResponse(BaseModel):
     results: List[ContractSearchResult]
     total_found: int
     message: str
+    cache_building: Optional[bool] = False  # ✅ NEW: Indicates if LLM cache is building
+
 
 class CompanySizeEnum(str, Enum):
     MICRO = "micro"

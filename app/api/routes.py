@@ -1525,13 +1525,31 @@ async def get_recommended_contracts(
         search_results = search_results[:limit]
         
         logger.info(f"✅ Recommendations complete: Returning {len(search_results)} matches (real-time)")
-        
+        # ✅ NEW: Check if cache is building (capabilities added in last 10 minutes)
+        cache_building = False
+        try:
+            latest_cap = db.query(CompanyCapability)\
+                .filter(CompanyCapability.company_id == company.id)\
+                .order_by(CompanyCapability.created_at.desc())\
+                .first()
+            
+            if latest_cap and latest_cap.created_at:
+                from datetime import timedelta
+                time_since_creation = datetime.now(timezone.utc) - latest_cap.created_at
+                cache_building = time_since_creation < timedelta(minutes=10)
+        except Exception as e:
+            logger.error(f"Failed to check cache build status: {e}")
+    
         return ContractSearchResponse(
             query="",
             results=search_results,
             total_found=len(search_results),
-            message=f"Found {len(search_results)} personalized matches (real-time scoring)"
-        )
+            message=f"Found {len(search_results)} personalized matches (real-time scoring)" + 
+                    (" - AI analysis building, check back in 5 minutes" if cache_building else ""),
+            cache_building=cache_building  # ✅ NEW FIELD        
+            )
+
+
         
     except Exception as e:
         logger.error(f"Recommendations failed: {str(e)}", exc_info=True)
