@@ -307,7 +307,7 @@ async def quick_start_from_url(request: QuickStartURLRequest):
                 temp_contract = Contract(
                     notice_id=enriched_result.get("notice_id", ""),
                     title=enriched_result.get("title", ""),
-                    buyer_name=enriched_result.get("agency", ""),
+                    buyer_name=enriched_result.get("agency") or "Unknown Agency",  # ← FIX
                     description=enriched_result.get("description", ""),
                     contract_value=enriched_result.get("contract_value"),
                     region=enriched_result.get("state"),
@@ -330,8 +330,8 @@ async def quick_start_from_url(request: QuickStartURLRequest):
                     {
                         "notice_id": enriched_result.get("notice_id", ""),
                         "title": enriched_result.get("title", ""),
-                        "agency": enriched_result.get("agency", ""),
-                        "buyer_name": enriched_result.get("agency", ""),  # helpful for modal consistency
+                        "agency": enriched_result.get("agency") or "Unknown Agency",  # ← FIX
+                        "buyer_name": enriched_result.get("agency") or "Unknown Agency",  # ← FIX
                         "description": enriched_result.get("description", ""),
                         "contract_value": enriched_result.get("contract_value"),
                         "region": enriched_result.get("state"),
