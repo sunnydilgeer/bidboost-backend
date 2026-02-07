@@ -1526,6 +1526,7 @@ async def get_recommended_contracts(
         
         logger.info(f"✅ Recommendations complete: Returning {len(search_results)} matches (real-time)")
         # ✅ NEW: Check if cache is building (capabilities added in last 10 minutes)
+        # ✅ NEW: Check if cache is building (capabilities added in last 10 minutes)
         cache_building = False
         try:
             latest_cap = db.query(CompanyCapability)\
@@ -1535,7 +1536,17 @@ async def get_recommended_contracts(
             
             if latest_cap and latest_cap.created_at:
                 from datetime import timedelta
-                time_since_creation = datetime.now(timezone.utc) - latest_cap.created_at
+                
+                # Handle both timezone-aware and naive datetimes
+                now = datetime.now(timezone.utc)
+                created = latest_cap.created_at
+                
+                # Make both timezone-aware for comparison
+                if created.tzinfo is None:
+                    # Database datetime is naive, assume UTC
+                    created = created.replace(tzinfo=timezone.utc)
+                
+                time_since_creation = now - created
                 cache_building = time_since_creation < timedelta(minutes=10)
         except Exception as e:
             logger.error(f"Failed to check cache build status: {e}")
