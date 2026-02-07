@@ -373,7 +373,7 @@ class MatchCacheService:
                 naics_name=metadata.get("naics_name"),
                 psc_code=metadata.get("psc_code"),
                 set_aside=metadata.get("set_aside"),
-                closing_date=metadata.get("response_deadline")
+                closing_date=metadata.get("response_deadline") or None
             )
             
             # ✅ Score with skip_strategic_intel=True (FAST MODE)
