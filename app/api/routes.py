@@ -1439,9 +1439,9 @@ async def get_recommended_contracts(
             # Create Contract for scoring
             temp_contract = Contract(
                 notice_id=enriched_result.get("notice_id", ""),
-                title=enriched_result.get("title", ""),
-                buyer_name=enriched_result.get("agency", ""),
-                description=enriched_result.get("description", ""),
+                title=enriched_result.get("title") or "Untitled",  # ✅ Handle None
+                buyer_name=enriched_result.get("agency") or "Unknown Agency",  # ✅ Handle None
+                description=enriched_result.get("description") or "",  # ✅ Handle None
                 contract_value=enriched_result.get("contract_value"),
                 region=enriched_result.get("state"),
                 qdrant_id=enriched_result.get("id"),
