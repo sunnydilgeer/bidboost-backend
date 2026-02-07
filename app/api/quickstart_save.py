@@ -2,7 +2,7 @@
 Sticky onboarding - Save quick-start results when user creates account
 Stores capabilities extracted from website scraping to Qdrant
 """
-from fastapi import APIRouter, HTTPException, Depends
+from fastapi import APIRouter, HTTPException, Depends, BackgroundTasks
 from pydantic import BaseModel, Field
 from typing import List, Optional
 import logging
@@ -14,6 +14,8 @@ from app.services.llm import LLMService
 from app.services.capability_store import CapabilityStoreService
 from app.core.config import settings
 from app.auth.utils import get_current_user
+from app.api.routes import trigger_cache_refresh  # ✅ NEW: Import cache refresh
+
 
 logger = logging.getLogger(__name__)
 
@@ -48,6 +50,7 @@ class SaveQuickStartResponse(BaseModel):
 @router.post("/save", response_model=SaveQuickStartResponse)
 async def save_quickstart_results(
     request: SaveQuickStartRequest,
+    background_tasks: BackgroundTasks,  # ✅ NEW: Add background tasks
     current_user: dict = Depends(get_current_user),
     db: Session = Depends(get_db)
 ):
@@ -149,6 +152,8 @@ async def save_quickstart_results(
         db.commit()
         
         logger.info(f"✅ Saved {capabilities_created} capabilities for firm {firm_id}")
+        trigger_cache_refresh(db, firm_id, background_tasks)
+        logger.info(f"🔄 Triggered cache refresh for firm {firm_id}")
         
         return SaveQuickStartResponse(
             success=True,
