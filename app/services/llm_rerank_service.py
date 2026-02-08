@@ -1,15 +1,20 @@
 """
-LLM Re-Ranking Service - Phase 1.5
+LLM Re-Ranking Service - Phase 1.5 (Batch 1 Optimized)
 
-Batch re-ranks semantic candidates using GPT-4o-mini for better judgment.
-Scores contracts on capability fit, eligibility, and practicality.
+Batch re-ranks semantic candidates using GPT-4o-mini with bid/no-bid decision framing.
+Generates reasons that mirror how senior bid managers actually triage opportunities.
 
-FIXES APPLIED:
-- Use qdrant_id (not notice_id) as contract identifier
-- Include matched_capabilities in prompt for better context
-- Validation + repair pass for missing contracts
-- Timeout + retry limits to prevent hanging
-- Verbose logging with timestamps
+OPTIMIZATIONS FOR BATCH 1 (SME GOVCON FIRMS):
+- 4-slot decision scaffold (Eligibility → Capability → Buyer → Timeline)
+- Bid manager tone (not AI similarity explanations)
+- Concrete capability naming (not vague "alignment" language)
+- Uncertainty admission (builds trust)
+
+RELIABILITY FEATURES:
+- Batch processing with progress tracking
+- Timeout + exponential backoff retry
+- Validation + repair for missing contracts
+- Fallback scoring on failures
 """
 
 import logging
@@ -25,9 +30,13 @@ from app.models.company import CompanyProfile
 logger = logging.getLogger(__name__)
 
 class LLMReranker:
-    """Re-rank contracts using LLM for nuanced assessment."""
+    """Re-rank contracts using LLM with bid/no-bid decision framing."""
     
-    BATCH_SIZE = 10  # ✅ REDUCED for faster response
+    BATCH_SIZE = 10
+    MAX_API_RETRIES = 3
+    MAX_REPAIR_ATTEMPTS = 2
+    API_TIMEOUT = 120.0
+    REPAIR_TIMEOUT = 30.0
     
     def __init__(self):
         self.client = OpenAI(api_key=settings.OPENAI_API_KEY)
@@ -35,39 +44,44 @@ class LLMReranker:
     def rerank_contracts_for_firm(
         self,
         firm: CompanyProfile,
-        contracts: List[Dict],  # List of {contract, scores, metadata}
+        contracts: List[Dict],
     ) -> Dict[str, Dict]:
         """
         Re-rank contracts using LLM batch processing.
         
-        Returns: dict[qdrant_id] -> {
-            'llm_score': 0-100,
-            'llm_verdict': 'pursue|monitor|pass',
-            'llm_reasons': ['...'],
-            'llm_flags': ['...']
-        }
+        Args:
+            firm: CompanyProfile with capabilities, certs, preferences
+            contracts: List of {contract, scores, metadata}
+        
+        Returns:
+            dict[qdrant_id] -> {
+                'llm_score': 0-100,
+                'llm_verdict': 'pursue|monitor|pass',
+                'llm_reasons': ['...'],
+                'llm_flags': ['...']
+            }
         """
         start_time = time.time()
         total_contracts = len(contracts)
         total_batches = (total_contracts + self.BATCH_SIZE - 1) // self.BATCH_SIZE
         
-        logger.info(f"🤖 PHASE 1.5 START: LLM re-ranking {total_contracts} contracts")
-        logger.info(f"   📊 Configuration: {total_batches} batches × {self.BATCH_SIZE} contracts/batch")
+        logger.info(f"🤖 LLM RE-RANKING START")
         logger.info(f"   🏢 Firm: {firm.company_name}")
+        logger.info(f"   📊 Contracts: {total_contracts}")
+        logger.info(f"   📦 Batches: {total_batches} × {self.BATCH_SIZE}")
         sys.stdout.flush()
         
         results = {}
         successful_batches = 0
         failed_batches = 0
         
-        # Process in batches
         for i in range(0, len(contracts), self.BATCH_SIZE):
             batch_num = i // self.BATCH_SIZE + 1
             batch = contracts[i:i + self.BATCH_SIZE]
             batch_start = time.time()
             
             logger.info(f"")
-            logger.info(f"📦 Batch {batch_num}/{total_batches} - Processing {len(batch)} contracts...")
+            logger.info(f"📦 Batch {batch_num}/{total_batches} - {len(batch)} contracts")
             sys.stdout.flush()
             
             try:
@@ -76,38 +90,37 @@ class LLMReranker:
                 successful_batches += 1
                 
                 batch_duration = time.time() - batch_start
-                logger.info(f"✅ Batch {batch_num}/{total_batches} complete in {batch_duration:.1f}s - {len(batch_results)} contracts scored")
+                logger.info(f"   ✅ Complete in {batch_duration:.1f}s - {len(batch_results)} scored")
                 sys.stdout.flush()
                 
             except Exception as e:
                 failed_batches += 1
                 batch_duration = time.time() - batch_start
                 
-                logger.error(f"❌ Batch {batch_num}/{total_batches} FAILED after {batch_duration:.1f}s: {e}")
+                logger.error(f"   ❌ FAILED after {batch_duration:.1f}s: {e}")
                 sys.stdout.flush()
                 
-                # Fallback: assign neutral scores
+                # Fallback scoring
                 for item in batch:
                     contract_id = item['contract'].qdrant_id
                     results[contract_id] = {
                         'llm_score': 50,
                         'llm_verdict': 'monitor',
-                        'llm_reasons': ['LLM scoring unavailable - batch failed'],
+                        'llm_reasons': ['LLM scoring unavailable - batch processing failed'],
                         'llm_flags': ['llm_error']
                     }
                 
-                logger.info(f"   ⚠️  Assigned fallback scores to {len(batch)} contracts")
+                logger.info(f"   ⚠️  Fallback scores assigned to {len(batch)} contracts")
                 sys.stdout.flush()
         
         total_duration = time.time() - start_time
         
         logger.info(f"")
-        logger.info(f"🎯 PHASE 1.5 COMPLETE")
-        logger.info(f"   ⏱️  Total time: {total_duration/60:.1f} minutes ({total_duration:.0f}s)")
-        logger.info(f"   ✅ Successful batches: {successful_batches}/{total_batches}")
-        logger.info(f"   ❌ Failed batches: {failed_batches}/{total_batches}")
-        logger.info(f"   📊 Contracts scored: {len(results)}/{total_contracts}")
-        logger.info(f"   ⚡ Avg time per batch: {total_duration/total_batches:.1f}s")
+        logger.info(f"🎯 LLM RE-RANKING COMPLETE")
+        logger.info(f"   ⏱️  {total_duration/60:.1f}m ({total_duration:.0f}s)")
+        logger.info(f"   ✅ Success: {successful_batches}/{total_batches}")
+        logger.info(f"   ❌ Failed: {failed_batches}/{total_batches}")
+        logger.info(f"   📊 Scored: {len(results)}/{total_contracts}")
         sys.stdout.flush()
         
         return results
@@ -119,26 +132,20 @@ class LLMReranker:
         batch_num: int,
         total_batches: int
     ) -> Dict[str, Dict]:
-        """Process one batch of contracts with validation + repair."""
+        """Process one batch with validation + repair."""
         
-        # Build prompt
-        logger.info(f"   🔨 Building prompt for batch {batch_num}...")
+        logger.info(f"   🔨 Building prompt...")
         sys.stdout.flush()
+        
         prompt = self._build_prompt(firm, batch)
-        
-        # Get expected IDs for validation
         expected_ids = [item['contract'].qdrant_id for item in batch]
-        logger.info(f"   📋 Expected {len(expected_ids)} contract IDs")
-        sys.stdout.flush()
         
-        # Call OpenAI with retry logic
-        max_retries = 3
+        # API call with retry
         response = None
-        
-        for attempt in range(max_retries):
+        for attempt in range(self.MAX_API_RETRIES):
             try:
                 api_start = time.time()
-                logger.info(f"   🌐 API call attempt {attempt + 1}/{max_retries} (timeout: 120s)...")
+                logger.info(f"   🌐 API call {attempt + 1}/{self.MAX_API_RETRIES}...")
                 sys.stdout.flush()
                 
                 response = self.client.chat.completions.create(
@@ -149,37 +156,36 @@ class LLMReranker:
                     ],
                     temperature=0.1,
                     response_format={"type": "json_object"},
-                    timeout=120.0
+                    timeout=self.API_TIMEOUT
                 )
                 
                 api_duration = time.time() - api_start
-                logger.info(f"   ✅ API call succeeded in {api_duration:.1f}s")
+                logger.info(f"   ✅ API success in {api_duration:.1f}s")
                 sys.stdout.flush()
                 break
                 
             except Exception as e:
                 api_duration = time.time() - api_start
-                logger.error(f"   ❌ Attempt {attempt + 1} failed after {api_duration:.1f}s: {e}")
+                logger.error(f"   ❌ Attempt {attempt + 1} failed ({api_duration:.1f}s): {e}")
                 sys.stdout.flush()
                 
-                if attempt < max_retries - 1:
-                    wait_time = 2 ** attempt  # Exponential backoff
-                    logger.info(f"   ⏳ Retrying in {wait_time}s...")
+                if attempt < self.MAX_API_RETRIES - 1:
+                    wait = 2 ** attempt
+                    logger.info(f"   ⏳ Retry in {wait}s...")
                     sys.stdout.flush()
-                    time.sleep(wait_time)
+                    time.sleep(wait)
                 else:
-                    logger.error(f"   💥 All {max_retries} attempts failed - giving up on batch {batch_num}")
+                    logger.error(f"   💥 All attempts failed")
                     sys.stdout.flush()
                     raise
         
-        # Parse response
-        logger.info(f"   📝 Parsing JSON response...")
+        # Parse JSON
+        logger.info(f"   📝 Parsing response...")
         sys.stdout.flush()
         
         raw_json = response.choices[0].message.content
         parsed = json.loads(raw_json)
         
-        # Convert to dict keyed by qdrant_id
         results = {}
         for item in parsed.get('results', []):
             contract_id = item['contract_id']
@@ -190,20 +196,20 @@ class LLMReranker:
                 'llm_flags': item.get('flags', [])
             }
         
-        logger.info(f"   📊 Parsed {len(results)} contract scores from LLM")
+        logger.info(f"   📊 Parsed {len(results)} scores")
         sys.stdout.flush()
         
-        # ✅ VALIDATION: Check for missing contracts
+        # Validation
         missing_ids = set(expected_ids) - set(results.keys())
         
         if missing_ids:
-            logger.warning(f"   ⚠️  LLM omitted {len(missing_ids)} contracts - attempting repair...")
+            logger.warning(f"   ⚠️  {len(missing_ids)} contracts missing - repairing...")
             sys.stdout.flush()
             
-            repair_results = self._repair_missing_contracts(firm, batch, missing_ids, batch_num)
+            repair_results = self._repair_missing_contracts(firm, batch, missing_ids)
             results.update(repair_results)
             
-            logger.info(f"   🔧 After repair: {len(results)}/{len(expected_ids)} contracts have scores")
+            logger.info(f"   🔧 After repair: {len(results)}/{len(expected_ids)} scored")
             sys.stdout.flush()
         
         return results
@@ -212,14 +218,10 @@ class LLMReranker:
         self,
         firm: CompanyProfile,
         batch: List[Dict],
-        missing_ids: set,
-        batch_num: int,
-        max_attempts: int = 2
+        missing_ids: set
     ) -> Dict[str, Dict]:
-        """
-        Repair pass for contracts the LLM omitted.
-        Retries up to max_attempts with timeout.
-        """
+        """Repair pass for omitted contracts."""
+        
         missing_contracts = [
             item for item in batch 
             if item['contract'].qdrant_id in missing_ids
@@ -228,44 +230,30 @@ class LLMReranker:
         if not missing_contracts:
             return {}
         
-        logger.info(f"   🔧 REPAIR: Attempting to score {len(missing_contracts)} missing contracts")
+        logger.info(f"   🔧 REPAIR: {len(missing_contracts)} contracts")
         sys.stdout.flush()
         
-        # ✅ TRY REPAIR WITH TIMEOUT AND RETRIES
-        for attempt in range(max_attempts):
+        for attempt in range(self.MAX_REPAIR_ATTEMPTS):
             try:
                 repair_start = time.time()
-                logger.info(f"      🔄 Repair attempt {attempt + 1}/{max_attempts}...")
+                logger.info(f"      🔄 Attempt {attempt + 1}/{self.MAX_REPAIR_ATTEMPTS}")
                 sys.stdout.flush()
                 
-                # Build minimal repair prompt
-                repair_prompt = f"""You previously omitted these contracts. Score them now.
-
-Firm: {firm.company_name}
-
-Missing Contracts:
-{chr(10).join([f"ID: {item['contract'].qdrant_id}, Title: {item['contract'].title[:100]}" for item in missing_contracts])}
-
-Return JSON with ONLY these {len(missing_contracts)} contracts:
-{{
-  "results": [
-    {{"contract_id": "...", "score": 0-100, "verdict": "pursue|monitor|pass", "reasons": ["..."], "flags": []}}
-  ]
-}}"""
+                repair_prompt = self._build_repair_prompt(firm, missing_contracts)
                 
                 response = self.client.chat.completions.create(
                     model="gpt-4o-mini",
                     messages=[
-                        {"role": "system", "content": "Score the missing contracts in JSON."},
+                        {"role": "system", "content": "Score the missing contracts. Use bid/no-bid decision framing."},
                         {"role": "user", "content": repair_prompt}
                     ],
                     temperature=0.1,
                     response_format={"type": "json_object"},
-                    timeout=30.0
+                    timeout=self.REPAIR_TIMEOUT
                 )
                 
                 repair_duration = time.time() - repair_start
-                logger.info(f"      ✅ Repair API call succeeded in {repair_duration:.1f}s")
+                logger.info(f"      ✅ Repair API in {repair_duration:.1f}s")
                 sys.stdout.flush()
                 
                 raw_json = response.choices[0].message.content
@@ -281,97 +269,143 @@ Return JSON with ONLY these {len(missing_contracts)} contracts:
                         'llm_flags': item.get('flags', [])
                     }
                 
-                # ✅ CHECK IF REPAIR WAS SUCCESSFUL
                 still_missing = missing_ids - set(repair_results.keys())
                 
                 if still_missing:
-                    logger.warning(f"      ⚠️  Repair still missing {len(still_missing)} contracts")
+                    logger.warning(f"      ⚠️  Still missing {len(still_missing)}")
                     sys.stdout.flush()
                     
-                    if attempt < max_attempts - 1:
-                        logger.info(f"      🔄 Will retry repair...")
-                        sys.stdout.flush()
+                    if attempt < self.MAX_REPAIR_ATTEMPTS - 1:
                         continue
                     else:
-                        # Give up, use fallback for still-missing
-                        logger.warning(f"      ⚠️  Using fallback scores for {len(still_missing)} contracts")
-                        sys.stdout.flush()
-                        
+                        # Final fallback
                         for mid in still_missing:
-                            repair_results[mid] = {
-                                'llm_score': 50,
-                                'llm_verdict': 'monitor',
-                                'llm_reasons': ['LLM scoring unavailable after retries'],
-                                'llm_flags': ['repair_failed']
-                            }
+                            repair_results[mid] = self._fallback_score()
                 
-                logger.info(f"      ✅ Repair recovered {len(repair_results)}/{len(missing_ids)} contracts")
+                logger.info(f"      ✅ Repaired {len(repair_results)}/{len(missing_ids)}")
                 sys.stdout.flush()
                 return repair_results
                 
             except Exception as e:
                 repair_duration = time.time() - repair_start
-                logger.error(f"      ❌ Repair attempt {attempt + 1} failed after {repair_duration:.1f}s: {e}")
+                logger.error(f"      ❌ Attempt {attempt + 1} failed ({repair_duration:.1f}s): {e}")
                 sys.stdout.flush()
                 
-                if attempt < max_attempts - 1:
-                    logger.info(f"      ⏳ Retrying repair...")
-                    sys.stdout.flush()
+                if attempt < self.MAX_REPAIR_ATTEMPTS - 1:
                     continue
                 
-                # Final fallback - return neutral scores for ALL missing
-                logger.error(f"      💥 All repair attempts failed - using fallback for {len(missing_ids)} contracts")
+                # Total failure fallback
+                logger.error(f"      💥 All repairs failed - using fallback")
                 sys.stdout.flush()
                 
-                return {
-                    mid: {
-                        'llm_score': 50,
-                        'llm_verdict': 'monitor',
-                        'llm_reasons': ['LLM scoring unavailable - repair failed'],
-                        'llm_flags': ['repair_error']
-                    }
-                    for mid in missing_ids
-                }
+                return {mid: self._fallback_score() for mid in missing_ids}
         
-        # Should never reach here
+        return {mid: self._fallback_score() for mid in missing_ids}
+    
+    def _fallback_score(self) -> Dict:
+        """Neutral fallback when LLM fails."""
         return {
-            mid: {
-                'llm_score': 50,
-                'llm_verdict': 'monitor',
-                'llm_reasons': ['LLM scoring unavailable'],
-                'llm_flags': ['repair_timeout']
-            }
-            for mid in missing_ids
+            'llm_score': 50,
+            'llm_verdict': 'monitor',
+            'llm_reasons': ['LLM scoring unavailable - manual review recommended'],
+            'llm_flags': ['llm_unavailable']
         }
     
     def _get_system_prompt(self) -> str:
-        return """You are a government contracting bid analyst. Score contracts based on fit and win-likelihood.
+        """System prompt with bid manager persona and decision framing."""
+        return """You are a senior bid manager for federal systems integrators and IT services firms.
 
-Scoring Rubric (0-100):
-- 45% Capability fit (technical requirements match)
-- 25% Eligibility (set-aside + certifications)
-- 15% Buyer similarity (agency preference/past experience)
+Your job: Help firms triage opportunities during weekly pipeline reviews.
+
+CRITICAL INSTRUCTION: Your "reasons" must sound like internal bid/no-bid checklist language — NOT generic AI similarity statements.
+
+=== 4-SLOT DECISION SCAFFOLD ===
+
+Use this structure for EVERY contract's reasons array:
+
+1. ELIGIBILITY GATE
+   Ask: "Is there an obvious blocker?"
+   
+   If safe:
+   → "No obvious eligibility blockers detected"
+   → "Full and open competition — no set-aside restrictions"
+   
+   If uncertain:
+   → "Requires SDVOSB certification — verify eligibility"
+   → "Set-aside designation unclear — manual review needed"
+
+2. CAPABILITY ALIGNMENT
+   Ask: "Does this map to what they actually do?"
+   
+   Be specific:
+   → "Strong scope fit with your IT modernization and cloud migration capabilities"
+   → "Core requirement matches your cybersecurity and systems integration services"
+   → "Partial alignment with your data analytics practice — consulting scope may stretch"
+   
+   Avoid vague:
+   ✗ "Aligns with your profile"
+   ✗ "High similarity detected"
+
+3. BUYER RELEVANCE
+   Ask: "Is this a buyer they understand?"
+   
+   Use grounded language:
+   → "Buying agency matches your typical federal customer profile"
+   → "DoD buyer aligns with your past contract wins"
+   → "Agency outside recent focus — requires strategic consideration"
+   → "Civilian agency procurement — different from your DoD focus"
+
+4. TIMELINE SANITY
+   Ask: "Is this a scramble or manageable?"
+   
+   Be practical:
+   → "Standard 45-day response window — manageable timeline"
+   → "Timeline consistent with rapid-response bids"
+   → "Compressed 15-day deadline — requires immediate mobilization"
+   → "Extended timeline — may indicate low urgency"
+
+=== SCORING RUBRIC (0-100) ===
+
+- 45% Capability fit (technical requirements match firm's core services)
+- 25% Eligibility (set-aside compatibility, certifications, vehicle access)
+- 15% Buyer similarity (agency matches past wins/preferences)
 - 15% Practicality (timeline, scope clarity, value band)
 
 Downgrade for:
-- "Security" meaning guards vs cyber (domain mismatch)
-- Irrelevant NAICS/industry
-- Missing/weak description
+- Domain mismatch (e.g., "security" = guards when firm does cyber)
+- Irrelevant NAICS/industry codes
+- Vague/missing scope descriptions
 - Set-aside certification mismatch
-- Unrealistic timelines
+- Unrealistic timelines or unclear deadlines
+- Value band way outside firm's typical range
 
-Output strict JSON only. Include ALL contracts in results."""
-    
+=== VERDICT GUIDANCE ===
+
+- pursue (75-100): Strong fit, few barriers, clear win path
+- monitor (50-74): Decent fit but has complications/uncertainties
+- pass (0-49): Poor fit, major blockers, or resource mismatch
+
+=== TONE ===
+
+Professional. Concise. Decision-support.
+
+Sound like a senior bid manager briefing their BD team.
+
+Never use:
+- Marketing language
+- ML/AI jargon ("embeddings", "semantic similarity", "confidence scores")
+- Overly enthusiastic phrasing
+
+=== OUTPUT ===
+
+Strict JSON only. Include ALL contracts in results array."""
+
     def _build_prompt(self, firm: CompanyProfile, batch: List[Dict]) -> str:
-        """Build the user prompt with firm + contracts."""
+        """Build user prompt with firm context + contracts + examples."""
         
-        # Firm summary (truncated to 300 words)
         firm_summary = self._build_firm_summary(firm)
-        
-        # Get all batch IDs upfront (helps model compliance)
         batch_ids = [item['contract'].qdrant_id for item in batch]
         
-        # Contract list
         contract_list = []
         for idx, item in enumerate(batch):
             contract = item['contract']
@@ -382,42 +416,119 @@ Output strict JSON only. Include ALL contracts in results."""
 
 {firm_summary}
 
-# Batch IDs (you must score ALL of these):
+# Contract IDs to Score (ALL {len(batch)} required)
+
 {', '.join(batch_ids)}
 
-# Contracts to Score ({len(batch)} total)
+# Contracts
 
 {chr(10).join(contract_list)}
 
-# Task
+# Your Task
 
-Score each contract 0-100 and provide verdict (pursue/monitor/pass).
+Score each contract 0-100 using the scoring rubric from your system prompt.
 
-Output JSON:
+Provide verdict: pursue | monitor | pass
+
+Generate 4 reasons using the decision scaffold:
+
+**Slot 1 - Eligibility:**
+✓ "No obvious eligibility blockers detected"
+✓ "Full and open competition — no set-aside"
+✗ "Requires 8(a) certification — verify eligibility"
+
+**Slot 2 - Capability:**
+✓ "Strong scope fit with your IT modernization and systems integration capabilities"
+✓ "Core requirement matches your cloud services and DevSecOps practice"
+✗ "Partial capability match — consulting scope may be a stretch"
+
+**Slot 3 - Buyer:**
+✓ "Buying agency (DoD) matches your existing customer base"
+✓ "Agency aligns with your federal contracting profile"
+✗ "Civilian agency — outside your recent DoD focus"
+
+**Slot 4 - Timeline:**
+✓ "Standard 30-day response window"
+✓ "Timeline consistent with rapid-response bids"
+✗ "Compressed 10-day deadline — immediate mobilization required"
+
+=== BAD EXAMPLES (DO NOT USE) ===
+
+❌ "High semantic similarity to past wins"
+❌ "Strong embeddings alignment detected"
+❌ "AI confidence score: 0.87"
+❌ "This matches your profile based on ML analysis"
+
+=== GOOD EXAMPLES (USE THIS STYLE) ===
+
+✅ "No set-aside restrictions — open competition"
+✅ "Strong alignment with your IT modernization and cloud migration capabilities"
+✅ "Buying agency (VA) matches your existing federal customer profile"
+✅ "Standard 45-day response window — manageable timeline"
+
+=== Output Format ===
+
 {{
   "results": [
     {{
-      "contract_id": "string",
+      "contract_id": "exact_qdrant_id_from_list_above",
       "score": 0-100,
       "verdict": "pursue|monitor|pass",
-      "reasons": ["...", "...", "..."],
-      "flags": ["missing_cert", "wrong_domain", "tight_deadline", "unclear_scope"]
+      "reasons": [
+        "Eligibility slot reason",
+        "Capability slot reason",
+        "Buyer slot reason",
+        "Timeline slot reason"
+      ],
+      "flags": ["tight_deadline", "unclear_scope", "wrong_domain", "missing_cert"]
     }}
   ]
 }}
 
-CRITICAL: Include all {len(batch)} contracts in results. Use the exact IDs from the Batch IDs list above."""
+CRITICAL: Include all {len(batch)} contracts. Use exact IDs from the list above."""
         
         return prompt
     
-    def _build_firm_summary(self, firm: CompanyProfile) -> str:
-        """Build concise firm summary (max 300 words)."""
+    def _build_repair_prompt(self, firm: CompanyProfile, missing_contracts: List[Dict]) -> str:
+        """Minimal repair prompt for omitted contracts."""
         
-        # Core capabilities (top 5)
-        cap_text = ""
-        if firm.capabilities:
-            caps = [c.capability_text for c in firm.capabilities[:5] if c.capability_text]
-            cap_text = "- " + "\n- ".join(caps[:3])  # Top 3 only
+        firm_name = firm.company_name
+        
+        contract_lines = []
+        for item in missing_contracts:
+            contract = item['contract']
+            contract_lines.append(
+                f"ID: {contract.qdrant_id}\n"
+                f"Title: {contract.title[:120] if contract.title else 'N/A'}\n"
+                f"Agency: {contract.buyer_name or 'N/A'}\n"
+                f"Set-Aside: {contract.set_aside or 'Full & Open'}\n"
+                f"---"
+            )
+        
+        return f"""You omitted these contracts. Score them now.
+
+Firm: {firm_name}
+
+Missing Contracts ({len(missing_contracts)}):
+
+{chr(10).join(contract_lines)}
+
+Return JSON with ONLY these {len(missing_contracts)} contracts using the 4-slot decision scaffold:
+
+{{
+  "results": [
+    {{
+      "contract_id": "...",
+      "score": 0-100,
+      "verdict": "pursue|monitor|pass",
+      "reasons": ["eligibility", "capability", "buyer", "timeline"],
+      "flags": []
+    }}
+  ]
+}}"""
+    
+    def _build_firm_summary(self, firm: CompanyProfile) -> str:
+        """Build concise firm summary for prompt context."""
         
         # Certifications
         certs = []
@@ -431,59 +542,72 @@ CRITICAL: Include all {len(batch)} contracts in results. Use the exact IDs from 
             certs.append("HUBZone")
         if firm.sba_certified:
             certs.append("Small Business")
-        
-        cert_text = ", ".join(certs) if certs else "None"
+        cert_text = ", ".join(certs) if certs else "None listed"
         
         # NAICS
         naics_text = ", ".join(firm.naics_codes[:3]) if firm.naics_codes else "Not specified"
         
+        # Core capabilities
+        cap_lines = []
+        if firm.capabilities:
+            for cap in firm.capabilities[:5]:
+                if cap.capability_text:
+                    cap_lines.append(f"  • {cap.capability_text[:120]}")
+        cap_text = "\n".join(cap_lines) if cap_lines else "  (Not specified)"
+        
         # Preferred agencies
         pref_agencies = ""
         if firm.search_preference and firm.search_preference.preferred_agencies:
-            pref_agencies = ", ".join(firm.search_preference.preferred_agencies[:3])
+            agencies = firm.search_preference.preferred_agencies[:3]
+            pref_agencies = f"\nPreferred Agencies: {', '.join(agencies)}"
         
-        summary = f"""Company: {firm.company_name}
+        summary = f"""**Company:** {firm.company_name}
 
-Certifications: {cert_text}
-Primary NAICS: {naics_text}
-{f"Preferred Agencies: {pref_agencies}" if pref_agencies else ""}
+**Certifications:** {cert_text}
 
-Core Capabilities:
+**Primary NAICS:** {naics_text}{pref_agencies}
+
+**Core Capabilities:**
 {cap_text}"""
         
-        return summary[:800]  # Hard limit
+        return summary[:900]  # Hard limit
     
     def _format_contract(self, contract: Contract, idx: int, matched_capability: Optional[str] = None) -> str:
-        """Format single contract for prompt (truncated)."""
+        """Format contract for prompt (decision-relevant fields only)."""
         
-        # Truncate description
-        desc = (contract.description or "")[:200]
+        desc = (contract.description or "No description")[:250]
         
-        # Format contract value safely
+        # Value
         if contract.contract_value:
             try:
                 value_str = f"${contract.contract_value:,.0f}"
             except (ValueError, TypeError):
-                value_str = "N/A"
+                value_str = "Not disclosed"
         else:
-            value_str = "N/A"
+            value_str = "Not disclosed"
         
-        # Format closing date safely
-        closes_str = str(contract.closing_date) if contract.closing_date else "N/A"
+        # Deadline
+        closes_str = str(contract.closing_date) if contract.closing_date else "Not specified"
         
-        # ✅ INCLUDE MATCHED CAPABILITY
-        matched_cap_line = f"Top Matched Capability: {matched_capability[:150]}" if matched_capability else ""
+        # Top matched capability
+        matched_cap_line = ""
+        if matched_capability:
+            matched_cap_line = f"**Top Capability Match:** {matched_capability[:140]}\n"
         
         return f"""## Contract {idx + 1}
-ID: {contract.qdrant_id}
-Notice ID: {contract.notice_id}
-Title: {contract.title[:160] if contract.title else 'N/A'}
-Agency: {contract.buyer_name or 'N/A'}
-Description: {desc}...
-{matched_cap_line}
-NAICS: {contract.naics_code or 'N/A'}
-Set-Aside: {contract.set_aside or 'Full & Open'}
-Region: {contract.region or 'N/A'}
-Value: {value_str}
-Closes: {closes_str}
+
+**ID:** {contract.qdrant_id}
+**Notice ID:** {contract.notice_id}
+**Title:** {contract.title[:160] if contract.title else 'Untitled'}
+
+**Agency:** {contract.buyer_name or 'Not specified'}
+**Set-Aside:** {contract.set_aside or 'Full & Open'}
+**NAICS:** {contract.naics_code or 'N/A'}
+**Region:** {contract.region or 'N/A'}
+
+**Value:** {value_str}
+**Closes:** {closes_str}
+
+{matched_cap_line}**Description:** {desc}...
+
 ---"""
