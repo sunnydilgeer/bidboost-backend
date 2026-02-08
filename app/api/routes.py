@@ -1676,22 +1676,7 @@ async def search_contracts(
         
         # Build Pinecone filters
         filters = {}
-        if search_request.min_value or search_request.max_value:
-            value_filter = {}
-            if search_request.min_value:
-                value_filter["$gte"] = float(search_request.min_value)
-            if search_request.max_value:
-                value_filter["$lte"] = float(search_request.max_value)
-            filters["contract_value"] = value_filter
-        
-        if search_request.region:
-            filters["state"] = {"$eq": search_request.region}
-
-        # ✅ ADD THIS: Always exclude expired contracts
-        from datetime import datetime, timezone
-        today = datetime.now(timezone.utc).isoformat()
-        filters["response_deadline"] = {"$gte": today}
-                
+       
         # Search Pinecone
         search_limit = search_request.limit if include_match_scores else search_request.limit
         results = pinecone.search_contracts(
@@ -1701,6 +1686,12 @@ async def search_contracts(
             namespace=settings.PINECONE_NAMESPACE,
             filter_dict=filters if filters else None
         )
+
+        logger.info(f"[DEBUG] Raw results count: {len(results)}")
+        if results:
+            logger.info(f"[DEBUG] First result metadata: {results[0]}")
+            logger.info(f"[DEBUG] response_deadline value: {results[0].get('response_deadline')}")
+            logger.info(f"[DEBUG] response_deadline type: {type(results[0].get('response_deadline'))}")
         
         # Initialize scorer if match scores are requested
         scorer = ContractMatchScorer(db, pinecone.index) if include_match_scores else None

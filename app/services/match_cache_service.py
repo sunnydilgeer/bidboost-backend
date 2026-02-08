@@ -5,7 +5,11 @@ Phase 1: Multi-query semantic matching with diversity boost (3-7 min)
 Phase 1.5: LLM re-ranking for quality (2-4 min) 
 Phase 2: Batched strategic intelligence enrichment (15-20 min)
 
-Runs nightly to cache top 500 matches per company in PostgreSQL
+ENRICHMENT STATUS FLOW:
+- Phase 1 saves contracts with enrichment_status='pending'
+- Phase 2 updates enrichment_status='complete' after strategic intel added
+- Frontend shows "Enriching..." badge during Phase 2 (status='pending')
+- Frontend hides badge after Phase 2 (status='complete')
 
 ✨ NEW: DIVERSITY SCORING
 - Contracts matching multiple capabilities get boosted
@@ -19,6 +23,7 @@ FIXES APPLIED:
 - Multi-capability diversity boost
 - Comprehensive logging with progress tracking
 - Batched Pinecone vector fetching (100 at a time to avoid URI length errors)
+- ✅ CRITICAL: Fallback to mark remaining pending contracts as complete
 """
 
 import logging
@@ -81,21 +86,35 @@ class MatchCacheService:
             
             for firm in firms:
                 try:
-                    # PHASE 1: Multi-query semantic matching with diversity boost (3-7 min)
+                    logger.info(f"")
+                    logger.info(f"{'='*100}")
+                    logger.info(f"🚀 STARTING CACHE UPDATE FOR: {firm.company_name} (firm_id: {firm.firm_id})")
+                    logger.info(f"{'='*100}")
+                    sys.stdout.flush()
+                    
+                    # PHASE 1 & 1.5: Multi-query semantic matching + LLM re-ranking (5-10 min)
+                    # Saves contracts with enrichment_status='pending'
                     self._update_firm_cache(firm)
                     
                     # PHASE 2: Strategic intelligence enrichment (15-20 min)
-                    self.enrich_cached_matches_batched(firm.firm_id)
+                    # Updates enrichment_status='complete' when done
+                    self._enrich_cached_matches_batched(firm.firm_id)
+                    
+                    logger.info(f"")
+                    logger.info(f"✅ CACHE UPDATE COMPLETE FOR: {firm.company_name}")
+                    logger.info(f"{'='*100}")
+                    sys.stdout.flush()
                     
                 except Exception as e:
-                    logger.error(f"Failed to update cache for firm {firm.firm_id}: {e}")
+                    logger.error(f"❌ Failed to update cache for firm {firm.firm_id}: {e}", exc_info=True)
                     continue
             
-            logger.info(f"✅ Cache update complete for {len(firms)} firms")
+            logger.info(f"")
+            logger.info(f"🎉 CACHE UPDATE COMPLETE FOR ALL {len(firms)} FIRMS")
             sys.stdout.flush()
             
         except Exception as e:
-            logger.error(f"Cache update failed: {e}", exc_info=True)
+            logger.error(f"❌ Cache update failed: {e}", exc_info=True)
         finally:
             if self.db:
                 self.db.close()
@@ -156,7 +175,9 @@ class MatchCacheService:
     
     def _update_firm_cache(self, firm: CompanyProfile):
         """
-        PHASE 1: Multi-query semantic matching with diversity boost + LLM re-ranking (5-10 min).
+        PHASE 1 & 1.5: Multi-query semantic matching with diversity boost + LLM re-ranking (5-10 min).
+        
+        Saves contracts with enrichment_status='pending' for Phase 2 enrichment.
         
         ✨ NEW DIVERSITY SCORING:
         1. Query Pinecone with ALL capability vectors (not just first)
@@ -177,7 +198,7 @@ class MatchCacheService:
         
         # Check if firm has capabilities
         if not firm.capabilities:
-            logger.warning(f"Firm {firm.firm_id} has no capabilities - skipping")
+            logger.warning(f"⚠️ Firm {firm.firm_id} has no capabilities - skipping")
             return
         
         # Pre-fetch capability vectors
@@ -186,7 +207,7 @@ class MatchCacheService:
         
         capability_ids = [cap.qdrant_id for cap in firm.capabilities if cap.qdrant_id]
         if not capability_ids:
-            logger.warning(f"Firm {firm.firm_id} has no capability vectors - skipping")
+            logger.warning(f"⚠️ Firm {firm.firm_id} has no capability vectors - skipping")
             return
         
         logger.info(f"📋 Fetching {len(capability_ids)} capability vectors...")
@@ -219,7 +240,7 @@ class MatchCacheService:
         for idx, cap_id in enumerate(capability_ids):
             cap_vector = capability_vectors.get(cap_id)
             if not cap_vector:
-                logger.warning(f"No vector for capability {cap_id}, skipping")
+                logger.warning(f"⚠️ No vector for capability {cap_id}, skipping")
                 continue
             
             logger.info(f"   📡 Querying capability {idx+1}/{len(capability_ids)}...")
@@ -420,12 +441,21 @@ class MatchCacheService:
         sys.stdout.flush()
         
         # ✅ PHASE 1.5 - LLM RE-RANKING
+        logger.info(f"")
+        logger.info(f"{'='*80}")
+        logger.info(f"✨ PHASE 1.5: LLM Re-ranking for {firm.company_name}")
+        logger.info(f"{'='*80}")
+        sys.stdout.flush()
+        
         llm_results = {}
         try:
             from app.services.llm_rerank_service import LLMReranker
             
             reranker = LLMReranker()
             llm_results = reranker.rerank_contracts_for_firm(firm, top_matches)
+            
+            logger.info(f"✅ LLM re-ranked {len(llm_results)} contracts")
+            sys.stdout.flush()
             
         except Exception as e:
             logger.error(f"⚠️ LLM re-ranking failed, using semantic scores only: {e}")
@@ -462,14 +492,15 @@ class MatchCacheService:
         phase1_duration = time.time() - phase1_start
         
         logger.info(f"")
-        logger.info(f"🎯 Phase 1 Complete:")
+        logger.info(f"🎯 Phase 1 & 1.5 Complete:")
         logger.info(f"   ⏱️  Total time: {phase1_duration/60:.1f} minutes")
         logger.info(f"   📊 Top match score: {top_matches[0]['final_score']:.2f}")
         logger.info(f"   📊 Contracts to cache: {len(top_matches)}")
         sys.stdout.flush()
         
         # Delete old cache entries for this firm
-        logger.info(f"🗑️  Clearing old cache entries...")
+        logger.info(f"")
+        logger.info(f"🗑️  Clearing old cache entries for {firm.firm_id}...")
         sys.stdout.flush()
         
         self.db.execute(
@@ -479,9 +510,10 @@ class MatchCacheService:
         )
         
         # Insert new cache entries with enrichment_status='pending'
-        logger.info(f"💾 Saving {len(top_matches)} matches to cache...")
+        logger.info(f"💾 Saving {len(top_matches)} matches to cache with enrichment_status='pending'...")
         sys.stdout.flush()
         
+        saved_count = 0
         for rank, match in enumerate(top_matches, start=1):
             contract = match["contract"]
             scores = match["scores"]
@@ -515,12 +547,13 @@ class MatchCacheService:
                 "why_this_matches": scores.get("why_this_matches", []),
                 "match_reasons": scores.get("match_reasons", []),
 
-                # ✅ Strategic intelligence = NULL (will be enriched in Phase 2)
+                # ✅ CRITICAL: Strategic intelligence = NULL (will be enriched in Phase 2)
                 "incumbent_data": None,
                 "pricing_benchmarks": None,
                 "competition_stats": None,
                 
-                # ✅ Enrichment tracking
+                # ✅ CRITICAL: Set enrichment_status='pending' for Phase 2
+                # This shows "Enriching..." badge in UI until Phase 2 completes
                 "enrichment_status": "pending",
                 "enriched_at": None,
                 
@@ -559,6 +592,7 @@ class MatchCacheService:
             try:
                 cached_match = CachedContractMatch(**cache_metadata)
                 self.db.add(cached_match)
+                saved_count += 1
             except Exception as e:
                 logger.error(f"Error creating cached match for {contract.notice_id}: {e}")
                 continue
@@ -566,16 +600,22 @@ class MatchCacheService:
         # Commit all cached matches for this firm
         try:
             self.db.commit()
-            logger.info(f"✅ PHASE 1 & 1.5 COMPLETE: Cached {len(top_matches)} matches for {firm.company_name}")
-            logger.info(f"⏳ Strategic intelligence will be enriched in Phase 2...")
+            logger.info(f"")
+            logger.info(f"✅ PHASE 1 & 1.5 COMPLETE:")
+            logger.info(f"   💾 Saved {saved_count} matches for {firm.company_name}")
+            logger.info(f"   📊 Status: enrichment_status='pending' (awaiting Phase 2)")
+            logger.info(f"   🎨 Frontend shows: 'Enriching...' badge")
+            logger.info(f"")
             sys.stdout.flush()
         except Exception as e:
-            logger.error(f"Error committing cached matches for firm {firm.firm_id}: {e}")
+            logger.error(f"❌ Error committing cached matches for firm {firm.firm_id}: {e}", exc_info=True)
             self.db.rollback()
     
-    def enrich_cached_matches_batched(self, firm_id: str):
+    def _enrich_cached_matches_batched(self, firm_id: str):
         """
         PHASE 2: Add strategic intelligence using PSC-aware batched queries (15-20 min).
+        
+        Updates enrichment_status='complete' when done (removes "Enriching..." badge).
         
         ✨ NEW GROUPING STRATEGY: (PSC, NAICS, Agency) for contract-specific data
         
@@ -597,9 +637,11 @@ class MatchCacheService:
         - Fallback groups return "naics_agency" granularity (agency-level)
         - Frontend can show confidence indicators based on granularity
         """
+        phase2_start = time.time()
+        
         logger.info(f"")
         logger.info(f"{'='*80}")
-        logger.info(f"🎯 PHASE 2: Enriching strategic intelligence for {firm_id}")
+        logger.info(f"🎯 PHASE 2: Strategic Intelligence Enrichment for {firm_id}")
         logger.info(f"{'='*80}")
         sys.stdout.flush()
         
@@ -610,15 +652,17 @@ class MatchCacheService:
         ).all()
         
         if not matches:
-            logger.info(f"No pending matches to enrich for {firm_id}")
+            logger.info(f"ℹ️  No pending matches to enrich for {firm_id}")
             return
         
-        logger.info(f"📊 Enriching {len(matches)} contracts...")
+        logger.info(f"📊 Found {len(matches)} contracts with enrichment_status='pending'")
+        logger.info(f"🎨 Frontend currently shows: 'Enriching...' badge for these contracts")
         sys.stdout.flush()
         
         # ✅ BATCHING: Separate contracts by PSC availability
         psc_groups = {}      # Contracts WITH PSC codes → contract-specific data
         fallback_groups = {}  # Contracts WITHOUT PSC codes → agency-wide data
+        skipped_count = 0
         
         for match in matches:
             naics = match.naics_code
@@ -629,6 +673,7 @@ class MatchCacheService:
             if not naics or not agency:
                 match.enrichment_status = 'complete'
                 match.enriched_at = datetime.now(timezone.utc)
+                skipped_count += 1
                 continue
             
             # Group by PSC if available (CONTRACT-SPECIFIC)
@@ -645,127 +690,205 @@ class MatchCacheService:
                 fallback_groups[key].append(match)
         
         total_groups = len(psc_groups) + len(fallback_groups)
+        logger.info(f"")
         logger.info(
-            f"📊 Grouped into {len(psc_groups)} PSC-specific + "
-            f"{len(fallback_groups)} NAICS-only groups "
-            f"(total: {total_groups} queries)"
+            f"📊 Grouping complete:\n"
+            f"   - {len(psc_groups)} PSC-specific groups (contract-level data)\n"
+            f"   - {len(fallback_groups)} NAICS-only groups (agency-level data)\n"
+            f"   - {skipped_count} contracts skipped (missing classification)\n"
+            f"   - Total queries needed: {total_groups}"
         )
         sys.stdout.flush()
         
         enriched_count = 0
         psc_specific_count = 0
         broad_fallback_count = 0
+        error_count = 0
         
         # ✅ ENRICH PSC-SPECIFIC GROUPS (CONTRACT-LEVEL DATA)
-        logger.info(f"🔍 Processing {len(psc_groups)} PSC-specific groups...")
-        sys.stdout.flush()
-        
-        for idx, ((psc, naics, agency), contract_list) in enumerate(psc_groups.items()):
-            if (idx + 1) % 50 == 0:
-                logger.info(f"   ⚡ Processed {idx + 1}/{len(psc_groups)} PSC groups...")
-                sys.stdout.flush()
+        if psc_groups:
+            logger.info(f"")
+            logger.info(f"🔍 Processing {len(psc_groups)} PSC-specific groups...")
+            sys.stdout.flush()
             
-            try:
-                # Query with PSC for contract-level specificity
-                pricing = self.scorer.incumbent_matcher.get_pricing_benchmarks(
-                    naics_code=naics,
-                    agency_name=agency,
-                    psc_code=psc,  # ← KEY: Include PSC for contract-specific data
-                    min_samples=10  # Require 10+ samples for confidence
-                )
+            for idx, ((psc, naics, agency), contract_list) in enumerate(psc_groups.items()):
+                if (idx + 1) % 50 == 0:
+                    elapsed = time.time() - phase2_start
+                    rate = (idx + 1) / elapsed if elapsed > 0 else 0
+                    remaining = len(psc_groups) - (idx + 1)
+                    eta = remaining / rate if rate > 0 else 0
+                    
+                    logger.info(
+                        f"   ⚡ Progress: {idx + 1}/{len(psc_groups)} PSC groups "
+                        f"({rate:.1f} groups/sec, ETA: {eta:.0f}s)"
+                    )
+                    sys.stdout.flush()
                 
-                competition = self.scorer.incumbent_matcher.get_competition_stats(
-                    naics_code=naics,
-                    agency_name=agency,
-                    psc_code=psc,  # ← KEY: Include PSC for contract-specific data
-                    min_samples=10
-                )
-                
-                # Apply to all contracts in this PSC group
-                for match in contract_list:
-                    match.pricing_benchmarks = self._serialize_strategic_intel(pricing)
-                    match.competition_stats = self._serialize_strategic_intel(competition)
-                    match.enrichment_status = 'complete'
-                    match.enriched_at = datetime.now(timezone.utc)
-                    enriched_count += 1
-                
-                # Track granularity for reporting
-                if pricing and pricing.get('granularity') == 'psc_specific':
-                    psc_specific_count += len(contract_list)
-                else:
-                    broad_fallback_count += len(contract_list)
-                
-            except Exception as e:
-                logger.error(f"Failed to enrich PSC group (PSC={psc}, NAICS={naics}, Agency={agency[:30]}): {e}")
-                # Mark as complete to avoid retry loop
-                for match in contract_list:
-                    match.enrichment_status = 'complete'
-                    match.enriched_at = datetime.now(timezone.utc)
+                try:
+                    # Query with PSC for contract-level specificity
+                    pricing = self.scorer.incumbent_matcher.get_pricing_benchmarks(
+                        naics_code=naics,
+                        agency_name=agency,
+                        psc_code=psc,  # ← KEY: Include PSC for contract-specific data
+                        min_samples=10  # Require 10+ samples for confidence
+                    )
+                    
+                    competition = self.scorer.incumbent_matcher.get_competition_stats(
+                        naics_code=naics,
+                        agency_name=agency,
+                        psc_code=psc,  # ← KEY: Include PSC for contract-specific data
+                        min_samples=10
+                    )
+                    
+                    # ✅ CRITICAL: Apply to all contracts in this PSC group AND mark as complete
+                    for match in contract_list:
+                        match.pricing_benchmarks = self._serialize_strategic_intel(pricing)
+                        match.competition_stats = self._serialize_strategic_intel(competition)
+                        match.enrichment_status = 'complete'  # ← Removes "Enriching..." badge
+                        match.enriched_at = datetime.now(timezone.utc)
+                        enriched_count += 1
+                    
+                    # Track granularity for reporting
+                    if pricing and pricing.get('granularity') == 'psc_specific':
+                        psc_specific_count += len(contract_list)
+                    else:
+                        broad_fallback_count += len(contract_list)
+                    
+                except Exception as e:
+                    logger.error(f"❌ Failed to enrich PSC group (PSC={psc}, NAICS={naics}, Agency={agency[:30]}): {e}")
+                    error_count += len(contract_list)
+                    
+                    # ✅ CRITICAL: Mark as complete even if enrichment failed
+                    # This prevents infinite "Enriching..." badges
+                    for match in contract_list:
+                        match.enrichment_status = 'complete'
+                        match.enriched_at = datetime.now(timezone.utc)
         
         # ✅ ENRICH FALLBACK GROUPS (AGENCY-LEVEL DATA)
-        logger.info(f"📊 Processing {len(fallback_groups)} NAICS-only groups...")
+        if fallback_groups:
+            logger.info(f"")
+            logger.info(f"📊 Processing {len(fallback_groups)} NAICS-only groups...")
+            sys.stdout.flush()
+            
+            for idx, ((naics, agency), contract_list) in enumerate(fallback_groups.items()):
+                if (idx + 1) % 50 == 0:
+                    logger.info(f"   ⚡ Progress: {idx + 1}/{len(fallback_groups)} NAICS groups...")
+                    sys.stdout.flush()
+                
+                try:
+                    # Query without PSC (agency-wide aggregation)
+                    pricing = self.scorer.incumbent_matcher.get_pricing_benchmarks(
+                        naics_code=naics,
+                        agency_name=agency,
+                        psc_code=None,  # ← No PSC available
+                        min_samples=3   # ← Lower threshold for fallback
+                    )
+                    
+                    competition = self.scorer.incumbent_matcher.get_competition_stats(
+                        naics_code=naics,
+                        agency_name=agency,
+                        psc_code=None,
+                        min_samples=3
+                    )
+                    
+                    # ✅ CRITICAL: Apply to all contracts without PSC AND mark as complete
+                    for match in contract_list:
+                        match.pricing_benchmarks = self._serialize_strategic_intel(pricing)
+                        match.competition_stats = self._serialize_strategic_intel(competition)
+                        match.enrichment_status = 'complete'  # ← Removes "Enriching..." badge
+                        match.enriched_at = datetime.now(timezone.utc)
+                        enriched_count += 1
+                    
+                    broad_fallback_count += len(contract_list)
+                    
+                except Exception as e:
+                    logger.error(f"❌ Failed to enrich NAICS group (NAICS={naics}, Agency={agency[:30]}): {e}")
+                    error_count += len(contract_list)
+                    
+                    # ✅ CRITICAL: Mark as complete even if enrichment failed
+                    for match in contract_list:
+                        match.enrichment_status = 'complete'
+                        match.enriched_at = datetime.now(timezone.utc)
+        
+        # ✅ CRITICAL FALLBACK: Catch any stragglers still pending
+        logger.info(f"")
+        logger.info(f"🔍 Checking for any remaining pending contracts...")
         sys.stdout.flush()
         
-        for idx, ((naics, agency), contract_list) in enumerate(fallback_groups.items()):
-            if (idx + 1) % 50 == 0:
-                logger.info(f"   ⚡ Processed {idx + 1}/{len(fallback_groups)} NAICS groups...")
-                sys.stdout.flush()
-            
-            try:
-                # Query without PSC (agency-wide aggregation)
-                pricing = self.scorer.incumbent_matcher.get_pricing_benchmarks(
-                    naics_code=naics,
-                    agency_name=agency,
-                    psc_code=None,  # ← No PSC available
-                    min_samples=3   # ← Lower threshold for fallback
-                )
-                
-                competition = self.scorer.incumbent_matcher.get_competition_stats(
-                    naics_code=naics,
-                    agency_name=agency,
-                    psc_code=None,
-                    min_samples=3
-                )
-                
-                # Apply to all contracts without PSC
-                for match in contract_list:
-                    match.pricing_benchmarks = self._serialize_strategic_intel(pricing)
-                    match.competition_stats = self._serialize_strategic_intel(competition)
-                    match.enrichment_status = 'complete'
-                    match.enriched_at = datetime.now(timezone.utc)
-                    enriched_count += 1
-                
-                broad_fallback_count += len(contract_list)
-                
-            except Exception as e:
-                logger.error(f"Failed to enrich NAICS group (NAICS={naics}, Agency={agency[:30]}): {e}")
-                for match in contract_list:
-                    match.enrichment_status = 'complete'
-                    match.enriched_at = datetime.now(timezone.utc)
+        remaining_pending = self.db.query(CachedContractMatch).filter(
+            CachedContractMatch.firm_id == firm_id,
+            CachedContractMatch.enrichment_status == 'pending'
+        ).all()
+        
+        if remaining_pending:
+            logger.warning(
+                f"⚠️ Found {len(remaining_pending)} contracts still pending after Phase 2. "
+                f"Marking as complete to prevent infinite 'Enriching...' badges."
+            )
+            for match in remaining_pending:
+                match.enrichment_status = 'complete'
+                match.enriched_at = datetime.now(timezone.utc)
         
         # Commit all enrichments
         try:
             self.db.commit()
             
+            phase2_duration = time.time() - phase2_start
+            
             # Calculate percentages
-            psc_pct = (psc_specific_count / enriched_count * 100) if enriched_count > 0 else 0
-            broad_pct = (broad_fallback_count / enriched_count * 100) if enriched_count > 0 else 0
+            total_processed = enriched_count + skipped_count + len(remaining_pending)
+            psc_pct = (psc_specific_count / total_processed * 100) if total_processed > 0 else 0
+            broad_pct = (broad_fallback_count / total_processed * 100) if total_processed > 0 else 0
             
             logger.info(f"")
-            logger.info(
-                f"✅ PHASE 2 COMPLETE: Enriched {enriched_count}/{len(matches)} contracts for {firm_id}\n"
-                f"   📊 Data Quality Breakdown:\n"
-                f"      - {psc_specific_count} contracts ({psc_pct:.1f}%) got PSC-specific data (contract-level)\n"
-                f"      - {broad_fallback_count} contracts ({broad_pct:.1f}%) got NAICS-only data (agency-level)\n"
-                f"   🔍 Query Efficiency:\n"
-                f"      - {len(psc_groups)} PSC-specific queries\n"
-                f"      - {len(fallback_groups)} NAICS-only queries\n"
-                f"      - Total: {total_groups} queries"
-            )
+            logger.info(f"{'='*80}")
+            logger.info(f"✅ PHASE 2 COMPLETE for {firm_id}")
+            logger.info(f"{'='*80}")
+            logger.info(f"")
+            logger.info(f"⏱️  Total time: {phase2_duration/60:.1f} minutes")
+            logger.info(f"")
+            logger.info(f"📊 Data Quality Breakdown:")
+            logger.info(f"   - {psc_specific_count} contracts ({psc_pct:.1f}%) got PSC-specific data (contract-level)")
+            logger.info(f"   - {broad_fallback_count} contracts ({broad_pct:.1f}%) got NAICS-only data (agency-level)")
+            logger.info(f"   - {skipped_count} contracts skipped (missing classification)")
+            logger.info(f"   - {len(remaining_pending)} contracts auto-completed (fallback)")
+            if error_count > 0:
+                logger.info(f"   - {error_count} contracts had enrichment errors (marked complete)")
+            logger.info(f"")
+            logger.info(f"🔍 Query Efficiency:")
+            logger.info(f"   - {len(psc_groups)} PSC-specific queries")
+            logger.info(f"   - {len(fallback_groups)} NAICS-only queries")
+            logger.info(f"   - Total: {total_groups} queries")
+            logger.info(f"")
+            logger.info(f"🎨 Frontend Impact:")
+            logger.info(f"   - All contracts now have enrichment_status='complete'")
+            logger.info(f"   - 'Enriching...' badges will disappear")
+            logger.info(f"   - Strategic intelligence available where applicable")
+            logger.info(f"")
             sys.stdout.flush()
+            
         except Exception as e:
-            logger.error(f"Failed to commit enrichments: {e}")
+            logger.error(f"❌ Failed to commit Phase 2 enrichments: {e}", exc_info=True)
             self.db.rollback()
+            
+            # ✅ CRITICAL: Even if commit fails, try to mark pending as complete
+            try:
+                logger.warning(f"⚠️ Attempting fallback: marking all pending as complete...")
+                
+                self.db.query(CachedContractMatch).filter(
+                    CachedContractMatch.firm_id == firm_id,
+                    CachedContractMatch.enrichment_status == 'pending'
+                ).update({
+                    'enrichment_status': 'complete',
+                    'enriched_at': datetime.now(timezone.utc)
+                })
+                
+                self.db.commit()
+                logger.info(f"✅ Fallback successful: all contracts marked complete")
+                
+            except Exception as fallback_error:
+                logger.error(f"❌ Fallback also failed: {fallback_error}", exc_info=True)
+                self.db.rollback()
 
 
 # Standalone function for manual invocation
