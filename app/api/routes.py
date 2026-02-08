@@ -82,8 +82,8 @@ class PipelineResponse(BaseModel):
 logger = logging.getLogger(__name__)
 capability_embedding_cache = {}
 
-router = APIRouter(prefix="/api", tags=["Contracts"])
-
+from fastapi import APIRouter
+router = APIRouter(prefix="/api", tags=["Contracts"], redirect_slashes=True)
 def get_active_contracts_filter():
     """Generate Pinecone filter to exclude expired contracts"""
     from datetime import datetime, timezone
