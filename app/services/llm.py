@@ -1,8 +1,11 @@
 import httpx
 import json
 import asyncio
+import logging
 from typing import List
 from app.core.config import settings
+
+logger = logging.getLogger(__name__)
 
 class LLMService:
     def __init__(self):
@@ -47,8 +50,13 @@ class LLMService:
     
     async def extract_capabilities(self, website_text: str) -> List[dict]:
         """
-        Extract 5-8 specific, concrete service capabilities from website text.
-        Focuses on WHAT they deliver across ALL service types.
+        🆕 FIXED: Extract capabilities that are ACTUALLY on the company's website.
+        
+        BUG FIXES:
+        - Removed example-based prompting that caused hallucination
+        - Added validation to verify extracted capabilities match scraped text
+        - Added debugging logs to track what's being sent to LLM
+        - Stricter prompt instructions
         
         Returns: List of dicts with structure:
             [{"capability_text": "Service description", "category": "Category name"}, ...]
@@ -60,53 +68,62 @@ class LLMService:
             
             client = AsyncOpenAI(api_key=settings.OPENAI_API_KEY)
             
-            # ✅ INCREASED: Use first 12000 chars instead of 6000
-            # ✅ SMARTER: Prioritize content (often where services are described)
+            # Use first 12000 chars (enough to capture multiple pages)
             content_window = website_text[:12000]
             
-            prompt = f"""Analyze this company website and extract 5-8 SPECIFIC service capabilities.
+            # 🆕 DEBUG LOGGING: Show what we're actually sending to the LLM
+            logger.info("="*70)
+            logger.info("📝 CAPABILITY EXTRACTION - SCRAPED TEXT PREVIEW")
+            logger.info("="*70)
+            logger.info(f"Total text length: {len(website_text):,} chars")
+            logger.info(f"Content window: {len(content_window):,} chars")
+            logger.info(f"\nFirst 1000 chars of scraped text:")
+            logger.info("-"*70)
+            logger.info(content_window[:1000])
+            logger.info("-"*70)
+            
+            # 🆕 KEYWORD DETECTION: Check what domains are present
+            text_lower = content_window.lower()
+            domain_keywords = {
+                'IT/Software': ['software', 'cloud', 'application', 'cybersecurity', 'data', 'api', 'programming'],
+                'Construction/Facilities': ['construction', 'facility', 'building', 'maintenance', 'hvac', 'renovation'],
+                'Energy': ['energy', 'power', 'utilities', 'solar', 'electrical'],
+                'Consulting': ['consulting', 'advisory', 'strategy', 'transformation']
+            }
+            
+            logger.info("\n🔍 DOMAIN KEYWORD DETECTION:")
+            for domain, keywords in domain_keywords.items():
+                matches = [kw for kw in keywords if kw in text_lower]
+                if matches:
+                    logger.info(f"  {domain}: {', '.join(matches)}")
+            logger.info("="*70)
+            
+            # 🆕 STRICTER PROMPT: No examples, just instructions
+            prompt = f"""Extract 5-8 service capabilities from this company's website.
 
-WHAT TO EXTRACT:
-Extract CONCRETE SERVICES they provide. Look for:
+CRITICAL RULES:
+✅ Extract ONLY capabilities that are explicitly written on their website
+✅ Use the company's actual language and terminology from the text below
+✅ Be specific - include technologies, tools, frameworks, or industries they mention
+✅ Each capability should be 1-2 sentences describing what they DO (not who they are)
 
-✅ Physical services: facility management, operations, maintenance, construction, infrastructure
-✅ Technology services: cloud, software, IT systems, applications, platforms  
-✅ Energy services: energy management, utilities, HVAC, electrical, mechanical
-✅ Consulting: advisory, strategy, transformation, implementation
-✅ Professional services: training, support, staffing, project management
-✅ Industry-specific: healthcare IT, defense systems, financial tech, government solutions
-✅ Named products/platforms: specific software, tools, or systems they deploy
+❌ DO NOT infer or add capabilities not mentioned in the text
+❌ DO NOT use generic federal contracting language unless it's in their text
+❌ DO NOT hallucinate services based on what companies "typically" offer
+❌ DO NOT add capabilities from other companies or examples
 
-EXAMPLES OF GOOD EXTRACTIONS:
+VALIDATION STEP (before returning):
+- Re-read the website text below
+- Verify each extracted capability uses words/phrases from the text
+- If a capability doesn't match the text, remove it
 
-For a facilities company:
-- "Facility operations and maintenance services for mission-critical government and commercial buildings"
-- "Energy management solutions including HVAC optimization and utility cost reduction"
-- "Infrastructure modernization and capital project management"
-
-For a tech company:
-- "Cloud migration and modernization services for AWS, Azure, and GCP"
-- "Workday implementation and integration with existing enterprise systems"
-- "Cybersecurity consulting and FedRAMP authorization support"
-
-For a hybrid company:
-- "IT infrastructure management and 24/7 help desk support"
-- "Building automation systems and smart facility technology"
-- "Digital transformation consulting for operational efficiency"
-
-RULES:
-1. Each capability = 1-2 sentences describing a SPECIFIC service offering
-2. Be concrete — mention technologies, industries, or outcomes when possible
-3. Avoid: mission statements, values, vague descriptions
-4. Focus on deliverables, not aspirations
-
-Website content:
+WEBSITE TEXT:
 {content_window}
 
-Return ONLY valid JSON (no markdown, no backticks, no explanation):
+Return ONLY valid JSON (no markdown, no backticks):
 [
-  {{"capability_text": "Specific service description here", "category": "Service Type"}},
-  {{"capability_text": "Another specific service here", "category": "Service Type"}}
+  {{"capability_text": "Specific service they mention (use their words)", "category": "Service Type"}},
+  {{"capability_text": "Another service from their website", "category": "Service Type"}}
 ]"""
 
             response = await client.chat.completions.create(
@@ -114,20 +131,20 @@ Return ONLY valid JSON (no markdown, no backticks, no explanation):
                 messages=[
                     {
                         "role": "system", 
-                        "content": "You extract specific service capabilities from company websites. Focus on WHAT THEY DO (concrete services, products, solutions) across ALL industries — technology, facilities, energy, consulting, construction, professional services, etc. You output ONLY valid JSON."
+                        "content": "You are a precise capability extractor. You ONLY extract services that are explicitly stated on the company's website. You never infer, hallucinate, or add capabilities not mentioned in the provided text. You output valid JSON only."
                     },
                     {"role": "user", "content": prompt}
                 ],
-                temperature=0.3,  # Slightly higher for more diverse extraction
+                temperature=0.1,  # 🆕 LOWER: Reduce creativity/hallucination
                 max_tokens=1500
             )
             
             result_text = response.choices[0].message.content.strip()
-            print(f"🤖 GPT-4o-mini extraction result:")
-            print(f"{'='*70}")
-            print(result_text)
-            print(f"{'='*70}")
-
+            
+            logger.info("\n🤖 GPT-4o-mini EXTRACTION RESULT:")
+            logger.info("="*70)
+            logger.info(result_text)
+            logger.info("="*70)
             
             # Clean markdown fences if present
             if "```json" in result_text:
@@ -139,9 +156,8 @@ Return ONLY valid JSON (no markdown, no backticks, no explanation):
             try:
                 capabilities = json.loads(result_text)
             except json.JSONDecodeError as e:
-                print(f"❌ JSON parsing error: {e}")
-                print(f"Raw response: {result_text[:500]}")
-                # Fallback to generic
+                logger.error(f"❌ JSON parsing error: {e}")
+                logger.error(f"Raw response (first 500 chars): {result_text[:500]}")
                 return [{
                     "capability_text": "Professional services and solutions",
                     "category": "General Services"
@@ -151,17 +167,78 @@ Return ONLY valid JSON (no markdown, no backticks, no explanation):
             if not isinstance(capabilities, list):
                 capabilities = [capabilities]
             
-            # Ensure each item has required fields
+            # 🆕 POST-EXTRACTION VALIDATION: Verify capabilities match scraped text
             validated_capabilities = []
-            for cap in capabilities:
-                if isinstance(cap, dict) and "capability_text" in cap:
+            text_lower_for_validation = content_window.lower()
+            
+            logger.info("\n✅ VALIDATING EXTRACTED CAPABILITIES:")
+            logger.info("="*70)
+            
+            for idx, cap in enumerate(capabilities):
+                if not isinstance(cap, dict) or "capability_text" not in cap:
+                    logger.warning(f"  [{idx+1}] ⚠️ Invalid structure, skipping")
+                    continue
+                
+                cap_text = cap["capability_text"]
+                cap_lower = cap_text.lower()
+                
+                # Extract significant words (ignore common words)
+                stop_words = {'and', 'the', 'for', 'with', 'that', 'this', 'from', 'services', 
+                             'solutions', 'including', 'provide', 'provide', 'support', 'our', 
+                             'we', 'are', 'is', 'to', 'of', 'in', 'on'}
+                
+                significant_words = [
+                    word for word in cap_lower.split() 
+                    if len(word) > 4 and word not in stop_words
+                ][:8]  # Check first 8 significant words
+                
+                # Count how many significant words appear in scraped text
+                matches = sum(1 for word in significant_words if word in text_lower_for_validation)
+                match_percentage = (matches / len(significant_words) * 100) if significant_words else 0
+                
+                # 🆕 THRESHOLD: At least 40% of significant words must match
+                if match_percentage >= 40:
                     validated_capabilities.append({
-                        "capability_text": cap["capability_text"],
+                        "capability_text": cap_text,
                         "category": cap.get("category", "General")
                     })
+                    logger.info(f"  [{idx+1}] ✅ VALID ({match_percentage:.0f}% match)")
+                    logger.info(f"       \"{cap_text[:80]}...\"")
+                    logger.info(f"       Matched words: {[w for w in significant_words if w in text_lower_for_validation]}")
+                else:
+                    logger.warning(f"  [{idx+1}] ❌ REJECTED ({match_percentage:.0f}% match - likely hallucination)")
+                    logger.warning(f"       \"{cap_text[:80]}...\"")
+                    logger.warning(f"       Only {matches}/{len(significant_words)} significant words found in scraped text")
             
-            # Return 5-8 capabilities (or whatever we got)
+            logger.info("="*70)
+            logger.info(f"📊 VALIDATION SUMMARY: {len(validated_capabilities)}/{len(capabilities)} capabilities passed validation")
+            logger.info("="*70 + "\n")
+            
+            # If validation was too aggressive and rejected everything, relax threshold
+            if not validated_capabilities and len(capabilities) > 0:
+                logger.warning("⚠️ Validation rejected all capabilities, using relaxed threshold (25%)")
+                for cap in capabilities:
+                    if isinstance(cap, dict) and "capability_text" in cap:
+                        cap_text = cap["capability_text"]
+                        cap_lower = cap_text.lower()
+                        
+                        significant_words = [
+                            word for word in cap_lower.split() 
+                            if len(word) > 4 and word not in stop_words
+                        ][:8]
+                        
+                        matches = sum(1 for word in significant_words if word in text_lower_for_validation)
+                        match_percentage = (matches / len(significant_words) * 100) if significant_words else 0
+                        
+                        if match_percentage >= 25:  # Relaxed threshold
+                            validated_capabilities.append({
+                                "capability_text": cap_text,
+                                "category": cap.get("category", "General")
+                            })
+            
+            # Return validated capabilities (5-8 max)
             if not validated_capabilities:
+                logger.error("❌ No valid capabilities extracted, using fallback")
                 return [{
                     "capability_text": "Professional services and solutions",
                     "category": "General Services"
