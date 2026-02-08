@@ -83,7 +83,7 @@ logger = logging.getLogger(__name__)
 capability_embedding_cache = {}
 
 from fastapi import APIRouter
-router = APIRouter(prefix="/api", tags=["Contracts"], redirect_slashes=True)
+router = APIRouter(prefix="/api", tags=["Contracts"])
 def get_active_contracts_filter():
     """Generate Pinecone filter to exclude expired contracts"""
     from datetime import datetime, timezone
@@ -516,7 +516,7 @@ async def send_test_email(
 # ========== COMPANY PROFILE ROUTES ==========
 
 @router.get("/company/profile", response_model=CompanyProfileResponse)
-async def get_company_profile_endpoint(
+async def get_company_profile_endpoint_with_slash(
     current_user: User = Depends(get_current_active_user),
     db: Session = Depends(get_db)
 ):
@@ -569,6 +569,14 @@ async def get_company_profile_endpoint(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"Failed to retrieve company profile: {str(e)}"
         )
+
+@router.get("/company/profile/", response_model=CompanyProfileResponse)  # ← WITH SLASH
+async def get_company_profile_endpoint_with_slash(
+    current_user: User = Depends(get_current_active_user),
+    db: Session = Depends(get_db)
+):
+    """Handle trailing slash - calls the main endpoint"""
+    return await get_company_profile_endpoint(current_user, db)
 @router.put("/company/profile")
 async def update_company_profile_endpoint(
     data: FederalInfoUpdate,  # ← This receives the JSON body!
