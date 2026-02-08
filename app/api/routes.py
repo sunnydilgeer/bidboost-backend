@@ -1738,7 +1738,7 @@ async def search_contracts(
             contract_result = ContractSearchResult(
                 notice_id=enriched_result.get("notice_id", ""),
                 title=enriched_result.get("title", ""),
-                buyer_name=enriched_result.get("agency", ""),
+                buyer_name=enriched_result.get("agency") or "Unknown Agency",  # ✅ Handles None
                 description=enriched_result.get("description", ""),
                 value=enriched_result.get("contract_value"),
                 region=enriched_result.get("state"),
