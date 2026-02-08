@@ -48,7 +48,7 @@ class LLMService:
     async def extract_capabilities(self, website_text: str) -> List[dict]:
         """
         Extract 5-8 specific, concrete service capabilities from website text.
-        Focuses on WHAT they deliver, not mission statements or generic descriptions.
+        Focuses on WHAT they deliver across ALL service types.
         
         Returns: List of dicts with structure:
             [{"capability_text": "Service description", "category": "Category name"}, ...]
@@ -60,41 +60,53 @@ class LLMService:
             
             client = AsyncOpenAI(api_key=settings.OPENAI_API_KEY)
             
-            prompt = f"""Analyze this company website content and extract 5-8 SPECIFIC service capabilities for federal government contracting.
+            # ✅ INCREASED: Use first 12000 chars instead of 6000
+            # ✅ SMARTER: Prioritize content (often where services are described)
+            content_window = website_text[:12000]
+            
+            prompt = f"""Analyze this company website and extract 5-8 SPECIFIC service capabilities.
 
-CRITICAL EXTRACTION RULES:
-1. Extract CONCRETE SERVICES AND OFFERINGS, not mission statements or generic descriptions
-2. Focus on what appears in:
-   - Services pages and menus
-   - Solutions sections
-   - Products listings
-   - Technology platforms mentioned
-   - Industry expertise areas
-3. Look for:
-   - Specific technology services (e.g., "Cloud migration for AWS/Azure/GCP")
-   - Named products or platforms (e.g., "Workday implementation services")
-   - Industry specializations (e.g., "Healthcare data analytics with HIPAA compliance")
-   - Technical capabilities (e.g., "DevOps automation and CI/CD pipelines")
-   - Consulting services (e.g., "Digital transformation advisory for financial services")
-4. Each capability should be 1-2 sentences describing WHAT they deliver, not WHY
-5. AVOID:
-   - Mission statements ("We're on a mission to...")
-   - Generic values ("True partners change the world...")
-   - Calls to action ("Explore our services...")
-   - Vague descriptions without specifics
+WHAT TO EXTRACT:
+Extract CONCRETE SERVICES they provide. Look for:
+
+✅ Physical services: facility management, operations, maintenance, construction, infrastructure
+✅ Technology services: cloud, software, IT systems, applications, platforms  
+✅ Energy services: energy management, utilities, HVAC, electrical, mechanical
+✅ Consulting: advisory, strategy, transformation, implementation
+✅ Professional services: training, support, staffing, project management
+✅ Industry-specific: healthcare IT, defense systems, financial tech, government solutions
+✅ Named products/platforms: specific software, tools, or systems they deploy
+
+EXAMPLES OF GOOD EXTRACTIONS:
+
+For a facilities company:
+- "Facility operations and maintenance services for mission-critical government and commercial buildings"
+- "Energy management solutions including HVAC optimization and utility cost reduction"
+- "Infrastructure modernization and capital project management"
+
+For a tech company:
+- "Cloud migration and modernization services for AWS, Azure, and GCP"
+- "Workday implementation and integration with existing enterprise systems"
+- "Cybersecurity consulting and FedRAMP authorization support"
+
+For a hybrid company:
+- "IT infrastructure management and 24/7 help desk support"
+- "Building automation systems and smart facility technology"
+- "Digital transformation consulting for operational efficiency"
+
+RULES:
+1. Each capability = 1-2 sentences describing a SPECIFIC service offering
+2. Be concrete — mention technologies, industries, or outcomes when possible
+3. Avoid: mission statements, values, vague descriptions
+4. Focus on deliverables, not aspirations
 
 Website content:
-{website_text[:6000]}
+{content_window}
 
-Return ONLY a valid JSON array with NO additional text, markdown, or explanation:
+Return ONLY valid JSON (no markdown, no backticks, no explanation):
 [
-  {{"capability_text": "Cloud migration and modernization services for AWS, Azure, and GCP with containerization and microservices architecture", "category": "Cloud Services"}},
-  {{"capability_text": "Workday implementation and deployment including integration with existing enterprise systems", "category": "Enterprise Software"}},
-  {{"capability_text": "Data analytics and AI/ML solutions for healthcare sector with HIPAA compliance expertise", "category": "Data & AI"}},
-  {{"capability_text": "Cybersecurity consulting and FedRAMP authorization support for federal agencies", "category": "Cybersecurity"}},
-  {{"capability_text": "Digital transformation advisory services for payment systems and fintech platforms", "category": "Financial Services"}},
-  {{"capability_text": "User-centered design and UX services for government digital services", "category": "Design"}},
-  {{"capability_text": "Managed IT services and application support for enterprise applications", "category": "IT Services"}}
+  {{"capability_text": "Specific service description here", "category": "Service Type"}},
+  {{"capability_text": "Another specific service here", "category": "Service Type"}}
 ]"""
 
             response = await client.chat.completions.create(
@@ -102,23 +114,22 @@ Return ONLY a valid JSON array with NO additional text, markdown, or explanation
                 messages=[
                     {
                         "role": "system", 
-                        "content": "You are an expert at analyzing company websites and extracting specific, concrete service capabilities. Your job is to identify WHAT THEY DO (services, products, platforms) NOT WHY they do it (mission, values). Focus on technical services, named products, industry expertise, and consulting offerings. Return ONLY valid JSON with no markdown formatting."
+                        "content": "You extract specific service capabilities from company websites. Focus on WHAT THEY DO (concrete services, products, solutions) across ALL industries — technology, facilities, energy, consulting, construction, professional services, etc. You output ONLY valid JSON."
                     },
                     {"role": "user", "content": prompt}
                 ],
-                temperature=0.2,  # Lower for more focused, consistent extraction
-                max_tokens=1200
+                temperature=0.3,  # Slightly higher for more diverse extraction
+                max_tokens=1500
             )
             
             result_text = response.choices[0].message.content.strip()
-            print(f"🤖 GPT-4o-mini raw response:")
+            print(f"🤖 GPT-4o-mini extraction result:")
             print(f"{'='*70}")
             print(result_text)
             print(f"{'='*70}")
 
             
-            # Handle various JSON formatting issues
-            # Remove markdown code fences if present
+            # Clean markdown fences if present
             if "```json" in result_text:
                 result_text = result_text.split("```json")[1].split("```")[0].strip()
             elif "```" in result_text:
@@ -128,12 +139,12 @@ Return ONLY a valid JSON array with NO additional text, markdown, or explanation
             try:
                 capabilities = json.loads(result_text)
             except json.JSONDecodeError as e:
-                # Log error and return fallback
                 print(f"❌ JSON parsing error: {e}")
-                print(f"Raw response: {result_text[:200]}")
+                print(f"Raw response: {result_text[:500]}")
+                # Fallback to generic
                 return [{
-                    "capability_text": "Digital services and technology consulting",
-                    "category": "IT Services"
+                    "capability_text": "Professional services and solutions",
+                    "category": "General Services"
                 }]
             
             # Validate structure
@@ -149,11 +160,14 @@ Return ONLY a valid JSON array with NO additional text, markdown, or explanation
                         "category": cap.get("category", "General")
                     })
             
-            # Return 5-8 capabilities
-            return validated_capabilities[:8] if validated_capabilities else [{
-                "capability_text": "Digital services and technology consulting",
-                "category": "IT Services"
-            }]
+            # Return 5-8 capabilities (or whatever we got)
+            if not validated_capabilities:
+                return [{
+                    "capability_text": "Professional services and solutions",
+                    "category": "General Services"
+                }]
+            
+            return validated_capabilities[:8]
         
         else:
             # Fallback to Ollama (less reliable for structured output)
@@ -228,7 +242,7 @@ Answer:"""
 
 
 # ============================================================================
-# Singleton and Helper Functions (ADD THESE AT THE END)
+# Singleton and Helper Functions
 # ============================================================================
 
 # Singleton instance
