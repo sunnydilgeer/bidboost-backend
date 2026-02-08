@@ -84,6 +84,15 @@ capability_embedding_cache = {}
 
 router = APIRouter(prefix="/api", tags=["Contracts"])
 
+def get_active_contracts_filter():
+    """Generate Pinecone filter to exclude expired contracts"""
+    from datetime import datetime, timezone
+    
+    today = datetime.now(timezone.utc).isoformat()
+    
+    return {
+        "response_deadline": {"$gte": today}
+    }
 
 def trigger_cache_refresh(firm_id: str):
     """Trigger immediate cache refresh for a firm in background"""
@@ -1233,7 +1242,10 @@ async def get_recommended_contracts(
         if USE_CACHE:
             # Get cached matches (including pending enrichments)
             cached_matches = db.query(CachedContractMatch)\
-                .filter(CachedContractMatch.firm_id == current_user.firm_id)\
+                 .filter(
+                    CachedContractMatch.firm_id == current_user.firm_id,
+                    CachedContractMatch.closing_date >= datetime.now(timezone.utc)  # ✅ ADD THIS
+                )\
                 .order_by(CachedContractMatch.rank)\
                 .limit(limit)\
                 .all()
@@ -1348,7 +1360,9 @@ async def get_recommended_contracts(
                 query_vector=cap_vector,
                 limit=10,  # Get top 10 per capability
                 min_score=0.30,
-                namespace=settings.PINECONE_NAMESPACE
+                namespace=settings.PINECONE_NAMESPACE,
+                filter_dict=get_active_contracts_filter()  # ✅ ADD THIS
+
             )
             
             # Track which capability matched which contracts
@@ -1669,7 +1683,12 @@ async def search_contracts(
         
         if search_request.region:
             filters["state"] = {"$eq": search_request.region}
-        
+
+        # ✅ ADD THIS: Always exclude expired contracts
+        from datetime import datetime, timezone
+        today = datetime.now(timezone.utc).isoformat()
+        filters["response_deadline"] = {"$gte": today}
+                
         # Search Pinecone
         search_limit = search_request.limit if include_match_scores else search_request.limit
         results = pinecone.search_contracts(
