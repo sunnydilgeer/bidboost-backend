@@ -516,7 +516,7 @@ async def send_test_email(
 # ========== COMPANY PROFILE ROUTES ==========
 
 @router.get("/company/profile", response_model=CompanyProfileResponse)
-async def get_company_profile_endpoint_with_slash(
+async def get_company_profile_endpoint(
     current_user: User = Depends(get_current_active_user),
     db: Session = Depends(get_db)
 ):
