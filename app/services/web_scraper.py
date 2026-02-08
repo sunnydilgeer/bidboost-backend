@@ -1,10 +1,21 @@
 """
-Web scraping service for extracting company capabilities from websites
-Ultra-enhanced to thoroughly explore navigation menus and service pages
+Web Scraper Service - PRODUCTION-READY ULTIMATE VERSION
+
+Combines:
+- Comprehensive navigation extraction (old version)
+- Intelligent link scoring & prioritization (old version)
+- Parallel page fetching (old version)
+- Service-focused text extraction (old version)
+- Anti-bot protection with realistic headers (new)
+- Automatic Playwright fallback for 403s (new)
+- Clean error handling (new)
+
+This is the BEST of both versions.
 """
+
+import httpx
 import logging
 from typing import Dict, List, Optional, Set
-import httpx
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin, urlparse
 import asyncio
@@ -12,14 +23,16 @@ import re
 
 logger = logging.getLogger(__name__)
 
+
 class WebScraperService:
-    """Extract company information with comprehensive navigation exploration"""
+    """Extract company capabilities with comprehensive navigation exploration"""
     
     def __init__(self):
         self.timeout = 15.0
         self.max_pages = 12  # Increased for thorough coverage
         self.use_playwright = True
-        
+        self.visited_urls = set()
+    
     def _normalize_url(self, url: str) -> str:
         """Add https:// if missing"""
         if not url.startswith(('http://', 'https://')):
@@ -44,6 +57,23 @@ class WebScraperService:
         ]
         url_lower = url.lower()
         return any(pattern in url_lower for pattern in skip_patterns)
+    
+    def _get_realistic_headers(self) -> Dict[str, str]:
+        """🆕 Return realistic browser headers to avoid 403 errors"""
+        return {
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
+            'Accept-Language': 'en-US,en;q=0.9',
+            'Accept-Encoding': 'gzip, deflate, br',
+            'DNT': '1',
+            'Connection': 'keep-alive',
+            'Upgrade-Insecure-Requests': '1',
+            'Sec-Fetch-Dest': 'document',
+            'Sec-Fetch-Mode': 'navigate',
+            'Sec-Fetch-Site': 'none',
+            'Sec-Fetch-User': '?1',
+            'Cache-Control': 'max-age=0',
+        }
     
     def _extract_all_navigation_links(self, base_url: str, soup: BeautifulSoup) -> Set[str]:
         """
@@ -130,9 +160,12 @@ class WebScraperService:
             # Specific tech (common)
             '/cloud', '/data', '/ai', '/ml', '/analytics', '/cybersecurity',
             '/digital', '/digital-transformation', '/innovation',
+            # Construction/Facilities (for your domain)
+            '/construction', '/facilities', '/energy', '/maintenance',
+            '/operations', '/o-and-m', '/building-services',
             # About variations
             '/about', '/about-us', '/who-we-are', '/company',
-            # Workday specific (since user mentioned it)
+            # Enterprise systems
             '/workday', '/salesforce', '/oracle', '/sap', '/microsoft'
         ]
         
@@ -168,7 +201,8 @@ class WebScraperService:
         
         # RELEVANT: Specific technologies
         tech_keywords = ['cloud', 'data', 'ai', 'analytics', 'cyber', 'digital', 
-                        'workday', 'salesforce', 'oracle', 'sap', 'aws', 'azure']
+                        'workday', 'salesforce', 'oracle', 'sap', 'aws', 'azure',
+                        'construction', 'facilities', 'energy', 'maintenance']
         for keyword in tech_keywords:
             if keyword in combined:
                 score += 4
@@ -276,43 +310,58 @@ class WebScraperService:
         return text
     
     async def _fetch_page(self, url: str, client: httpx.AsyncClient) -> Optional[str]:
-        """Fetch a single page"""
+        """🆕 Fetch a single page with realistic headers to avoid 403"""
         try:
             response = await client.get(
                 url, 
                 timeout=self.timeout, 
                 follow_redirects=True,
-                headers={
-                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
-                }
+                headers=self._get_realistic_headers()
             )
+            
+            # 🆕 Handle 403 specifically
+            if response.status_code == 403:
+                logger.warning(f"⚠️ 403 Forbidden for {url}, will try Playwright fallback")
+                return None
+            
             if response.status_code == 200:
                 return response.text
+            
+            return None
+        except httpx.HTTPStatusError as e:
+            if e.response.status_code == 403:
+                logger.warning(f"⚠️ 403 Forbidden for {url}")
             return None
         except Exception as e:
             logger.debug(f"Failed to fetch {url}: {e}")
             return None
     
     async def _fetch_page_with_playwright(self, url: str) -> Optional[str]:
-        """Fetch page using Playwright"""
+        """🆕 Fetch page using Playwright with better bot evasion"""
         try:
             from playwright.async_api import async_playwright
             
             async with async_playwright() as p:
                 browser = await p.chromium.launch(
                     headless=True,
-                    args=['--no-sandbox', '--disable-setuid-sandbox']
+                    args=[
+                        '--no-sandbox', 
+                        '--disable-setuid-sandbox',
+                        '--disable-blink-features=AutomationControlled'  # Hide automation
+                    ]
                 )
                 
                 context = await browser.new_context(
-                    user_agent='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+                    user_agent='Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                    viewport={'width': 1920, 'height': 1080},
+                    locale='en-US',
                 )
                 
                 page = await context.new_page()
                 page.set_default_timeout(self.timeout * 1000)
                 
                 await page.goto(url, wait_until='domcontentloaded')
-                await page.wait_for_timeout(3000)
+                await page.wait_for_timeout(2000)
                 
                 # Scroll to trigger lazy loading
                 await page.evaluate('window.scrollTo(0, document.body.scrollHeight)')
@@ -325,6 +374,7 @@ class WebScraperService:
                 return content
                 
         except ImportError:
+            logger.warning("Playwright not installed, falling back to basic scraping")
             return None
         except Exception as e:
             logger.debug(f"Playwright failed for {url}: {e}")
@@ -332,7 +382,13 @@ class WebScraperService:
     
     async def scrape_company_website(self, url: str) -> Dict[str, any]:
         """
-        Comprehensive website scraping with thorough navigation exploration
+        🚀 ULTIMATE COMPREHENSIVE SCRAPER
+        
+        Combines:
+        - Comprehensive navigation extraction
+        - Intelligent link prioritization
+        - Parallel page fetching
+        - Anti-bot protection with automatic Playwright fallback
         """
         url = self._normalize_url(url)
         
@@ -349,17 +405,18 @@ class WebScraperService:
         logger.info(f"=" * 70)
         
         try:
-            # STEP 1: Fetch homepage
+            # STEP 1: Fetch homepage (try HTTP first, then Playwright)
             homepage_html = None
             
-            if self.use_playwright:
-                logger.info("🎭 Attempting Playwright render...")
-                homepage_html = await self._fetch_page_with_playwright(url)
+            # 🆕 Try HTTP first with realistic headers
+            logger.info("📄 Attempting HTTP fetch with realistic headers...")
+            async with httpx.AsyncClient() as client:
+                homepage_html = await self._fetch_page(url, client)
             
-            if not homepage_html:
-                logger.info("📄 Falling back to httpx...")
-                async with httpx.AsyncClient() as client:
-                    homepage_html = await self._fetch_page(url, client)
+            # 🆕 If 403 or failed, fallback to Playwright
+            if not homepage_html and self.use_playwright:
+                logger.info("🎭 HTTP failed, attempting Playwright render...")
+                homepage_html = await self._fetch_page_with_playwright(url)
             
             if not homepage_html:
                 return {
@@ -404,12 +461,25 @@ class WebScraperService:
             all_text = [homepage_text]
             logger.info(f"✅ Homepage: {len(homepage_text)} chars")
             
-            # STEP 6: Fetch priority pages in parallel
-            logger.info(f"\n🌐 Fetching {len(priority_links)} priority pages...")
+            # STEP 6: 🚀 Fetch priority pages in PARALLEL
+            logger.info(f"\n🌐 Fetching {len(priority_links)} priority pages in parallel...")
             
             async with httpx.AsyncClient() as client:
                 tasks = [self._fetch_page(link, client) for link in priority_links]
                 pages_html = await asyncio.gather(*tasks)
+            
+            # 🆕 If any pages returned None (403), retry with Playwright
+            playwright_needed = []
+            for i, (page_html, page_url) in enumerate(zip(pages_html, priority_links)):
+                if page_html is None:
+                    playwright_needed.append((i, page_url))
+            
+            if playwright_needed and self.use_playwright:
+                logger.info(f"🎭 Retrying {len(playwright_needed)} failed pages with Playwright...")
+                for idx, page_url in playwright_needed:
+                    pw_html = await self._fetch_page_with_playwright(page_url)
+                    if pw_html:
+                        pages_html[idx] = pw_html
             
             # STEP 7: Extract text from each page
             successfully_scraped = 0
@@ -430,7 +500,7 @@ class WebScraperService:
             combined_text = ' '.join(all_text)
             
             # STEP 9: Truncate if needed
-            max_chars = 40000  # Generous limit
+            max_chars = 40000  # Generous limit for LLM
             if len(combined_text) > max_chars:
                 combined_text = combined_text[:max_chars] + "..."
                 logger.info(f"✂️  Truncated from {len(combined_text):,} to {max_chars:,} chars")
@@ -460,3 +530,14 @@ class WebScraperService:
                 "capabilities_text": "",
                 "pages_scraped": 0
             }
+
+
+# Singleton instance
+_scraper_service = None
+
+def get_web_scraper() -> WebScraperService:
+    """Get singleton web scraper instance"""
+    global _scraper_service
+    if _scraper_service is None:
+        _scraper_service = WebScraperService()
+    return _scraper_service
