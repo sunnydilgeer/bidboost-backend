@@ -1641,16 +1641,7 @@ async def search_contracts(
     - Same scoring as dashboard and quick-start
     """
     try:
-
-        if include_match_scores:
-            company = db.query(CompanyProfile).filter(
-                CompanyProfile.firm_id == current_user.firm_id
-            ).first()
-            
-            if not company or not company.capabilities or len(company.capabilities) == 0:
-                logger.info(f"⚡ Disabling match scoring - no capabilities for {current_user.firm_id}")
-                include_match_scores = False
-                
+               
         from app.services.pinecone_store import PineconeStoreService
         from app.core.config import settings 
         from app.services.code_lookup import get_code_lookup_service, clean_naics_code
@@ -1684,7 +1675,7 @@ async def search_contracts(
         results = pinecone.search_contracts(
             query_vector=query_vector,
             limit=search_limit,
-            min_score=0.3,
+            min_score=0.20,
             namespace=settings.PINECONE_NAMESPACE,
             filter_dict=filters if filters else None
         )
