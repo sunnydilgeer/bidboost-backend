@@ -1,5 +1,5 @@
 """
-BidMatch Capability Analyzer Service - OPTIMIZED FOR SPEED
+BidMatch Capability Analyzer Service - OPTIMIZED FOR SPEED + BUG FIXES
 
 Analyzes company capabilities against near-miss contracts to generate
 improvement recommendations grounded in real contract language.
@@ -10,11 +10,10 @@ KEY OPTIMIZATIONS:
 - Smart contract chunking (10 contracts per recommendation)
 - 120s → 12-15s total time
 
-CRITICAL PRINCIPLES:
-- Teaches contract language, not score optimization
-- Enhancement > Addition
-- Evidence in words, not numbers
-- Max 5 recommendations, 1-2 high priority
+BUG FIXES:
+- Defensive null handling for all contract fields
+- Better error recovery and logging
+- Validation of contract data structure
 """
 
 import logging
@@ -86,8 +85,17 @@ class CapabilityAnalyzerService:
             
             logger.info(f"Found {len(near_miss_contracts)} near-miss contracts")
             
+            # ✅ VALIDATE CONTRACTS - Remove any with missing critical fields
+            validated_contracts = self._validate_contracts(near_miss_contracts)
+            
+            if not validated_contracts:
+                logger.error(f"No valid contracts after validation for {firm_id}")
+                return self._empty_response(firm_id)
+            
+            logger.info(f"Validated {len(validated_contracts)}/{len(near_miss_contracts)} contracts")
+            
             # Extract capability patterns from contracts
-            capability_patterns = self._extract_capability_patterns(near_miss_contracts)
+            capability_patterns = self._extract_capability_patterns(validated_contracts)
             
             # Classify profile state
             profile_state = await self._classify_profile_state(profile, capability_patterns)
@@ -95,7 +103,7 @@ class CapabilityAnalyzerService:
             # Generate recommendations IN PARALLEL (THIS IS THE KEY OPTIMIZATION)
             result = await self._generate_recommendations_parallel(
                 profile,
-                near_miss_contracts,
+                validated_contracts,
                 capability_patterns,
                 max_recommendations
             )
@@ -110,7 +118,7 @@ class CapabilityAnalyzerService:
                 "analysis_context": {
                     "firm_id": firm_id,
                     "capabilities_analyzed": len(profile.capabilities or []),
-                    "contracts_analyzed": len(near_miss_contracts),
+                    "contracts_analyzed": len(validated_contracts),
                     "analysis_basis": "near_match_contracts",
                     "profile_diagnosis": diagnosis,
                     "profile_diagnosis_detail": diagnosis_detail
@@ -121,6 +129,41 @@ class CapabilityAnalyzerService:
         except Exception as e:
             logger.error(f"Error analyzing capabilities for {firm_id}: {e}", exc_info=True)
             return self._empty_response(firm_id)
+    
+    def _validate_contracts(self, contracts: List[Dict]) -> List[Dict]:
+        """
+        ✅ CRITICAL BUG FIX: Validate contracts have required fields
+        
+        Filters out contracts with missing or null critical fields to prevent
+        'NoneType' object is not subscriptable errors
+        """
+        validated = []
+        
+        for contract in contracts:
+            # Check if contract is a dict
+            if not isinstance(contract, dict):
+                logger.warning(f"Skipping non-dict contract: {type(contract)}")
+                continue
+            
+            # Ensure critical fields exist and are not None
+            title = contract.get('title')
+            notice_id = contract.get('notice_id')
+            
+            if not title or not notice_id:
+                logger.debug(f"Skipping contract with missing title or notice_id")
+                continue
+            
+            # Ensure agency has a fallback
+            if contract.get('agency') is None:
+                contract['agency'] = 'Federal Agency'
+            
+            # Ensure description has a fallback
+            if contract.get('description') is None:
+                contract['description'] = ''
+            
+            validated.append(contract)
+        
+        return validated
     
     async def _get_near_miss_contracts(
         self, 
@@ -230,7 +273,10 @@ class CapabilityAnalyzerService:
             ]
             
             for contract in contracts:
-                text = f"{contract.get('title', '')} {contract.get('description', '')}".lower()
+                # ✅ DEFENSIVE: Handle None values safely
+                title = contract.get('title') or ''
+                description = contract.get('description') or ''
+                text = f"{title} {description}".lower()
                 
                 # Extract frameworks
                 for framework in FEDERAL_FRAMEWORKS:
@@ -242,9 +288,9 @@ class CapabilityAnalyzerService:
                     if verb in text:
                         service_verbs.append(verb)
                 
-                # Collect agencies
-                agency = contract.get("agency", "")
-                if agency:
+                # Collect agencies - with defensive handling
+                agency = contract.get("agency")
+                if agency and isinstance(agency, str):
                     agencies.append(agency)
             
             return {
@@ -255,7 +301,7 @@ class CapabilityAnalyzerService:
             }
         
         except Exception as e:
-            logger.error(f"Error extracting patterns: {e}")
+            logger.error(f"Error extracting patterns: {e}", exc_info=True)
             return {"frameworks": {}, "service_verbs": {}, "agencies": {}, "total_contracts": 0}
     
     async def _classify_profile_state(
@@ -295,7 +341,7 @@ class CapabilityAnalyzerService:
                 return "well_aligned"
         
         except Exception as e:
-            logger.error(f"Error classifying profile state: {e}")
+            logger.error(f"Error classifying profile state: {e}", exc_info=True)
             return "missing_federal_language"
     
     async def _generate_recommendations_parallel(
@@ -347,7 +393,9 @@ class CapabilityAnalyzerService:
                 if isinstance(result, dict) and result.get("recommendation"):
                     recommendations.append(result["recommendation"])
                 elif isinstance(result, Exception):
-                    logger.error(f"Recommendation {idx} failed: {result}")
+                    logger.error(f"Recommendation {idx} failed: {result}", exc_info=result)
+                elif isinstance(result, dict) and result.get("error"):
+                    logger.warning(f"Recommendation {idx} error: {result['error']}")
             
             # Determine diagnosis
             diagnosis = await self._classify_profile_state(profile, patterns)
@@ -378,6 +426,8 @@ class CapabilityAnalyzerService:
         🚀 Generate ONE recommendation using GPT-4o-mini (fast, parallelizable)
         
         This runs in parallel with other recommendations for 10x speedup
+        
+        ✅ BUG FIX: All contract field access is now null-safe
         """
         try:
             capability_texts = [cap.capability_text for cap in capabilities]
@@ -386,12 +436,17 @@ class CapabilityAnalyzerService:
             frameworks_list = ", ".join(list(patterns.get("frameworks", {}).keys())[:5])
             agencies_list = ", ".join(list(patterns.get("agencies", {}).keys())[:3])
             
-            # Sample 3-5 contracts for this recommendation
+            # ✅ DEFENSIVE: Sample 3-5 contracts with null-safe field access
             sample_snippets = []
             for contract in contracts[:5]:
-                title = contract.get('title', '')[:80]
-                agency = contract.get('agency', 'Federal Agency')[:30]
+                # ✅ NULL-SAFE: Use 'or' to handle None values before slicing
+                title = (contract.get('title') or 'Untitled Contract')[:80]
+                agency = (contract.get('agency') or 'Federal Agency')[:30]
                 sample_snippets.append(f"[{agency}] {title}")
+            
+            # If no sample snippets, use fallback
+            if not sample_snippets:
+                sample_snippets.append("[Federal Agency] Contract opportunity")
             
             prompt = f"""Generate ONE specific, save-ready capability recommendation based on contract analysis.
 
@@ -399,8 +454,8 @@ COMPANY'S CURRENT CAPABILITIES:
 {chr(10).join(f"{i+1}. {cap[:120]}" for i, cap in enumerate(capability_texts))}
 
 RELEVANT CONTRACT PATTERNS:
-- Common frameworks: {frameworks_list}
-- Top agencies: {agencies_list}
+- Common frameworks: {frameworks_list or "Various federal frameworks"}
+- Top agencies: {agencies_list or "Various federal agencies"}
 - Sample contracts analyzed: {chr(10).join(sample_snippets)}
 
 INSTRUCTIONS:
@@ -475,7 +530,7 @@ Be specific and actionable. Ground in actual contract language."""
         """Validate and enrich a recommendation to match the required schema"""
         
         try:
-            # Extract fields
+            # Extract fields with defensive defaults
             statement = rec.get('capability_statement', '')
             deliverables = rec.get('deliverables', [])
             frameworks = rec.get('frameworks_standards', [])
@@ -498,10 +553,11 @@ Be specific and actionable. Ground in actual contract language."""
             # Build evidence from snippets
             evidence_list = []
             for snippet in snippets:
-                snippet_text = snippet.get('snippet_text', '')
-                context = snippet.get('context', '')
-                if snippet_text:
-                    evidence_list.append(f"{snippet_text} ({context})" if context else snippet_text)
+                if isinstance(snippet, dict):
+                    snippet_text = snippet.get('snippet_text', '')
+                    context = snippet.get('context', '')
+                    if snippet_text:
+                        evidence_list.append(f"{snippet_text} ({context})" if context else snippet_text)
             
             # Fallback evidence if no snippets provided
             if not evidence_list:
@@ -520,16 +576,16 @@ Be specific and actionable. Ground in actual contract language."""
                 "suggested_capability": {
                     "capability_text": capability_text,
                     "capability_statement": statement,
-                    "deliverables": deliverables,
-                    "frameworks_standards": frameworks,
-                    "keywords": keywords,
+                    "deliverables": deliverables if isinstance(deliverables, list) else [],
+                    "frameworks_standards": frameworks if isinstance(frameworks, list) else [],
+                    "keywords": keywords if isinstance(keywords, list) else [],
                     "category": category,
                     "naics_code": None
                 },
                 "why_this_matters": {
                     "summary": evidence_list[0] if evidence_list else "Improves federal contract alignment",
                     "evidence": evidence_list,
-                    "snippets": snippets
+                    "snippets": snippets if isinstance(snippets, list) else []
                 },
                 "related_existing_capabilities": [],
                 "recommended_action": action,
@@ -540,7 +596,7 @@ Be specific and actionable. Ground in actual contract language."""
             }
             
             # Add related capability if enhancement
-            if related_idx is not None and 0 <= related_idx < len(existing_capabilities):
+            if related_idx is not None and isinstance(related_idx, int) and 0 <= related_idx < len(existing_capabilities):
                 related_cap = existing_capabilities[related_idx]
                 recommendation["related_existing_capabilities"].append({
                     "capability_id": related_cap.id,
