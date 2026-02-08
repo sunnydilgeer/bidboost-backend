@@ -1628,7 +1628,7 @@ async def get_pipeline_summary(
 @router.post("/contracts/search", response_model=ContractSearchResponse)
 async def search_contracts(
     search_request: ContractSearchRequest,
-    include_match_scores: bool = True,
+    include_match_scores: bool = False,
     current_user: User = Depends(get_current_active_user),
     db: Session = Depends(get_db)
 ) -> ContractSearchResponse:
@@ -1800,7 +1800,7 @@ async def search_contracts(
                 if match_scores:
                     contract_result.match_scores = match_scores
                     contract_result.total_match_score = match_scores["match_score"]  # ✅ PURE CAPABILITY SCORE
-                    contract_result.final_score = match_scores["match_score"]  # ✅ ADD THIS
+                    # contract_result.final_score = match_scores["match_score"]  # ✅ ADD THIS
                     contract_result.match_reasons = match_scores.get("match_reasons", [])
                     contract_result.matched_capabilities = match_scores.get("matched_capabilities", [])
                     contract_result.why_this_matches = match_scores.get("why_this_matches", [])
@@ -2043,7 +2043,7 @@ async def get_saved_contracts_enriched(
                         # ✅ Full match score breakdown
                         "total_match_score": float(cached.total_score),
                         "score": float(cached.total_score),
-                        "final_score": float(cached.total_score),  # ✅ ADD THIS
+                        # "final_score": float(cached.total_score),  # ✅ ADD THIS
 
                         "match_scores": {
                             "capability_score": float(cached.capability_score),
@@ -2108,7 +2108,7 @@ async def get_saved_contracts_enriched(
                         # ✅ Full match score breakdown from real-time scoring
                         "total_match_score": float(match_scores["match_score"]) if match_scores else 0.0,
                         "score": float(match_scores["match_score"]) if match_scores else 0.0,
-                        "final_score": float(match_scores["match_score"]) if match_scores else 0.0,  # ✅ ADD THIS
+                        # "final_score": float(match_scores["match_score"]) if match_scores else 0.0,  # ✅ ADD THIS
 
                         "match_scores": match_scores if match_scores else {
                             "capability_score": 0.0,
@@ -2169,7 +2169,7 @@ async def get_saved_contracts_enriched(
                         "updated_at": saved.updated_at.isoformat(),
                         "total_match_score": float(saved.match_score) if saved.match_score else 0.0,
                         "score": float(saved.match_score) if saved.match_score else 0.0,
-                        "final_score": float(saved.match_score) if saved.match_score else 0.0,  # ✅ ADD THIS
+                        # "final_score": float(saved.match_score) if saved.match_score else 0.0,  # ✅ ADD THIS
 
                         "match_scores": None,
                         "match_reasons": [],
