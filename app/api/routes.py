@@ -1241,10 +1241,12 @@ async def get_recommended_contracts(
         
         if USE_CACHE:
             # Get cached matches (including pending enrichments)
+            today_str = datetime.now(timezone.utc).date().isoformat()  # "2026-02-08"
+
             cached_matches = db.query(CachedContractMatch)\
                  .filter(
                     CachedContractMatch.firm_id == current_user.firm_id,
-                    CachedContractMatch.closing_date >= datetime.now(timezone.utc)  # ✅ ADD THIS
+                    CachedContractMatch.closing_date >= today_str  # ✅ STRING COMPARISON
                 )\
                 .order_by(CachedContractMatch.rank)\
                 .limit(limit)\
