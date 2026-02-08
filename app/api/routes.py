@@ -570,13 +570,6 @@ async def get_company_profile_endpoint(
             detail=f"Failed to retrieve company profile: {str(e)}"
         )
 
-@router.get("/company/profile/", response_model=CompanyProfileResponse)  # ← WITH SLASH
-async def get_company_profile_endpoint_with_slash(
-    current_user: User = Depends(get_current_active_user),
-    db: Session = Depends(get_db)
-):
-    """Handle trailing slash - calls the main endpoint"""
-    return await get_company_profile_endpoint(current_user, db)
 @router.put("/company/profile")
 async def update_company_profile_endpoint(
     data: FederalInfoUpdate,  # ← This receives the JSON body!
